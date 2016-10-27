@@ -3,7 +3,7 @@ $site_name = 'Good And Cheap';
 $meta_description = '';
 
 // default paths
-$site = 'portfolio';
+$site = 'goodandcheap';
 
 $css = 'ui/' . $site . '.css';
 $js = 'ui/' . $site . '.js';
