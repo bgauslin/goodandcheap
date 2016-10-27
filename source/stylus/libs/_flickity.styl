@@ -1,0 +1,105 @@
+.flickity-enabled
+  position relative
+  padding-bottom 2rem // NOTE to contain navigation
+
+  &:focus
+    outline none
+
+  &.is-draggable
+    tap-highlight-color transparent
+    user-select none
+
+    .flickity-viewport
+      cursor move
+      cursor grab
+
+    .flickity-viewport.is-pointer-down
+      cursor grabbing
+
+.flickity-viewport
+  position relative
+  height 100%
+  overflow hidden
+
+.flickity-slider
+  position absolute
+  width 100%
+  height 100%
+
+// ----------------------------------------
+// previous/next buttons
+
+.flickity-prev-next-button
+  position absolute
+  bottom 0
+  margin 0
+  padding 0 .5em
+  width 3rem
+  height 2rem
+  text-align center
+  color brand-color
+  background transparent
+  border none
+  border-radius 0
+  cursor pointer
+
+  icon()
+  fade()
+
+  &:hover
+    color medium-grey
+    background transparent
+    border none
+
+  &:disabled
+    visibility hidden
+
+  &:focus
+    outline none
+
+  &.previous
+    left 0
+
+    &:before
+      content '\e802' // angle-left
+      //content '\e800' // left-open
+
+  &.next
+    right 0
+
+    &:after
+      content '\e803' // angle-right
+      //content '\e801' // right-open
+  svg
+    display none
+
+// ----------------------------------------
+// page dots
+
+.flickity-page-dots
+  position absolute
+  bottom 0
+  right 3.5rem
+  left 3.5rem
+  height 2rem
+  line-height 2rem
+  list-style none
+  text-align center
+
+  .dot
+    position relative
+    top 2px
+    display inline-block
+    margin 0 4px
+    width 8px
+    height 8px
+    background light-grey
+    border-radius 50%
+    fade()
+    cursor pointer
+
+    &:hover
+      background medium-grey
+
+    &.is-selected
+      background brand-color

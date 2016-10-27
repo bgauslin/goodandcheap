@@ -1,0 +1,13 @@
+body
+  &::after
+    display none
+    content 'base'
+
+    @media (min-width breakpoint-small)
+      content 'small'
+
+    @media (min-width breakpoint-medium)
+      content 'medium'
+
+    @media (min-width breakpoint-large)
+      content 'large'

@@ -1,0 +1,58 @@
+// ------------------------------
+// sans-serif
+
+webfont('Futura-Book', '/ui/webfonts/Futura-Book/Futura-Book')
+webfont('Futura-Bold', '/ui/webfonts/Futura-Bold/Futura-Bold')
+
+body-font()
+  font-family 'Futura-Book', sans-serif
+  font-weight normal
+
+body-font-bold()
+  font-family 'Futura-Bold', sans-serif
+  font-weight normal
+
+small-caps(font-size)
+  font-size em(font-size)
+  text-transform uppercase
+  letter-spacing .1em
+
+// ------------------------------
+// serif
+
+webfont('CarminaBT-Bold', '/ui/webfonts/CarminaBT-Bold/CarminaBT-Bold')
+webfont('CarminaBT-Light', '/ui/webfonts/CarminaBT-Light/CarminaBT-Light')
+
+heading-bold()
+  font-family 'CarminaBT-Bold', serif
+  font-weight normal
+
+heading-light()
+  font-family 'CarminaBT-Light', serif
+  font-weight normal
+
+// ------------------------------
+// icons
+
+// NOTE no woff2 file for icons-webfont
+@font-face
+  font-family Icons
+  src url(/ui/webfonts/icons/icons.eot)
+  src url(/ui/webfonts/icons/icons.woff) format('woff'),
+      url(/ui/webfonts/icons/icons.ttf) format('truetype')
+
+icon()
+  font-family 'Icons', sans-serif
+
+// '\e800' // left-open
+// '\e801' // right-open
+// '\e802' // angle-left
+// '\e803' // angle-right
+// '\e804' // search
+// '\e805' // user
+// '\e806' // circle-empty
+// '\e807' // ok-circled
+// '\e808' // cancel-circled
+// '\e809' // cancel
+// '\e80a' // heart
+// '\e80b' // heart-empty

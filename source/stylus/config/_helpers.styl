@@ -1,0 +1,23 @@
+// ---------------------------------------------------------------------------
+// layout
+
+column-width = 4em
+gutter-width = 1em
+
+grid-width(column-count)
+  (column-count * (column-width + gutter-width)) - gutter-width
+
+
+// ---------------------------------------------------------------------------
+// fonts
+
+em(px)
+  (px / 16) * 1em
+
+webfont(name, file)
+  @font-face
+    font-family name
+    src url(file + '.eot')
+    src url(file + '.woff') format('woff'),
+        url(file + '.woff2') format('woff2'),
+        url(file + '.ttf') format('truetype')
