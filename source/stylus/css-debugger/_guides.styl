@@ -1,0 +1,27 @@
+.css-debugger
+  .guides::before
+    content '\e801' // align-justify
+    transform rotate(90deg)
+
+body.guides
+  background-color transparent
+  background-repeat repeat-y
+
+  background-image url('/ui/img/debug-rule.png'), url('/ui/img/debug-rule.png'), url('/ui/img/debug-rule.png')
+  background-position left margins-base top 0, right margins-base top 0
+
+  @media (min-width breakpoint-small)
+    background-position top center, left margins-small top 0, right margins-small top 0
+
+  @media (min-width breakpoint-medium)
+    background-position top center, left margins-medium top 0, right margins-medium top 0
+
+  @media (min-width breakpoint-large)
+    background-position top center, left margins-large top 0, right margins-large top 0
+
+  // NOTE pixel values must be coordinated for width-xlarge...
+  @media (min-width breakpoint-xlarge)
+    background-position top center, calc(50% - 560px) 0, calc(50% + 560px) 0
+
+  img
+    opacity .75 !important

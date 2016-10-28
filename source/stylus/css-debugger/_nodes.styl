@@ -1,0 +1,23 @@
+.css-debugger
+  .nodes::before
+    content '\f0e8' // sitemap
+
+body.nodes
+  *
+    background rgba(255, 0, 0, .2) !important
+  * *
+    background rgba(0, 255, 0, .2) !important
+  * * *
+    background rgba(0, 0, 255, .2) !important
+  * * * *
+    background rgba(255, 0, 255, .2) !important
+  * * * * *
+    background rgba(0, 255, 255, .2) !important
+  * * * * * *
+    background rgba(255, 255, 0, .2) !important
+
+  // don't apply styles to debugger
+  .css-debugger
+    background rgba(0, 0, 0, .8) !important
+    *
+      background transparent !important

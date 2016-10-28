@@ -1,0 +1,72 @@
+.css-debugger
+  .attr::before
+    content '\f121' // code
+
+body.attr
+
+  // links
+  a[href]:not([title])
+    border 1px solid red
+
+  a[title=""]
+    outline 1px dotted red
+
+  a[href="#"]
+    background lime
+
+  a[href=""]
+    background fuchsia
+
+  // blank classes and id's
+  *[class=""]
+  *[id=""]
+    outline 1px dotted red
+
+  // empty items
+  div:empty
+  span:empty
+  li:empty
+  p:empty
+  td:empty
+  th:empty
+    outline 1px dotted green
+
+  // images
+  img[alt=""]
+    border 1px solid red
+
+  img:not([alt])
+    border 1px dotted red
+
+  img[title=""]
+    outline 1px solid fuchsia
+
+  img:not([title])
+    outline 1px dotted fuchsia
+
+  // tables
+  table:not([summary])
+    outline 5px solid red
+
+  table[summary=""]
+    outline 3px dotted red
+
+  th
+    border 2px solid red
+
+  th[scope="col"]
+  th[scope="row"]
+    border none
+
+  // old markup
+  *[style]
+  font
+  center
+    outline 1px solid red
+
+  // ignore styles for debugger
+  .css-debugger
+    a
+      border none !important
+      outline none !important
+      background transparent !important

@@ -1,0 +1,77 @@
+body
+  &::after
+    display none
+    content 'base'
+
+    @media(min-width breakpoint-small)
+      content 'small'
+
+    @media(min-width breakpoint-medium)
+      content 'medium'
+
+    @media(min-width breakpoint-large)
+      content 'large'
+
+    @media(min-width breakpoint-xlarge)
+      content 'xlarge'
+
+webfont('Debug-Icons', '/ui/webfonts/icons-debug/icons-debug')
+
+debug-icon()
+  font-family 'Debug-Icons'
+  font-weight normal
+  font-style normal
+
+.css-debugger
+  position fixed
+  right 0
+  bottom 0
+  z-index 999999
+
+  display flex
+  align-items center
+
+  background rgba(0, 0, 0, .8) !important
+
+  font-family monospace
+
+  ul
+    display flex
+    margin 0
+    padding .3em
+
+  li
+    margin 0
+    font-size .9em
+    list-style none
+
+  p
+    margin 0
+    font-size .9em
+
+  a
+    display flex
+    align-items center
+
+    padding .5em
+
+    line-height 1
+    text-decoration none
+
+    &::before
+      debug-icon()
+      display inline-block
+      margin-right .5em
+
+    &:link
+    &:visited
+      color #aaa
+
+    &.on
+      color white
+
+
+@import '_attr'
+@import '_breakpoint'
+@import '_guides'
+@import '_nodes'

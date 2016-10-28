@@ -1,0 +1,46 @@
+.css-debugger
+
+  .breakpoints::before
+    content '\e800' // resize-horizontal
+
+  .breakpoint
+    display flex
+    align-items center
+
+    margin 0
+    padding .5em .75em
+
+    color white
+    border-left 1px solid #787878
+
+    &::after
+      content 'base'
+
+      @media(min-width breakpoint-small)
+        content 'small'
+
+      @media(min-width breakpoint-medium)
+        content 'medium'
+
+      @media(min-width breakpoint-large)
+        content 'large'
+
+      @media(min-width breakpoint-xlarge)
+        content 'xlarge'
+
+
+    &::before
+      margin-right .25em
+
+      debug-icon()
+      content '\f10b' // mobile
+      font-size 1.5em
+
+      @media (min-width breakpoint-medium)
+        content '\f10a' // tablet
+
+      @media (min-width breakpoint-large)
+        content '\f109' // laptop
+
+      @media (min-width breakpoint-xlarge)
+        content '\f108' // desktop
