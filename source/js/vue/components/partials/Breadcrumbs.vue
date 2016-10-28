@@ -10,11 +10,38 @@
 </template>
 
 <script>
+import getBreakpointValue from '../../../helpers/getBreakpointValue'
+
 export default {
   data () {
     return {
       crumb: 'Crumb',
       current: 'Current'
+    }
+  },
+
+  created () {
+    // TODO: call function on load
+    window.addEventListener('onload', this.scrollViewport)
+    window.addEventListener('resize', this.scrollViewport)
+  },
+
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this.scrollViewport)
+  },
+
+  methods: {
+    scrollViewport () {
+      if (getBreakpointValue() === 'base' || getBreakpointValue() === 'small') {
+        var offset = this.$el.offsetHeight
+        setTimeout(function() {
+          window.scrollTo(0, offset)
+        }, 0)
+      } else {
+        setTimeout(function() {
+          window.scrollTo(0, 0)
+        }, 0)
+      }
     }
   }
 }
@@ -36,13 +63,16 @@ export default {
 
   @media(min-width breakpoint-small)
     margin 0 margins-small
-    //width auto
 
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
   @media(min-width breakpoint-large)
     margin 0 margins-large
+
+  @media(min-width breakpoint-xlarge)
+    margin 0 auto
+    width width-xlarge
 
   ul
     display flex

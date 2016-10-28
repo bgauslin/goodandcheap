@@ -25,6 +25,7 @@ import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Cover from '../partials/Cover.vue'
 import Preview from '../partials/Preview.vue'
+import getBreakpointValue from '../../../helpers/getBreakpointValue'
 
 export default {
 
@@ -39,6 +40,15 @@ export default {
 
   created () {
     this.fetchData(this.getApiUrl())
+    window.addEventListener('resize', this.matchHeights)
+  },
+
+  mounted () {
+    // TODO: wait for cover image to load before calling this.matchHeights
+  },
+
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this.matchHeights)
   },
 
   watch: {
@@ -63,6 +73,21 @@ export default {
 
     updatePageTitle (title, metaDescription) {
       this.$root.$emit('update-page-title', title)
+    },
+
+    matchHeights () {
+      var previews, cover, coverHeightPx, coverHeight
+
+      previews = document.querySelector('.previews')
+      cover = document.querySelector('.cover img')
+      coverHeightPx = cover.offsetHeight
+      coverHeight = coverHeightPx / 16 + 'em'
+
+      if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
+        previews.style.height = coverHeight
+      } else {
+        previews.style.height = 'auto'
+      }
     }
   }
 }
