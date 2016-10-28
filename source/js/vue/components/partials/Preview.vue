@@ -20,28 +20,26 @@ export default {
 
 .preview
   position relative
-  overflow hidden
-  background white
-  border-top 1px solid border-color
   list-style none
-
-  @media(min-width breakpoint-small)
-    margin-top -1px
-    border 1px solid border-color
-
-  @media(min-width breakpoint-large)
-    margin-left -1px
-    width calc((1/3 * 100%) + 1px)
 
   a
     display flex
     flex-direction row
     align-items center
-
+    background white
+    border-top 1px solid border-color
     link(dark-grey, medium-grey, brand-color)
 
     .chapter-title
       //color brand-color
+
+  &:last-child
+    a
+      border-bottom 1px solid border-color
+
+  &.recipe-preview
+    a
+      margin-right 3rem
 
   .toggle-favorite
   .remove-favorite
@@ -87,27 +85,5 @@ export default {
   .preview
     a
       link-hover(brand-color)
-
-
-// TODO: refactor/rename styles...
-.page-list
-.chapter-list
-  .preview
-    a
-      padding-right 1rem
-
-    &:last-child
-      border-bottom 1px solid border-color
-
-
-.recipe-list
-.favorites-list
-  .preview
-    &:last-child
-      border-bottom 1px solid border-color
-
-    a
-      margin-right 3rem
-
 
 </style>

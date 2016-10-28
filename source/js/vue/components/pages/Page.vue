@@ -1,5 +1,5 @@
 <template lang="pug">
-  article.page
+  div.page
     preloader(v-if="loading")
     div.copy(v-if="!loading && page")
       h1 {{ page.title }}
@@ -14,7 +14,6 @@
 import Preloader from '../partials/Preloader.vue'
 
 export default {
-
   components: { Preloader },
 
   data () {
@@ -67,12 +66,15 @@ export default {
     margin-bottom 3rem
 
   .copy
-    padding 1rem
+    padding 1rem margins-base
     background white
 
     @media(min-width breakpoint-small)
       margin 0 auto
-      padding 1rem 2rem
+      padding 1rem margins-small
+
+    @media(min-width breakpoint-medium)
+      padding 2rem margins-medium
 
     @media(min-width breakpoint-large)
       margin 0 8rem
@@ -80,19 +82,15 @@ export default {
 
   h1
     margin .5em 0 1em
+    heading-bold()
 
-  h2
-  h3
-  h4
+  h2,h3,h4
     body-font-bold()
     text-transform uppercase
-
   h2
     small-caps(11)
-
   li
     body-font()
-
   a
     text-decoration underline
 
@@ -101,13 +99,10 @@ export default {
 
   h2
     margin 0 0 1em
-
   p
     margin 0 0 1em
-
   ul
     margin 1em 0
-
   li
     display inline-block
     list-style none

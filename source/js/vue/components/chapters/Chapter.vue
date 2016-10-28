@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.chapter
+  div.chapter
     preloader(v-if="loading")
     div.chapter-intro(v-if="!loading && chapter")
       cover(

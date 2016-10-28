@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.home
+  div
     tabs(:tabs="tabs")
     router-view
 </template>

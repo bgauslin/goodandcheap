@@ -32,6 +32,9 @@ export default {
     margin 1rem auto
     width width-small
 
+  @media(min-width breakpoint-medium)
+    margin 1.5rem auto
+
   li
     flex-grow 1
     width 33%

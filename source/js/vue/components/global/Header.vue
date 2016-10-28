@@ -72,4 +72,8 @@ export default {
     a
       link-hover(rgba(white, .7))
 
+      &.current
+        cursor default
+        color white
+
 </style>

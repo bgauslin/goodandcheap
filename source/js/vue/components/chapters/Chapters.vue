@@ -1,8 +1,8 @@
 <template lang="pug">
-  div
+  div.chapters
     preloader(v-if="loading")
     div(v-if="!loading && chapters")
-      ol.chapter-list
+      ol.previews
         preview(
           v-for="chapter in chapters",
           :item="chapter",
@@ -58,6 +58,24 @@ export default {
 </script>
 
 <style lang="stylus">
-//@import '../../../../stylus/_config/'
+@import '../../../../stylus/config/'
+
+.chapters
+  @media(min-width breakpoint-medium)
+    margin 0 margins-medium
+
+    .previews
+      display flex
+      flex-direction row
+      flex-wrap wrap
+
+    .preview
+      margin -1px 0 0 -1px
+      border 1px solid border-color
+      width calc(50% + 1px)
+
+    @media(min-width breakpoint-large)
+      .preview
+        width calc((1/3 * 100%) + 1px)
 
 </style>

@@ -1,8 +1,8 @@
 <template lang="pug">
-  div
+  div.pages
     preloader(v-if="loading")
     div(v-if="!loading && pages")
-      ol.page-list
+      ol.previews
         preview(
           v-for="page in pages",
           :item="page",
@@ -57,6 +57,27 @@ export default {
 </script>
 
 <style lang="stylus">
-//@import '../../../../stylus/config/'
+@import '../../../../stylus/config/'
+
+.pages
+  @media(min-width breakpoint-medium)
+    margin 0 margins-medium
+
+    .previews
+      display flex
+      flex-direction row
+      flex-wrap wrap
+
+    .preview
+      margin -1px 0 0 -1px
+      border 1px solid border-color
+      width calc(50% + 1px)
+
+    @media(min-width breakpoint-large)
+      .preview
+        width calc((1/3 * 100%) + 1px)
+
+
+
 
 </style>
