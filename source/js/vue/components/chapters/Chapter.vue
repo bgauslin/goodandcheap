@@ -2,26 +2,32 @@
   div
     preloader(v-if="loading")
     breadcrumbs(v-if="!loading && chapter")
-    div.chapter
-      div.chapter-intro(v-if="!loading && chapter")
+    div.chapter(v-if="!loading && chapter")
+      div.intro
         cover(
           :title="chapter.title",
           :blurb="chapter.blurb",
           :image="chapter.photo",
           :count="chapter.recipeCount + ' Recipes'"
         )
-      ol.recipe-list
-        <!-- recipe-preview(v-for="recipe in chapter.recipes") -->
+      ol.previews
+        preview(
+          v-for="(recipe, index) in chapter.recipes",
+          :item="recipe",
+          :index="index"
+          route-name="recipe"
+        )
 </template>
 
 <script>
 import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Cover from '../partials/Cover.vue'
+import Preview from '../partials/Preview.vue'
 
 export default {
 
-  components: { Preloader, Breadcrumbs, Cover },
+  components: { Preloader, Breadcrumbs, Cover, Preview },
 
   data () {
     return {
@@ -49,14 +55,13 @@ export default {
       this.loading = true
       this.$http.get(url).then((response) => {
         this.chapter = response.data
+        this.updatePageTitle(this.chapter.title)
         this.loading = false
-        this.updatePageMeta(this.chapter.title, null)
       })
     },
 
-    updatePageMeta (title, metaDescription) {
+    updatePageTitle (title, metaDescription) {
       this.$root.$emit('update-page-title', title)
-      this.$root.$emit('update-meta-description', metaDescription)
     }
   }
 }
@@ -72,18 +77,17 @@ export default {
     margin 0 margins-medium
 
   @media(min-width breakpoint-large)
-    position relative
+    display flex
     margin 0 margins-large 3rem
-    padding-bottom 43% // TODO: why isn't this 50%?
-    overflow hidden
 
-    .chapter-intro
-      position-it(absolute, 0, null, null, 0)
+    .intro
       width 50%
       border-right 1px solid border-color
 
-    .recipe-list
-      position-it(absolute, 0, 0, null, null)
+    .previews
+      width 50%
+
+      // TODO: set fixed height equal to .intro height
       overflow-y scroll
       -webkit-overflow-scrolling touch
 

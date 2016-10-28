@@ -1,17 +1,30 @@
 <template lang="pug">
   li.preview
     router-link(:to="{ name: routeName, params: { slug: item.slug } }", :title="item.title")
-      thumb(:image="item.photo", :title="item.title")
+      thumb(:image="item.thumb", :title="item.title")
       div.summary
+        p.chapter-title(v-if="item.chapter") {{ item.chapter }}
         h3 {{ item.title }}
+        p.tagline(v-if="item.tagline") {{ item.tagline }}
+        badge(v-if="item.badge", :label="New")
+        p.kind(v-if="item.kind == 'ideas' || item.kind == 'method'", :class="item.kind|lower") {{ recipe.kind }}
         p.recipe-count(v-if="item.recipeCount") {{ item.recipeCount }} Recipes
+        p.count(v-if="this.index") {{ itemCount }}
 </template>
+
 
 <script>
 import Thumb from './Thumb.vue'
 export default {
   components: { Thumb },
-  props: ['item', 'routeName']
+
+  props: ['item', 'routeName', 'index'],
+
+  computed: {
+    itemCount () {
+      return this.index + 1
+    }
+  }
 }
 </script>
 
