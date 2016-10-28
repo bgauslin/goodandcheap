@@ -14,8 +14,9 @@
         preview(
           v-for="(recipe, index) in chapter.recipes",
           :item="recipe",
+          route-name="recipe",
+          :showCount="true",
           :index="index"
-          route-name="recipe"
         )
 </template>
 

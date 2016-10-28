@@ -9,7 +9,7 @@
         badge(v-if="item.badge", :label="New")
         p.kind(v-if="item.kind == 'ideas' || item.kind == 'method'", :class="item.kind|lower") {{ recipe.kind }}
         p.recipe-count(v-if="item.recipeCount") {{ item.recipeCount }} Recipes
-        p.count(v-if="this.index") {{ itemCount }}
+        p.count(v-if="showCount") {{ itemCount }}
 </template>
 
 
@@ -18,7 +18,13 @@ import Thumb from './Thumb.vue'
 export default {
   components: { Thumb },
 
-  props: ['item', 'routeName', 'index'],
+  props: ['item', 'routeName', 'showCount', 'index'],
+
+  data () {
+    return {
+      __showCount: false
+    }
+  },
 
   computed: {
     itemCount () {
