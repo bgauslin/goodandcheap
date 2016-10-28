@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.favorites#favorites
+  section.favorites
 </template>
 
 

@@ -6,8 +6,7 @@
 <style lang="stylus">
 @import '../../../../stylus/config/'
 
-.favorite-toggle
-.remove-favorite
+.toggle-favorite
   position absolute // NOTE see .recipe and .preview for TRBL
   display block
   width 3rem
@@ -18,7 +17,7 @@
     line-height 2rem
     icon()
 
-.favorite-toggle
+.toggle-favorite
   &::before
     content '\e80b' // heart-empty
     color light-grey
@@ -28,30 +27,12 @@
       content '\e80a' // heart (filled)
       color red
 
-.remove-favorite
-  &::before
-    content '\e808' // cancel-circled
-    color light-grey
-    font-size em(20)
-
-  &:active
-    &::before
-      color dark-red
 
 .no-touch
-  .remove-favorite
-    &:hover
-      &::before
-        color dark-red
-
-  .favorite-toggle
+  .toggle-favorite
     &:hover,
     &.saved:hover
       &::before
         color red
-
-
-
-
 
 </style>

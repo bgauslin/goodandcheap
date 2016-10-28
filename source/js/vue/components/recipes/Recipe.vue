@@ -62,4 +62,47 @@ export default {
   h4
     margin 0 0 1em
 
+
+@media(min-width breakpoint-large)
+  .recipe
+    display flex
+    flex-direction row
+
+    .cover,
+    .overview
+      width 50%
+
+    .cover
+      order 2
+
+    .overview
+      order 1
+      border-right 1px solid border-color
+
+    .favorite-toggle
+      top 0.5rem
+
+    // NOTE for side-by-side layout
+    &.contained
+      position relative
+
+      .cover
+        overflow hidden
+
+      .overview
+        padding-bottom 3rem
+
+      .overview-mask
+        position absolute
+        bottom 0
+        left 0
+        width 50%
+        height 4rem
+        background linear-gradient(to bottom, rgba(white, 0), white)
+
+      .overview
+        overflow-y scroll
+        -webkit-overflow-scrolling touch
+        border-right none
+
 </style>
