@@ -1,13 +1,28 @@
 <template lang="pug">
-  div.ingredients-list.list(id="ingredients")
-    h3 Ingredients
-    div.ingredients(v-for="ingredients in entry.ingredients")
-      h4 {{ ingredients.subheading }}
-        span.item-count {{ ingredients.list|length }} Item/s
+  div.ingredients-list
+    div.ingredients(v-for="block in ingredients")
+      h4 {{ block.heading }}
+        span.item-count {{ block.items.length }} {{ itemsLabel(block.items) }}
       ul
-        li(v-for="ingredient in ingredients.list") {{ ingredient.item }}
+        li(v-for="item in block.items") {{ item }}
 </template>
 
+<script>
+export default {
+  props: ['ingredients'],
+
+  methods: {
+    itemsLabel (count) {
+      if (count.length > 1) {
+        return 'Items'
+      } else {
+        return 'Item'
+      }
+    }
+
+  }
+}
+</script>
 
 <style lang="stylus">
 @import '../../../../stylus/config/'

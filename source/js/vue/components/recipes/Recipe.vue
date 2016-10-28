@@ -1,30 +1,71 @@
 <template lang="pug">
-  article.recipe
-    section.cover
-      <!-- _coverPhoto -->
-      budget(:budget="budget")
-    section.overview
-      header
-        h1 {{ recipe.title }}
-        h2.tagline {{ recipe.tagline }}
-        p.new(v-if="recipe.badge") New
-      div
-        div.blurb.list#intro
-          h3 Intro
-          div v-html="recipe.blurb"
-        ingredients(:ingredients="recipe.ingredients")
-        instructions(:instructions="recipe.instructions")
+  div
+    preloader(v-if="loading")
+    breadcrumbs(v-if="!loading && recipe")
+    article.recipe(v-if="!loading && recipe")
+      <!-- section.cover -->
+        <!-- _coverPhoto -->
+        <!-- budget(:budget="budget") -->
+      section.overview
+        header
+          h1 {{ recipe.title }}
+          h2.tagline {{ recipe.tagline }}
+          p.new(v-if="recipe.badge") New
+        div
+          div.blurb
+            div(v-html="recipe.blurb")
+            ingredients(:ingredients="recipe.ingredients")
+            instructions(:instructions="recipe.instructions")
 </template>
 
 <script>
+import Preloader from '../partials/Preloader.vue'
+import Breadcrumbs from '../partials/Breadcrumbs.vue'
+
 import Badge from './Badge.vue'
 import Budget from './Budget.vue'
 import Ingredients from './Ingredients.vue'
 import Instructions from './Instructions.vue'
 
 export default {
-  components: {Badge, Budget, Ingredients, Instructions },
-  props: ['recipe']
+  components: { Preloader, Breadcrumbs, Badge, Budget, Ingredients, Instructions },
+
+  data () {
+    return {
+      loading: null,
+      recipe: null
+    }
+  },
+
+  created () {
+    this.fetchData(this.getApiUrl())
+  },
+
+  watch: {
+    '$route' (to, from) {
+      this.fetchData(this.getApiUrl())
+    }
+  },
+
+  methods: {
+    getApiUrl () {
+      return this.$root.apiBaseUrl + '/recipe/' + this.$route.params.slug
+    },
+
+    fetchData (url) {
+      this.loading = true
+      this.$http.get(url).then((response) => {
+        this.recipe = response.data
+        this.updatePageTitle(this.recipe.title)
+        this.loading = false
+      })
+    },
+
+    updatePageTitle (title) {
+      this.$root.$emit('update-page-title', title)
+    }
+
+  }
 }
 </script>
 

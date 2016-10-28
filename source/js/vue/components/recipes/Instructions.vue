@@ -1,14 +1,18 @@
 <template lang="pug">
-  div.instructions list(id="steps")
-    h3 Steps
-    div(v-for="steps in instructions.stpes")
-      h4(v-if="heading") {{ heading }}
-        span.item-count(v-if="steps > 1") {{ steps }} Step/s
-      ol(v-if="steps")
-      ul(v-else)
-        li(v-for="step in steps") {{ step }}
+  div.instructions
+    div(v-for="block in instructions")
+      h4(v-if="block.heading") {{ block.heading }}
+        span.item-count(v-if="block.steps > 1") {{ block.steps }} Steps
+      ol
+        li(v-for="step in block.steps") {{ step }}
 </template>
 
+
+<script>
+export default {
+  props: ['instructions']
+}
+</script>
 
 <style lang="stylus">
 @import '../../../../stylus/config/'
