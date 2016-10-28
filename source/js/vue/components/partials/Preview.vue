@@ -25,27 +25,33 @@ export default {
   border-top 1px solid border-color
   list-style none
 
+  @media(min-width breakpoint-small)
+    margin-top -1px
+    border 1px solid border-color
+
+  @media(min-width breakpoint-large)
+    margin-left -1px
+    width calc((1/3 * 100%) + 1px)
+
   a
     display flex
     flex-direction row
     align-items center
 
-    &:link
-      color dark-grey
+    link(dark-grey, medium-grey, brand-color)
 
-    &:visited
-      color medium-grey
+    .chapter-title
+      //color brand-color
 
-    &:active
-      color brand-color
-
-      .chapter-title
-        color brand-color
+  .toggle-favorite
+  .remove-favorite
+    top .5rem
+    right 0
 
   .chapter-title
     body-font()
     small-caps(11)
-    color light-grey
+    //color light-grey
 
   h3
     heading-bold()
@@ -80,27 +86,18 @@ export default {
 .no-touch
   .preview
     a
-      &:hover
-      &:visited:hover
-        color brand-color
-
-        .chapter-title
-          color brand-color
+      link-hover(brand-color)
 
 
-
-
-
-
+// TODO: refactor/rename styles...
 .page-list
 .chapter-list
   .preview
     a
       padding-right 1rem
+
     &:last-child
       border-bottom 1px solid border-color
-
-
 
 
 .recipe-list
@@ -111,13 +108,6 @@ export default {
 
     a
       margin-right 3rem
-
-    .favorite-toggle
-    .remove-favorite
-      top .5rem
-      right 0
-
-
 
 
 </style>

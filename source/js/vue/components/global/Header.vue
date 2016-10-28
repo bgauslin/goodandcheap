@@ -28,10 +28,8 @@ export default {
 @import '../../../../stylus/config/'
 
 .header
-  position fixed
-  top 0
-  right 0
-  left 0
+  position-it(fixed, 0, 0, null, 0)
+
   z-index 9999
   background brand-color
   box-shadow 0 0 5px 0 medium-grey
@@ -40,12 +38,14 @@ export default {
     display flex
     justify-content space-between
     align-items center
+    height header-height-base
 
     @media(min-width breakpoint-small)
       margin 0 margins-small
 
     @media(min-width breakpoint-medium)
       margin 0 margins-medium
+      height header-height-medium
 
     @media(min-width breakpoint-large)
       margin 0 margins-large
@@ -55,17 +55,17 @@ export default {
       width width-xlarge
 
   h1
-    text-align center
+    display flex
+    align-self stretch
     body-font-bold()
     small-caps(14)
 
-    a
-      height header-height
-      line-height header-height
-
   a
+    display flex
+    align-items center
+    align-self stretch
+    padding 0 1.5rem
     link(white, white, rgba(white, .7))
-
 
 .no-touch
   .header

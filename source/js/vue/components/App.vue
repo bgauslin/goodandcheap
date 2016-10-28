@@ -25,16 +25,9 @@ export default {
 
 .content
   flex 1
-  padding-top header-height
+  padding-top header-height-base
 
-  & > div
-    //margin 0 auto
-
-    @media(min-width breakpoint-small)
-      //width small
-
-    @media(min-width breakpoint-large)
-      //position relative
-      //width large
+  @media(min-width breakpoint-medium)
+    padding-top header-height-medium
 
 </style>

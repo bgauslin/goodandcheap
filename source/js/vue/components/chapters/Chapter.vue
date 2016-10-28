@@ -63,28 +63,30 @@ export default {
 @import '../../../../stylus/config/'
 
 .chapter
-  &.contained
-    .recipe-list
-      border none
+  background white
+
+  @media(min-width breakpoint-medium)
+    margin 0 margins-medium
 
   @media(min-width breakpoint-large)
-    display flex
-    flex-direction row
-    flex-wrap nowrap
-
-    .recipe-list
-      background white
+    position relative
+    margin 0 margins-large 3rem
+    padding-bottom 43% // TODO: why isn't this 50%?
+    overflow hidden
 
     .chapter-intro
+      position-it(absolute, 0, null, null, 0)
       width 50%
       border-right 1px solid border-color
 
-    // NOTE see also .recipe.large
-    &.contained
-      .chapter-intro
-        overflow hidden
-      .recipe-list
-        overflow-y scroll
-        -webkit-overflow-scrolling touch
+    .recipe-list
+      position-it(absolute, 0, 0, null, null)
+      overflow-y scroll
+      -webkit-overflow-scrolling touch
+
+  @media(min-width breakpoint-xlarge)
+    margin 0 auto 3rem
+    width width-xlarge
+
 
 </style>

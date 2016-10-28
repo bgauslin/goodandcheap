@@ -1,20 +1,13 @@
-// ---------------------------------------------------------------------------
-// layout
-
-// TODO: remove/replace these styles...
-column-width = 4em
-gutter-width = 1em
-
-
-// TODO: remove/replace these styles...
-grid-width(column-count)
-  (column-count * (column-width + gutter-width)) - gutter-width
-
-
-
-
-// ---------------------------------------------------------------------------
-// fonts
+position-it(position, top, right, bottom left)
+  position position
+  if top != null
+    top top
+  if right != null
+    right right
+  if bottom != null
+    bottom bottom
+  if left != null
+    left left
 
 em(px)
   (px / 16) * 1em
@@ -26,9 +19,6 @@ webfont(name, file)
     src url(file + '.woff') format('woff'),
         url(file + '.woff2') format('woff2'),
         url(file + '.ttf') format('truetype')
-
-// ---------------------------------------------------------------------------
-// aspect-ratio
 
 aspect-ratio(width, height)
   position relative
@@ -42,15 +32,8 @@ aspect-ratio(width, height)
     bottom 0
 
 
-// ---------------------------------------------------------------------------
-// misc
-
 transition-all()
   transition all .2s ease
-
-
-// ---------------------------------------------------------------------------
-// links
 
 link(link, visited, active)
   &
@@ -67,13 +50,11 @@ link(link, visited, active)
     &:focus
       color active
 
-
 link-hover(hover)
   &
     &:hover
     &:visited:hover
       color hover
-
 
 link-background(link, visited, active)
   &
@@ -87,13 +68,11 @@ link-background(link, visited, active)
     &:visited:active
       background-color active
 
-
 link-background-hover(hover)
   &
     &:hover
     &:visited:hover
       background-color hover
-
 
 link-border(link, visited, active)
   &

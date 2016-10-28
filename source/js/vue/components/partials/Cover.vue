@@ -22,38 +22,31 @@ export default {
 @import '../../../../stylus/config/'
 
 .cover
-  position relative
   background white
 
-  @media(min-width breakpoint-small)
-    overflow hidden
-
-    .blurb
-      position absolute
-      top 0
-      left 3rem
-      right 3rem
-      padding 1.5rem
-      box-shadow 0 0 5px 0 light-grey // horiz vert blur spread color
-      background rgba(white, 0.95)
-
-  @media(min-width breakpoint-large)
-    background transparent
-
-  figure
-    width 100%
-
   h1
+    heading-bold()
     margin-bottom .5em
 
     @media(min-width breakpoint-large)
       font-size em(30)
 
+  .blurb
+    heading-light()
+
   .budget
-    position absolute
-    top 3em
-    right 0
+    position-it(absolute, 3em, 0, null, null)
     padding .5em 2em .5em 1em
     background rgba(white, 0.97)
+
+  @media(min-width breakpoint-small)
+    aspect-ratio(1, 1)
+    overflow hidden
+
+    .blurb
+      position-it(absolute, 0, 3rem, null, 3rem)
+      padding 1.5rem
+      box-shadow 0 0 5px 0 light-grey // horiz vert blur spread color
+      background rgba(white, 0.95)
 
 </style>

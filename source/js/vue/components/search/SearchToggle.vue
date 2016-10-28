@@ -14,12 +14,13 @@ export default {
 @import '../../../../stylus/config/'
 
 .search-toggle
-  display block
-  width header-height
-  height header-height
-  line-height header-height
-  text-align center
+  display flex
+  justify-content center
+  align-items center
+  align-self stretch
 
+  width header-height-base
+  line-height 1
   color white
 
   &:active
