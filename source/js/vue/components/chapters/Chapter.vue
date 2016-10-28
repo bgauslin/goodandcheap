@@ -74,7 +74,7 @@ export default {
       })
     },
 
-    updatePageTitle (title, metaDescription) {
+    updatePageTitle (title) {
       this.$root.$emit('update-page-title', title)
     },
 
