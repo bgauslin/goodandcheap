@@ -1,13 +1,12 @@
 <template lang="pug">
   div.chapters
     preloader(v-if="loading")
-    div(v-if="!loading && chapters")
-      ol.previews
-        preview(
-          v-for="chapter in chapters",
-          :item="chapter",
-          route-name="chapter"
-        )
+    ol.previews(v-if="!loading && chapters")
+      preview(
+        v-for="chapter in chapters",
+        :item="chapter",
+        route-name="chapter"
+      )
 </template>
 
 

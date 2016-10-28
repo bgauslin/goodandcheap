@@ -1,13 +1,12 @@
 <template lang="pug">
   div.pages
     preloader(v-if="loading")
-    div(v-if="!loading && pages")
-      ol.previews
-        preview(
-          v-for="page in pages",
-          :item="page",
-          route-name="info"
-        )
+    ol.previews(v-if="!loading && pages")
+      preview(
+        v-for="page in pages",
+        :item="page",
+        route-name="info"
+      )
 </template>
 
 <script>
