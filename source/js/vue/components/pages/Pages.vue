@@ -6,7 +6,7 @@
         preview(
           v-for="page in pages",
           :item="page",
-          route-name="page"
+          route-name="info"
         )
 </template>
 

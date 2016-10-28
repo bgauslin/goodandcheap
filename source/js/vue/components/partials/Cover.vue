@@ -4,7 +4,8 @@
       :src="image.src",
       :width="image.width",
       :height="image.height",
-      :alt="title")
+      :alt="title"
+    )
     div.blurb
       h1 {{ title }}
       div(v-html="blurb")

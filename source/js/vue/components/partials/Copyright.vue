@@ -21,5 +21,10 @@ export default {
 <style lang="stylus">
 //@import '../../../../stylus/_config/'
 
+.copyright
+  a
+    &::before
+      content: ' '
+
 
 </style>

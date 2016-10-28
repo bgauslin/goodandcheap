@@ -1,20 +1,16 @@
 <template lang="pug">
   li.preview
     router-link(:to="{ name: routeName, params: { slug: item.slug } }", :title="item.title")
-      figure.thumb
-        img(
-          :src="item.photo.src",
-          :width="item.photo.width",
-          :height="item.photo.height",
-          :alt="item.title"
-        )
+      thumb(:image="item.photo", :title="item.title")
       div.summary
         h3 {{ item.title }}
-        p(v-if="item.recipeCount", class="recipe-count") {{ item.recipeCount }} Recipes
+        p.recipe-count(v-if="item.recipeCount") {{ item.recipeCount }} Recipes
 </template>
 
 <script>
+import Thumb from './Thumb.vue'
 export default {
+  components: { Thumb },
   props: ['item', 'routeName']
 }
 </script>
@@ -45,11 +41,6 @@ export default {
 
       .chapter-title
         color brand-color
-
-  .thumb
-    flex-shrink 0
-    margin .5rem
-    width 5rem
 
   .chapter-title
     body-font()

@@ -1,11 +1,17 @@
 <template lang="pug">
+  p.badge {{ label }}
 </template>
 
+<script>
+export default {
+  props: ['label']
+}
+</script>
 
 <style lang="stylus">
 @import '../../../../stylus/config/'
 
-.new
+.badge
   display inline-block
   padding .2em .75em
   body-font()

@@ -28,8 +28,8 @@ export default function() {
       ]
     },
     {
-      path: '/page/:slug',
-      name: 'page',
+      path: '/info/:slug',
+      name: 'info',
       component: Page
     },
     {

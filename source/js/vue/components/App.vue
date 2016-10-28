@@ -19,9 +19,12 @@ export default {
 @import '../../../stylus/config/'
 
 .site
-  flex 1
+  display flex
+  min-height 100vh
+  flex-direction column
 
 .content
+  flex 1
   padding-top header-height
 
   & > div
