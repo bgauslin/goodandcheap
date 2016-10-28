@@ -81,7 +81,7 @@ function initCssDebugger(debugModules, prefs) {
 function logBreakpoint(prefs) {
   //if (prefs.indexOf('breakpoints') > -1) {
     var value = window.getComputedStyle(document.body,':after').getPropertyValue('content').replace(/\"/g, '')
-    console.log('breakpoint = ' + value)
+    //console.log('breakpoint = ' + value)
   //}
 }
 

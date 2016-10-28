@@ -19,7 +19,7 @@ export default {
 
   methods: {
     getFavoritesCount(count) {
-      console.log('count = ' + count)
+      //console.log('count = ' + count)
     }
   }
 
