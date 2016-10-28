@@ -1,23 +1,39 @@
 <template lang="pug">
-  button.toggle-favorite(@click="toggle(id)", :class='{ isSaved : "saved" }')
+  button.toggle-favorite(@click="toggleFavorite(id)", :class="{ saved: isFavorite }")
 </template>
 
 
 <script>
 export default {
-  props: ['id'],
+  props: ['id', 'favorites'],
 
   data () {
     return {
-      isSaved: false
+      isFavorite: false
     }
   },
 
+  created () {
+    //this.isFavorite = this.isInFavorites(this.favorites, this.id)
+  },
+
   methods: {
-    toggle (id) {
-      this.isSaved = !this.isSaved
-      console.log('toggled id = ' + id)
-      //return
+    toggleFavorite (id) {
+      if (this.isFavorite) {
+        this.$root.$emit('remove-favorite', id)
+      } else {
+        this.$root.$emit('add-favorite', id)
+      }
+      this.isFavorite = !this.isFavorite
+    },
+
+    isInFavorites (a, obj) {
+      for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+          return true
+        }
+      }
+      return false
     }
   }
 }

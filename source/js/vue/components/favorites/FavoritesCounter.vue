@@ -1,28 +1,63 @@
 <template lang="pug">
-  button.favorites-counter
+  a.favorites-counter {{ favoritesCount }}
 </template>
 
 <script>
 export default {
-  //props: ['count']
 
   data () {
     return {
-      isVisible: true,
-      count: 2
+      favorites: [],
+      isVisible: true
     }
   },
 
   created () {
-    this.getFavoritesCount(this.count)
+    this.fetchFavoritesStore()
+
+    let that = this // <-- this is kind of weird
+
+    this.$root.$on('add-favorite', function(id) {
+      that.addFavorite(id)
+    })
+
+    this.$root.$on('remove-favorite', function(id) {
+      that.removeFavorite(id)
+    })
+  },
+
+  computed: {
+    favoritesCount () {
+      return this.favorites.length
+    }
   },
 
   methods: {
-    getFavoritesCount(count) {
-      //console.log('count = ' + count)
+    fetchFavoritesStore () {
+      var store = localStorage.getItem('favorites')
+
+      if (store === null) {
+        this.setFavoritesStore(this.favorites)
+      } else {
+        this.favorites = JSON.parse(localStorage.getItem('favorites'));
+      }
+    },
+
+    setFavoritesStore (favorites) {
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+    },
+
+    addFavorite (id) {
+      this.favorites.push(id)
+      this.setFavoritesStore(this.favorites)
+    },
+
+    removeFavorite (id) {
+      var i = this.favorites.indexOf(id)
+      this.favorites.splice(i, 1)
+      this.setFavoritesStore(this.favorites)
     }
   }
-
 }
 </script>
 
