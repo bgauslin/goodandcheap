@@ -1,24 +1,27 @@
 <template lang="pug">
-  div.chapter
+  div
     preloader(v-if="loading")
-    div.chapter-intro(v-if="!loading && chapter")
-      cover(
-        :title="chapter.title",
-        :blurb="chapter.blurb",
-        :image="chapter.photo",
-        :count="chapter.recipeCount + ' Recipes'"
-      )
-    ol.recipe-list
-      <!-- recipe-preview(v-for="recipe in chapter.recipes") -->
+    breadcrumbs(v-if="!loading && chapter")
+    div.chapter
+      div.chapter-intro(v-if="!loading && chapter")
+        cover(
+          :title="chapter.title",
+          :blurb="chapter.blurb",
+          :image="chapter.photo",
+          :count="chapter.recipeCount + ' Recipes'"
+        )
+      ol.recipe-list
+        <!-- recipe-preview(v-for="recipe in chapter.recipes") -->
 </template>
 
 <script>
 import Preloader from '../partials/Preloader.vue'
+import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Cover from '../partials/Cover.vue'
 
 export default {
 
-  components: { Preloader, Cover },
+  components: { Preloader, Breadcrumbs, Cover },
 
   data () {
     return {

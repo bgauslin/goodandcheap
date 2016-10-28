@@ -1,5 +1,5 @@
 <template lang="pug">
-  nav(:class='{ "breadcrumbs", breadcrumbsClass: breadcrumbsClass }')
+  nav.breadcrumbs
     ul
       li
         a(href="/") Home
@@ -8,6 +8,17 @@
       li {{ current }}
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      crumb: 'Crumb',
+      current: 'Current'
+    }
+  }
+}
+
+</script>
 
 
 <style lang="stylus">

@@ -1,6 +1,7 @@
 <template lang="pug">
   div.page
     preloader(v-if="loading")
+    breadcrumbs(v-if="!loading && page")
     div.copy(v-if="!loading && page")
       h1 {{ page.title }}
       section.page-section(v-for="block in page.content")
@@ -12,9 +13,10 @@
 
 <script>
 import Preloader from '../partials/Preloader.vue'
+import Breadcrumbs from '../partials/Breadcrumbs.vue'
 
 export default {
-  components: { Preloader },
+  components: { Preloader, Breadcrumbs },
 
   data () {
     return {
