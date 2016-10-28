@@ -1,6 +1,8 @@
 var elixir = require('laravel-elixir');
 
 require('laravel-elixir-browserify-official');
+require('laravel-elixir-vueify');
+require('laravel-elixir-pug');
 require('laravel-elixir-livereload');
 
 elixir.config.sourcemaps = false;

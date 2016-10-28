@@ -1,0 +1,62 @@
+<template lang="pug">
+  ul.tabs
+    li(v-for="tab in tabs")
+      router-link(:to="{ name: tab.routeName }", :title="tab.label", exact) {{ tab.label }}
+</template>
+
+<script>
+
+export default {
+  props: ['tabs']
+}
+</script>
+
+
+<style lang="stylus">
+@import '../../../../stylus/config/'
+
+.tabs
+  display flex
+  flex-direction row
+  justify-content space-between
+  margin 1rem
+  body-font()
+  small-caps(11)
+  border 1px solid brand-color
+  border-radius 4px
+  overflow hidden
+
+  @media(min-width breakpoint-small)
+    margin 1rem auto
+
+  @media(min-width breakpoint-large)
+    width 50%
+
+  li
+    flex-grow 1
+    width 33%
+    align-self center
+    list-style none
+    line-height 1
+    border-right 1px solid brand-color
+
+    &:last-child
+      border none
+
+    a
+      display block
+      padding .75em 0
+      text-align center
+      background white
+
+      &:link,
+      &:visited
+        color brand-color
+
+      &.current,
+      &.current:hover
+        color white
+        background brand-color
+
+
+</style>
