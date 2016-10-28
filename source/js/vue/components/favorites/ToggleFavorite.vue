@@ -5,7 +5,7 @@
 
 <script>
 export default {
-  props: ['id', 'favorites'],
+  props: ['id'],
 
   data () {
     return {
@@ -14,7 +14,7 @@ export default {
   },
 
   created () {
-    //this.isFavorite = this.isInFavorites(this.favorites, this.id)
+    this.fetchFavorites()
   },
 
   methods: {
@@ -27,13 +27,17 @@ export default {
       this.isFavorite = !this.isFavorite
     },
 
-    isInFavorites (a, obj) {
-      for (var i = 0; i < a.length; i++) {
-        if (a[i] === obj) {
-          return true
-        }
+    fetchFavorites () {
+      let store = localStorage.getItem('favorites')
+      if (store !== null) {
+        let favorites = JSON.parse(localStorage.getItem('favorites'))
+        this.isFavorite = this.isInFavorites(favorites, this.id)
       }
-      return false
+    },
+
+    isInFavorites (arr, id) {
+      var i = arr.indexOf(id)
+      return (i !== -1) ? true : false
     }
   }
 }

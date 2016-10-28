@@ -13,7 +13,7 @@ export default {
   },
 
   created () {
-    this.fetchFavoritesStore()
+    this.fetchFavorites()
 
     let that = this // <-- this is kind of weird
 
@@ -33,29 +33,29 @@ export default {
   },
 
   methods: {
-    fetchFavoritesStore () {
+    fetchFavorites () {
       var store = localStorage.getItem('favorites')
 
       if (store === null) {
-        this.setFavoritesStore(this.favorites)
+        this.setFavorites(this.favorites)
       } else {
         this.favorites = JSON.parse(localStorage.getItem('favorites'));
       }
     },
 
-    setFavoritesStore (favorites) {
+    setFavorites (favorites) {
       localStorage.setItem('favorites', JSON.stringify(favorites));
     },
 
     addFavorite (id) {
       this.favorites.push(id)
-      this.setFavoritesStore(this.favorites)
+      this.setFavorites(this.favorites)
     },
 
     removeFavorite (id) {
       var i = this.favorites.indexOf(id)
       this.favorites.splice(i, 1)
-      this.setFavoritesStore(this.favorites)
+      this.setFavorites(this.favorites)
     }
   }
 }
