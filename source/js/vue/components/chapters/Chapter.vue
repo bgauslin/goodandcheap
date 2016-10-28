@@ -15,7 +15,10 @@
           v-for="(recipe, index) in chapter.recipes",
           :item="recipe",
           route-name="recipe",
+          :showChapter="false",
           :showCount="true",
+          :toggleFavorite="true",
+          :removeFavorite="false",
           :index="index"
         )
 </template>

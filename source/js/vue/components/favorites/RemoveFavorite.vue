@@ -1,6 +1,19 @@
 <template lang="pug">
+  button.remove-favorite(@click="removeItem(id)")
 </template>
 
+
+<script>
+export default {
+  props: ['id'],
+
+  methods: {
+    removeItem (id) {
+      console.log('removed id = ' + id)
+    }
+  }
+}
+</script>
 
 
 <style lang="stylus">

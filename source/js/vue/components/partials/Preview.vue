@@ -3,22 +3,28 @@
     router-link(:to="{ name: routeName, params: { slug: item.slug } }", :title="item.title")
       thumb(:image="item.thumb", :title="item.title")
       div.summary
-        p.chapter-title(v-if="item.chapter") {{ item.chapter }}
+        p.chapter-title(v-if="item.chapter && showChapter") {{ item.chapter }}
         h3 {{ item.title }}
         p.tagline(v-if="item.tagline") {{ item.tagline }}
-        badge(v-if="item.badge", :label="New")
+        badge(v-if="item.new", label="New")
         p.kind(v-if="item.kind == 'ideas' || item.kind == 'method'", :class="item.kind|lower") {{ recipe.kind }}
         p.recipe-count(v-if="item.recipeCount") {{ item.recipeCount }} Recipes
         p.count(v-if="showCount") {{ itemCount }}
+    toggle-favorite(v-if="toggleFavorite", :id="item.id")
+    remove-favorite(v-if="removeFavorite", :id="item.id")
 </template>
 
 
 <script>
 import Thumb from './Thumb.vue'
-export default {
-  components: { Thumb },
+import Badge from '../recipes/Badge.vue'
+import ToggleFavorite from '../favorites/ToggleFavorite.vue'
+import RemoveFavorite from '../favorites/RemoveFavorite.vue'
 
-  props: ['item', 'routeName', 'showCount', 'index'],
+export default {
+  components: { Thumb, Badge, ToggleFavorite, RemoveFavorite },
+
+  props: ['item', 'routeName', 'showChapter', 'showCount', 'index', 'toggleFavorite', 'removeFavorite'],
 
   data () {
     return {

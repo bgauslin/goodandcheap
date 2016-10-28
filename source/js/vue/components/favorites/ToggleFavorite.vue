@@ -1,6 +1,27 @@
 <template lang="pug">
+  button.toggle-favorite(@click="toggle(id)", :class='{ isSaved : "saved" }')
 </template>
 
+
+<script>
+export default {
+  props: ['id'],
+
+  data () {
+    return {
+      isSaved: false
+    }
+  },
+
+  methods: {
+    toggle (id) {
+      this.isSaved = !this.isSaved
+      console.log('toggled id = ' + id)
+      //return
+    }
+  }
+}
+</script>
 
 
 <style lang="stylus">
