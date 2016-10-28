@@ -31,18 +31,9 @@ const app = new Vue({
   },
 
   created () {
-    this.getMetaDescription()
-
     this.$root.$on('update-page-title', function(title) {
       this.updateTitle(title)
-      //console.log('$root.$on(\'update-page-title\') = ' + title)
     })
-
-    this.$root.$on('update-meta-description', function(metaDescription) {
-      this.updateMetaDescription(metaDescription)
-      //console.log('$root.$on(\'update-meta-description\') = ' + metaDescription)
-    })
-
   },
 
   methods: {
@@ -52,21 +43,6 @@ const app = new Vue({
       } else {
         document.title = this.siteName
       }
-    },
-
-    updateMetaDescription (content) {
-      var metaDescription = document.querySelector('meta[name="description"]')
-      if (content !== null) {
-        metaDescription.setAttribute('content', content)
-      } else {
-        metaDescription.setAttribute('content', this.metaDescription)
-      }
-    },
-
-    getMetaDescription () {
-      var metaDescription = document.querySelector('meta[name="description"]')
-      var content = metaDescription.getAttribute('content')
-      this.metaDescription = content
     }
   }
 

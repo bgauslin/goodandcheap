@@ -9,6 +9,7 @@
 <script>
 import AppHeader from './global/Header.vue'
 import AppFooter from './global/Footer.vue'
+
 export default {
   components: { AppHeader, AppFooter }
 }

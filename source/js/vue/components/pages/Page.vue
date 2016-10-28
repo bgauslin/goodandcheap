@@ -46,14 +46,13 @@ export default {
       this.loading = true
       this.$http.get(url).then((response) => {
         this.page = response.data
-        this.updatePageMeta(this.page.title, this.page.blurb)
+        this.updatePageTitle(this.page.title)
         this.loading = false
       })
     },
 
-    updatePageMeta (title, metaDescription) {
+    updatePageTitle(title) {
       this.$root.$emit('update-page-title', title)
-      this.$root.$emit('update-meta-description', metaDescription)
     }
   }
 }
