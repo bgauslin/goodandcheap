@@ -5,7 +5,8 @@
         a(href="/") Home
       li
         a(href="#") {{ crumb }}
-      li {{ current }}
+      li
+        span {{ current }}
 </template>
 
 <script>
@@ -33,20 +34,26 @@ export default {
   small-caps(12)
   color light-grey
 
+  @media(min-width breakpoint-small)
+    margin 0 margins-small
+    //width auto
+
+  @media(min-width breakpoint-medium)
+    margin 0 margins-medium
+
   @media(min-width breakpoint-large)
-    width auto
-
-    &.info
-      margin-left 8rem
-
+    margin 0 margins-large
 
   ul
-    margin 0 1rem
+    display flex
+    padding 0 margins-base
+
+    @media(min-width breakpoint-small)
+      padding 0
 
   li
-    display inline-block
-    margin 0 .5em 0 0
     list-style none
+    margin 0 .5em 0 0
 
     &::after
       icon()
@@ -63,21 +70,15 @@ export default {
         display none
 
   a
+  span
     display inline-block
     padding .75rem 0
-
-    &:link
-    &:visited
-      color brand-color
-
-    &:active
-      color dark-grey
+  a
+    link(brand-color, brand-color, dark-grey)
 
 .no-touch
   .breadcrumbs
     a
-      &:hover
-      &:visited:hover
-        color medium-grey
+      link-hover(medium-grey)
 
 </style>
