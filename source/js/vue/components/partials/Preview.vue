@@ -48,6 +48,7 @@ export default {
     color light-grey
 
   h3
+    heading-bold()
     line-height 1.1
 
   .summary

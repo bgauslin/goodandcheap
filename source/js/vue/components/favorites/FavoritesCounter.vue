@@ -1,36 +1,56 @@
 <template lang="pug">
+  button.favorites-counter
 </template>
 
+<script>
+export default {
+  //props: ['count']
+
+  data () {
+    return {
+      isVisible: true,
+      count: 2
+    }
+  },
+
+  created () {
+    this.getFavoritesCount(this.count)
+  },
+
+  methods: {
+    getFavoritesCount(count) {
+      console.log('count = ' + count)
+    }
+  }
+
+}
+</script>
 
 
 <style lang="stylus">
 @import '../../../../stylus/config/'
 
 .favorites-counter
-  position absolute
-  top 0
-  right 0
+  display block
+  width header-height
+  height header-height
+  line-height header-height
+  text-align center
+
   body-font()
   font-size em(11)
+  color white
 
-  a
-    display inline-block
-    height header-height
-    line-height header-height
-    padding 0 1rem
+  &::after
+    margin-left .25em
+    icon()
+    content '\e80b' // heart-empty
+    font-size 1rem
 
-    &::after
-      margin-left .25em
-      icon()
-      content '\e80b' // heart-empty
-      font-size 1rem
-
-    &.current::after
-      content '\e80a' // heart
+  &.current::after
+    content '\e80a' // heart
 
   &.updated
     animation bounce 500ms ease
-
-
 
 </style>

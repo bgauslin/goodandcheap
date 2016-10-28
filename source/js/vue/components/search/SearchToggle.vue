@@ -1,21 +1,25 @@
+<template lang="pug">
+  button.search-toggle
+</template>
 
 
+<script>
+export default {
 
-
-
-
+}
+</script>
 
 
 <style lang="stylus">
+@import '../../../../stylus/config/'
 
 .search-toggle
-  position absolute
-  top 0
-  left 0
+  display block
   width header-height
   height header-height
   line-height header-height
   text-align center
+
   color white
 
   &:active
@@ -25,7 +29,6 @@
     icon()
     font-size em(16)
     content '\e804' // search
-
     position relative
     top -.1em
 

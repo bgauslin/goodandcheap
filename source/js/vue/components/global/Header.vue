@@ -1,15 +1,20 @@
 <template lang="pug">
   header.header
     div
+      search-toggle
       h1
         router-link(to="/", title="Home", exact) {{ heading }}
+      favorites-counter
       <!-- search-bar -->
 </template>
 
 <script>
-import SearchBar from '../partials/SearchBar.vue'
+import SearchToggle from '../search/SearchToggle.vue'
+import FavoritesCounter from '../favorites/FavoritesCounter.vue'
+import SearchBar from '../search/SearchBar.vue'
+
 export default {
-  components: { SearchBar },
+  components: { SearchToggle, FavoritesCounter, SearchBar },
 
   data () {
     return {
@@ -29,20 +34,25 @@ export default {
   left 0
   z-index 9999
   background brand-color
-  box-shadow 0 0 5px 0 medium-grey // horiz vert blur spread color
+  box-shadow 0 0 5px 0 medium-grey
 
   & > div
     display flex
-    justify-content center
+    justify-content space-between
     align-items center
-    width 100%
 
     @media(min-width breakpoint-small)
-      //margin 0 auto
-      //width small
+      margin 0 margins-small
+
+    @media(min-width breakpoint-medium)
+      margin 0 margins-medium
 
     @media(min-width breakpoint-large)
-      //width large
+      margin 0 margins-large
+
+    @media(min-width breakpoint-xlarge)
+      margin 0 auto
+      width width-xlarge
 
   h1
     text-align center
@@ -50,27 +60,16 @@ export default {
     small-caps(14)
 
     a
-      //display inline-block
-      //padding 0 2em
       height header-height
       line-height header-height
 
   a
-    &:link,
-    &:visited
-      color white
-
-    &:active
-      color rgba(white, .7)
+    link(white, white, rgba(white, .7))
 
 
 .no-touch
   .header
     a
-      &:hover,
-      &:visited:hover
-        color rgba(white, .7)
-
-
+      link-hover(rgba(white, .7))
 
 </style>

@@ -19,18 +19,18 @@ export default {
   display flex
   flex-direction row
   justify-content space-between
-  margin 1rem
+
+  margin 1rem margins-base
+  overflow hidden
+
   body-font()
   small-caps(11)
   border 1px solid brand-color
   border-radius 4px
-  overflow hidden
 
   @media(min-width breakpoint-small)
     margin 1rem auto
-
-  @media(min-width breakpoint-large)
-    width 50%
+    width width-small
 
   li
     flex-grow 1
@@ -49,11 +49,11 @@ export default {
       text-align center
       background white
 
-      &:link,
+      &:link
       &:visited
         color brand-color
 
-      &.current,
+      &.current
       &.current:hover
         color white
         background brand-color
