@@ -18,13 +18,19 @@
             h2.tagline {{ recipe.tagline }}
             p.new(v-if="recipe.badge") New
           div.blurb(v-html="recipe.blurb")
-          <!-- tabs(:tabs="tabs") -->
-          ul.tabs
+
+          <!-- useTabs for debugging... -->
+          ul.tabs(v-if="useTabs")
             li(v-for="tab in tabs")
               router-link(:to="tab.name", :title="tab.label") {{ tab.label }}
           router-view(:ingredients="recipe.ingredients", :instructions="recipe.instructions")
+
+          ingredients(v-if="!useTabs", :ingredients="recipe.ingredients")
+          instructions(v-if="!useTabs", :instructions="recipe.instructions")
+
         alpha-overlay
 </template>
+
 
 <script>
 import Preloader from '../partials/Preloader.vue'
@@ -34,15 +40,18 @@ import Photos from './Photos.vue'
 import Tabs from '../partials/Tabs.vue'
 import AlphaOverlay from '../partials/AlphaOverlay.vue'
 
-import imagesLoaded from 'imagesloaded'
+// remove Ingredients and Instructions once tbas are fully working...
+import Ingredients from './Ingredients.vue'
+import Instructions from './Instructions.vue'
 
 export default {
-  components: { Preloader, Breadcrumbs, Badge, Photos, Tabs, AlphaOverlay },
+  components: { Preloader, Breadcrumbs, Badge, Photos, Tabs, Ingredients, Instructions, AlphaOverlay },
 
   data () {
     return {
       loading: null,
       recipe: null,
+      useTabs: false,
       tabs: [
         { label: 'About', name: 'about' },
         { label: 'Ingredients', name: 'ingredients' },
@@ -95,7 +104,7 @@ export default {
       padding-bottom 50%
       overflow hidden
 
-      .recipe-cover
+      .photos
         position-it(absolute, 0, 0, null, null)
         width 50%
         overflow hidden
