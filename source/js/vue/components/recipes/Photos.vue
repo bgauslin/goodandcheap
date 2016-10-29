@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.recipe-cover(:class="{ gallery : photos > 1 }")
+  div.photos(:class="{ gallery : photos > 1 }")
     img(
       v-for="photo in photos",
       :src="photo.src",
@@ -7,7 +7,7 @@
       :height="photo.height",
       :title="photo.title"
     )
-    <!-- budget(:budget="budget") -->
+    budget(:budget="budget")
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
 <style lang="stylus">
 @import '../../../../stylus/config/'
 
-.recipe-cover
+.photos
   cover()
 
 </style>
