@@ -58,16 +58,16 @@ export default {
   color light-grey
 
   @media(min-width breakpoint-small)
-    margin 0 margins-small
+    margin .5rem margins-small
 
   @media(min-width breakpoint-medium)
-    margin 0 margins-medium
+    margin 1rem margins-medium
 
   @media(min-width breakpoint-large)
-    margin 0 margins-large
+    margin 1.5rem margins-large
 
   @media(min-width breakpoint-xlarge)
-    margin 0 auto
+    margin 1.5rem auto
     width width-xlarge
 
   ul

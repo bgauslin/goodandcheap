@@ -11,14 +11,21 @@ body
 ::-webkit-scrollbar
   display none
 
-.hidden
-  display none
+img
+  width 100%
+  height auto
+  vertical-align middle
 
-h1,h2,h3,h4,p,ul,ol,figure,img
+
+// --------------------------------------------------
+// TODO: move to components(?)
+
+h1,h2,h3,
+p,ul,ol
   margin 0
   padding 0
 
-h1,h2,h3,h4,h5,h6
+h1,h2,h3
   line-height 1.1
 
 h1
@@ -31,13 +38,14 @@ h2
 h3
   font-size em(18)
 
-h4
-  sans-heavy()
-  small-caps(11)
-
 p
   font-size em(15)
   line-height 1.5
+
+b
+strong
+  font-weight normal
+
 
 a
   background transparent
@@ -49,16 +57,9 @@ a
   a
     link-hover(dark-grey)
 
-img
-  width 100%
-  height auto
-  vertical-align middle
-  border 0
 
-b
-strong
-  font-weight normal
-
+// --------------------------------------------------
+// TODO: move to components(?)
 
 input[type='search']
   -webkit-appearance none

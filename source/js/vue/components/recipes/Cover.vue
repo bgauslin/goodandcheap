@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.cover(:class="{ gallery : photos > 1 }")
+  div.recipe-cover(:class="{ gallery : photos > 1 }")
     img(
       v-for="photo in photos",
       :src="photo.src",
@@ -7,7 +7,7 @@
       :height="photo.height",
       :title="photo.title"
     )
-    budget(:budget="budget")
+    <!-- budget(:budget="budget") -->
 </template>
 
 <script>
@@ -22,14 +22,12 @@ export default {
 <style lang="stylus">
 @import '../../../../stylus/config/'
 
-.cover
+.recipe-cover
   cover()
+
   @media(min-width breakpoint-small)
     cover-small()
-
-  .budget
-    position-it(absolute, 3em, 0, null, null)
-    padding .5em 2em .5em 1em
-    background rgba(white, 0.97)
+    // TODO: why does padding-bottom need to be 50% instead of 100% ???
+    padding-bottom 50%
 
 </style>

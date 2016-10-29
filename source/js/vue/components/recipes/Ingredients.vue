@@ -1,7 +1,7 @@
 <template lang="pug">
   div.ingredients-list
     div.ingredients(v-for="block in ingredients")
-      h4 {{ block.heading }}
+      h2 {{ block.heading }}
         span.item-count {{ block.items.length }} {{ itemsLabel(block.items) }}
       ul
         li(v-for="item in block.items")
@@ -34,10 +34,16 @@ export default {
 .ingredients
   margin 0
 
-  h4
-    padding .5em 0
+  h2
+    margin 1rem 0
+    padding 0
+    sans-heavy()
+    small-caps(12)
+
   ul
-    padding 0 0 1em
+    margin 0 0 2em
+    padding 0
+
   li
     margin 0 0 1em
     list-style none

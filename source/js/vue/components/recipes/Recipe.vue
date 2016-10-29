@@ -5,12 +5,12 @@
       v-if="!loading && recipe",
       :parents="recipe.parents",
       :current="recipe.title"
-      )
+    )
     article.recipe(v-if="!loading && recipe")
       cover(
         :photos="recipe.photos",
         :budget="recipe.budget"
-        )
+      )
       div.overview
         header
           h1 {{ recipe.title }}
@@ -20,7 +20,7 @@
           div(v-html="recipe.blurb")
           ingredients(:ingredients="recipe.ingredients")
           instructions(:instructions="recipe.instructions")
-      <!-- alpha-overlay(v-if="hasOverlay") -->
+      alpha-overlay(v-if="hasOverlay")
 </template>
 
 <script>
@@ -44,7 +44,7 @@ export default {
     return {
       loading: null,
       recipe: null,
-      hasOverlay: false
+      hasOverlay: true
     }
   },
 
@@ -96,7 +96,7 @@ export default {
       var overview, cover, coverHeightPx, coverHeight
 
       overview = document.querySelector('.overview')
-      cover = document.querySelector('.cover img')
+      cover = document.querySelector('.recipe-cover img')
       coverHeightPx = cover.offsetHeight
       coverHeight = coverHeightPx / 16 + 'em'
 
@@ -125,17 +125,18 @@ export default {
     margin 0 margins-medium
 
   @media(min-width breakpoint-large)
+    position relative
     display flex
     margin 0 margins-large 3rem
 
-    .cover
+    .recipe-cover
       width 50%
       order 2
 
     .overview
       width 50%
       order 1
-      padding-bottom 3rem
+      padding-bottom 4rem
       overflow-y scroll
       -webkit-overflow-scrolling touch
 
@@ -150,13 +151,20 @@ export default {
   h1
     serif-heavy()
 
+  .tagline
+    sans-heavy()
+    small-caps(11)
+
   h3
     margin 0 0 1em
     sans-heavy()
     small-caps(11)
 
   .blurb
-    padding-top 0
+    padding 0 1rem 2rem
+
+    & > div
+      serif()
 
   .tabs
     margin 0 1rem 1rem

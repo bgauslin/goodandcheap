@@ -1,7 +1,7 @@
 <template lang="pug">
   div.instructions
     div(v-for="block in instructions")
-      h4(v-if="block.heading") {{ block.heading }}
+      h2(v-if="block.heading") {{ block.heading }}
         span.item-count(v-if="block.steps > 1") {{ block.steps }} Steps
       ol
         li(v-for="step in block.steps") {{ step }}
@@ -20,8 +20,11 @@ export default {
 .instructions
   margin 0 0 1rem
 
-  h4
+  h2
     padding .5em 0
+    sans-heavy()
+    //small-caps()
+
   ol
     margin 0
     padding 0 0 0 1rem
