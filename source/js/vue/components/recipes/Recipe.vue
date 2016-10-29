@@ -8,7 +8,7 @@
     )
     div.recipe(v-if="!loading && recipe")
       div
-        cover(
+        photos(
           :photos="recipe.photos",
           :budget="recipe.budget"
         )
@@ -18,43 +18,41 @@
             h2.tagline {{ recipe.tagline }}
             p.new(v-if="recipe.badge") New
           div.blurb(v-html="recipe.blurb")
-          ingredients(:ingredients="recipe.ingredients")
-          instructions(:instructions="recipe.instructions")
+          <!-- tabs(:tabs="tabs") -->
+          ul.tabs
+            li(v-for="tab in tabs")
+              router-link(:to="tab.name", :title="tab.label") {{ tab.label }}
+          router-view(:ingredients="recipe.ingredients", :instructions="recipe.instructions")
         alpha-overlay
 </template>
 
 <script>
 import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
-
 import Badge from './Badge.vue'
-import Cover from './Cover.vue'
-import Ingredients from './Ingredients.vue'
-import Instructions from './Instructions.vue'
-
+import Photos from './Photos.vue'
+import Tabs from '../partials/Tabs.vue'
 import AlphaOverlay from '../partials/AlphaOverlay.vue'
 
-import getBreakpointValue from '../../../helpers/getBreakpointValue'
 import imagesLoaded from 'imagesloaded'
 
 export default {
-  components: { Preloader, Breadcrumbs, Badge, Cover, Ingredients, Instructions, AlphaOverlay },
+  components: { Preloader, Breadcrumbs, Badge, Photos, Tabs, AlphaOverlay },
 
   data () {
     return {
       loading: null,
-      recipe: null
+      recipe: null,
+      tabs: [
+        { label: 'About', name: 'about' },
+        { label: 'Ingredients', name: 'ingredients' },
+        { label: 'Steps', name: 'steps' }
+      ]
     }
   },
 
   created () {
     this.fetchData(this.getApiUrl())
-  },
-
-  watch: {
-    '$route' (to, from) {
-      this.fetchData(this.getApiUrl())
-    }
   },
 
   methods: {

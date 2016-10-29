@@ -11,14 +11,8 @@ export default {
   data () {
     return {
       tabs: [
-        {
-          label: 'Recipes',
-          routeName: 'chapters'
-        },
-        {
-          label: 'Info',
-          routeName: 'pages'
-        }
+        { label: 'Recipes', name: 'chapters' },
+        { label: 'Info', name: 'pages' }
       ]
     }
   }

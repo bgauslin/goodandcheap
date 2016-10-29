@@ -10,9 +10,12 @@ const router = new VueRouter({
   routes: routeConfig(),
   mode: 'history',
   linkActiveClass: 'current',
+  // TODO: set meta for different scroll behaviors...
+  /*
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
   }
+  */
 })
 
 import App from './components/App.vue'

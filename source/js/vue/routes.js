@@ -6,6 +6,8 @@ import Chapter from './components/chapters/Chapter.vue'
 import Page from './components/pages/Page.vue'
 
 import Recipe from './components/recipes/Recipe.vue'
+import RecipeIngredients from './components/recipes/Ingredients.vue'
+import RecipeInstructions from './components/recipes/Instructions.vue'
 
 import NotFound from './components/views/NotFound.vue'
 
@@ -40,7 +42,19 @@ export default function() {
     {
       path: '/recipe/:slug',
       name: 'recipe',
-      component: Recipe
+      component: Recipe,
+      children: [
+        {
+          name: 'ingredients',
+          path: 'ingredients',
+          component: RecipeIngredients
+        },
+        {
+          name: 'instructions',
+          path: 'steps',
+          component: RecipeInstructions
+        }
+      ]
     },
     {
       path: '/recipe',
