@@ -6,21 +6,21 @@
       :parents="recipe.parents",
       :current="recipe.title"
     )
-    article.recipe(v-if="!loading && recipe")
-      cover(
-        :photos="recipe.photos",
-        :budget="recipe.budget"
-      )
-      div.overview
-        header
-          h1 {{ recipe.title }}
-          h2.tagline {{ recipe.tagline }}
-          p.new(v-if="recipe.badge") New
-        div.blurb
-          div(v-html="recipe.blurb")
+    div.recipe(v-if="!loading && recipe")
+      div
+        cover(
+          :photos="recipe.photos",
+          :budget="recipe.budget"
+        )
+        div.overview
+          header
+            h1 {{ recipe.title }}
+            h2.tagline {{ recipe.tagline }}
+            p.new(v-if="recipe.badge") New
+          div.blurb(v-html="recipe.blurb")
           ingredients(:ingredients="recipe.ingredients")
           instructions(:instructions="recipe.instructions")
-      alpha-overlay(v-if="hasOverlay")
+        alpha-overlay
 </template>
 
 <script>
@@ -43,18 +43,12 @@ export default {
   data () {
     return {
       loading: null,
-      recipe: null,
-      hasOverlay: true
+      recipe: null
     }
   },
 
   created () {
     this.fetchData(this.getApiUrl())
-    window.addEventListener('resize', this.matchHeights)
-  },
-
-  beforeDestroy: function () {
-    window.removeEventListener('resize', this.matchHeights)
   },
 
   watch: {
@@ -79,36 +73,6 @@ export default {
 
     updatePageTitle (title) {
       this.$root.$emit('update-page-title', title)
-    },
-
-    loadImages () {
-      let that = this
-      imagesLoaded(this.$el, that, function(instance) {
-        console.log('imagesloaded')
-        that.loading = false
-        that.matchHeights() // TODO: call function after cover is loaded...
-      })
-    },
-
-    matchHeights () {
-      console.log('matchHeights called!')
-
-      var overview, cover, coverHeightPx, coverHeight
-
-      overview = document.querySelector('.overview')
-      cover = document.querySelector('.recipe-cover img')
-      coverHeightPx = cover.offsetHeight
-      coverHeight = coverHeightPx / 16 + 'em'
-
-      console.log('coverHeightPx = ' + coverHeightPx)
-
-      if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
-        overview.style.height = coverHeight
-        this.hasOverlay = true
-      } else {
-        overview.style.height = 'auto'
-        this.hasOverlay = false
-      }
     }
   }
 }
@@ -125,20 +89,26 @@ export default {
     margin 0 margins-medium
 
   @media(min-width breakpoint-large)
-    position relative
-    display flex
     margin 0 margins-large 3rem
 
-    .recipe-cover
-      width 50%
-      order 2
+    & > div
+      position relative
+      width 100%
+      padding-bottom 50%
+      overflow hidden
 
-    .overview
-      width 50%
-      order 1
-      padding-bottom 4rem
-      overflow-y scroll
-      -webkit-overflow-scrolling touch
+      .recipe-cover
+        position-it(absolute, 0, 0, null, null)
+        width 50%
+        overflow hidden
+
+      .overview
+        position-it(absolute, 0, null, null, 0)
+        width 50%
+        height 100%
+        padding-bottom 4rem
+        overflow-y scroll
+        -webkit-overflow-scrolling touch
 
   @media(min-width breakpoint-xlarge)
     margin 0 auto 3rem
@@ -159,6 +129,9 @@ export default {
     margin 0 0 1em
     sans-heavy()
     small-caps(11)
+
+  .overview
+    padding-bottom 2rem
 
   .blurb
     padding 0 1rem 2rem

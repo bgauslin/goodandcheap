@@ -25,9 +25,4 @@ export default {
 .recipe-cover
   cover()
 
-  @media(min-width breakpoint-small)
-    cover-small()
-    // TODO: why does padding-bottom need to be 50% instead of 100% ???
-    padding-bottom 50%
-
 </style>

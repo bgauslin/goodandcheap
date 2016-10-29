@@ -18,12 +18,13 @@ export default {
 @import '../../../../stylus/config/'
 
 .instructions
-  margin 0 0 1rem
+  margin 0 1rem 1rem
 
   h2
-    padding .5em 0
+    margin 1rem 0
+    padding 0
     sans-heavy()
-    //small-caps()
+    small-caps(12)
 
   ol
     margin 0
