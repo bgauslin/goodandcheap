@@ -22,31 +22,13 @@ export default {
 @import '../../../../stylus/config/'
 
 .cover
-  background white
-
-  h1
-    serif-heavy()
-    margin-bottom .5em
-
-    @media(min-width breakpoint-large)
-      font-size em(30)
-
-  .blurb
-    serif()
-
-  .budget
-    position-it(absolute, 3em, 0, null, null)
-    padding .5em 2em .5em 1em
-    background rgba(white, 0.97)
-
+  cover()
   @media(min-width breakpoint-small)
-    aspect-ratio(1, 1)
-    overflow hidden
+    cover-small()
 
-    .blurb
-      position-it(absolute, 0, 3rem, null, 3rem)
-      padding 1.5rem
-      box-shadow 0 0 5px 0 light-grey // horiz vert blur spread color
-      background rgba(white, 0.95)
+  .recipe-count
+    margin 1rem 0 0
+    sans-heavy()
+    small-caps(11)
 
 </style>

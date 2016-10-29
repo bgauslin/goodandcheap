@@ -88,6 +88,9 @@ export default {
     margin 0 1rem 1rem
     width calc(100% - 2rem)
 
+  h1
+    serif-heavy()
+
   h3
     margin 0 0 1em
     sans-heavy()

@@ -62,18 +62,15 @@ export default {
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
-    .previews
-      display flex
-      flex-direction row
-      flex-wrap wrap
+  .previews
+    animation slideInUp .3s ease
+    @media(min-width breakpoint-medium)
+      previews-grid()
 
-    .preview
-      margin -1px 0 0 -1px
-      border 1px solid border-color
-      width calc(50% + 1px)
-
+  .preview
+    @media(min-width breakpoint-medium)
+      preview-grid()
     @media(min-width breakpoint-large)
-      .preview
-        width calc((1/3 * 100%) + 1px)
+      preview-grid-large()
 
 </style>

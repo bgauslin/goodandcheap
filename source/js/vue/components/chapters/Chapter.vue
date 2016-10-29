@@ -11,14 +11,11 @@
           :count="chapter.recipeCount + ' Recipes'"
         )
       ol.previews
-        preview(
+        recipe-preview(
           v-for="(recipe, index) in chapter.recipes",
           :item="recipe",
           route-name="recipe",
-          :showChapter="false",
-          :showCount="true",
-          :toggleFavorite="true",
-          :removeFavorite="false",
+          :toggle-favorite="true",
           :index="index"
         )
 </template>
@@ -27,12 +24,13 @@
 import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Cover from '../partials/Cover.vue'
-import Preview from '../partials/Preview.vue'
+import RecipePreview from '../recipes/Preview.vue'
 import getBreakpointValue from '../../../helpers/getBreakpointValue'
+import imagesLoaded from 'imagesloaded'
 
 export default {
 
-  components: { Preloader, Breadcrumbs, Cover, Preview },
+  components: { Preloader, Breadcrumbs, Cover, RecipePreview },
 
   data () {
     return {
@@ -46,12 +44,13 @@ export default {
     window.addEventListener('resize', this.matchHeights)
   },
 
-  mounted () {
-    // TODO: wait for cover image to load before calling this.matchHeights
-  },
-
   beforeDestroy: function () {
     window.removeEventListener('resize', this.matchHeights)
+  },
+
+  mounted () {
+    //this.loadImages()
+    //this.matchHeights()
   },
 
   watch: {
@@ -70,7 +69,7 @@ export default {
       this.$http.get(url).then((response) => {
         this.chapter = response.data
         this.updatePageTitle(this.chapter.title)
-        this.loading = false
+        this.loadImages()
       })
     },
 
@@ -78,13 +77,26 @@ export default {
       this.$root.$emit('update-page-title', title)
     },
 
+    loadImages () {
+      let that = this
+      imagesLoaded(this.$el, that, function(instance) {
+        console.log('imagesloaded')
+        that.loading = false
+        that.matchHeights() // TODO: call function after cover is loaded...
+      })
+    },
+
     matchHeights () {
+      console.log('matchHeights called!')
+
       var previews, cover, coverHeightPx, coverHeight
 
       previews = document.querySelector('.previews')
       cover = document.querySelector('.cover img')
       coverHeightPx = cover.offsetHeight
       coverHeight = coverHeightPx / 16 + 'em'
+
+      console.log('coverHeightPx = ' + coverHeightPx)
 
       if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
         previews.style.height = coverHeight

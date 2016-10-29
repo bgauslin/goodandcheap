@@ -12,6 +12,15 @@ export default {
     }
   },
 
+  computed: {
+    favoritesCount () {
+      var count = this.favorites.length
+      if (count > 0) {
+        return count
+      }
+    }
+  },
+
   created () {
     this.fetchFavorites()
 
@@ -24,12 +33,6 @@ export default {
     this.$root.$on('remove-favorite', function(id) {
       that.removeFavorite(id)
     })
-  },
-
-  computed: {
-    favoritesCount () {
-      return this.favorites.length
-    }
   },
 
   methods: {

@@ -1,6 +1,7 @@
 <template lang="pug">
   figure.thumb
     img(
+      v-if="!loading",
       :src="image.src",
       :width="image.width",
       :height="image.height",
@@ -9,8 +10,30 @@
 </template>
 
 <script>
+import imagesLoaded from 'imagesloaded'
+
 export default {
-  props: ['image', 'title']
+  props: ['image', 'title'],
+
+  data () {
+    return {
+      loading: null
+    }
+  },
+
+  mounted () {
+    this.loadImages()
+  },
+
+  methods: {
+    loadImages () {
+      this.loading = true
+      let that = this
+      imagesLoaded(this.$el, that, function(instance) {
+        that.loading = false
+      })
+    }
+  }
 }
 </script>
 
@@ -21,5 +44,12 @@ export default {
   flex-shrink 0
   margin .5rem
   width 5rem
+  height 5rem
+  border-radius .25em
+  background-color lighter-grey
+
+  img
+    border-radius .25em
+    animation fadeIn .5s ease-out
 
 </style>
