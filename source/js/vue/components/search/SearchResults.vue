@@ -13,14 +13,14 @@ export default {
 .results-count
   margin 1em 0
   text-align center
-  body-font()
+  sans()
 
 .query
-  body-font-bold()
+  sans-heavy()
 
 .no-results
   margin-top 2rem
-  body-font()
+  sans()
   text-align center
 
 

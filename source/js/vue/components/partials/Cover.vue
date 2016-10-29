@@ -25,14 +25,14 @@ export default {
   background white
 
   h1
-    heading-bold()
+    serif-heavy()
     margin-bottom .5em
 
     @media(min-width breakpoint-large)
       font-size em(30)
 
   .blurb
-    heading-light()
+    serif()
 
   .budget
     position-it(absolute, 3em, 0, null, null)

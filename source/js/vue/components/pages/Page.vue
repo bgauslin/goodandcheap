@@ -1,7 +1,7 @@
 <template lang="pug">
   div.page
     preloader(v-if="loading")
-    breadcrumbs(v-if="!loading && page")
+    breadcrumbs(v-if="!loading && page", :current="page.title")
     div.copy(v-if="!loading && page")
       h1 {{ page.title }}
       section.page-section(v-for="block in page.content")
@@ -39,7 +39,7 @@ export default {
 
   methods: {
     getApiUrl () {
-      return this.$root.apiBaseUrl + '/page/' + this.$route.params.slug
+      return this.$root.apiBaseUrl + 'page/' + this.$route.params.slug
     },
 
     fetchData (url) {
@@ -69,6 +69,8 @@ export default {
   .copy
     padding 1rem margins-base
     background white
+    a
+      text-decoration underline
 
     @media(min-width breakpoint-small)
       margin 0 auto
@@ -83,17 +85,15 @@ export default {
 
   h1
     margin .5em 0 1em
-    heading-bold()
+    serif-heavy()
 
   h2,h3,h4
-    body-font-bold()
+    sans-heavy()
     text-transform uppercase
   h2
     small-caps(11)
   li
-    body-font()
-  a
-    text-decoration underline
+    sans()
 
 .page-section
   margin 1em 0 2em
@@ -108,5 +108,32 @@ export default {
     display inline-block
     list-style none
     margin-right 1em
+
+
+// TODO: these styles to be determines...
+body
+  &.background
+    background-repeat no-repeat
+    background-position center center
+    background-attachment fixed
+    background-size cover
+
+    .breadcrumbs
+    .site-footer
+      color white
+      a
+        text-decoration underline
+
+        &:link
+        &:visited
+          color white
+
+        &:hover
+        &:visited:hover
+          color brand-color
+
+
+
+
 
 </style>

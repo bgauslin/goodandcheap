@@ -2,9 +2,9 @@
   nav.breadcrumbs
     ul
       li
-        a(href="/") Home
-      li
-        a(href="#") {{ crumb }}
+        router-link(to="/", title="Home") Home
+      li(v-if="parents", v-for="parent in parents")
+        router-link(:to="{ name: parent.type, params: { slug: parent.slug } }", :title="parent.title") {{ parent.title }}
       li
         span {{ current }}
 </template>
@@ -13,12 +13,8 @@
 import getBreakpointValue from '../../../helpers/getBreakpointValue'
 
 export default {
-  data () {
-    return {
-      crumb: 'Crumb',
-      current: 'Current'
-    }
-  },
+
+  props: ['parents', 'current'],
 
   created () {
     // TODO: call function on load
@@ -57,7 +53,7 @@ export default {
   white-space nowrap
   overflow-x scroll
   -webkit-overflow-scrolling touch
-  body-font()
+  sans()
   small-caps(12)
   color light-grey
 

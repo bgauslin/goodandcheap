@@ -11,13 +11,13 @@
   h2
     margin 1em 0
     text-align center
-    body-font-bold()
+    sans-heavy()
     small-caps(14)
 
   .no-favorites
     margin-top 2rem
     text-align center
-    body-font()
+    sans()
 
     p
       margin 0 0 1em

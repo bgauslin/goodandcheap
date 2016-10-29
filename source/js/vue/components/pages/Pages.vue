@@ -35,7 +35,7 @@ export default {
 
   methods: {
     getApiUrl () {
-      return this.$root.apiBaseUrl + '/pages'
+      return this.$root.apiBaseUrl + 'pages'
     },
 
     fetchData (url) {

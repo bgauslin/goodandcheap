@@ -9,7 +9,7 @@
         badge(v-if="item.new", label="New")
         p.kind(v-if="item.kind == 'ideas' || item.kind == 'method'", :class="item.kind|lower") {{ recipe.kind }}
         p.recipe-count(v-if="item.recipeCount") {{ item.recipeCount }} Recipes
-        p.count(v-if="showCount") {{ itemCount }}
+        p.index(v-if="showCount") {{ itemCount }}
     toggle-favorite(v-if="toggleFavorite", :id="item.id")
     remove-favorite(v-if="removeFavorite", :id="item.id")
 </template>
@@ -25,12 +25,6 @@ export default {
   components: { Thumb, Badge, ToggleFavorite, RemoveFavorite },
 
   props: ['item', 'routeName', 'showChapter', 'showCount', 'index', 'toggleFavorite', 'removeFavorite'],
-
-  data () {
-    return {
-      __showCount: false
-    }
-  },
 
   computed: {
     itemCount () {
@@ -72,12 +66,12 @@ export default {
     right 0
 
   .chapter-title
-    body-font()
+    sans()
     small-caps(11)
     //color light-grey
 
   h3
-    heading-bold()
+    serif-heavy()
     line-height 1.1
 
   .summary
@@ -85,25 +79,30 @@ export default {
     margin-left .5rem
 
   .recipe-count
+    sans-heavy()
+    small-caps(11)
+
+  .recipe-count
   .tagline
   .kind
     display inline-block
     margin-top .2rem
 
-  .count
+  .index
     position absolute
     right 0
     bottom 1rem
-
     width 3rem
     text-align center
-
+    sans()
+    small-caps(11)
     line-height 1
+    color light-grey
 
 .tagline
   display inline-block
   margin-right .4em
-  body-font-bold()
+  sans-heavy()
   small-caps(11)
 
 .no-touch

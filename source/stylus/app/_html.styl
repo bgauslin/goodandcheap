@@ -1,0 +1,75 @@
+body
+  margin 0
+  padding 0
+  color dark-grey
+  background off-white
+
+*
+  box-sizing border-box
+  -webkit-tap-highlight-color rgba(0,0,0,0)
+
+::-webkit-scrollbar
+  display none
+
+.hidden
+  display none
+
+h1,h2,h3,h4,p,ul,ol,figure,img
+  margin 0
+  padding 0
+
+h1,h2,h3,h4,h5,h6
+  line-height 1.1
+
+h1
+  font-size em(24)
+
+h2
+  margin 1em 0
+  font-size em(18)
+
+h3
+  font-size em(18)
+
+h4
+  sans-heavy()
+  small-caps(11)
+
+p
+  font-size em(15)
+  line-height 1.5
+
+a
+  background transparent
+  text-decoration none
+  link(brand-color, brand-color-visited, dark-grey)
+  transition-all()
+
+.no-touch
+  a
+    link-hover(dark-grey)
+
+img
+  width 100%
+  height auto
+  vertical-align middle
+  border 0
+
+b
+strong
+  font-weight normal
+
+
+input[type='search']
+  -webkit-appearance none
+
+button
+  margin 0
+  color inherit
+  background transparent
+  font inherit
+  text-transform none
+  border none
+  outline none
+  overflow visible
+  cursor pointer

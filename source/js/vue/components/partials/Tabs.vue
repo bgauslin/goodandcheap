@@ -23,7 +23,7 @@ export default {
   margin 1rem margins-base
   overflow hidden
 
-  body-font()
+  sans()
   small-caps(11)
   border 1px solid brand-color
   border-radius 4px

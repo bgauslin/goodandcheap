@@ -31,7 +31,7 @@ export default {
 @import '../../../../stylus/config/'
 
 .budget
-  body-font-bold()
+  sans-heavy()
   small-caps(11)
 
   .total

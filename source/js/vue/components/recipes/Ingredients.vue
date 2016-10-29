@@ -46,11 +46,11 @@ export default {
   li
     margin 0 0 1em
     list-style none
-    body-font()
+    sans()
     font-size em(14)
 
 .item-count
-  body-font()
+  sans()
   margin-left 1em
   color light-grey
 

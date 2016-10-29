@@ -28,7 +28,7 @@ export default {
   ol
   ul
     margin 0
-    body-font()
+    sans()
     font-size em(14)
 
   ol

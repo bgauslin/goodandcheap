@@ -17,6 +17,6 @@ export default {
       margin-bottom .25em
 
     p
-      body-font()
+      sans()
 
 </style>

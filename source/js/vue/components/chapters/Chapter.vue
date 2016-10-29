@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     preloader(v-if="loading")
-    breadcrumbs(v-if="!loading && chapter")
+    breadcrumbs(v-if="!loading && chapter", :current="chapter.title")
     div.chapter(v-if="!loading && chapter")
       div.intro
         cover(
@@ -62,7 +62,7 @@ export default {
 
   methods: {
     getApiUrl () {
-      return this.$root.apiBaseUrl + '/chapter/' + this.$route.params.slug
+      return this.$root.apiBaseUrl + 'chapter/' + this.$route.params.slug
     },
 
     fetchData (url) {

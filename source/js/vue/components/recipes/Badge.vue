@@ -14,7 +14,7 @@ export default {
 .badge
   display inline-block
   padding .2em .75em
-  body-font()
+  sans()
   small-caps(11)
   color white
   background orange

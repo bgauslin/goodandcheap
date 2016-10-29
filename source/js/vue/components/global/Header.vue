@@ -57,7 +57,7 @@ export default {
   h1
     display flex
     align-self stretch
-    body-font-bold()
+    sans-heavy()
     small-caps(14)
 
   a

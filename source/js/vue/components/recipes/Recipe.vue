@@ -1,7 +1,11 @@
 <template lang="pug">
   div
     preloader(v-if="loading")
-    breadcrumbs(v-if="!loading && recipe")
+    breadcrumbs(
+      v-if="!loading && recipe",
+      :parents="recipe.parents",
+      :current="recipe.title"
+      )
     article.recipe(v-if="!loading && recipe")
       <!-- section.cover -->
         <!-- _coverPhoto -->
@@ -86,7 +90,7 @@ export default {
 
   h3
     margin 0 0 1em
-    body-font-bold()
+    sans-heavy()
     small-caps(11)
 
   .overview
@@ -102,6 +106,17 @@ export default {
 
   h4
     margin 0 0 1em
+
+
+.kind
+  sans-heavy()
+  small-caps(11)
+
+
+@media(min-width breakpoint-small)
+  .mini-recipe
+    figure
+      width 8rem
 
 
 @media(min-width breakpoint-large)

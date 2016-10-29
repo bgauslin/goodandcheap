@@ -51,7 +51,7 @@ export default {
   flex 1
   margin 0
   padding .3em
-  body-font()
+  sans()
   font-size em(13)
 
   &:focus
@@ -65,7 +65,7 @@ export default {
 
 .go
   padding .3em 1em
-  body-font()
+  sans()
   small-caps(13)
   color white
   background mix(black, brand-color, 25%)

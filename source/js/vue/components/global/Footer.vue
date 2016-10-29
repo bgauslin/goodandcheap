@@ -19,7 +19,7 @@ export default {
 @import '../../../../stylus/config/'
 
 .footer
-  body-font()
+  sans()
   small-caps(10)
   text-align center
   color light-grey

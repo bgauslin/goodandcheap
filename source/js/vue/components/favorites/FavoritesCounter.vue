@@ -74,7 +74,7 @@ export default {
   line-height 1
   color white
 
-  body-font()
+  sans()
   font-size em(11)
   color white
 
