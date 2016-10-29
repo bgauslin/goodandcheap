@@ -9,6 +9,8 @@ import Recipe from './components/recipes/Recipe.vue'
 import RecipeIngredients from './components/recipes/Ingredients.vue'
 import RecipeInstructions from './components/recipes/Instructions.vue'
 
+import Favorites from './components/favorites/Favorites.vue'
+
 import NotFound from './components/views/NotFound.vue'
 
 export default function() {
@@ -59,6 +61,11 @@ export default function() {
     {
       path: '/recipe',
       redirect: '/'
+    },
+    {
+      path: '/favorites',
+      name: 'favorites',
+      component: Favorites
     },
     {
       path: '*',

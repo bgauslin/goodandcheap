@@ -1,13 +1,90 @@
 <template lang="pug">
-  section.favorites
+  div.favorites
+    preloader(v-if="loading")
+    h2 {{ favoritesCount }} Favorites
+    ol.previews(v-if="!loading && favorites")
+      recipe-preview(
+        v-for="(recipe, index) in favorites",
+        :item="recipe",
+        route-name="recipe",
+        :remove-favorite="true",
+        :index="index"
+      )
 </template>
 
 
+<script>
+import Preloader from '../partials/Preloader.vue'
+import RecipePreview from '../recipes/Preview.vue'
+
+export default {
+
+  components: { Preloader, RecipePreview },
+
+  data () {
+    return {
+      loading: false,
+      favorites: []
+    }
+  },
+
+  computed: {
+    favoritesCount () {
+      var count = this.favorites.length
+      if (count > 0) {
+        return count
+      }
+    }
+  },
+
+  created () {
+    this.fetchFavorites()
+
+    let that = this // <-- this is kind of weird
+    this.$root.$on('remove-favorite', function(id) {
+      that.removeFavorite(id)
+    })
+  },
+
+  methods: {
+    fetchFavorites () {
+      this.loading = true
+      var store = localStorage.getItem('favorites')
+      if (store !== null) {
+        this.favorites = JSON.parse(localStorage.getItem('favorites'))
+      }
+      this.loading = false
+    },
+
+    removeFavorite (id) {
+      var i = this.favorites.indexOf(id)
+      this.favorites.splice(i, 1)
+      this.setFavorites(this.favorites)
+    }
+  }
+
+
+}
+</script>
 
 <style lang="stylus">
 @import '../../../../stylus/config/'
 
 .favorites
+  @media(min-width breakpoint-medium)
+    margin 0 margins-medium
+
+  .previews
+    animation slideInUp .3s ease
+    @media(min-width breakpoint-medium)
+      previews-grid()
+
+  .preview
+    @media(min-width breakpoint-medium)
+      preview-grid()
+    @media(min-width breakpoint-large)
+      preview-grid-large()
+
   h2
     margin 1em 0
     text-align center
