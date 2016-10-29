@@ -2,14 +2,16 @@
   div.favorites
     preloader(v-if="loading")
     h2 {{ favoritesCount }} Favorites
-    ol.previews(v-if="!loading && favorites")
-      recipe-preview(
-        v-for="(recipe, index) in favorites",
-        :item="recipe",
-        route-name="recipe",
-        :remove-favorite="true",
-        :index="index"
-      )
+
+    div(v-if="!debug")
+      ol.previews(v-if="!loading && favorites")
+        recipe-preview(
+          v-for="(recipe, index) in favorites",
+          :item="recipe",
+          route-name="recipe",
+          :remove-favorite="true",
+          :index="index"
+        )
 </template>
 
 
@@ -24,13 +26,15 @@ export default {
   data () {
     return {
       loading: false,
-      favorites: []
+      favoritesStore: [],
+      favorites: [],
+      debug: false
     }
   },
 
   computed: {
     favoritesCount () {
-      var count = this.favorites.length
+      var count = this.favoritesStore.length
       if (count > 0) {
         return count
       }
@@ -38,7 +42,7 @@ export default {
   },
 
   created () {
-    this.fetchFavorites()
+    this.fetchFavoritesStore()
 
     let that = this // <-- this is kind of weird
     this.$root.$on('remove-favorite', function(id) {
@@ -47,11 +51,27 @@ export default {
   },
 
   methods: {
-    fetchFavorites () {
-      this.loading = true
+    fetchFavoritesStore () {
       var store = localStorage.getItem('favorites')
       if (store !== null) {
-        this.favorites = JSON.parse(localStorage.getItem('favorites'))
+        this.favoritesStore = JSON.parse(localStorage.getItem('favorites'))
+        this.fetchData(this.favoritesStore)
+      }
+    },
+
+    getApiUrl () {
+      return this.$root.apiBaseUrl + 'favorites/'
+    },
+
+    fetchData (items) {
+      this.loading = true
+      for(var i = 0; i < items.length; i++) {
+        var id = items[i]
+        var url = this.getApiUrl() + id
+        console.log(url)
+        this.$http.get(url).then((response) => {
+          this.favorites.push(response.data)
+        })
       }
       this.loading = false
     },
