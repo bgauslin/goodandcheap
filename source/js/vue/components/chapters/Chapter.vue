@@ -3,21 +3,22 @@
     preloader(v-if="loading")
     breadcrumbs(v-if="!loading && chapter", :current="chapter.title")
     div.chapter(v-if="!loading && chapter")
-      div.intro
-        cover(
-          :title="chapter.title",
-          :blurb="chapter.blurb",
-          :image="chapter.photo",
-          :count="chapter.recipeCount + ' Recipes'"
-        )
-      ol.previews
-        recipe-preview(
-          v-for="(recipe, index) in chapter.recipes",
-          :item="recipe",
-          route-name="recipe",
-          :toggle-favorite="true",
-          :index="index"
-        )
+      div
+        div.intro
+          cover(
+            :title="chapter.title",
+            :blurb="chapter.blurb",
+            :image="chapter.photo",
+            :count="chapter.recipeCount + ' Recipes'"
+          )
+        ol.previews
+          recipe-preview(
+            v-for="(recipe, index) in chapter.recipes",
+            :item="recipe",
+            route-name="recipe",
+            :toggle-favorite="true",
+            :index="index"
+          )
 </template>
 
 <script>
@@ -41,16 +42,6 @@ export default {
 
   created () {
     this.fetchData(this.getApiUrl())
-    window.addEventListener('resize', this.matchHeights)
-  },
-
-  beforeDestroy: function () {
-    window.removeEventListener('resize', this.matchHeights)
-  },
-
-  mounted () {
-    //this.loadImages()
-    //this.matchHeights()
   },
 
   watch: {
@@ -69,7 +60,7 @@ export default {
       this.$http.get(url).then((response) => {
         this.chapter = response.data
         this.updatePageTitle(this.chapter.title)
-        this.loadImages()
+        this.loading = false
       })
     },
 
@@ -81,28 +72,8 @@ export default {
       let that = this
       imagesLoaded(this.$el, that, function(instance) {
         console.log('imagesloaded')
-        that.loading = false
-        that.matchHeights() // TODO: call function after cover is loaded...
+        //that.loading = false
       })
-    },
-
-    matchHeights () {
-      console.log('matchHeights called!')
-
-      var previews, cover, coverHeightPx, coverHeight
-
-      previews = document.querySelector('.previews')
-      cover = document.querySelector('.cover img')
-      coverHeightPx = cover.offsetHeight
-      coverHeight = coverHeightPx / 16 + 'em'
-
-      console.log('coverHeightPx = ' + coverHeightPx)
-
-      if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
-        previews.style.height = coverHeight
-      } else {
-        previews.style.height = 'auto'
-      }
     }
   }
 }
@@ -114,20 +85,31 @@ export default {
 .chapter
   background white
 
+  .intro
+    overflow hidden
+
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
   @media(min-width breakpoint-large)
-    display flex
     margin 0 margins-large 3rem
 
-    .intro
-      width 50%
+    & > div
+      position relative
+      width 100%
+      padding-bottom 50%
+      overflow hidden
 
-    .previews
-      width 50%
-      overflow-y scroll
-      -webkit-overflow-scrolling touch
+      .intro
+        position-it(absolute, 0, null, null, 0)
+        width 50%
+
+      .previews
+        position-it(absolute, 0, 0, null, null)
+        width 50%
+        height 100%
+        overflow-y scroll
+        -webkit-overflow-scrolling touch
 
   @media(min-width breakpoint-xlarge)
     margin 0 auto 3rem
