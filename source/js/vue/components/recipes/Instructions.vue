@@ -18,31 +18,19 @@ export default {
 @import '../../../../stylus/config/'
 
 .instructions
-  margin 0 1rem
-  padding 1rem 0
-  border-top 1px solid border-color
+  margin 0 0 1rem
 
   h4
     padding .5em 0
-
   ol
-  ul
     margin 0
+    padding 0 0 0 1rem
     sans()
     font-size em(14)
 
-  ol
-    padding 0 0 0 1.3rem
-
-  ul
     li
-      list-style none
+      margin 0 0 1em
+      list-style decimal outside
 
-  li
-    margin 0 0 1em
-
-  &.tabbed
-    padding-top 0
-    border none
 
 </style>

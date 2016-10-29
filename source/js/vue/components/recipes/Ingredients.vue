@@ -4,7 +4,8 @@
       h4 {{ block.heading }}
         span.item-count {{ block.items.length }} {{ itemsLabel(block.items) }}
       ul
-        li(v-for="item in block.items") {{ item }}
+        li(v-for="item in block.items")
+          a {{ item }}
 </template>
 
 <script>
@@ -28,13 +29,7 @@ export default {
 @import '../../../../stylus/config/'
 
 .ingredients-list
-  margin 0 1rem
-  padding 1rem 0 0
-  border-top 1px solid border-color
-
-  &.tabbed
-    padding-top 0
-    border none
+  margin 0 0 1rem
 
 .ingredients
   margin 0
@@ -49,43 +44,36 @@ export default {
     sans()
     font-size em(14)
 
-.item-count
-  sans()
-  margin-left 1em
-  color light-grey
+  .item-count
+    sans()
+    margin-left 1em
+    color light-grey
 
-a.checklist
-  display block
-  padding-left 2em
+  a
+    display block
+    padding-left 2em
+    link(dark-grey, dark-grey, brand-color)
 
-  &::before
-    display inline-block
-    width 1.3em
-    margin-left -1.3em
-    icon()
-    content '\e806' // circle-empty
-    font-size em(22)
-    color lighter-grey
-    vertical-align baseline
-    position relative
-    top .15em
-
-  &:link,
-  &:visited
-    color dark-grey
-
-  &:active
-    color brand-color
-
-  &.saved
     &::before
-      content '\e807' // ok-circled
-      color green
+      display inline-block
+      width 1.3em
+      margin-left -1.3em
+      icon()
+      content '\e806' // circle-empty
+      font-size em(22)
+      color lighter-grey
+      vertical-align baseline
+      position relative
+      top .15em
+
+    &.saved
+      &::before
+        content '\e807' // ok-circled
+        color green
 
 .no-touch
-  a.checklist
-    &:hover,
-    &:visited:hover
-      color brand-color
+  .ingredients
+    a
+      link-hover(brand-color)
 
 </style>
