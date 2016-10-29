@@ -123,12 +123,9 @@ export default {
 
     .intro
       width 50%
-      border-right 1px solid border-color
 
     .previews
       width 50%
-
-      // TODO: set fixed height equal to .intro height
       overflow-y scroll
       -webkit-overflow-scrolling touch
 

@@ -7,19 +7,20 @@
       :current="recipe.title"
       )
     article.recipe(v-if="!loading && recipe")
-      <!-- section.cover -->
-        <!-- _coverPhoto -->
-        <!-- budget(:budget="budget") -->
-      section.overview
+      cover(
+        :photos="recipe.photos",
+        :budget="recipe.budget"
+        )
+      div.overview
         header
           h1 {{ recipe.title }}
           h2.tagline {{ recipe.tagline }}
           p.new(v-if="recipe.badge") New
-        div
-          div.blurb
-            div(v-html="recipe.blurb")
-            ingredients(:ingredients="recipe.ingredients")
-            instructions(:instructions="recipe.instructions")
+        div.blurb
+          div(v-html="recipe.blurb")
+          ingredients(:ingredients="recipe.ingredients")
+          instructions(:instructions="recipe.instructions")
+      <!-- alpha-overlay(v-if="hasOverlay") -->
 </template>
 
 <script>
@@ -27,22 +28,33 @@ import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 
 import Badge from './Badge.vue'
-import Budget from './Budget.vue'
+import Cover from './Cover.vue'
 import Ingredients from './Ingredients.vue'
 import Instructions from './Instructions.vue'
 
+import AlphaOverlay from '../partials/AlphaOverlay.vue'
+
+import getBreakpointValue from '../../../helpers/getBreakpointValue'
+import imagesLoaded from 'imagesloaded'
+
 export default {
-  components: { Preloader, Breadcrumbs, Badge, Budget, Ingredients, Instructions },
+  components: { Preloader, Breadcrumbs, Badge, Cover, Ingredients, Instructions, AlphaOverlay },
 
   data () {
     return {
       loading: null,
-      recipe: null
+      recipe: null,
+      hasOverlay: false
     }
   },
 
   created () {
     this.fetchData(this.getApiUrl())
+    window.addEventListener('resize', this.matchHeights)
+  },
+
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this.matchHeights)
   },
 
   watch: {
@@ -53,7 +65,7 @@ export default {
 
   methods: {
     getApiUrl () {
-      return this.$root.apiBaseUrl + '/recipe/' + this.$route.params.slug
+      return this.$root.apiBaseUrl + 'recipe/' + this.$route.params.slug
     },
 
     fetchData (url) {
@@ -67,26 +79,73 @@ export default {
 
     updatePageTitle (title) {
       this.$root.$emit('update-page-title', title)
-    }
+    },
 
+    loadImages () {
+      let that = this
+      imagesLoaded(this.$el, that, function(instance) {
+        console.log('imagesloaded')
+        that.loading = false
+        that.matchHeights() // TODO: call function after cover is loaded...
+      })
+    },
+
+    matchHeights () {
+      console.log('matchHeights called!')
+
+      var overview, cover, coverHeightPx, coverHeight
+
+      overview = document.querySelector('.overview')
+      cover = document.querySelector('.cover img')
+      coverHeightPx = cover.offsetHeight
+      coverHeight = coverHeightPx / 16 + 'em'
+
+      console.log('coverHeightPx = ' + coverHeightPx)
+
+      if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
+        overview.style.height = coverHeight
+        this.hasOverlay = true
+      } else {
+        overview.style.height = 'auto'
+        this.hasOverlay = false
+      }
+    }
   }
 }
 </script>
+
 
 <style lang="stylus">
 @import '../../../../stylus/config/'
 
 .recipe
+  background white
+
+  @media(min-width breakpoint-medium)
+    margin 0 margins-medium
+
+  @media(min-width breakpoint-large)
+    display flex
+    margin 0 margins-large 3rem
+
+    .cover
+      width 50%
+      order 2
+
+    .overview
+      width 50%
+      order 1
+      padding-bottom 3rem
+      overflow-y scroll
+      -webkit-overflow-scrolling touch
+
+  @media(min-width breakpoint-xlarge)
+    margin 0 auto 3rem
+    width width-xlarge
+
   header
     margin 0 3rem 1rem 1rem
     padding-top 1rem
-
-    .kind
-      margin-bottom .5rem
-
-  .tabs
-    margin 0 1rem 1rem
-    width calc(100% - 2rem)
 
   h1
     serif-heavy()
@@ -96,72 +155,25 @@ export default {
     sans-heavy()
     small-caps(11)
 
-  .overview
-    position relative
-    background white
-
   .blurb
     padding-top 0
+
+  .tabs
+    margin 0 1rem 1rem
+    width calc(100% - 2rem)
+
+  .kind
+    margin-bottom .5rem
+    sans-heavy()
+    small-caps(11)
 
   .favorite-toggle
     top .75rem
     right 0
 
-  h4
-    margin 0 0 1em
-
-
-.kind
-  sans-heavy()
-  small-caps(11)
-
-
-@media(min-width breakpoint-small)
   .mini-recipe
-    figure
-      width 8rem
-
-
-@media(min-width breakpoint-large)
-  .recipe
-    display flex
-    flex-direction row
-
-    .cover,
-    .overview
-      width 50%
-
-    .cover
-      order 2
-
-    .overview
-      order 1
-      border-right 1px solid border-color
-
-    .favorite-toggle
-      top 0.5rem
-
-    // NOTE for side-by-side layout
-    &.contained
-      position relative
-
-      .cover
-        overflow hidden
-
-      .overview
-        padding-bottom 3rem
-
-      .overview-mask
-        position absolute
-        bottom 0
-        left 0
-        width 50%
-        height 4rem
-        background linear-gradient(to bottom, rgba(white, 0), white)
-
-      .overview
-        overflow-y scroll
-        -webkit-overflow-scrolling touch
-        border-right none
+    @media(min-width breakpoint-small)
+      figure
+        width 8rem
 
 </style>

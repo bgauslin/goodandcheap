@@ -23,6 +23,7 @@ export default {
 
 .cover
   cover()
+
   @media(min-width breakpoint-small)
     cover-small()
 

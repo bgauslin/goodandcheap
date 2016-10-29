@@ -1,27 +1,13 @@
 <template lang="pug">
   p.budget
-    span.total ${{ totalCost }} Total
-    span.cost ${{ unitCost }} / {{ budget.units }}
+    span.total {{ budget.totalCost }} Total
+    span.cost {{ budget.unitCost }} / {{ budget.units }}
 </template>
 
 
 <script>
 export default {
-
-  props: ['budget'],
-
-  computed: {
-    unitCost () {
-      let cost = budget.totalCost / budget.quantity
-      // TODO: format to two decimal places
-      return cost
-    },
-    totalCost () {
-      // TODO: format to two decimal places
-      // return budget.cost|number_format(2, '.', ',') }}
-    }
-  }
-
+  props: ['budget']
 }
 
 </script>
