@@ -26,15 +26,7 @@ export default {
   },
 
   created () {
-    this.apiUrl = this.getApiUrl()
-    this.fetchData(this.apiUrl)
-  },
-
-  watch: {
-    '$route' (to, from) {
-      this.apiUrl = this.getApiUrl()
-      this.fetchData(this.apiUrl)
-    }
+    this.fetchData(this.getApiUrl())
   },
 
   methods: {

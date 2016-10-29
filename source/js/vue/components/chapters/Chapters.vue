@@ -28,12 +28,6 @@ export default {
     this.fetchData(this.getApiUrl())
   },
 
-  watch: {
-    '$route' (to, from) {
-      this.fetchData(this.getApiUrl())
-    }
-  },
-
   methods: {
     getApiUrl () {
       return this.$root.apiBaseUrl + 'chapters'
