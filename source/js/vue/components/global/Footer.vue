@@ -28,21 +28,9 @@ export default {
     margin 0 auto
     padding 1rem
 
-.copyright
-  span
-    display block
-    padding .5rem 0
-
-    @media(min-width breakpoint-large)
-      display inline
-
-      &:last-child
-        &::before
-          content ' · '
-
-
 .license
   padding 1rem 0 .5rem
+
   img
     width auto
 

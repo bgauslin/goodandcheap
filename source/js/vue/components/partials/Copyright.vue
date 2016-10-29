@@ -19,12 +19,23 @@ export default {
 </script>
 
 <style lang="stylus">
-//@import '../../../../stylus/config/'
+@import '../../../../stylus/config/'
 
 .copyright
-  a
-    &::before
-      content: ' '
+  span
+    display block
+    a
+      display inline-block
+      padding .5rem 0 .5rem .5em
 
+    @media(min-width breakpoint-medium)
+      display inline
+
+      &:last-child
+        &::before
+          display inline-block
+          width 1.5rem
+          text-align center
+          content '·'
 
 </style>
