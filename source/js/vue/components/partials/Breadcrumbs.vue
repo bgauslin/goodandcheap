@@ -4,7 +4,10 @@
       li
         router-link(to="/", title="Home") Home
       li(v-if="parents", v-for="parent in parents")
-        router-link(:to="{ name: parent.type, params: { slug: parent.slug } }", :title="parent.title") {{ parent.title }}
+        router-link(
+          :to="{ name: parent.type, params: { slug: parent.slug } }",
+          :title="parent.title"
+        ) {{ parent.title }}
       li
         span {{ current }}
 </template>

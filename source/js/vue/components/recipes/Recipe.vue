@@ -23,7 +23,12 @@
           ul.tabs(v-if="useTabs")
             li(v-for="tab in tabs")
               router-link(:to="tab.name", :title="tab.label") {{ tab.label }}
-          router-view(:ingredients="recipe.ingredients", :instructions="recipe.instructions")
+
+          router-view(
+            v-if="useTabs",
+            :ingredients="recipe.ingredients",
+            :instructions="recipe.instructions"
+          )
 
           ingredients(v-if="!useTabs", :ingredients="recipe.ingredients")
           instructions(v-if="!useTabs", :instructions="recipe.instructions")
@@ -51,7 +56,7 @@ export default {
     return {
       loading: null,
       recipe: null,
-      useTabs: false,
+      useTabs: true,
       tabs: [
         { label: 'About', name: 'about' },
         { label: 'Ingredients', name: 'ingredients' },

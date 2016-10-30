@@ -10,6 +10,8 @@
 </template>
 
 
+
+
 <script>
 import Preloader from '../partials/Preloader.vue'
 import Preview from '../partials/Preview.vue'
