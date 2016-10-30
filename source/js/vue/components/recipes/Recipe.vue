@@ -17,8 +17,7 @@
             p.kind(v-if="data.kind !== 'Recipe'") {{ data.kind }}
             h1 {{ data.title }}
             h2.tagline {{ data.tagline }}
-            p.new(v-if="data.badge") New
-          div.blurb(v-html="data.blurb")
+            badge(v-if="data.badge")
 
           recipe-block(
             v-if="data.recipeBlocks",
@@ -28,12 +27,13 @@
 
           ul.tabs(v-if="data.ingredients && data.instructions")
             li
-              router-link(to="./", exact) Intro
+              router-link(:to="routeUrl", exact) Intro
             li
-              router-link(to="./ingredients") Ingredients
+              router-link(:to="routeUrl + '/ingredients'") Ingredients
             li
-              router-link(to="./steps") Steps
+              router-link(:to="routeUrl + '/steps'") Steps
           router-view(
+            :blurb="data.blurb",
             :ingredients="data.ingredients",
             :instructions="data.instructions"
           )
@@ -46,21 +46,19 @@ import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Badge from './Badge.vue'
 import Photos from './Photos.vue'
+import Intro from './Intro.vue'
 import RecipeBlock from './RecipeBlock.vue'
 import AlphaOverlay from '../partials/AlphaOverlay.vue'
 
-// remove Ingredients and Instructions once tabs are fully working...
-import Ingredients from './Ingredients.vue'
-import Instructions from './Instructions.vue'
-
 export default {
-  components: { Preloader, Breadcrumbs, Badge, Photos, RecipeBlock, Ingredients, Instructions, AlphaOverlay },
+  components: { Preloader, Breadcrumbs, Badge, Intro, Photos, RecipeBlock, AlphaOverlay },
 
   data () {
     return {
       loaded: false,
       data: null,
-      dataUrl: this.$root.apiBaseUrl + 'recipe/' + this.$route.params.slug
+      dataUrl: this.$root.apiBaseUrl + 'recipe/' + this.$route.params.slug,
+      routeUrl: '/recipe/' + this.$route.params.slug
     }
   },
 
@@ -137,12 +135,6 @@ export default {
 
   .overview
     padding-bottom 2rem
-
-  .blurb
-    padding 0 1rem 2rem
-
-    & > div
-      serif()
 
   .tabs
     margin 0 1rem 1rem

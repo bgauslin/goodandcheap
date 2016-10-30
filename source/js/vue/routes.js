@@ -6,6 +6,7 @@ import Chapter from './components/chapters/Chapter.vue'
 import Page from './components/pages/Page.vue'
 
 import Recipe from './components/recipes/Recipe.vue'
+import Intro from './components/recipes/Intro.vue'
 import RecipeIngredients from './components/recipes/Ingredients.vue'
 import RecipeInstructions from './components/recipes/Instructions.vue'
 
@@ -48,6 +49,7 @@ export default function() {
       children: [
         {
           path: '',
+          component: Intro
         },
         {
           path: 'ingredients',

@@ -1,12 +1,6 @@
 <template lang="pug">
-  p.badge {{ label }}
+  p.badge New
 </template>
-
-<script>
-export default {
-  props: ['label']
-}
-</script>
 
 <style lang="stylus">
 @import '../../../../stylus/config/'
