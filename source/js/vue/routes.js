@@ -47,12 +47,13 @@ export default function() {
       component: Recipe,
       children: [
         {
-          name: 'ingredients',
+          path: '',
+        },
+        {
           path: 'ingredients',
           component: RecipeIngredients
         },
         {
-          name: 'instructions',
           path: 'steps',
           component: RecipeInstructions
         }

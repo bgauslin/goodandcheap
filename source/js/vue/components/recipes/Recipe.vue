@@ -27,8 +27,12 @@
           )
 
           ul.tabs(v-if="data.ingredients && data.instructions")
-            li(v-for="tab in tabs")
-              router-link(:to="tab.name", :title="tab.label") {{ tab.label }}
+            li
+              router-link(to="./", exact) Intro
+            li
+              router-link(to="./ingredients") Ingredients
+            li
+              router-link(to="./steps") Steps
           router-view(
             :ingredients="data.ingredients",
             :instructions="data.instructions"
@@ -45,7 +49,7 @@ import Photos from './Photos.vue'
 import RecipeBlock from './RecipeBlock.vue'
 import AlphaOverlay from '../partials/AlphaOverlay.vue'
 
-// remove Ingredients and Instructions once tbas are fully working...
+// remove Ingredients and Instructions once tabs are fully working...
 import Ingredients from './Ingredients.vue'
 import Instructions from './Instructions.vue'
 
@@ -56,12 +60,7 @@ export default {
     return {
       loaded: false,
       data: null,
-      dataUrl: this.$root.apiBaseUrl + 'recipe/' + this.$route.params.slug,
-      tabs: [
-        { label: 'About', name: 'about' },
-        { label: 'Ingredients', name: 'ingredients' },
-        { label: 'Steps', name: 'steps' }
-      ]
+      dataUrl: this.$root.apiBaseUrl + 'recipe/' + this.$route.params.slug
     }
   },
 
