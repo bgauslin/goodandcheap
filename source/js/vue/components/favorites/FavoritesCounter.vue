@@ -1,5 +1,5 @@
 <template lang="pug">
-  a.favorites-counter {{ favoritesCount }}
+  router-link.favorites-counter(to="/favorites", title="Favorites", exact) {{ favoritesCount }}
 </template>
 
 <script>
