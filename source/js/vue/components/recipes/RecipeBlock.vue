@@ -1,11 +1,17 @@
 <template lang="pug">
   div
-    <!-- variation(v-if="block.type === 'variation'", :variation="block.variation") -->
+    variation(
+      v-if="block.type === 'variation'",
+      :variation="block"
+    )
     linked-recipe(
       v-if="block.type === 'linkedRecipe'",
       :linkedRecipe="block"
     )
-    <!-- mini-recipe(v-if="block.type === 'miniRecipe'",:miniRecipe="block.miniRecipe") -->
+    mini-recipe(
+      v-if="block.type === 'miniRecipe'",
+      :miniRecipe="block"
+    )
 </template>
 
 <script>
@@ -15,7 +21,6 @@ import MiniRecipe from './MiniRecipe.vue'
 
 export default {
   props: ['block'],
-
   components: { Variation, LinkedRecipe, MiniRecipe}
 }
 </script>
