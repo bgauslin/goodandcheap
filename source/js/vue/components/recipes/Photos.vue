@@ -23,6 +23,7 @@ export default {
 @import '../../../../stylus/config/'
 
 .photos
+  position relative
   cover()
 
 </style>
