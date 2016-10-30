@@ -1,45 +1,18 @@
 <template lang="pug">
   div.chapters
-    preloader(v-if="!loaded")
-    ol.previews(v-if="loaded")
+    ol.previews
       preview(
-        v-for="chapter in data",
+        v-for="chapter in chapters",
         :item="chapter",
         route-name="chapter"
       )
 </template>
 
 <script>
-import Preloader from '../partials/Preloader.vue'
 import Preview from '../partials/Preview.vue'
-
 export default {
-  components: { Preloader, Preview },
-
-  data () {
-    return {
-      loaded: false,
-      data: null,
-      dataUrl: this.$root.apiBaseUrl + 'chapters'
-    }
-  },
-
-  created () {
-    this.fetchData(this.dataUrl)
-  },
-
-  methods: {
-    fetchData (url) {
-      this.$http.get(url).then((response) => {
-        this.data = response.data.data
-        this.updateTitle(null)
-        this.loaded = true
-      })
-    },
-    updateTitle(title) {
-      this.$root.$emit('update-title', title)
-    }
-  }
+  components: { Preview },
+  props: ['chapters']
 }
 </script>
 
@@ -51,7 +24,6 @@ export default {
     margin 0 margins-medium
 
   .previews
-    animation slideInUp .3s ease
     @media(min-width breakpoint-medium)
       previews-grid()
 
