@@ -1,4 +1,9 @@
 <template lang="pug">
+  div
+    h1 {{ title }}
+    div
+      h2 {{ errorMessage }}
+      p {{ summary }}
 </template>
 
 <script>
@@ -7,28 +12,24 @@ export default {
   data () {
     return {
       title: 'Uh oh!',
-      summary: 'That page cannot be found. :(',
-      errorMessage: '404',
+      summary: 'The page you requested cannot be found. :(',
+      errorMessage: 'Error 404',
     }
   },
 
   // TODO: refactor created and methods, make DRY
   created () {
     this.updateTitle()
-    this.updateMetaDescription()
   },
 
   methods: {
     updateTitle () {
       this.$root.$emit('update-title', this.title)
-    },
-    updateMetaDescription () {
-      this.$root.$emit('update-meta-description', this.summary)
     }
   }
 }
 </script>
 
 <style lang="stylus">
-//@import '../../../../stylus/_config/'
+//@import '../../../../stylus/config/'
 </style>

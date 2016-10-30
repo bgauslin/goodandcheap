@@ -1,19 +1,19 @@
 <template lang="pug">
   div
-    preloader(v-if="loading")
-    breadcrumbs(v-if="!loading && chapter", :current="chapter.title")
-    div.chapter(v-if="!loading && chapter")
+    preloader(v-if="!loaded")
+    breadcrumbs(v-if="loaded", :current="data.title")
+    div.chapter(v-if="loaded")
       div
         div.intro
           cover(
-            :title="chapter.title",
-            :blurb="chapter.blurb",
-            :image="chapter.photo",
-            :count="chapter.recipeCount + ' Recipes'"
+            :title="data.title",
+            :blurb="data.blurb",
+            :image="data.photo",
+            :count="data.recipeCount + ' Recipes'"
           )
         ol.previews
           recipe-preview(
-            v-for="(recipe, index) in chapter.recipes",
+            v-for="(recipe, index) in data.recipes",
             :item="recipe",
             route-name="recipe",
             :toggle-favorite="true",
@@ -26,8 +26,6 @@ import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Cover from '../partials/Cover.vue'
 import RecipePreview from '../recipes/Preview.vue'
-import getBreakpointValue from '../../../helpers/getBreakpointValue'
-import imagesLoaded from 'imagesloaded'
 
 export default {
 
@@ -35,39 +33,27 @@ export default {
 
   data () {
     return {
-      loading: null,
-      chapter: null
+      loaded: false,
+      data: null,
+      dataUrl: this.$root.apiBaseUrl + 'chapter/' + this.$route.params.slug
     }
   },
 
   created () {
-    this.fetchData(this.getApiUrl())
+    this.fetchData(this.dataUrl)
   },
 
   methods: {
-    getApiUrl () {
-      return this.$root.apiBaseUrl + 'chapter/' + this.$route.params.slug
-    },
-
     fetchData (url) {
-      this.loading = true
       this.$http.get(url).then((response) => {
-        this.chapter = response.data
-        this.updatePageTitle(this.chapter.title)
-        this.loading = false
+        this.data = response.data
+        this.loaded = true
+        this.updateTitle(this.data.title)
       })
     },
 
-    updatePageTitle (title) {
-      this.$root.$emit('update-page-title', title)
-    },
-
-    loadImages () {
-      let that = this
-      imagesLoaded(this.$el, that, function(instance) {
-        console.log('imagesloaded')
-        //that.loading = false
-      })
+    updateTitle (title) {
+      this.$root.$emit('update-title', title)
     }
   }
 }

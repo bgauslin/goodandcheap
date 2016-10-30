@@ -1,16 +1,13 @@
 <template lang="pug">
   div.chapters
-    preloader(v-if="loading")
-    ol.previews(v-if="!loading && chapters")
+    preloader(v-if="!loaded")
+    ol.previews(v-if="loaded")
       preview(
-        v-for="chapter in chapters",
+        v-for="chapter in data",
         :item="chapter",
         route-name="chapter"
       )
 </template>
-
-
-
 
 <script>
 import Preloader from '../partials/Preloader.vue'
@@ -21,31 +18,26 @@ export default {
 
   data () {
     return {
-      loading: null,
-      chapters: null,
+      loaded: false,
+      data: null,
+      dataUrl: this.$root.apiBaseUrl + 'chapters'
     }
   },
 
   created () {
-    this.fetchData(this.getApiUrl())
+    this.fetchData(this.dataUrl)
   },
 
   methods: {
-    getApiUrl () {
-      return this.$root.apiBaseUrl + 'chapters'
-    },
-
     fetchData (url) {
-      this.loading = true
       this.$http.get(url).then((response) => {
-        this.chapters = response.data.data
-        this.updatePageTitle('Recipes')
-        this.loading = false
+        this.data = response.data.data
+        this.updateTitle(null)
+        this.loaded = true
       })
     },
-
-    updatePageTitle (title) {
-      this.$root.$emit('update-page-title', title)
+    updateTitle(title) {
+      this.$root.$emit('update-title', title)
     }
   }
 }

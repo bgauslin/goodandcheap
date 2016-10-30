@@ -1,9 +1,9 @@
 <template lang="pug">
   div.pages
-    preloader(v-if="loading")
-    ol.previews(v-if="!loading && pages")
+    preloader(v-if="!loaded")
+    ol.previews(v-if="loaded")
       preview(
-        v-for="page in pages",
+        v-for="page in data",
         :item="page",
         route-name="info"
       )
@@ -14,35 +14,31 @@ import Preloader from '../partials/Preloader.vue'
 import Preview from '../partials/Preview.vue'
 
 export default {
-  components: { Preloader, Preview },
+  components: { Preview, Preloader },
 
   data () {
     return {
-      loading: null,
-      pages: []
+      data: null,
+      loaded: false,
+      dataUrl: this.$root.apiBaseUrl + 'pages'
     }
   },
 
   created () {
-    this.fetchData(this.getApiUrl())
+    this.fetchData(this.dataUrl)
   },
 
   methods: {
-    getApiUrl () {
-      return this.$root.apiBaseUrl + 'pages'
-    },
-
     fetchData (url) {
-      this.loading = true
       this.$http.get(url).then((response) => {
-        this.pages = response.data.data
-        this.updatePageTitle('Info')
-        this.loading = false
+        this.data = response.data.data
+        this.updateTitle('Info')
+        this.loaded = true
       })
     },
 
-    updatePageTitle (title) {
-      this.$root.$emit('update-page-title', title)
+    updateTitle(title) {
+      this.$root.$emit('update-title', title)
     }
   }
 }

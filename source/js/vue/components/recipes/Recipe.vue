@@ -1,38 +1,31 @@
 <template lang="pug">
   div
-    preloader(v-if="loading")
+    preloader(v-if="!loaded")
     breadcrumbs(
-      v-if="!loading && recipe",
-      :parents="recipe.parents",
-      :current="recipe.title"
+      v-if="loaded",
+      :parents="data.parents",
+      :current="data.title"
     )
-    div.recipe(v-if="!loading && recipe")
+    div.recipe(v-if="loaded")
       div
         photos(
-          :photos="recipe.photos",
-          :budget="recipe.budget"
+          :photos="data.photos",
+          :budget="data.budget"
         )
         div.overview
           header
-            h1 {{ recipe.title }}
-            h2.tagline {{ recipe.tagline }}
-            p.new(v-if="recipe.badge") New
-          div.blurb(v-html="recipe.blurb")
+            h1 {{ data.title }}
+            h2.tagline {{ data.tagline }}
+            p.new(v-if="data.badge") New
+          div.blurb(v-html="data.blurb")
 
-          <!-- useTabs for debugging... -->
-          ul.tabs(v-if="useTabs")
+          ul.tabs
             li(v-for="tab in tabs")
               router-link(:to="tab.name", :title="tab.label") {{ tab.label }}
-
           router-view(
-            v-if="useTabs",
-            :ingredients="recipe.ingredients",
-            :instructions="recipe.instructions"
+            :ingredients="data.ingredients",
+            :instructions="data.instructions"
           )
-
-          ingredients(v-if="!useTabs", :ingredients="recipe.ingredients")
-          instructions(v-if="!useTabs", :instructions="recipe.instructions")
-
         alpha-overlay
 </template>
 
@@ -42,7 +35,6 @@ import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Badge from './Badge.vue'
 import Photos from './Photos.vue'
-import Tabs from '../partials/Tabs.vue'
 import AlphaOverlay from '../partials/AlphaOverlay.vue'
 
 // remove Ingredients and Instructions once tbas are fully working...
@@ -50,13 +42,13 @@ import Ingredients from './Ingredients.vue'
 import Instructions from './Instructions.vue'
 
 export default {
-  components: { Preloader, Breadcrumbs, Badge, Photos, Tabs, Ingredients, Instructions, AlphaOverlay },
+  components: { Preloader, Breadcrumbs, Badge, Photos, Ingredients, Instructions, AlphaOverlay },
 
   data () {
     return {
-      loading: null,
-      recipe: null,
-      useTabs: true,
+      loaded: false,
+      data: null,
+      dataUrl: this.$root.apiBaseUrl + 'recipe/' + this.$route.params.slug,
       tabs: [
         { label: 'About', name: 'about' },
         { label: 'Ingredients', name: 'ingredients' },
@@ -66,25 +58,19 @@ export default {
   },
 
   created () {
-    this.fetchData(this.getApiUrl())
+    this.fetchData(this.dataUrl)
   },
 
   methods: {
-    getApiUrl () {
-      return this.$root.apiBaseUrl + 'recipe/' + this.$route.params.slug
-    },
-
     fetchData (url) {
-      this.loading = true
       this.$http.get(url).then((response) => {
-        this.recipe = response.data
-        this.updatePageTitle(this.recipe.title)
-        this.loading = false
+        this.data = response.data
+        this.updateTitle(this.data.title)
+        this.loaded = true
       })
     },
-
-    updatePageTitle (title) {
-      this.$root.$emit('update-page-title', title)
+    updateTitle (title) {
+      this.$root.$emit('update-title', title)
     }
   }
 }

@@ -1,10 +1,10 @@
 <template lang="pug">
   div.page
-    preloader(v-if="loading")
-    breadcrumbs(v-if="!loading && page", :current="page.title")
-    div.copy(v-if="!loading && page")
-      h1 {{ page.title }}
-      section.page-section(v-for="block in page.content")
+    preloader(v-if="!loaded")
+    breadcrumbs(v-if="loaded", :current="data.title")
+    div.copy(v-if="loaded")
+      h1 {{ data.title }}
+      section.page-section(v-for="block in data.content")
         h2(v-if="block.heading") {{ block.heading }}
         div(v-if="block.copy", v-html="block.copy")
         ul(v-if="block.list")
@@ -20,31 +20,26 @@ export default {
 
   data () {
     return {
-      loading: null,
-      page: null
+      loaded: false,
+      data: null,
+      dataUrl: this.$root.apiBaseUrl + 'page/' + this.$route.params.slug
     }
   },
 
   created () {
-    this.fetchData(this.getApiUrl())
+    this.fetchData(this.dataUrl)
   },
 
   methods: {
-    getApiUrl () {
-      return this.$root.apiBaseUrl + 'page/' + this.$route.params.slug
-    },
-
     fetchData (url) {
-      this.loading = true
       this.$http.get(url).then((response) => {
-        this.page = response.data
-        this.updatePageTitle(this.page.title)
-        this.loading = false
+        this.data = response.data
+        this.updateTitle(this.data.title)
+        this.loaded = true
       })
     },
-
-    updatePageTitle(title) {
-      this.$root.$emit('update-page-title', title)
+    updateTitle(title) {
+      this.$root.$emit('update-title', title)
     }
   }
 }

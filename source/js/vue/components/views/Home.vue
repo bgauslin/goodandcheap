@@ -8,6 +8,7 @@
 import Tabs from '../partials/Tabs.vue'
 export default {
   components: { Tabs },
+
   data () {
     return {
       tabs: [

@@ -50,12 +50,11 @@ const app = new Vue({
 
   data: {
     apiBaseUrl: apiDomain + '/v1/',
-    siteName: document.title,
-    metaDescription: null
+    siteName: document.title
   },
 
   created () {
-    this.$root.$on('update-page-title', function(title) {
+    this.$root.$on('update-title', function(title) {
       this.updateTitle(title)
     })
   },
