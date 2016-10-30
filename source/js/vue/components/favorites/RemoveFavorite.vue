@@ -10,6 +10,7 @@ export default {
   methods: {
     removeItem (id) {
       console.log('removed id = ' + id)
+      this.$store.commit('removeFavorite', id)
     }
   }
 }

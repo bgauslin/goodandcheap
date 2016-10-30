@@ -1,9 +1,8 @@
 <template lang="pug">
   div.favorites
     preloader(v-if="loading")
-    h2 {{ favoritesCount }} Favorites
-
-    div(v-if="!debug")
+    h2 {{ favoritesCount }}
+    div
       ol.previews(v-if="!loading && favorites")
         recipe-preview(
           v-for="(recipe, index) in favorites",
@@ -26,39 +25,30 @@ export default {
   data () {
     return {
       loading: false,
-      favoritesStore: [],
-      favorites: [],
-      debug: false
+      favorites: []
     }
   },
 
   computed: {
     favoritesCount () {
-      var count = this.favoritesStore.length
-      if (count > 0) {
-        return count
+      var text
+      let count = this.$store.state.favorites.length
+      if (count <= 0 ) {
+        text = 'No Favorites :('
+      } else if (count === 1) {
+        text = '1 Favorite'
+      } else {
+        text = count + ' Favorites'
       }
+      return text
     }
   },
 
   created () {
-    this.fetchFavoritesStore()
-
-    let that = this // <-- this is kind of weird
-    this.$root.$on('remove-favorite', function(id) {
-      that.removeFavorite(id)
-    })
+    this.fetchData(this.$store.state.favorites)
   },
 
   methods: {
-    fetchFavoritesStore () {
-      var store = localStorage.getItem('favorites')
-      if (store !== null) {
-        this.favoritesStore = JSON.parse(localStorage.getItem('favorites'))
-        this.fetchData(this.favoritesStore)
-      }
-    },
-
     getApiUrl () {
       return this.$root.apiBaseUrl + 'favorites/'
     },
@@ -68,18 +58,11 @@ export default {
       for(var i = 0; i < items.length; i++) {
         var id = items[i]
         var url = this.getApiUrl() + id
-        console.log(url)
         this.$http.get(url).then((response) => {
           this.favorites.push(response.data)
         })
       }
       this.loading = false
-    },
-
-    removeFavorite (id) {
-      var i = this.favorites.indexOf(id)
-      this.favorites.splice(i, 1)
-      this.setFavorites(this.favorites)
     }
   }
 

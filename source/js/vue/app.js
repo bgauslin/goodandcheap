@@ -1,11 +1,32 @@
 import Vue from 'vue/dist/vue.js'
+import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+
+Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
-import routeConfig from './routes'
+const store = new Vuex.Store({
+  state: {
+    favorites: JSON.parse(localStorage.getItem('favorites')) || []
+  },
 
+  mutations: {
+    addFavorite (state, id) {
+      state.favorites.push(id)
+      localStorage.setItem('favorites', JSON.stringify(state.favorites))
+    },
+
+    removeFavorite (state, id) {
+      var i = state.favorites.indexOf(id)
+      state.favorites.splice(i, 1)
+      localStorage.setItem('favorites', JSON.stringify(state.favorites))
+    }
+  }
+})
+
+import routeConfig from './routes'
 const router = new VueRouter({
   routes: routeConfig(),
   mode: 'history',
@@ -18,13 +39,13 @@ const router = new VueRouter({
   */
 })
 
-import App from './components/App.vue'
 import getApiDomain from '../helpers/getApiDomain'
 const apiDomain = getApiDomain()
 
+import App from './components/App.vue'
 const app = new Vue({
   components: { App },
-
+  store,
   router,
 
   data: {

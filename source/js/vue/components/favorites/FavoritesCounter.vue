@@ -5,60 +5,12 @@
 <script>
 export default {
 
-  data () {
-    return {
-      favorites: [],
-      isVisible: true
-    }
-  },
-
   computed: {
     favoritesCount () {
-      var count = this.favorites.length
+      let count = this.$store.state.favorites.length
       if (count > 0) {
         return count
       }
-    }
-  },
-
-  created () {
-    this.fetchFavorites()
-
-    let that = this // <-- this is kind of weird
-
-    this.$root.$on('add-favorite', function(id) {
-      that.addFavorite(id)
-    })
-
-    this.$root.$on('remove-favorite', function(id) {
-      that.removeFavorite(id)
-    })
-  },
-
-  methods: {
-    fetchFavorites () {
-      var store = localStorage.getItem('favorites')
-
-      if (store === null) {
-        this.setFavorites(this.favorites)
-      } else {
-        this.favorites = JSON.parse(localStorage.getItem('favorites'));
-      }
-    },
-
-    setFavorites (favorites) {
-      localStorage.setItem('favorites', JSON.stringify(favorites));
-    },
-
-    addFavorite (id) {
-      this.favorites.push(id)
-      this.setFavorites(this.favorites)
-    },
-
-    removeFavorite (id) {
-      var i = this.favorites.indexOf(id)
-      this.favorites.splice(i, 1)
-      this.setFavorites(this.favorites)
     }
   }
 }

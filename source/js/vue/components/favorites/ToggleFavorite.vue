@@ -9,30 +9,22 @@ export default {
 
   data () {
     return {
-      isFavorite: false
+      isFavorite: false,
     }
   },
 
   created () {
-    this.fetchFavorites()
+    this.isFavorite = this.isInFavorites(this.$store.state.favorites, this.id)
   },
 
   methods: {
     toggleFavorite (id) {
       if (this.isFavorite) {
-        this.$root.$emit('remove-favorite', id)
+        this.$store.commit('removeFavorite', id)
       } else {
-        this.$root.$emit('add-favorite', id)
+        this.$store.commit('addFavorite', id)
       }
       this.isFavorite = !this.isFavorite
-    },
-
-    fetchFavorites () {
-      let store = localStorage.getItem('favorites')
-      if (store !== null) {
-        let favorites = JSON.parse(localStorage.getItem('favorites'))
-        this.isFavorite = this.isInFavorites(favorites, this.id)
-      }
     },
 
     isInFavorites (arr, id) {
@@ -48,7 +40,7 @@ export default {
 @import '../../../../stylus/config/'
 
 .toggle-favorite
-  position absolute // NOTE see .recipe and .preview for TRBL
+  position absolute
   display block
   width 3rem
   text-align center
