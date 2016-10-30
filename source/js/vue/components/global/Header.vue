@@ -5,16 +5,15 @@
       h1
         router-link(to="/", title="Home", exact) {{ heading }}
       favorites-counter
-      <!-- search-bar -->
 </template>
 
 <script>
 import SearchToggle from '../search/SearchToggle.vue'
 import FavoritesCounter from '../favorites/FavoritesCounter.vue'
-import SearchBar from '../search/SearchBar.vue'
+//import SearchBar from '../search/SearchBar.vue'
 
 export default {
-  components: { SearchToggle, FavoritesCounter, SearchBar },
+  components: { SearchToggle, FavoritesCounter },
 
   data () {
     return {

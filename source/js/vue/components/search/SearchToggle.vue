@@ -14,6 +14,8 @@ export default {
 @import '../../../../stylus/config/'
 
 .search-toggle
+  visibility hidden
+
   display flex
   justify-content center
   align-items center
