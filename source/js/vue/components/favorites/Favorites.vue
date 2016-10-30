@@ -1,9 +1,9 @@
 <template lang="pug">
   div.favorites
-    preloader(v-if="loading")
+    preloader(v-if="!loaded")
     h2 {{ favoritesCount }}
     div
-      ol.previews(v-if="!loading && favorites")
+      ol.previews(v-if="loaded")
         recipe-preview(
           v-for="(recipe, index) in favorites",
           :item="recipe",
@@ -24,7 +24,7 @@ export default {
 
   data () {
     return {
-      loading: false,
+      loaded: false,
       favorites: []
     }
   },
@@ -49,24 +49,27 @@ export default {
   },
 
   methods: {
+    fetchData (items) {
+      var url = this.getApiUrl() + this.stringifyIds(items)
+      this.$http.get(url).then((response) => {
+        this.favorites = response.data.data
+        this.loaded = true
+      })
+    },
     getApiUrl () {
       return this.$root.apiBaseUrl + 'favorites/'
     },
-
-    fetchData (items) {
-      this.loading = true
-      for(var i = 0; i < items.length; i++) {
-        var id = items[i]
-        var url = this.getApiUrl() + id
-        this.$http.get(url).then((response) => {
-          this.favorites.push(response.data)
-        })
+    stringifyIds (ids) {
+      var string = ''
+      for(var i = 0; i < ids.length; i++) {
+        string += ids[i]
+        if (i !== ids.length-1) {
+          string += ','
+        }
       }
-      this.loading = false
+      return string
     }
   }
-
-
 }
 </script>
 
