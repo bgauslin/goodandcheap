@@ -14,12 +14,19 @@
         )
         div.overview
           header
+            p.kind(v-if="data.kind !== 'Recipe'") {{ data.kind }}
             h1 {{ data.title }}
             h2.tagline {{ data.tagline }}
             p.new(v-if="data.badge") New
           div.blurb(v-html="data.blurb")
 
-          ul.tabs
+          recipe-block(
+            v-if="data.recipeBlocks",
+            v-for="block in data.recipeBlocks",
+            :block="block"
+          )
+
+          ul.tabs(v-if="data.ingredients && data.instructions")
             li(v-for="tab in tabs")
               router-link(:to="tab.name", :title="tab.label") {{ tab.label }}
           router-view(
@@ -35,6 +42,7 @@ import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Badge from './Badge.vue'
 import Photos from './Photos.vue'
+import RecipeBlock from './RecipeBlock.vue'
 import AlphaOverlay from '../partials/AlphaOverlay.vue'
 
 // remove Ingredients and Instructions once tbas are fully working...
@@ -42,7 +50,7 @@ import Ingredients from './Ingredients.vue'
 import Instructions from './Instructions.vue'
 
 export default {
-  components: { Preloader, Breadcrumbs, Badge, Photos, Ingredients, Instructions, AlphaOverlay },
+  components: { Preloader, Breadcrumbs, Badge, Photos, RecipeBlock, Ingredients, Instructions, AlphaOverlay },
 
   data () {
     return {
