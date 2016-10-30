@@ -1,9 +1,8 @@
 <template lang="pug">
   div.favorites
-    preloader(v-if="!loaded")
     h2 {{ favoritesCount }}
     div
-      ol.previews(v-if="loaded")
+      ol.previews
         recipe-preview(
           v-for="(recipe, index) in favorites",
           :item="recipe",
@@ -15,17 +14,15 @@
 
 
 <script>
-import Preloader from '../partials/Preloader.vue'
 import RecipePreview from '../recipes/Preview.vue'
 
 export default {
 
-  components: { Preloader, RecipePreview },
+  components: { RecipePreview },
 
   data () {
     return {
-      loaded: false,
-      favorites: []
+      favorites: this.$store.state.favorites
     }
   },
 
@@ -42,33 +39,6 @@ export default {
       }
       return text
     }
-  },
-
-  created () {
-    this.fetchData(this.$store.state.favorites)
-  },
-
-  methods: {
-    fetchData (items) {
-      var url = this.getApiUrl() + this.stringifyIds(items)
-      this.$http.get(url).then((response) => {
-        this.favorites = response.data.data
-        this.loaded = true
-      })
-    },
-    getApiUrl () {
-      return this.$root.apiBaseUrl + 'favorites/'
-    },
-    stringifyIds (ids) {
-      var string = ''
-      for(var i = 0; i < ids.length; i++) {
-        string += ids[i]
-        if (i !== ids.length-1) {
-          string += ','
-        }
-      }
-      return string
-    }
   }
 }
 </script>
@@ -81,7 +51,8 @@ export default {
     margin 0 margins-medium
 
   .previews
-    animation slideInUp .3s ease
+    //animation slideInUp .3s ease
+
     @media(min-width breakpoint-medium)
       previews-grid()
 

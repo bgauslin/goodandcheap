@@ -1,16 +1,15 @@
 <template lang="pug">
-  button.remove-favorite(@click="removeItem(id)")
+  button.remove-favorite(@click="removeItem(favorite)")
 </template>
 
 
 <script>
 export default {
-  props: ['id'],
+  props: ['favorite'],
 
   methods: {
-    removeItem (id) {
-      console.log('removed id = ' + id)
-      this.$store.commit('removeFavorite', id)
+    removeItem (favorite) {
+      this.$store.commit('removeFavorite', favorite)
     }
   }
 }

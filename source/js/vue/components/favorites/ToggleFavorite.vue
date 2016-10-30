@@ -1,35 +1,44 @@
 <template lang="pug">
-  button.toggle-favorite(@click="toggleFavorite(id)", :class="{ saved: isFavorite }")
+  button.toggle-favorite(@click="toggleFavorite(favorite)", :class="{ saved: isFavorite }")
 </template>
 
 
 <script>
 export default {
-  props: ['id'],
+  props: ['favorite'],
 
   data () {
     return {
-      isFavorite: false,
+      isFavorite: false
     }
   },
 
   created () {
-    this.isFavorite = this.isInFavorites(this.$store.state.favorites, this.id)
+    //this.isFavorite = this.isInFavorites(this.$store.state.favorites, this.favorite)
   },
 
   methods: {
-    toggleFavorite (id) {
+    toggleFavorite (favorite) {
       if (this.isFavorite) {
-        this.$store.commit('removeFavorite', id)
+        this.$store.commit('removeFavorite', favorite)
       } else {
-        this.$store.commit('addFavorite', id)
+        this.$store.commit('addFavorite', favorite)
       }
       this.isFavorite = !this.isFavorite
     },
 
-    isInFavorites (arr, id) {
-      var i = arr.indexOf(id)
-      return (i !== -1) ? true : false
+    isInFavorites (store, favorite) {
+      console.log('favorite.id = ' + favorite.id)
+      // TODO get all ids from store
+      let storeIds = []
+      for (let i = 0; i <= store.length; i++) {
+        console.log('i = ' + i)
+        //storeIds[i] = store[i].id
+      }
+      //console.log('storeIds = ' + storeIds)
+      //var index = store.indexOf(favorite)
+      //console.log('index = ' + index)
+      //return (index !== -1) ? true : false
     }
   }
 }

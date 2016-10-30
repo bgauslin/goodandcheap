@@ -1,16 +1,17 @@
 <template lang="pug">
-  li.preview.recipe-preview
-    router-link(:to="{ name: routeName, params: { slug: item.slug } }", :title="item.title")
-      thumb(:image="item.thumb", :title="item.title")
-      div.summary
-        p.chapter-title(v-if="item.chapter") {{ item.chapter }}
-        h3 {{ item.title }}
-        p.tagline(v-if="item.tagline") {{ item.tagline }}
-        badge(v-if="item.new")
-        p.kind(v-if="item.type == 'ideas' || item.type == 'method'", :class="item.type|lower") {{ recipe.kind }}
-        p.index {{ itemCount }}
-    toggle-favorite(v-if="toggleFavorite", :id="item.id")
-    remove-favorite(v-if="removeFavorite", :id="item.id")
+  transition(name="preview")
+    li.preview.recipe-preview
+      router-link(:to="{ name: routeName, params: { slug: item.slug } }", :title="item.title")
+        thumb(:image="item.thumb", :title="item.title")
+        div.summary
+          p.chapter-title(v-if="item.chapter") {{ item.chapter }}
+          h3 {{ item.title }}
+          p.tagline(v-if="item.tagline") {{ item.tagline }}
+          badge(v-if="item.new")
+          p.kind(v-if="item.type == 'ideas' || item.type == 'method'", :class="item.type|lower") {{ recipe.kind }}
+          p.index {{ itemCount }}
+      toggle-favorite(v-if="toggleFavorite", :favorite="item")
+      remove-favorite(v-if="removeFavorite", :favorite="item")
 </template>
 
 
@@ -29,7 +30,20 @@ export default {
     itemCount () {
       return this.index + 1
     }
+  },
+
+
+
+  methods: {
+    removeMe (id) {
+      this.removed = true
+    },
+    leave (el, done) {
+      // ...
+      done(console.log('removed!'))
+    },
   }
+
 }
 </script>
 
@@ -38,6 +52,9 @@ export default {
 
 .preview
   preview()
+
+  &.removed
+    //animation slideOutLeft .5s ease
 
 .recipe-preview
   a
@@ -74,6 +91,21 @@ export default {
   .remove-favorite
     top .5rem
     right 0
+
+
+.preview-enter-active
+  //transition all .3s ease
+
+.preview-leave-active
+  //transition all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+
+.preview-enter
+.preview-leave-active
+  //padding-left 10px
+  //
+  opacity 0
+
+
 
 .no-touch
   .preview
