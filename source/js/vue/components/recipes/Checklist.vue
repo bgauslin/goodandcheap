@@ -36,7 +36,6 @@ export default {
     margin 0 0 1em
     list-style none
     sans()
-    font-size em(14)
   */
 
   a

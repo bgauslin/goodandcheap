@@ -30,7 +30,6 @@ export default {
     margin 0
     padding 0 0 0 1rem
     sans()
-    font-size em(14)
 
     li
       margin 0 0 1em

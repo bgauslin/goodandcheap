@@ -72,7 +72,7 @@ export default {
     margin 0 margins-medium
 
   @media(min-width breakpoint-large)
-    margin 0 margins-large 3rem
+    margin 0 margins-large
 
     & > div
       position relative
@@ -92,7 +92,7 @@ export default {
         -webkit-overflow-scrolling touch
 
   @media(min-width breakpoint-xlarge)
-    margin 0 auto 3rem
+    margin 0 auto
     width width-xlarge
 
 
