@@ -20,9 +20,9 @@
             badge(v-if="data.badge")
 
           template(v-if="data.copyBlocks", v-for="block in data.copyBlocks")
+            blurb-with-heading(v-if="block.type === 'blurbWithHeading'", :heading="block.heading", :blurb="block.blurb")
             blurb(v-if="block.type === 'blurb'", :blurb="block.blurb")
             list(v-if="block.type === 'list'", :list="block.list")
-            blurb-with-heading(v-if="block.type === 'blurbWithHeading'", :heading="block.heading", :blurb="block.blurb")
 
           ul.tabs(v-if="data.ingredients || data.instructions")
             li
@@ -142,27 +142,37 @@ export default {
     width width-xlarge
 
   header
-    margin 0 3rem 1rem 1rem
-    padding-top 1rem
+    margin 0 2rem 1rem 0
 
   h1
     serif-heavy()
-
-  .tagline
-    sans-heavy()
-    small-caps(11)
 
   h3
     margin 0 0 1em
     sans-heavy()
     small-caps(11)
 
+  p
+    margin 0 0 1em
+    serif()
+
+  li
+    margin 0 0 1em
+    list-style none
+    sans()
+    font-size em(14)
+
+  .tagline
+    sans-heavy()
+    small-caps(11)
+
   .overview
-    padding-bottom 2rem
+    padding 1rem 1rem 2rem
 
   .tabs
-    margin 0 1rem 1rem
-    width calc(100% - 2rem)
+    width 100%
+    li
+      margin 0
 
   .kind
     margin-bottom .5rem

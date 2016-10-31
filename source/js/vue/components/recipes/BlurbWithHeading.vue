@@ -15,6 +15,7 @@ export default {
 <style lang="stylus">
 @import '../../../../stylus/config/'
 
+// TODO rename this element
 .copy-block
   padding .5rem 0
 

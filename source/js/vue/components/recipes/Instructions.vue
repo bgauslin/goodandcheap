@@ -18,7 +18,7 @@ export default {
 @import '../../../../stylus/config/'
 
 .instructions
-  margin 0 1rem 1rem
+  margin 0 0 1rem
 
   h2
     margin 1rem 0

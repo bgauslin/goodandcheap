@@ -29,7 +29,7 @@ export default {
 @import '../../../../stylus/config/'
 
 .ingredients-list
-  margin 0 1rem 1rem
+  margin 0 0 1rem
 
 .ingredients
   margin 0

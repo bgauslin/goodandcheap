@@ -19,6 +19,6 @@ export default {
 
 .linked-recipe
   margin 0 0 1rem
-  padding 0 1rem 1rem
+  //padding 0 1rem 1rem
 
 </style>
