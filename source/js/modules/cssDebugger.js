@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   // set initial debug state
-  var debugFlag = 1
+  var debugFlag = 0
 
   var debugModules = [
     'nodes',
