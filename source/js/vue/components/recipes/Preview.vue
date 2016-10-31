@@ -1,17 +1,17 @@
 <template lang="pug">
   transition(name="remove", mode="out-in")
     li.preview.recipe-preview
-      router-link(:to="{ name: routeName, params: { slug: item.slug } }", :title="item.title")
+      router-link(:to="{ name: 'recipe', params: { slug: item.slug } }", :title="item.title")
         thumb(:image="item.thumb", :title="item.title")
         div.summary
-          p.chapter-title(v-if="item.chapter") {{ item.chapter }}
+          p.chapter-title(v-if="showChapter") {{ item.chapter }}
           h3 {{ item.title }}
           p.tagline(v-if="item.tagline") {{ item.tagline }}
           badge(v-if="item.new")
           p.kind(v-if="item.type == 'ideas' || item.type == 'method'", :class="item.type|lower") {{ recipe.kind }}
           p.index {{ itemCount }}
-      toggle-favorite(v-if="toggleFavorite", :favorite="item")
-      remove-favorite(v-if="removeFavorite", :favorite="item")
+      toggle-favorite(v-if="favoriteButton === 'toggle'", :favorite="item")
+      remove-favorite(v-if="favoriteButton === 'remove'", :favorite="item")
 </template>
 
 
@@ -24,7 +24,7 @@ import RemoveFavorite from '../favorites/RemoveFavorite.vue'
 export default {
   components: { Thumb, Badge, ToggleFavorite, RemoveFavorite },
 
-  props: ['item', 'routeName', 'index', 'toggleFavorite', 'removeFavorite'],
+  props: ['item', 'index', 'showChapter', 'favoriteButton'],
 
   computed: {
     itemCount () {

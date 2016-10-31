@@ -6,9 +6,9 @@
         recipe-preview(
           v-for="(recipe, index) in favorites",
           :item="recipe",
-          route-name="recipe",
-          :remove-favorite="true",
-          :index="index"
+          :index="index",
+          :showChapter="true",
+          favoriteButton="remove"
         )
 </template>
 
@@ -29,7 +29,7 @@ export default {
   computed: {
     favoritesCount () {
       var text
-      let count = this.$store.state.favorites.length
+      let count = this.$store.getters.favoritesCount
       if (count <= 0 ) {
         text = 'No Favorites :('
       } else if (count === 1) {
@@ -47,14 +47,12 @@ export default {
 @import '../../../../stylus/config/'
 
 .favorites
-  @media(min-width breakpoint-medium)
-    margin 0 margins-medium
-
   .previews
-    //animation slideInUp .3s ease
-
     @media(min-width breakpoint-medium)
-      previews-grid()
+      margin 0 margins-medium
+
+      @media(min-width breakpoint-medium)
+        previews-grid()
 
   .preview
     @media(min-width breakpoint-medium)
@@ -67,19 +65,5 @@ export default {
     text-align center
     sans-heavy()
     small-caps(14)
-
-  .no-favorites
-    margin-top 2rem
-    text-align center
-    sans()
-
-    p
-      margin 0 0 1em
-
-  .recipe-list
-    width 100%
-
-    @media(min-width breakpoint-small)
-      margin 0 auto 2rem
 
 </style>

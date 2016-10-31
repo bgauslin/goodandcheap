@@ -15,9 +15,9 @@
           recipe-preview(
             v-for="(recipe, index) in data.recipes",
             :item="recipe",
-            route-name="recipe",
-            :toggle-favorite="true",
-            :index="index"
+            :index="index",
+            :showChapter="false",
+            favoriteButton="toggle"
           )
 </template>
 

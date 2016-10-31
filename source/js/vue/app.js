@@ -13,24 +13,43 @@ const store = new Vuex.Store({
   },
 
   mutations: {
-    addFavorite (state, id) {
-      state.favorites.push(id)
+    addFavorite (state, item) {
+      state.favorites.push(item)
       localStorage.setItem('favorites', JSON.stringify(state.favorites))
     },
 
-    removeFavorite (state, id) {
-      var i = state.favorites.indexOf(id)
+    removeFavorite (state, item) {
+      var i = state.favorites.indexOf(item)
       state.favorites.splice(i, 1)
       localStorage.setItem('favorites', JSON.stringify(state.favorites))
     }
+  },
+
+  getters: {
+    favoritesCount: state => {
+      return state.favorites.length
+    }
   }
+
 })
 
 import routeConfig from './routes'
 const router = new VueRouter({
   routes: routeConfig(),
   mode: 'history',
-  linkActiveClass: 'current'
+  linkActiveClass: 'current',
+
+  // NOTE force trailing slashes
+  // https://github.com/vuejs/vue-router/issues/455
+  beforeEach: ((to, from, next) => {
+  //router.beforeEach(transition => {
+    if (transition.to.path == '') {
+      transition.replace('/');
+    } else {
+      transition.next();
+    }
+  })
+
 })
 
 import getApiDomain from '../helpers/getApiDomain'
