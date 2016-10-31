@@ -19,6 +19,8 @@
             h2.tagline {{ data.tagline }}
             badge(v-if="data.badge")
 
+          toggle-favorite(:favorite="data")
+
           template(v-if="data.copyBlocks", v-for="block in data.copyBlocks")
             blurb-with-heading(v-if="block.type === 'blurbWithHeading'", :heading="block.heading", :blurb="block.blurb")
             blurb(v-if="block.type === 'blurb'", :blurb="block.blurb")
@@ -52,23 +54,22 @@ import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Badge from './Badge.vue'
 import Photos from './Photos.vue'
 import Blurb from './Blurb.vue'
-import AlphaOverlay from '../partials/AlphaOverlay.vue'
-
+import ToggleFavorite from '../favorites/ToggleFavorite.vue'
 import Variation from './Variation.vue'
 import LinkedRecipe from './LinkedRecipe.vue'
 import MiniRecipe from './MiniRecipe.vue'
-
 import List from './List.vue'
 import BlurbWithHeading from './BlurbWithHeading.vue'
-
+import AlphaOverlay from '../partials/AlphaOverlay.vue'
 
 export default {
   components: {
     Preloader,
     Breadcrumbs,
     Badge,
-    Blurb,
     Photos,
+    Blurb,
+    ToggleFavorite,
     Variation,
     LinkedRecipe,
     MiniRecipe,
@@ -146,6 +147,7 @@ export default {
 
 
   .overview
+    position relative
     padding 1rem 1rem 2rem
     @media(min-width breakpoint-large)
       padding 1.5rem 1.5rem 3rem
@@ -166,16 +168,13 @@ export default {
     sans-heavy()
     small-caps(11)
 
-
-
-
   header
     margin 0 2rem 1rem 0
 
   h1
     serif-heavy()
 
-  .favorite-toggle
+  .toggle-favorite
     top .75rem
     right 0
 
@@ -184,12 +183,7 @@ export default {
     sans-heavy()
     small-caps(11)
 
-  /*
-  p
-    margin 0 0 1em
-    serif()
-  */
-
+  // TODO: coordinate list styles with tabs and ingredients
   li
     margin 0 0 1em
     list-style none
