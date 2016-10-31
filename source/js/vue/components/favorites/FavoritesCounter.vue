@@ -7,7 +7,7 @@ export default {
 
   computed: {
     favoritesCount () {
-      let count = this.$store.state.favorites.length
+      var count = this.$store.getters.favoritesCount
       if (count > 0) {
         return count
       }

@@ -28,6 +28,10 @@ const store = new Vuex.Store({
   getters: {
     favoritesCount: state => {
       return state.favorites.length
+    },
+
+    favoritesIds: state => {
+      return state.favorites.map(favorite => favorite.id)
     }
   }
 

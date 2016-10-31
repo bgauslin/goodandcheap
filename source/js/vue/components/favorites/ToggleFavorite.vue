@@ -14,31 +14,23 @@ export default {
   },
 
   created () {
-    //this.isFavorite = this.isInFavorites(this.$store.state.favorites, this.favorite)
+    this.isFavorite = this.isInFavorites(this.favorite)
   },
 
   methods: {
-    toggleFavorite (favorite) {
+    toggleFavorite (item) {
       if (this.isFavorite) {
-        this.$store.commit('removeFavorite', favorite)
+        this.$store.commit('removeFavorite', item)
       } else {
-        this.$store.commit('addFavorite', favorite)
+        this.$store.commit('addFavorite', item)
       }
       this.isFavorite = !this.isFavorite
     },
 
-    isInFavorites (store, favorite) {
-      console.log('favorite.id = ' + favorite.id)
-      // TODO get all ids from store
-      let storeIds = []
-      for (let i = 0; i <= store.length; i++) {
-        console.log('i = ' + i)
-        //storeIds[i] = store[i].id
-      }
-      //console.log('storeIds = ' + storeIds)
-      //var index = store.indexOf(favorite)
-      //console.log('index = ' + index)
-      //return (index !== -1) ? true : false
+    isInFavorites (item) {
+      var ids = this.$store.getters.favoritesIds
+      var index = ids.indexOf(item.id)
+      return (index !== -1) ? true : false
     }
   }
 }

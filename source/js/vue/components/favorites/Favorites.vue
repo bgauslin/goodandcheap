@@ -15,7 +15,6 @@
 
 <script>
 import RecipePreview from '../recipes/Preview.vue'
-
 export default {
 
   components: { RecipePreview },
@@ -29,7 +28,7 @@ export default {
   computed: {
     favoritesCount () {
       var text
-      let count = this.$store.getters.favoritesCount
+      var count = this.$store.getters.favoritesCount
       if (count <= 0 ) {
         text = 'No Favorites :('
       } else if (count === 1) {
