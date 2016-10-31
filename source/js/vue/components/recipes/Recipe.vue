@@ -19,7 +19,6 @@
             h2.tagline {{ data.tagline }}
             badge(v-if="data.badge")
 
-          <!-- copy-blocks(v-if="data.copyBlocks", v-for="block in data.copyBlocks", :block="block") -->
           template(v-if="data.copyBlocks", v-for="block in data.copyBlocks")
             blurb(v-if="block.type === 'blurb'", :blurb="block.blurb")
             list(v-if="block.type === 'list'", :list="block.list")
@@ -174,9 +173,13 @@ export default {
     top .75rem
     right 0
 
-  .mini-recipe
-    @media(min-width breakpoint-small)
-      figure
-        width 8rem
+  .copy-block
+    padding .5rem 0
+
+    h4
+      margin-bottom .25em
+    p
+      sans()
+
 
 </style>

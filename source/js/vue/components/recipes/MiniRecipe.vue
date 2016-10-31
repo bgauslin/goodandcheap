@@ -30,4 +30,8 @@ export default {
   padding 1rem
   border-top 1px solid #eee
 
+  @media(min-width breakpoint-small)
+    figure
+      width 8rem
+
 </style>
