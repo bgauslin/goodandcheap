@@ -20,18 +20,22 @@ export default {
   props: ['parents', 'current'],
 
   created () {
-    //window.addEventListener('onload', this.scrollViewport)
-    //window.addEventListener('resize', this.scrollViewport)
+    //window.addEventListener('resize', this.scrollBreadcrumbs)
+  },
+
+  mounted () {
+    this.scrollBreadcrumbs()
   },
 
   beforeDestroy: function () {
-    //window.removeEventListener('resize', this.scrollViewport)
+    //window.removeEventListener('resize', this.scrollBreadcrumbs)
   },
 
   methods: {
-    scrollViewport () {
-      if (getBreakpointValue() === 'base' || getBreakpointValue() === 'small') {
-        var offset = this.$el.offsetHeight
+    scrollBreadcrumbs () {
+      var offset = this.$el.offsetHeight
+
+      if (getBreakpointValue() === 'base') {
         setTimeout(function() {
           window.scrollTo(0, offset)
         }, 0)
