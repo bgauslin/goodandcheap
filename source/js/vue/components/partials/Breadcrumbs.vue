@@ -63,15 +63,13 @@ export default {
     margin .5rem margins-small
 
   @media(min-width breakpoint-medium)
-    margin .75rem margins-medium
+    margin .5rem margins-medium
 
   @media(min-width breakpoint-large)
-    margin-right margins-large
-    margin-left margins-large
+    margin .5rem margins-large
 
   @media(min-width breakpoint-xlarge)
-    margin-right auto
-    margin-left auto
+    margin .5rem auto
     width width-xlarge
 
   ul

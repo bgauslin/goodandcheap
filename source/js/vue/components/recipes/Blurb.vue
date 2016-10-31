@@ -12,6 +12,8 @@ export default {
 @import '../../../../stylus/config/'
 
 .blurb
-  //padding 0 1rem 2rem
+  p
+    margin 0 0 1em
+    serif()
 
 </style>

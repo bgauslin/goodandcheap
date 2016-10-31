@@ -27,7 +27,7 @@ export default {
 .mini-recipe
   display flex
   flex-direction row
-  padding 1rem
+  padding 1rem 0
   border-top 1px solid #eee
 
   @media(min-width breakpoint-small)

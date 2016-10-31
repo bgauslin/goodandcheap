@@ -112,6 +112,9 @@ export default {
 .recipe
   background white
 
+  @media(min-width breakpoint-small)
+    margin 0 margins-small
+
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
@@ -141,35 +144,19 @@ export default {
     margin 0 auto 3rem
     width width-xlarge
 
-  header
-    margin 0 2rem 1rem 0
 
-  h1
-    serif-heavy()
+  .overview
+    padding 1rem 1rem 2rem
+    @media(min-width breakpoint-large)
+      padding 1.5rem 1.5rem 3rem
 
-  h3
-    margin 0 0 1em
-    sans-heavy()
-    small-caps(11)
-
-  p
-    margin 0 0 1em
-    serif()
-
-  li
-    margin 0 0 1em
-    list-style none
-    sans()
-    font-size em(14)
 
   .tagline
     sans-heavy()
     small-caps(11)
 
-  .overview
-    padding 1rem 1rem 2rem
-
   .tabs
+    margin 1rem 0
     width 100%
     li
       margin 0
@@ -179,9 +166,35 @@ export default {
     sans-heavy()
     small-caps(11)
 
+
+
+
+  header
+    margin 0 2rem 1rem 0
+
+  h1
+    serif-heavy()
+
   .favorite-toggle
     top .75rem
     right 0
+
+  h3
+    margin 0 0 1em
+    sans-heavy()
+    small-caps(11)
+
+  /*
+  p
+    margin 0 0 1em
+    serif()
+  */
+
+  li
+    margin 0 0 1em
+    list-style none
+    sans()
+    font-size em(14)
 
   .copy-block
     padding .5rem 0
