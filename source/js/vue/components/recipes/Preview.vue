@@ -1,5 +1,5 @@
 <template lang="pug">
-  transition(name="preview")
+  transition(name="remove", mode="out-in")
     li.preview.recipe-preview
       router-link(:to="{ name: routeName, params: { slug: item.slug } }", :title="item.title")
         thumb(:image="item.thumb", :title="item.title")
@@ -30,20 +30,7 @@ export default {
     itemCount () {
       return this.index + 1
     }
-  },
-
-
-
-  methods: {
-    removeMe (id) {
-      this.removed = true
-    },
-    leave (el, done) {
-      // ...
-      done(console.log('removed!'))
-    },
   }
-
 }
 </script>
 
@@ -52,9 +39,6 @@ export default {
 
 .preview
   preview()
-
-  &.removed
-    //animation slideOutLeft .5s ease
 
 .recipe-preview
   a
@@ -93,18 +77,8 @@ export default {
     right 0
 
 
-.preview-enter-active
-  //transition all .3s ease
-
-.preview-leave-active
-  //transition all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0)
-
-.preview-enter
-.preview-leave-active
-  //padding-left 10px
-  //
-  opacity 0
-
+.remove-leave-active
+  //animation slideOutLeft 10s ease
 
 
 .no-touch
