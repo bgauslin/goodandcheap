@@ -15,7 +15,19 @@
 </template>
 
 <script>
+import Ingredients from './Ingredients.vue'
 export default {
+  components: { Ingredients },
   props: ['miniRecipe']
 }
 </script>
+
+<style lang="stylus">
+
+.mini-recipe
+  display flex
+  flex-direction row
+  padding 1rem
+  border-top 1px solid #eee
+
+</style>

@@ -19,15 +19,15 @@
             h2.tagline {{ data.tagline }}
             badge(v-if="data.badge")
 
-          copy-blocks(
-            v-if="data.copyBlocks",
-            v-for="block in data.copyBlocks",
-            :block="block"
-          )
+          <!-- copy-blocks(v-if="data.copyBlocks", v-for="block in data.copyBlocks", :block="block") -->
+          template(v-if="data.copyBlocks", v-for="block in data.copyBlocks")
+            blurb(v-if="block.type === 'blurb'", :blurb="block.blurb")
+            list(v-if="block.type === 'list'", :list="block.list")
+            blurb-with-heading(v-if="block.type === 'blurbWithHeading'", :heading="block.heading", :blurb="block.blurb")
 
-          ul.tabs(v-if="data.ingredients && data.instructions")
+          ul.tabs(v-if="data.ingredients || data.instructions")
             li
-              router-link(:to="routeUrl", exact) Intro
+              router-link(:to="routeUrl + '/'", exact) Intro
             li(v-if="data.ingredients")
               router-link(:to="routeUrl + '/ingredients'") Ingredients
             li(v-if="data.instructions")
@@ -38,11 +38,11 @@
             :instructions="data.instructions"
           )
 
-          recipe-blocks(
-            v-if="data.recipeBlocks",
-            v-for="block in data.recipeBlocks",
-            :block="block"
-          )
+          template(v-if="data.recipeBlocks", v-for="block in data.recipeBlocks")
+            variation(v-if="block.type === 'variation'", :variation="block")
+            linked-recipe(v-if="block.type === 'linkedRecipe'", :linkedRecipe="block")
+            mini-recipe(v-if="block.type === 'miniRecipe'", :miniRecipe="block")
+
         alpha-overlay
 </template>
 
@@ -53,12 +53,30 @@ import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Badge from './Badge.vue'
 import Photos from './Photos.vue'
 import Blurb from './Blurb.vue'
-import RecipeBlocks from './RecipeBlocks.vue'
-import CopyBlocks from './CopyBlocks.vue'
 import AlphaOverlay from '../partials/AlphaOverlay.vue'
 
+import Variation from './Variation.vue'
+import LinkedRecipe from './LinkedRecipe.vue'
+import MiniRecipe from './MiniRecipe.vue'
+
+import List from './List.vue'
+import BlurbWithHeading from './BlurbWithHeading.vue'
+
+
 export default {
-  components: { Preloader, Breadcrumbs, Badge, Blurb, Photos, RecipeBlocks, CopyBlocks, AlphaOverlay },
+  components: {
+    Preloader,
+    Breadcrumbs,
+    Badge,
+    Blurb,
+    Photos,
+    Variation,
+    LinkedRecipe,
+    MiniRecipe,
+    List,
+    BlurbWithHeading,
+    AlphaOverlay
+  },
 
   data () {
     return {

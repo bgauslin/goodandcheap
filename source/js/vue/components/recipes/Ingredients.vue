@@ -1,7 +1,7 @@
 <template lang="pug">
   div.ingredients-list
     div.ingredients(v-for="block in ingredients")
-      h2 {{ block.heading }}
+      h2(v-if="block.heading") {{ block.heading }}
         span.item-count {{ block.items.length }} {{ itemsLabel(block.items) }}
       checklist(:items="block.items")
 </template>
