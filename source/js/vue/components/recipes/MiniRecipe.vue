@@ -2,15 +2,15 @@
   div.mini-recipe
     div.contents
       h4 {{ miniRecipe.heading }}
-      div {{ miniRecipe.blurb }}
+      div(v-html="miniRecipe.blurb")
       ol.ingredients
         li(v-for="ingredient in miniRecipe.ingredients") {{ ingredient }}
-    figure
+    figure(v-if="miniRecipe.photo")
       img(
-        src="miniRecipe.thumb.url",
-        width="miniRecipe.thumb.width",
-        height="miniRecipe.thumb.height",
-        title="miniRecipe.thumb.title"
+        :src="miniRecipe.photo.src",
+        :width="miniRecipe.photo.width",
+        :height="miniRecipe.photo.height",
+        :title="miniRecipe.photo.title"
       )
 </template>
 

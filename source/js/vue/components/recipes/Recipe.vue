@@ -19,23 +19,29 @@
             h2.tagline {{ data.tagline }}
             badge(v-if="data.badge")
 
-          recipe-block(
-            v-if="data.recipeBlocks",
-            v-for="block in data.recipeBlocks",
+          copy-blocks(
+            v-if="data.copyBlocks",
+            v-for="block in data.copyBlocks",
             :block="block"
           )
 
           ul.tabs(v-if="data.ingredients && data.instructions")
             li
               router-link(:to="routeUrl", exact) Intro
-            li
+            li(v-if="data.ingredients")
               router-link(:to="routeUrl + '/ingredients'") Ingredients
-            li
+            li(v-if="data.instructions")
               router-link(:to="routeUrl + '/steps'") Steps
           router-view(
             :blurb="data.blurb",
             :ingredients="data.ingredients",
             :instructions="data.instructions"
+          )
+
+          recipe-blocks(
+            v-if="data.recipeBlocks",
+            v-for="block in data.recipeBlocks",
+            :block="block"
           )
         alpha-overlay
 </template>
@@ -46,12 +52,13 @@ import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Badge from './Badge.vue'
 import Photos from './Photos.vue'
-import Intro from './Intro.vue'
-import RecipeBlock from './RecipeBlock.vue'
+import Blurb from './Blurb.vue'
+import RecipeBlocks from './RecipeBlocks.vue'
+import CopyBlocks from './CopyBlocks.vue'
 import AlphaOverlay from '../partials/AlphaOverlay.vue'
 
 export default {
-  components: { Preloader, Breadcrumbs, Badge, Intro, Photos, RecipeBlock, AlphaOverlay },
+  components: { Preloader, Breadcrumbs, Badge, Blurb, Photos, RecipeBlocks, CopyBlocks, AlphaOverlay },
 
   data () {
     return {
