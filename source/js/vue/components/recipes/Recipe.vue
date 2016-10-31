@@ -62,6 +62,8 @@ import List from './List.vue'
 import BlurbWithHeading from './BlurbWithHeading.vue'
 import AlphaOverlay from '../partials/AlphaOverlay.vue'
 
+import getBreakpointValue from '../../../helpers/getBreakpointValue'
+
 export default {
   components: {
     Preloader,
@@ -89,6 +91,15 @@ export default {
 
   created () {
     this.fetchData(this.dataUrl)
+    window.addEventListener('resize', this.minHeight)
+  },
+
+  updated () {
+    this.minHeight()
+  },
+
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this.minHeight)
   },
 
   methods: {
@@ -99,9 +110,23 @@ export default {
         this.loaded = true
       })
     },
+
     updateTitle (title) {
       this.$root.$emit('update-title', title)
+    },
+
+    minHeight () {
+      var overview = this.$el.querySelector('.overview')
+      var overviewWidthPx = overview.offsetWidth
+      var overviewWidth = overviewWidthPx / 16 + 'em'
+
+      if (getBreakpointValue() !== 'large' || getBreakpointValue() !== 'xlarge') {
+        overview.style.minHeight = overviewWidth
+      } else {
+        overview.style.minHeight = 'none'
+      }
     }
+
   }
 }
 </script>
@@ -111,13 +136,22 @@ export default {
 @import '../../../../stylus/config/'
 
 .recipe
-  background white
+  & > div
+    margin 0 auto
+    background white
 
   @media(min-width breakpoint-small)
     margin 0 margins-small
 
+    & > div
+      max-width 35rem
+
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
+
+    & > div
+      width 35rem
+      max-width none
 
   @media(min-width breakpoint-large)
     margin 0 margins-large
