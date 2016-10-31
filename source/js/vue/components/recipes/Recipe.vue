@@ -21,11 +21,6 @@
 
           toggle-favorite(:favorite="data")
 
-          template(v-if="data.copyBlocks", v-for="block in data.copyBlocks")
-            blurb-with-heading(v-if="block.type === 'blurbWithHeading'", :heading="block.heading", :blurb="block.blurb")
-            blurb(v-if="block.type === 'blurb'", :blurb="block.blurb")
-            list(v-if="block.type === 'list'", :list="block.list")
-
           ul.tabs(v-if="data.ingredients || data.instructions")
             li
               router-link(:to="routeUrl + '/'", exact) Intro
@@ -38,6 +33,11 @@
             :ingredients="data.ingredients",
             :instructions="data.instructions"
           )
+
+          template(v-if="data.copyBlocks", v-for="block in data.copyBlocks")
+            blurb-with-heading(v-if="block.type === 'blurbWithHeading'", :heading="block.heading", :blurb="block.blurb")
+            blurb(v-if="block.type === 'blurb'", :blurb="block.blurb")
+            list(v-if="block.type === 'list'", :list="block.list")
 
           template(v-if="data.recipeBlocks", v-for="block in data.recipeBlocks")
             variation(v-if="block.type === 'variation'", :variation="block")
