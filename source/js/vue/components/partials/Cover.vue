@@ -1,11 +1,19 @@
 <template lang="pug">
   div.cover
-    img(
-      :src="image.src",
-      :width="image.width",
-      :height="image.height",
-      :alt="title"
-    )
+    figure(v-if="!loaded")
+      img(
+        :src="image.placeholder",
+        :width="image.width",
+        :height="image.height",
+        :alt="title"
+      )
+    figure(v-if="loaded")
+      img(
+        :src="image.src",
+        :width="image.width",
+        :height="image.height",
+        :alt="title"
+      )
     div.blurb
       h1 {{ title }}
       div(v-html="blurb")
@@ -13,8 +21,30 @@
 </template>
 
 <script>
+import imagesLoaded from 'imagesloaded'
+
 export default {
-  props: ['image', 'title', 'blurb', 'count']
+  props: ['image', 'title', 'blurb', 'count'],
+
+  data () {
+    return {
+      loaded: null
+    }
+  },
+
+  mounted () {
+    this.loadImages()
+  },
+
+  methods: {
+    loadImages () {
+      this.loaded = false
+      let self = this
+      imagesLoaded(this.$el.querySelector('img'), self, function(instance) {
+        self.loaded = true
+      })
+    }
+  }
 }
 </script>
 
@@ -23,8 +53,6 @@ export default {
 
 .cover
   cover()
-  @media(min-width breakpoint-small)
-    cover-small()
 
   h1
     serif-heavy()
@@ -35,7 +63,7 @@ export default {
 
   .blurb
     padding 1rem
-    animation slideInUp .3s ease-out
+    animation fadeIn .5s ease-out
 
     & > div
       serif()
@@ -45,7 +73,6 @@ export default {
       padding 1.5rem
       box-shadow 0 0 5px 0 light-grey // horiz vert blur spread color
       background rgba(white, 0.95)
-      animation slideInDown .3s ease-out
 
   .recipe-count
     margin 1rem 0 0
