@@ -20,13 +20,12 @@ export default {
   props: ['parents', 'current'],
 
   created () {
-    // TODO: call function on load
-    window.addEventListener('onload', this.scrollViewport)
-    window.addEventListener('resize', this.scrollViewport)
+    //window.addEventListener('onload', this.scrollViewport)
+    //window.addEventListener('resize', this.scrollViewport)
   },
 
   beforeDestroy: function () {
-    window.removeEventListener('resize', this.scrollViewport)
+    //window.removeEventListener('resize', this.scrollViewport)
   },
 
   methods: {
