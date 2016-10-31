@@ -26,10 +26,13 @@ export default {
 
   & > div
     margin 0 auto
-    padding 1rem
+    padding .75rem
+
+    @media(min-width breakpoint-medium)
+      padding 1.5rem
 
 .license
-  padding 1rem 0 .5rem
+  margin-top: .5rem
 
   img
     width auto

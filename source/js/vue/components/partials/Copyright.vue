@@ -26,9 +26,9 @@ export default {
     display block
     a
       display inline-block
-      padding .5rem 0 .5rem .5em
+      padding .25rem 0 .25rem .5em
 
-    @media(min-width breakpoint-medium)
+    @media(min-width breakpoint-small)
       display inline
 
       &:last-child
