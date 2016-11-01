@@ -1,26 +1,17 @@
 <template lang="pug">
   ul.checklist
-    li(v-for="(item, index) in items")
-      a(href="#", @click.prevent="toggleItem(index)") {{ item }}
+    checklist-item(
+      v-for="(item, index) in items",
+      :item="item",
+      :index="index"
+    )
 </template>
 
 <script>
+import ChecklistItem from './ChecklistItem.vue'
 export default {
-  // TODO list item as separate component
-
-  props: ['items'],
-
-  data () {
-    return {
-      checked: []
-    }
-  },
-
-  methods: {
-    toggleItem (index) {
-      console.log('ingredient toggled for ' + index)
-    }
-  }
+  components: { ChecklistItem },
+  props: ['items']
 }
 </script>
 
@@ -30,39 +21,5 @@ export default {
 .checklist
   margin 0 0 2em
   padding 0
-
-  /*
-  li
-    margin 0 0 1em
-    list-style none
-    sans()
-  */
-
-  a
-    display block
-    padding-left 2em
-    link(dark-grey, dark-grey, brand-color)
-
-    &::before
-      display inline-block
-      width 1.3em
-      margin-left -1.3em
-      icon()
-      content '\e806' // circle-empty
-      font-size em(22)
-      color lighter-grey
-      vertical-align baseline
-      position relative
-      top .15em
-
-    &.saved
-      &::before
-        content '\e807' // ok-circled
-        color green
-
-.no-touch
-  .checklist
-    a
-      link-hover(brand-color)
 
 </style>

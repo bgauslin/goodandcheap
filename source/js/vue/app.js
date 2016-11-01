@@ -9,7 +9,8 @@ Vue.use(VueResource)
 
 const store = new Vuex.Store({
   state: {
-    favorites: JSON.parse(localStorage.getItem('favorites')) || []
+    favorites: JSON.parse(localStorage.getItem('favorites')) || [],
+    ingredients: JSON.parse(localStorage.getItem('ingredients')) || []
   },
 
   mutations: {
@@ -22,6 +23,17 @@ const store = new Vuex.Store({
       var i = state.favorites.indexOf(item)
       state.favorites.splice(i, 1)
       localStorage.setItem('favorites', JSON.stringify(state.favorites))
+    },
+
+    addIngredient (state, item) {
+      state.ingredients.push(item)
+      localStorage.setItem('ingredients', JSON.stringify(state.ingredients))
+    },
+
+    removeIngredient (state, item) {
+      var i = state.ingredients.indexOf(item)
+      state.ingredients.splice(i, 1)
+      localStorage.setItem('favorites', JSON.stringify(state.ingredients))
     }
   },
 
