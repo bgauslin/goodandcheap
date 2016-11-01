@@ -23,6 +23,13 @@ export default {
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
+  @media(min-width breakpoint-large)
+    margin 0 margins-large
+
+  @media(min-width breakpoint-xlarge)
+    margin 0 auto
+    width width-xlarge
+
   .previews
     @media(min-width breakpoint-medium)
       previews-grid()
