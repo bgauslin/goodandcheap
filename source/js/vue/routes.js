@@ -46,6 +46,7 @@ export default function() {
       path: '/recipe/:slug',
       name: 'recipe',
       component: Recipe,
+      redirect: '/recipe/:slug/',
       children: [
         {
           path: '',
