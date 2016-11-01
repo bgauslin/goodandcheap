@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style lang="stylus">
+@import '../../../../stylus/config/'
 
 .mini-recipe
   display flex
@@ -30,8 +31,23 @@ export default {
   padding 1rem 0
   border-top 1px solid #eee
 
-  @media(min-width breakpoint-small)
-    figure
+  .contents
+    margin-right 1rem
+
+  h4
+    margin 0 0 1em
+    sans-heavy()
+    small-caps(11)
+  p
+    margin 0 0 1em
+    serif()
+
+  figure
+    margin-top 1.5rem
+    width 5rem
+    flex-shrink 0
+
+    @media(min-width breakpoint-small)
       width 8rem
 
 </style>
