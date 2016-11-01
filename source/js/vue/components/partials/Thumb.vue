@@ -28,9 +28,9 @@ export default {
   methods: {
     loadImages () {
       this.loading = true
-      let that = this
-      imagesLoaded(this.$el, that, function(instance) {
-        that.loading = false
+      let self = this
+      imagesLoaded(this.$el, self, function(instance) {
+        self.loading = false
       })
     }
   }
