@@ -5,7 +5,7 @@
         router-link(to="/", title="Home") Home
       li(v-if="parents", v-for="parent in parents")
         router-link(
-          :to="{ name: parent.type, params: { slug: parent.slug } }",
+          :to="{ name: parent.routeName, params: { slug: parent.slug } }",
           :title="parent.title"
         ) {{ parent.title }}
       li
@@ -19,16 +19,8 @@ export default {
 
   props: ['parents', 'current'],
 
-  created () {
-    //window.addEventListener('resize', this.scrollBreadcrumbs)
-  },
-
   mounted () {
     this.scrollBreadcrumbs()
-  },
-
-  beforeDestroy: function () {
-    //window.removeEventListener('resize', this.scrollBreadcrumbs)
   },
 
   methods: {

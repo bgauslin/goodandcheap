@@ -1,7 +1,11 @@
 <template lang="pug">
   div.page
     preloader(v-if="!loaded")
-    breadcrumbs(v-if="loaded", :current="data.title")
+    breadcrumbs(
+      v-if="loaded",
+      :parents="data.parents",
+      :current="data.title"
+    )
     div.copy(v-if="loaded")
       h1 {{ data.title }}
       section.page-section(v-for="block in data.content")
