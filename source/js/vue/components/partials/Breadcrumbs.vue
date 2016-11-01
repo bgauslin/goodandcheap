@@ -56,16 +56,16 @@ export default {
   color light-grey
 
   @media(min-width breakpoint-small)
-    margin .5rem margins-small
+    margin 0 margins-small
 
   @media(min-width breakpoint-medium)
-    margin .5rem margins-medium
+    margin 0 margins-medium
 
   @media(min-width breakpoint-large)
-    margin .5rem margins-large
+    margin 0 margins-large
 
   @media(min-width breakpoint-xlarge)
-    margin .5rem auto
+    margin 0 auto
     width width-xlarge
 
   ul
@@ -96,7 +96,7 @@ export default {
   a
   span
     display inline-block
-    padding .75rem 0
+    padding 1rem 0
   a
     link(brand-color, brand-color, dark-grey)
 
