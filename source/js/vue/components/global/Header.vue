@@ -1,19 +1,18 @@
 <template lang="pug">
   header.header
     div
-      search-toggle
+      back-button
       h1
         router-link(to="/", title="Home", exact) {{ heading }}
       favorites-counter
 </template>
 
 <script>
-import SearchToggle from '../search/SearchToggle.vue'
+import BackButton from '../partials/BackButton.vue'
 import FavoritesCounter from '../favorites/FavoritesCounter.vue'
-//import SearchBar from '../search/SearchBar.vue'
 
 export default {
-  components: { SearchToggle, FavoritesCounter },
+  components: { BackButton, FavoritesCounter },
 
   data () {
     return {
