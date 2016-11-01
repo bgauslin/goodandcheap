@@ -1,14 +1,8 @@
 <template lang="pug">
   div.cover
-    figure(v-if="!loaded")
+    figure(:style="'background-image:url(' + image.placeholder + ')'")
       img(
-        :src="image.placeholder",
-        :width="image.width",
-        :height="image.height",
-        :alt="title"
-      )
-    figure(v-if="loaded")
-      img(
+        v-if="loaded",
         :src="image.src",
         :width="image.width",
         :height="image.height",
@@ -40,7 +34,7 @@ export default {
     loadImages () {
       this.loaded = false
       let self = this
-      imagesLoaded(this.$el.querySelector('img'), self, function(instance) {
+      imagesLoaded(this.$el.querySelectorAll('img'), self, function(instance) {
         self.loaded = true
       })
     }
@@ -52,7 +46,17 @@ export default {
 @import '../../../../stylus/config/'
 
 .cover
+  position relative
   cover()
+
+  figure
+    background-position center center
+    background-repeat no-repeat
+    background-size cover
+
+    img
+      animation fadeIn 1s ease
+
 
   h1
     serif-heavy()
