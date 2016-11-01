@@ -8,7 +8,7 @@
           h3 {{ item.title }}
           p.tagline(v-if="item.tagline") {{ item.tagline }}
           badge(v-if="item.new")
-          p.kind(v-if="item.type == 'ideas' || item.type == 'method'", :class="item.type|lower") {{ recipe.kind }}
+          p.kind(v-if="item.kind !== 'Recipe'", :class="item.kind|lower") {{ item.kind }}
           p.index {{ itemCount }}
       toggle-favorite(v-if="favoriteButton === 'toggle'", :favorite="item")
       remove-favorite(v-if="favoriteButton === 'remove'", :favorite="item")
@@ -45,19 +45,21 @@ export default {
     padding-right 3rem
 
   .chapter-title
-    sans()
+  .tagline
+  .kind
     small-caps(11)
+
+  .chapter-title
+    sans()
     color light-grey
 
   .tagline
-    display inline-block
-    margin-right .4em
-    sans-heavy()
-    small-caps(11)
-
-  // TODO: coordinate .kind with api and markup
   .kind
     display inline-block
+    sans-heavy()
+  .tagline
+    margin-right .4em
+  .kind
     margin-top .2rem
 
   .index
@@ -75,7 +77,6 @@ export default {
   .remove-favorite
     top .5rem
     right 0
-
 
 .remove-leave-active
   //animation slideOutLeft 10s ease
