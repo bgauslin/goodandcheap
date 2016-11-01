@@ -213,6 +213,9 @@ export default {
     top .75rem
     right 0
 
+    @media(min-width breakpoint-large)
+      right .5rem
+
   h3
     margin 0 0 1em
     sans-heavy()
