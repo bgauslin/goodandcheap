@@ -163,7 +163,7 @@ export default {
       padding-bottom 50%
       overflow hidden
 
-      .photos
+      .recipe-cover
         position-it(absolute, 0, 0, null, null)
         width 50%
         overflow hidden
