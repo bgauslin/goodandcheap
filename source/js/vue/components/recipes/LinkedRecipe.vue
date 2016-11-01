@@ -16,9 +16,12 @@ export default {
 
 
 <style lang="stylus">
+@import '../../../../stylus/config/'
 
 .linked-recipe
   margin 0 0 1rem
-  //padding 0 1rem 1rem
+
+  p
+    sans()
 
 </style>
