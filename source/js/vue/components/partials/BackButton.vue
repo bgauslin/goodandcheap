@@ -26,9 +26,8 @@ export default {
       window.history.back()
     },
     onHome () {
-      var where = this.$route.path
-      console.log('where = ' + where)
-      this.isHome = (where === '/') ? true : false
+      var path = this.$route.path
+      this.isHome = (path === '/') ? true : false
     }
   }
 }
