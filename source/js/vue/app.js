@@ -34,26 +34,34 @@ const store = new Vuex.Store({
       return state.favorites.map(favorite => favorite.id)
     }
   }
-
 })
 
 import routeConfig from './routes'
+
+const scrollBehavior = (to, from, savedPosition) => {
+  return { x: 0, y: 0 }
+}
+
+/*
+const scrollBehavior = (to, from, savedPosition) => {
+  if (savedPosition) {
+    return savedPosition
+  } else {
+    const position = {}
+    if (to.matched.some(m => m.meta.scrollToTop)) {
+      position.x = 0
+      position.y = 0
+    }
+    return position
+  }
+}
+*/
+
 const router = new VueRouter({
   routes: routeConfig(),
   mode: 'history',
   linkActiveClass: 'current',
-
-  // NOTE force trailing slashes
-  // https://github.com/vuejs/vue-router/issues/455
-  beforeEach: ((to, from, next) => {
-  //router.beforeEach(transition => {
-    if (transition.to.path == '') {
-      transition.replace('/');
-    } else {
-      transition.next();
-    }
-  })
-
+  //scrollBehavior
 })
 
 import getApiDomain from '../helpers/getApiDomain'
