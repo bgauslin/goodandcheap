@@ -8,8 +8,9 @@
     )
     div.recipe(v-if="loaded")
       div
-        photos(
-          :photos="data.photos",
+        cover(
+          :image="data.photo",
+          :title="data.title",
           :budget="data.budget"
         )
         div.overview
@@ -52,7 +53,7 @@
 import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Badge from './Badge.vue'
-import Photos from './Photos.vue'
+import Cover from './Cover.vue'
 import Blurb from './Blurb.vue'
 import ToggleFavorite from '../favorites/ToggleFavorite.vue'
 import Variation from './Variation.vue'
@@ -69,7 +70,7 @@ export default {
     Preloader,
     Breadcrumbs,
     Badge,
-    Photos,
+    Cover,
     Blurb,
     ToggleFavorite,
     Variation,
