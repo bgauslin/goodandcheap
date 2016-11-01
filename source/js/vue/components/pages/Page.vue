@@ -57,6 +57,10 @@ export default {
   @media(min-width breakpoint-large)
     margin-bottom 3rem
 
+    .breadcrumbs
+      margin .5rem auto
+      max-width 48rem
+
   .copy
     padding 1rem margins-base
     background white
@@ -71,18 +75,22 @@ export default {
       padding 2rem margins-medium
 
     @media(min-width breakpoint-large)
-      margin 0 8rem
       padding 3rem 4rem
+      width 48rem
+
 
   h1
     margin .5em 0 1em
     serif-heavy()
-
-  h2,h3,h4
+  h2
+  h3
+  h4
     sans-heavy()
     text-transform uppercase
   h2
     small-caps(11)
+  p
+    serif()
   li
     sans()
 
