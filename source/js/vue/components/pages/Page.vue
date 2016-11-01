@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.page
+  div.page(:style="'background-image:url(' + data.photo.src + ')'")
     preloader(v-if="!loaded")
     breadcrumbs(
       v-if="loaded",
@@ -53,9 +53,12 @@ export default {
 @import '../../../../stylus/config/'
 
 .page
+  background-position center center
+  background-repeat no-repeat
+  background-size cover
 
   @media(min-width breakpoint-large)
-    margin-bottom 3rem
+    padding-bottom 3rem
 
     .breadcrumbs
       margin .5rem auto

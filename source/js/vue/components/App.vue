@@ -26,9 +26,9 @@ export default {
 
 .content
   flex 1
-  padding-top header-height-base
+  margin-top header-height-base
 
   @media(min-width breakpoint-medium)
-    padding-top header-height-medium
+    margin-top header-height-medium
 
 </style>
