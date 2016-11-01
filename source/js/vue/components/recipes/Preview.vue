@@ -8,7 +8,7 @@
           h3 {{ item.title }}
           p.tagline(v-if="item.tagline") {{ item.tagline }}
           badge(v-if="item.new")
-          p.kind(v-if="item.kind !== 'Recipe'", :class="item.kind|lower") {{ item.kind }}
+          p.kind(v-if="item.kind !== 'Recipe'") {{ item.kind }}
           p.index {{ itemCount }}
       toggle-favorite(v-if="favoriteButton === 'toggle'", :favorite="item")
       remove-favorite(v-if="favoriteButton === 'remove'", :favorite="item")
