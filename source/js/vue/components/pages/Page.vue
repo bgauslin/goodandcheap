@@ -80,7 +80,7 @@ export default {
 
     .breadcrumbs
       margin 0 auto
-      max-width 48rem
+      max-width page-max-width
 
   .copy
     padding 1rem margins-base
@@ -97,7 +97,7 @@ export default {
 
     @media(min-width breakpoint-large)
       padding 3rem 4rem
-      width 48rem
+      width page-max-width
 
   h1
     margin .5em 0 1em
