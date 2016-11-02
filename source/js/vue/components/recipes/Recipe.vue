@@ -7,7 +7,7 @@
       :current="data.title"
     )
     div.recipe(v-if="loaded")
-      div
+      div.recipe-content
         cover(
           :image="data.photo",
           :title="data.title",
@@ -137,27 +137,27 @@ export default {
 @import '../../../../stylus/config/'
 
 .recipe
-  & > div
+  .recipe-content
     margin 0 auto
     background white
 
   @media(min-width breakpoint-small)
     margin 0 margins-small
 
-    & > div
+    .recipe-content
       max-width stacked-width
 
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
-    & > div
+    .recipe-content
       width stacked-width
       max-width none
 
   @media(min-width breakpoint-large)
     margin 0 margins-large
 
-    & > div
+    .recipe-content
       position relative
       width 100%
       padding-bottom 50%
@@ -180,13 +180,11 @@ export default {
     margin 0 auto
     width width-xlarge
 
-
   .overview
     position relative
     padding 1rem 1rem 2rem
     @media(min-width breakpoint-large)
       padding 1.5rem 1.5rem 3rem
-
 
   .tagline
     sans-heavy()
