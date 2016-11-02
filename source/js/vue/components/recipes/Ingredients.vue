@@ -2,7 +2,7 @@
   div.ingredients-list
     div.ingredients(v-for="block in ingredients")
       h2(v-if="block.heading") {{ block.heading }}
-        span.item-count {{ block.items.length }} {{ itemsLabel(block.items) }}
+        span.item-count {{ itemsLabel(block.items) }}
       checklist(:items="block.items")
 </template>
 
@@ -15,10 +15,11 @@ export default {
 
   methods: {
     itemsLabel (count) {
-      if (count.length > 1) {
-        return 'Items'
+      var number = count.length
+      if (number > 1) {
+        return number + ' Items'
       } else {
-        return 'Item'
+        return number + ' Item'
       }
     }
   }
