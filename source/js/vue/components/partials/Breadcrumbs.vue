@@ -99,6 +99,9 @@ export default {
     padding 1rem 0
   a
     link(brand-color, brand-color, dark-grey)
+  span
+    padding-right margins-base
+
 
 .no-touch
   .breadcrumbs
