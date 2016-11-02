@@ -1,23 +1,24 @@
 <template lang="pug">
-  div.page(:style="'background-image:url(' + data.photo.src + ')'")
+  div.page(:style="'background-image:' + backgroundImageCss", :class="{ 'has-background' : hasBackgroundImage }")
     preloader(v-if="!loaded")
-    breadcrumbs(
-      v-if="loaded",
-      :parents="data.parents",
-      :current="data.title"
-    )
-    div.copy(v-if="loaded")
-      h1 {{ data.title }}
-      section.page-section(v-for="block in data.content")
-        h2(v-if="block.heading") {{ block.heading }}
-        div(v-if="block.copy", v-html="block.copy")
-        ul(v-if="block.list")
-          li(v-for="item in block.list") {{ item }}
+    div(v-if="loaded")
+      breadcrumbs(
+        :parents="data.parents",
+        :current="data.title"
+      )
+      div.copy
+        h1 {{ data.title }}
+        section.page-section(v-for="block in data.content")
+          h2(v-if="block.heading") {{ block.heading }}
+          div(v-if="block.copy", v-html="block.copy")
+          ul(v-if="block.list")
+            li(v-for="item in block.list") {{ item }}
 </template>
 
 <script>
 import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
+import getBreakpointValue from '../../../helpers/getBreakpointValue'
 
 export default {
   components: { Preloader, Breadcrumbs },
@@ -26,12 +27,24 @@ export default {
     return {
       loaded: false,
       data: null,
-      dataUrl: this.$root.apiBaseUrl + 'page/' + this.$route.params.slug
+      dataUrl: this.$root.apiBaseUrl + 'page/' + this.$route.params.slug,
+      hasBackgroundImage: null,
+      backgroundImageCss: null,
+      backgroundImageOverlayCss: 'linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25))'
     }
   },
 
   created () {
     this.fetchData(this.dataUrl)
+    window.addEventListener('resize', this.setBackgroundImage)
+  },
+
+  updated () {
+    this.setBackgroundImage()
+  },
+
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this.setBackgroundImage)
   },
 
   methods: {
@@ -44,6 +57,15 @@ export default {
     },
     updateTitle(title) {
       this.$root.$emit('update-title', title)
+    },
+    setBackgroundImage() {
+      if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
+        this.backgroundImageCss = this.backgroundImageOverlayCss + ',url(' + this.data.backgroundImage + ')'
+        this.hasBackgroundImage = true
+      } else {
+        this.backgroundImageCss = 'none'
+        this.hasBackgroundImage = false
+      }
     }
   }
 }
@@ -53,15 +75,11 @@ export default {
 @import '../../../../stylus/config/'
 
 .page
-  background-position center center
-  background-repeat no-repeat
-  background-size cover
-
   @media(min-width breakpoint-large)
-    padding-bottom 3rem
+    padding-bottom 4rem
 
     .breadcrumbs
-      margin .5rem auto
+      margin 0 auto
       max-width 48rem
 
   .copy
@@ -81,7 +99,6 @@ export default {
       padding 3rem 4rem
       width 48rem
 
-
   h1
     margin .5em 0 1em
     serif-heavy()
@@ -97,6 +114,20 @@ export default {
   li
     sans()
 
+&.has-background
+  background-position center center
+  background-repeat no-repeat
+  background-size cover
+  background-attachment scroll
+
+  .breadcrumbs
+    color rgba(white, .7)
+    a
+      link(white, white, rgba(white, .7))
+    span
+      color rgba(white, .7)
+
+
 .page-section
   margin 1em 0 2em
 
@@ -111,31 +142,13 @@ export default {
     list-style none
     margin-right 1em
 
+.no-touch
+  .page
+    &.has-background
+      background-attachment fixed
 
-// TODO: these styles to be determines...
-body
-  &.background
-    background-repeat no-repeat
-    background-position center center
-    background-attachment fixed
-    background-size cover
-
-    .breadcrumbs
-    .site-footer
-      color white
-      a
-        text-decoration underline
-
-        &:link
-        &:visited
-          color white
-
-        &:hover
-        &:visited:hover
-          color brand-color
-
-
-
-
+      .breadcrumbs
+        a
+          link-hover(rgba(white, .7))
 
 </style>
