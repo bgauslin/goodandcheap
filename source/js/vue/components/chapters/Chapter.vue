@@ -63,13 +63,25 @@ export default {
 @import '../../../../stylus/config/'
 
 .chapter
-  background white
+  & > div
+    margin 0 auto
+    background white
 
   .intro
     overflow hidden
 
+  @media(min-width breakpoint-small)
+    margin 0 margins-small
+
+    & > div
+      max-width stacked-width
+
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
+
+    & > div
+      width stacked-width
+      max-width none
 
   @media(min-width breakpoint-large)
     margin 0 margins-large

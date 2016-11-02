@@ -145,13 +145,13 @@ export default {
     margin 0 margins-small
 
     & > div
-      max-width 35rem
+      max-width stacked-width
 
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
     & > div
-      width 35rem
+      width stacked-width
       max-width none
 
   @media(min-width breakpoint-large)
