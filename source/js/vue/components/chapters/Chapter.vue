@@ -2,7 +2,7 @@
   div.chapter
     preloader(v-if="!loaded")
     breadcrumbs(v-if="loaded", :current="data.title")
-    div(v-if="loaded")
+    div.chapter-content(v-if="loaded")
       div.intro
         cover(
           :title="data.title",
@@ -62,12 +62,15 @@ export default {
 @import '../../../../stylus/config/'
 
 .chapter
-  & > div
+  .chapter-content
     margin 0 auto
     background white
 
   .intro
     overflow hidden
+
+  .previews
+    animation slide-in-up .5s ease
 
   @media(min-width breakpoint-small)
     margin 0 margins-small
@@ -76,14 +79,14 @@ export default {
       margin 0 auto
       max-width stacked-width
 
-    & > div
+    .chapter-content
       max-width stacked-width
 
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
     .breadcrumbs
-    & > div
+    .chapter-content
       width stacked-width
       max-width none
 
@@ -93,7 +96,7 @@ export default {
     .breadcrumbs
       width auto
 
-    & > div
+    .chapter-content
       position relative
       width 100%
       padding-bottom 50%
