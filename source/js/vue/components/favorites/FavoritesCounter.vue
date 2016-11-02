@@ -1,9 +1,24 @@
 <template lang="pug">
-  router-link.favorites-counter(to="/favorites", title="Favorites", exact) {{ favoritesCount }}
+  transition(name="bounce", appear)
+    router-link.favorites-counter(:class="{ empty : !hasFavorites }", to="/favorites", title="Favorites", exact) {{ favoritesCount }}
 </template>
 
 <script>
 export default {
+
+  data () {
+    return {
+      hasFavorites: null
+    }
+  },
+
+  mounted () {
+    this.hasFavorites = this.showCounter()
+  },
+
+  updated () {
+    this.hasFavorites = this.showCounter()
+  },
 
   computed: {
     favoritesCount () {
@@ -11,6 +26,13 @@ export default {
       if (count > 0) {
         return count
       }
+    }
+  },
+
+  methods: {
+    showCounter() {
+      var count = this.favoritesCount
+      return (count > 0) ? true : false
     }
   }
 }
@@ -25,13 +47,15 @@ export default {
   justify-content center
   align-items center
   align-self stretch
-  width header-height-base
+  width 3.5rem
   line-height 1
   color white
-
   sans()
   font-size em(11)
   color white
+
+  &.empty
+    visibility hidden
 
   &::after
     margin-left .25em
@@ -42,7 +66,10 @@ export default {
   &.current::after
     content '\e80a' // heart
 
-  &.updated
-    animation bounce 500ms ease
+
+.bounce-enter
+.bounce-enter-active
+  animation bounce .5s ease
+
 
 </style>
