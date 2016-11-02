@@ -1,14 +1,22 @@
 // ----------------------------------------
-// .previews grids
+// .previews grids (multiple)
 
 previews-grid()
   display flex
   flex-direction row
   flex-wrap wrap
 
+  @media(min-width breakpoint-medium)
+    .preview
+      a
+        border 1px solid border-color
+
+
+// ----------------------------------------
+// .preview grids (single)
+
 preview-grid()
   margin -1px 0 0 -1px
-  border 1px solid border-color
   width calc(50% + 1px)
 
 preview-grid-large()
