@@ -26,6 +26,8 @@ export default {
 @import '../../../../stylus/config/'
 
 .item
+  margin 0 0 1em
+
   a
     display block
     padding-left 2em

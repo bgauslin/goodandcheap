@@ -21,6 +21,9 @@ export default {
 .checklist
   margin 0 0 2em
   padding 0
+
+  list-style none
+  sans()
   font-size em(15)
 
 </style>

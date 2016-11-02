@@ -221,12 +221,6 @@ export default {
     sans-heavy()
     small-caps(11)
 
-  // TODO: coordinate list styles with tabs and ingredients
-  li
-    margin 0 0 1em
-    list-style none
-    sans()
-
   .copy-block
     padding .5rem 0
 
@@ -234,6 +228,5 @@ export default {
       margin-bottom .25em
     p
       sans()
-
 
 </style>
