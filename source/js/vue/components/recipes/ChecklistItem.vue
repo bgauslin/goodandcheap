@@ -1,6 +1,6 @@
 <template lang="pug">
   li.item
-    a(href="#", @click.prevent="toggleItem(index)", :class="{ 'saved' : checked }") {{ item }}
+    a(href="#", @click.prevent="toggleItem(index)", :class="{ saved : checked }") {{ item }}
 </template>
 
 <script>
