@@ -55,7 +55,7 @@ export default {
     background-size cover
 
     img
-      animation fadeIn 1s ease
+      animation fade-in 1s ease
 
 
   h1
@@ -67,7 +67,7 @@ export default {
 
   .blurb
     padding 1rem
-    animation fadeIn .5s ease-out
+    animation fade-in .5s ease-out
 
     & > div
       serif()
