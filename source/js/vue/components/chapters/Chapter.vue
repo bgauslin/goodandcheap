@@ -1,24 +1,23 @@
 <template lang="pug">
-  div
+  div.chapter
     preloader(v-if="!loaded")
     breadcrumbs(v-if="loaded", :current="data.title")
-    div.chapter(v-if="loaded")
-      div
-        div.intro
-          cover(
-            :title="data.title",
-            :blurb="data.blurb",
-            :image="data.photo",
-            :count="data.recipeCount + ' Recipes'"
-          )
-        ol.previews
-          recipe-preview(
-            v-for="(recipe, index) in data.recipes",
-            :item="recipe",
-            :index="index",
-            :showChapter="false",
-            favoriteButton="toggle"
-          )
+    div(v-if="loaded")
+      div.intro
+        cover(
+          :title="data.title",
+          :blurb="data.blurb",
+          :image="data.photo",
+          :count="data.recipeCount + ' Recipes'"
+        )
+      ol.previews
+        recipe-preview(
+          v-for="(recipe, index) in data.recipes",
+          :item="recipe",
+          :index="index",
+          :showChapter="false",
+          favoriteButton="toggle"
+        )
 </template>
 
 <script>
@@ -73,18 +72,26 @@ export default {
   @media(min-width breakpoint-small)
     margin 0 margins-small
 
+    .breadcrumbs
+      margin 0 auto
+      max-width stacked-width
+
     & > div
       max-width stacked-width
 
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
+    .breadcrumbs
     & > div
       width stacked-width
       max-width none
 
   @media(min-width breakpoint-large)
     margin 0 margins-large
+
+    .breadcrumbs
+      width auto
 
     & > div
       position relative
