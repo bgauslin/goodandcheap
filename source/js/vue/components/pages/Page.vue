@@ -21,6 +21,8 @@ import getBreakpointValue from '../../../helpers/getBreakpointValue'
 export default {
   components: { Breadcrumbs },
 
+  props: ['data'],
+
   data () {
     return {
       hasBackgroundImage: null,

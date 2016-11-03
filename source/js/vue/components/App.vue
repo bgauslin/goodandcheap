@@ -18,36 +18,44 @@ export default {
   data () {
     return {
       data: null,
-      dataLoaded: null
+      dataLoaded: null,
+      apiUrl: this.$route.meta.apiUrl
     }
   },
 
   created () {
-    this.fetchData()
+    //console.log('apiUrl = ' + this.apiUrl)
+    if (this.apiUrl !== undefined) {
+      this.fetchData(this.apiUrl)
+    }
   },
 
   watch: {
-    '$route' (to, from, next) {
-      this.fetchData()
+    '$route' (to, from) {
+      this.apiUrl = this.$route.meta.apiUrl
+      //console.log('apiUrl = ' + this.apiUrl)
+      if (this.apiUrl !== undefined) {
+        this.data = null
+        this.dataLoaded = false
+        this.fetchData(this.apiUrl)
+      }
     }
   },
 
   methods: {
-    fetchData () {
-      var apiUrl = this.$route.meta.apiUrl
+    fetchData (apiUrl) {
 
-      if (apiUrl) {
-        var dataUrl = this.$root.apiBaseUrl + apiUrl
-        if (this.$route.params.slug !== undefined) {
-           dataUrl += '/' + this.$route.params.slug
-         }
-        this.$http.get(dataUrl).then((response) => {
-          this.dataLoaded = false
-          this.data = response.data
-          this.updateTitle(response.data.title)
-          this.dataLoaded = true
-        })
-      }
+
+
+      var dataUrl = this.$root.apiBaseUrl + apiUrl
+      if (this.$route.params.slug !== undefined) {
+         dataUrl += '/' + this.$route.params.slug
+       }
+      this.$http.get(dataUrl).then((response) => {
+        this.data = response.data
+        this.updateTitle(response.data.title)
+        this.dataLoaded = true
+      })
     },
 
     updateTitle (title) {

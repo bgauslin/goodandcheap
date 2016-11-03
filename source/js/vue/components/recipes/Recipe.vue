@@ -22,11 +22,11 @@
 
           ul.tabs(v-if="data.ingredients || data.instructions")
             li
-              router-link(:to="routeUrl + '/'", exact) Intro
+              router-link(:to="{ path: '/recipe/' + this.$route.params.slug + '/' }", exact) Intro
             li(v-if="data.ingredients")
-              router-link(:to="routeUrl + '/ingredients'") Ingredients
+              router-link(:to="{ path: 'ingredients' }") Ingredients
             li(v-if="data.instructions")
-              router-link(:to="routeUrl + '/steps'") Steps
+              router-link(:to="{ path: 'steps' }") Steps
           router-view(
             :blurb="data.blurb",
             :ingredients="data.ingredients",
