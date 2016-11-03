@@ -18,7 +18,7 @@
           badge(v-if="data.badge")
         toggle-favorite(:favorite="data")
         ul.tabs(v-if="data.ingredients || data.instructions")
-          li
+          li(v-if="data.blurb")
             router-link(:to="{ name: 'recipe', params: { slug: data.slug } }", exact) Intro
           li(v-if="data.ingredients")
             router-link(:to="{ name: 'ingredients', params: { slug: data.slug } }") Ingredients
