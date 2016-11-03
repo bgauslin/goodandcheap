@@ -2,7 +2,7 @@
   div.instructions
     div(v-for="block in instructions")
       h2(v-if="block.heading") {{ block.heading }}
-        span.item-count {{ itemsLabel(block.steps) }}
+        span.steps-count {{ itemsLabel(block.steps) }}
       h2(v-else) {{ itemsLabel(block.steps) }}
       ul(v-if="block.steps.length === 1")
         li(v-for="step in block.steps") {{ step }}
@@ -37,6 +37,11 @@ export default {
     padding 0
     sans-heavy()
     small-caps(12)
+
+  .steps-count
+    sans()
+    margin-left 1em
+    color light-grey
 
   ul
   ol
