@@ -10,7 +10,7 @@ Vue.use(VueResource)
 const store = new Vuex.Store({
   state: {
     favorites: JSON.parse(localStorage.getItem('favorites')) || [],
-    ingredients: JSON.parse(localStorage.getItem('ingredients')) || []
+    siteData: []
   },
 
   mutations: {
@@ -18,34 +18,25 @@ const store = new Vuex.Store({
       state.favorites.push(item)
       localStorage.setItem('favorites', JSON.stringify(state.favorites))
     },
-
     removeFavorite (state, item) {
       var i = state.favorites.indexOf(item)
       state.favorites.splice(i, 1)
       localStorage.setItem('favorites', JSON.stringify(state.favorites))
     },
-
-    addIngredient (state, item) {
-      state.ingredients.push(item)
-      localStorage.setItem('ingredients', JSON.stringify(state.ingredients))
+    storeSiteData (state, item) {
+      state.siteData.push(item)
     },
-
-    removeIngredient (state, item) {
-      var i = state.ingredients.indexOf(item)
-      state.ingredients.splice(i, 1)
-      localStorage.setItem('favorites', JSON.stringify(state.ingredients))
-    }
   },
 
   getters: {
     favoritesCount: state => {
       return state.favorites.length
     },
-
     favoritesIds: state => {
       return state.favorites.map(favorite => favorite.id)
     }
   }
+
 })
 
 import routeConfig from './routes'
@@ -86,24 +77,8 @@ const app = new Vue({
   router,
 
   data: {
-    apiBaseUrl: apiDomain + '/v1/',
-    siteName: document.title
-  },
-
-  created () {
-    this.$root.$on('update-title', function(title) {
-      this.updateTitle(title)
-    })
-  },
-
-  methods: {
-    updateTitle (title) {
-      if (title !== null) {
-        document.title = title + ' · ' + this.siteName
-      } else {
-        document.title = this.siteName
-      }
-    }
+    siteName: document.title,
+    apiBaseUrl: apiDomain + '/v1/'
   }
 
 }).$mount('#app')
