@@ -1,8 +1,8 @@
 <template lang="pug">
-  div.recipe-cover(v-if="image")
+  div.recipe-cover
     figure(:style="'background-image:url(' + image.placeholder + ')'")
       img(
-        v-if="!loaded",
+        v-if="loaded",
         :src="image.src",
         :width="image.width",
         :height="image.height",
@@ -25,7 +25,7 @@ export default {
     }
   },
 
-  updated () {
+  mounted () {
     this.loadImages()
   },
 
@@ -45,7 +45,7 @@ export default {
 @import '../../../../stylus/config/'
 
 .recipe-cover
-  position relative // NOTE for .budget position
+  position relative // NOTE this is for .budget position: absolute
   cover()
 
   figure

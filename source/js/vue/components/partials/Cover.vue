@@ -2,7 +2,7 @@
   div.cover
     figure(:style="'background-image:url(' + image.placeholder + ')'")
       img(
-        v-if="!loading",
+        v-if="loaded",
         :src="image.src",
         :width="image.width",
         :height="image.height",
@@ -22,7 +22,7 @@ export default {
 
   data () {
     return {
-      loading: null
+      loaded: null
     }
   },
 
@@ -32,10 +32,10 @@ export default {
 
   methods: {
     loadImages () {
-      this.loading = true
+      this.loaded = false
       let self = this
       imagesLoaded(this.$el, self, function(instance) {
-        self.loading = false
+        self.loaded = true
       })
     }
   }
