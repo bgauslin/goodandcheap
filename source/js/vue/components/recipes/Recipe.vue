@@ -1,49 +1,43 @@
 <template lang="pug">
-  div
+  div.recipe
     breadcrumbs(
       :parents="data.parents",
       :current="data.title"
     )
-    div.recipe
-      div.recipe-content
-        cover(
-          :image="data.photo",
-          :title="data.title",
-          :budget="data.budget"
+    div.recipe-content
+      cover(
+        :image="data.photo",
+        :title="data.title",
+        :budget="data.budget"
+      )
+      div.overview
+        header
+          p.kind(v-if="data.kind !== 'Recipe'") {{ data.kind }}
+          h1 {{ data.title }}
+          h2.tagline {{ data.tagline }}
+          badge(v-if="data.badge")
+        toggle-favorite(:favorite="data")
+        ul.tabs(v-if="data.ingredients || data.instructions")
+          li
+            router-link(:to="{ name: 'recipe', params: { slug: data.slug } }", exact) Intro
+          li(v-if="data.ingredients")
+            router-link(:to="{ name: 'ingredients', params: { slug: data.slug } }") Ingredients
+          li(v-if="data.instructions")
+            router-link(:to="{ name: 'steps', params: { slug: data.slug } }") Steps
+        router-view(
+          :blurb="data.blurb",
+          :ingredients="data.ingredients",
+          :instructions="data.instructions"
         )
-        div.overview
-          header
-            p.kind(v-if="data.kind !== 'Recipe'") {{ data.kind }}
-            h1 {{ data.title }}
-            h2.tagline {{ data.tagline }}
-            badge(v-if="data.badge")
-
-          toggle-favorite(:favorite="data")
-
-          ul.tabs(v-if="data.ingredients || data.instructions")
-            li
-              router-link(:to="{ name: 'recipe', params: { slug: data.slug } }", exact) Intro
-            li(v-if="data.ingredients")
-              router-link(:to="{ name: 'ingredients', params: { slug: data.slug } }") Ingredients
-            li(v-if="data.instructions")
-              router-link(:to="{ name: 'steps', params: { slug: data.slug } }") Steps
-          router-view(
-            :blurb="data.blurb",
-            :ingredients="data.ingredients",
-            :instructions="data.instructions"
-          )
-
-          template(v-if="data.copyBlocks", v-for="block in data.copyBlocks")
-            blurb-with-heading(v-if="block.type === 'blurbWithHeading'", :heading="block.heading", :blurb="block.blurb")
-            blurb(v-if="block.type === 'blurb'", :blurb="block.blurb")
-            list(v-if="block.type === 'list'", :list="block.list")
-
-          template(v-if="data.recipeBlocks", v-for="block in data.recipeBlocks")
-            variation(v-if="block.type === 'variation'", :variation="block")
-            linked-recipe(v-if="block.type === 'linkedRecipe'", :linkedRecipe="block")
-            mini-recipe(v-if="block.type === 'miniRecipe'", :miniRecipe="block")
-
-        alpha-overlay
+        template(v-if="data.copyBlocks", v-for="block in data.copyBlocks")
+          blurb-with-heading(v-if="block.type === 'blurbWithHeading'", :heading="block.heading", :blurb="block.blurb")
+          blurb(v-if="block.type === 'blurb'", :blurb="block.blurb")
+          list(v-if="block.type === 'list'", :list="block.list")
+        template(v-if="data.recipeBlocks", v-for="block in data.recipeBlocks")
+          variation(v-if="block.type === 'variation'", :variation="block")
+          linked-recipe(v-if="block.type === 'linkedRecipe'", :linkedRecipe="block")
+          mini-recipe(v-if="block.type === 'miniRecipe'", :miniRecipe="block")
+      alpha-overlay
 </template>
 
 
@@ -119,18 +113,26 @@ export default {
   @media(min-width breakpoint-small)
     margin 0 margins-small
 
+    .breadcrumbs
+      margin 0 auto
+      max-width stacked-width
+
     .recipe-content
       max-width stacked-width
 
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
+    .breadcrumbs
     .recipe-content
       width stacked-width
       max-width none
 
   @media(min-width breakpoint-large)
     margin 0 margins-large
+
+    .breadcrumbs
+      width auto
 
     .recipe-content
       position relative
