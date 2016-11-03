@@ -19,12 +19,16 @@ export default {
     return {
       data: null,
       dataLoaded: null,
-      apiUrl: this.$route.meta.apiUrl
+      apiUrl: null,
+      currentPath: ''
     }
   },
 
   created () {
-    //console.log('apiUrl = ' + this.apiUrl)
+    this.apiUrl = this.$route.meta.apiUrl
+    //console.log('created apiUrl = ' + this.apiUrl)
+    this.$store.commit('savePath', this.$route.path)
+
     if (this.apiUrl !== undefined) {
       this.fetchData(this.apiUrl)
     }
@@ -33,8 +37,12 @@ export default {
   watch: {
     '$route' (to, from) {
       this.apiUrl = this.$route.meta.apiUrl
-      //console.log('apiUrl = ' + this.apiUrl)
-      if (this.apiUrl !== undefined) {
+      //console.log('watch apiUrl = ' + this.apiUrl)
+
+      var currentPath = this.$route.path
+      var lastPath = this.$store.getters.getLastPath
+
+      if (this.apiUrl !== undefined && currentPath !== lastPath) {
         this.data = null
         this.dataLoaded = false
         this.fetchData(this.apiUrl)
@@ -44,16 +52,15 @@ export default {
 
   methods: {
     fetchData (apiUrl) {
-
-
-
       var dataUrl = this.$root.apiBaseUrl + apiUrl
       if (this.$route.params.slug !== undefined) {
          dataUrl += '/' + this.$route.params.slug
-       }
+      }
+      //console.log('dataUrl = ' + dataUrl)
       this.$http.get(dataUrl).then((response) => {
         this.data = response.data
         this.updateTitle(response.data.title)
+        this.$store.commit('savePath', this.$route.path)
         this.dataLoaded = true
       })
     },
