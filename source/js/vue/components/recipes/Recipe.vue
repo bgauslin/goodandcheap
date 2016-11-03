@@ -22,11 +22,11 @@
 
           ul.tabs(v-if="data.ingredients || data.instructions")
             li
-              router-link(:to="{ path: '/recipe/' + this.$route.params.slug + '/' }", exact) Intro
+              router-link(:to="{ name: 'recipe', params: { slug: data.slug } }", exact) Intro
             li(v-if="data.ingredients")
-              router-link(:to="{ path: 'ingredients' }") Ingredients
+              router-link(:to="{ name: 'ingredients', params: { slug: data.slug } }") Ingredients
             li(v-if="data.instructions")
-              router-link(:to="{ path: 'steps' }") Steps
+              router-link(:to="{ name: 'steps', params: { slug: data.slug } }") Steps
           router-view(
             :blurb="data.blurb",
             :ingredients="data.ingredients",
@@ -83,7 +83,7 @@ export default {
     window.addEventListener('resize', this.minHeight)
   },
 
-  updated () {
+  mounted () {
     this.minHeight()
   },
 

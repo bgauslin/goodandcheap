@@ -65,10 +65,12 @@ export default function() {
           }
         },
         {
+          name: 'ingredients',
           path: 'ingredients',
           component: RecipeIngredients
         },
         {
+          name: 'steps',
           path: 'steps',
           component: RecipeInstructions
         }
