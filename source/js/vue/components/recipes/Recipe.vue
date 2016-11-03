@@ -1,12 +1,10 @@
 <template lang="pug">
   div
-    preloader(v-if="!loaded")
     breadcrumbs(
-      v-if="loaded",
       :parents="data.parents",
       :current="data.title"
     )
-    div.recipe(v-if="loaded")
+    div.recipe
       div.recipe-content
         cover(
           :image="data.photo",
@@ -50,7 +48,6 @@
 
 
 <script>
-import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Badge from './Badge.vue'
 import Cover from './Cover.vue'
@@ -67,7 +64,6 @@ import getBreakpointValue from '../../../helpers/getBreakpointValue'
 
 export default {
   components: {
-    Preloader,
     Breadcrumbs,
     Badge,
     Cover,
@@ -81,17 +77,9 @@ export default {
     AlphaOverlay
   },
 
-  data () {
-    return {
-      loaded: false,
-      data: null,
-      dataUrl: this.$root.apiBaseUrl + 'recipe/' + this.$route.params.slug,
-      routeUrl: '/recipe/' + this.$route.params.slug
-    }
-  },
+  props: ['data'],
 
   created () {
-    this.fetchData(this.dataUrl)
     window.addEventListener('resize', this.minHeight)
   },
 
@@ -104,18 +92,6 @@ export default {
   },
 
   methods: {
-    fetchData (url) {
-      this.$http.get(url).then((response) => {
-        this.data = response.data
-        this.updateTitle(this.data.title)
-        this.loaded = true
-      })
-    },
-
-    updateTitle (title) {
-      this.$root.$emit('update-title', title)
-    },
-
     minHeight () {
       var overview = this.$el.querySelector('.overview')
       var overviewWidthPx = overview.offsetWidth
@@ -127,7 +103,6 @@ export default {
         overview.style.minHeight = 'none'
       }
     }
-
   }
 }
 </script>

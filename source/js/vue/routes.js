@@ -21,9 +21,12 @@ export default function() {
       component: Home,
       children: [
         {
-          path: '/',
+          path: '',
           name: 'chapters',
-          component: Chapters
+          component: Chapters,
+          meta: {
+            apiPath: 'home'
+          },
         },
         {
           path: 'info',
@@ -35,12 +38,18 @@ export default function() {
     {
       path: '/info/:slug',
       name: 'info',
-      component: Page
+      component: Page,
+      meta: {
+        apiPath: 'page'
+      },
     },
     {
       path: '/chapter/:slug',
       name: 'chapter',
-      component: Chapter
+      component: Chapter,
+      meta: {
+        apiPath: 'chapter'
+      },
     },
     {
       path: '/recipe/:slug',
@@ -50,7 +59,10 @@ export default function() {
       children: [
         {
           path: '',
-          component: Blurb
+          component: Blurb,
+          meta: {
+            apiPath: 'recipe'
+          }
         },
         {
           path: 'ingredients',

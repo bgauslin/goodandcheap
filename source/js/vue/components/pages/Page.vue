@@ -1,7 +1,6 @@
 <template lang="pug">
   div.page(:style="'background-image:' + backgroundImageCss", :class="{ 'has-background' : hasBackgroundImage }")
-    preloader(v-if="!loaded")
-    div(v-if="loaded")
+    div
       breadcrumbs(
         :parents="data.parents",
         :current="data.title"
@@ -16,18 +15,14 @@
 </template>
 
 <script>
-import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import getBreakpointValue from '../../../helpers/getBreakpointValue'
 
 export default {
-  components: { Preloader, Breadcrumbs },
+  components: { Breadcrumbs },
 
   data () {
     return {
-      loaded: false,
-      data: null,
-      dataUrl: this.$root.apiBaseUrl + 'page/' + this.$route.params.slug,
       hasBackgroundImage: null,
       backgroundImageCss: null,
       backgroundImageOverlayCss: 'linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25))'
@@ -35,7 +30,6 @@ export default {
   },
 
   created () {
-    this.fetchData(this.dataUrl)
     window.addEventListener('resize', this.setBackgroundImage)
   },
 
@@ -48,16 +42,6 @@ export default {
   },
 
   methods: {
-    fetchData (url) {
-      this.$http.get(url).then((response) => {
-        this.data = response.data
-        this.updateTitle(this.data.title)
-        this.loaded = true
-      })
-    },
-    updateTitle(title) {
-      this.$root.$emit('update-title', title)
-    },
     setBackgroundImage() {
       if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
         this.backgroundImageCss = this.backgroundImageOverlayCss + ',url(' + this.data.backgroundImage + ')'

@@ -1,8 +1,7 @@
 <template lang="pug">
   div.chapter
-    preloader(v-if="!loaded")
-    breadcrumbs(v-if="loaded", :current="data.title")
-    div.chapter-content(v-if="loaded")
+    breadcrumbs(:current="data.title")
+    div.chapter-content
       div.intro
         cover(
           :title="data.title",
@@ -21,40 +20,13 @@
 </template>
 
 <script>
-import Preloader from '../partials/Preloader.vue'
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Cover from '../partials/Cover.vue'
 import RecipePreview from '../recipes/Preview.vue'
 
 export default {
-
-  components: { Preloader, Breadcrumbs, Cover, RecipePreview },
-
-  data () {
-    return {
-      loaded: false,
-      data: null,
-      dataUrl: this.$root.apiBaseUrl + 'chapter/' + this.$route.params.slug
-    }
-  },
-
-  created () {
-    this.fetchData(this.dataUrl)
-  },
-
-  methods: {
-    fetchData (url) {
-      this.$http.get(url).then((response) => {
-        this.data = response.data
-        this.loaded = true
-        this.updateTitle(this.data.title)
-      })
-    },
-
-    updateTitle (title) {
-      this.$root.$emit('update-title', title)
-    }
-  }
+  components: { Breadcrumbs, Cover, RecipePreview },
+  props: ['data']
 }
 </script>
 
