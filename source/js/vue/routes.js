@@ -77,6 +77,14 @@ export default function() {
       ]
     },
     {
+      path: '/recipe/:slug/ingredients',
+      redirect: '/recipe/:slug/'
+    },
+    {
+      path: '/recipe/:slug/steps',
+      redirect: '/recipe/:slug/'
+    },
+    {
       path: '/recipe',
       redirect: '/'
     },
