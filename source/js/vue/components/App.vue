@@ -34,30 +34,27 @@ export default {
 
   methods: {
     fetchData () {
-      var apiPath = this.$route.meta.apiPath
+      var apiUrl = this.$route.meta.apiUrl
 
-      if (apiPath) {
-        var dataUrl = this.$root.apiBaseUrl + apiPath
-        var dataSlug = this.$route.params.slug
-
-        if (dataSlug !== undefined) {
-          dataUrl = dataUrl + '/' + dataSlug
-        }
-
+      if (apiUrl) {
+        var dataUrl = this.$root.apiBaseUrl + apiUrl
+        if (this.$route.params.slug !== undefined) {
+           dataUrl += '/' + this.$route.params.slug
+         }
         this.$http.get(dataUrl).then((response) => {
           this.dataLoaded = false
           this.data = response.data
-          //this.updateTitle(null)
+          this.updateTitle(response.data.title)
           this.dataLoaded = true
         })
       }
     },
 
     updateTitle (title) {
-      if (title !== null) {
-        document.title = title + ' · ' + this.siteName
+      if (title !== undefined) {
+        document.title = title + ' · ' + this.$root.siteName
       } else {
-        document.title = this.siteName
+        document.title = this.$root.siteName
       }
     }
   }

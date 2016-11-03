@@ -25,7 +25,7 @@ export default function() {
           name: 'chapters',
           component: Chapters,
           meta: {
-            apiPath: 'home'
+            apiUrl: 'home'
           },
         },
         {
@@ -40,7 +40,7 @@ export default function() {
       name: 'info',
       component: Page,
       meta: {
-        apiPath: 'page'
+        apiUrl: 'page'
       },
     },
     {
@@ -48,7 +48,7 @@ export default function() {
       name: 'chapter',
       component: Chapter,
       meta: {
-        apiPath: 'chapter'
+        apiUrl: 'chapter'
       },
     },
     {
@@ -61,7 +61,7 @@ export default function() {
           path: '',
           component: Blurb,
           meta: {
-            apiPath: 'recipe'
+            apiUrl: 'recipe'
           }
         },
         {
