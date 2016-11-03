@@ -4,7 +4,9 @@
       h2(v-if="block.heading") {{ block.heading }}
         span.item-count {{ itemsLabel(block.steps) }}
       h2(v-else) {{ itemsLabel(block.steps) }}
-      ol
+      ul(v-if="block.steps.length === 1")
+        li(v-for="step in block.steps") {{ step }}
+      ol(v-else)
         li(v-for="step in block.steps") {{ step }}
 </template>
 
@@ -18,8 +20,6 @@ export default {
       var number = count.length
       if (number > 1) {
         return number + ' Steps'
-      } else {
-        return number + ' Step'
       }
     }
   }
@@ -38,16 +38,22 @@ export default {
     sans-heavy()
     small-caps(12)
 
+  ul
   ol
     margin 0
-    padding 0 0 0 1.1rem
     sans()
     font-size em(15)
-
+  li
+    margin 0 0 1em
+  ol
+    padding 0 0 0 1.1rem
     li
-      margin 0 0 1em
       padding-left .5em
       list-style decimal outside
+  ul
+    padding 0
+    li
+      list-style none
 
 
 </style>
