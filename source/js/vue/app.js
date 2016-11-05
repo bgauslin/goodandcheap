@@ -10,7 +10,6 @@ Vue.use(VueResource)
 const store = new Vuex.Store({
   state: {
     favorites: JSON.parse(localStorage.getItem('favorites')) || [],
-    lastPath: ''
   },
 
   mutations: {
@@ -22,10 +21,7 @@ const store = new Vuex.Store({
       var i = state.favorites.indexOf(item)
       state.favorites.splice(i, 1)
       localStorage.setItem('favorites', JSON.stringify(state.favorites))
-    },
-    savePath (state, path) {
-      state.lastPath = path
-    },
+    }
   },
 
   getters: {
@@ -34,9 +30,6 @@ const store = new Vuex.Store({
     },
     favoritesIds: state => {
       return state.favorites.map(favorite => favorite.id)
-    },
-    getLastPath: state => {
-      return state.lastPath
     }
   }
 
