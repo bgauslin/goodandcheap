@@ -3,7 +3,8 @@
     app-header(:parent="parent", :home="home")
     div.content
       preloader(v-if="!dataLoaded")
-      router-view(v-if="dataLoaded", :data="data")
+      transition(:name="transitionName", mode="out-in")
+        router-view(v-if="dataLoaded", :data="data")
     app-footer
 </template>
 
@@ -20,7 +21,8 @@ export default {
       data: null,
       dataLoaded: null,
       apiUrl: null,
-      home: null
+      home: null,
+      transitionName: ''
     }
   },
 
@@ -42,6 +44,16 @@ export default {
   watch: {
     '$route' (to, from) {
       this.isHome()
+
+      var direction = this.$route.params.direction
+
+      if (direction !== undefined) {
+        this.transitionName = direction
+      } else {
+        const toDepth = to.path.split('/').length
+        const fromDepth = from.path.split('/').length
+        this.transitionName = (toDepth < fromDepth) ? 'back' : 'forward'
+      }
 
       this.apiUrl = this.$route.meta.apiUrl
       if (this.apiUrl !== undefined) {
@@ -98,5 +110,27 @@ export default {
 
   @media(min-width breakpoint-medium)
     margin-top header-height-medium
+
+
+.forward-enter
+.forward-enter-active
+  animation slideInRight .2s ease-out
+
+.forward-leave
+.forward-leave-active
+  animation slideOutLeft .2s ease-out
+
+.back-enter
+.back-enter-active
+  animation slideInLeft .2s ease-out
+
+.back-leave
+.back-leave-active
+  animation slideOutRight .2s ease-out
+
+
+
+
+
 
 </style>

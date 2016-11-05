@@ -2,12 +2,12 @@
   div.up-button(:class="{ hide: home }")
     router-link(
       v-if="parent && parent.slug",
-      :to="{ name: parent.routeName, params: { slug: parent.slug } }",
+      :to="{ name: parent.routeName, params: { slug: parent.slug, direction: 'back' } }",
       :title="parent.title"
     )
     router-link(
       v-if="parent && !parent.slug",
-      :to="{ name: parent.routeName }",
+      :to="{ name: parent.routeName, direction: 'back' }",
       :title="parent.title",
       exact
     )
