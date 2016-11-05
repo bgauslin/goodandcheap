@@ -10,6 +10,7 @@ Vue.use(VueResource)
 const store = new Vuex.Store({
   state: {
     favorites: JSON.parse(localStorage.getItem('favorites')) || [],
+    parent: null
   },
 
   mutations: {
@@ -21,6 +22,9 @@ const store = new Vuex.Store({
       var i = state.favorites.indexOf(item)
       state.favorites.splice(i, 1)
       localStorage.setItem('favorites', JSON.stringify(state.favorites))
+    },
+    setParent (state, parent) {
+      state.parent = parent
     }
   },
 
@@ -30,9 +34,11 @@ const store = new Vuex.Store({
     },
     favoritesIds: state => {
       return state.favorites.map(favorite => favorite.id)
+    },
+    getParent: state => {
+      return state.parent
     }
   }
-
 })
 
 import routeConfig from './routes'

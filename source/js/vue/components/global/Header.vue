@@ -1,7 +1,7 @@
 <template lang="pug">
   header.header
     div
-      up-button
+      up-button(:parent="parent")
       h1
         router-link(to="/", title="Home", exact) {{ heading }}
       favorites-counter
@@ -20,7 +20,14 @@ export default {
     return {
       'heading': 'Good And Cheap'
     }
+  },
+
+  computed: {
+    parent () {
+      return this.$store.getters.getParent
+    }
   }
+
 }
 </script>
 

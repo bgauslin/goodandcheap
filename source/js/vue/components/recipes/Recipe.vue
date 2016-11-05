@@ -1,7 +1,7 @@
 <template lang="pug">
   div.recipe
     breadcrumbs(
-      :parents="data.parents",
+      :parent="data.parent",
       :current="data.title"
     )
     div.recipe-content

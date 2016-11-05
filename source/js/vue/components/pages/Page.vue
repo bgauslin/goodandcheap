@@ -2,7 +2,7 @@
   div.page(:style="'background-image:' + backgroundImageCss", :class="{ 'has-background' : hasBackgroundImage }")
     div
       breadcrumbs(
-        :parents="data.parents",
+        :parent="data.parent",
         :current="data.title"
       )
       div.copy

@@ -3,7 +3,7 @@
     ul
       li
         router-link(to="/", title="Home") Home
-      li(v-if="parents", v-for="parent in parents")
+      li(v-if="parent")
         router-link(
           :to="{ name: parent.routeName, params: { slug: parent.slug } }",
           :title="parent.title"
@@ -17,7 +17,7 @@ import getBreakpointValue from '../../../helpers/getBreakpointValue'
 
 export default {
 
-  props: ['parents', 'current'],
+  props: ['parent', 'current'],
 
   mounted () {
     this.scrollBreadcrumbs()

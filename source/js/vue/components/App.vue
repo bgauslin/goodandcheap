@@ -19,7 +19,7 @@ export default {
     return {
       data: null,
       dataLoaded: null,
-      apiUrl: null,
+      apiUrl: null
     }
   },
 
@@ -49,6 +49,7 @@ export default {
       }
       this.$http.get(dataUrl).then((response) => {
         this.data = response.data
+        this.$store.commit('setParent', response.data.parent)
         this.updateTitle(response.data.title)
         this.dataLoaded = true
       })
