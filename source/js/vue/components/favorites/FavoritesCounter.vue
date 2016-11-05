@@ -1,5 +1,5 @@
 <template lang="pug">
-  transition(name="bounce", appear)
+  transition
     router-link.favorites-counter(:class="{ empty : !hasFavorites }", to="/favorites", title="Favorites", exact) {{ favoritesCount }}
 </template>
 
@@ -8,7 +8,14 @@ export default {
 
   data () {
     return {
-      hasFavorites: null
+      hasFavorites: null,
+      updated: null
+    }
+  },
+
+  watch: {
+    favoritesCount () {
+      this.updateCount()
     }
   },
 
@@ -33,6 +40,10 @@ export default {
     showCounter() {
       var count = this.favoritesCount
       return (count > 0) ? true : false
+    },
+    updateCount () {
+      // TODO apply transition/animation on update
+      console.log('updateCount!')
     }
   }
 }
@@ -53,6 +64,9 @@ export default {
   sans()
   font-size em(11)
   color white
+
+  // TODO apply this animation on update
+  //animation bounce .5s ease
 
   &.empty
     visibility hidden
