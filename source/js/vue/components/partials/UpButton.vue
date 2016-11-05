@@ -1,5 +1,5 @@
 <template lang="pug">
-  a.back-button(@click="goBack", href="#", title="Back", :class="{ hide: isHome }")
+  router-link.up-button(:to="{ parent }", title="Back", :class="{ hide: isHome }")
 </template>
 
 <script>
@@ -7,7 +7,8 @@ export default {
 
   data () {
     return {
-      isHome: false
+      isHome: false,
+      parent: null
     }
   },
 
@@ -15,16 +16,7 @@ export default {
     this.onHome()
   },
 
-  watch: {
-    '$route' (to, from) {
-      this.onHome()
-    }
-  },
-
   methods: {
-    goBack () {
-      window.history.back()
-    },
     onHome () {
       var path = this.$route.path
       this.isHome = (path === '/') ? true : false
@@ -36,7 +28,7 @@ export default {
 <style lang="stylus">
 @import '../../../../stylus/config/'
 
-.back-button
+.up-button
   display flex
   justify-content center
   align-items center

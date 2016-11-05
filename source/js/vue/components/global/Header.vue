@@ -1,18 +1,20 @@
 <template lang="pug">
   header.header
     div
-      back-button
+      up-button
       h1
         router-link(to="/", title="Home", exact) {{ heading }}
       favorites-counter
 </template>
 
 <script>
-import BackButton from '../partials/BackButton.vue'
+import UpButton from '../partials/UpButton.vue'
+import SearchToggle from '../search/SearchToggle.vue'
+import SearchBar from '../search/SearchBar.vue'
 import FavoritesCounter from '../favorites/FavoritesCounter.vue'
 
 export default {
-  components: { BackButton, FavoritesCounter },
+  components: { UpButton, SearchToggle, SearchBar, FavoritesCounter },
 
   data () {
     return {
@@ -57,6 +59,9 @@ export default {
     align-self stretch
     sans-heavy()
     small-caps(14)
+
+    @media(min-width breakpoint-small)
+      margin-left 1rem
 
   a
     display flex
