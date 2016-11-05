@@ -1,7 +1,7 @@
 <template lang="pug">
   header.header
     div
-      up-button(:parent="parent")
+      up-button(:parent="parent", :home="home")
       h1
         router-link(to="/", title="Home", exact) {{ heading }}
       favorites-counter
@@ -16,18 +16,13 @@ import FavoritesCounter from '../favorites/FavoritesCounter.vue'
 export default {
   components: { UpButton, SearchToggle, SearchBar, FavoritesCounter },
 
+  props: ['parent', 'home'],
+
   data () {
     return {
       'heading': 'Good And Cheap'
     }
-  },
-
-  computed: {
-    parent () {
-      return this.$store.getters.getParent
-    }
   }
-
 }
 </script>
 

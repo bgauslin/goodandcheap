@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.up-button(:class="{ hide: isHome }")
+  div.up-button(:class="{ hide: home }")
     router-link(
       v-if="parent && parent.slug",
       :to="{ name: parent.routeName, params: { slug: parent.slug } }",
@@ -15,33 +15,7 @@
 
 <script>
 export default {
-
-  props: ['parent'],
-
-
-  // TODO move all of this up...
-  data () {
-    return {
-      isHome: false
-    }
-  },
-
-  mounted () {
-    this.onHome()
-  },
-
-  watch: {
-    '$route' (to, from) {
-      this.onHome()
-    }
-  },
-
-  methods: {
-    onHome () {
-      var path = this.$route.path
-      this.isHome = (path === '/') ? true : false
-    }
-  }
+  props: ['parent', 'home']
 }
 </script>
 

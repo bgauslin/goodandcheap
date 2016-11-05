@@ -1,6 +1,6 @@
 <template lang="pug">
   div.site
-    app-header
+    app-header(:parent="parent", :home="home")
     div.content
       preloader(v-if="!dataLoaded")
       router-view(v-if="dataLoaded", :data="data")
@@ -19,11 +19,20 @@ export default {
     return {
       data: null,
       dataLoaded: null,
-      apiUrl: null
+      apiUrl: null,
+      home: null
+    }
+  },
+
+  computed: {
+    parent () {
+      return this.$store.getters.getParent
     }
   },
 
   created () {
+    this.isHome()
+
     this.apiUrl = this.$route.meta.apiUrl
     if (this.apiUrl !== undefined) {
       this.fetchData(this.apiUrl)
@@ -32,6 +41,8 @@ export default {
 
   watch: {
     '$route' (to, from) {
+      this.isHome()
+
       this.apiUrl = this.$route.meta.apiUrl
       if (this.apiUrl !== undefined) {
         this.data = null
@@ -61,7 +72,13 @@ export default {
       } else {
         document.title = this.$root.siteName
       }
+    },
+
+    isHome () {
+      var path = this.$route.path
+      this.home = (path === '/') ? true : false
     }
+
   }
 }
 </script>
