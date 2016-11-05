@@ -21,7 +21,7 @@ export default function() {
       component: Home,
       children: [
         {
-          path: '',
+          path: '/',
           name: 'chapters',
           component: Chapters,
           meta: {

@@ -7,7 +7,7 @@
     )
     router-link(
       v-if="parent && !parent.slug",
-      :to="{ name: parent.routeName, direction: 'back' }",
+      :to="{ name: parent.routeName, params: { direction: 'back' } }",
       :title="parent.title",
       exact
     )

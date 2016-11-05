@@ -1,6 +1,6 @@
 <template lang="pug">
   li.preview
-    router-link(:to="{ name: routeName, params: { slug: item.slug } }", :title="item.title")
+    router-link(:to="{ name: routeName, params: { slug: item.slug, direction: 'forward' } }", :title="item.title")
       thumb(:image="item.thumb", :title="item.title")
       div.summary
         h3 {{ item.title }}

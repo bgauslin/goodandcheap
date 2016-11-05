@@ -5,7 +5,7 @@
         router-link(to="/", title="Home") Home
       li(v-if="parent")
         router-link(
-          :to="{ name: parent.routeName, params: { slug: parent.slug } }",
+          :to="{ name: parent.routeName, params: { slug: parent.slug, direction: 'back' } }",
           :title="parent.title"
         ) {{ parent.title }}
       li

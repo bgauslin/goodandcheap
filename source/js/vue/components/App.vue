@@ -4,7 +4,7 @@
     div.content
       preloader(v-if="!dataLoaded")
       transition(:name="transitionName", mode="out-in")
-        router-view(v-if="dataLoaded", :data="data")
+        router-view(v-if="dataLoaded", :data="data", :key="data")
     app-footer
 </template>
 
@@ -54,6 +54,8 @@ export default {
         const fromDepth = from.path.split('/').length
         this.transitionName = (toDepth < fromDepth) ? 'back' : 'forward'
       }
+
+      console.log('transitionName = ' + this.transitionName)
 
       this.apiUrl = this.$route.meta.apiUrl
       if (this.apiUrl !== undefined) {
@@ -127,10 +129,6 @@ export default {
 .back-leave
 .back-leave-active
   animation slideOutRight .2s ease-out
-
-
-
-
 
 
 </style>
