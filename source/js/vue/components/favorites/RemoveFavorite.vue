@@ -23,6 +23,7 @@ export default {
   position absolute // NOTE see .recipe and .preview for TRBL
   display block
   width 3rem
+  padding .5rem
   text-align center
 
   &::before

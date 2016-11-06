@@ -24,29 +24,24 @@ export default {
 
 .up-button
   display flex
+  justify-content center
+  align-items center
+
   width header-height-base
+  height header-height-base
 
   a
-    display flex
-    justify-content center
-    align-items center
-    align-self stretch
-
-    line-height 1
-
-    @media(min-width breakpoint-small)
-      margin-left -1rem
-
     link(white, white, rgba(white, .7))
 
     &::before
       icon()
       font-size em(22)
       content '\e802' // angle-left
-      margin-left -.5rem
+      position relative
+      left -.25rem
 
       @media(min-width breakpoint-small)
-        margin-left 0
+        left -1rem
 
   &.hide
     visibility hidden

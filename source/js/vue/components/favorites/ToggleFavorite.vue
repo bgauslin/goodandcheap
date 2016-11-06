@@ -44,6 +44,7 @@ export default {
   position absolute
   display block
   width 3rem
+  padding .5rem
   text-align center
 
   &::before
