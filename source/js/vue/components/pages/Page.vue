@@ -1,26 +1,18 @@
 <template lang="pug">
   div.page(:style="'background-image:' + backgroundImageCss", :class="{ 'has-background' : hasBackgroundImage }")
-    div
-      breadcrumbs(
-        :parent="data.parent",
-        :current="data.title"
-      )
-      div.copy
-        h1 {{ data.title }}
-        section.page-section(v-for="block in data.content")
-          h2(v-if="block.heading") {{ block.heading }}
-          div(v-if="block.copy", v-html="block.copy")
-          ul(v-if="block.list")
-            li(v-for="item in block.list") {{ item }}
+    div.copy
+      h1 {{ data.title }}
+      section.page-section(v-for="block in data.content")
+        h2(v-if="block.heading") {{ block.heading }}
+        div(v-if="block.copy", v-html="block.copy")
+        ul(v-if="block.list")
+          li(v-for="item in block.list") {{ item }}
 </template>
 
 <script>
-import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import getBreakpointValue from '../../../helpers/getBreakpointValue'
 
 export default {
-  components: { Breadcrumbs },
-
   props: ['data'],
 
   data () {
@@ -61,10 +53,6 @@ export default {
   @media(min-width breakpoint-large)
     padding-bottom 4rem
 
-    .breadcrumbs
-      margin 0 auto
-      max-width page-max-width
-
   .copy
     padding 1rem margins-base
     background white
@@ -103,12 +91,15 @@ export default {
   background-size cover
   background-attachment scroll
 
+  // TODO move breadcrumb styles...
+  /*
   .breadcrumbs
     color rgba(white, .7)
     a
       link(white, white, rgba(white, .7))
     span
       color rgba(white, .7)
+  */
 
 
 .page-section
@@ -129,9 +120,11 @@ export default {
   .page
     &.has-background
       background-attachment fixed
-
+      // TODO move breadcrumb styles...
+      /*
       .breadcrumbs
         a
           link-hover(rgba(white, .7))
+      */
 
 </style>

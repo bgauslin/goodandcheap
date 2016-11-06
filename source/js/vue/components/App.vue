@@ -1,6 +1,7 @@
 <template lang="pug">
   div.site
     app-header(:parent="parent", :home="home")
+    <!-- breadcrumbs(:parent="data.parent", :current="data.title") -->
     div.content
       preloader(v-if="!dataLoaded")
       transition(:name="transitionName", mode="out-in")
@@ -10,11 +11,12 @@
 
 <script>
 import AppHeader from './global/Header.vue'
+import Breadcrumbs from './partials/Breadcrumbs.vue'
 import AppFooter from './global/Footer.vue'
 import Preloader from './partials/Preloader.vue'
 
 export default {
-  components: { AppHeader, Preloader, AppFooter },
+  components: { AppHeader, Breadcrumbs, Preloader, AppFooter },
 
   data () {
     return {
@@ -143,12 +145,20 @@ export default {
 
 .content
   flex 1
-  margin-top header-height-base
+  padding header-height-base 0 0
+
+  @media(min-width breakpoint-small)
+    margin-top 1.5rem
 
   @media(min-width breakpoint-medium)
-    margin-top header-height-medium
+    margin-top 2rem
+    padding header-height-medium 0 0
+
+  @media(min-width breakpoint-large)
+    margin-top 3rem
 
 
+/*
 .forward-enter
 .forward-enter-active
   animation slideInRight .3s ease-out
@@ -164,6 +174,6 @@ export default {
 .back-leave
 .back-leave-active
   animation slideOutRight .3s ease-out
-
+*/
 
 </style>

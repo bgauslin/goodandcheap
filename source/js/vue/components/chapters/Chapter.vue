@@ -1,6 +1,5 @@
 <template lang="pug">
   div.chapter
-    breadcrumbs(:current="data.title")
     div.chapter-content
       div.intro
         cover(
@@ -20,12 +19,11 @@
 </template>
 
 <script>
-import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Cover from '../partials/BasicCover.vue'
 import RecipePreview from '../recipes/Preview.vue'
 
 export default {
-  components: { Breadcrumbs, Cover, RecipePreview },
+  components: { Cover, RecipePreview },
   props: ['data']
 }
 </script>
@@ -47,26 +45,18 @@ export default {
   @media(min-width breakpoint-small)
     margin 0 margins-small
 
-    .breadcrumbs
-      margin 0 auto
-      max-width stacked-width
-
     .chapter-content
       max-width stacked-width
 
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
-    .breadcrumbs
     .chapter-content
       width stacked-width
       max-width none
 
   @media(min-width breakpoint-large)
     margin 0 margins-large
-
-    .breadcrumbs
-      width auto
 
     .chapter-content
       position relative

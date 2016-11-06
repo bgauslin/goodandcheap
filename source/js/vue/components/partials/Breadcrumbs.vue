@@ -3,9 +3,9 @@
     ul
       li
         router-link(
-          to="/",
-          title="Home"
-        ) Home
+          :to="{ name: 'chapters' }",
+          title="Recipes"
+        ) Recipes
       li(v-if="parent")
         router-link(
           :to="{ name: parent.routeName, params: { slug: parent.slug, direction: 'back' } }",
@@ -59,16 +59,22 @@ export default {
   color light-grey
 
   @media(min-width breakpoint-small)
-    margin 0 margins-small
+    margin header-height-base margins-small 0
+    max-width stacked-width
 
   @media(min-width breakpoint-medium)
-    margin 0 margins-medium
+    margin header-height-medium auto 0
+    width stacked-width
+    max-width none
 
   @media(min-width breakpoint-large)
-    margin 0 margins-large
+    margin-right margins-large
+    margin-left margins-large
+    width auto
 
   @media(min-width breakpoint-xlarge)
-    margin 0 auto
+    margin-right auto
+    margin-left auto
     width width-xlarge
 
   ul

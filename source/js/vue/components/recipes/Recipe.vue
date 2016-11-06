@@ -1,9 +1,5 @@
 <template lang="pug">
   div.recipe
-    breadcrumbs(
-      :parent="data.parent",
-      :current="data.title"
-    )
     div.recipe-content
       recipe-cover(
         :image="data.photo",
@@ -79,7 +75,6 @@
 
 
 <script>
-import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Badge from './Badge.vue'
 import RecipeCover from './RecipeCover.vue'
 import Blurb from './Blurb.vue'
@@ -95,7 +90,6 @@ import getBreakpointValue from '../../../helpers/getBreakpointValue'
 
 export default {
   components: {
-    Breadcrumbs,
     Badge,
     RecipeCover,
     Blurb,
@@ -150,26 +144,18 @@ export default {
   @media(min-width breakpoint-small)
     margin 0 margins-small
 
-    .breadcrumbs
-      margin 0 auto
-      max-width stacked-width
-
     .recipe-content
       max-width stacked-width
 
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
-    .breadcrumbs
     .recipe-content
       width stacked-width
       max-width none
 
   @media(min-width breakpoint-large)
     margin 0 margins-large
-
-    .breadcrumbs
-      width auto
 
     .recipe-content
       position relative
