@@ -1,13 +1,6 @@
 <template lang="pug">
   div.cover
-    figure(:style="'background-image:url(' + image.placeholder + ')'")
-      img(
-        v-if="loaded",
-        :src="image.src",
-        :width="image.width",
-        :height="image.height",
-        :alt="title"
-      )
+    cover-photo(:image="image", :title="title")
     div.blurb
       h1 {{ title }}
       div(v-html="blurb")
@@ -16,29 +9,11 @@
 
 <script>
 import imagesLoaded from 'imagesloaded'
+import CoverPhoto from './CoverPhoto.vue'
 
 export default {
-  props: ['image', 'title', 'blurb', 'count'],
-
-  data () {
-    return {
-      loaded: null
-    }
-  },
-
-  mounted () {
-    this.loadImages()
-  },
-
-  methods: {
-    loadImages () {
-      this.loaded = false
-      let self = this
-      imagesLoaded(this.$el, self, function(instance) {
-        self.loaded = true
-      })
-    }
-  }
+  components: { CoverPhoto },
+  props: ['image', 'title', 'blurb', 'count']
 }
 </script>
 
@@ -46,17 +21,7 @@ export default {
 @import '../../../../stylus/config/'
 
 .cover
-  position relative
   cover()
-
-  figure
-    background-position center center
-    background-repeat no-repeat
-    background-size cover
-
-    img
-      animation fade-in 1s ease
-
 
   h1
     serif-heavy()

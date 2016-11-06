@@ -5,7 +5,7 @@
       :current="data.title"
     )
     div.recipe-content
-      cover(
+      recipe-cover(
         :image="data.photo",
         :title="data.title",
         :budget="data.budget"
@@ -81,8 +81,7 @@
 <script>
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Badge from './Badge.vue'
-import Cover from './Cover.vue'
-//import Cover from '../partials/Cover.vue'
+import RecipeCover from './RecipeCover.vue'
 import Blurb from './Blurb.vue'
 import ToggleFavorite from '../favorites/ToggleFavorite.vue'
 import Variation from './Variation.vue'
@@ -98,7 +97,7 @@ export default {
   components: {
     Breadcrumbs,
     Badge,
-    Cover,
+    RecipeCover,
     Blurb,
     ToggleFavorite,
     Variation,

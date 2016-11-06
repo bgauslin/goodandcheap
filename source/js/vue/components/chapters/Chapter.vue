@@ -21,7 +21,7 @@
 
 <script>
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
-import Cover from '../partials/Cover.vue'
+import Cover from '../partials/BasicCover.vue'
 import RecipePreview from '../recipes/Preview.vue'
 
 export default {
