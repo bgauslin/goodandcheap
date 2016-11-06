@@ -32,11 +32,8 @@ export default {
   },
 
   created () {
-    window.addEventListener('resize', this.setBackgroundImage)
-  },
-
-  updated () {
     this.setBackgroundImage()
+    window.addEventListener('resize', this.setBackgroundImage)
   },
 
   beforeDestroy: function () {
