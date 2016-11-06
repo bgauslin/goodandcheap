@@ -2,11 +2,12 @@
   div.favorites
     h2 {{ favoritesCount }}
     div
-      ol.previews
+      transition-group(name="favorites", tag="ol", class="previews")
         recipe-preview(
           v-for="(recipe, index) in favorites",
           :item="recipe",
           :index="index",
+          :key="recipe",
           :showChapter="true",
           favoriteButton="remove"
         )
@@ -46,30 +47,39 @@ export default {
 @import '../../../../stylus/config/'
 
 .favorites
+  margin 0 auto
+
   @media(min-width breakpoint-medium)
-    margin 0 margins-medium
-
-  @media(min-width breakpoint-large)
-    margin 0 margins-large
-
-  @media(min-width breakpoint-xlarge)
-    margin 0 auto
-    width width-xlarge
+    width width-medium
 
   .previews
     animation slideInUp .3s ease-out
 
-    @media(min-width breakpoint-medium)
-      previews-grid()
-
   .preview
+    transition all .5s ease
+
     @media(min-width breakpoint-medium)
-      preview-grid()
+      a
+        border-right 1px solid border-color
+        border-left 1px solid border-color
 
   h2
     margin 1em 0
     text-align center
     sans-heavy()
     small-caps(14)
+
+.favorites-leave-active
+  position absolute
+  opacity 0
+  transform translateX(-100%)
+
+  @media(min-width breakpoint-medium)
+    width width-medium
+    transform translateX(0)
+    transform scale(.5)
+
+.favorites-move
+  transition transform .3s
 
 </style>
