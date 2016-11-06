@@ -34,13 +34,16 @@ export default {
 
   created () {
     this.isHome()
-    this.endpoint = this.$route.meta.endpoint
 
+    this.endpoint = this.$route.meta.endpoint
     if (this.endpoint !== undefined) {
       this.fetchData(this.endpoint)
     }
 
-    // TODO load favorites route on direct URL visit...
+    // NOTE load favorites on direct URL visit
+    if (this.$route.name === 'favorites') {
+      this.dataLoaded = true
+    }
   },
 
   watch: {
@@ -99,6 +102,9 @@ export default {
     },
 
     setTransition (to, from, direction) {
+      this.transitionName = direction
+
+      /*
       if (direction !== undefined) {
         this.transitionName = direction
       } else {
@@ -106,6 +112,7 @@ export default {
         const fromDepth = from.path.split('/').length
         this.transitionName = (toDepth < fromDepth) ? 'back' : 'forward'
       }
+      */
     },
 
     updateTitle (title) {
@@ -144,19 +151,19 @@ export default {
 
 .forward-enter
 .forward-enter-active
-  animation slideInRight .2s ease-out
+  animation slideInRight .3s ease-out
 
 .forward-leave
 .forward-leave-active
-  animation slideOutLeft .2s ease-out
+  animation slideOutLeft .3s ease-out
 
 .back-enter
 .back-enter-active
-  animation slideInLeft .2s ease-out
+  animation slideInLeft .3s ease-out
 
 .back-leave
 .back-leave-active
-  animation slideOutRight .2s ease-out
+  animation slideOutRight .3s ease-out
 
 
 </style>
