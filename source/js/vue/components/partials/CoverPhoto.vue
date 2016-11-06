@@ -1,14 +1,10 @@
 <template lang="pug">
   div.cover-photo
     figure(
-      v-if="loading",
-      :style="'background-image:url(' + image.placeholder + ')'"
-    )
-    figure(
-      v-if="!loading",
       :style="'background-image:url(' + image.placeholder + ')'"
     )
       img(
+        v-if="!loading",
         :src="image.src",
         :width="image.width",
         :height="image.height",
