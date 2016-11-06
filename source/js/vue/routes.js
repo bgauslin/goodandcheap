@@ -65,7 +65,8 @@ export default function() {
           name: 'intro',
           component: Blurb,
           meta: {
-            endpoint: 'recipe'
+            endpoint: 'recipe',
+            stayInPlace: true
           }
         },
         {
@@ -73,7 +74,8 @@ export default function() {
           path: 'ingredients',
           component: RecipeIngredients,
           meta: {
-            endpoint: 'recipe'
+            endpoint: 'recipe',
+            stayInPlace: true
           }
         },
         {
@@ -81,7 +83,8 @@ export default function() {
           path: 'steps',
           component: RecipeInstructions,
           meta: {
-            endpoint: 'recipe'
+            endpoint: 'recipe',
+            stayInPlace: true
           }
         }
       ]

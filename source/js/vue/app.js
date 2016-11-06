@@ -40,31 +40,24 @@ const store = new Vuex.Store({
 })
 
 import routeConfig from './routes'
-
 const scrollBehavior = (to, from, savedPosition) => {
-  return { x: 0, y: 0 }
-}
-
-/*
-const scrollBehavior = (to, from, savedPosition) => {
-  if (savedPosition) {
-    return savedPosition
-  } else {
-    const position = {}
-    if (to.matched.some(m => m.meta.scrollToTop)) {
-      position.x = 0
-      position.y = 0
+  if (to.matched.some(m => m.meta.stayInPlace)) {
+    if (savedPosition) {
+      return savedPosition
     }
-    return position
+  } else {
+    return {
+      x: 0,
+      y: 0
+    }
   }
 }
-*/
 
 const router = new VueRouter({
   routes: routeConfig(),
   mode: 'history',
   linkActiveClass: 'current',
-  //scrollBehavior
+  scrollBehavior
 })
 
 import getApiDomain from '../helpers/getApiDomain'
