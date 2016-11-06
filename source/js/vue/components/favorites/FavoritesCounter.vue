@@ -71,7 +71,7 @@ export default {
   color white
 
   // TODO apply this animation on update
-  //animation bounce .5s ease
+  //animation bounce .3s ease-out
 
   &.empty
     visibility hidden
@@ -88,7 +88,7 @@ export default {
 
 .bounce-enter
 .bounce-enter-active
-  animation bounce .5s ease
+  animation bounce .3s ease-out
 
 
 </style>

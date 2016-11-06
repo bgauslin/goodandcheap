@@ -180,7 +180,6 @@ export default {
       .recipe-cover
         position-it(absolute, 0, 0, null, null)
         width 50%
-        overflow hidden
 
       .overview
         position-it(absolute, 0, null, null, 0)
@@ -197,6 +196,8 @@ export default {
   .overview
     position relative
     padding 1rem 1rem 2rem
+    animation slideInUp .3s ease-out
+
     @media(min-width breakpoint-large)
       padding 1.5rem 1.5rem 3rem
 

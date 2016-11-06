@@ -50,6 +50,6 @@ export default {
 
   img
     border-radius .25em
-    animation fade-in .5s ease-out
+    animation fadeIn .3s ease-out
 
 </style>

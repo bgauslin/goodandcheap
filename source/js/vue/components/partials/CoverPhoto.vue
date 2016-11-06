@@ -55,6 +55,6 @@ export default {
     background-size cover
 
   img
-    animation fade-in 1s ease
+    animation fadeIn 1s ease-out
 
 </style>

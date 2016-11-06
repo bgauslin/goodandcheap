@@ -46,7 +46,6 @@ export default {
 @import '../../../../stylus/config/'
 
 .favorites
-
   @media(min-width breakpoint-medium)
     margin 0 margins-medium
 
@@ -58,6 +57,8 @@ export default {
     width width-xlarge
 
   .previews
+    animation slideInUp .3s ease-out
+
     @media(min-width breakpoint-medium)
       previews-grid()
 

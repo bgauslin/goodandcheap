@@ -32,7 +32,8 @@ export default {
 
   .blurb
     padding 1rem
-    animation fade-in .5s ease-out
+    animation fadeIn .3s ease-out
+    //animation slideInUp .3s ease-out
 
     & > div
       serif()
@@ -42,6 +43,7 @@ export default {
       padding 1.5rem
       box-shadow 0 0 5px 0 light-grey // horiz vert blur spread color
       background rgba(white, 0.95)
+      //animation slideInDown .3s ease-out
 
   .recipe-count
     margin 1rem 0 0
