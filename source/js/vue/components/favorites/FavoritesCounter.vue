@@ -1,35 +1,34 @@
 <template lang="pug">
-  transition
-    router-link.favorites-counter(
-      :class="{ empty : !hasFavorites }",
-      to="/favorites",
-      title="Favorites",
-      exact
-    ) {{ favoritesCount }}
+  router-link.favorites-counter(
+    :class="{ empty : !hasFavorites }",
+    to="/favorites",
+    title="Favorites",
+    exact
+  ) {{ favoritesCount }}
 </template>
 
 <script>
 export default {
 
+  // TODO logic and animation for 0 -> 1 and for 1 -> 0
+
   data () {
     return {
-      hasFavorites: null,
-      updated: null
-    }
-  },
-
-  watch: {
-    favoritesCount () {
-      this.updateCount()
+      hasFavorites: null
     }
   },
 
   mounted () {
     this.hasFavorites = this.showCounter()
+    this.$el.addEventListener('animationend', this.animationDone, false)
   },
 
   updated () {
     this.hasFavorites = this.showCounter()
+  },
+
+  beforeDestroy: function () {
+    this.$el.removeEventListener('animationend')
   },
 
   computed: {
@@ -41,14 +40,26 @@ export default {
     }
   },
 
+  watch: {
+    favoritesCount () {
+      this.updateCount()
+    }
+  },
+
   methods: {
     showCounter() {
       var count = this.favoritesCount
       return (count > 0) ? true : false
     },
     updateCount () {
-      // TODO apply transition/animation on update
-      console.log('updateCount!')
+      console.log('updateCount called')
+      var count = this.favoritesCount
+      if (count > 0) {
+        this.$el.classList.add('updated')
+      }
+    },
+    animationDone() {
+      this.$el.classList.remove('updated')
     }
   }
 }
@@ -70,8 +81,8 @@ export default {
   font-size em(11)
   color white
 
-  // TODO apply this animation on update
-  //animation bounce .3s ease-out
+  &.updated
+    animation bounce .3s ease-out
 
   &.empty
     visibility hidden
@@ -86,9 +97,6 @@ export default {
     content '\e80a' // heart
 
 
-.bounce-enter
-.bounce-enter-active
-  animation bounce .3s ease-out
 
 
 </style>
