@@ -9,6 +9,7 @@
           :index="index",
           :key="recipe",
           :showChapter="true",
+          :showBadge="false",
           favoriteButton="remove"
         )
 </template>

@@ -7,7 +7,7 @@
           p.chapter-title(v-if="showChapter") {{ item.chapter }}
           h3 {{ item.title }}
           p.tagline(v-if="item.tagline") {{ item.tagline }}
-          badge(v-if="item.new")
+          badge(v-if="item.new && showBadge")
           p.kind(v-if="item.kind !== 'Recipe'") {{ item.kind }}
           p.index {{ itemCount }}
       toggle-favorite(v-if="favoriteButton === 'toggle'", :favorite="item")
@@ -24,7 +24,7 @@ import RemoveFavorite from '../favorites/RemoveFavorite.vue'
 export default {
   components: { Thumb, Badge, ToggleFavorite, RemoveFavorite },
 
-  props: ['item', 'index', 'showChapter', 'favoriteButton'],
+  props: ['item', 'index', 'showChapter', 'showBadge', 'favoriteButton'],
 
   computed: {
     itemCount () {
@@ -43,6 +43,9 @@ export default {
 .recipe-preview
   a
     padding-right 3rem
+
+  .summary
+    margin-right 0
 
   .chapter-title
   .tagline
@@ -75,7 +78,7 @@ export default {
 
   .toggle-favorite
   .remove-favorite
-    top .5rem
+    top 0
     right 0
 
 

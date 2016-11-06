@@ -14,6 +14,7 @@
           :item="recipe",
           :index="index",
           :showChapter="false",
+          :showBadge="true",
           favoriteButton="toggle"
         )
 </template>
@@ -40,7 +41,9 @@ export default {
     overflow hidden
 
   .previews
-    animation slideInUp .3s ease-out
+    //animation-delay 10s
+    //transition-delay 10s
+    //animation slideInUp .3s ease-out
 
   @media(min-width breakpoint-small)
     margin 1.5rem margins-small 0
