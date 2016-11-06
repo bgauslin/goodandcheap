@@ -145,18 +145,10 @@ export default {
 
 .content
   flex 1
-  padding header-height-base 0 0
-
-  @media(min-width breakpoint-small)
-    margin-top 1.5rem
+  margin header-height-base 0 0
 
   @media(min-width breakpoint-medium)
-    margin-top 2rem
-    padding header-height-medium 0 0
-
-  @media(min-width breakpoint-large)
-    margin-top 3rem
-
+    margin-top header-height-medium
 
 /*
 .forward-enter

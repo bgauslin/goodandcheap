@@ -43,20 +43,20 @@ export default {
     animation slideInUp .3s ease-out
 
   @media(min-width breakpoint-small)
-    margin 0 margins-small
+    margin 1.5rem margins-small 0
 
     .chapter-content
       max-width stacked-width
 
   @media(min-width breakpoint-medium)
-    margin 0 margins-medium
+    margin 2.25rem margins-medium 0
 
     .chapter-content
       width stacked-width
       max-width none
 
   @media(min-width breakpoint-large)
-    margin 0 margins-large
+    margin 2.25rem margins-large 0
 
     .chapter-content
       position relative
@@ -76,8 +76,7 @@ export default {
         -webkit-overflow-scrolling touch
 
   @media(min-width breakpoint-xlarge)
-    margin 0 auto
+    margin 3rem auto 0
     width width-xlarge
-
 
 </style>

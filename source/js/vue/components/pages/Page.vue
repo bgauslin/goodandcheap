@@ -51,7 +51,7 @@ export default {
 
 .page
   @media(min-width breakpoint-large)
-    padding-bottom 4rem
+    padding 3rem 0
 
   .copy
     padding 1rem margins-base
