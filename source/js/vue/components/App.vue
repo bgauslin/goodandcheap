@@ -15,6 +15,8 @@ import Breadcrumbs from './partials/Breadcrumbs.vue'
 import AppFooter from './global/Footer.vue'
 import Preloader from './partials/Preloader.vue'
 
+import request from 'superagent'
+
 export default {
   components: { AppHeader, Breadcrumbs, Preloader, AppFooter },
 
@@ -74,11 +76,18 @@ export default {
       if (slug === null) { slug = undefined } // NOTE weird bugfix for going to 'info' from 'page'
       if (slug !== undefined) { endpointUrl += '/' + slug }
 
-      this.$http.get(endpointUrl).then((response) => {
-        this.data = response.data
-        this.$store.commit('setParent', response.data.parent)
-        this.updateTitle(response.data.title)
-        this.dataLoaded = true
+      var that = this
+      request
+      .get(endpointUrl)
+      .end(function(error, response) {
+        if (error || !response.ok) {
+          console.log('Error fetching data :|');
+        } else {
+          that.data = response.body
+          that.$store.commit('setParent', response.body.parent)
+          that.updateTitle(response.body.title)
+          that.dataLoaded = true
+        }
       })
     },
 

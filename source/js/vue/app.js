@@ -1,11 +1,9 @@
 import Vue from 'vue/dist/vue.js'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
-Vue.use(VueResource)
 
 const store = new Vuex.Store({
   state: {
