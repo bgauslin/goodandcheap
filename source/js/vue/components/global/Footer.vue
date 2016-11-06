@@ -20,7 +20,8 @@ export default {
 
 .footer
   sans()
-  small-caps(10)
+  small-caps()
+  //small-caps(10)
   text-align center
   color light-grey
 

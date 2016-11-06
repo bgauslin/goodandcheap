@@ -37,7 +37,7 @@ export default {
   h4
     margin 0 0 1em
     sans-heavy()
-    small-caps(11)
+    small-caps()
   p
     margin 0 0 1em
     serif()

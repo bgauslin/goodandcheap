@@ -12,6 +12,11 @@ position-it(position, top, right, bottom left)
 em(px)
   (px / 16) * 1em
 
+small-caps(font-size = 11)
+  font-size em(font-size)
+  text-transform uppercase
+  letter-spacing .1em
+
 webfont(name, file)
   @font-face
     font-family name

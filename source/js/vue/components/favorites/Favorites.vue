@@ -64,8 +64,6 @@ export default {
   .preview
     @media(min-width breakpoint-medium)
       preview-grid()
-    @media(min-width breakpoint-large)
-      preview-grid-large()
 
   h2
     margin 1em 0

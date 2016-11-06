@@ -46,6 +46,6 @@ export default {
   .recipe-count
     margin 1rem 0 0
     sans-heavy()
-    small-caps(11)
+    small-caps()
 
 </style>

@@ -24,7 +24,7 @@ export default {
   overflow hidden
 
   sans()
-  small-caps(11)
+  small-caps()
   border 1px solid brand-color
   border-radius 4px
 

@@ -55,7 +55,8 @@ export default {
   overflow-x scroll
   -webkit-overflow-scrolling touch
   sans()
-  small-caps(12)
+  small-caps()
+  //small-caps(12)
   color light-grey
 
   @media(min-width breakpoint-small)

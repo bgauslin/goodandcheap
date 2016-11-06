@@ -202,7 +202,7 @@ export default {
 
   .tagline
     sans-heavy()
-    small-caps(11)
+    small-caps()
 
   .tabs
     margin 1rem 0
@@ -213,7 +213,7 @@ export default {
   .kind
     margin-bottom .5rem
     sans-heavy()
-    small-caps(11)
+    small-caps()
 
   header
     margin 0 2rem 1rem 0
@@ -231,7 +231,7 @@ export default {
   h3
     margin 0 0 1em
     sans-heavy()
-    small-caps(11)
+    small-caps()
 
   .copy-block
     padding .5rem 0

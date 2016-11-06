@@ -47,7 +47,7 @@ export default {
   .chapter-title
   .tagline
   .kind
-    small-caps(11)
+    small-caps()
 
   .chapter-title
     sans()
@@ -69,7 +69,7 @@ export default {
     width 3rem
     text-align center
     sans()
-    small-caps(11)
+    small-caps()
     line-height 1
     color light-grey
 
@@ -77,9 +77,6 @@ export default {
   .remove-favorite
     top .5rem
     right 0
-
-.remove-leave-active
-  //animation slideOutLeft 10s ease
 
 
 .no-touch

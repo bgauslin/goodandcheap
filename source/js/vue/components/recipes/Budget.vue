@@ -22,7 +22,7 @@ export default {
   background rgba(white, 0.97)
 
   sans-heavy()
-  small-caps(11)
+  small-caps()
 
   .total
   .cost

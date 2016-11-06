@@ -9,7 +9,7 @@
   display inline-block
   padding .2em .75em
   sans()
-  small-caps(11)
+  small-caps()
   color white
   background orange
   border-radius 2px

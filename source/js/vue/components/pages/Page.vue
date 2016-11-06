@@ -94,7 +94,7 @@ export default {
     sans-heavy()
     text-transform uppercase
   h2
-    small-caps(11)
+    small-caps()
   p
     serif()
   li

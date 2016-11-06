@@ -39,7 +39,7 @@ export default {
     margin 1rem 0
     padding 0
     sans-heavy()
-    small-caps(12)
+    small-caps()
 
   .item-count
     sans()

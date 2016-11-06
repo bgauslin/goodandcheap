@@ -38,7 +38,7 @@ export default {
 
   .recipe-count
     sans-heavy()
-    small-caps(11)
+    small-caps()
     display inline-block
     margin-top .2rem
 
