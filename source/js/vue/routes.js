@@ -25,13 +25,16 @@ export default function() {
           name: 'chapters',
           component: Chapters,
           meta: {
-            apiUrl: 'home'
-          },
+            endpoint: 'home'
+          }
         },
         {
-          path: 'info',
+          path: '/info',
           name: 'pages',
-          component: Pages
+          component: Pages,
+          meta: {
+            endpoint: 'home'
+          }
         }
       ]
     },
@@ -40,16 +43,16 @@ export default function() {
       name: 'info',
       component: Page,
       meta: {
-        apiUrl: 'page'
-      },
+        endpoint: 'page'
+      }
     },
     {
       path: '/chapter/:slug',
       name: 'chapter',
       component: Chapter,
       meta: {
-        apiUrl: 'chapter'
-      },
+        endpoint: 'chapter'
+      }
     },
     {
       path: '/recipe/:slug',
@@ -59,30 +62,29 @@ export default function() {
       children: [
         {
           path: '',
+          name: 'intro',
           component: Blurb,
           meta: {
-            apiUrl: 'recipe'
+            endpoint: 'recipe'
           }
         },
         {
           name: 'ingredients',
           path: 'ingredients',
-          component: RecipeIngredients
+          component: RecipeIngredients,
+          meta: {
+            endpoint: 'recipe'
+          }
         },
         {
           name: 'steps',
           path: 'steps',
-          component: RecipeInstructions
+          component: RecipeInstructions,
+          meta: {
+            endpoint: 'recipe'
+          }
         }
       ]
-    },
-    {
-      path: '/recipe/:slug/ingredients',
-      redirect: '/recipe/:slug/'
-    },
-    {
-      path: '/recipe/:slug/steps',
-      redirect: '/recipe/:slug/'
     },
     {
       path: '/recipe',

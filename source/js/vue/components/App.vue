@@ -20,7 +20,7 @@ export default {
     return {
       data: null,
       dataLoaded: null,
-      apiUrl: null,
+      endpoint: this.$route.meta.endpoint,
       home: null,
       transitionName: ''
     }
@@ -34,19 +34,66 @@ export default {
 
   created () {
     this.isHome()
-
-    this.apiUrl = this.$route.meta.apiUrl
-    if (this.apiUrl !== undefined) {
-      this.fetchData(this.apiUrl)
+    this.endpoint = this.$route.meta.endpoint
+    if (this.endpoint !== undefined) {
+      this.fetchData(this.endpoint)
     }
   },
 
   watch: {
     '$route' (to, from) {
       this.isHome()
+      this.setTransition(to, from, this.$route.params.direction)
+      this.endpoint = this.$route.meta.endpoint
 
-      var direction = this.$route.params.direction
+      var reload = this.doFetch(to, from)
 
+      if (this.endpoint !== undefined && reload !== false) {
+        this.data = null
+        this.dataLoaded = false
+        this.fetchData(this.endpoint)
+      }
+    }
+  },
+
+  methods: {
+    fetchData (endpoint) {
+      var endpointUrl = this.$root.apiBaseUrl + endpoint
+      var slug = this.$route.params.slug
+      //console.log('slug = ' + slug)
+
+      // NOTE weird bugfix for pages going back up to info
+      if (slug === null) { slug = undefined }
+      if (slug !== undefined) { endpointUrl += '/' + slug }
+
+      this.$http.get(endpointUrl).then((response) => {
+        this.data = response.data
+        this.$store.commit('setParent', response.data.parent)
+        this.updateTitle(response.data.title)
+        this.dataLoaded = true
+      })
+    },
+
+    doFetch(to, from) {
+      //console.log('to = ' + to.name)
+      //console.log('from = ' + from.name)
+
+      if (to.name === 'intro') {
+        if (from.name === 'steps' || from.name === 'ingredients') {
+          return false
+        }
+      } else if (to.name === 'steps' || to.name === 'ingredients') {
+        return false
+      } else if (to.name === 'chapters' && from.name === 'pages') {
+        return false
+      } else if (to.name === 'pages' && from.name === 'chapters') {
+        return false
+      }  else {
+        return true
+      }
+    },
+
+    setTransition (to, from, direction) {
       if (direction !== undefined) {
         this.transitionName = direction
       } else {
@@ -54,30 +101,6 @@ export default {
         const fromDepth = from.path.split('/').length
         this.transitionName = (toDepth < fromDepth) ? 'back' : 'forward'
       }
-
-      console.log('transitionName = ' + this.transitionName)
-
-      this.apiUrl = this.$route.meta.apiUrl
-      if (this.apiUrl !== undefined) {
-        this.data = null
-        this.dataLoaded = false
-        this.fetchData(this.apiUrl)
-      }
-    }
-  },
-
-  methods: {
-    fetchData (apiUrl) {
-      var dataUrl = this.$root.apiBaseUrl + apiUrl
-      if (this.$route.params.slug !== undefined) {
-         dataUrl += '/' + this.$route.params.slug
-      }
-      this.$http.get(dataUrl).then((response) => {
-        this.data = response.data
-        this.$store.commit('setParent', response.data.parent)
-        this.updateTitle(response.data.title)
-        this.dataLoaded = true
-      })
     },
 
     updateTitle (title) {
