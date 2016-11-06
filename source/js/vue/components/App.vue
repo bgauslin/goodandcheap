@@ -35,9 +35,12 @@ export default {
   created () {
     this.isHome()
     this.endpoint = this.$route.meta.endpoint
+
     if (this.endpoint !== undefined) {
       this.fetchData(this.endpoint)
     }
+
+    // TODO load favorites route on direct URL visit...
   },
 
   watch: {
@@ -58,12 +61,12 @@ export default {
 
   methods: {
     fetchData (endpoint) {
+      //console.log('endpoint = ' + endpoint)
       var endpointUrl = this.$root.apiBaseUrl + endpoint
       var slug = this.$route.params.slug
       //console.log('slug = ' + slug)
 
-      // NOTE weird bugfix for pages going back up to info
-      if (slug === null) { slug = undefined }
+      if (slug === null) { slug = undefined } // NOTE weird bugfix for going to 'info' from 'page'
       if (slug !== undefined) { endpointUrl += '/' + slug }
 
       this.$http.get(endpointUrl).then((response) => {
@@ -87,6 +90,8 @@ export default {
       } else if (to.name === 'chapters' && from.name === 'pages') {
         return false
       } else if (to.name === 'pages' && from.name === 'chapters') {
+        return false
+      } else if (to.name === 'favorites') {
         return false
       }  else {
         return true
