@@ -56,7 +56,7 @@ export default {
       max-width none
 
   @media(min-width breakpoint-large)
-    margin 2.25rem margins-large 0
+    margin 3rem margins-large 0
 
     .chapter-content
       position relative

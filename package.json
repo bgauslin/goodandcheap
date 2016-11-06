@@ -25,5 +25,8 @@
     "vueify": "^9.2.4",
     "vuex": "^2.0.0",
     "vuex-router-sync": "^3.0.0"
+  },
+  "dependencies": {
+    "headroom.js": "^0.9.3"
   }
 }

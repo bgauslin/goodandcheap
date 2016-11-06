@@ -17,6 +17,8 @@ import SearchToggle from '../search/SearchToggle.vue'
 import SearchBar from '../search/SearchBar.vue'
 import FavoritesCounter from '../favorites/FavoritesCounter.vue'
 
+import headroom from 'headroom.js'
+
 export default {
   components: { UpButton, SearchToggle, SearchBar, FavoritesCounter },
 
@@ -24,9 +26,34 @@ export default {
 
   data () {
     return {
-      'heading': 'Good And Cheap'
+      heading: 'Good And Cheap',
+      headroomOptions: {
+        offset: 0,
+        tolerance: 5,
+        classes: {
+          initial: 'header',
+          pinned: 'pin',
+          unpinned: 'unpin',
+          top : 'top',
+          notTop : '-top',
+          bottom : 'bottom',
+          notBottom : '-bottom'
+        }
+      }
+    }
+  },
+
+  mounted () {
+    this.makeHeadroom()
+  },
+
+  methods: {
+    makeHeadroom () {
+      let header = new headroom(this.$el, this.headroomOptions)
+      header.init()
     }
   }
+
 }
 </script>
 
@@ -37,8 +64,18 @@ export default {
   position-it(fixed, 0, 0, null, 0)
 
   z-index 9999
-  background brand-color
+  background rgba(brand-color, .97)
   box-shadow 0 0 5px 0 medium-grey
+
+  // headroom classes
+  transition transform .3s ease-out
+
+  &.pin
+    transform translateY(0%)
+
+  &.unpin
+    transform translateY(-100%)
+
 
   & > div
     display flex

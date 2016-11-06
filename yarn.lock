@@ -2862,6 +2862,10 @@ he@1.0.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.0.0.tgz#6da5b265d7f2c3b5e480749168e0e159d05728da"
 
+headroom.js:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/headroom.js/-/headroom.js-0.9.3.tgz#6d48499a2b9883fcc0683b26f461e732f149a1fe"
+
 hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
