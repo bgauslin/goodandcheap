@@ -1,6 +1,11 @@
 <template lang="pug">
   transition
-    router-link.favorites-counter(:class="{ empty : !hasFavorites }", to="/favorites", title="Favorites", exact) {{ favoritesCount }}
+    router-link.favorites-counter(
+      :class="{ empty : !hasFavorites }",
+      to="/favorites",
+      title="Favorites",
+      exact
+    ) {{ favoritesCount }}
 </template>
 
 <script>

@@ -16,27 +16,64 @@
           h1 {{ data.title }}
           h2.tagline {{ data.tagline }}
           badge(v-if="data.badge")
+
         toggle-favorite(:favorite="data")
+
         ul.tabs(v-if="data.ingredients || data.instructions")
           li(v-if="data.blurb")
-            router-link(:to="{ name: 'recipe', params: { slug: data.slug } }", exact) Intro
+            router-link(
+              :to="{ name: 'recipe', params: { slug: data.slug, isTab: true } }",
+              exact
+            ) Intro
           li(v-if="data.ingredients")
-            router-link(:to="{ name: 'ingredients', params: { slug: data.slug } }") Ingredients
+            router-link(
+              :to="{ name: 'ingredients', params: { slug: data.slug, isTab: true } }"
+            ) Ingredients
           li(v-if="data.instructions")
-            router-link(:to="{ name: 'steps', params: { slug: data.slug } }") Steps
+            router-link(
+              :to="{ name: 'steps', params: { slug: data.slug, isTab: true } }"
+            ) Steps
+
         router-view(
           :blurb="data.blurb",
           :ingredients="data.ingredients",
           :instructions="data.instructions"
         )
-        template(v-if="data.copyBlocks", v-for="block in data.copyBlocks")
-          blurb-with-heading(v-if="block.type === 'blurbWithHeading'", :heading="block.heading", :blurb="block.blurb")
-          blurb(v-if="block.type === 'blurb'", :blurb="block.blurb")
-          list(v-if="block.type === 'list'", :list="block.list")
-        template(v-if="data.recipeBlocks", v-for="block in data.recipeBlocks")
-          variation(v-if="block.type === 'variation'", :variation="block")
-          linked-recipe(v-if="block.type === 'linkedRecipe'", :linkedRecipe="block")
-          mini-recipe(v-if="block.type === 'miniRecipe'", :miniRecipe="block")
+
+        template(
+          v-if="data.copyBlocks",
+          v-for="block in data.copyBlocks"
+        )
+          blurb-with-heading(
+            v-if="block.type === 'blurbWithHeading'",
+            :heading="block.heading",
+            :blurb="block.blurb"
+          )
+          blurb(
+            v-if="block.type === 'blurb'",
+            :blurb="block.blurb"
+          )
+          list(
+            v-if="block.type === 'list'",
+            :list="block.list"
+          )
+
+        template(
+          v-if="data.recipeBlocks",
+          v-for="block in data.recipeBlocks"
+        )
+          variation(
+            v-if="block.type === 'variation'",
+            :variation="block"
+          )
+          linked-recipe(
+            v-if="block.type === 'linkedRecipe'",
+            :linkedRecipe="block"
+          )
+          mini-recipe(
+            v-if="block.type === 'miniRecipe'",
+            :miniRecipe="block"
+          )
       alpha-overlay
 </template>
 
@@ -45,6 +82,7 @@
 import Breadcrumbs from '../partials/Breadcrumbs.vue'
 import Badge from './Badge.vue'
 import Cover from './Cover.vue'
+//import Cover from '../partials/Cover.vue'
 import Blurb from './Blurb.vue'
 import ToggleFavorite from '../favorites/ToggleFavorite.vue'
 import Variation from './Variation.vue'

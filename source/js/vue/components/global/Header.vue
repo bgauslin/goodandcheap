@@ -3,7 +3,11 @@
     div
       up-button(:parent="parent", :home="home")
       h1
-        router-link(to="/", title="Home", exact) {{ heading }}
+        router-link(
+          to="/",
+          title="Home",
+          exact
+        ) {{ heading }}
       favorites-counter
 </template>
 
