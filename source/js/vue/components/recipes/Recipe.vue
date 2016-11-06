@@ -201,8 +201,11 @@ export default {
       padding 1.5rem 1.5rem 3rem
 
   .tagline
+    display inline-block
+    margin-right 0.5rem
     sans-heavy()
     small-caps()
+
 
   .tabs
     margin 1rem 0
