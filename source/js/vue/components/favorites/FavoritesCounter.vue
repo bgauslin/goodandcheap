@@ -87,9 +87,6 @@ export default {
   &.updated
     animation bounce .3s ease-out
 
-  &.empty
-    visibility hidden
-
   a
     display flex
     align-items center
@@ -103,7 +100,7 @@ export default {
       content '\e80a' // heart
       font-size 1rem
 
-    &.current::after
+    &.empty::after
       content '\e80b' // heart-empty
 
     &.current
