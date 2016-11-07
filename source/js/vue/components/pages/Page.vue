@@ -50,12 +50,16 @@ export default {
 @import '../../../../stylus/config/'
 
 .page
+  //animation slideInUp .5s ease-out
+
   @media(min-width breakpoint-large)
     padding 3rem 0
 
   .copy
     padding 1rem margins-base
     background white
+    animation slideInUp .5s ease
+
     a
       text-decoration underline
 

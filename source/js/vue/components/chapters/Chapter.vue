@@ -41,9 +41,7 @@ export default {
     overflow hidden
 
   .previews
-    //animation-delay 10s
-    //transition-delay 10s
-    //animation slideInUp .3s ease-out
+    animation slideInUp .3s ease-out
 
   @media(min-width breakpoint-small)
     margin 1.5rem margins-small 0
