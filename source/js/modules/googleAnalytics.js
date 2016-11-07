@@ -1,6 +1,6 @@
 import tld from '../helpers/getTLD'
 
-let accountId = 'UA-XXXXXX-XX'
+let accountId = 'UA-626192-14'
 
 if (tld() === 'website') {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

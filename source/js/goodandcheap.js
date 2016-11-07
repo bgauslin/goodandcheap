@@ -5,6 +5,6 @@ import noTouch from './modules/noTouch'
 noTouch()
 
 import './vue/app'
-import './modules/cssDebugger'
+import './modules/googleAnalytics'
 
-//import './modules/googleAnalytics'
+//import './modules/cssDebugger'
