@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.up-button(:class="{ hide: home }")
+  div.up-button(v-if="parent !== null")
     router-link(
       v-if="parent && parent.slug",
       :to="{ name: parent.routeName, params: { slug: parent.slug } }",
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  props: ['parent', 'home']
+  props: ['parent']
 }
 </script>
 
@@ -52,7 +52,7 @@ export default {
     span
       display none
       sans()
-      small-caps(13)
+      small-caps(12)
       white-space nowrap
 
       @media(min-width breakpoint-medium)
@@ -66,8 +66,9 @@ export default {
       position relative
       top -.05em
 
-  &.hide
-    visibility hidden
+    &:active
+      transition .3s ease
+      transform scale(.9)
 
 .no-touch
   .up-button

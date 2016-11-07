@@ -1,7 +1,7 @@
 <template lang="pug">
   header.header
     div.controls
-      up-button(:parent="parent", :home="home")
+      up-button(:parent="parent")
       h1
         router-link(
           to="/",
@@ -21,7 +21,7 @@ import headroom from 'headroom.js'
 export default {
   components: { UpButton, FavoritesCounter },
 
-  props: ['parent', 'home'],
+  props: ['parent'],
 
   data () {
     return {
@@ -114,6 +114,10 @@ export default {
 
       @media(min-width breakpoint-medium)
         height header-height-medium
+
+      &:active
+        transition .3s ease
+        transform scale(.9)
 
 .no-touch
   .header

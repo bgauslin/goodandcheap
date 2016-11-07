@@ -1,6 +1,6 @@
 <template lang="pug">
   div.site
-    app-header(:parent="parent", :home="home")
+    app-header(:parent="parent")
     div.content
       preloader(v-if="!dataLoaded")
       transition(:name="transitionName", mode="out-in")
