@@ -1,7 +1,7 @@
 <template lang="pug">
   header.header
     div.controls
-      <!-- up-button(:parent="parent", :home="home") -->
+      up-button(:parent="parent", :home="home")
       h1
         router-link(
           to="/",
@@ -12,15 +12,15 @@
 </template>
 
 <script>
-//import UpButton from '../partials/UpButton.vue'
-import SearchToggle from '../search/SearchToggle.vue'
-import SearchBar from '../search/SearchBar.vue'
+import UpButton from '../partials/UpButton.vue'
 import FavoritesCounter from '../favorites/FavoritesCounter.vue'
+//import SearchToggle from '../search/SearchToggle.vue'
+//import SearchBar from '../search/SearchBar.vue'
 
 import headroom from 'headroom.js'
 
 export default {
-  components: { SearchToggle, SearchBar, FavoritesCounter },
+  components: { UpButton, FavoritesCounter },
 
   props: ['parent', 'home'],
 

@@ -4,7 +4,7 @@
       router-link(:to="{ name: 'recipe', params: { chapter: item.chapter.slug, slug: item.slug } }", :title="item.title")
         thumb(:image="item.thumb", :title="item.title")
         div.summary
-          p.chapter-title(v-if="showChapter") {{ item.chapter }}
+          p.chapter-title(v-if="showChapter") {{ item.chapter.title }}
           h3 {{ item.title }}
           p.tagline(v-if="item.tagline") {{ item.tagline }}
           badge(v-if="item.new && showBadge")
