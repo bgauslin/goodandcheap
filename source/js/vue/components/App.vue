@@ -43,8 +43,8 @@ export default {
       this.fetchData(this.endpoint)
     }
 
-    // NOTE load favorites on direct URL visit
-    if (this.$route.name === 'favorites') {
+    // NOTE routes with no data fetching
+    if (this.$route.name === 'favorites' || this.$route.name === '404') {
       this.dataLoaded = true
     }
   },
@@ -145,9 +145,7 @@ export default {
     },
 
     notFound() {
-      console.log('Error fetching data :|')
-      console.log('Redirect to 404 page')
-      //this.$root.router.go({ path: "/" })
+      window.location.replace('/404')
     }
 
   }

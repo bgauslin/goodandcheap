@@ -47,6 +47,11 @@ export default function() {
       }
     },
     {
+      path: '/404',
+      name: '404',
+      component: NotFound
+    },
+    {
       path: '/favorites',
       name: 'favorites',
       component: Favorites
@@ -93,10 +98,6 @@ export default function() {
           }
         }
       ]
-    },
-    {
-      path: '*',
-      component: NotFound
     }
   ]
 
