@@ -2,7 +2,7 @@
   div.favorites-counter
     router-link(
       :class="{ empty : !hasFavorites }",
-      to="/favorites",
+      :to="{ name: 'favorites' }",
       title="Favorites",
       exact
     ) {{ favoritesCount }}
@@ -11,7 +11,6 @@
 <script>
 export default {
 
-  // TODO logic and animation for 0 -> 1 and for 1 -> 0
   data () {
     return {
       hasFavorites: null
@@ -52,7 +51,7 @@ export default {
       return (count > 0) ? true : false
     },
     updateCount () {
-      console.log('updateCount called')
+      //console.log('updateCount called')
       var count = this.favoritesCount
       if (count > 0) {
         this.$el.classList.add('updated')

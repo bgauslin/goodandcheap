@@ -47,7 +47,7 @@ export default function() {
       }
     },
     {
-      path: '/chapter/:slug',
+      path: '/:slug',
       name: 'chapter',
       component: Chapter,
       meta: {
@@ -55,10 +55,10 @@ export default function() {
       }
     },
     {
-      path: '/recipe/:slug',
+      path: '/:chapter/:slug',
       name: 'recipe',
       component: Recipe,
-      redirect: '/recipe/:slug/',
+      redirect: '/:chapter/:slug',
       children: [
         {
           path: '',
@@ -88,10 +88,6 @@ export default function() {
           }
         }
       ]
-    },
-    {
-      path: '/recipe',
-      redirect: '/'
     },
     {
       path: '/favorites',

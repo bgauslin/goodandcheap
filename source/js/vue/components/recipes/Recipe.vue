@@ -17,16 +17,16 @@
         ul.tabs(v-if="data.ingredients || data.instructions")
           li(v-if="data.blurb || data.recipeBlocks || data.copyBlocks")
             router-link(
-              :to="{ name: 'recipe', params: { slug: data.slug, isTab: true } }",
+              :to="{ name: 'recipe', params: { chapter: data.parent.slug, slug: data.slug } }",
               exact
             ) Intro
           li(v-if="data.ingredients")
             router-link(
-              :to="{ name: 'ingredients', params: { slug: data.slug, isTab: true } }"
+              :to="{ name: 'ingredients', params: { chapter: data.parent.slug, slug: data.slug } }"
             ) Ingredients
           li(v-if="data.instructions")
             router-link(
-              :to="{ name: 'steps', params: { slug: data.slug, isTab: true } }"
+              :to="{ name: 'steps', params: { chapter: data.parent.slug, slug: data.slug } }"
             ) Steps
 
         router-view(

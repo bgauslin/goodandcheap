@@ -1,7 +1,6 @@
 <template lang="pug">
   div.site
     app-header(:parent="parent", :home="home")
-    <!-- breadcrumbs(:parent="data.parent", :current="data.title") -->
     div.content
       preloader(v-if="!dataLoaded")
       transition(:name="transitionName", mode="out-in")
@@ -24,7 +23,7 @@ export default {
     return {
       data: null,
       dataLoaded: null,
-      endpoint: this.$route.meta.endpoint,
+      endpoint: '',
       home: null,
       transitionName: ''
     }
@@ -58,6 +57,9 @@ export default {
 
       var fetch = this.doFetch(to, from)
 
+      console.log('fetch = ' + fetch)
+
+
       if (this.endpoint !== undefined && fetch !== false) {
         this.data = null
         this.dataLoaded = false
@@ -68,10 +70,12 @@ export default {
 
   methods: {
     fetchData (endpoint) {
-      //console.log('endpoint = ' + endpoint)
+
       var endpointUrl = this.$root.apiBaseUrl + endpoint
       var slug = this.$route.params.slug
-      //console.log('slug = ' + slug)
+
+      console.log('endpoint = ' + endpoint)
+      console.log('slug = ' + slug)
 
       if (slug === null) { slug = undefined } // NOTE weird bugfix for going to 'info' from 'page'
       if (slug !== undefined) { endpointUrl += '/' + slug }
@@ -81,9 +85,10 @@ export default {
       .get(endpointUrl)
       .end(function(error, response) {
         if (error || !response.ok) {
-          console.log('Error fetching data :|');
+          that.notFound()
         } else {
           that.data = response.body
+          // TODO refactor/rename parent data(?)...
           that.$store.commit('setParent', response.body.parent)
           that.updateTitle(response.body.title)
           that.dataLoaded = true
@@ -137,6 +142,12 @@ export default {
     isHome () {
       var path = this.$route.path
       this.home = (path === '/') ? true : false
+    },
+
+    notFound() {
+      console.log('Error fetching data :|')
+      console.log('Redirect to 404 page')
+      //this.$root.router.go({ path: "/" })
     }
 
   }

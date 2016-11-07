@@ -1,7 +1,7 @@
 <template lang="pug">
   transition(name="remove", mode="out-in")
     li.preview.recipe-preview
-      router-link(:to="{ name: 'recipe', params: { slug: item.slug, direction: 'forward' } }", :title="item.title")
+      router-link(:to="{ name: 'recipe', params: { chapter: item.chapter.slug, slug: item.slug } }", :title="item.title")
         thumb(:image="item.thumb", :title="item.title")
         div.summary
           p.chapter-title(v-if="showChapter") {{ item.chapter }}
