@@ -3,8 +3,7 @@
     div.contents
       h4 {{ miniRecipe.heading }}
       div(v-html="miniRecipe.blurb")
-      ol.ingredients
-        li(v-for="ingredient in miniRecipe.ingredients") {{ ingredient }}
+      checklist(:items="miniRecipe.ingredients")
     figure(v-if="miniRecipe.photo")
       img(
         :src="miniRecipe.photo.src",
@@ -15,15 +14,16 @@
 </template>
 
 <script>
-import Ingredients from './Ingredients.vue'
+import Checklist from '../Checklist.vue'
+
 export default {
-  components: { Ingredients },
+  components: { Checklist },
   props: ['miniRecipe']
 }
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../../stylus/config/'
 
 .mini-recipe
   display flex

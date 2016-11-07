@@ -14,3 +14,14 @@ export default {
   props: ['variation']
 }
 </script>
+
+
+<style lang="stylus">
+@import '../../../../../stylus/config/'
+
+.variation
+  h4
+    sans-heavy()
+    small-caps()
+
+</style>

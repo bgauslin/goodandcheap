@@ -13,7 +13,7 @@ export default {
 
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../../stylus/config/'
 
 // TODO rename this element
 .copy-block

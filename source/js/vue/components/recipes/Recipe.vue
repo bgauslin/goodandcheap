@@ -12,11 +12,10 @@
           h1 {{ data.title }}
           h2.tagline {{ data.tagline }}
           badge(v-if="data.badge")
-
         toggle-favorite(:favorite="data")
 
         ul.tabs(v-if="data.ingredients || data.instructions")
-          li(v-if="data.blurb")
+          li(v-if="data.blurb || data.recipeBlocks || data.copyBlocks")
             router-link(
               :to="{ name: 'recipe', params: { slug: data.slug, isTab: true } }",
               exact
@@ -36,71 +35,25 @@
           :instructions="data.instructions"
         )
 
-        template(
-          v-if="data.copyBlocks",
-          v-for="block in data.copyBlocks"
-        )
-          blurb-with-heading(
-            v-if="block.type === 'blurbWithHeading'",
-            :heading="block.heading",
-            :blurb="block.blurb"
-          )
-          blurb(
-            v-if="block.type === 'blurb'",
-            :blurb="block.blurb"
-          )
-          list(
-            v-if="block.type === 'list'",
-            :list="block.list"
-          )
+        recipe-blocks(v-if="data.kind === 'Ideas'", :data="data.recipeBlocks")
+        copy-blocks(v-if="data.kind === 'Method'", :data="data.copyBlocks")
 
-        template(
-          v-if="data.recipeBlocks",
-          v-for="block in data.recipeBlocks"
-        )
-          variation(
-            v-if="block.type === 'variation'",
-            :variation="block"
-          )
-          linked-recipe(
-            v-if="block.type === 'linkedRecipe'",
-            :linkedRecipe="block"
-          )
-          mini-recipe(
-            v-if="block.type === 'miniRecipe'",
-            :miniRecipe="block"
-          )
       alpha-overlay
 </template>
 
 
 <script>
-import Badge from './Badge.vue'
 import RecipeCover from './RecipeCover.vue'
-import Blurb from './Blurb.vue'
 import ToggleFavorite from '../favorites/ToggleFavorite.vue'
-import Variation from './Variation.vue'
-import LinkedRecipe from './LinkedRecipe.vue'
-import MiniRecipe from './MiniRecipe.vue'
-import List from './List.vue'
-import BlurbWithHeading from './BlurbWithHeading.vue'
+import Badge from './Badge.vue'
 import AlphaOverlay from '../partials/AlphaOverlay.vue'
+import CopyBlocks from './copyBlocks/CopyBlocks.vue'
+import RecipeBlocks from './recipeBlocks/RecipeBlocks.vue'
 
 import getBreakpointValue from '../../../helpers/getBreakpointValue'
 
 export default {
-  components: {
-    Badge,
-    RecipeCover,
-    Blurb,
-    ToggleFavorite,
-    Variation,
-    LinkedRecipe,
-    MiniRecipe,
-    List,
-    BlurbWithHeading,
-    AlphaOverlay
-  },
+  components: { RecipeCover, ToggleFavorite, Badge, AlphaOverlay, CopyBlocks, RecipeBlocks },
 
   props: ['data'],
 
