@@ -47,6 +47,11 @@ export default function() {
       }
     },
     {
+      path: '/favorites',
+      name: 'favorites',
+      component: Favorites
+    },
+    {
       path: '/:slug',
       name: 'chapter',
       component: Chapter,
@@ -88,11 +93,6 @@ export default function() {
           }
         }
       ]
-    },
-    {
-      path: '/favorites',
-      name: 'favorites',
-      component: Favorites
     },
     {
       path: '*',
