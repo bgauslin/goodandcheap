@@ -50,8 +50,6 @@ export default {
 @import '../../../../stylus/config/'
 
 .page
-  //animation slideInUp .5s ease-out
-
   @media(min-width breakpoint-large)
     padding 3rem 0
 
@@ -61,7 +59,9 @@ export default {
     animation slideInUp .5s ease
 
     a
-      text-decoration underline
+      background rgba(brand-color, .1)
+      padding .1em .4em
+      border-radius 2px
 
     @media(min-width breakpoint-small)
       margin 0 auto
@@ -95,17 +95,6 @@ export default {
   background-size cover
   background-attachment scroll
 
-  // TODO move breadcrumb styles...
-  /*
-  .breadcrumbs
-    color rgba(white, .7)
-    a
-      link(white, white, rgba(white, .7))
-    span
-      color rgba(white, .7)
-  */
-
-
 .page-section
   margin 1em 0 2em
 
@@ -124,11 +113,9 @@ export default {
   .page
     &.has-background
       background-attachment fixed
-      // TODO move breadcrumb styles...
-      /*
-      .breadcrumbs
-        a
-          link-hover(rgba(white, .7))
-      */
+    a:hover
+      color white
+      background brand-color
+
 
 </style>

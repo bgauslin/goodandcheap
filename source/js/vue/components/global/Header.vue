@@ -44,7 +44,7 @@ export default {
   },
 
   mounted () {
-    this.makeHeadroom()
+    //this.makeHeadroom()
   },
 
   methods: {
