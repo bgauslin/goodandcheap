@@ -64,7 +64,6 @@ export default {
       content '\e80a' // heart (filled)
       color red
 
-
 .no-touch
   .toggle-favorite
     &:hover,

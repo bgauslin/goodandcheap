@@ -29,7 +29,7 @@ export default {
   sans()
   small-caps()
   border 1px solid brand-color
-  border-radius 4px
+  //border-radius 4px
 
   @media(min-width breakpoint-small)
     margin 1rem auto
@@ -44,24 +44,39 @@ export default {
     align-self center
     list-style none
     line-height 1
+
     border-right 1px solid brand-color
 
     &:last-child
       border none
 
+  a
+    display block
+    padding .75em 0
+    text-align center
+    background white
+
+    &:link
+    &:visited
+      color brand-color
+
+    &:active
+      color brand-color
+      background rgba(brand-color, .1)
+
+    &.current
+      color white
+      background brand-color
+
+.no-touch
+  .tabs
     a
-      display block
-      padding .75em 0
-      text-align center
-      background white
-
-      &:link
-      &:visited
+      &:hover
         color brand-color
-
-      &.current
+        background rgba(brand-color, .1)
       &.current:hover
         color white
         background brand-color
+
 
 </style>

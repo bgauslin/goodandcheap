@@ -102,6 +102,10 @@ export default {
     &.empty::after
       content '\e80b' // heart-empty
 
+    &:active
+      transition .3s ease
+      transform scale(.9)
+
     &.current
       color white
 

@@ -145,11 +145,11 @@ export default {
     small-caps()
 
   .tabs
-    margin 0 0 1rem
+    margin 0 0 1.5rem
     width 100%
 
     @media(min-width breakpoint-small)
-      margin .5rem 0 1.5rem
+      margin 0 0 2rem
 
     li
       margin 0
@@ -166,10 +166,11 @@ export default {
     serif-heavy()
 
   .toggle-favorite
-    top .75rem
+    top .25rem
     right 0
 
     @media(min-width breakpoint-large)
+      top .75rem
       right .5rem
 
   h3
