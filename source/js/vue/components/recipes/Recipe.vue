@@ -146,7 +146,6 @@ export default {
     sans-heavy()
     small-caps()
 
-
   .tabs
     margin 1rem 0
     width 100%
