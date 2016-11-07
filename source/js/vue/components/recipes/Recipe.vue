@@ -10,7 +10,7 @@
         header
           p.kind(v-if="data.kind !== 'Recipe'") {{ data.kind }}
           h1 {{ data.title }}
-          h2.tagline {{ data.tagline }}
+          h2.tagline(v-if="data.tagline") {{ data.tagline }}
           badge(v-if="data.badge")
         toggle-favorite(:favorite="data")
 

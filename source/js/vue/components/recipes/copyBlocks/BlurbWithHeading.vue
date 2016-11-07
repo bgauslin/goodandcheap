@@ -1,7 +1,7 @@
 <template lang="pug">
   div.copy-block
     h4 {{ heading }}
-    div {{ blurb }}
+    div(v-html="blurb")
 </template>
 
 
@@ -15,13 +15,15 @@ export default {
 <style lang="stylus">
 @import '../../../../../stylus/config/'
 
-// TODO rename this element
 .copy-block
   padding .5rem 0
 
   h4
-    margin-bottom .25em
+    margin 0 0 .25em
+    sans-heavy()
+    small-caps()
   p
     sans()
+    font-size em(14)
 
 </style>

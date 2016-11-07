@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.blurb(v-if="blurb" v-html="blurb")
+  div.blurb(v-html="blurb")
 </template>
 
 <script>

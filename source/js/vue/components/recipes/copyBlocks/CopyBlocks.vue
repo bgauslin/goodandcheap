@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    template(v-for="block in data.copyBlocks")
+    template(v-for="block in data")
       blurb-with-heading(
         v-if="block.type === 'blurbWithHeading'",
         :heading="block.heading",
