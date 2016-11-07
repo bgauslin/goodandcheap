@@ -10,7 +10,6 @@
 <script>
 import imagesLoaded from 'imagesloaded'
 import CoverPhoto from './CoverPhoto.vue'
-
 export default {
   components: { CoverPhoto },
   props: ['image', 'title', 'blurb', 'count']
@@ -33,7 +32,6 @@ export default {
   .blurb
     padding 1rem
     animation fadeIn .3s ease-out
-    //animation slideInUp .3s ease-out
 
     & > div
       serif()
@@ -41,9 +39,8 @@ export default {
     @media(min-width breakpoint-small)
       position-it(absolute, 0, 3rem, null, 3rem)
       padding 1.5rem
-      box-shadow 0 0 5px 0 light-grey // horiz vert blur spread color
+      box-shadow 0 0 5px 0 light-grey
       background rgba(white, 0.95)
-      //animation slideInDown .3s ease-out
 
   .recipe-count
     margin 1rem 0 0

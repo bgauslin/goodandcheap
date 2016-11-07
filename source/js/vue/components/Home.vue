@@ -1,11 +1,10 @@
 <template lang="pug">
   div
-    div
-      tabs(:tabs="tabs")
-      router-view(
-        :chapters="data.chapters",
-        :pages="data.pages"
-      )
+    tabs(:tabs="tabs")
+    router-view(
+      :chapters="data.chapters",
+      :pages="data.pages"
+    )
 </template>
 
 <script>

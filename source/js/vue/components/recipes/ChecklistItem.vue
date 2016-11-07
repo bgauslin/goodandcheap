@@ -1,6 +1,10 @@
 <template lang="pug">
   li.item
-    a(href="#", @click.prevent="toggleItem(index)", :class="{ saved : checked }") {{ item }}
+    a(
+      href="#",
+      @click.prevent="toggleItem(index)",
+      :class="{ saved : checked }"
+    ) {{ item }}
 </template>
 
 <script>
@@ -16,7 +20,6 @@ export default {
   methods: {
     toggleItem (index) {
       this.checked = !this.checked
-      //console.log('ingredient toggled for ' + index)
     }
   }
 }
@@ -27,7 +30,6 @@ export default {
 
 .item
   margin 0
-  //margin 0 0 1em
 
   a
     display block

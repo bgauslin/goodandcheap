@@ -16,12 +16,10 @@
       )
 </template>
 
-
 <script>
 import Blurb from '../Blurb.vue'
 import BlurbWithHeading from './BlurbWithHeading.vue'
 import List from './List.vue'
-
 export default {
   components: { Blurb, BlurbWithHeading, List },
   props: ['data']

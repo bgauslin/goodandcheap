@@ -1,17 +1,13 @@
 import Home from './components/Home.vue'
 import Chapters from './components/chapters/Chapters.vue'
-import Pages from './components/pages/Pages.vue'
-
 import Chapter from './components/chapters/Chapter.vue'
+import Pages from './components/pages/Pages.vue'
 import Page from './components/pages/Page.vue'
-
 import Recipe from './components/recipes/Recipe.vue'
-import Blurb from './components/recipes/Blurb.vue'
+import RecipeBlurb from './components/recipes/Blurb.vue'
 import RecipeIngredients from './components/recipes/Ingredients.vue'
 import RecipeInstructions from './components/recipes/Instructions.vue'
-
 import Favorites from './components/favorites/Favorites.vue'
-
 import NotFound from './components/NotFound.vue'
 
 export default function() {
@@ -73,7 +69,7 @@ export default function() {
         {
           path: '',
           name: 'intro',
-          component: Blurb,
+          component: RecipeBlurb,
           meta: {
             endpoint: 'recipe',
             stayInPlace: true

@@ -11,7 +11,6 @@
 
 <script>
 import getBreakpointValue from '../../../helpers/getBreakpointValue'
-
 export default {
   props: ['data'],
 

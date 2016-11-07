@@ -4,13 +4,11 @@
     div(v-html="blurb")
 </template>
 
-
 <script>
 export default {
   props: ['heading', 'blurb']
 }
 </script>
-
 
 <style lang="stylus">
 @import '../../../../../stylus/config/'

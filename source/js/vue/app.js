@@ -68,7 +68,6 @@ const app = new Vue({
   components: { App },
   store,
   router,
-
   data: {
     siteName: document.title,
     apiBaseUrl: apiDomain + '/v1/'

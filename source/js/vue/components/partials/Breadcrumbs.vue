@@ -17,9 +17,7 @@
 
 <script>
 import getBreakpointValue from '../../../helpers/getBreakpointValue'
-
 export default {
-
   props: ['parent', 'current'],
 
   mounted () {
@@ -42,9 +40,7 @@ export default {
     }
   }
 }
-
 </script>
-
 
 <style lang="stylus">
 @import '../../../../stylus/config/'

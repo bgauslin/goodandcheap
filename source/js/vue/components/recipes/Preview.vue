@@ -14,7 +14,6 @@
       remove-favorite(v-if="favoriteButton === 'remove'", :favorite="item")
 </template>
 
-
 <script>
 import Thumb from '../partials/Thumb.vue'
 import Badge from './Badge.vue'
@@ -80,7 +79,6 @@ export default {
   .remove-favorite
     top 0
     right 0
-
 
 .no-touch
   .preview

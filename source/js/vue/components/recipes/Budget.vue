@@ -4,14 +4,11 @@
     span.cost {{ budget.unitCost }} / {{ budget.units }}
 </template>
 
-
 <script>
 export default {
   props: ['budget']
 }
-
 </script>
-
 
 <style lang="stylus">
 @import '../../../../stylus/config/'
@@ -28,6 +25,5 @@ export default {
   .total
   .cost
     display block
-
 
 </style>

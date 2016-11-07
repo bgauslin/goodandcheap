@@ -52,13 +52,12 @@ export default {
   watch: {
     '$route' (to, from) {
       this.isHome()
-      this.setTransition(to, from, this.$route.params.direction)
+
+      //this.setTransition(to, from, this.$route.params.direction)
+
       this.endpoint = this.$route.meta.endpoint
-
       var fetch = this.doFetch(to, from)
-
-      console.log('fetch = ' + fetch)
-
+      //console.log('fetch = ' + fetch)
 
       if (this.endpoint !== undefined && fetch !== false) {
         this.data = null
@@ -70,12 +69,11 @@ export default {
 
   methods: {
     fetchData (endpoint) {
-
       var endpointUrl = this.$root.apiBaseUrl + endpoint
       var slug = this.$route.params.slug
 
-      console.log('endpoint = ' + endpoint)
-      console.log('slug = ' + slug)
+      //console.log('endpoint = ' + endpoint)
+      //console.log('slug = ' + slug)
 
       if (slug === null) { slug = undefined } // NOTE weird bugfix for going to 'info' from 'page'
       if (slug !== undefined) { endpointUrl += '/' + slug }
@@ -88,7 +86,6 @@ export default {
           that.notFound()
         } else {
           that.data = response.body
-          // TODO refactor/rename parent data(?)...
           that.$store.commit('setParent', response.body.parent)
           that.updateTitle(response.body.title)
           that.dataLoaded = true
@@ -119,7 +116,6 @@ export default {
 
     setTransition (to, from, direction) {
       this.transitionName = direction
-
       /*
       if (direction !== undefined) {
         this.transitionName = direction
@@ -151,7 +147,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="stylus">
 @import '../../../stylus/config/'

@@ -10,7 +10,6 @@
 
 <script>
 export default {
-
   data () {
     return {
       hasFavorites: null
@@ -50,13 +49,14 @@ export default {
       var count = this.favoritesCount
       return (count > 0) ? true : false
     },
+
     updateCount () {
-      //console.log('updateCount called')
       var count = this.favoritesCount
       if (count > 0) {
         this.$el.classList.add('updated')
       }
     },
+
     animationDone() {
       this.$el.classList.remove('updated')
     }

@@ -1,7 +1,7 @@
 <template lang="pug">
   li.preview
     router-link(
-        :to="{ name: routeName, params: { slug: item.slug, direction: 'forward' } }",
+        :to="{ name: routeName, params: { slug: item.slug } }",
         :title="item.title"
       )
       thumb(
@@ -12,7 +12,6 @@
         h3 {{ item.title }}
         p.recipe-count(v-if="item.recipeCount") {{ item.recipeCount }} Recipes
 </template>
-
 
 <script>
 import Thumb from './Thumb.vue'

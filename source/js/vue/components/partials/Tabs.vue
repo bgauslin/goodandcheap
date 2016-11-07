@@ -1,16 +1,19 @@
 <template lang="pug">
   ul.tabs
     li(v-for="tab in tabs")
-      router-link(v-if="tab.name", :to="{ name: tab.name }", :title="tab.label", exact) {{ tab.label }}
+      router-link(
+        v-if="tab.name",
+        :to="{ name: tab.name }",
+        :title="tab.label",
+        exact
+      ) {{ tab.label }}
 </template>
 
 <script>
-
 export default {
   props: ['tabs']
 }
 </script>
-
 
 <style lang="stylus">
 @import '../../../../stylus/config/'
@@ -60,6 +63,5 @@ export default {
       &.current:hover
         color white
         background brand-color
-
 
 </style>

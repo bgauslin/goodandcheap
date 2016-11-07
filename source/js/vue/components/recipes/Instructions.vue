@@ -10,7 +10,6 @@
         li(v-for="step in block.steps") {{ step }}
 </template>
 
-
 <script>
 export default {
   props: ['instructions'],
@@ -59,6 +58,5 @@ export default {
     padding 0
     li
       list-style none
-
 
 </style>

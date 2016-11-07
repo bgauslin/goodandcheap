@@ -15,7 +15,6 @@
 
 <script>
 import Checklist from '../Checklist.vue'
-
 export default {
   components: { Checklist },
   props: ['miniRecipe']

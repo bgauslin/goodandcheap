@@ -19,7 +19,6 @@
 import Variation from './Variation.vue'
 import LinkedRecipe from './LinkedRecipe.vue'
 import MiniRecipe from './MiniRecipe.vue'
-
 export default {
   components: { Variation, LinkedRecipe, MiniRecipe },
   props: ['data']

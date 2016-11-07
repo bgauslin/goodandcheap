@@ -2,7 +2,7 @@
   div.chapter
     div.chapter-content
       div.intro
-        cover(
+        basic-cover(
           :title="data.title",
           :blurb="data.blurb",
           :image="data.photo",
@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import Cover from '../partials/BasicCover.vue'
+import BasicCover from '../partials/BasicCover.vue'
 import RecipePreview from '../recipes/Preview.vue'
 
 export default {
-  components: { Cover, RecipePreview },
+  components: { BasicCover, RecipePreview },
   props: ['data']
 }
 </script>

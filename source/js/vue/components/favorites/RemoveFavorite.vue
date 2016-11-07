@@ -2,7 +2,6 @@
   button.remove-favorite(@click="removeItem(favorite)")
 </template>
 
-
 <script>
 export default {
   props: ['favorite'],
@@ -14,7 +13,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="stylus">
 @import '../../../../stylus/config/'

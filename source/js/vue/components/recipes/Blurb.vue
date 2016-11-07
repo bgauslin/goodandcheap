@@ -21,7 +21,6 @@ export default {
     padding .1em .4em
     border-radius 2px
 
-
 .no-touch
   .blurb
     a:hover

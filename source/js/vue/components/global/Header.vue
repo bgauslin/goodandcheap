@@ -14,9 +14,8 @@
 <script>
 import UpButton from '../partials/UpButton.vue'
 import FavoritesCounter from '../favorites/FavoritesCounter.vue'
-//import SearchToggle from '../search/SearchToggle.vue'
-//import SearchBar from '../search/SearchBar.vue'
 
+// TODO remove headroom.js (it's better without it)
 import headroom from 'headroom.js'
 
 export default {

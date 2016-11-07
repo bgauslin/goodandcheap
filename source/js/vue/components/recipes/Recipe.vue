@@ -41,7 +41,6 @@
       alpha-overlay
 </template>
 
-
 <script>
 import RecipeCover from './RecipeCover.vue'
 import ToggleFavorite from '../favorites/ToggleFavorite.vue'
@@ -84,7 +83,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="stylus">
 @import '../../../../stylus/config/'
