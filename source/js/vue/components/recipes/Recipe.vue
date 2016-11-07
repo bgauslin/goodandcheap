@@ -147,8 +147,12 @@ export default {
     small-caps()
 
   .tabs
-    margin 1rem 0
+    margin 0 0 1rem
     width 100%
+
+    @media(min-width breakpoint-small)
+      margin .5rem 0 1.5rem
+
     li
       margin 0
 

@@ -36,7 +36,7 @@ export default {
   margin 0
 
   h2
-    margin 1rem 0
+    margin 1rem 0 .5rem
     padding 0
     sans-heavy()
     small-caps()

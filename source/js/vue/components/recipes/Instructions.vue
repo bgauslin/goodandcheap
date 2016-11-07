@@ -48,13 +48,13 @@ export default {
     margin 0
     sans()
     font-size em(15)
+
   li
     margin 0 0 1em
+
   ol
-    padding 0 0 0 1.1rem
-    li
-      padding-left .5em
-      list-style decimal outside
+    padding 0 0 0 1.3rem
+
   ul
     padding 0
     li
