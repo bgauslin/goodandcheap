@@ -106,9 +106,15 @@ export default {
     &.current::after
       content '\e80b' // heart-empty
 
+    &.current
+      color white
+
 .no-touch
   .favorites-counter
     a
       link-hover(rgba(white, .7))
+      &.current:hover
+        color white
+        cursor default
 
 </style>

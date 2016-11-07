@@ -63,6 +63,8 @@ export default {
       font-size em(22)
       content '\e802' // angle-left
       margin-right .25em
+      position relative
+      top -.05em
 
   &.hide
     visibility hidden
