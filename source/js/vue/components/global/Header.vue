@@ -1,6 +1,6 @@
 <template lang="pug">
   header.header
-    div
+    div.controls
       up-button(:parent="parent", :home="home")
       h1
         router-link(
@@ -76,11 +76,8 @@ export default {
   &.unpin
     transform translateY(-100%)
 
-
-  & > div
-    display flex
-    justify-content space-between
-    align-items center
+  .controls
+    position relative
     height header-height-base
 
     @media(min-width breakpoint-small)
@@ -98,28 +95,34 @@ export default {
       width width-xlarge
 
   h1
+    position-it(absolute, 0, 4rem, null, 4rem)
+
     display flex
-    align-self stretch
+    justify-content center
+    height header-height-base
+
     sans-heavy()
     small-caps(14)
+    white-space nowrap
 
-    @media(min-width breakpoint-small)
-      margin-left 1rem
+    a
+      display flex
+      align-items center
+      align-self stretch
 
-  a
-    display flex
-    align-items center
-    align-self stretch
-    padding 0 1.5rem
-    link(white, white, rgba(white, .7))
+      padding 0 1rem
+      link(white, white, rgba(white, .7))
+
+      @media(min-width breakpoint-medium)
+        height header-height-medium
 
 .no-touch
   .header
-    a
-      link-hover(rgba(white, .7))
-
-      &.current
-        cursor default
-        color white
+    h1
+      a
+        link-hover(rgba(white, .7))
+        &.current
+          cursor default
+          color white
 
 </style>

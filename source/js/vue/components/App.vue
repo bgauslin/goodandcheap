@@ -56,9 +56,9 @@ export default {
       this.setTransition(to, from, this.$route.params.direction)
       this.endpoint = this.$route.meta.endpoint
 
-      var reload = this.doFetch(to, from)
+      var fetch = this.doFetch(to, from)
 
-      if (this.endpoint !== undefined && reload !== false) {
+      if (this.endpoint !== undefined && fetch !== false) {
         this.data = null
         this.dataLoaded = false
         this.fetchData(this.endpoint)

@@ -23,25 +23,29 @@ export default {
 @import '../../../../stylus/config/'
 
 .up-button
-  display flex
-  justify-content center
-  align-items center
-
-  width header-height-base
-  height header-height-base
+  position-it(absolute, 0, null, null, 0)
 
   a
+    display flex
+    align-items center
+    align-self stretch
+
+    width 3rem
+    padding-left .75rem
+    height header-height-base
+
+    @media(min-width breakpoint-small)
+      padding-left 0
+
+    @media(min-width breakpoint-medium)
+      height header-height-medium
+
     link(white, white, rgba(white, .7))
 
     &::before
       icon()
       font-size em(22)
       content '\e802' // angle-left
-      position relative
-      left -.25rem
-
-      @media(min-width breakpoint-small)
-        left -1rem
 
   &.hide
     visibility hidden

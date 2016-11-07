@@ -1,17 +1,17 @@
 <template lang="pug">
-  router-link.favorites-counter(
-    :class="{ empty : !hasFavorites }",
-    to="/favorites",
-    title="Favorites",
-    exact
-  ) {{ favoritesCount }}
+  div.favorites-counter
+    router-link(
+      :class="{ empty : !hasFavorites }",
+      to="/favorites",
+      title="Favorites",
+      exact
+    ) {{ favoritesCount }}
 </template>
 
 <script>
 export default {
 
   // TODO logic and animation for 0 -> 1 and for 1 -> 0
-
   data () {
     return {
       hasFavorites: null
@@ -70,16 +70,19 @@ export default {
 @import '../../../../stylus/config/'
 
 .favorites-counter
+  position-it(absolute, 0, 0, null, null)
   display flex
-  justify-content center
-  align-items center
-  align-self stretch
-  width 3.5rem
-  line-height 1
+  justify-content flex-end
+
+  width 4rem
+  height header-height-base
+
   color white
   sans()
-  font-size em(11)
-  color white
+  font-size em(13)
+
+  @media(min-width breakpoint-medium)
+    height header-height-medium
 
   &.updated
     animation bounce .3s ease-out
@@ -87,16 +90,25 @@ export default {
   &.empty
     visibility hidden
 
-  &::after
-    margin-left .25em
-    icon()
-    content '\e80b' // heart-empty
-    font-size 1rem
+  a
+    display flex
+    align-items center
+    align-self stretch
 
-  &.current::after
-    content '\e80a' // heart
+    link(white, white, rgba(white, .7))
 
+    &::after
+      margin 0 1rem 0 .3em
+      icon()
+      content '\e80a' // heart
+      font-size 1rem
 
+    &.current::after
+      content '\e80b' // heart-empty
 
+.no-touch
+  .favorites-counter
+    a
+      link-hover(rgba(white, .7))
 
 </style>
