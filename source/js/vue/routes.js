@@ -8,6 +8,7 @@ import RecipeBlurb from './components/recipes/Blurb.vue'
 import RecipeIngredients from './components/recipes/Ingredients.vue'
 import RecipeInstructions from './components/recipes/Instructions.vue'
 import Favorites from './components/favorites/Favorites.vue'
+import Search from './components/search/SearchResults.vue'
 import NotFound from './components/NotFound.vue'
 
 export default function() {
@@ -53,6 +54,18 @@ export default function() {
       component: Favorites
     },
     {
+      path: '/search/:query',
+      name: 'search',
+      component: Search,
+      meta: {
+        endpoint: 'search'
+      }
+    },
+    {
+      path: '/search/',
+      redirect: '/'
+    },
+    {
       path: '/:slug',
       name: 'chapter',
       component: Chapter,
@@ -64,7 +77,7 @@ export default function() {
       path: '/:chapter/:slug',
       name: 'recipe',
       component: Recipe,
-      redirect: '/:chapter/:slug',
+      redirect: '/:chapter/:slug/',
       children: [
         {
           path: '',

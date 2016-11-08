@@ -69,14 +69,18 @@ export default {
 
   methods: {
     fetchData (endpoint) {
-      var endpointUrl = this.$root.apiBaseUrl + endpoint
-      var slug = this.$route.params.slug
-
       //console.log('endpoint = ' + endpoint)
+      var endpointUrl = this.$root.apiBaseUrl + endpoint
+      var slug = (this.$route.params.query) ? this.$route.params.query : this.$route.params.slug
       //console.log('slug = ' + slug)
 
-      if (slug === null) { slug = undefined } // NOTE weird bugfix for going to 'info' from 'page'
-      if (slug !== undefined) { endpointUrl += '/' + slug }
+      // NOTE weird bugfix for going to 'info' from 'page'
+      if (slug === null) {
+        slug = undefined
+      }
+      if (slug !== undefined) {
+        endpointUrl += '/' + slug
+      }
 
       var that = this
       request
@@ -96,7 +100,6 @@ export default {
     doFetch(to, from) {
       //console.log('to = ' + to.name)
       //console.log('from = ' + from.name)
-
       if (to.name === 'intro') {
         if (from.name === 'steps' || from.name === 'ingredients') {
           return false
