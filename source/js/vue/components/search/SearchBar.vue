@@ -1,17 +1,49 @@
 <template lang="pug">
   div.search-bar
-    form.search-form(action="")
-      input.search(
-        type="search",
+    form.search-form(action="/search")
+      input.search-input(
         name="q",
-        placeholder="Search",
-        value="",
+        type="search",
+        :value="query",
+        placeholder="Search"
       )
-      button.go Go
+    search-toggle
 </template>
 
 <script>
+import SearchToggle from './SearchToggle.vue'
 export default {
+  components: { SearchToggle },
+
+  data () {
+    return {
+      showInput: false,
+      query: this.$store.getters.getQuery
+    }
+  },
+
+  created () {
+    this.getQuery()
+  },
+
+
+  methods: {
+    getQuery () {
+      var query = window.location.search
+      if (query) {
+        this.query = query.replace('?q=', '').replace('%20', ' ')
+      } else {
+        this.query = ''
+      }
+      this.$store.commit('setQuery', this.query)
+    },
+
+    toggleInput() {
+      // TODO catch state from search-toggle
+    }
+  }
+
+
 }
 </script>
 
@@ -20,55 +52,28 @@ export default {
 @import '../../../../stylus/config/'
 
 .search-bar
-  padding 0 1rem 1rem
+  position-it(absolute, 0, 3rem, null, 3rem)
+  display flex
+  height header-height-base
 
-  &.closed
-    display none
-
-  &.open
-    display block
-
-  @media (min-width breakpoint-small)
-    margin-right auto
-    margin-left auto
-    width small
+  @media(min-width breakpoint-medium)
+    height header-height-medium
 
 .search-form
   display flex
-  width 100%
+  align-items center
+  align-self stretch
+  flex 1
 
-.search
-.go
-  border none
-
-  &:first-child
-    border-radius 4px 0 0 4px
-
-  &:last-child
-    border-radius 0 4px 4px 0
-
-.search
+.search-input
   flex 1
   margin 0
-  padding .3em
+  padding .25rem .5rem
   sans()
   font-size em(13)
+  border none
 
   &:focus
     outline none
-
-  &:not(:first-child)
-    border-left 0
-
-  &:not(:last-child)
-    border-right 0
-
-.go
-  padding .3em 1em
-  sans()
-  small-caps(13)
-  color white
-  background mix(black, brand-color, 25%)
-
 
 </style>

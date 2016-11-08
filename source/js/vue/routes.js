@@ -54,16 +54,12 @@ export default function() {
       component: Favorites
     },
     {
-      path: '/search/:query',
+      path: '/search',
       name: 'search',
       component: Search,
       meta: {
         endpoint: 'search'
       }
-    },
-    {
-      path: '/search/',
-      redirect: '/'
     },
     {
       path: '/:slug',

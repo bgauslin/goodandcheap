@@ -71,16 +71,19 @@ export default {
     fetchData (endpoint) {
       //console.log('endpoint = ' + endpoint)
       var endpointUrl = this.$root.apiBaseUrl + endpoint
-      var slug = (this.$route.params.query) ? this.$route.params.query : this.$route.params.slug
+      var slug = this.$route.params.slug
       //console.log('slug = ' + slug)
 
-      // NOTE weird bugfix for going to 'info' from 'page'
-      if (slug === null) {
-        slug = undefined
+      // NOTE append query for search
+      if (window.location.search) {
+        endpointUrl += window.location.search
       }
-      if (slug !== undefined) {
-        endpointUrl += '/' + slug
-      }
+
+      // NOTE bugfix for going to 'info' from 'page'
+      if (slug === null) { slug = undefined }
+      if (slug !== undefined) { endpointUrl += '/' + slug }
+
+      //console.log('endpointUrl = ' + endpointUrl)
 
       var that = this
       request
@@ -100,6 +103,7 @@ export default {
     doFetch(to, from) {
       //console.log('to = ' + to.name)
       //console.log('from = ' + from.name)
+      // TODO find a cleaner way to route all of this...
       if (to.name === 'intro') {
         if (from.name === 'steps' || from.name === 'ingredients') {
           return false
@@ -144,6 +148,7 @@ export default {
     },
 
     notFound() {
+      //console.log('404')
       window.location.replace('/404')
     }
 

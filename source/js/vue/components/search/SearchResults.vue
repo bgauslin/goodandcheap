@@ -26,7 +26,7 @@ export default {
 
   data () {
     return {
-      query: this.$route.params.query
+      query: this.$store.getters.getQuery
     }
   },
 

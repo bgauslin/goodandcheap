@@ -8,18 +8,20 @@
           title="Home",
           exact
         ) {{ heading }}
+      search-bar
       favorites-counter
 </template>
 
 <script>
 import UpButton from '../partials/UpButton.vue'
+import SearchBar from '../search/SearchBar.vue'
 import FavoritesCounter from '../favorites/FavoritesCounter.vue'
 
 // TODO remove headroom.js (it's better without it)
 import headroom from 'headroom.js'
 
 export default {
-  components: { UpButton, FavoritesCounter },
+  components: { UpButton, SearchBar, FavoritesCounter },
 
   props: ['parent'],
 

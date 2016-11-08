@@ -5,7 +5,6 @@
 
 <script>
 export default {
-
 }
 </script>
 
@@ -14,15 +13,9 @@ export default {
 @import '../../../../stylus/config/'
 
 .search-toggle
-  visibility hidden
-
-  display flex
-  justify-content center
-  align-items center
-  align-self stretch
-
-  width header-height-base
-  line-height 1
+  display block
+  width 2rem
+  text-align center
   color white
 
   &:active
@@ -32,8 +25,6 @@ export default {
     icon()
     font-size em(16)
     content '\e804' // search
-    position relative
-    top -.1em
 
   &.open
     &::before
@@ -41,7 +32,7 @@ export default {
 
 .no-touch
   .search-toggle
-    &:hover,
+    &:hover
     &:visited:hover
       color rgba(white, .7)
 

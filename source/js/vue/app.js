@@ -8,7 +8,8 @@ Vue.use(VueRouter)
 const store = new Vuex.Store({
   state: {
     favorites: JSON.parse(localStorage.getItem('favorites')) || [],
-    parent: null
+    parent: null,
+    query: null
   },
 
   mutations: {
@@ -23,6 +24,9 @@ const store = new Vuex.Store({
     },
     setParent (state, parent) {
       state.parent = parent
+    },
+    setQuery (state, query) {
+      state.query = query
     }
   },
 
@@ -35,6 +39,9 @@ const store = new Vuex.Store({
     },
     getParent: state => {
       return state.parent
+    },
+    getQuery: state => {
+      return state.query
     }
   }
 })
