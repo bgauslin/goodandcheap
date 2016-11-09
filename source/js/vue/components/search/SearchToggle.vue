@@ -24,12 +24,13 @@ export default {
 @import '../../../../stylus/config/'
 
 .search-toggle
-  display block
-  width 2rem
-  text-align center
-  color white
+  margin 0
+  padding 0
 
   align-self stretch
+
+  width 2.75rem
+  color white
 
   &:active
     color rgba(white, .7)

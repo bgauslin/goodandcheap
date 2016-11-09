@@ -54,19 +54,10 @@ export default {
 
 .header
   position-it(fixed, 0, 0, null, 0)
+  z-index 999
 
-  //z-index 999
   background rgba(brand-color, .97)
   box-shadow 0 0 5px 0 medium-grey
-
-  // headroom classes
-  transition transform .3s ease-out
-
-  &.pin
-    transform translateY(0%)
-
-  &.unpin
-    transform translateY(-100%)
 
   .controls
     position relative
@@ -87,8 +78,7 @@ export default {
       width width-xlarge
 
   h1
-    position-it(absolute, 0, 6rem, null, 6rem)
-    //z-index 999
+    position-it(absolute, 0, 0, null, 0)
 
     display flex
     justify-content center
@@ -98,15 +88,14 @@ export default {
     small-caps(14)
     white-space nowrap
 
-    @media(min-width breakpoint-large)
-      right 22rem
-      left 22rem
-
     @media(max-width breakpoint-large)
       &.search-enabled
         display none
 
     a
+      position relative
+      z-index 2
+
       display flex
       align-items center
       align-self stretch

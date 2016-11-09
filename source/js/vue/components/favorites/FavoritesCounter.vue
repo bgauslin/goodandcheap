@@ -78,7 +78,7 @@ export default {
 
   color white
   sans()
-  font-size em(13)
+  font-size em(12)
 
   @media(min-width breakpoint-medium)
     height header-height-medium

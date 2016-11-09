@@ -3,7 +3,7 @@
     form.search-form(action="/search")
       input.search-input(
         name="q",
-        type="search",
+        type="text",
         :value="query",
         :class="{ open : open, closed : !open }",
         placeholder="Search",
@@ -48,7 +48,7 @@ export default {
 @import '../../../../stylus/config/'
 
 .search-bar
-  position-it(absolute, 0, 3.25rem, null, .75rem)
+  position-it(absolute, 0, 3rem, null, margins-base)
 
   display flex
   align-items center
@@ -76,7 +76,14 @@ export default {
   display flex
   align-items center
 
+input[type="search"]
+  appearance none
+  border-radius 0
+
 .search-input
+  appearance none
+  border-radius 0
+
   position-it(absolute, .5rem, 0, .5rem, null)
 
   margin 0
@@ -93,11 +100,12 @@ export default {
   &.closed
     padding .25rem 0
     width 0
+    z-index -1
 
   &.open
     padding .25rem
     width 100%
-    z-index 9999
+    z-index 2
 
   &:focus
     outline none

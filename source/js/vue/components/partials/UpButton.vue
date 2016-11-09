@@ -27,7 +27,7 @@ export default {
 .up-button
   position-it(absolute, 0, null, null, 0)
   width 3rem
-  z-index 9999
+  z-index 2
 
   @media(min-width breakpoint-medium)
     width auto
