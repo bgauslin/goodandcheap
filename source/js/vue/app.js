@@ -10,7 +10,7 @@ const store = new Vuex.Store({
     favorites: JSON.parse(localStorage.getItem('favorites')) || [],
     parent: null,
     query: null,
-    showSearch: true
+    showSearch: false
   },
 
   mutations: {

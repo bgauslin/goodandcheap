@@ -2,7 +2,7 @@
   header.header
     div.controls
       up-button(:parent="parent")
-      h1
+      h1(:class="{ 'search-enabled' : hasSearch }")
         router-link(
           to="/",
           title="Home",
@@ -44,6 +44,12 @@ export default {
     }
   },
 
+  computed: {
+    hasSearch () {
+      return this.$store.getters.getShowSearch
+    }
+  },
+
   mounted () {
     //this.makeHeadroom()
   },
@@ -64,7 +70,7 @@ export default {
 .header
   position-it(fixed, 0, 0, null, 0)
 
-  z-index 9999
+  z-index 999
   background rgba(brand-color, .97)
   box-shadow 0 0 5px 0 medium-grey
 
@@ -97,6 +103,7 @@ export default {
 
   h1
     position-it(absolute, 0, 6rem, null, 6rem)
+    z-index 999
 
     display flex
     justify-content center
@@ -105,6 +112,9 @@ export default {
     sans-heavy()
     small-caps(14)
     white-space nowrap
+
+    &.search-enabled
+      display none
 
     a
       display flex
@@ -118,7 +128,7 @@ export default {
         height header-height-medium
 
       &:active
-        transition .3s ease
+        //transition .3s ease
         transform scale(.9)
 
 .no-touch
@@ -129,5 +139,7 @@ export default {
         &.current
           cursor default
           color white
+          &:active
+            transform none
 
 </style>

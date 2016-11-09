@@ -1,10 +1,11 @@
 <template lang="pug">
-  div.search-bar(:class="{open : open, closed : !open }")
+  div.search-bar
     form.search-form(action="/search")
       input.search-input(
         name="q",
         type="search",
         :value="query",
+        :class="{ open : open, closed : !open }",
         placeholder="Search",
         autofocus
       )
@@ -58,16 +59,6 @@ export default {
 
   height header-height-base
 
-  &.closed
-    .search-input
-      padding .25rem 0
-      width 0
-
-  &.open
-    .search-input
-      padding .25rem .5rem
-      width 100%
-
   @media(min-width breakpoint-medium)
     height header-height-medium
 
@@ -88,6 +79,14 @@ export default {
   sans()
   font-size em(13)
   border none
+
+  &.closed
+    padding .25rem 0
+    width 0
+
+  &.open
+    padding .25rem .5rem
+    width 100%
 
   &:focus
     outline none

@@ -1,6 +1,6 @@
 <template lang="pug">
   div.site
-    app-header(:parent="parent")
+    app-header(:parent="parent", :home="home")
     div.content
       preloader(v-if="!dataLoaded")
       transition(:name="transitionName", mode="out-in")
@@ -37,6 +37,7 @@ export default {
 
   created () {
     this.isHome()
+    this.isSearch()
 
     this.endpoint = this.$route.meta.endpoint
     if (this.endpoint !== undefined) {
@@ -52,6 +53,7 @@ export default {
   watch: {
     '$route' (to, from) {
       this.isHome()
+      this.isSearch()
 
       //this.setTransition(to, from, this.$route.params.direction)
 
@@ -143,8 +145,14 @@ export default {
     },
 
     isHome () {
-      var path = this.$route.path
-      this.home = (path === '/') ? true : false
+      var routeName = this.$route.name
+      this.home = (routeName === 'chapters') ? true : false
+    },
+
+    isSearch () {
+      var routeName = this.$route.name
+      var setSearch = (routeName === 'search') ? true : false
+      this.$store.commit('setSearch', setSearch)
     },
 
     notFound() {
