@@ -52,15 +52,25 @@ export default {
 @import '../../../../stylus/config/'
 
 .search-bar
-  position-it(absolute, 0, 3rem, null, .75rem)
+  position-it(absolute, 0, 3.25rem, null, .75rem)
 
   display flex
   align-items center
 
   height header-height-base
 
+  @media(min-width breakpoint-small)
+    right 3.5rem
+    left 5.5rem
+
   @media(min-width breakpoint-medium)
     height header-height-medium
+
+  @media(min-width breakpoint-large)
+    left calc(50% + 6rem)
+
+  @media(min-width breakpoint-xlarge)
+    left calc(50% + 8rem)
 
 .search-form
   position relative

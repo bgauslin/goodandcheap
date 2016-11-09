@@ -113,22 +113,25 @@ export default {
     small-caps(14)
     white-space nowrap
 
-    &.search-enabled
-      display none
+    @media(min-width breakpoint-large)
+      right 22rem
+      left 22rem
+
+    @media(max-width breakpoint-large)
+      &.search-enabled
+        display none
 
     a
       display flex
       align-items center
       align-self stretch
 
-      //padding 0 1rem
       link(white, white, rgba(white, .7))
 
       @media(min-width breakpoint-medium)
         height header-height-medium
 
       &:active
-        //transition .3s ease
         transform scale(.9)
 
 .no-touch
