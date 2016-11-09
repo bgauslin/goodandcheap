@@ -2,24 +2,45 @@
   li.item
     a(
       href="#",
-      @click.prevent="toggleItem(index)",
-      :class="{ saved : checked }"
+      @click.prevent="toggleItem(id)",
+      :class="{ saved : isSaved }"
     ) {{ item }}
 </template>
 
 <script>
 export default {
-  props: ['item', 'index'],
+  props: ['item', 'itemIndex', 'listIndex', 'parentId'],
 
   data () {
     return {
-      checked: false
+      isSaved: false
     }
   },
 
+  computed: {
+    id () {
+      return this.parentId + '.' + this.listIndex + '.' + this.itemIndex
+    }
+  },
+
+  created () {
+    this.isSaved = this.isSavedIngredient(this.id)
+  },
+
   methods: {
-    toggleItem (index) {
-      this.checked = !this.checked
+    toggleItem (id) {
+      if (this.isSaved) {
+        this.$store.commit('removeIngredient', id)
+      } else {
+        this.$store.commit('addIngredient', id)
+      }
+      this.isSaved = !this.isSaved
+    },
+
+    isSavedIngredient (id) {
+      var ids = this.$store.getters.ingredientsIds
+      var index = ids.indexOf(id)
+      return (index !== -1) ? true : false
     }
   }
 }

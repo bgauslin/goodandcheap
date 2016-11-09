@@ -8,6 +8,7 @@ Vue.use(VueRouter)
 const store = new Vuex.Store({
   state: {
     favorites: JSON.parse(localStorage.getItem('favorites')) || [],
+    ingredients: JSON.parse(localStorage.getItem('ingredients')) || [],
     parent: null,
     query: null,
     showSearch: false
@@ -22,6 +23,15 @@ const store = new Vuex.Store({
       var i = state.favorites.indexOf(item)
       state.favorites.splice(i, 1)
       localStorage.setItem('favorites', JSON.stringify(state.favorites))
+    },
+    addIngredient (state, id) {
+      state.ingredients.push(id)
+      localStorage.setItem('ingredients', JSON.stringify(state.ingredients))
+    },
+    removeIngredient (state, id) {
+      var i = state.ingredients.indexOf(id)
+      state.ingredients.splice(i, 1)
+      localStorage.setItem('ingredients', JSON.stringify(state.ingredients))
     },
     setParent (state, parent) {
       state.parent = parent
@@ -40,6 +50,9 @@ const store = new Vuex.Store({
     },
     favoritesIds: state => {
       return state.favorites.map(favorite => favorite.id)
+    },
+    ingredientsIds: state => {
+      return state.ingredients
     },
     getParent: state => {
       return state.parent

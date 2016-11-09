@@ -32,7 +32,8 @@
         router-view(
           :blurb="data.blurb",
           :ingredients="data.ingredients",
-          :instructions="data.instructions"
+          :instructions="data.instructions",
+          :parentId="data.id"
         )
 
         recipe-blocks(v-if="data.kind === 'Ideas'", :data="data.recipeBlocks")

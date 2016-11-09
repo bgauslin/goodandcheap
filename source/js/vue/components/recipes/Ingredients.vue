@@ -1,9 +1,13 @@
 <template lang="pug">
   div.ingredients-list
-    div.ingredients(v-for="block in ingredients")
+    div.ingredients(v-for="(block, index) in ingredients")
       h2(v-if="block.heading") {{ block.heading }}
         span.item-count {{ itemsLabel(block.items) }}
-      checklist(:items="block.items")
+      checklist(
+        :items="block.items",
+        :parentId="parentId",
+        :listIndex="index"
+      )
 </template>
 
 <script>
@@ -11,7 +15,7 @@ import Checklist from './Checklist.vue'
 export default {
   components: { Checklist },
 
-  props: ['ingredients'],
+  props: ['ingredients', 'parentId'],
 
   methods: {
     itemsLabel (count) {
