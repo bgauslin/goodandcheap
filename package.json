@@ -7,7 +7,6 @@
   "dependencies": {
     "fastclick": "^1.0.6",
     "flickity": "^2.0.5",
-    "headroom.js": "^0.9.3",
     "imagesloaded": "^4.1.1",
     "isotope-layout": "^3.0.1",
     "laravel-elixir": "^6.0.0-11",
@@ -19,12 +18,12 @@
     "laravel-elixir-vueify": "^2.0.0",
     "pug": "^2.0.0-beta6",
     "spin": "0.0.1",
-    "superagent": "^2.3.0",
     "stylus": "^0.54.5",
+    "superagent": "^2.3.0",
     "vue": "^2.0.3",
+    "vue-router": "^2.0.1",
     "vueify": "^9.2.4",
     "vuex": "^2.0.0",
-    "vue-router": "^2.0.1",
     "vuex-router-sync": "^3.0.0"
   }
 }
