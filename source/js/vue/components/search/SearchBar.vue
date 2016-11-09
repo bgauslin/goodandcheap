@@ -6,8 +6,7 @@
         type="text",
         :value="query",
         :class="{ open : open, closed : !open }",
-        placeholder="Search",
-        autofocus
+        placeholder="Search"
       )
     search-toggle(:open="open")
 </template>
@@ -25,6 +24,15 @@ export default {
 
   created () {
     this.getQuery()
+    document.addEventListener('click', this.closeIt)
+  },
+
+  updated () {
+    this.focusInput()
+  },
+
+  beforeDestroy: function () {
+    //document.removeEventListener('click', this.closeIt)
   },
 
   computed: {
@@ -39,6 +47,15 @@ export default {
       this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null
       this.$store.commit('setQuery', this.query)
     },
+    focusInput () {
+      this.$el.querySelectorAll('.search-input')[0].focus()
+    },
+    closeIt () {
+      let active = document.activeElement.tagName
+      if (active !== 'INPUT') {
+        this.$store.commit('setSearch', false)
+      }
+    }
   }
 }
 </script>
