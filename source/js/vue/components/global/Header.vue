@@ -17,9 +17,6 @@ import UpButton from '../partials/UpButton.vue'
 import SearchBar from '../search/SearchBar.vue'
 import FavoritesCounter from '../favorites/FavoritesCounter.vue'
 
-// TODO remove headroom.js (it's better without it)
-import headroom from 'headroom.js'
-
 export default {
   components: { UpButton, SearchBar, FavoritesCounter },
 
@@ -48,19 +45,7 @@ export default {
     hasSearch () {
       return this.$store.getters.getShowSearch
     }
-  },
-
-  mounted () {
-    //this.makeHeadroom()
-  },
-
-  methods: {
-    makeHeadroom () {
-      let header = new headroom(this.$el, this.headroomOptions)
-      header.init()
-    }
   }
-
 }
 </script>
 
@@ -70,7 +55,7 @@ export default {
 .header
   position-it(fixed, 0, 0, null, 0)
 
-  z-index 999
+  //z-index 999
   background rgba(brand-color, .97)
   box-shadow 0 0 5px 0 medium-grey
 
@@ -103,7 +88,7 @@ export default {
 
   h1
     position-it(absolute, 0, 6rem, null, 6rem)
-    z-index 999
+    //z-index 999
 
     display flex
     justify-content center
@@ -133,6 +118,7 @@ export default {
 
       &:active
         transform scale(.9)
+        transition .3s ease
 
 .no-touch
   .header

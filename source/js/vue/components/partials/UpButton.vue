@@ -67,8 +67,8 @@ export default {
       top -.05em
 
     &:active
-      transition .3s ease
       transform scale(.9)
+      transition .3s ease
 
 .no-touch
   .up-button

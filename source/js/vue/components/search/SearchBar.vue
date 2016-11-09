@@ -36,13 +36,9 @@ export default {
   methods: {
     getQuery () {
       var query = window.location.search
-      if (query) {
-        this.query = query.replace('?q=', '').replace('%20', ' ')
-      } else {
-        this.query = ''
-      }
+      this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null
       this.$store.commit('setQuery', this.query)
-    }
+    },
   }
 }
 </script>
@@ -75,14 +71,14 @@ export default {
 .search-form
   position relative
   width 100%
-  height inherit
+  height 100%
 
   display flex
   align-items center
 
 .search-input
-  position absolute
-  right 0
+  position-it(absolute, .5rem, 0, .5rem, null)
+
   margin 0
   transition all .2s ease
 
@@ -90,13 +86,18 @@ export default {
   font-size em(13)
   border none
 
+  @media(min-width breakpoint-medium)
+    top .875rem
+    bottom .875rem
+
   &.closed
     padding .25rem 0
     width 0
 
   &.open
-    padding .25rem .5rem
+    padding .25rem
     width 100%
+    z-index 9999
 
   &:focus
     outline none
