@@ -23,7 +23,7 @@ export default {
 
   data () {
     return {
-      favorites: this.$store.state.favorites
+      favorites: this.$store.state.favorites.reverse()
     }
   },
 
