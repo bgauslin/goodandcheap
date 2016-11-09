@@ -1,13 +1,14 @@
 <template lang="pug">
-  div.search-bar
+  div.search-bar(:class="{open : open, closed : !open }")
     form.search-form(action="/search")
       input.search-input(
         name="q",
         type="search",
         :value="query",
-        placeholder="Search"
+        placeholder="Search",
+        autofocus
       )
-    search-toggle
+    search-toggle(:open="open")
 </template>
 
 <script>
@@ -17,8 +18,7 @@ export default {
 
   data () {
     return {
-      showInput: false,
-      query: this.$store.getters.getQuery
+      query: ''
     }
   },
 
@@ -26,6 +26,11 @@ export default {
     this.getQuery()
   },
 
+  computed: {
+    open () {
+      return this.$store.getters.getShowSearch
+    }
+  },
 
   methods: {
     getQuery () {
@@ -36,14 +41,8 @@ export default {
         this.query = ''
       }
       this.$store.commit('setQuery', this.query)
-    },
-
-    toggleInput() {
-      // TODO catch state from search-toggle
     }
   }
-
-
 }
 </script>
 
@@ -52,23 +51,40 @@ export default {
 @import '../../../../stylus/config/'
 
 .search-bar
-  position-it(absolute, 0, 3rem, null, 3rem)
+  position-it(absolute, 0, 3rem, null, .75rem)
+
   display flex
+  align-items center
+
   height header-height-base
+
+  &.closed
+    .search-input
+      padding .25rem 0
+      width 0
+
+  &.open
+    .search-input
+      padding .25rem .5rem
+      width 100%
 
   @media(min-width breakpoint-medium)
     height header-height-medium
 
 .search-form
+  position relative
+  width 100%
+  height inherit
+
   display flex
   align-items center
-  align-self stretch
-  flex 1
 
 .search-input
-  flex 1
+  position absolute
+  right 0
   margin 0
-  padding .25rem .5rem
+  transition all .2s ease
+
   sans()
   font-size em(13)
   border none

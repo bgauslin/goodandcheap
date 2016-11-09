@@ -96,7 +96,7 @@ export default {
       width width-xlarge
 
   h1
-    position-it(absolute, 0, 4rem, null, 4rem)
+    position-it(absolute, 0, 6rem, null, 6rem)
 
     display flex
     justify-content center
@@ -111,7 +111,7 @@ export default {
       align-items center
       align-self stretch
 
-      padding 0 1rem
+      //padding 0 1rem
       link(white, white, rgba(white, .7))
 
       @media(min-width breakpoint-medium)

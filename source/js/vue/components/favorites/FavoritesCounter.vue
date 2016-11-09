@@ -73,7 +73,7 @@ export default {
   display flex
   justify-content flex-end
 
-  width 4rem
+  width 3rem
   height header-height-base
 
   color white

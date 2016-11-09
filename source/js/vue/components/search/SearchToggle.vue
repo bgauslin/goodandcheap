@@ -1,10 +1,21 @@
 <template lang="pug">
-  button.search-toggle
+  button.search-toggle(
+    @click="toggle(open)",
+    :class="{open : open, closed : !open }"
+  )
 </template>
-
 
 <script>
 export default {
+
+  props: ['open'],
+
+  methods: {
+    toggle (open) {
+      open = !open
+      this.$store.commit('setSearch', open)
+    }
+  }
 }
 </script>
 
@@ -17,6 +28,8 @@ export default {
   width 2rem
   text-align center
   color white
+
+  align-self stretch
 
   &:active
     color rgba(white, .7)

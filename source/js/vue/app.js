@@ -9,7 +9,8 @@ const store = new Vuex.Store({
   state: {
     favorites: JSON.parse(localStorage.getItem('favorites')) || [],
     parent: null,
-    query: null
+    query: null,
+    showSearch: true
   },
 
   mutations: {
@@ -27,6 +28,9 @@ const store = new Vuex.Store({
     },
     setQuery (state, query) {
       state.query = query
+    },
+    setSearch (state, flag) {
+      state.showSearch = flag
     }
   },
 
@@ -42,6 +46,9 @@ const store = new Vuex.Store({
     },
     getQuery: state => {
       return state.query
+    },
+    getShowSearch: state => {
+      return state.showSearch
     }
   }
 })
