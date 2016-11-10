@@ -8,7 +8,7 @@
         ) Recipes
       li(v-if="parent")
         router-link(
-          :to="{ name: parent.routeName, params: { slug: parent.slug, direction: 'back' } }",
+          :to="{ name: parent.routeName, params: { slug: parent.slug } }",
           :title="parent.title"
         ) {{ parent.title }}
       li
