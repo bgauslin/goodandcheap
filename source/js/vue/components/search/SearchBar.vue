@@ -24,11 +24,13 @@ export default {
 
   created () {
     this.getQuery()
-    document.addEventListener('click', this.closeIt)
+    // NOTE borked in iOS Safari
+    //document.addEventListener('click', this.closeIt)
   },
 
   updated () {
-    this.focusInput()
+    // NOTE borked in iOS Safari
+    //this.focusInput()
   },
 
   beforeDestroy: function () {
