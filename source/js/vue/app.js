@@ -66,7 +66,6 @@ const store = new Vuex.Store({
   }
 })
 
-import routeConfig from './routes'
 const scrollBehavior = (to, from, savedPosition) => {
   if (to.matched.some(m => m.meta.stayInPlace)) {
     if (savedPosition) {
@@ -80,12 +79,16 @@ const scrollBehavior = (to, from, savedPosition) => {
   }
 }
 
+import routeConfig from './routes'
 const router = new VueRouter({
   routes: routeConfig(),
   mode: 'history',
   linkActiveClass: 'current',
   scrollBehavior
 })
+
+import transitions from './transitions'
+transitions(router)
 
 import getApiDomain from '../helpers/getApiDomain'
 const apiDomain = getApiDomain()

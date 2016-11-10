@@ -55,11 +55,12 @@ export default {
       this.isHome()
       this.isSearch()
 
-      //this.setTransition(to, from, this.$route.params.direction)
-
       this.endpoint = this.$route.meta.endpoint
       var fetch = this.doFetch(to, from)
       //console.log('fetch = ' + fetch)
+
+      console.log('watch.transitionName = ' + this.transitionName)
+      console.log('-----')
 
       if (this.endpoint !== undefined && fetch !== false) {
         this.data = null
@@ -118,22 +119,9 @@ export default {
         return false
       } else if (to.name === 'favorites') {
         return false
-      }  else {
+      } else {
         return true
       }
-    },
-
-    setTransition (to, from, direction) {
-      this.transitionName = direction
-      /*
-      if (direction !== undefined) {
-        this.transitionName = direction
-      } else {
-        const toDepth = to.path.split('/').length
-        const fromDepth = from.path.split('/').length
-        this.transitionName = (toDepth < fromDepth) ? 'back' : 'forward'
-      }
-      */
     },
 
     updateTitle (title) {
@@ -159,7 +147,6 @@ export default {
       //console.log('404')
       window.location.replace('/404')
     }
-
   }
 }
 </script>
@@ -179,14 +166,17 @@ export default {
   @media(min-width breakpoint-medium)
     margin-top header-height-medium
 
-/*
+
 .forward-enter
 .forward-enter-active
   animation slideInRight .3s ease-out
 
 .forward-leave
-.forward-leave-active
+.forward-active
   animation slideOutLeft .3s ease-out
+
+
+
 
 .back-enter
 .back-enter-active
@@ -195,6 +185,5 @@ export default {
 .back-leave
 .back-leave-active
   animation slideOutRight .3s ease-out
-*/
 
 </style>
