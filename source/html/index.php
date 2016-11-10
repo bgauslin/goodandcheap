@@ -33,6 +33,7 @@ if ($tld == 'website') {
     <title><?php echo $site_name?></title>
     <meta name="description" content="<?php echo $meta_description?>">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="<?php echo $css_path ?>">
   </head>
 
