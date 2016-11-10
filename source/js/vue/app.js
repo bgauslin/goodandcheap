@@ -91,7 +91,7 @@ const router = new VueRouter({
   routes: routeConfig(),
   mode: 'history',
   linkActiveClass: 'current',
-  scrollBehavior
+  //scrollBehavior
 })
 
 import transitions from './transitions'

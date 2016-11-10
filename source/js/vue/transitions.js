@@ -5,8 +5,7 @@ import Vue from 'vue/dist/vue.js'
 export default function(router) {
 
   router.beforeEach((to, from, next) => {
-    console.log(from.name + ' -> ' + to.name)
-    console.log('-----')
+    //console.log(from.name + ' -> ' + to.name)
 
     if (from.name === null && to.name === 'chapters') {
       // home
@@ -33,6 +32,9 @@ export default function(router) {
       // default
       router.app.$store.commit('setTransitionName', 'up')
     }
+
+    //console.log('transitionName = ' + router.app.$store.getters.getTransitionName)
+    //console.log('-----')
     next()
   })
 }

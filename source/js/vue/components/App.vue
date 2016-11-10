@@ -5,9 +5,9 @@
       preloader(v-if="!dataLoaded")
       transition(
         @before-enter="beforeEnter",
+        @after-enter="afterEnter",
         @before-leave="beforeLeave",
-        :enter-active-class="transitionEnter",
-        :leave-active-class="transitionLeave",
+        @after-leave="afterLeave",
         mode="out-in"
       )
         router-view(v-if="dataLoaded", :data="data", :key="data")
@@ -78,9 +78,7 @@ export default {
   },
 
   methods: {
-    beforeEnter (el, done) {
-      console.log('beforeEnter')
-
+    beforeEnter (el) {
       switch (this.transitionName) {
         case 'forward':
           this.transitionEnter = 'slide-in-right'
@@ -91,12 +89,15 @@ export default {
         default:
           this.transitionEnter = 'slide-in-up'
       }
-      console.log('enter-class = ' + this.transitionEnter)
+      el.classList.add(this.transitionEnter)
+      //console.log('enter-class = ' + this.transitionEnter)
     },
 
-    beforeLeave (el, done) {
-      console.log('beforeLeave')
+    afterEnter (el) {
+      el.classList.remove(this.transitionEnter)
+    },
 
+    beforeLeave (el) {
       switch (this.transitionName) {
         case 'forward':
           this.transitionLeave = 'slide-out-left'
@@ -107,7 +108,12 @@ export default {
         default:
           this.transitionLeave = 'slide-out-down'
       }
-      console.log('leave-class = ' + this.transitionLeave)
+      el.classList.add(this.transitionLeave)
+      //console.log('leave-class = ' + this.transitionLeave)
+    },
+
+    afterLeave (el) {
+      el.classList.remove(this.transitionLeave)
     },
 
     fetchData (endpoint) {
