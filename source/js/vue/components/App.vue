@@ -3,7 +3,13 @@
     app-header(:parent="parent", :home="home")
     div.content
       preloader(v-if="!dataLoaded")
-      transition(:name="transitionName", mode="out-in")
+      transition(
+        @before-enter="beforeEnter",
+        @before-leave="beforeLeave",
+        :enter-active-class="transitionEnter",
+        :leave-active-class="transitionLeave",
+        mode="out-in"
+      )
         router-view(v-if="dataLoaded", :data="data", :key="data")
     app-footer
 </template>
@@ -25,13 +31,17 @@ export default {
       dataLoaded: null,
       endpoint: '',
       home: null,
-      transitionName: ''
+      transitionEnter: null,
+      transitionLeave: null
     }
   },
 
   computed: {
     parent () {
       return this.$store.getters.getParent
+    },
+    transitionName () {
+      return this.$store.getters.getTransitionName
     }
   },
 
@@ -59,9 +69,6 @@ export default {
       var fetch = this.doFetch(to, from)
       //console.log('fetch = ' + fetch)
 
-      console.log('watch.transitionName = ' + this.transitionName)
-      console.log('-----')
-
       if (this.endpoint !== undefined && fetch !== false) {
         this.data = null
         this.dataLoaded = false
@@ -71,6 +78,38 @@ export default {
   },
 
   methods: {
+    beforeEnter (el, done) {
+      console.log('beforeEnter')
+
+      switch (this.transitionName) {
+        case 'forward':
+          this.transitionEnter = 'slide-in-right'
+          break
+        case 'back':
+          this.transitionEnter = 'slide-in-left'
+          break
+        default:
+          this.transitionEnter = 'slide-in-up'
+      }
+      console.log('enter-class = ' + this.transitionEnter)
+    },
+
+    beforeLeave (el, done) {
+      console.log('beforeLeave')
+
+      switch (this.transitionName) {
+        case 'forward':
+          this.transitionLeave = 'slide-out-left'
+          break
+        case 'back':
+          this.transitionLeave = 'slide-out-right'
+          break
+        default:
+          this.transitionLeave = 'slide-out-down'
+      }
+      console.log('leave-class = ' + this.transitionLeave)
+    },
+
     fetchData (endpoint) {
       //console.log('endpoint = ' + endpoint)
       var endpointUrl = this.$root.apiBaseUrl + endpoint
@@ -166,24 +205,28 @@ export default {
   @media(min-width breakpoint-medium)
     margin-top header-height-medium
 
+.fade-in
+  animation fadeIn 1s ease
 
-.forward-enter
-.forward-enter-active
+.fade-out
+  animation fadeOut 1s ease
+
+.slide-in-right
   animation slideInRight .3s ease-out
 
-.forward-leave
-.forward-active
+.slide-out-left
   animation slideOutLeft .3s ease-out
 
+.slide-out-right
+  animation slideOutRight .3s ease-out
 
-
-
-.back-enter
-.back-enter-active
+.slide-in-left
   animation slideInLeft .3s ease-out
 
-.back-leave
-.back-leave-active
-  animation slideOutRight .3s ease-out
+.slide-in-up
+  animation slideInUp .3s ease-out
+
+.slide-out-down
+  animation slideOutDown .3s ease-out
 
 </style>

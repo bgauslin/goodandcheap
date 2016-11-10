@@ -11,7 +11,8 @@ const store = new Vuex.Store({
     ingredients: JSON.parse(localStorage.getItem('ingredients')) || [],
     parent: null,
     query: null,
-    showSearch: false
+    showSearch: false,
+    transitionName: null
   },
 
   mutations: {
@@ -41,6 +42,9 @@ const store = new Vuex.Store({
     },
     setSearch (state, flag) {
       state.showSearch = flag
+    },
+    setTransitionName (state, name) {
+      state.transitionName = name
     }
   },
 
@@ -62,6 +66,9 @@ const store = new Vuex.Store({
     },
     getShowSearch: state => {
       return state.showSearch
+    },
+    getTransitionName: state => {
+      return state.transitionName
     }
   }
 })
