@@ -90,7 +90,7 @@ export default {
           this.transitionEnter = 'slide-in-up'
       }
       el.classList.add(this.transitionEnter)
-      //console.log('enter-class = ' + this.transitionEnter)
+      console.log('enter = ' + this.transitionEnter)
     },
 
     afterEnter (el) {
@@ -109,7 +109,7 @@ export default {
           this.transitionLeave = 'slide-out-down'
       }
       el.classList.add(this.transitionLeave)
-      //console.log('leave-class = ' + this.transitionLeave)
+      console.log('leave = ' + this.transitionLeave)
     },
 
     afterLeave (el) {
@@ -207,6 +207,7 @@ export default {
 .content
   flex 1
   margin header-height-base 0 0
+  overflow hidden
 
   @media(min-width breakpoint-medium)
     margin-top header-height-medium

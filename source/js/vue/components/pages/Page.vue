@@ -55,7 +55,6 @@ export default {
   .copy
     padding 1rem margins-base
     background white
-    animation slideInUp .5s ease
 
     a
       background rgba(brand-color, .1)
