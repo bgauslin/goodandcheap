@@ -41,7 +41,7 @@ export default {
     overflow hidden
 
   .previews
-    animation slideInUp .3s ease-out
+    //animation slideInUp .5s ease-out
 
   @media(min-width breakpoint-small)
     margin 1.5rem margins-small 0

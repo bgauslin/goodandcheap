@@ -5,8 +5,9 @@ export default function(router) {
   router.beforeEach((to, from, next) => {
     console.log(from.name + ' -> ' + to.name)
 
-    if (to.name === 'favorites' || from.name === 'favorites') {
-      router.app.$store.commit('setTransitionName', 'forward')
+    // good gravy, this is convoluted!
+    if (to.name === 'favorites') {
+      router.app.$store.commit('setTransitionName', 'up')
     } else if (from.name === 'chapters' && to.name === 'chapter') {
       router.app.$store.commit('setTransitionName', 'forward')
     } else if (from.name === 'chapter' && to.name === 'chapters') {
