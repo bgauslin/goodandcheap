@@ -22,6 +22,8 @@ export default {
 @import '../../../../stylus/config/'
 
 .copyright
+  font-size em(13)
+
   span
     display block
     a

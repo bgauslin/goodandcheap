@@ -32,7 +32,7 @@ export default {
       padding 1.5rem
 
 .license
-  margin-top: .5rem
+  margin: .5rem 0
 
   img
     width auto
