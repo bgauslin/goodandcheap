@@ -74,6 +74,7 @@ export default {
     transform translateY(100%)
   75%
     visibility visible
+    opacity 0
     transform translateY(100%)
   100%
     transform translateY(0)

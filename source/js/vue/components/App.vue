@@ -221,7 +221,7 @@ export default {
 .slide-out-right
 .slide-out-left
 .slide-out-down
-  animation-duration .25s
+  animation-duration .2s
   animation-timing-function ease-out
 
 .slide-in-right
@@ -250,6 +250,6 @@ export default {
   .slide-out-right
   .slide-out-left
   .slide-out-down
-    animation-duration .4s
+    animation-duration .35s
 
 </style>
