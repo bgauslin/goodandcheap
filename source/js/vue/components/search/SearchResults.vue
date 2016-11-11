@@ -57,9 +57,6 @@ export default {
   @media(min-width breakpoint-medium)
     width width-medium
 
-  .previews
-    animation slideInUp .3s ease-out
-
   .preview
     transition all .5s ease
 
@@ -69,9 +66,14 @@ export default {
         border-left 1px solid border-color
 
   h2
-    margin 1em 0
+    margin 0
+    padding 1.5rem 0
     text-align center
     small-caps(14)
+
+    @media(min-width breakpoint-medium)
+      padding 2rem 0
+
     .count
       sans()
     .query
