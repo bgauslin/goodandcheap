@@ -19,8 +19,8 @@ export default {
 @import '../../../stylus/config/'
 
 .error404
-  // TODO vertically center via flexbox instead of fixed
-  position-it(fixed, 4rem, 1rem, 4rem, 1rem)
+  position-it(absolute, 0, 1rem, 0, 1rem)
+  z-index -1
   display flex
   flex-direction column
   justify-content center
