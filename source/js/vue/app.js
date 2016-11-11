@@ -5,71 +5,19 @@ import VueRouter from 'vue-router'
 Vue.use(Vuex)
 Vue.use(VueRouter)
 
+import favorites from './store/favorites'
+import ingredients from './store/ingredients'
+import parent from './store/parent'
+import search from './store/search'
+import direction from './store/direction'
+
 const store = new Vuex.Store({
-  state: {
-    favorites: JSON.parse(localStorage.getItem('favorites')) || [],
-    ingredients: JSON.parse(localStorage.getItem('ingredients')) || [],
-    parent: null,
-    query: null,
-    showSearch: false,
-    direction: null
-  },
-
-  mutations: {
-    addFavorite (state, item) {
-      state.favorites.push(item)
-      localStorage.setItem('favorites', JSON.stringify(state.favorites))
-    },
-    removeFavorite (state, item) {
-      var i = state.favorites.indexOf(item)
-      state.favorites.splice(i, 1)
-      localStorage.setItem('favorites', JSON.stringify(state.favorites))
-    },
-    addIngredient (state, id) {
-      state.ingredients.push(id)
-      localStorage.setItem('ingredients', JSON.stringify(state.ingredients))
-    },
-    removeIngredient (state, id) {
-      var i = state.ingredients.indexOf(id)
-      state.ingredients.splice(i, 1)
-      localStorage.setItem('ingredients', JSON.stringify(state.ingredients))
-    },
-    setParent (state, parent) {
-      state.parent = parent
-    },
-    setQuery (state, query) {
-      state.query = query
-    },
-    setSearch (state, flag) {
-      state.showSearch = flag
-    },
-    setDirection (state, name) {
-      state.direction = name
-    }
-  },
-
-  getters: {
-    favoritesCount: state => {
-      return state.favorites.length
-    },
-    favoritesIds: state => {
-      return state.favorites.map(favorite => favorite.id)
-    },
-    ingredientsIds: state => {
-      return state.ingredients
-    },
-    getParent: state => {
-      return state.parent
-    },
-    getQuery: state => {
-      return state.query
-    },
-    getShowSearch: state => {
-      return state.showSearch
-    },
-    getDirection: state => {
-      return state.direction
-    }
+  modules: {
+    favorites: favorites,
+    ingredients: ingredients,
+    parent: parent,
+    search: search,
+    direction: direction
   }
 })
 
