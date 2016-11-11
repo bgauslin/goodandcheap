@@ -214,22 +214,42 @@ export default {
   @media(min-width breakpoint-medium)
     margin-top header-height-medium
 
+
 .slide-in-right
-  animation slideInRight .3s ease-out
+.slide-in-left
+.slide-in-up
+.slide-out-right
+.slide-out-left
+.slide-out-down
+  animation-duration .25s
+  animation-timing-function ease-out
+
+.slide-in-right
+  animation-name slideInRight
 
 .slide-in-left
-  animation slideInLeft .3s ease-out
+  animation-name slideInLeft
 
 .slide-in-up
-  animation slideInUp .3s ease-out
+  animation-name slideInUp
 
 .slide-out-right
-  animation slideOutRight .3s ease-out
+  animation-name slideOutRight
 
 .slide-out-left
-  animation slideOutLeft .3s ease-out
+  animation-name slideOutLeft
 
 .slide-out-down
-  animation slideOutDown .3s ease-out
+  animation-name slideOutDown
+
+
+@media(min-width breakpoint-medium)
+  .slide-in-right
+  .slide-in-left
+  .slide-in-up
+  .slide-out-right
+  .slide-out-left
+  .slide-out-down
+    animation-duration .4s
 
 </style>

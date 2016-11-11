@@ -40,9 +40,6 @@ export default {
   .intro
     overflow hidden
 
-  .previews
-    //animation slideInUp .5s ease-out
-
   @media(min-width breakpoint-small)
     margin 1.5rem margins-small 0
 
