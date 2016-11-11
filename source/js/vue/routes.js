@@ -80,8 +80,7 @@ export default function() {
           name: 'intro',
           component: RecipeBlurb,
           meta: {
-            endpoint: 'recipe',
-            stayInPlace: true
+            endpoint: 'recipe'
           }
         },
         {
@@ -89,8 +88,7 @@ export default function() {
           path: 'ingredients',
           component: RecipeIngredients,
           meta: {
-            endpoint: 'recipe',
-            stayInPlace: true
+            endpoint: 'recipe'
           }
         },
         {
@@ -98,8 +96,7 @@ export default function() {
           path: 'steps',
           component: RecipeInstructions,
           meta: {
-            endpoint: 'recipe',
-            stayInPlace: true
+            endpoint: 'recipe'
           }
         }
       ]

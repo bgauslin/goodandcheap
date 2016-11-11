@@ -10,7 +10,11 @@
         @after-leave="afterLeave",
         mode="out-in"
       )
-        router-view(v-if="dataLoaded", :data="data", :key="data")
+        router-view(
+          v-if="dataLoaded",
+          :data="data",
+          :key="data"
+        )
     app-footer
 </template>
 
@@ -40,8 +44,8 @@ export default {
     parent () {
       return this.$store.getters.getParent
     },
-    transitionName () {
-      return this.$store.getters.getTransitionName
+    direction () {
+      return this.$store.getters.getDirection
     }
   },
 
@@ -53,8 +57,7 @@ export default {
     if (this.endpoint !== undefined) {
       this.fetchData(this.endpoint)
     }
-
-    // NOTE routes with no data fetching
+    // set dataLoaded flag for routes with no data fetching
     if (this.$route.name === 'favorites' || this.$route.name === '404') {
       this.dataLoaded = true
     }
@@ -67,7 +70,6 @@ export default {
 
       this.endpoint = this.$route.meta.endpoint
       var fetch = this.doFetch(to, from)
-      //console.log('fetch = ' + fetch)
 
       if (this.endpoint !== undefined && fetch !== false) {
         this.data = null
@@ -79,7 +81,7 @@ export default {
 
   methods: {
     beforeEnter (el) {
-      switch (this.transitionName) {
+      switch (this.direction) {
         case 'forward':
           this.transitionEnter = 'slide-in-right'
           break
@@ -90,8 +92,8 @@ export default {
           this.transitionEnter = 'slide-in-up'
       }
       el.classList.add(this.transitionEnter)
-      console.log('enter = ' + this.transitionEnter)
 
+      // reset scroll position for iOS
       setTimeout(function() {
         window.scrollTo(0, 1)
       }, 0)
@@ -102,7 +104,7 @@ export default {
     },
 
     beforeLeave (el) {
-      switch (this.transitionName) {
+      switch (this.direction) {
         case 'forward':
           this.transitionLeave = 'slide-out-left'
           break
@@ -113,7 +115,6 @@ export default {
           this.transitionLeave = 'slide-out-down'
       }
       el.classList.add(this.transitionLeave)
-      console.log('leave = ' + this.transitionLeave)
     },
 
     afterLeave (el) {
@@ -121,21 +122,22 @@ export default {
     },
 
     fetchData (endpoint) {
-      //console.log('endpoint = ' + endpoint)
       var endpointUrl = this.$root.apiBaseUrl + endpoint
       var slug = this.$route.params.slug
-      //console.log('slug = ' + slug)
 
-      // NOTE append query for search
+      // append query for search
       if (window.location.search) {
         endpointUrl += window.location.search
       }
 
-      // NOTE bugfix for going to 'info' from 'page'
-      if (slug === null) { slug = undefined }
-      if (slug !== undefined) { endpointUrl += '/' + slug }
+      // set slug to undefined when going from 'page' to 'info'
+      if (slug === null) {
+        slug = undefined
+      }
 
-      //console.log('endpointUrl = ' + endpointUrl)
+      if (slug !== undefined) {
+        endpointUrl += '/' + slug
+      }
 
       var that = this
       request
@@ -153,18 +155,15 @@ export default {
     },
 
     doFetch(to, from) {
-      //console.log('to = ' + to.name)
-      //console.log('from = ' + from.name)
-      // TODO find a cleaner way to route all of this...
       if (to.name === 'intro') {
         if (from.name === 'steps' || from.name === 'ingredients') {
           return false
         }
       } else if (to.name === 'steps' || to.name === 'ingredients') {
         return false
-      } else if (to.name === 'chapters' && from.name === 'pages') {
+      } else if (from.name === 'pages' && to.name === 'chapters') {
         return false
-      } else if (to.name === 'pages' && from.name === 'chapters') {
+      } else if (from.name === 'chapters' && to.name === 'pages') {
         return false
       } else if (to.name === 'favorites') {
         return false
@@ -193,7 +192,6 @@ export default {
     },
 
     notFound() {
-      //console.log('404')
       window.location.replace('/404')
     }
   }
@@ -216,26 +214,20 @@ export default {
   @media(min-width breakpoint-medium)
     margin-top header-height-medium
 
-.fade-in
-  animation fadeIn 1s ease
-
-.fade-out
-  animation fadeOut 1s ease
-
 .slide-in-right
   animation slideInRight .3s ease-out
-
-.slide-out-left
-  animation slideOutLeft .3s ease-out
-
-.slide-out-right
-  animation slideOutRight .3s ease-out
 
 .slide-in-left
   animation slideInLeft .3s ease-out
 
 .slide-in-up
   animation slideInUp .3s ease-out
+
+.slide-out-right
+  animation slideOutRight .3s ease-out
+
+.slide-out-left
+  animation slideOutLeft .3s ease-out
 
 .slide-out-down
   animation slideOutDown .3s ease-out

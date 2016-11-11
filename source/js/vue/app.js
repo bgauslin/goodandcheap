@@ -12,7 +12,7 @@ const store = new Vuex.Store({
     parent: null,
     query: null,
     showSearch: false,
-    transitionName: null
+    direction: null
   },
 
   mutations: {
@@ -43,8 +43,8 @@ const store = new Vuex.Store({
     setSearch (state, flag) {
       state.showSearch = flag
     },
-    setTransitionName (state, name) {
-      state.transitionName = name
+    setDirection (state, name) {
+      state.direction = name
     }
   },
 
@@ -67,31 +67,17 @@ const store = new Vuex.Store({
     getShowSearch: state => {
       return state.showSearch
     },
-    getTransitionName: state => {
-      return state.transitionName
+    getDirection: state => {
+      return state.direction
     }
   }
 })
-
-const scrollBehavior = (to, from, savedPosition) => {
-  if (to.matched.some(m => m.meta.stayInPlace)) {
-    if (savedPosition) {
-      return savedPosition
-    }
-  } else {
-    return {
-      x: 0,
-      y: 0
-    }
-  }
-}
 
 import routeConfig from './routes'
 const router = new VueRouter({
   routes: routeConfig(),
   mode: 'history',
-  linkActiveClass: 'current',
-  //scrollBehavior
+  linkActiveClass: 'current'
 })
 
 import transitions from './transitions'
