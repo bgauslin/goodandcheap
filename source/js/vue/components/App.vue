@@ -91,6 +91,10 @@ export default {
       }
       el.classList.add(this.transitionEnter)
       console.log('enter = ' + this.transitionEnter)
+
+      setTimeout(function() {
+        window.scrollTo(0, 1)
+      }, 0)
     },
 
     afterEnter (el) {
