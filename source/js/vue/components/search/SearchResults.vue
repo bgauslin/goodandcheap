@@ -43,6 +43,20 @@ export default {
       }
       return text
     }
+  },
+
+  mounted () {
+    this.updateTitle()
+  },
+
+  methods: {
+    updateTitle () {
+      var title = 'Search Results'
+      if (this.query) {
+        title += ' for ' + this.query
+      }
+      document.title = title + ' · ' + this.$root.siteName
+    }
   }
 }
 </script>

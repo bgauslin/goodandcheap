@@ -49,6 +49,7 @@ export default {
 
   mounted () {
     this.setHasFavorites(this.favorites)
+    this.updateTitle('Favorites')
   },
 
   updated () {
@@ -58,9 +59,11 @@ export default {
   methods: {
     setHasFavorites (favorites) {
       this.hasFavorites = (favorites.length > 0) ? true : false
+    },
+    updateTitle (title) {
+      document.title = title + ' · ' + this.$root.siteName
     }
   }
-
 }
 </script>
 
