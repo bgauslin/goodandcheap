@@ -17,7 +17,6 @@ export default {
   position-it(absolute, 3em, 0, null, null)
   padding .5em 2em .5em 1em
   background rgba(white, 0.97)
-  animation slideInRight .3s ease-out
 
   sans-heavy()
   small-caps()
