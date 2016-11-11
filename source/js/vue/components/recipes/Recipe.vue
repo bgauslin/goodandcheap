@@ -62,6 +62,7 @@ export default {
   },
 
   mounted () {
+    this.addVisited(this.data.id)
     this.minHeight()
   },
 
@@ -80,6 +81,9 @@ export default {
       } else {
         overview.style.minHeight = 'none'
       }
+    },
+    addVisited (id) {
+      this.$store.commit('addVisited', id)
     }
   }
 }

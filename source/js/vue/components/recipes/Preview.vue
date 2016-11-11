@@ -1,7 +1,11 @@
 <template lang="pug">
   transition(name="remove", mode="out-in")
     li.preview.recipe-preview
-      router-link(:to="{ name: 'recipe', params: { chapter: item.chapter.slug, slug: item.slug } }", :title="item.title")
+      router-link(
+        :to="{ name: 'recipe', params: { chapter: item.chapter.slug, slug: item.slug } }",
+        :title="item.title",
+        :class="{ visited : isVisited }"
+      )
         thumb(:image="item.thumb", :title="item.title")
         div.summary
           p.chapter-title(v-if="showChapter") {{ item.chapter.title }}
@@ -25,9 +29,27 @@ export default {
 
   props: ['item', 'index', 'showChapter', 'showBadge', 'favoriteButton'],
 
+  data () {
+    return {
+      isVisited: false
+    }
+  },
+
   computed: {
     itemCount () {
       return this.index + 1
+    }
+  },
+
+  mounted () {
+    this.isVisited = this.checkIfVisited(this.item.id)
+  },
+
+  methods: {
+    checkIfVisited (id) {
+      var ids = this.$store.getters.visitedIds
+      var index = ids.indexOf(id)
+      return (index !== -1) ? true : false
     }
   }
 }

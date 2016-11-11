@@ -10,6 +10,7 @@ import ingredients from './store/ingredients'
 import parent from './store/parent'
 import search from './store/search'
 import direction from './store/direction'
+import visited from './store/visited'
 
 const store = new Vuex.Store({
   modules: {
@@ -17,7 +18,8 @@ const store = new Vuex.Store({
     ingredients: ingredients,
     parent: parent,
     search: search,
-    direction: direction
+    direction: direction,
+    visited: visited
   }
 })
 
