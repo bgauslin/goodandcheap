@@ -1,6 +1,6 @@
 <?php
 $site_name = 'Good And Cheap';
-$meta_description = '';
+$meta_description = 'Web app based on the cookbook by Leanne Brown';
 
 // default paths
 $site = 'goodandcheap';
