@@ -18,10 +18,11 @@ export default {
 
   h4
     margin 0 0 .25em
-    sans-heavy()
-    small-caps()
+    sans_heavy()
+    small_caps()
+
   p
+    font-size px_to_em(14)
     sans()
-    font-size em(14)
 
 </style>

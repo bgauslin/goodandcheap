@@ -43,32 +43,32 @@ export default {
 @import '../../../../stylus/config/'
 
 .toggle-favorite
-  position absolute
   display block
-  width 3rem
   padding .5rem
+  position absolute
   text-align center
+  width 3rem
 
   &::before
     height 2rem
-    line-height 2rem
     icon()
+    line-height 2rem
 
 .toggle-favorite
   &::before
-    content '\e80b' // heart-empty
-    color light-grey
+    color LIGHT_GREY
+    content ICON_HEART_EMPTY
 
   &.saved
     &::before
-      content '\e80a' // heart (filled)
-      color red
+      color RED
+      content ICON_HEART
 
 .no-touch
   .toggle-favorite
-    &:hover,
+    &:hover
     &.saved:hover
       &::before
-        color red
+        color RED
 
 </style>

@@ -32,14 +32,14 @@ export default {
 
 <style lang="stylus">
 .preloader
-  position fixed
-  top 0
-  left 0
-  right 0
   height 100vh
+  left 0
+  position fixed
+  right 0
+  top 0
 
   .spinner
-    top 50%
     left 50%
+    top 50%
 
 </style>

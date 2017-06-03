@@ -1,14 +1,12 @@
 body
+  background OFF_WHITE
+  color DARK_GREY
   margin 0
   padding 0
-  color dark-grey
-  background off-white
 
 *
   box-sizing border-box
   text-size-adjust none
-  //text-rendering optimizeLegibility
-  //-webkit-font-smoothing antialiased
   -webkit-tap-highlight-color transparent
 
 figure
@@ -16,31 +14,34 @@ figure
   padding 0
 
 img
-  width 100%
   height auto
   vertical-align middle
+  width 100%
 
-
-// --------------------------------------------------
 // TODO: move to components(?)
-
-h1,h2,h3,
-p,ul,ol
+h1
+h2
+h3
+p
+ul
+ol
   margin 0
   padding 0
 
-h1,h2,h3
+h1
+h2
+h3
   line-height 1.1
 
 h1
-  font-size em(24)
+  font-size px_to_em(24)
 
 h2
+  font-size px_to_em(18)
   margin 1em 0
-  font-size em(18)
 
 h3
-  font-size em(18)
+  font-size px_to_em(18)
 
 p
   line-height 1.5
@@ -51,25 +52,22 @@ strong
 
 a
   background transparent
+  link(BRAND_COLOR, BRAND_COLOR_VISITED, DARK_GREY)
   text-decoration none
-  link(brand-color, brand-color-visited, dark-grey)
 
 .no-touch
   a
-    link-hover(dark-grey)
-    transition-all()
+    link_hover(DARK_GREY)
+    transition_all()
 
-
-// --------------------------------------------------
 // TODO: move to components(?)
-
 button
-  margin 0
-  color inherit
   background transparent
-  font inherit
-  text-transform none
   border none
+  color inherit
+  cursor pointer
+  font inherit
+  margin 0
   outline none
   overflow visible
-  cursor pointer
+  text-transform none

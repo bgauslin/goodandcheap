@@ -72,64 +72,55 @@ export default {
 
 @keyframes showFavorites
   0%
+    opacity 0
+    transform translateY(100%)
     visibility hidden
-    opacity 0
-    transform translateY(100%)
   75%
-    visibility visible
     opacity 0
     transform translateY(100%)
+    visibility visible
   100%
-    transform translateY(0)
     opacity 1
+    transform translateY(0)
 
 .favorites
-  margin 0 auto
   animation showFavorites 1s ease-out
+  margin 0 auto
 
   &.empty
     animation none
-    /*
-    h2
-      position-it(absolute, 0, 0, 0, 0)
-      z-index -1
-      display flex
-      justify-content center
-      align-items center
-    */
 
-  @media(min-width breakpoint-medium)
-    width width-medium
+  @media(min-width BREAKPOINT_MEDIUM)
+    width WIDTH_MEDIUM
 
   .preview
     transition all .5s ease
 
-    @media(min-width breakpoint-medium)
+    @media(min-width BREAKPOINT_MEDIUM)
       a
-        border-right 1px solid border-color
-        border-left 1px solid border-color
+        border-left 1px solid BORDER_COLOR
+        border-right 1px solid BORDER_COLOR
 
   h2
     margin 0
     padding 1.5rem 0
+    sans_heavy()
+    small_caps(14)
     text-align center
-    sans-heavy()
-    small-caps(14)
 
-    @media(min-width breakpoint-medium)
+    @media(min-width BREAKPOINT_MEDIUM)
       padding 2rem 0
-
 
 // remove-favorite animations
 .favorites-leave-active
-  position absolute
   opacity 0
+  position absolute
   transform translateX(-100%)
 
-  @media(min-width breakpoint-medium)
-    width width-medium
-    transform translateX(0)
+  @media(min-width BREAKPOINT_MEDIUM)
     transform scale(.5)
+    transform translateX(0)
+    width WIDTH_MEDIUM
 
 .favorites-move
   transition transform .3s

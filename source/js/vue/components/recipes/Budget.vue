@@ -14,12 +14,11 @@ export default {
 @import '../../../../stylus/config/'
 
 .budget
-  position-it(absolute, 3em, 0, null, null)
+  background rgba(WHITE, 0.97)
   padding .5em 2em .5em 1em
-  background rgba(white, 0.97)
-
-  sans-heavy()
-  small-caps()
+  position_it(absolute, 3em, 0, null, null)
+  sans_heavy()
+  small_caps()
 
   .total
   .cost

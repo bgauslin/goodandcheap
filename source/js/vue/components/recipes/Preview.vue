@@ -71,39 +71,41 @@ export default {
   .chapter-title
   .tagline
   .kind
-    small-caps()
+    small_caps()
 
   .chapter-title
+    color LIGHT_GREY
     sans()
-    color light-grey
 
-  .tagline
   .kind
-    display inline-block
-    sans-heavy()
   .tagline
-    margin-right .4em
+    display inline-block
+    sans_heavy()
+
   .kind
     margin-top .2rem
 
+  .tagline
+    margin-right .4em
+
   .index
+    bottom 1rem
+    color LIGHT_GREY
+    line-height 1
     position absolute
     right 0
-    bottom 1rem
-    width 3rem
-    text-align center
     sans()
-    small-caps()
-    line-height 1
-    color light-grey
+    small_caps()
+    text-align center
+    width 3rem
 
   .toggle-favorite
   .remove-favorite
-    top 0
     right 0
+    top 0
 
 .no-touch
   .preview
-    preview-no-touch()
+    preview_no_touch()
 
 </style>

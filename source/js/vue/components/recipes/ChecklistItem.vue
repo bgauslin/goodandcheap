@@ -2,7 +2,7 @@
   li.item
     a(
       href="#",
-      @click.prevent="toggleItem(id)",
+      @click.prevent="toggleItpx_to_em(id)",
       :class="{ saved : isSaved }"
     ) {{ item }}
 </template>
@@ -54,29 +54,29 @@ export default {
 
   a
     display block
+    link(DARK_GREY, DARK_GREY, BRAND_COLOR)
     padding .5em 0 .5em 2em
-    link(dark-grey, dark-grey, brand-color)
 
     &::before
+      color LIGHTER_GREY
+      content ICON_CIRCLE_EMPTY
       display inline-block
-      width 1.3em
-      margin-left -1.3em
+      font-size px_to_em(22)
       icon()
-      content '\e806' // circle-empty
-      font-size em(22)
-      color lighter-grey
-      vertical-align baseline
+      margin-left -1.3em
       position relative
       top .15em
+      vertical-align baseline
+      width 1.3em
 
     &.saved
       &::before
-        content '\e807' // ok-circled
         color green
+        content ICON_OK_CIRCLED
 
 .no-touch
   .item
     a
-      link-hover(brand-color)
+      link_hover(BRAND_COLOR)
 
 </style>

@@ -53,57 +53,52 @@ export default {
 @import '../../../../stylus/config/'
 
 .header
-  position-it(fixed, 0, 0, null, 0)
+  background rgba(BRAND_COLOR, .97)
+  box-shadow 0 0 5px 0 MEDIUM_GREY
+  position_it(fixed, 0, 0, null, 0)
   z-index 999
 
-  background rgba(brand-color, .97)
-  box-shadow 0 0 5px 0 medium-grey
-
   .controls
+    height HEADER_HEIGHT_BASE
     position relative
-    height header-height-base
 
-    @media(min-width breakpoint-small)
-      margin 0 margins-small
+    @media(min-width BREAKPOINT_SMALL)
+      margin 0 MARGINS_SMALL
 
-    @media(min-width breakpoint-medium)
-      margin 0 margins-medium
-      height header-height-medium
+    @media(min-width BREAKPOINT_MEDIUM)
+      height HEADER_HEIGHT_MEDIUM
+      margin 0 MARGINS_MEDIUM
 
-    @media(min-width breakpoint-large)
-      margin 0 margins-large
+    @media(min-width BREAKPOINT_LARGE)
+      margin 0 MARGINS_LARGE
 
-    @media(min-width breakpoint-xlarge)
+    @media(min-width BREAKPOINT_XLARGE)
       margin 0 auto
-      width width-xlarge
+      width WIDTH_XLARGE
 
   h1
-    position-it(absolute, 0, 0, null, 0)
-
     display flex
+    height HEADER_HEIGHT_BASE
     justify-content center
-    height header-height-base
-
-    sans-heavy()
-    small-caps(14)
+    position_it(absolute, 0, 0, null, 0)
+    sans_heavy()
+    small_caps(14)
     white-space nowrap
 
-    @media(max-width breakpoint-large)
+    @media(max-width BREAKPOINT_LARGE)
       &.search-enabled
         display none
 
     a
+      align-items center
+      align-self stretch
+      display flex
+      link(WHITE, WHITE, rgba(WHITE, .7))
       position relative
       z-index 2
 
-      display flex
-      align-items center
-      align-self stretch
-
-      link(white, white, rgba(white, .7))
-
-      @media(min-width breakpoint-medium)
-        height header-height-medium
+      @media(min-width BREAKPOINT_MEDIUM)
+        height HEADER_HEIGHT_MEDIUM
 
       &:active
         transform scale(.9)
@@ -113,10 +108,12 @@ export default {
   .header
     h1
       a
-        link-hover(rgba(white, .7))
+        link_hover(rgba(WHITE, .7))
+
         &.current
+          color WHITE
           cursor default
-          color white
+
           &:active
             transform none
 

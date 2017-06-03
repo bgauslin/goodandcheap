@@ -24,30 +24,28 @@ export default {
 @import '../../../../stylus/config/'
 
 .search-toggle
+  align-self stretch
+  color WHITE
   margin 0
   padding 0
-
-  align-self stretch
-
   width 2.75rem
-  color white
 
   &:active
-    color rgba(white, .7)
+    color rgba(WHITE, .7)
 
   &::before
+    content ICON_SEARCH
     icon()
-    font-size em(16)
-    content '\e804' // search
+    font-size px_to_em(16)
 
   &.open
     &::before
-      content '\e809' // cancel
+      content ICON_CANCEL
 
 .no-touch
   .search-toggle
     &:hover
     &:visited:hover
-      color rgba(white, .7)
+      color rgba(WHITE, .7)
 
 </style>

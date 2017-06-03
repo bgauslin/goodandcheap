@@ -1,13 +1,13 @@
 body
   &::after
-    display none
     content 'base'
+    display none
 
-    @media (min-width breakpoint-small)
+    @media (min-width BREAKPOINT_SMALL)
       content 'small'
 
-    @media (min-width breakpoint-medium)
+    @media (min-width BREAKPOINT_MEDIUM)
       content 'medium'
 
-    @media (min-width breakpoint-large)
+    @media (min-width BREAKPOINT_LARGE)
       content 'large'

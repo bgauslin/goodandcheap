@@ -19,64 +19,60 @@ export default {
 @import '../../../../stylus/config/'
 
 .tabs
+  border 1px solid BRAND_COLOR
   display flex
   flex-direction row
   justify-content space-between
-
-  margin 1rem margins-base
+  margin 1rem MARGINS_BASE
   overflow hidden
-
   sans()
-  small-caps()
-  border 1px solid brand-color
-  //border-radius 4px
+  small_caps()
 
-  @media(min-width breakpoint-small)
+  @media(min-width BREAKPOINT_SMALL)
     margin 1rem auto
-    width width-small
+    width WIDTH_SMALL
 
-  @media(min-width breakpoint-medium)
+  @media(min-width BREAKPOINT_MEDIUM)
     margin 1.5rem auto
 
   li
-    flex-grow 1
-    width 33%
     align-self center
-    list-style none
+    border-right 1px solid BRAND_COLOR
+    flex-grow 1
     line-height 1
-
-    border-right 1px solid brand-color
+    list-style none
+    width 33%
 
     &:last-child
       border none
 
   a
+    background WHITE
     display block
     padding .75em 0
     text-align center
-    background white
 
     &:link
     &:visited
-      color brand-color
+      color BRAND_COLOR
 
     &:active
-      color brand-color
-      background rgba(brand-color, .1)
+      background rgba(BRAND_COLOR, .1)
+      color BRAND_COLOR
 
     &.current
-      color white
-      background brand-color
+      background BRAND_COLOR
+      color WHITE
 
 .no-touch
   .tabs
     a
       &:hover
-        color brand-color
-        background rgba(brand-color, .1)
-      &.current:hover
-        color white
-        background brand-color
+        background rgba(BRAND_COLOR, .1)
+        color BRAND_COLOR
 
+      &.current:hover
+        background BRAND_COLOR
+        color WHITE
 
 </style>

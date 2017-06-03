@@ -23,7 +23,7 @@
           li(v-if="data.ingredients")
             router-link(
               :to="{ name: 'ingredients', params: { chapter: data.parent.slug, slug: data.slug } }"
-            ) Ingredients
+            ) ingredients
           li(v-if="data.instructions")
             router-link(
               :to="{ name: 'steps', params: { chapter: data.parent.slug, slug: data.slug } }"
@@ -94,65 +94,65 @@ export default {
 
 .recipe
   .recipe-content
+    background WHITE
     margin 0 auto
-    background white
 
-  @media(min-width breakpoint-small)
-    margin 1.5rem margins-small 0
-
-    .recipe-content
-      max-width stacked-width
-
-  @media(min-width breakpoint-medium)
-    margin 2.25rem margins-medium 0
+  @media(min-width BREAKPOINT_SMALL)
+    margin 1.5rem MARGINS_SMALL 0
 
     .recipe-content
-      width stacked-width
+      max-width STACKED_WIDTH
+
+  @media(min-width BREAKPOINT_MEDIUM)
+    margin 2.25rem MARGINS_MEDIUM 0
+
+    .recipe-content
       max-width none
+      width STACKED_WIDTH
 
-  @media(min-width breakpoint-large)
-    margin 3rem margins-large 0
+  @media(min-width BREAKPOINT_LARGE)
+    margin 3rem MARGINS_LARGE 0
 
     .recipe-content
+      overflow hidden
+      padding-bottom 50%
       position relative
       width 100%
-      padding-bottom 50%
-      overflow hidden
 
       .recipe-cover
-        position-it(absolute, 0, 0, null, null)
+        position_it(absolute, 0, 0, null, null)
         width 50%
 
       .overview
-        position-it(absolute, 0, null, null, 0)
-        width 50%
         height 100%
         padding-bottom 4rem
-        overflow-y scroll
         -webkit-overflow-scrolling touch
+        overflow-y scroll
+        position_it(absolute, 0, null, null, 0)
+        width 50%
 
-  @media(min-width breakpoint-xlarge)
+  @media(min-width BREAKPOINT_XLARGE)
     margin 3rem auto 0
-    width width-xlarge
+    width WIDTH_XLARGE
 
   .overview
-    position relative
     padding 1rem 1rem 2rem
+    position relative
 
-    @media(min-width breakpoint-large)
+    @media(min-width BREAKPOINT_LARGE)
       padding 1.5rem 1.5rem 3rem
 
   .tagline
     display inline-block
     margin-right 0.5rem
-    sans-heavy()
-    small-caps()
+    sans_heavy()
+    small_caps()
 
   .tabs
     margin 0 0 1.5rem
     width 100%
 
-    @media(min-width breakpoint-small)
+    @media(min-width BREAKPOINT_SMALL)
       margin 0 0 2rem
 
     li
@@ -160,33 +160,34 @@ export default {
 
   .kind
     margin-bottom .5rem
-    sans-heavy()
-    small-caps()
+    sans_heavy()
+    small_caps()
 
   header
     margin 0 2rem 1rem 0
 
   h1
-    serif-heavy()
+    serif_heavy()
 
   .toggle-favorite
-    top .25rem
     right 0
+    top .25rem
 
-    @media(min-width breakpoint-large)
-      top .75rem
+    @media(min-width BREAKPOINT_LARGE)
       right .5rem
+      top .75rem
 
   h3
     margin 0 0 1em
-    sans-heavy()
-    small-caps()
+    sans_heavy()
+    small_caps()
 
   .copy-block
     padding .5rem 0
 
     h4
       margin-bottom .25em
+
     p
       sans()
 

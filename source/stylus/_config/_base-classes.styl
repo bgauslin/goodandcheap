@@ -1,0 +1,57 @@
+cover()
+  position relative
+
+  figure
+    aspect_ratio(1, 1)
+
+  img
+    animation fadeIn .3s ease-out
+
+preview()
+  list-style none
+  position relative
+
+  a
+    align-items center
+    background WHITE
+    border-top 1px solid BORDER_COLOR
+    display flex
+    flex-direction row
+    link(DARK_GREY, MEDIUM_GREY, BRAND_COLOR)
+
+    &.visited
+      color MEDIUM_GREY
+
+  h3
+    line-height 1.1
+    margin .2em 0
+    serif_heavy()
+
+  .summary
+    flex-grow 1
+    margin 0 1rem 0 .5rem
+
+  &:last-child
+    a
+      border-bottom 1px solid BORDER_COLOR
+
+preview_grid()
+  margin -1px 0 0 -1px
+  width calc(50% + 1px)
+
+preview_grid_large()
+  width calc((1/3 * 100%) + 1px)
+
+preview_no_touch()
+  a
+    link_hover(BRAND_COLOR)
+
+previews_grid()
+  display flex
+  flex-direction row
+  flex-wrap wrap
+
+  @media(min-width BREAKPOINT_MEDIUM)
+    .preview
+      a
+        border 1px solid BORDER_COLOR

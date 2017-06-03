@@ -34,19 +34,19 @@ export default {
   h2
     margin 1rem 0
     padding 0
-    sans-heavy()
-    small-caps()
+    sans_heavy()
+    small_caps()
 
   .steps-count
-    sans()
+    color LIGHT_GREY
     margin-left 1em
-    color light-grey
+    sans()
 
   ul
   ol
+    font-size px_to_em(15)
     margin 0
     sans()
-    font-size em(15)
 
   li
     margin 0 0 1em
@@ -56,6 +56,7 @@ export default {
 
   ul
     padding 0
+
     li
       list-style none
 

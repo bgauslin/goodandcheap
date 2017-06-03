@@ -25,28 +25,28 @@ export default {
 @import '../../../../../stylus/config/'
 
 .mini-recipe
+  border-top 1px solid #eee
   display flex
   flex-direction row
   padding 1rem 0
-  border-top 1px solid #eee
 
   .contents
     margin-right 1rem
 
   h4
     margin 0 0 1em
-    sans-heavy()
-    small-caps()
+    sans_heavy()
+    small_caps()
   p
     margin 0 0 1em
     serif()
 
   figure
+    flex-shrink 0
     margin-top 1.5rem
     width 5rem
-    flex-shrink 0
 
-    @media(min-width breakpoint-small)
+    @media(min-width BREAKPOINT_SMALL)
       width 8rem
 
 </style>

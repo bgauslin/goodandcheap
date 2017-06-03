@@ -36,13 +36,13 @@ export default {
   preview()
 
   .recipe-count
-    sans-heavy()
-    small-caps()
     display inline-block
     margin-top .2rem
+    sans_heavy()
+    small_caps()
 
 .no-touch
   .preview
-    preview-no-touch()
+    preview_no_touch()
 
 </style>

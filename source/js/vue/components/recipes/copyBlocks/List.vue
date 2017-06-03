@@ -16,9 +16,9 @@ export default {
   margin 0 0 1em
 
   li
+    font-size px_to_em(14)
     list-style none
     margin 0 0 .5em
     sans()
-    font-size em(14)
 
 </style>

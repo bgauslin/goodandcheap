@@ -1,5 +1,5 @@
 <template lang="pug">
-  button.remove-favorite(@click="removeItem(favorite)")
+  button.remove-favorite(@click="removeItpx_to_em(favorite)")
 </template>
 
 <script>
@@ -18,31 +18,31 @@ export default {
 @import '../../../../stylus/config/'
 
 .remove-favorite
-  position absolute // NOTE see .recipe and .preview for TRBL
   display block
-  width 3rem
   padding .5rem
+  position absolute // NOTE see .recipe and .preview for TRBL
   text-align center
+  width 3rem
 
   &::before
     height 2rem
-    line-height 2rem
     icon()
+    line-height 2rem
 
 .remove-favorite
   &::before
-    content '\e808' // cancel-circled
-    color light-grey
-    font-size em(20)
+    color LIGHT_GREY
+    content ICON_CANCEL_CIRCLED
+    font-size px_to_em(20)
 
   &:active
     &::before
-      color dark-red
+      color DARK_RED
 
 .no-touch
   .remove-favorite
     &:hover
       &::before
-        color dark-red
+        color DARK_RED
 
 </style>

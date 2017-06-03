@@ -68,30 +68,32 @@ export default {
 .search-results
   margin 0 auto
 
-  @media(min-width breakpoint-medium)
-    width width-medium
+  @media(min-width BREAKPOINT_MEDIUM)
+    width WIDTH_MEDIUM
 
   .preview
     transition all .5s ease
 
-    @media(min-width breakpoint-medium)
+    @media(min-width BREAKPOINT_MEDIUM)
       a
-        border-right 1px solid border-color
-        border-left 1px solid border-color
+        border-left 1px solid BORDER_COLOR
+        border-right 1px solid BORDER_COLOR
 
   h2
     margin 0
     padding 1.5rem 0
+    small_caps(14)
     text-align center
-    small-caps(14)
 
-    @media(min-width breakpoint-medium)
+    @media(min-width BREAKPOINT_MEDIUM)
       padding 2rem 0
 
     .count
       sans()
+
     .query
-      sans-heavy()
+      sans_heavy()
+
       &::before
         content ' '
 

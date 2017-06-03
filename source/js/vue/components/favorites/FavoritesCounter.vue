@@ -69,52 +69,50 @@ export default {
 @import '../../../../stylus/config/'
 
 .favorites-counter
-  position-it(absolute, 0, 0, null, null)
+  color WHITE
   display flex
+  font-size px_to_em(12)
+  height HEADER_HEIGHT_BASE
   justify-content flex-end
-
-  width 3rem
-  height header-height-base
-
-  color white
   sans()
-  font-size em(12)
+  position_it(absolute, 0, 0, null, null)
+  width 3rem
 
-  @media(min-width breakpoint-medium)
-    height header-height-medium
+  @media(min-width BREAKPOINT_MEDIUM)
+    height HEADER_HEIGHT_MEDIUM
 
   &.updated
     animation bounce .3s ease-out
 
   a
-    display flex
     align-items center
     align-self stretch
-
-    link(white, white, rgba(white, .7))
+    display flex
+    link(WHITE, WHITE, rgba(WHITE, .7))
 
     &::after
-      margin 0 1rem 0 .3em
-      icon()
-      content '\e80a' // heart
+      content ICON_HEART
       font-size 1rem
+      icon()
+      margin 0 1rem 0 .3em
 
     &.empty::after
-      content '\e80b' // heart-empty
+      content ICON_HEART_EMPTY
 
     &:active
-      transition .3s ease
       transform scale(.9)
+      transition .3s ease
 
     &.current
-      color white
+      color WHITE
 
 .no-touch
   .favorites-counter
     a
-      link-hover(rgba(white, .7))
+      link_hover(rgba(WHITE, .7))
+
       &.current:hover
-        color white
+        color WHITE
         cursor default
 
 </style>

@@ -17,14 +17,14 @@ export default {
     serif()
 
   a
-    background rgba(brand-color, .1)
-    padding .1em .4em
+    background rgba(BRAND_COLOR, .1)
     border-radius 2px
+    padding .1em .4em
 
 .no-touch
   .blurb
     a:hover
-      color white
-      background brand-color
+      background BRAND_COLOR
+      color WHITE
 
 </style>

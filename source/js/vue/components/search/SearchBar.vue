@@ -67,33 +67,30 @@ export default {
 @import '../../../../stylus/config/'
 
 .search-bar
-  position-it(absolute, 0, 3rem, null, margins-base)
-
-  display flex
   align-items center
+  display flex
+  height HEADER_HEIGHT_BASE
+  position_it(absolute, 0, 3rem, null, MARGINS_BASE)
 
-  height header-height-base
-
-  @media(min-width breakpoint-small)
-    right 3.5rem
+  @media(min-width BREAKPOINT_SMALL)
     left 5.5rem
+    right 3.5rem
 
-  @media(min-width breakpoint-medium)
-    height header-height-medium
+  @media(min-width BREAKPOINT_MEDIUM)
+    height HEADER_HEIGHT_MEDIUM
 
-  @media(min-width breakpoint-large)
+  @media(min-width BREAKPOINT_LARGE)
     left calc(50% + 6rem)
 
-  @media(min-width breakpoint-xlarge)
+  @media(min-width BREAKPOINT_XLARGE)
     left calc(50% + 8rem)
 
 .search-form
+  align-items center
+  display flex
+  height 100%
   position relative
   width 100%
-  height 100%
-
-  display flex
-  align-items center
 
 input[type="search"]
   appearance none
@@ -101,20 +98,17 @@ input[type="search"]
 
 .search-input
   appearance none
+  border none
   border-radius 0
-
-  position-it(absolute, .5rem, 0, .5rem, null)
-
+  font-size px_to_em(13)
   margin 0
+  position_it(absolute, .5rem, 0, .5rem, null)
+  sans()
   transition all .2s ease
 
-  sans()
-  font-size em(13)
-  border none
-
-  @media(min-width breakpoint-medium)
-    top .875rem
+  @media(min-width BREAKPOINT_MEDIUM)
     bottom .875rem
+    top .875rem
 
   &.closed
     padding .25rem 0

@@ -19,17 +19,17 @@ export default {
 @import '../../../stylus/config/'
 
 .error404
-  position-it(absolute, 0, 1rem, 0, 1rem)
-  z-index -1
+  align-items center
   display flex
   flex-direction column
   justify-content center
-  align-items center
+  position_it(absolute, 0, 1rem, 0, 1rem)
+  z-index -1
 
   h1
     margin 0 0 1rem
-    sans-heavy()
-    small-caps(14)
+    sans_heavy()
+    small_caps(14)
 
   p
     serif()

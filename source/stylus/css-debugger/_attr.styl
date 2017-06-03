@@ -1,15 +1,17 @@
+ICON_CODE = '\f121'
+
 .css-debugger
   .attr::before
-    content '\f121' // code
+    content ICON_CODE
 
 body.attr
 
   // links
   a[href]:not([title])
-    border 1px solid red
+    border 1px solid RED
 
   a[title=""]
-    outline 1px dotted red
+    outline 1px dotted RED
 
   a[href="#"]
     background lime
@@ -20,7 +22,7 @@ body.attr
   // blank classes and id's
   *[class=""]
   *[id=""]
-    outline 1px dotted red
+    outline 1px dotted RED
 
   // empty items
   div:empty
@@ -33,10 +35,10 @@ body.attr
 
   // images
   img[alt=""]
-    border 1px solid red
+    border 1px solid RED
 
   img:not([alt])
-    border 1px dotted red
+    border 1px dotted RED
 
   img[title=""]
     outline 1px solid fuchsia
@@ -46,13 +48,13 @@ body.attr
 
   // tables
   table:not([summary])
-    outline 5px solid red
+    outline 5px solid RED
 
   table[summary=""]
-    outline 3px dotted red
+    outline 3px dotted RED
 
   th
-    border 2px solid red
+    border 2px solid RED
 
   th[scope="col"]
   th[scope="row"]
@@ -62,7 +64,7 @@ body.attr
   *[style]
   font
   center
-    outline 1px solid red
+    outline 1px solid RED
 
   // ignore styles for debugger
   .css-debugger

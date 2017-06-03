@@ -49,59 +49,66 @@ export default {
 @import '../../../../stylus/config/'
 
 .page
-  @media(min-width breakpoint-large)
+  @media(min-width BREAKPOINT_LARGE)
     padding 3rem 0
 
   .copy
-    padding 1rem margins-base
-    background white
+    background WHITE
+    padding 1rem MARGINS_BASE
 
     a
-      background rgba(brand-color, .1)
-      padding .1em .4em
+      background rgba(BRAND_COLOR, .1)
       border-radius 2px
+      padding .1em .4em
 
-    @media(min-width breakpoint-small)
+    @media(min-width BREAKPOINT_SMALL)
       margin 0 auto
-      padding 1rem margins-small
+      padding 1rem MARGINS_SMALL
 
-    @media(min-width breakpoint-medium)
-      padding 2rem margins-medium
+    @media(min-width BREAKPOINT_MEDIUM)
+      padding 2rem MARGINS_MEDIUM
 
-    @media(min-width breakpoint-large)
+    @media(min-width BREAKPOINT_LARGE)
       padding 3rem 4rem
-      width page-max-width
+      width PAGE_MAX_WIDTH
 
   h1
     margin .5em 0 1em
-    serif-heavy()
+    serif_heavy()
+
   h2
   h3
   h4
-    sans-heavy()
+    sans_heavy()
     text-transform uppercase
+
   h2
-    small-caps()
+    small_caps()
+
   p
     serif()
+
   li
     sans()
 
 &.has-background
+  background-attachment scroll
   background-position center center
   background-repeat no-repeat
   background-size cover
-  background-attachment scroll
 
 .page-section
   margin 1em 0 2em
 
   h2
     margin 0 0 1em
+
   p
     margin 0 0 1em
+
   ul
     margin 1em 0
+
   li
     display inline-block
     list-style none
@@ -111,9 +118,10 @@ export default {
   .page
     &.has-background
       background-attachment fixed
+
     a:hover
-      color white
-      background brand-color
+      color WHITE
+      background BRAND_COLOR
 
 
 </style>

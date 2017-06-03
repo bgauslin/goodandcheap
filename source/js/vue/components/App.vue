@@ -203,52 +203,50 @@ export default {
 
 .site
   display flex
-  min-height 100vh
   flex-direction column
+  min-height 100vh
 
 .content
   flex 1
-  margin header-height-base 0 0
+  margin HEADER_HEIGHT_BASE 0 0
   overflow hidden
 
-  @media(min-width breakpoint-medium)
-    margin-top header-height-medium
+  @media(min-width BREAKPOINT_MEDIUM)
+    margin-top HEADER_HEIGHT_MEDIUM
 
-
-.slide-in-right
 .slide-in-left
+.slide-in-right
 .slide-in-up
-.slide-out-right
-.slide-out-left
 .slide-out-down
+.slide-out-left
+.slide-out-right
   animation-duration .2s
   animation-timing-function ease-out
-
-.slide-in-right
-  animation-name slideInRight
 
 .slide-in-left
   animation-name slideInLeft
 
+.slide-in-right
+  animation-name slideInRight
+
 .slide-in-up
   animation-name slideInUp
-
-.slide-out-right
-  animation-name slideOutRight
-
-.slide-out-left
-  animation-name slideOutLeft
 
 .slide-out-down
   animation-name slideOutDown
 
+.slide-out-left
+  animation-name slideOutLeft
 
-@media(min-width breakpoint-medium)
-  .slide-in-right
+.slide-out-right
+  animation-name slideOutRight
+
+@media(min-width BREAKPOINT_MEDIUM)
   .slide-in-left
+  .slide-in-right
   .slide-in-up
-  .slide-out-right
   .slide-out-left
+  .slide-out-right
   .slide-out-down
     animation-duration .35s
 

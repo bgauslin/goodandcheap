@@ -3,21 +3,21 @@ body
     display none
     content 'base'
 
-    @media(min-width breakpoint-small)
+    @media(min-width BREAKPOINT_SMALL)
       content 'small'
 
-    @media(min-width breakpoint-medium)
+    @media(min-width BREAKPOINT_MEDIUM)
       content 'medium'
 
-    @media(min-width breakpoint-large)
+    @media(min-width BREAKPOINT_LARGE)
       content 'large'
 
-    @media(min-width breakpoint-xlarge)
+    @media(min-width BREAKPOINT_XLARGE)
       content 'xlarge'
 
 webfont('Debug-Icons', '/ui/webfonts/icons-debug/icons-debug')
 
-debug-icon()
+debug_icon()
   font-family 'Debug-Icons'
   font-weight normal
   font-style normal
@@ -59,7 +59,7 @@ debug-icon()
     text-decoration none
 
     &::before
-      debug-icon()
+      debug_icon()
       display inline-block
       margin-right .5em
 
@@ -68,7 +68,7 @@ debug-icon()
       color #aaa
 
     &.on
-      color white
+      color WHITE
 
 
 @import '_attr'

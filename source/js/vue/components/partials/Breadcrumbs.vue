@@ -46,38 +46,38 @@ export default {
 @import '../../../../stylus/config/'
 
 .breadcrumbs
-  width 100%
-  white-space nowrap
+  color LIGHT_GREY
   overflow-x scroll
   -webkit-overflow-scrolling touch
   sans()
-  small-caps(12)
-  color light-grey
+  small_caps(12)
+  white-space nowrap
+  width 100%
 
-  @media(min-width breakpoint-small)
-    margin header-height-base margins-small 0
-    max-width stacked-width
+  @media(min-width BREAKPOINT_SMALL)
+    margin HEADER_HEIGHT_BASE MARGINS_SMALL 0
+    max-width STACKED_WIDTH
 
-  @media(min-width breakpoint-medium)
-    margin header-height-medium auto 0
-    width stacked-width
+  @media(min-width BREAKPOINT_MEDIUM)
+    margin HEADER_HEIGHT_MEDIUM auto 0
     max-width none
+    width STACKED_WIDTH
 
-  @media(min-width breakpoint-large)
-    margin-right margins-large
-    margin-left margins-large
+  @media(min-width BREAKPOINT_LARGE)
+    margin-left MARGINS_LARGE
+    margin-right MARGINS_LARGE
     width auto
 
-  @media(min-width breakpoint-xlarge)
-    margin-right auto
+  @media(min-width BREAKPOINT_XLARGE)
     margin-left auto
-    width width-xlarge
+    margin-right auto
+    width WIDTH_XLARGE
 
   ul
     display flex
-    padding 0 margins-base
+    padding 0 MARGINS_BASE
 
-    @media(min-width breakpoint-small)
+    @media(min-width BREAKPOINT_SMALL)
       padding 0
 
   li
@@ -85,12 +85,12 @@ export default {
     margin 0 .5em 0 0
 
     &::after
-      icon()
-      content '\e801' // right-open
+      content ICON_RIGHT_OPEN
       font-size 75%
+      icon()
+      margin-left 1em
       position relative
       top -1px
-      margin-left 1em
 
     &:last-child
       margin-right 1rem
@@ -102,15 +102,16 @@ export default {
   span
     display inline-block
     padding 1rem 0
-  a
-    link(brand-color, brand-color, dark-grey)
-  span
-    padding-right margins-base
 
+  a
+    link(BRAND_COLOR, BRAND_COLOR, DARK_GREY)
+
+  span
+    padding-right MARGINS_BASE
 
 .no-touch
   .breadcrumbs
     a
-      link-hover(medium-grey)
+      link_hover(MEDIUM_GREY)
 
 </style>

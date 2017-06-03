@@ -25,43 +25,41 @@ export default {
 @import '../../../../stylus/config/'
 
 .up-button
-  position-it(absolute, 0, null, null, 0)
+  position_it(absolute, 0, null, null, 0)
   width 3rem
   z-index 2
 
-  @media(min-width breakpoint-medium)
+  @media(min-width BREAKPOINT_MEDIUM)
     width auto
 
   a
-    display flex
     align-items center
     align-self stretch
-
-    padding-left .75rem
-    height header-height-base
+    display flex
+    height HEADER_HEIGHT_BASE
     line-height 1
+    link(WHITE, WHITE, rgba(WHITE, .7))
+    padding-left .75rem
 
-    link(white, white, rgba(white, .7))
-
-    @media(min-width breakpoint-small)
+    @media(min-width BREAKPOINT_SMALL)
       padding-left 0
 
-    @media(min-width breakpoint-medium)
-      height header-height-medium
+    @media(min-width BREAKPOINT_MEDIUM)
+      height HEADER_HEIGHT_MEDIUM
 
     span
       display none
       sans()
-      small-caps(12)
+      small_caps(12)
       white-space nowrap
 
-      @media(min-width breakpoint-medium)
+      @media(min-width BREAKPOINT_MEDIUM)
         display block
 
     &::before
+      content ICON_ANGLE_LEFT
+      font-size px_to_em(22)
       icon()
-      font-size em(22)
-      content '\e802' // angle-left
       margin-right .25em
       position relative
       top -.05em
@@ -73,6 +71,6 @@ export default {
 .no-touch
   .up-button
     a
-      link-hover(rgba(white, .7))
+      link_hover(rgba(WHITE, .7))
 
 </style>

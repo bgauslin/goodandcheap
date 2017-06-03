@@ -34,47 +34,47 @@ export default {
 
 .chapter
   .chapter-content
+    background WHITE
     margin 0 auto
-    background white
 
   .intro
     overflow hidden
 
-  @media(min-width breakpoint-small)
-    margin 1.5rem margins-small 0
+  @media(min-width BREAKPOINT_SMALL)
+    margin 1.5rem MARGINS_SMALL 0
 
     .chapter-content
-      max-width stacked-width
+      max-width STACKED_WIDTH
 
-  @media(min-width breakpoint-medium)
-    margin 2.25rem margins-medium 0
+  @media(min-width BREAKPOINT_MEDIUM)
+    margin 2.25rem MARGINS_MEDIUM 0
 
     .chapter-content
-      width stacked-width
       max-width none
+      width STACKED_WIDTH
 
-  @media(min-width breakpoint-large)
-    margin 3rem margins-large 0
+  @media(min-width BREAKPOINT_LARGE)
+    margin 3rem MARGINS_LARGE 0
 
     .chapter-content
+      overflow hidden
+      padding-bottom 50%
       position relative
       width 100%
-      padding-bottom 50%
-      overflow hidden
 
       .intro
-        position-it(absolute, 0, null, null, 0)
+        position_it(absolute, 0, null, null, 0)
         width 50%
 
       .previews
-        position-it(absolute, 0, 0, null, null)
-        width 50%
         height 100%
         overflow-y scroll
         -webkit-overflow-scrolling touch
+        position_it(absolute, 0, 0, null, null)
+        width 50%
 
-  @media(min-width breakpoint-xlarge)
+  @media(min-width BREAKPOINT_XLARGE)
     margin 3rem auto 0
-    width width-xlarge
+    width WIDTH_XLARGE
 
 </style>

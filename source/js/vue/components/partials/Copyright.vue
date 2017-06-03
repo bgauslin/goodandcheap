@@ -22,22 +22,23 @@ export default {
 @import '../../../../stylus/config/'
 
 .copyright
-  font-size em(13)
+  font-size px_to_em(13)
 
   span
     display block
+
     a
       display inline-block
       padding .25rem 0 .25rem .5em
 
-    @media(min-width breakpoint-small)
+    @media(min-width BREAKPOINT_SMALL)
       display inline
 
       &:last-child
         &::before
-          display inline-block
-          width 1.5rem
-          text-align center
           content '·'
+          display inline-block
+          text-align center
+          width 1.5rem
 
 </style>

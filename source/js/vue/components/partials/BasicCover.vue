@@ -23,28 +23,28 @@ export default {
   cover()
 
   h1
-    serif-heavy()
     margin-bottom .5em
+    serif_heavy()
 
-    @media(min-width breakpoint-large)
-      font-size em(30)
+    @media(min-width BREAKPOINT_LARGE)
+      font-size px_to_em(30)
 
   .blurb
-    padding 1rem
     animation fadeIn .3s ease-out
+    padding 1rem
 
     & > div
       serif()
 
-    @media(min-width breakpoint-small)
-      position-it(absolute, 0, 3rem, null, 3rem)
+    @media(min-width BREAKPOINT_SMALL)
+      background rgba(WHITE, 0.95)
+      box-shadow 0 0 5px 0 LIGHT_GREY
       padding 1.5rem
-      box-shadow 0 0 5px 0 light-grey
-      background rgba(white, 0.95)
+      position_it(absolute, 0, 3rem, null, 3rem)
 
   .recipe-count
     margin 1rem 0 0
-    sans-heavy()
-    small-caps()
+    sans_heavy()
+    small_caps()
 
 </style>

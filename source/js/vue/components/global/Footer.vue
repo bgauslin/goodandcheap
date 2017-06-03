@@ -19,16 +19,16 @@ export default {
 @import '../../../../stylus/config/'
 
 .footer
+  color LIGHT_GREY
   sans()
-  small-caps()
+  small_caps()
   text-align center
-  color light-grey
 
   & > div
     margin 0 auto
     padding .75rem
 
-    @media(min-width breakpoint-medium)
+    @media(min-width BREAKPOINT_MEDIUM)
       padding 1.5rem
 
 .license

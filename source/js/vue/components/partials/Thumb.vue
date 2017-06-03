@@ -41,15 +41,15 @@ export default {
 @import '../../../../stylus/config/'
 
 .thumb
+  border-radius .25em
+  background-color LIGHTER_GREY
   flex-shrink 0
   margin .5rem
-  width 5rem
   height 5rem
-  border-radius .25em
-  background-color lighter-grey
+  width 5rem
 
   img
-    border-radius .25em
     animation fadeIn .3s ease-out
+    border-radius .25em
 
 </style>

@@ -6,12 +6,12 @@
 @import '../../../../stylus/config/'
 
 .badge
+  background ORANGE
+  border-radius 2px
+  color WHITE
   display inline-block
   padding .2em .75em
   sans()
-  small-caps()
-  color white
-  background orange
-  border-radius 2px
+  small_caps()
 
 </style>
