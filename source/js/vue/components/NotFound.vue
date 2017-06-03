@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../stylus/config/'
+@import '../../../stylus/_config/'
 
 .error404
   align-items center

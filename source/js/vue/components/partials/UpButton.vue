@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .up-button
   position_it(absolute, 0, null, null, 0)

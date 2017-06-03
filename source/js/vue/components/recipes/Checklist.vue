@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .checklist
   font-size px_to_em(15)

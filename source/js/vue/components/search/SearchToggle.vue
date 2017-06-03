@@ -21,7 +21,7 @@ export default {
 
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .search-toggle
   align-self stretch

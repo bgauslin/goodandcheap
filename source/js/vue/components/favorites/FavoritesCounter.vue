@@ -66,7 +66,7 @@ export default {
 
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .favorites-counter
   color WHITE

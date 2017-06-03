@@ -64,7 +64,7 @@ export default {
 
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .search-bar
   align-items center
