@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .budget
   background rgba(WHITE, 0.97)

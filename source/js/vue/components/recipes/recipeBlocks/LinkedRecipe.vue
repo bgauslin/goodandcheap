@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../../stylus/config/'
+@import '../../../../../stylus/_config/'
 
 .linked-recipe
   margin 0 0 1rem

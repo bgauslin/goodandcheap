@@ -1,6 +1,6 @@
 <template lang="pug">
   ul.checklist
-    checklist-itpx_to_em(
+    checklist-item(
       v-for="(item, index) in items",
       :item="item",
       :parentId="parentId",
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .checklist
   font-size px_to_em(15)

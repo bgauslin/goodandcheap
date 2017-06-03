@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .copyright
   font-size px_to_em(13)

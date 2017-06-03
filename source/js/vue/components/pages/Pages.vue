@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .pages
   @media(min-width BREAKPOINT_MEDIUM)

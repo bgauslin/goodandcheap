@@ -2,7 +2,7 @@
   li.item
     a(
       href="#",
-      @click.prevent="toggleItpx_to_em(id)",
+      @click.prevent="toggleItem(id)",
       :class="{ saved : isSaved }"
     ) {{ item }}
 </template>
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .item
   margin 0

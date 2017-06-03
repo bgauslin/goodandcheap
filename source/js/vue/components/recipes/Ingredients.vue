@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .ingredients-list
   margin 0 0 1rem

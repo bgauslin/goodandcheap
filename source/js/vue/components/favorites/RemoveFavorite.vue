@@ -1,5 +1,5 @@
 <template lang="pug">
-  button.remove-favorite(@click="removeItpx_to_em(favorite)")
+  button.remove-favorite(@click="removeItem(favorite)")
 </template>
 
 <script>
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .remove-favorite
   display block

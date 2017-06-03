@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/config/'
+@import '../../../../stylus/_config/'
 
 .header
   background rgba(BRAND_COLOR, .97)
