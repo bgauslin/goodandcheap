@@ -89,10 +89,10 @@ export default {
       padding 2rem 0
 
     .count
-      sans()
+      font_sans()
 
     .query
-      sans_heavy()
+      font_sans_heavy()
 
       &::before
         content ' '

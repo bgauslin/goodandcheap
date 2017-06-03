@@ -11,7 +11,7 @@
   color WHITE
   display inline-block
   padding .2em .75em
-  sans()
+  font_sans()
   small_caps()
 
 </style>

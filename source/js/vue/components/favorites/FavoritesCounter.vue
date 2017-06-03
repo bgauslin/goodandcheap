@@ -74,7 +74,7 @@ export default {
   font-size px_to_em(12)
   height HEADER_HEIGHT_BASE
   justify-content flex-end
-  sans()
+  font_sans()
   position_it(absolute, 0, 0, null, null)
   width 3rem
 

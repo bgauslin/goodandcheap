@@ -17,7 +17,7 @@ export default {
   background rgba(WHITE, 0.97)
   padding .5em 2em .5em 1em
   position_it(absolute, 3em, 0, null, null)
-  sans_heavy()
+  font_sans_heavy()
   small_caps()
 
   .total

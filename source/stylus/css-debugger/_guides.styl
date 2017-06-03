@@ -20,9 +20,8 @@ body.guides
   @media (min-width BREAKPOINT_LARGE)
     background-position top center, left MARGINS_LARGE top 0, right MARGINS_LARGE top 0
 
-  // NOTE pixel values must be coordinated for WIDTH_XLARGE...
   @media (min-width BREAKPOINT_XLARGE)
-    background-position top center, calc(50% - 560px) 0, calc(50% + 560px) 0
+    background-position top center, 'calc(50% - %s)' % (WIDTH_XLARGE/2) 0, 'calc(50% + %s)' % (WIDTH_XLARGE/2) 0
 
   img
     opacity .75 !important

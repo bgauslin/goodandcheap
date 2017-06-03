@@ -35,11 +35,11 @@ export default {
 
   h4
     margin 0 0 1em
-    sans_heavy()
+    font_sans_heavy()
     small_caps()
   p
     margin 0 0 1em
-    serif()
+    font_serif()
 
   figure
     flex-shrink 0

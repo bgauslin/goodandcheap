@@ -28,11 +28,11 @@ export default {
 
   h1
     margin 0 0 1rem
-    sans_heavy()
+    font_sans_heavy()
     small_caps(14)
 
   p
-    serif()
+    font_serif()
     text-align center
 
 </style>

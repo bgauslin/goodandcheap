@@ -103,20 +103,20 @@ input[type="search"]
   font-size px_to_em(13)
   margin 0
   position_it(absolute, .5rem, 0, .5rem, null)
-  sans()
+  font_sans()
   transition all .2s ease
 
   @media(min-width BREAKPOINT_MEDIUM)
-    bottom .875rem
-    top .875rem
+    bottom px_to_rem(14)
+    top px_to_rem(14)
 
   &.closed
-    padding .25rem 0
+    padding px_to_rem(4) 0
     width 0
     z-index -1
 
   &.open
-    padding .25rem
+    padding px_to_rem(4)
     width 100%
     z-index 2
 

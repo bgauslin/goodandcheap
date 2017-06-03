@@ -20,7 +20,7 @@ export default {
 
 .variation
   h4
-    sans_heavy()
+    font_sans_heavy()
     small_caps()
 
 </style>

@@ -75,12 +75,12 @@ export default {
 
   .chapter-title
     color LIGHT_GREY
-    sans()
+    font_sans()
 
   .kind
   .tagline
     display inline-block
-    sans_heavy()
+    font_sans_heavy()
 
   .kind
     margin-top .2rem
@@ -94,7 +94,7 @@ export default {
     line-height 1
     position absolute
     right 0
-    sans()
+    font_sans()
     small_caps()
     text-align center
     width 3rem

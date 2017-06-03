@@ -25,7 +25,7 @@ export default {
   justify-content space-between
   margin 1rem MARGINS_BASE
   overflow hidden
-  sans()
+  font_sans()
   small_caps()
 
   @media(min-width BREAKPOINT_SMALL)

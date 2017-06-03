@@ -42,12 +42,12 @@ export default {
   h2
     margin 1rem 0 .5rem
     padding 0
-    sans_heavy()
+    font_sans_heavy()
     small_caps()
 
   .item-count
     color LIGHT_GREY
     margin-left 1em
-    sans()
+    font_sans()
 
 </style>

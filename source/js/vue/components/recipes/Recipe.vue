@@ -145,7 +145,7 @@ export default {
   .tagline
     display inline-block
     margin-right 0.5rem
-    sans_heavy()
+    font_sans_heavy()
     small_caps()
 
   .tabs
@@ -160,14 +160,14 @@ export default {
 
   .kind
     margin-bottom .5rem
-    sans_heavy()
+    font_sans_heavy()
     small_caps()
 
   header
     margin 0 2rem 1rem 0
 
   h1
-    serif_heavy()
+    font_serif_heavy()
 
   .toggle-favorite
     right 0
@@ -179,7 +179,7 @@ export default {
 
   h3
     margin 0 0 1em
-    sans_heavy()
+    font_sans_heavy()
     small_caps()
 
   .copy-block
@@ -189,6 +189,6 @@ export default {
       margin-bottom .25em
 
     p
-      sans()
+      font_sans()
 
 </style>

@@ -5,8 +5,6 @@ ICON_CODE = '\f121'
     content ICON_CODE
 
 body.attr
-
-  // links
   a[href]:not([title])
     border 1px solid RED
 
@@ -19,12 +17,10 @@ body.attr
   a[href=""]
     background fuchsia
 
-  // blank classes and id's
   *[class=""]
   *[id=""]
     outline 1px dotted RED
 
-  // empty items
   div:empty
   span:empty
   li:empty
@@ -33,7 +29,6 @@ body.attr
   th:empty
     outline 1px dotted green
 
-  // images
   img[alt=""]
     border 1px solid RED
 
@@ -46,7 +41,6 @@ body.attr
   img:not([title])
     outline 1px dotted fuchsia
 
-  // tables
   table:not([summary])
     outline 5px solid RED
 
@@ -60,7 +54,6 @@ body.attr
   th[scope="row"]
     border none
 
-  // old markup
   *[style]
   font
   center
@@ -69,6 +62,6 @@ body.attr
   // ignore styles for debugger
   .css-debugger
     a
+      background transparent !important
       border none !important
       outline none !important
-      background transparent !important

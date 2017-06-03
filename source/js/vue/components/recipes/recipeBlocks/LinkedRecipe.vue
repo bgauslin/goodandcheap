@@ -21,6 +21,6 @@ export default {
   margin 0 0 1rem
 
   p
-    sans()
+    font_sans()
 
 </style>

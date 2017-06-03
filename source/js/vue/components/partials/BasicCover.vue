@@ -24,7 +24,7 @@ export default {
 
   h1
     margin-bottom .5em
-    serif_heavy()
+    font_serif_heavy()
 
     @media(min-width BREAKPOINT_LARGE)
       font-size px_to_em(30)
@@ -34,7 +34,7 @@ export default {
     padding 1rem
 
     & > div
-      serif()
+      font_serif()
 
     @media(min-width BREAKPOINT_SMALL)
       background rgba(WHITE, 0.95)
@@ -44,7 +44,7 @@ export default {
 
   .recipe-count
     margin 1rem 0 0
-    sans_heavy()
+    font_sans_heavy()
     small_caps()
 
 </style>

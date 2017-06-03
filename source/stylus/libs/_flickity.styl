@@ -1,5 +1,5 @@
 .flickity-enabled
-  padding-bottom 2rem // NOTE to contain navigation
+  padding-bottom 2rem // NOTE padding is here to contain navigation
   position relative
 
   &:focus
@@ -10,7 +10,7 @@
     user-select none
 
     .flickity-viewport
-      cursor move
+      //cursor move
       cursor grab
 
     .flickity-viewport.is-pointer-down
@@ -26,7 +26,6 @@
   position absolute
   width 100%
 
-// previous/next buttons
 .flickity-prev-next-button
   background transparent
   border none
@@ -63,13 +62,10 @@
   &.next
     right 0
 
-    &:after
+    &::after
       content ICON_ANGLE_RIGHT
   svg
     display none
-
-// ----------------------------------------
-// page dots
 
 .flickity-page-dots
   bottom 0

@@ -49,7 +49,7 @@ export default {
   color LIGHT_GREY
   overflow-x scroll
   -webkit-overflow-scrolling touch
-  sans()
+  font_sans()
   small_caps(12)
   white-space nowrap
   width 100%

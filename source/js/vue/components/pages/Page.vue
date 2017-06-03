@@ -74,22 +74,22 @@ export default {
 
   h1
     margin .5em 0 1em
-    serif_heavy()
+    font_serif_heavy()
 
   h2
   h3
   h4
-    sans_heavy()
+    font_sans_heavy()
     text-transform uppercase
 
   h2
     small_caps()
 
   p
-    serif()
+    font_serif()
 
   li
-    sans()
+    font_sans()
 
 &.has-background
   background-attachment scroll

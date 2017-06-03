@@ -1,13 +1,13 @@
 aspect_ratio(width, height)
-  position relative
   padding-bottom (height / width) * 100%
+  position relative
 
   img
-    position absolute
-    top 0
-    left 0
-    right 0
     bottom 0
+    left 0
+    position absolute
+    right 0
+    top 0
 
 link(link, visited, active)
   &
@@ -33,6 +33,9 @@ link_hover(hover)
 px_to_em(px)
   (px / 16) * 1em
 
+px_to_rem(px)
+  (px / 16) * 1rem
+
 position_it(position, top, right, bottom left)
   position position
   if top != null
@@ -44,10 +47,10 @@ position_it(position, top, right, bottom left)
   if left != null
     left left
 
-small_caps(font-size = 11)
-  font-size px_to_em(font-size)
-  text-transform uppercase
+small_caps(font_size = 11)
+  font-size px_to_em(font_size)
   letter-spacing .1em
+  text-transform uppercase
 
 transition_all()
   transition all .3s ease

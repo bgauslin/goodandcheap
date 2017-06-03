@@ -104,7 +104,7 @@ export default {
   h2
     margin 0
     padding 1.5rem 0
-    sans_heavy()
+    font_sans_heavy()
     small_caps(14)
     text-align center
 

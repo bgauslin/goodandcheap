@@ -23,8 +23,8 @@ export default {
 .checklist
   font-size px_to_em(15)
   list-style none
-  margin 0 0 .5rem
+  margin 0 0 px_to_rem(8)
   padding 0
-  sans()
+  font_sans()
 
 </style>

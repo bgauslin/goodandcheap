@@ -81,7 +81,7 @@ export default {
     height HEADER_HEIGHT_BASE
     justify-content center
     position_it(absolute, 0, 0, null, 0)
-    sans_heavy()
+    font_sans_heavy()
     small_caps(14)
     white-space nowrap
 

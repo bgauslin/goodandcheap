@@ -19,6 +19,6 @@ export default {
     font-size px_to_em(14)
     list-style none
     margin 0 0 .5em
-    sans()
+    font_sans()
 
 </style>

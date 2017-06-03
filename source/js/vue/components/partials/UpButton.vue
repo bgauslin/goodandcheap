@@ -49,7 +49,7 @@ export default {
 
     span
       display none
-      sans()
+      font_sans()
       small_caps(12)
       white-space nowrap
 
