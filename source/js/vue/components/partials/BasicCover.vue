@@ -1,16 +1,10 @@
 <template lang="pug">
   div.cover
-    cover-photo(
-      v-bind="{ image, title }"
-    )
+    cover-photo(:image="image", :title="title")
     div.blurb
       h1 {{ title }}
-      div(
-        v-html="blurb"
-      )
-      p.recipe-count(
-        v-if="count"
-      ) {{ count }}
+      div(v-html="blurb")
+      p.recipe-count(v-if="count") {{ count }}
 </template>
 
 <script>

@@ -5,9 +5,7 @@
         :href="linkedRecipe.link.slug",
         :title="linkedRecipe.link.title"
       ) {{ linkedRecipe.heading }}
-    div(
-      v-html="linkedRecipe.blurb"
-    )
+    div(v-html="linkedRecipe.blurb")
 </template>
 
 <script>

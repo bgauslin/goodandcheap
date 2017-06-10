@@ -8,8 +8,8 @@
 export default {
   data () {
     return {
-      message: 'The page you requested cannot be found. :(',
-      title: 'Error 404'
+      title: 'Error 404',
+      message: 'The page you requested cannot be found. :('
     }
   }
 }

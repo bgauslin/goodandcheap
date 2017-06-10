@@ -6,19 +6,20 @@
     div
       ol.previews
         recipe-preview(
-          favoriteButton="toggle",
           v-for="(recipe, index) in data.data",
-          :index="index",
           :item="recipe",
+          :index="index",
           :key="recipe",
+          :showChapter="true",
           :showBadge="false",
-          :showChapter="true"
+          favoriteButton="toggle"
         )
 </template>
 
 <script>
 import RecipePreview from '../recipes/Preview.vue'
 export default {
+
   components: { RecipePreview },
 
   props: ['data'],

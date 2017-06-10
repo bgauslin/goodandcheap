@@ -1,26 +1,12 @@
 <template lang="pug">
-  div.page(
-    :class="{ 'has-background' : hasBackgroundImage }",
-    :style="'background-image:' + backgroundImageCss"
-  )
+  div.page(:style="'background-image:' + backgroundImageCss", :class="{ 'has-background' : hasBackgroundImage }")
     div.copy
       h1 {{ data.title }}
-      section.page-section(
-        v-for="block in data.content"
-      )
-        h2(
-          v-if="block.heading"
-        ) {{ block.heading }}
-        div(
-          v-html="block.copy",
-          v-if="block.copy"
-        )
-        ul(
-          v-if="block.list"
-        )
-          li(
-            v-for="item in block.list"
-          ) {{ item }}
+      section.page-section(v-for="block in data.content")
+        h2(v-if="block.heading") {{ block.heading }}
+        div(v-if="block.copy", v-html="block.copy")
+        ul(v-if="block.list")
+          li(v-for="item in block.list") {{ item }}
 </template>
 
 <script>
@@ -30,9 +16,9 @@ export default {
 
   data () {
     return {
+      hasBackgroundImage: null,
       backgroundImageCss: null,
-      backgroundImageOverlayCss: 'linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25))',
-      hasBackgroundImage: null
+      backgroundImageOverlayCss: 'linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25))'
     }
   },
 

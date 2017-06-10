@@ -1,11 +1,10 @@
 <template lang="pug">
   div.recipe-cover
     cover-photo(
-      v-bind="{ image, title }"
+      :image="image",
+      :title="title"
     )
-    budget(
-      v-bind="budget"
-    )
+    budget(:budget="budget")
 </template>
 
 <script>

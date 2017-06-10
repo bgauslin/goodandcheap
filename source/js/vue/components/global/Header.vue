@@ -1,16 +1,12 @@
 <template lang="pug">
   header.header
     div.controls
-      up-button(
-        v-bind="parent"
-      )
-      h1(
-        :class="{ 'search-enabled' : hasSearch }"
-      )
+      up-button(:parent="parent")
+      h1(:class="{ 'search-enabled' : hasSearch }")
         router-link(
-          exact,
           to="/",
-          title="Home"
+          title="Home",
+          exact
         ) {{ heading }}
       search-bar
       favorites-counter

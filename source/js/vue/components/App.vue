@@ -1,18 +1,14 @@
 <template lang="pug">
   div.site
-    app-header(
-      v-bind="{ parent, home }"
-    )
+    app-header(:parent="parent", :home="home")
     div.content
-      preloader(
-        v-if="!dataLoaded"
-      )
+      preloader(v-if="!dataLoaded")
       transition(
-        mode="out-in",
         @before-enter="beforeEnter",
         @after-enter="afterEnter",
         @before-leave="beforeLeave",
-        @after-leave="afterLeave"
+        @after-leave="afterLeave",
+        mode="out-in"
       )
         router-view(
           v-if="dataLoaded",

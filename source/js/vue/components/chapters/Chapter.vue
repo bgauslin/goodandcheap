@@ -3,19 +3,19 @@
     div.chapter-content
       div.intro
         basic-cover(
+          :title="data.title",
           :blurb="data.blurb",
-          :count="data.recipeCount + ' Recipes'",
           :image="data.photo",
-          :title="data.title"
+          :count="data.recipeCount + ' Recipes'"
         )
       ol.previews
         recipe-preview(
-          favoriteButton="toggle",
           v-for="(recipe, index) in data.recipes",
-          :index="index",
           :item="recipe",
+          :index="index",
+          :showChapter="false",
           :showBadge="true",
-          :showChapter="false"
+          favoriteButton="toggle"
         )
 </template>
 

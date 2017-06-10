@@ -1,13 +1,11 @@
 <template lang="pug">
   ul.tabs
-    li(
-      v-for="tab in tabs"
-    )
+    li(v-for="tab in tabs")
       router-link(
-        exact,
         v-if="tab.name",
         :to="{ name: tab.name }",
-        :title="tab.label"
+        :title="tab.label",
+        exact
       ) {{ tab.label }}
 </template>
 

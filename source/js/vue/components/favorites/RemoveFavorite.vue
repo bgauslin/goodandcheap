@@ -1,7 +1,5 @@
 <template lang="pug">
-  button.remove-favorite(
-    @click="removeItem(favorite)"
-  )
+  button.remove-favorite(@click="removeItem(favorite)")
 </template>
 
 <script>

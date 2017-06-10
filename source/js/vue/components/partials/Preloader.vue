@@ -5,6 +5,7 @@
 <script>
 import Spinner from 'spin'
 export default {
+
   data () {
     return {
       spinnerOptions: {

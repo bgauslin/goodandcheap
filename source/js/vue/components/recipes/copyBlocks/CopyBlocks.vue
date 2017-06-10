@@ -1,12 +1,10 @@
 <template lang="pug">
   div
-    template(
-      v-for="block in data"
-    )
+    template(v-for="block in data")
       blurb-with-heading(
         v-if="block.type === 'blurbWithHeading'",
-        :blurb="block.blurb",
-        :heading="block.heading"
+        :heading="block.heading",
+        :blurb="block.blurb"
       )
       blurb(
         v-if="block.type === 'blurb'",

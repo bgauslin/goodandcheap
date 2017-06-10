@@ -2,9 +2,9 @@
   div.pages
     ol.previews
       preview(
-        route-name="info",
         v-for="page in pages",
-        :item="page"
+        :item="page",
+        route-name="info"
       )
 </template>
 

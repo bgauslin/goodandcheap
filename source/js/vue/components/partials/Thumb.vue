@@ -2,10 +2,10 @@
   figure.thumb
     img(
       v-if="!loading",
-      :alt="title",
-      :height="image.height",
       :src="image.src",
-      :width="image.width"
+      :width="image.width",
+      :height="image.height",
+      :alt="title"
     )
 </template>
 

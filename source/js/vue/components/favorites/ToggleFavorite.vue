@@ -1,7 +1,7 @@
 <template lang="pug">
   button.toggle-favorite(
-    :class="{ saved: isFavorite }",
-    @click="toggleFavorite(favorite)"
+    @click="toggleFavorite(favorite)",
+    :class="{ saved: isFavorite }"
   )
 </template>
 

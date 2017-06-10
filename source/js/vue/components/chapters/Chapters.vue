@@ -2,9 +2,9 @@
   div.chapters
     ol.previews
       preview(
-        route-name="chapter",
         v-for="chapter in chapters",
-        :item="chapter"
+        :item="chapter",
+        route-name="chapter"
       )
 </template>
 

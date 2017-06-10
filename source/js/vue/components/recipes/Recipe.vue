@@ -2,61 +2,43 @@
   div.recipe
     div.recipe-content
       recipe-cover(
-        :budget="data.budget",
         :image="data.photo",
-        :title="data.title"
+        :title="data.title",
+        :budget="data.budget"
       )
       div.overview
         header
-          p.kind(
-            v-if="data.kind !== 'Recipe'"
-          ) {{ data.kind }}
+          p.kind(v-if="data.kind !== 'Recipe'") {{ data.kind }}
           h1 {{ data.title }}
-          h2.tagline(
-            v-if="data.tagline"
-          ) {{ data.tagline }}
-          badge(
-            v-if="data.badge"
-          )
-        toggle-favorite(
-          :favorite="data"
-        )
-        ul.tabs(
-          v-if="data.ingredients || data.instructions"
-        )
-          li(
-            v-if="data.blurb || data.recipeBlocks || data.copyBlocks"
-          )
+          h2.tagline(v-if="data.tagline") {{ data.tagline }}
+          badge(v-if="data.badge")
+        toggle-favorite(:favorite="data")
+
+        ul.tabs(v-if="data.ingredients || data.instructions")
+          li(v-if="data.blurb || data.recipeBlocks || data.copyBlocks")
             router-link(
               :to="{ name: 'recipe', params: { chapter: data.parent.slug, slug: data.slug } }",
               exact
             ) Intro
-          li(
-            v-if="data.ingredients"
-          )
+          li(v-if="data.ingredients")
             router-link(
               :to="{ name: 'ingredients', params: { chapter: data.parent.slug, slug: data.slug } }"
-            ) Ingredients
-          li(
-            v-if="data.instructions"
-          )
+            ) ingredients
+          li(v-if="data.instructions")
             router-link(
               :to="{ name: 'steps', params: { chapter: data.parent.slug, slug: data.slug } }"
             ) Steps
+
         router-view(
           :blurb="data.blurb",
           :ingredients="data.ingredients",
           :instructions="data.instructions",
           :parentId="data.id"
         )
-        recipe-blocks(
-          v-if="data.kind === 'Ideas'",
-          :data="data.recipeBlocks"
-        )
-        copy-blocks(
-          v-if="data.kind === 'Method'",
-          :data="data.copyBlocks"
-        )
+
+        recipe-blocks(v-if="data.kind === 'Ideas'", :data="data.recipeBlocks")
+        copy-blocks(v-if="data.kind === 'Method'", :data="data.copyBlocks")
+
       alpha-overlay
 </template>
 

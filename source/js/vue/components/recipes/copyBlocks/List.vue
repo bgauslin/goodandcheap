@@ -1,8 +1,6 @@
 <template lang="pug">
   ul.blurb-list
-    li(
-      v-for="item in list"
-    ) {{ item }}
+    li(v-for="item in list") {{ item }}
 </template>
 
 <script>

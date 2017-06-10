@@ -1,12 +1,13 @@
 <template lang="pug">
   button.search-toggle(
-    :class="{ open : open, closed : !open }",
-    @click="toggle(open)"
+    @click="toggle(open)",
+    :class="{ open : open, closed : !open }"
   )
 </template>
 
 <script>
 export default {
+
   props: ['open'],
 
   methods: {
