@@ -1,21 +1,41 @@
 <template lang="pug">
-  transition(name="remove", mode="out-in")
+  transition(
+    mode="out-in",
+    name="remove"
+  )
     li.preview.recipe-preview
       router-link(
-        :to="{ name: 'recipe', params: { chapter: item.chapter.slug, slug: item.slug } }",
+        :class="{ visited : isVisited }",
         :title="item.title",
-        :class="{ visited : isVisited }"
+        :to="{ name: 'recipe', params: { chapter: item.chapter.slug, slug: item.slug } }"
       )
-        thumb(:image="item.thumb", :title="item.title")
+        thumb(
+          :image="item.thumb",
+          :title="item.title"
+        )
         div.summary
-          p.chapter-title(v-if="showChapter") {{ item.chapter.title }}
+          p.chapter-title(
+            v-if="showChapter"
+          ) {{ item.chapter.title }}
           h3 {{ item.title }}
-          p.tagline(v-if="item.tagline") {{ item.tagline }}
-          badge(v-if="item.new && showBadge")
-          p.kind(v-if="item.kind !== 'Recipe'") {{ item.kind }}
+          p.tagline(
+            v-if="item.tagline"
+          ) {{ item.tagline }}
+          badge(
+            v-if="item.new && showBadge"
+          )
+          p.kind(
+            v-if="item.kind !== 'Recipe'"
+          ) {{ item.kind }}
           p.index {{ itemCount }}
-      toggle-favorite(v-if="favoriteButton === 'toggle'", :favorite="item")
-      remove-favorite(v-if="favoriteButton === 'remove'", :favorite="item")
+      toggle-favorite(
+        v-if="favoriteButton === 'toggle'",
+        :favorite="item"
+      )
+      remove-favorite(
+        v-if="favoriteButton === 'remove'",
+        :favorite="item"
+      )
 </template>
 
 <script>

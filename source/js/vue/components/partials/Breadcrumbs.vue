@@ -3,13 +3,13 @@
     ul
       li
         router-link(
-          :to="{ name: 'chapters' }",
-          title="Recipes"
+          title="Recipes",
+          :to="{ name: 'chapters' }"
         ) Recipes
       li(v-if="parent")
         router-link(
-          :to="{ name: parent.routeName, params: { slug: parent.slug } }",
-          :title="parent.title"
+          :title="parent.title",
+          :to="{ name: parent.routeName, params: { slug: parent.slug } }"
         ) {{ parent.title }}
       li
         span {{ current }}

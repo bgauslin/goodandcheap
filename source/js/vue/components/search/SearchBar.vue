@@ -1,12 +1,14 @@
 <template lang="pug">
   div.search-bar
-    form.search-form(action="/search")
+    form.search-form(
+      action="/search"
+    )
       input.search-input(
         name="q",
+        placeholder="Search",
         type="text",
-        :value="query",
         :class="{ open : open, closed : !open }",
-        placeholder="Search"
+        :value="query"
       )
     search-toggle(:open="open")
 </template>

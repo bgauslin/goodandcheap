@@ -1,6 +1,8 @@
 <template lang="pug">
   ul.tabs
-    li(v-for="tab in tabs")
+    li(
+      v-for="tab in tabs"
+    )
       router-link(
         v-if="tab.name",
         :to="{ name: tab.name }",

@@ -3,9 +3,9 @@
     checklist-item(
       v-for="(item, index) in items",
       :item="item",
-      :parentId="parentId",
+      :itemIndex="index",
       :listIndex="listIndex",
-      :itemIndex="index"
+      :parentId="parentId"
     )
 </template>
 

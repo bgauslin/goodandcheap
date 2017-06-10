@@ -1,10 +1,16 @@
 <template lang="pug">
-  div.page(:style="'background-image:' + backgroundImageCss", :class="{ 'has-background' : hasBackgroundImage }")
+  div.page(
+    :class="{ 'has-background' : hasBackgroundImage }",
+    :style="'background-image:' + backgroundImageCss"
+  )
     div.copy
       h1 {{ data.title }}
       section.page-section(v-for="block in data.content")
         h2(v-if="block.heading") {{ block.heading }}
-        div(v-if="block.copy", v-html="block.copy")
+        div(
+          v-html="block.copy",
+          v-if="block.copy"
+        )
         ul(v-if="block.list")
           li(v-for="item in block.list") {{ item }}
 </template>

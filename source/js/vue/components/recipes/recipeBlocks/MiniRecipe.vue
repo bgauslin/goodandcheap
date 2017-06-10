@@ -2,14 +2,20 @@
   div.mini-recipe
     div.contents
       h4 {{ miniRecipe.heading }}
-      div(v-html="miniRecipe.blurb")
-      checklist(:items="miniRecipe.ingredients")
-    figure(v-if="miniRecipe.photo")
+      div(
+        v-html="miniRecipe.blurb"
+      )
+      checklist(
+        :items="miniRecipe.ingredients"
+      )
+    figure(
+      v-if="miniRecipe.photo"
+    )
       img(
-        :src="miniRecipe.photo.src",
-        :width="miniRecipe.photo.width",
         :height="miniRecipe.photo.height",
-        :title="miniRecipe.photo.title"
+        :src="miniRecipe.photo.src",
+        :title="miniRecipe.photo.title",
+        :width="miniRecipe.photo.width"
       )
 </template>
 

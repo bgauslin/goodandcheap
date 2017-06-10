@@ -1,20 +1,22 @@
 <template lang="pug">
-  div.favorites(:class="{ 'empty' : !hasFavorites }")
+  div.favorites(
+    :class="{ 'empty' : !hasFavorites }"
+  )
     h2 {{ favoritesCount }}
     div
       transition-group(
+        class="previews",
         name="favorites",
-        tag="ol",
-        class="previews"
+        tag="ol"
       )
         recipe-preview(
+          favoriteButton="remove",
           v-for="(recipe, index) in favorites",
-          :item="recipe",
           :index="index",
+          :item="recipe",
           :key="recipe",
-          :showChapter="true",
           :showBadge="false",
-          favoriteButton="remove"
+          :showChapter="true"
         )
 </template>
 

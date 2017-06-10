@@ -1,6 +1,8 @@
 <template lang="pug">
   div
-    template(v-for="block in data")
+    template(
+      v-for="block in data"
+    )
       variation(
         v-if="block.type === 'variation'",
         :variation="block"
