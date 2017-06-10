@@ -1,9 +1,17 @@
 <template lang="pug">
   p.copyright
     span Content © 2014–{{ currentYear }}
-      a(href="http://www.leannebrown.com/" title="Visit LeanneBrown.com" target="_blank") Leanne Brown
+      a(
+        href="http://www.leannebrown.com/",
+        target="_blank",
+        title="Visit LeanneBrown.com"
+      ) Leanne Brown
     span Website © 2015–{{ currentYear }}
-      a(href="http://gauslin.com/" title="Visit Gauslin.com" target="_blank") Ben Gauslin
+      a(
+        href="https://gauslin.com/",
+        target="_blank",
+        title="Visit Gauslin.com"
+      ) Ben Gauslin
 </template>
 
 <script>

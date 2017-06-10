@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    tabs(:tabs="tabs")
+    tabs(v-bind="tabs")
     router-view(
       :chapters="data.chapters",
       :pages="data.pages"

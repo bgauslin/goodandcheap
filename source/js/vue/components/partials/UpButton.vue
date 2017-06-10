@@ -1,16 +1,18 @@
 <template lang="pug">
-  div.up-button(v-if="parent !== null")
+  div.up-button(
+    v-if="parent !== null"
+  )
     router-link(
       v-if="parent && parent.slug",
-      :to="{ name: parent.routeName, params: { slug: parent.slug } }",
-      :title="parent.title"
+      :title="parent.title",
+      :to="{ name: parent.routeName, params: { slug: parent.slug } }"
     )
       span {{ parent.title }}
     router-link(
+      exact,
       v-if="parent && !parent.slug",
       :to="{ name: parent.routeName }",
-      :title="parent.title",
-      exact
+      :title="parent.title"
     )
       span {{ parent.title }}
 </template>

@@ -3,13 +3,12 @@
     figure(
       :style="'background-image:url(' + image.placeholder + ')'"
     )
-      img(
+      img.hi-res(
         v-if="!loading",
-        :src="image.src",
-        :width="image.width",
-        :height="image.height",
         :alt="title",
-        class="hi-res"
+        :height="image.height",
+        :src="image.src",
+        :width="image.width"
       )
 </template>
 

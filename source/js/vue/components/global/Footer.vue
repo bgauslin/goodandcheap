@@ -3,8 +3,15 @@
     div
       copyright
       p.license
-        a(rel="license", href="http://creativecommons.org/licenses/by-nc-sa/4.0/", target="_blank")
-          img(src="/ui/img/by-nc-sa-80x15.svg", alt="Creative Commons License")
+        a(
+          href="http://creativecommons.org/licenses/by-nc-sa/4.0/",
+          rel="license",
+          target="_blank"
+        )
+          img(
+            alt="Creative Commons License",
+            src="/ui/img/by-nc-sa-80x15.svg"
+          )
 </template>
 
 <script>

@@ -2,8 +2,8 @@
   li.item
     a(
       href="#",
-      @click.prevent="toggleItem(id)",
-      :class="{ saved : isSaved }"
+      :class="{ saved : isSaved }",
+      @click.prevent="toggleItem(id)"
     ) {{ item }}
 </template>
 

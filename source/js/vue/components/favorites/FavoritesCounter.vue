@@ -1,10 +1,10 @@
 <template lang="pug">
   div.favorites-counter
     router-link(
-      :class="{ empty : !hasFavorites }",
-      :to="{ name: 'favorites' }",
+      exact,
       title="Favorites",
-      exact
+      :class="{ empty : !hasFavorites }",
+      :to="{ name: 'favorites' }"
     ) {{ favoritesCount }}
 </template>
 
