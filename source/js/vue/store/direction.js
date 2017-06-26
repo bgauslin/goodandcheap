@@ -1,5 +1,4 @@
 const direction = {
-
   state: {
     direction: null
   },
@@ -11,11 +10,8 @@ const direction = {
   },
 
   getters: {
-    getDirection: state => {
-      return state.direction
-    }
+    getDirection: state => state.direction
   }
-
 }
 
 export default direction

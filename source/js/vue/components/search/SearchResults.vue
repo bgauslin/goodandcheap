@@ -19,7 +19,6 @@
 <script>
 import RecipePreview from '../recipes/Preview.vue'
 export default {
-
   components: { RecipePreview },
 
   props: ['data'],
@@ -60,7 +59,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="stylus">
 @import '../../../../stylus/_config/'

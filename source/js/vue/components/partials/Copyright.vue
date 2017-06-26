@@ -10,8 +10,8 @@
 export default {
   computed: {
     currentYear () {
-      var fullYear = new Date().getFullYear()
-      var shortYear = fullYear.toString().substr(2,2)
+      let fullYear = new Date().getFullYear()
+      let shortYear = fullYear.toString().substr(2,2)
       return shortYear
     }
   }

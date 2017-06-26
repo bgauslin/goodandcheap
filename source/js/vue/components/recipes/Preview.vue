@@ -19,15 +19,15 @@
 </template>
 
 <script>
-import Thumb from '../partials/Thumb.vue'
 import Badge from './Badge.vue'
-import ToggleFavorite from '../favorites/ToggleFavorite.vue'
 import RemoveFavorite from '../favorites/RemoveFavorite.vue'
+import Thumb from '../partials/Thumb.vue'
+import ToggleFavorite from '../favorites/ToggleFavorite.vue'
 
 export default {
-  components: { Thumb, Badge, ToggleFavorite, RemoveFavorite },
+  components: { Badge, RemoveFavorite, Thumb, ToggleFavorite },
 
-  props: ['item', 'index', 'showChapter', 'showBadge', 'favoriteButton'],
+  props: ['favoriteButton', 'index', 'item', 'showBadge', 'showChapter'],
 
   data () {
     return {
@@ -47,8 +47,8 @@ export default {
 
   methods: {
     checkIfVisited (id) {
-      var ids = this.$store.getters.visitedIds
-      var index = ids.indexOf(id)
+      let ids = this.$store.getters.visitedIds
+      let index = ids.indexOf(id)
       return (index !== -1) ? true : false
     }
   }

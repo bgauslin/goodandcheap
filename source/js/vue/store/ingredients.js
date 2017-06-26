@@ -1,5 +1,4 @@
 const ingredients = {
-
   state: {
     ingredients: JSON.parse(localStorage.getItem('ingredients')) || []
   },
@@ -17,12 +16,8 @@ const ingredients = {
   },
 
   getters: {
-    ingredientsIds: state => {
-      return state.ingredients
-    }
+    ingredientsIds: state => state.ingredients
   }
-
 }
-
 
 export default ingredients

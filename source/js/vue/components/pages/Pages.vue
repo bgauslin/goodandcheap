@@ -10,7 +10,6 @@
 
 <script>
 import Preview from '../partials/Preview.vue'
-
 export default {
   components: { Preview },
   props: ['pages']

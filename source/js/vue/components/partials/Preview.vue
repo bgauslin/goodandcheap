@@ -15,7 +15,6 @@
 
 <script>
 import Thumb from './Thumb.vue'
-
 export default {
   components: { Thumb },
 

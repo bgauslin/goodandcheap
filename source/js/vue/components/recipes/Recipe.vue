@@ -43,17 +43,16 @@
 </template>
 
 <script>
+import AlphaOverlay from '../partials/AlphaOverlay.vue'
+import Badge from './Badge.vue'
+import CopyBlocks from './copyBlocks/CopyBlocks.vue'
+import getBreakpointValue from '../../../helpers/getBreakpointValue'
+import RecipeBlocks from './recipeBlocks/RecipeBlocks.vue'
 import RecipeCover from './RecipeCover.vue'
 import ToggleFavorite from '../favorites/ToggleFavorite.vue'
-import Badge from './Badge.vue'
-import AlphaOverlay from '../partials/AlphaOverlay.vue'
-import CopyBlocks from './copyBlocks/CopyBlocks.vue'
-import RecipeBlocks from './recipeBlocks/RecipeBlocks.vue'
-
-import getBreakpointValue from '../../../helpers/getBreakpointValue'
 
 export default {
-  components: { RecipeCover, ToggleFavorite, Badge, AlphaOverlay, CopyBlocks, RecipeBlocks },
+  components: { AlphaOverlay, Badge, CopyBlocks, RecipeBlocks, RecipeCover, ToggleFavorite },
 
   props: ['data'],
 
@@ -72,9 +71,9 @@ export default {
 
   methods: {
     minHeight () {
-      var overview = this.$el.querySelector('.overview')
-      var overviewWidthPx = overview.offsetWidth
-      var overviewWidth = overviewWidthPx / 16 + 'em'
+      let overview = this.$el.querySelector('.overview')
+      let overviewWidthPx = overview.offsetWidth
+      let overviewWidth = overviewWidthPx / 16 + 'em'
 
       if (getBreakpointValue() !== 'large' || getBreakpointValue() !== 'xlarge') {
         overview.style.minHeight = overviewWidth

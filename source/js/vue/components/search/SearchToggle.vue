@@ -7,7 +7,6 @@
 
 <script>
 export default {
-
   props: ['open'],
 
   methods: {
@@ -18,7 +17,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="stylus">
 @import '../../../../stylus/_config/'

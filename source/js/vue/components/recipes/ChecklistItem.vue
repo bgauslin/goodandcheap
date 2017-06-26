@@ -28,6 +28,11 @@ export default {
   },
 
   methods: {
+    isSavedIngredient (id) {
+      var ids = this.$store.getters.ingredientsIds
+      var index = ids.indexOf(id)
+      return (index !== -1) ? true : false
+    },
     toggleItem (id) {
       if (this.isSaved) {
         this.$store.commit('removeIngredient', id)
@@ -35,12 +40,6 @@ export default {
         this.$store.commit('addIngredient', id)
       }
       this.isSaved = !this.isSaved
-    },
-
-    isSavedIngredient (id) {
-      var ids = this.$store.getters.ingredientsIds
-      var index = ids.indexOf(id)
-      return (index !== -1) ? true : false
     }
   }
 }

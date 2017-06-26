@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import UpButton from '../partials/UpButton.vue'
-import SearchBar from '../search/SearchBar.vue'
 import FavoritesCounter from '../favorites/FavoritesCounter.vue'
+import SearchBar from '../search/SearchBar.vue'
+import UpButton from '../partials/UpButton.vue'
 
 export default {
-  components: { UpButton, SearchBar, FavoritesCounter },
+  components: { FavoritesCounter, SearchBar, UpButton },
 
   props: ['parent'],
 

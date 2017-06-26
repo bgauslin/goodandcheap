@@ -19,12 +19,12 @@ export default {
 
   methods: {
     itemsLabel (count) {
-      var number = count.length
+      let number = count.length
+      var label = 'Item'
       if (number > 1) {
-        return number + ' Items'
-      } else {
-        return number + ' Item'
+        label += 's'
       }
+      return `${number} ${label}`
     }
   }
 }

@@ -21,10 +21,10 @@ export default {
 @import '../../../../stylus/_config/'
 
 .checklist
+  font_sans()
   font-size px_to_em(15)
   list-style none
   margin 0 0 px_to_rem(8)
   padding 0
-  font_sans()
 
 </style>

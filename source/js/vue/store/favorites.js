@@ -1,5 +1,4 @@
 const favorites = {
-
   state: {
     favorites: JSON.parse(localStorage.getItem('favorites')) || []
   },
@@ -17,12 +16,8 @@ const favorites = {
   },
 
   getters: {
-    favoritesCount: state => {
-      return state.favorites.length
-    },
-    favoritesIds: state => {
-      return state.favorites.map(favorite => favorite.id)
-    }
+    favoritesCount: state => state.favorites.length,
+    favoritesIds: state => state.favorites.map(favorite => favorite.id)
   }
 }
 

@@ -32,7 +32,7 @@ export default {
     loadImages () {
       this.loading = true
       let that = this
-      imagesLoaded(this.$el.querySelector('.hi-res'), that, function(instance) {
+      imagesLoaded(this.$el.querySelector('.hi-res'), that, instance => {
         that.loading = false
       })
     }

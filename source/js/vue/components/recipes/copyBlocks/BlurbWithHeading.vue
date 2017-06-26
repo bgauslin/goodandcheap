@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  props: ['heading', 'blurb']
+  props: ['blurb', 'heading']
 }
 </script>
 
@@ -17,12 +17,12 @@ export default {
   padding .5rem 0
 
   h4
-    margin 0 0 .25em
     font_sans_heavy()
+    margin 0 0 .25em
     small_caps()
 
   p
-    font-size px_to_em(14)
     font_sans()
+    font-size px_to_em(14)
 
 </style>

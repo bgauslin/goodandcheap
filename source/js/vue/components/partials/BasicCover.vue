@@ -8,11 +8,12 @@
 </template>
 
 <script>
-import imagesLoaded from 'imagesloaded'
 import CoverPhoto from './CoverPhoto.vue'
+import imagesLoaded from 'imagesloaded'
+
 export default {
   components: { CoverPhoto },
-  props: ['image', 'title', 'blurb', 'count']
+  props: ['blurb', 'count', 'image', 'title']
 }
 </script>
 
@@ -23,8 +24,8 @@ export default {
   cover()
 
   h1
-    margin-bottom .5em
     font_serif_heavy()
+    margin-bottom .5em
 
     @media(min-width BREAKPOINT_LARGE)
       font-size px_to_em(30)
@@ -43,8 +44,8 @@ export default {
       position_it(absolute, 0, 3rem, null, 3rem)
 
   .recipe-count
-    margin 1rem 0 0
     font_sans_heavy()
+    margin 1rem 0 0
     small_caps()
 
 </style>

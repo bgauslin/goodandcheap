@@ -1,8 +1,13 @@
 import attachFastClick from 'fastclick'
-attachFastClick(document.body)
-
+import googleAnalytics from './modules/googleAnalytics'
 import noTouch from './modules/noTouch'
-noTouch()
-
 import './vue/app'
-import './modules/googleAnalytics'
+
+const gaData = {
+  domain: 'goodandcheap.website',
+  id: 'UA-626192-14'
+}
+
+attachFastClick(document.body)
+googleAnalytics(gaData)
+noTouch()

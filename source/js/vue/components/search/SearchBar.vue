@@ -24,17 +24,6 @@ export default {
 
   created () {
     this.getQuery()
-    // NOTE borked in iOS Safari
-    //document.addEventListener('click', this.closeIt)
-  },
-
-  updated () {
-    // NOTE borked in iOS Safari
-    //this.focusInput()
-  },
-
-  beforeDestroy: function () {
-    //document.removeEventListener('click', this.closeIt)
   },
 
   computed: {
@@ -44,19 +33,19 @@ export default {
   },
 
   methods: {
-    getQuery () {
-      var query = window.location.search
-      this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null
-      this.$store.commit('setQuery', this.query)
-    },
-    focusInput () {
-      this.$el.querySelectorAll('.search-input')[0].focus()
-    },
     closeIt () {
       let active = document.activeElement.tagName
       if (active !== 'INPUT') {
         this.$store.commit('setSearch', false)
       }
+    },
+    focusInput () {
+      this.$el.querySelectorAll('.search-input')[0].focus()
+    },
+    getQuery () {
+      var query = window.location.search
+      this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null
+      this.$store.commit('setQuery', this.query)
     }
   }
 }

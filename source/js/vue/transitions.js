@@ -1,7 +1,6 @@
 export default function(router) {
 
   router.beforeEach((to, from, next) => {
-
     // chapters -> chapter
     if (from.name === 'chapters' && to.name === 'chapter') {
       router.app.$store.commit('setDirection', 'forward')

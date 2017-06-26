@@ -15,9 +15,9 @@ export default {
 
 .budget
   background rgba(WHITE, 0.97)
+  font_sans_heavy()
   padding .5em 2em .5em 1em
   position_it(absolute, 3em, 0, null, null)
-  font_sans_heavy()
   small_caps()
 
   .total

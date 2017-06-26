@@ -1,5 +1,4 @@
 const favorites = {
-
   state: {
     parent: null
   },
@@ -11,11 +10,8 @@ const favorites = {
   },
 
   getters: {
-    getParent: state => {
-      return state.parent
-    }
+    getParent: state => state.parent
   }
-
 }
 
 export default favorites

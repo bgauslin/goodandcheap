@@ -29,7 +29,7 @@ export default {
     loadImages () {
       this.loading = true
       let that = this
-      imagesLoaded(this.$el, that, function(instance) {
+      imagesLoaded(this.$el, that, instance => {
         that.loading = false
       })
     }
@@ -41,11 +41,11 @@ export default {
 @import '../../../../stylus/_config/'
 
 .thumb
-  border-radius .25em
   background-color LIGHTER_GREY
+  border-radius .25em
   flex-shrink 0
-  margin .5rem
   height 5rem
+  margin .5rem
   width 5rem
 
   img

@@ -2,15 +2,30 @@ import Vue from 'vue/dist/vue.js'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 
-Vue.use(Vuex)
-Vue.use(VueRouter)
+import App from './components/App.vue'
+import getApiDomain from '../helpers/getApiDomain'
+import routeConfig from './routes'
+import transitions from './transitions'
 
+import direction from './store/direction'
 import favorites from './store/favorites'
 import ingredients from './store/ingredients'
 import parent from './store/parent'
 import search from './store/search'
-import direction from './store/direction'
 import visited from './store/visited'
+
+Vue.use(Vuex)
+Vue.use(VueRouter)
+
+const apiDomain = getApiDomain()
+
+const router = new VueRouter({
+  routes: routeConfig(),
+  mode: 'history',
+  linkActiveClass: 'current'
+})
+
+transitions(router)
 
 const store = new Vuex.Store({
   modules: {
@@ -23,20 +38,6 @@ const store = new Vuex.Store({
   }
 })
 
-import routeConfig from './routes'
-const router = new VueRouter({
-  routes: routeConfig(),
-  mode: 'history',
-  linkActiveClass: 'current'
-})
-
-import transitions from './transitions'
-transitions(router)
-
-import getApiDomain from '../helpers/getApiDomain'
-const apiDomain = getApiDomain()
-
-import App from './components/App.vue'
 const app = new Vue({
   components: { App },
   store,

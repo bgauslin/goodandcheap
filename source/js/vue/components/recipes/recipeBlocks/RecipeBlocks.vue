@@ -16,11 +16,12 @@
 </template>
 
 <script>
-import Variation from './Variation.vue'
 import LinkedRecipe from './LinkedRecipe.vue'
 import MiniRecipe from './MiniRecipe.vue'
+import Variation from './Variation.vue'
+
 export default {
-  components: { Variation, LinkedRecipe, MiniRecipe },
+  components: { LinkedRecipe, MiniRecipe, Variation },
   props: ['data']
 }
 </script>

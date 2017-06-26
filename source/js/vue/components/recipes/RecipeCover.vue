@@ -13,7 +13,7 @@ import CoverPhoto from '../partials/CoverPhoto.vue'
 import imagesLoaded from 'imagesloaded'
 export default {
   components: { Budget, CoverPhoto },
-  props: ['image', 'title', 'budget']
+  props: ['budget', 'image', 'title']
 }
 </script>
 

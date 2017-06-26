@@ -1,5 +1,4 @@
 const search = {
-
   state: {
     query: null,
     showSearch: false
@@ -15,15 +14,9 @@ const search = {
   },
 
   getters: {
-    getQuery: state => {
-      return state.query
-    },
-    getShowSearch: state => {
-      return state.showSearch
-    }
+    getQuery: state => state.query,
+    getShowSearch: state => state.showSearch
   }
-
 }
-
 
 export default search

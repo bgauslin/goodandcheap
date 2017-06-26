@@ -1,7 +1,7 @@
 export default function() {
-  var hostName = window.location.hostname
-  var hostNameArray = hostName.split('.')
-  var posOfTld = hostNameArray.length - 1
-  var tld = hostNameArray[posOfTld]
+  let hostName = window.location.hostname,
+      hostNameArray = hostName.split('.'),
+      posOfTld = hostNameArray.length - 1,
+      tld = hostNameArray[posOfTld]
   return tld
 }

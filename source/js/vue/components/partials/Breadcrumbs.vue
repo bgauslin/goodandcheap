@@ -26,14 +26,14 @@ export default {
 
   methods: {
     scrollBreadcrumbs () {
-      var offset = this.$el.offsetHeight
+      let offset = this.$el.offsetHeight
 
       if (getBreakpointValue() === 'base') {
-        setTimeout(function() {
+        setTimeout(() => {
           window.scrollTo(0, offset)
         }, 0)
       } else {
-        setTimeout(function() {
+        setTimeout(() => {
           window.scrollTo(0, 0)
         }, 0)
       }

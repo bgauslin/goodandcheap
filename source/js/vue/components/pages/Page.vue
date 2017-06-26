@@ -18,7 +18,7 @@ export default {
     return {
       hasBackgroundImage: null,
       backgroundImageCss: null,
-      backgroundImageOverlayCss: 'linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25))'
+      backgroundImageOverlayCss: 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25))'
     }
   },
 
@@ -27,14 +27,14 @@ export default {
     window.addEventListener('resize', this.setBackgroundImage)
   },
 
-  beforeDestroy: function () {
+  beforeDestroy () {
     window.removeEventListener('resize', this.setBackgroundImage)
   },
 
   methods: {
     setBackgroundImage() {
       if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
-        this.backgroundImageCss = this.backgroundImageOverlayCss + ',url(' + this.data.backgroundImage + ')'
+        this.backgroundImageCss = `${this.backgroundImageOverlayCss},url(${this.data.backgroundImage})`
         this.hasBackgroundImage = true
       } else {
         this.backgroundImageCss = 'none'

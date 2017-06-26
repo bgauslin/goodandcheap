@@ -19,15 +19,14 @@
 </template>
 
 <script>
+import AppFooter from './global/Footer.vue'
 import AppHeader from './global/Header.vue'
 import Breadcrumbs from './partials/Breadcrumbs.vue'
-import AppFooter from './global/Footer.vue'
 import Preloader from './partials/Preloader.vue'
-
 import request from 'superagent'
 
 export default {
-  components: { AppHeader, Breadcrumbs, Preloader, AppFooter },
+  components: { AppFooter, AppHeader, Breadcrumbs, Preloader },
 
   data () {
     return {
@@ -94,7 +93,7 @@ export default {
       el.classList.add(this.transitionEnter)
 
       // reset scroll position for iOS
-      setTimeout(function() {
+      setTimeout(() => {
         window.scrollTo(0, 1)
       }, 0)
     },
@@ -142,7 +141,7 @@ export default {
       var that = this
       request
       .get(endpointUrl)
-      .end(function(error, response) {
+      .end((error, response) => {
         if (error || !response.ok) {
           that.notFound()
         } else {
@@ -173,11 +172,7 @@ export default {
     },
 
     updateTitle (title) {
-      if (title !== undefined) {
-        document.title = title + ' · ' + this.$root.siteName
-      } else {
-        document.title = this.$root.siteName
-      }
+      document.title = (title !== undefined) ? `${title} · ${this.$root.siteName}` : this.$root.siteName
     },
 
     isHome () {

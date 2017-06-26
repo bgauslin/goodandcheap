@@ -16,9 +16,9 @@ export default {
 
   methods: {
     itemsLabel (count) {
-      var number = count.length
+      let number = count.length
       if (number > 1) {
-        return number + ' Steps'
+        return `${number} Steps`
       }
     }
   }

@@ -34,12 +34,13 @@ export default {
     margin-right 1rem
 
   h4
-    margin 0 0 1em
     font_sans_heavy()
-    small_caps()
-  p
     margin 0 0 1em
+    small_caps()
+
+  p
     font_serif()
+    margin 0 0 1em
 
   figure
     flex-shrink 0

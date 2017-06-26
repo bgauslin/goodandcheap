@@ -22,7 +22,6 @@
 <script>
 import RecipePreview from '../recipes/Preview.vue'
 export default {
-
   components: { RecipePreview },
 
   data () {
@@ -34,8 +33,8 @@ export default {
 
   computed: {
     favoritesCount () {
-      var text
-      var count = this.$store.getters.favoritesCount
+      let text
+      let count = this.$store.getters.favoritesCount
       if (count <= 0 ) {
         text = 'No Favorites :('
       } else if (count === 1) {
@@ -61,7 +60,7 @@ export default {
       this.hasFavorites = (favorites.length > 0) ? true : false
     },
     updateTitle (title) {
-      document.title = title + ' · ' + this.$root.siteName
+      document.title = `${title} · ${this.$root.siteName}`
     }
   }
 }

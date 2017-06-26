@@ -13,8 +13,8 @@ export default {
 
 .blurb
   p
-    margin 0 0 1em
     font_serif()
+    margin 0 0 1em
 
   a
     background rgba(BRAND_COLOR, .1)

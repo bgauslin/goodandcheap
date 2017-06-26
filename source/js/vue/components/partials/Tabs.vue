@@ -22,10 +22,10 @@ export default {
   border 1px solid BRAND_COLOR
   display flex
   flex-direction row
+  font_sans()
   justify-content space-between
   margin 1rem MARGINS_BASE
   overflow hidden
-  font_sans()
   small_caps()
 
   @media(min-width BREAKPOINT_SMALL)
