@@ -30,8 +30,8 @@ export default {
     },
 
     isInFavorites (item) {
-      var ids = this.$store.getters.favoritesIds
-      var index = ids.indexOf(item.id)
+      let ids = this.$store.getters.favoritesIds
+      let index = ids.indexOf(item.id)
       return (index !== -1) ? true : false
     }
   }

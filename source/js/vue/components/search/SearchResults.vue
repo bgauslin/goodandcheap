@@ -31,8 +31,8 @@ export default {
 
   computed: {
     resultsCount () {
-      var text
-      var count = this.data.data.length
+      let text
+      let count = this.data.data.length
       if (count <= 0 ) {
         text = 'No Results'
       } else if (count === 1) {
@@ -50,7 +50,7 @@ export default {
 
   methods: {
     updateTitle () {
-      var title = 'Search Results'
+      let title = 'Search Results'
       if (this.query) {
         title += ' for ' + this.query
       }

@@ -29,8 +29,8 @@ export default {
 
   methods: {
     isSavedIngredient (id) {
-      var ids = this.$store.getters.ingredientsIds
-      var index = ids.indexOf(id)
+      let ids = this.$store.getters.ingredientsIds
+      let index = ids.indexOf(id)
       return (index !== -1) ? true : false
     },
     toggleItem (id) {

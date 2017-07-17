@@ -9,7 +9,7 @@ const ingredients = {
       localStorage.setItem('ingredients', JSON.stringify(state.ingredients))
     },
     removeIngredient (state, id) {
-      var i = state.ingredients.indexOf(id)
+      let i = state.ingredients.indexOf(id)
       state.ingredients.splice(i, 1)
       localStorage.setItem('ingredients', JSON.stringify(state.ingredients))
     }

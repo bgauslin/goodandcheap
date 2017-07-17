@@ -43,7 +43,7 @@ export default {
       this.$el.querySelectorAll('.search-input')[0].focus()
     },
     getQuery () {
-      var query = window.location.search
+      let query = window.location.search
       this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null
       this.$store.commit('setQuery', this.query)
     }

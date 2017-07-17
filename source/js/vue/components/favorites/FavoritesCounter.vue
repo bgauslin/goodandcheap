@@ -31,7 +31,7 @@ export default {
 
   computed: {
     favoritesCount () {
-      var count = this.$store.getters.favoritesCount
+      let count = this.$store.getters.favoritesCount
       if (count > 0) {
         return count
       }
@@ -46,12 +46,12 @@ export default {
 
   methods: {
     showCounter() {
-      var count = this.favoritesCount
+      let count = this.favoritesCount
       return (count > 0) ? true : false
     },
 
     updateCount () {
-      var count = this.favoritesCount
+      let count = this.favoritesCount
       if (count > 0) {
         this.$el.classList.add('updated')
       }

@@ -68,7 +68,7 @@ export default {
       this.isSearch()
 
       this.endpoint = this.$route.meta.endpoint
-      var fetch = this.doFetch(to, from)
+      let fetch = this.doFetch(to, from)
 
       if (this.endpoint !== undefined && fetch !== false) {
         this.data = null
@@ -121,8 +121,8 @@ export default {
     },
 
     fetchData (endpoint) {
-      var endpointUrl = this.$root.apiBaseUrl + endpoint
-      var slug = this.$route.params.slug
+      let endpointUrl = this.$root.apiBaseUrl + endpoint
+      let slug = this.$route.params.slug
 
       // append query for search
       if (window.location.search) {
@@ -138,7 +138,7 @@ export default {
         endpointUrl += '/' + slug
       }
 
-      var that = this
+      let that = this
       request
       .get(endpointUrl)
       .end((error, response) => {
@@ -176,13 +176,13 @@ export default {
     },
 
     isHome () {
-      var routeName = this.$route.name
+      let routeName = this.$route.name
       this.home = (routeName === 'chapters') ? true : false
     },
 
     isSearch () {
-      var routeName = this.$route.name
-      var setSearch = (routeName === 'search') ? true : false
+      let routeName = this.$route.name
+      let setSearch = (routeName === 'search') ? true : false
       this.$store.commit('setSearch', setSearch)
     },
 

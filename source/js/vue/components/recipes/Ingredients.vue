@@ -20,7 +20,7 @@ export default {
   methods: {
     itemsLabel (count) {
       let number = count.length
-      var label = 'Item'
+      let label = 'Item'
       if (number > 1) {
         label += 's'
       }
