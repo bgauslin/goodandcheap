@@ -19,6 +19,6 @@ elixir(function(mix) {
   .version(['public/ui/goodandcheap.js', 'public/ui/goodandcheap.css'])
   .livereload()
   .browserSync({
-    proxy: 'goodandcheap.dev'
+    proxy: 'goodandcheap.test'
   });
 });
