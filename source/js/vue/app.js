@@ -44,7 +44,7 @@ const app = new Vue({
   router,
   data: {
     siteName: document.title,
-    apiBaseUrl: apiDomain + '/v1/'
+    apiBaseUrl: apiDomain + '/v2/'
   }
 
 }).$mount('#app')
