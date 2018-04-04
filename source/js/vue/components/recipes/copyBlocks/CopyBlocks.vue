@@ -6,9 +6,9 @@
         :heading="block.heading",
         :blurb="block.blurb"
       )
-      blurb(
+      div.blurb(
         v-if="block.type === 'blurb'",
-        :blurb="block.blurb"
+        v-html="block.blurb",
       )
       list(
         v-if="block.type === 'list'",
@@ -17,12 +17,19 @@
 </template>
 
 <script>
-import Blurb from '../Blurb.vue'
+// TODO: consolidate all copyBlocks components
+
 import BlurbWithHeading from './BlurbWithHeading.vue'
 import List from './List.vue'
 
 export default {
-  components: { Blurb, BlurbWithHeading, List },
-  props: ['data']
+  components: { 
+    BlurbWithHeading,
+    List,
+  },
+
+  props: [
+    'data'
+  ]
 }
 </script>
