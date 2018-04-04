@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../../stylus/_config/'
+@import '../../../../stylus/_config/'
 
 .copy-block
   padding .5rem 0

@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import CopyBlocks from './copyBlocks/CopyBlocks.vue'
+import CopyBlocks from './CopyBlocks.vue'
 import RecipeBlocks from './recipeBlocks/RecipeBlocks.vue'
 
 export default {
