@@ -4,7 +4,7 @@
       recipe-cover(
         :image="data.photo",
         :title="data.title",
-        :budget="data.budget"
+        :budget="data.budget",
       )
       div.overview
         header
@@ -31,13 +31,12 @@
 
         router-view(
           :blurb="data.blurb",
+          :copyBlocks="data.copyBlocks",
           :ingredients="data.ingredients",
           :instructions="data.instructions",
-          :parentId="data.id"
+          :recipeBlocks="data.recipeBlocks",
+          :parentId="data.id",
         )
-
-        recipe-blocks(v-if="data.kind === 'Ideas'", :data="data.recipeBlocks")
-        copy-blocks(v-if="data.kind === 'Method'", :data="data.copyBlocks")
 
       alpha-overlay
 </template>
@@ -45,44 +44,50 @@
 <script>
 import AlphaOverlay from '../partials/AlphaOverlay.vue'
 import Badge from './Badge.vue'
-import CopyBlocks from './copyBlocks/CopyBlocks.vue'
 import getBreakpointValue from '../../../helpers/getBreakpointValue'
-import RecipeBlocks from './recipeBlocks/RecipeBlocks.vue'
 import RecipeCover from './RecipeCover.vue'
 import ToggleFavorite from '../favorites/ToggleFavorite.vue'
 
 export default {
-  components: { AlphaOverlay, Badge, CopyBlocks, RecipeBlocks, RecipeCover, ToggleFavorite },
+  components: {
+    AlphaOverlay,
+    Badge,
+    RecipeCover,
+    ToggleFavorite,
+  },
 
-  props: ['data'],
+  props: [
+    'data',
+  ],
 
   created () {
-    window.addEventListener('resize', this.minHeight)
+    window.addEventListener('resize', this.minHeight);
   },
 
   mounted () {
-    this.addVisited(this.data.id)
-    this.minHeight()
+    this.addVisited(this.data.id);
+    this.minHeight();
   },
 
-  beforeDestroy: function () {
-    window.removeEventListener('resize', this.minHeight)
+  beforeDestroy () {
+    window.removeEventListener('resize', this.minHeight);
   },
 
   methods: {
     minHeight () {
-      let overview = this.$el.querySelector('.overview')
-      let overviewWidthPx = overview.offsetWidth
-      let overviewWidth = overviewWidthPx / 16 + 'em'
+      let overview = this.$el.querySelector('.overview');
+      let overviewWidthPx = overview.offsetWidth;
+      let overviewWidth = overviewWidthPx / 16 + 'em';
 
       if (getBreakpointValue() !== 'large' || getBreakpointValue() !== 'xlarge') {
-        overview.style.minHeight = overviewWidth
+        overview.style.minHeight = overviewWidth;
       } else {
-        overview.style.minHeight = 'none'
+        overview.style.minHeight = 'none';
       }
     },
+
     addVisited (id) {
-      this.$store.commit('addVisited', id)
+      this.$store.commit('addVisited', id);
     }
   }
 }

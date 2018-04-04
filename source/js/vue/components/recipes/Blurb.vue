@@ -1,10 +1,35 @@
 <template lang="pug">
-  div.blurb(v-html="blurb")
+  div
+    div.blurb(
+      v-if="blurb",
+      v-html="blurb",
+    )
+    copy-blocks(
+      v-if="copyBlocks",
+      :data="copyBlocks",
+    )
+    recipe-blocks(
+      v-if="recipeBlocks",
+      :data="recipeBlocks",
+    )
+
 </template>
 
 <script>
+import CopyBlocks from './copyBlocks/CopyBlocks.vue'
+import RecipeBlocks from './recipeBlocks/RecipeBlocks.vue'
+
 export default {
-  props: ['blurb']
+  components: {
+    CopyBlocks,
+    RecipeBlocks,
+  },
+
+  props: [
+    'blurb',
+    'copyBlocks',
+    'recipeBlocks',
+  ]
 }
 </script>
 
