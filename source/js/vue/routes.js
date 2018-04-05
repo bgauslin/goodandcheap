@@ -18,16 +18,16 @@ export default function() {
       component: Home,
       children: [
         {
-          path: '/',
           name: 'chapters',
+          path: '/',
           component: Chapters,
           meta: {
             endpoint: 'home'
           }
         },
         {
-          path: '/info',
           name: 'pages',
+          path: '/info',
           component: Pages,
           meta: {
             endpoint: 'home'
@@ -36,48 +36,48 @@ export default function() {
       ]
     },
     {
-      path: '/info/:slug',
       name: 'info',
+      path: '/info/:slug',
       component: Page,
       meta: {
         endpoint: 'page'
       }
     },
     {
-      path: '/404',
       name: '404',
+      path: '/404',
       component: NotFound
     },
     {
-      path: '/favorites',
       name: 'favorites',
+      path: '/favorites',
       component: Favorites
     },
     {
-      path: '/search',
       name: 'search',
+      path: '/search',
       component: Search,
       meta: {
         endpoint: 'search'
       }
     },
     {
-      path: '/:slug',
       name: 'chapter',
+      path: '/:slug',
       component: Chapter,
       meta: {
         endpoint: 'chapter'
       }
     },
     {
-      path: '/:chapter/:slug',
       name: 'recipe',
+      path: '/:chapter/:slug',
       component: Recipe,
       redirect: '/:chapter/:slug/',
       children: [
         {
-          path: '',
           name: 'intro',
+          path: '',
           component: RecipeBlurb,
           meta: {
             endpoint: 'recipe'
