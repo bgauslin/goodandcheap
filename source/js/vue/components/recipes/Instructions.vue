@@ -1,13 +1,27 @@
 <template lang="pug">
   div.instructions
-    div(v-for="block in instructions")
-      h2(v-if="block.heading") {{ block.heading }}
+    div(
+      v-for="block in instructions"
+    )
+      h2(
+        v-if="block.heading"
+      ) {{ block.heading }}
         span.steps-count {{ itemsLabel(block.steps) }}
-      h2(v-else) {{ itemsLabel(block.steps) }}
-      ul(v-if="block.steps.length === 1")
-        li(v-for="step in block.steps") {{ step }}
-      ol(v-else)
-        li(v-for="step in block.steps") {{ step }}
+      h2(
+        v-else
+      ) {{ itemsLabel(block.steps) }}
+      ul(
+        v-if="block.steps.length === 1"
+      )
+        li(
+          v-for="step in block.steps"
+        ) {{ step }}
+      ol(
+        v-else
+      )
+        li(
+          v-for="step in block.steps"
+        ) {{ step }}
 </template>
 
 <script>
@@ -16,9 +30,9 @@ export default {
 
   methods: {
     itemsLabel (count) {
-      let number = count.length
+      const number = count.length;
       if (number > 1) {
-        return `${number} Steps`
+        return `${number} Steps`;
       }
     }
   }

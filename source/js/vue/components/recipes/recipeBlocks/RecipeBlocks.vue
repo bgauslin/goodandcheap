@@ -1,6 +1,8 @@
 <template lang="pug">
   div
-    template(v-for="block in data")
+    template(
+      v-for="block in data"
+    )
       variation(
         v-if="block.type === 'variation'",
         :variation="block"
@@ -13,15 +15,21 @@
         v-if="block.type === 'miniRecipe'",
         :miniRecipe="block"
       )
+
 </template>
 
 <script>
-import LinkedRecipe from './LinkedRecipe.vue'
-import MiniRecipe from './MiniRecipe.vue'
-import Variation from './Variation.vue'
+import LinkedRecipe from './LinkedRecipe.vue';
+import MiniRecipe from './MiniRecipe.vue';
+import Variation from './Variation.vue';
 
 export default {
-  components: { LinkedRecipe, MiniRecipe, Variation },
+  components: {
+    LinkedRecipe,
+    MiniRecipe,
+    Variation,
+  },
+
   props: ['data']
 }
 </script>

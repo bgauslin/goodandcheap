@@ -4,14 +4,14 @@
       :src="variation.photo.src",
       :width="variation.photo.width",
       :height="variation.photo.height",
-      :alt="variation.photo.title"
+      :alt="variation.photo.title",
     )
     h4 {{ variation.heading }}
 </template>
 
 <script>
 export default {
-  props: ['variation']
+  props: ['variation'],
 }
 </script>
 

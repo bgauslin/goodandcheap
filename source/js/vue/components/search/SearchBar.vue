@@ -1,56 +1,61 @@
 <template lang="pug">
   div.search-bar
-    form.search-form(action="/search")
+    form.search-form(
+      action="/search",
+    )
       input.search-input(
         name="q",
         type="text",
         :value="query",
         :class="{ open : open, closed : !open }",
-        placeholder="Search"
+        placeholder="Search",
       )
     search-toggle(:open="open")
 </template>
 
 <script>
-import SearchToggle from './SearchToggle.vue'
+import SearchToggle from './SearchToggle.vue';
+
 export default {
   components: { SearchToggle },
 
   data () {
     return {
-      query: ''
+      query: '',
     }
   },
 
   created () {
-    this.getQuery()
+    this.getQuery();
   },
 
   computed: {
     open () {
-      return this.$store.getters.getShowSearch
+      return this.$store.getters.getShowSearch;
     }
   },
 
   methods: {
     closeIt () {
-      let active = document.activeElement.tagName
+      let active = document.activeElement.tagName;
       if (active !== 'INPUT') {
-        this.$store.commit('setSearch', false)
+        this.$store.commit('setSearch', false);
       }
     },
+
     focusInput () {
-      this.$el.querySelectorAll('.search-input')[0].focus()
+      this.$el.querySelectorAll('.search-input')[0].focus();
     },
+
     getQuery () {
-      let query = window.location.search
-      this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null
-      this.$store.commit('setQuery', this.query)
+      let query = window.location.search;
+      this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null;
+      this.$store.commit('setQuery', this.query);
     }
-  }
+  },
+
 }
 </script>
-
 
 <style lang="stylus">
 @import '../../../../stylus/_config/'

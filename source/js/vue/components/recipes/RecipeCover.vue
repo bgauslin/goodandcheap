@@ -2,18 +2,29 @@
   div.recipe-cover
     cover-photo(
       :image="image",
-      :title="title"
+      :title="title",
     )
-    budget(:budget="budget")
+    budget(
+      :budget="budget",
+    )
 </template>
 
 <script>
-import Budget from './Budget.vue'
-import CoverPhoto from '../partials/CoverPhoto.vue'
-import imagesLoaded from 'imagesloaded'
+import Budget from './Budget.vue';
+import CoverPhoto from '../partials/CoverPhoto.vue';
+import imagesLoaded from 'imagesloaded';
+
 export default {
-  components: { Budget, CoverPhoto },
-  props: ['budget', 'image', 'title']
+  components: {
+    Budget,
+    CoverPhoto,
+  },
+
+  props: [
+    'budget',
+    'image',
+    'title',
+  ]
 }
 </script>
 

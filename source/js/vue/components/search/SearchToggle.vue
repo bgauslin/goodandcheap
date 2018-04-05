@@ -11,8 +11,8 @@ export default {
 
   methods: {
     toggle (open) {
-      open = !open
-      this.$store.commit('setSearch', open)
+      open = !open;
+      this.$store.commit('setSearch', open);
     }
   }
 }

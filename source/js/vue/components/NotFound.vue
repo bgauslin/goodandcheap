@@ -2,6 +2,7 @@
   div.error404
     h1 {{ title }}
     p {{ message }}
+
 </template>
 
 <script>
@@ -9,7 +10,7 @@ export default {
   data () {
     return {
       title: 'Error 404',
-      message: 'The page you requested cannot be found. :('
+      message: 'The page you requested cannot be found. :(',
     }
   }
 }

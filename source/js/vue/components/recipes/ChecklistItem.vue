@@ -3,43 +3,48 @@
     a(
       href="#",
       @click.prevent="toggleItem(id)",
-      :class="{ saved : isSaved }"
+      :class="{ saved : isSaved }",
     ) {{ item }}
 </template>
 
 <script>
 export default {
-  props: ['item', 'itemIndex', 'listIndex', 'parentId'],
+  props: [
+    'item',
+    'itemIndex',
+    'listIndex',
+    'parentId',
+  ],
 
   data () {
     return {
-      isSaved: false
+      isSaved: false,
     }
   },
 
   computed: {
     id () {
-      return this.parentId + '.' + this.listIndex + '.' + this.itemIndex
+      return this.parentId + '.' + this.listIndex + '.' + this.itemIndex;
     }
   },
 
   created () {
-    this.isSaved = this.isSavedIngredient(this.id)
+    this.isSaved = this.isSavedIngredient(this.id);
   },
 
   methods: {
     isSavedIngredient (id) {
-      let ids = this.$store.getters.ingredientsIds
-      let index = ids.indexOf(id)
-      return (index !== -1) ? true : false
+      let ids = this.$store.getters.ingredientsIds;
+      let index = ids.indexOf(id);
+      return (index !== -1) ? true : false;
     },
     toggleItem (id) {
       if (this.isSaved) {
-        this.$store.commit('removeIngredient', id)
+        this.$store.commit('removeIngredient', id);
       } else {
-        this.$store.commit('addIngredient', id)
+        this.$store.commit('addIngredient', id);
       }
-      this.isSaved = !this.isSaved
+      this.isSaved = !this.isSaved;
     }
   }
 }

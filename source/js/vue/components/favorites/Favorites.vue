@@ -1,11 +1,13 @@
 <template lang="pug">
-  div.favorites(:class="{ 'empty' : !hasFavorites }")
+  div.favorites(
+    :class="{ 'empty' : !hasFavorites }"
+  )
     h2 {{ favoritesCount }}
     div
       transition-group(
         name="favorites",
         tag="ol",
-        class="previews"
+        class="previews",
       )
         recipe-preview(
           v-for="(recipe, index) in favorites",
@@ -14,55 +16,58 @@
           :key="recipe",
           :showChapter="true",
           :showBadge="false",
-          favoriteButton="remove"
+          favoriteButton="remove",
         )
 </template>
 
 
 <script>
-import RecipePreview from '../recipes/Preview.vue'
+import RecipePreview from '../recipes/Preview.vue';
+
 export default {
   components: { RecipePreview },
 
   data () {
     return {
       favorites: this.$store.state.favorites.favorites.reverse(),
-      hasFavorites: false
+      hasFavorites: false,
     }
   },
 
   computed: {
     favoritesCount () {
-      let text
-      let count = this.$store.getters.favoritesCount
+      let text;
+      let count = this.$store.getters.favoritesCount;
       if (count <= 0 ) {
-        text = 'No Favorites :('
+        text = 'No Favorites :(';
       } else if (count === 1) {
-        text = '1 Favorite'
+        text = '1 Favorite';
       } else {
-        text = count + ' Favorites'
+        text = count + ' Favorites';
       }
-      return text
+      return text;
     }
   },
 
   mounted () {
-    this.setHasFavorites(this.favorites)
-    this.updateTitle('Favorites')
+    this.setHasFavorites(this.favorites);
+    this.updateTitle('Favorites');
   },
 
   updated () {
-    this.setHasFavorites(this.favorites)
+    this.setHasFavorites(this.favorites);
   },
 
   methods: {
     setHasFavorites (favorites) {
-      this.hasFavorites = (favorites.length > 0) ? true : false
+      this.hasFavorites = (favorites.length > 0) ? true : false;
     },
+
     updateTitle (title) {
       document.title = `${title} · ${this.$root.siteName}`
-    }
-  }
+    },
+  },
+
 }
 </script>
 

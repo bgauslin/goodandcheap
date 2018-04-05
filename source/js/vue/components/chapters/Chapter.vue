@@ -6,7 +6,7 @@
           :title="data.title",
           :blurb="data.blurb",
           :image="data.photo",
-          :count="data.recipeCount + ' Recipes'"
+          :count="data.recipeCount + ' Recipes'",
         )
       ol.previews
         recipe-preview(
@@ -15,17 +15,21 @@
           :index="index",
           :showChapter="false",
           :showBadge="true",
-          favoriteButton="toggle"
+          favoriteButton="toggle",
         )
 </template>
 
 <script>
-import BasicCover from '../partials/BasicCover.vue'
-import RecipePreview from '../recipes/Preview.vue'
+import BasicCover from '../partials/BasicCover.vue';
+import RecipePreview from '../recipes/Preview.vue';
 
 export default {
-  components: { BasicCover, RecipePreview },
-  props: ['data']
+  components: {
+    BasicCover,
+    RecipePreview,
+  },
+
+  props: ['data'],
 }
 </script>
 

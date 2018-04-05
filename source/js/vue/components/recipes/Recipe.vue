@@ -6,25 +6,46 @@
         :title="data.title",
         :budget="data.budget",
       )
+
       div.overview
         header
-          p.kind(v-if="data.kind !== 'Recipe'") {{ data.kind }}
+          p.kind(
+            v-if="data.kind !== 'Recipe'"
+          ) {{ data.kind }}
+
           h1 {{ data.title }}
-          h2.tagline(v-if="data.tagline") {{ data.tagline }}
-          badge(v-if="data.badge")
-        toggle-favorite(:favorite="data")
+          
+          h2.tagline(
+            v-if="data.tagline"
+          ) {{ data.tagline }}
+          
+          badge(
+            v-if="data.badge"
+          )
+
+        toggle-favorite(
+          :favorite="data"
+        )
 
         ul.tabs(v-if="data.ingredients || data.instructions")
-          li(v-if="data.blurb || data.recipeBlocks || data.copyBlocks")
+          li(
+            v-if="data.blurb || data.recipeBlocks || data.copyBlocks"
+          )
             router-link(
               :to="{ name: 'recipe', params: { chapter: data.parent.slug, slug: data.slug } }",
               exact
             ) Intro
-          li(v-if="data.ingredients")
+
+          li(
+            v-if="data.ingredients"
+          )
             router-link(
               :to="{ name: 'ingredients', params: { chapter: data.parent.slug, slug: data.slug } }"
-            ) ingredients
-          li(v-if="data.instructions")
+            ) Ingredients
+
+          li(
+            v-if="data.instructions"
+          )
             router-link(
               :to="{ name: 'steps', params: { chapter: data.parent.slug, slug: data.slug } }"
             ) Steps

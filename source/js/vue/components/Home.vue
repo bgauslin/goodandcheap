@@ -3,8 +3,9 @@
     tabs(:tabs="tabs")
     router-view(
       :chapters="data.chapters",
-      :pages="data.pages"
+      :pages="data.pages",
     )
+
 </template>
 
 <script>
@@ -19,7 +20,7 @@ export default {
     return {
       tabs: [
         { label: 'Recipes', name: 'chapters' },
-        { label: 'Info', name: 'pages' }
+        { label: 'Info', name: 'pages' },
       ]
     }
   }

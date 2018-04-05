@@ -4,66 +4,67 @@
       :class="{ empty : !hasFavorites }",
       :to="{ name: 'favorites' }",
       title="Favorites",
-      exact
+      exact,
     ) {{ favoritesCount }}
+
 </template>
 
 <script>
 export default {
   data () {
     return {
-      hasFavorites: null
+      hasFavorites: null,
     }
   },
 
   mounted () {
-    this.hasFavorites = this.showCounter()
-    this.$el.addEventListener('animationend', this.animationDone, false)
+    this.hasFavorites = this.showCounter();
+    this.$el.addEventListener('animationend', this.animationDone, false);
   },
 
   updated () {
-    this.hasFavorites = this.showCounter()
+    this.hasFavorites = this.showCounter();
   },
 
-  beforeDestroy: function () {
-    this.$el.removeEventListener('animationend')
+  beforeDestroy () {
+    this.$el.removeEventListener('animationend');
   },
 
   computed: {
     favoritesCount () {
-      let count = this.$store.getters.favoritesCount
+      const count = this.$store.getters.favoritesCount;
       if (count > 0) {
-        return count
+        return count;
       }
     }
   },
 
   watch: {
     favoritesCount () {
-      this.updateCount()
+      this.updateCount();
     }
   },
 
   methods: {
     showCounter() {
-      let count = this.favoritesCount
-      return (count > 0) ? true : false
+      const count = this.favoritesCount;
+      return (count > 0) ? true : false;
     },
 
     updateCount () {
-      let count = this.favoritesCount
+      const count = this.favoritesCount;
       if (count > 0) {
-        this.$el.classList.add('updated')
+        this.$el.classList.add('updated');
       }
     },
 
     animationDone() {
-      this.$el.classList.remove('updated')
+      this.$el.classList.remove('updated');
     }
-  }
+  },
+
 }
 </script>
-
 
 <style lang="stylus">
 @import '../../../../stylus/_config/'

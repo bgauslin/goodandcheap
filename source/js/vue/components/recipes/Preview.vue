@@ -1,55 +1,95 @@
 <template lang="pug">
-  transition(name="remove", mode="out-in")
+  transition(
+    name="remove",
+    mode="out-in",
+  )
     li.preview.recipe-preview
       router-link(
         :to="{ name: 'recipe', params: { chapter: item.chapter.slug, slug: item.slug } }",
         :title="item.title",
-        :class="{ visited : isVisited }"
+        :class="{ visited : isVisited }",
       )
-        thumb(:image="item.thumb", :title="item.title")
+        thumb(
+          :image="item.thumb",
+          :title="item.title",
+        )
+
         div.summary
-          p.chapter-title(v-if="showChapter") {{ item.chapter.title }}
+          p.chapter-title(
+            v-if="showChapter"
+          ) {{ item.chapter.title }}
+
           h3 {{ item.title }}
-          p.tagline(v-if="item.tagline") {{ item.tagline }}
-          badge(v-if="item.new && showBadge")
-          p.kind(v-if="item.kind !== 'Recipe'") {{ item.kind }}
+          
+          p.tagline(
+            v-if="item.tagline"
+          ) {{ item.tagline }}
+          
+          badge(
+            v-if="item.new && showBadge"
+          )
+          
+          p.kind(
+            v-if="item.kind !== 'Recipe'"
+          ) {{ item.kind }}
+          
           p.index {{ itemCount }}
-      toggle-favorite(v-if="favoriteButton === 'toggle'", :favorite="item")
-      remove-favorite(v-if="favoriteButton === 'remove'", :favorite="item")
+
+      toggle-favorite(
+        v-if="favoriteButton === 'toggle'",
+        :favorite="item",
+      )
+
+      remove-favorite(
+        v-if="favoriteButton === 'remove'",
+        :favorite="item",
+      )
+
 </template>
 
 <script>
-import Badge from './Badge.vue'
-import RemoveFavorite from '../favorites/RemoveFavorite.vue'
-import Thumb from '../partials/Thumb.vue'
-import ToggleFavorite from '../favorites/ToggleFavorite.vue'
+import Badge from './Badge.vue';
+import RemoveFavorite from '../favorites/RemoveFavorite.vue';
+import Thumb from '../partials/Thumb.vue';
+import ToggleFavorite from '../favorites/ToggleFavorite.vue';
 
 export default {
-  components: { Badge, RemoveFavorite, Thumb, ToggleFavorite },
+  components: {
+    Badge,
+    RemoveFavorite,
+    Thumb,
+    ToggleFavorite,
+  },
 
-  props: ['favoriteButton', 'index', 'item', 'showBadge', 'showChapter'],
+  props: [
+    'favoriteButton',
+    'index',
+    'item',
+    'showBadge',
+    'showChapter',
+  ],
 
   data () {
     return {
-      isVisited: false
+      isVisited: false,
     }
   },
 
   computed: {
     itemCount () {
-      return this.index + 1
+      return this.index + 1;
     }
   },
 
   mounted () {
-    this.isVisited = this.checkIfVisited(this.item.id)
+    this.isVisited = this.checkIfVisited(this.item.id);
   },
 
   methods: {
     checkIfVisited (id) {
-      let ids = this.$store.getters.visitedIds
-      let index = ids.indexOf(id)
-      return (index !== -1) ? true : false
+      let ids = this.$store.getters.visitedIds;
+      let index = ids.indexOf(id);
+      return (index !== -1) ? true : false;
     }
   }
 }

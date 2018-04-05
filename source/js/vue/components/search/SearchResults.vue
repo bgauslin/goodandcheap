@@ -12,12 +12,14 @@
           :key="recipe",
           :showChapter="true",
           :showBadge="false",
-          favoriteButton="toggle"
+          favoriteButton="toggle",
         )
+
 </template>
 
 <script>
-import RecipePreview from '../recipes/Preview.vue'
+import RecipePreview from '../recipes/Preview.vue';
+
 export default {
   components: { RecipePreview },
 
@@ -25,38 +27,39 @@ export default {
 
   data () {
     return {
-      query: this.$store.getters.getQuery
+      query: this.$store.getters.getQuery,
     }
   },
 
   computed: {
     resultsCount () {
-      let text
-      let count = this.data.data.length
+      let text;
+      const count = this.data.data.length;
       if (count <= 0 ) {
-        text = 'No Results'
+        text = 'No Results';
       } else if (count === 1) {
-        text = '1 Result'
+        text = '1 Result';
       } else {
-        text = count + ' Results'
+        text = count + ' Results';
       }
-      return text
+      return text;
     }
   },
 
   mounted () {
-    this.updateTitle()
+    this.updateTitle();
   },
 
   methods: {
     updateTitle () {
-      let title = 'Search Results'
+      let title = 'Search Results';
       if (this.query) {
-        title += ' for ' + this.query
+        title += ' for ' + this.query;
       }
-      document.title = title + ' · ' + this.$root.siteName
+      document.title = title + ' · ' + this.$root.siteName;
     }
-  }
+  },
+
 }
 </script>
 

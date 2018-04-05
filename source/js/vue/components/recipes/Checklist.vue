@@ -3,17 +3,24 @@
     checklist-item(
       v-for="(item, index) in items",
       :item="item",
-      :parentId="parentId",
+      :itemIndex="index",
       :listIndex="listIndex",
-      :itemIndex="index"
+      :parentId="parentId",
     )
 </template>
 
 <script>
-import ChecklistItem from './ChecklistItem.vue'
+import ChecklistItem from './ChecklistItem.vue';
 export default {
-  components: { ChecklistItem },
-  props: ['items', 'listIndex', 'parentId']
+  components: {
+    ChecklistItem
+  },
+  
+  props: [
+    'items',
+    'listIndex',
+    'parentId',
+  ]
 }
 </script>
 

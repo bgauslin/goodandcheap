@@ -2,19 +2,28 @@
   div.mini-recipe
     div.contents
       h4 {{ miniRecipe.heading }}
-      div(v-html="miniRecipe.blurb")
-      checklist(:items="miniRecipe.ingredients")
-    figure(v-if="miniRecipe.photo")
+      div(
+        v-html="miniRecipe.blurb"
+      )
+      checklist(
+        :items="miniRecipe.ingredients"
+      )
+
+    figure(
+      v-if="miniRecipe.photo"
+    )
       img(
         :src="miniRecipe.photo.src",
         :width="miniRecipe.photo.width",
         :height="miniRecipe.photo.height",
         :title="miniRecipe.photo.title"
       )
+
 </template>
 
 <script>
-import Checklist from '../Checklist.vue'
+import Checklist from '../Checklist.vue';
+
 export default {
   components: { Checklist },
   props: ['miniRecipe']
