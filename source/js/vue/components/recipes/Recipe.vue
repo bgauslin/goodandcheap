@@ -42,11 +42,11 @@
 </template>
 
 <script>
-import AlphaOverlay from '../partials/AlphaOverlay.vue'
-import Badge from './Badge.vue'
-import getBreakpointValue from '../../../helpers/getBreakpointValue'
-import RecipeCover from './RecipeCover.vue'
-import ToggleFavorite from '../favorites/ToggleFavorite.vue'
+import AlphaOverlay from '../partials/AlphaOverlay.vue';
+import Badge from './Badge.vue';
+import getBreakpointValue from '../../../helpers/getBreakpointValue';
+import RecipeCover from './RecipeCover.vue';
+import ToggleFavorite from '../favorites/ToggleFavorite.vue';
 
 export default {
   components: {
