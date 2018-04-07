@@ -8,7 +8,7 @@
           :image="data.photo",
           :title="data.title",
         )
-      ol.previews
+      ol.chapter__previews
         recipe-preview(
           v-for="(recipe, index) in data.recipes",
           :index="index",
@@ -37,16 +37,16 @@ export default {
 @import '../../../../stylus/_config/'
 
 .chapter
-  @media(min-width BREAKPOINT_SMALL)
+  @media (min-width BREAKPOINT_SMALL)
     margin 1.5rem MARGINS_SMALL 0
 
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     margin 2.25rem MARGINS_MEDIUM 0
 
-  @media(min-width BREAKPOINT_LARGE)
+  @media (min-width BREAKPOINT_LARGE)
     margin 3rem MARGINS_LARGE 0
 
-  @media(min-width BREAKPOINT_XLARGE)
+  @media (min-width BREAKPOINT_XLARGE)
     margin 3rem auto 0
     width WIDTH_XLARGE
 
@@ -54,30 +54,31 @@ export default {
   background WHITE
   margin 0 auto
   
-  @media(min-width BREAKPOINT_SMALL)
+  @media (min-width BREAKPOINT_SMALL)
     max-width STACKED_WIDTH
 
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     max-width none
     width STACKED_WIDTH
 
-  @media(min-width BREAKPOINT_LARGE)
+  @media (min-width BREAKPOINT_LARGE)
     overflow hidden
     padding-bottom 50%
     position relative
     width 100%
-    
-    .previews
-      height 100%
-      overflow-y scroll
-      -webkit-overflow-scrolling touch
-      position_it(absolute, 0, 0, null, null)
-      width 50%
+
+.chapter__previews
+  @media (min-width BREAKPOINT_LARGE)
+    height 100%
+    overflow-y scroll
+    -webkit-overflow-scrolling touch
+    position_it(absolute, 0, 0, null, null)
+    width 50%
 
 .chapter__intro
   overflow hidden
 
-  @media(min-width BREAKPOINT_LARGE)
+  @media (min-width BREAKPOINT_LARGE)
     position_it(absolute, 0, null, null, 0)
     width 50%
 

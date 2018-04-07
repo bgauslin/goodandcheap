@@ -50,6 +50,7 @@ export default {
 <style lang="stylus">
 @import '../../../../stylus/_config/'
 
+// TODO: BEM-ify selectors
 .breadcrumbs
   color LIGHT_GREY
   overflow-x scroll
@@ -59,21 +60,21 @@ export default {
   white-space nowrap
   width 100%
 
-  @media(min-width BREAKPOINT_SMALL)
+  @media (min-width BREAKPOINT_SMALL)
     margin HEADER_HEIGHT_BASE MARGINS_SMALL 0
     max-width STACKED_WIDTH
 
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     margin HEADER_HEIGHT_MEDIUM auto 0
     max-width none
     width STACKED_WIDTH
 
-  @media(min-width BREAKPOINT_LARGE)
+  @media (min-width BREAKPOINT_LARGE)
     margin-left MARGINS_LARGE
     margin-right MARGINS_LARGE
     width auto
 
-  @media(min-width BREAKPOINT_XLARGE)
+  @media (min-width BREAKPOINT_XLARGE)
     margin-left auto
     margin-right auto
     width WIDTH_XLARGE
@@ -82,7 +83,7 @@ export default {
     display flex
     padding 0 MARGINS_BASE
 
-    @media(min-width BREAKPOINT_SMALL)
+    @media (min-width BREAKPOINT_SMALL)
       padding 0
 
   li

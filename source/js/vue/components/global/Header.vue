@@ -77,17 +77,17 @@ export default {
   height HEADER_HEIGHT_BASE
   position relative
 
-  @media(min-width BREAKPOINT_SMALL)
+  @media (min-width BREAKPOINT_SMALL)
     margin 0 MARGINS_SMALL
 
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     height HEADER_HEIGHT_MEDIUM
     margin 0 MARGINS_MEDIUM
 
-  @media(min-width BREAKPOINT_LARGE)
+  @media (min-width BREAKPOINT_LARGE)
     margin 0 MARGINS_LARGE
 
-  @media(min-width BREAKPOINT_XLARGE)
+  @media (min-width BREAKPOINT_XLARGE)
     margin 0 auto
     width WIDTH_XLARGE
 
@@ -100,7 +100,7 @@ export default {
   small_caps(14)
   white-space nowrap
 
-  @media(max-width BREAKPOINT_LARGE)
+  @media (max-width BREAKPOINT_LARGE)
     &.search-enabled
       display none
 
@@ -112,7 +112,7 @@ export default {
   position relative
   z-index 2
 
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     height HEADER_HEIGHT_MEDIUM
 
   &:active

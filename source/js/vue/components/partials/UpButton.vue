@@ -31,7 +31,7 @@ export default {
   width 3rem
   z-index 2
 
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     width auto
 
   a
@@ -43,10 +43,10 @@ export default {
     link(WHITE, WHITE, rgba(WHITE, .7))
     padding-left .75rem
 
-    @media(min-width BREAKPOINT_SMALL)
+    @media (min-width BREAKPOINT_SMALL)
       padding-left 0
 
-    @media(min-width BREAKPOINT_MEDIUM)
+    @media (min-width BREAKPOINT_MEDIUM)
       height HEADER_HEIGHT_MEDIUM
 
     span
@@ -55,7 +55,7 @@ export default {
       small_caps(12)
       white-space nowrap
 
-      @media(min-width BREAKPOINT_MEDIUM)
+      @media (min-width BREAKPOINT_MEDIUM)
         display block
 
     &::before

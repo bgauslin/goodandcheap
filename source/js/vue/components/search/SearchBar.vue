@@ -66,18 +66,18 @@ export default {
   height HEADER_HEIGHT_BASE
   position_it(absolute, 0, 3rem, null, MARGINS_BASE)
 
-  @media(min-width BREAKPOINT_SMALL)
+  @media (min-width BREAKPOINT_SMALL)
     left 5.5rem
     // right 3.5rem
     right 0
 
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     height HEADER_HEIGHT_MEDIUM
 
-  @media(min-width BREAKPOINT_LARGE)
+  @media (min-width BREAKPOINT_LARGE)
     left calc(50% + 6rem)
 
-  @media(min-width BREAKPOINT_XLARGE)
+  @media (min-width BREAKPOINT_XLARGE)
     left calc(50% + 8rem)
 
 .search-form
@@ -101,7 +101,7 @@ input[type="search"]
   font_sans()
   transition all .2s ease
 
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     bottom px_to_rem(14)
     top px_to_rem(14)
 

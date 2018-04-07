@@ -8,7 +8,7 @@
 .alpha-overlay
   display none
 
-  @media(min-width BREAKPOINT_LARGE)
+  @media (min-width BREAKPOINT_LARGE)
     background linear-gradient(to bottom, rgba(WHITE, 0), WHITE)
     display block
     height 5rem

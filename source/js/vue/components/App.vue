@@ -221,7 +221,7 @@ export default {
   margin HEADER_HEIGHT_BASE 0 0
   overflow hidden
 
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     margin-top HEADER_HEIGHT_MEDIUM
 
 .slide-in-left
@@ -251,7 +251,7 @@ export default {
 .slide-out-right
   animation-name slideOutRight
 
-@media(min-width BREAKPOINT_MEDIUM)
+@media (min-width BREAKPOINT_MEDIUM)
   .slide-in-left
   .slide-in-right
   .slide-in-up

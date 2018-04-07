@@ -105,6 +105,7 @@ export default {
 .preview
   preview()
 
+// TODO: BEM-ify selectors
 .recipe-preview
   a
     padding-right 3rem

@@ -21,25 +21,25 @@ export default {
 @import '../../../../stylus/_config/'
 
 .pages
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     margin 0 MARGINS_MEDIUM
 
-  @media(min-width BREAKPOINT_LARGE)
+  @media (min-width BREAKPOINT_LARGE)
     margin 0 MARGINS_LARGE
 
-  @media(min-width BREAKPOINT_XLARGE)
+  @media (min-width BREAKPOINT_XLARGE)
     margin 0 auto
     width WIDTH_XLARGE
 
 .pages .previews
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     previews_grid()
 
 .pages .preview
-  @media(min-width BREAKPOINT_MEDIUM)
+  @media (min-width BREAKPOINT_MEDIUM)
     preview_grid()
 
-  @media(min-width BREAKPOINT_LARGE)
+  @media (min-width BREAKPOINT_LARGE)
     preview_grid_large()
 
 </style>
