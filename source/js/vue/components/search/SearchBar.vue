@@ -4,13 +4,15 @@
       action="/search",
     )
       input.search-input(
-        name="q",
-        type="text",
-        :value="query",
         :class="{ open : open, closed : !open }",
+        :value="query",
+        name="q",
         placeholder="Search",
+        type="text",
       )
-    search-toggle(:open="open")
+    search-toggle(
+      :open="open",
+    )
 </template>
 
 <script>
@@ -21,7 +23,7 @@ export default {
 
   data () {
     return {
-      query: '',
+      query: null,
     }
   },
 
@@ -32,13 +34,12 @@ export default {
   computed: {
     open () {
       return this.$store.getters.getShowSearch;
-    }
+    },
   },
 
   methods: {
     closeIt () {
-      let active = document.activeElement.tagName;
-      if (active !== 'INPUT') {
+      if (document.activeElement.tagName !== 'INPUT') {
         this.$store.commit('setSearch', false);
       }
     },
@@ -51,9 +52,8 @@ export default {
       let query = window.location.search;
       this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null;
       this.$store.commit('setQuery', this.query);
-    }
+    },
   },
-
 }
 </script>
 

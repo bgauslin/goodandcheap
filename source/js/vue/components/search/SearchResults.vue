@@ -7,14 +7,13 @@
       ol.previews
         recipe-preview(
           v-for="(recipe, index) in data.data",
-          :item="recipe",
           :index="index",
+          :item="recipe",
           :key="recipe",
-          :showChapter="true",
           :showBadge="false",
+          :showChapter="true",
           favoriteButton="toggle",
         )
-
 </template>
 
 <script>
@@ -33,17 +32,17 @@ export default {
 
   computed: {
     resultsCount () {
-      let text;
       const count = this.data.data.length;
+      let text;
       if (count <= 0 ) {
         text = 'No Results';
       } else if (count === 1) {
         text = '1 Result';
       } else {
-        text = count + ' Results';
+        text = `${count} Results`;
       }
       return text;
-    }
+    },
   },
 
   mounted () {
@@ -52,12 +51,12 @@ export default {
 
   methods: {
     updateTitle () {
-      let title = 'Search Results';
+      let pageTitle;
       if (this.query) {
-        title += ' for ' + this.query;
+        pageTitle = `Search Results for ${this.query}`;
       }
-      document.title = title + ' · ' + this.$root.siteName;
-    }
+      document.title = `${pageTitle} · ${this.$root.siteName}`;
+    },
   },
 
 }

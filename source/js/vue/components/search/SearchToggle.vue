@@ -1,7 +1,7 @@
 <template lang="pug">
   button.search-toggle(
     @click="toggle(open)",
-    :class="{ open : open, closed : !open }"
+    :class="{ open : open, closed : !open }",
   )
 </template>
 
@@ -13,8 +13,8 @@ export default {
     toggle (open) {
       open = !open;
       this.$store.commit('setSearch', open);
-    }
-  }
+    },
+  },
 }
 </script>
 
