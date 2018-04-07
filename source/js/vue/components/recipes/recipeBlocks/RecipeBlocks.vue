@@ -1,21 +1,20 @@
 <template lang="pug">
   div
     template(
-      v-for="block in data"
+      v-for="block in data",
     )
       variation(
         v-if="block.type === 'variation'",
-        :variation="block"
+        :variation="block",
       )
       linked-recipe(
         v-if="block.type === 'linkedRecipe'",
-        :linkedRecipe="block"
+        :linkedRecipe="block",
       )
       mini-recipe(
         v-if="block.type === 'miniRecipe'",
-        :miniRecipe="block"
+        :miniRecipe="block",
       )
-
 </template>
 
 <script>
@@ -30,6 +29,6 @@ export default {
     Variation,
   },
 
-  props: ['data']
+  props: ['data'],
 }
 </script>

@@ -1,10 +1,10 @@
 <template lang="pug">
   div.variation
     img(
+      :alt="variation.photo.title",
+      :height="variation.photo.height",
       :src="variation.photo.src",
       :width="variation.photo.width",
-      :height="variation.photo.height",
-      :alt="variation.photo.title",
     )
     h4 {{ variation.heading }}
 </template>
