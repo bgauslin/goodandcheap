@@ -3,22 +3,22 @@
     :class="{ 'has-background' : hasBackgroundImage }",
     :style="'background-image:' + backgroundImageCss",
   )
-    div.copy
-      h1 {{ data.title }}
-      section.page-section(
+    div.page__content
+      h1.page__title {{ data.title }}
+      section.page__section(
         v-for="block in data.content",
       )
-        h2(
+        h2.page__heading(
           v-if="block.heading",
         ) {{ block.heading }}
-        div(
+        div.page__copy(
           v-if="block.copy",
           v-html="block.copy",
         )
-        ul(
+        ul.page__list(
           v-if="block.list",
         )
-          li(
+          li.page__list__item(
             v-for="item in block.list",
           ) {{ item }}
 </template>
@@ -67,76 +67,66 @@ export default {
   @media(min-width BREAKPOINT_LARGE)
     padding 3rem 0
 
-  .copy
-    background WHITE
-    padding 1rem MARGINS_BASE
+  &.has-background
+    background-attachment scroll
+    background-position center center
+    background-repeat no-repeat
+    background-size cover
 
-    a
-      background rgba(BRAND_COLOR, .1)
-      border-radius 2px
-      padding .1em .4em
+.page__content
+  background WHITE
+  padding 1rem MARGINS_BASE
 
-    @media(min-width BREAKPOINT_SMALL)
-      margin 0 auto
-      padding 1rem MARGINS_SMALL
+  @media(min-width BREAKPOINT_SMALL)
+    margin 0 auto
+    padding 1rem MARGINS_SMALL
 
-    @media(min-width BREAKPOINT_MEDIUM)
-      padding 2rem MARGINS_MEDIUM
+  @media(min-width BREAKPOINT_MEDIUM)
+    padding 2rem MARGINS_MEDIUM
 
-    @media(min-width BREAKPOINT_LARGE)
-      padding 3rem 4rem
-      width PAGE_MAX_WIDTH
+  @media(min-width BREAKPOINT_LARGE)
+    padding 3rem 4rem
+    width PAGE_MAX_WIDTH
 
-  h1
-    margin .5em 0 1em
-    font_serif_heavy()
+.page__title
+  margin .5em 0 1em
+  font_serif_heavy()
 
-  h2
-  h3
-  h4
-    font_sans_heavy()
-    text-transform uppercase
-
-  h2
-    small_caps()
-
-  p
-    font_serif()
-
-  li
-    font_sans()
-
-&.has-background
-  background-attachment scroll
-  background-position center center
-  background-repeat no-repeat
-  background-size cover
-
-.page-section
+.page__section
   margin 1em 0 2em
 
-  h2
-    margin 0 0 1em
+.page__heading
+  font_sans_heavy()
+  margin 0 0 1em
+  small_caps()
+  text-transform uppercase
 
+.page__copy
   p
+    font_serif()
     margin 0 0 1em
 
-  ul
-    margin 1em 0
+  a
+    background rgba(BRAND_COLOR, .1)
+    border-radius 2px
+    padding .1em .4em
 
-  li
-    display inline-block
-    list-style none
-    margin-right 1em
+.page__list
+  margin 1em 0
 
-.no-touch
-  .page
-    &.has-background
-      background-attachment fixed
+.page__list__item
+  display inline-block
+  font_sans()
+  list-style none
+  margin-right 1em
 
-    a:hover
-      color WHITE
-      background BRAND_COLOR
+.no-touch .page
+  &.has-background
+    background-attachment fixed
 
+.no-touch .page__copy
+  a:hover
+    color WHITE
+    background BRAND_COLOR
 
 </style>

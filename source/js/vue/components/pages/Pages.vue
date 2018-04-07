@@ -31,15 +31,15 @@ export default {
     margin 0 auto
     width WIDTH_XLARGE
 
-  .previews
-    @media(min-width BREAKPOINT_MEDIUM)
-      previews_grid()
+.pages .previews
+  @media(min-width BREAKPOINT_MEDIUM)
+    previews_grid()
 
-  .preview
-    @media(min-width BREAKPOINT_MEDIUM)
-      preview_grid()
+.pages .preview
+  @media(min-width BREAKPOINT_MEDIUM)
+    preview_grid()
 
-    @media(min-width BREAKPOINT_LARGE)
-      preview_grid_large()
+  @media(min-width BREAKPOINT_LARGE)
+    preview_grid_large()
 
 </style>
