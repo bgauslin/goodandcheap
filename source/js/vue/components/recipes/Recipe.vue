@@ -2,52 +2,53 @@
   div.recipe
     div.recipe-content
       recipe-cover(
+        :budget="data.budget",
         :image="data.photo",
         :title="data.title",
-        :budget="data.budget",
       )
-
       div.overview
         header
           p.kind(
-            v-if="data.kind !== 'Recipe'"
+            v-if="data.kind !== 'Recipe'",
           ) {{ data.kind }}
 
           h1 {{ data.title }}
           
           h2.tagline(
-            v-if="data.tagline"
+            v-if="data.tagline",
           ) {{ data.tagline }}
           
           badge(
-            v-if="data.badge"
+            v-if="data.badge",
           )
 
         toggle-favorite(
-          :favorite="data"
+          :favorite="data",
         )
 
-        ul.tabs(v-if="data.ingredients || data.instructions")
+        ul.tabs(
+          v-if="data.ingredients || data.instructions",
+        )
           li(
-            v-if="data.blurb || data.recipeBlocks || data.copyBlocks"
+            v-if="data.blurb || data.recipeBlocks || data.copyBlocks",
           )
             router-link(
               :to="{ name: 'recipe', params: { chapter: data.parent.slug, slug: data.slug } }",
-              exact
+              exact,
             ) Intro
 
           li(
-            v-if="data.ingredients"
+            v-if="data.ingredients",
           )
             router-link(
-              :to="{ name: 'ingredients', params: { chapter: data.parent.slug, slug: data.slug } }"
+              :to="{ name: 'ingredients', params: { chapter: data.parent.slug, slug: data.slug } }",
             ) Ingredients
 
           li(
-            v-if="data.instructions"
+            v-if="data.instructions",
           )
             router-link(
-              :to="{ name: 'steps', params: { chapter: data.parent.slug, slug: data.slug } }"
+              :to="{ name: 'steps', params: { chapter: data.parent.slug, slug: data.slug } }",
             ) Steps
 
         router-view(
@@ -77,9 +78,7 @@ export default {
     ToggleFavorite,
   },
 
-  props: [
-    'data',
-  ],
+  props: ['data'],
 
   created () {
     window.addEventListener('resize', this.minHeight);
@@ -96,9 +95,9 @@ export default {
 
   methods: {
     minHeight () {
-      let overview = this.$el.querySelector('.overview');
-      let overviewWidthPx = overview.offsetWidth;
-      let overviewWidth = overviewWidthPx / 16 + 'em';
+      const overview = this.$el.querySelector('.overview');
+      const overviewWidthPx = overview.offsetWidth;
+      const overviewWidth = overviewWidthPx / 16 + 'em';
 
       if (getBreakpointValue() !== 'large' || getBreakpointValue() !== 'xlarge') {
         overview.style.minHeight = overviewWidth;
@@ -109,8 +108,8 @@ export default {
 
     addVisited (id) {
       this.$store.commit('addVisited', id);
-    }
-  }
+    },
+  },
 }
 </script>
 

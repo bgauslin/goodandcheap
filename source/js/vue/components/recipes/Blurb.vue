@@ -12,7 +12,6 @@
       v-if="recipeBlocks",
       :data="recipeBlocks",
     )
-
 </template>
 
 <script>
@@ -29,7 +28,7 @@ export default {
     'blurb',
     'copyBlocks',
     'recipeBlocks',
-  ]
+  ],
 }
 </script>
 

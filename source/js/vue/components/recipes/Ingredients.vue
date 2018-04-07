@@ -1,16 +1,16 @@
 <template lang="pug">
   div.ingredients-list
     div.ingredients(
-      v-for="(block, index) in ingredients"
+      v-for="(block, index) in ingredients",
     )
       h2(
-        v-if="block.heading"
+        v-if="block.heading",
       ) {{ block.heading }}
         span.item-count {{ itemsLabel(block.items) }}
       checklist(
         :items="block.items",
-        :parentId="parentId",
         :listIndex="index",
+        :parentId="parentId",
       )
 </template>
 
@@ -28,14 +28,14 @@ export default {
 
   methods: {
     itemsLabel (count) {
-      let number = count.length;
+      const number = count.length;
       let label = 'Item';
       if (number > 1) {
         label += 's';
       }
       return `${number} ${label}`;
-    }
-  }
+    },
+  },
 }
 </script>
 

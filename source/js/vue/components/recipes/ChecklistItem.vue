@@ -1,9 +1,9 @@
 <template lang="pug">
   li.item
     a(
-      href="#",
-      @click.prevent="toggleItem(id)",
       :class="{ saved : isSaved }",
+      @click.prevent="toggleItem(id)",
+      href="#",
     ) {{ item }}
 </template>
 
@@ -24,8 +24,8 @@ export default {
 
   computed: {
     id () {
-      return this.parentId + '.' + this.listIndex + '.' + this.itemIndex;
-    }
+      return `${this.parentId}.${this.listIndex}.${this.itemIndex}`;
+    },
   },
 
   created () {
@@ -34,10 +34,11 @@ export default {
 
   methods: {
     isSavedIngredient (id) {
-      let ids = this.$store.getters.ingredientsIds;
-      let index = ids.indexOf(id);
-      return (index !== -1) ? true : false;
+      const ids = this.$store.getters.ingredientsIds;
+      const index = ids.indexOf(id);
+      return (index !== -1);
     },
+
     toggleItem (id) {
       if (this.isSaved) {
         this.$store.commit('removeIngredient', id);
@@ -45,8 +46,8 @@ export default {
         this.$store.commit('addIngredient', id);
       }
       this.isSaved = !this.isSaved;
-    }
-  }
+    },
+  },
 }
 </script>
 

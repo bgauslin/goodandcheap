@@ -24,7 +24,7 @@ export default {
     'budget',
     'image',
     'title',
-  ]
+  ],
 }
 </script>
 

@@ -1,13 +1,13 @@
 <template lang="pug">
   transition(
-    name="remove",
     mode="out-in",
+    name="remove",
   )
     li.preview.recipe-preview
       router-link(
-        :to="{ name: 'recipe', params: { chapter: item.chapter.slug, slug: item.slug } }",
-        :title="item.title",
         :class="{ visited : isVisited }",
+        :title="item.title",
+        :to="{ name: 'recipe', params: { chapter: item.chapter.slug, slug: item.slug } }",
       )
         thumb(
           :image="item.thumb",
@@ -16,21 +16,21 @@
 
         div.summary
           p.chapter-title(
-            v-if="showChapter"
+            v-if="showChapter",
           ) {{ item.chapter.title }}
 
           h3 {{ item.title }}
           
           p.tagline(
-            v-if="item.tagline"
+            v-if="item.tagline",
           ) {{ item.tagline }}
           
           badge(
-            v-if="item.new && showBadge"
+            v-if="item.new && showBadge",
           )
           
           p.kind(
-            v-if="item.kind !== 'Recipe'"
+            v-if="item.kind !== 'Recipe'",
           ) {{ item.kind }}
           
           p.index {{ itemCount }}
@@ -78,7 +78,7 @@ export default {
   computed: {
     itemCount () {
       return this.index + 1;
-    }
+    },
   },
 
   mounted () {
@@ -87,10 +87,10 @@ export default {
 
   methods: {
     checkIfVisited (id) {
-      let ids = this.$store.getters.visitedIds;
-      let index = ids.indexOf(id);
-      return (index !== -1) ? true : false;
-    }
+      const ids = this.$store.getters.visitedIds;
+      const index = ids.indexOf(id);
+      return (index !== -1);
+    },
   }
 }
 </script>

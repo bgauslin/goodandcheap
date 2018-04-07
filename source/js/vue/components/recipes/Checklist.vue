@@ -12,15 +12,13 @@
 <script>
 import ChecklistItem from './ChecklistItem.vue';
 export default {
-  components: {
-    ChecklistItem
-  },
+  components: { ChecklistItem },
   
   props: [
     'items',
     'listIndex',
     'parentId',
-  ]
+  ],
 }
 </script>
 

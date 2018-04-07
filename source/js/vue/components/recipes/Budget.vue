@@ -1,12 +1,14 @@
 <template lang="pug">
-  p.budget(v-if="budget")
+  p.budget(
+    v-if="budget",
+  )
     span.total {{ budget.totalCost }} Total
     span.cost {{ budget.unitCost }} / {{ budget.units }}
 </template>
 
 <script>
 export default {
-  props: ['budget']
+  props: ['budget'],
 }
 </script>
 
