@@ -34,7 +34,6 @@ export default {
 
   data () {
     return {
-      allowFavorites: false,
       heading: 'Good And Cheap',
       headroomOptions: {
         offset: 0,
@@ -53,6 +52,10 @@ export default {
   },
 
   computed: {
+    allowFavorites () {
+      return this.$store.getters.allowFavorites;
+    },
+
     hasSearch () {
       return this.$store.getters.getShowSearch;
     },

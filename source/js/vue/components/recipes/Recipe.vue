@@ -81,10 +81,10 @@ export default {
 
   props: ['data'],
 
-  data () {
-    return {
-      allowFavorites: false,
-    }
+  computed: {
+    allowFavorites () {
+      return this.$store.getters.allowFavorites;
+    },
   },
 
   created () {

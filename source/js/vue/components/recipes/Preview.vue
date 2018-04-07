@@ -72,11 +72,14 @@ export default {
   data () {
     return {
       isVisited: false,
-      allowFavorites: false,
     }
   },
 
   computed: {
+    allowFavorites () {
+      return this.$store.getters.allowFavorites;
+    },
+    
     itemCount () {
       return this.index + 1;
     },
