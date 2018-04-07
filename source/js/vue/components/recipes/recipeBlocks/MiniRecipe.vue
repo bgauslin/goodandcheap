@@ -1,14 +1,14 @@
 <template lang="pug">
   div.mini-recipe
-    div.contents
-      h4 {{ miniRecipe.heading }}
-      div(
+    div.mini-recipe__content
+      h4.mini-recipe__heading {{ miniRecipe.heading }}
+      div.mini-recipe__blurb(
         v-html="miniRecipe.blurb",
       )
       checklist(
         :items="miniRecipe.ingredients",
       )
-    figure(
+    figure.mini-recipe__photo(
       v-if="miniRecipe.photo",
     )
       img(
@@ -37,24 +37,25 @@ export default {
   flex-direction row
   padding 1rem 0
 
-  .contents
-    margin-right 1rem
+.mini-recipe__content
+  margin-right 1rem
 
-  h4
-    font_sans_heavy()
-    margin 0 0 1em
-    small_caps()
+.mini-recipe__heading
+  font_sans_heavy()
+  margin 0 0 1em
+  small_caps()
 
+.mini-recipe__blurb
   p
     font_serif()
     margin 0 0 1em
 
-  figure
-    flex-shrink 0
-    margin-top 1.5rem
-    width 5rem
+.mini-recipe__photo
+  flex-shrink 0
+  margin-top 1.5rem
+  width 5rem
 
-    @media(min-width BREAKPOINT_SMALL)
-      width 8rem
+  @media(min-width BREAKPOINT_SMALL)
+    width 8rem
 
 </style>

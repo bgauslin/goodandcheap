@@ -6,7 +6,7 @@
       :src="variation.photo.src",
       :width="variation.photo.width",
     )
-    h4 {{ variation.heading }}
+    h4.variation__heading {{ variation.heading }}
 </template>
 
 <script>
@@ -18,9 +18,8 @@ export default {
 <style lang="stylus">
 @import '../../../../../stylus/_config/'
 
-.variation
-  h4
-    font_sans_heavy()
-    small_caps()
+.variation__heading
+  font_sans_heavy()
+  small_caps()
 
 </style>

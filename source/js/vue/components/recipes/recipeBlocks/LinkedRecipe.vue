@@ -1,11 +1,11 @@
 <template lang="pug">
   div.linked-recipe
-    h3
-      a(
+    h3.linked-recipe__heading
+      a.linked-recipe__link(
         :href="linkedRecipe.link.slug",
         :title="linkedRecipe.link.title",
       ) {{ linkedRecipe.heading }}
-    div(
+    div.linked-recipe__blurb(
       v-html="linkedRecipe.blurb",
     )
 </template>
@@ -22,6 +22,7 @@ export default {
 .linked-recipe
   margin 0 0 1rem
 
+.linked-recipe__blurb
   p
     font_sans()
 
