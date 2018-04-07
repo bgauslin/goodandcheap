@@ -1,6 +1,6 @@
 <template lang="pug">
-  li.item
-    a(
+  li.checklist__item
+    a.checklist__link(
       :class="{ saved : isSaved }",
       @click.prevent="toggleItem(id)",
       href="#",
@@ -54,34 +54,31 @@ export default {
 <style lang="stylus">
 @import '../../../../stylus/_config/'
 
-.item
+.checklist__item
   margin 0
 
-  a
-    display block
-    link(DARK_GREY, DARK_GREY, BRAND_COLOR)
-    padding .5em 0 .5em 2em
+.checklist__link
+  display block
+  link(DARK_GREY, DARK_GREY, BRAND_COLOR)
+  padding .5em 0 .5em 2em
 
-    &::before
-      color LIGHTER_GREY
-      content ICON_CIRCLE_EMPTY
-      display inline-block
-      font-size px_to_em(22)
-      icon()
-      margin-left -1.3em
-      position relative
-      top .15em
-      vertical-align baseline
-      width 1.3em
+  &::before
+    color LIGHTER_GREY
+    content ICON_CIRCLE_EMPTY
+    display inline-block
+    font-size px_to_em(22)
+    icon()
+    margin-left -1.3em
+    position relative
+    top .15em
+    vertical-align baseline
+    width 1.3em
 
-    &.saved
-      &::before
-        color green
-        content ICON_OK_CIRCLED
+.checklist__link.saved::before
+  color green
+  content ICON_OK_CIRCLED
 
-.no-touch
-  .item
-    a
-      link_hover(BRAND_COLOR)
+.no-touch .checklist__link
+  link_hover(BRAND_COLOR)
 
 </style>
