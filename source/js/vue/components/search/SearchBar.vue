@@ -64,7 +64,8 @@ export default {
   align-items center
   display flex
   height HEADER_HEIGHT_BASE
-  position_it(absolute, 0, 3rem, null, MARGINS_BASE)
+  position_it(absolute, 0, 0, null, MARGINS_BASE)
+  // position_it(absolute, 0, 3rem, null, MARGINS_BASE)
 
   @media (min-width BREAKPOINT_SMALL)
     left 5.5rem

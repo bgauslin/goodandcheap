@@ -99,8 +99,7 @@ export default {
     },
 
     beforeEnter (el) {
-      console.log('beforeEnter this.direction', this.direction);
-
+      // console.log('beforeEnter this.direction', this.direction);
       switch (this.direction) {
         case 'forward':
           this.transitionEnter = 'slide-in-right';
@@ -121,8 +120,7 @@ export default {
     },
 
     beforeLeave (el) {
-      console.log('beforeLeave this.direction', this.direction);
-
+      // console.log('beforeLeave this.direction', this.direction);
       switch (this.direction) {
         case 'forward':
           this.transitionLeave = 'slide-out-left';
