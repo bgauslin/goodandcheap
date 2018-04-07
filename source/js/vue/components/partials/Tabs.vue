@@ -1,9 +1,10 @@
 <template lang="pug">
   ul.tabs
-    li(
+    li.tabs__item(
       v-for="tab in tabs",
     )
       router-link(
+        class="tabs__link",
         v-if="tab.name",
         :to="{ name: tab.name }",
         :title="tab.label",
@@ -21,14 +22,8 @@ export default {
 @import '../../../../stylus/_config/'
 
 .tabs
-  border 1px solid BRAND_COLOR
-  display flex
-  flex-direction row
-  font_sans()
-  justify-content space-between
   margin 1rem MARGINS_BASE
-  overflow hidden
-  small_caps()
+  tabs()
 
   @media(min-width BREAKPOINT_SMALL)
     margin 1rem auto
@@ -37,44 +32,14 @@ export default {
   @media(min-width BREAKPOINT_MEDIUM)
     margin 1.5rem auto
 
-  li
-    align-self center
-    border-right 1px solid BRAND_COLOR
-    flex-grow 1
-    line-height 1
-    list-style none
-    width 33%
+.tabs__item
+  flex 0 0 50%
+  tabs_item()
 
-    &:last-child
-      border none
+.tabs__link
+  tabs_link()
 
-  a
-    background WHITE
-    display block
-    padding .75em 0
-    text-align center
-
-    &:link
-    &:visited
-      color BRAND_COLOR
-
-    &:active
-      background rgba(BRAND_COLOR, .1)
-      color BRAND_COLOR
-
-    &.current
-      background BRAND_COLOR
-      color WHITE
-
-.no-touch
-  .tabs
-    a
-      &:hover
-        background rgba(BRAND_COLOR, .1)
-        color BRAND_COLOR
-
-      &.current:hover
-        background BRAND_COLOR
-        color WHITE
+.no-touch .tabs__link
+  tabs_link__no_touch()
 
 </style>

@@ -1,20 +1,20 @@
 <template lang="pug">
   div.recipe
-    div.recipe-content
+    div.recipe__content
       recipe-cover(
         :budget="data.budget",
         :image="data.photo",
         :title="data.title",
       )
-      div.overview
-        header
-          p.kind(
+      div.recipe__overview
+        header.recipe__header
+          p.recipe__kind(
             v-if="data.kind !== 'Recipe'",
           ) {{ data.kind }}
 
-          h1 {{ data.title }}
+          h1.recipe__title {{ data.title }}
           
-          h2.tagline(
+          h2.recipe__tagline(
             v-if="data.tagline",
           ) {{ data.tagline }}
           
@@ -27,25 +27,28 @@
           :favorite="data",
         )
 
-        ul.tabs(
+        ul.recipe__tabs(
           v-if="data.ingredients || data.instructions",
         )
-          li(
+          li.recipe__tabs__item(
             v-if="data.blurb || data.recipeBlocks || data.copyBlocks",
           )
             router-link(
+              class="recipe__tabs__link",
               :to="{ name: 'recipe', params: { chapter: data.parent.slug, slug: data.slug } }",
               exact
             ) Intro
 
-          li(
+          li.recipe__tabs__item(
             v-if="data.ingredients",
           )
             router-link(
+              class="recipe__tabs__link",
               :to="{ name: 'ingredients', params: { chapter: data.parent.slug, slug: data.slug } }",
             ) Ingredients
 
-          li(
+          li.recipe__tabs__item(
+            class="recipe__tabs__link",
             v-if="data.instructions",
           )
             router-link(
@@ -102,7 +105,7 @@ export default {
 
   methods: {
     minHeight () {
-      const overview = this.$el.querySelector('.overview');
+      const overview = this.$el.querySelector('.recipe__overview');
       const overviewWidthPx = overview.offsetWidth;
       const overviewWidth = overviewWidthPx / 16 + 'em';
 
@@ -124,102 +127,113 @@ export default {
 @import '../../../../stylus/_config/'
 
 .recipe
-  .recipe-content
-    background WHITE
-    margin 0 auto
-
   @media(min-width BREAKPOINT_SMALL)
     margin 1.5rem MARGINS_SMALL 0
-
-    .recipe-content
-      max-width STACKED_WIDTH
 
   @media(min-width BREAKPOINT_MEDIUM)
     margin 2.25rem MARGINS_MEDIUM 0
 
-    .recipe-content
-      max-width none
-      width STACKED_WIDTH
-
   @media(min-width BREAKPOINT_LARGE)
     margin 3rem MARGINS_LARGE 0
-
-    .recipe-content
-      overflow hidden
-      padding-bottom 50%
-      position relative
-      width 100%
-
-      .recipe-cover
-        position_it(absolute, 0, 0, null, null)
-        width 50%
-
-      .overview
-        height 100%
-        padding-bottom 4rem
-        -webkit-overflow-scrolling touch
-        overflow-y scroll
-        position_it(absolute, 0, null, null, 0)
-        width 50%
 
   @media(min-width BREAKPOINT_XLARGE)
     margin 3rem auto 0
     width WIDTH_XLARGE
 
-  .overview
-    padding 1rem 1rem 2rem
+.recipe__content
+  background WHITE
+  margin 0 auto
+
+  @media(min-width BREAKPOINT_SMALL)
+    max-width STACKED_WIDTH
+
+  @media(min-width BREAKPOINT_MEDIUM)
+    max-width none
+    width STACKED_WIDTH
+
+  @media(min-width BREAKPOINT_LARGE)
+    overflow hidden
+    padding-bottom 50%
     position relative
+    width 100%
 
-    @media(min-width BREAKPOINT_LARGE)
-      padding 1.5rem 1.5rem 3rem
+// TODO: BEM-ify and/or relocate selector(?)
+.recipe .recipe-cover
+  @media(min-width BREAKPOINT_LARGE)
+    position_it(absolute, 0, 0, null, null)
+    width 50%
 
-  .tagline
+.recipe__overview
+  padding 1rem 1rem 2rem
+  position relative
+
+  @media(min-width BREAKPOINT_LARGE)  
+    height 100%
+    // padding-bottom 4rem
+    padding 1.5rem 1.5rem 3rem
+    -webkit-overflow-scrolling touch
+    overflow-y scroll
+    position_it(absolute, 0, null, null, 0)
+    width 50%
+
+.recipe__header
+  margin 0 2rem 1rem 0
+
+.recipe__kind
+  margin-bottom .5rem
+  font_sans_heavy()
+  small_caps()
+
+.recipe__title
+  font_serif_heavy()
+
+.recipe__tagline
     display inline-block
     margin-right 0.5rem
     font_sans_heavy()
     small_caps()
 
-  .tabs
-    margin 0 0 1.5rem
-    width 100%
+.recipe__tabs
+  margin 0 0 1.5rem
+  tabs()
 
-    @media(min-width BREAKPOINT_SMALL)
-      margin 0 0 2rem
+  @media(min-width BREAKPOINT_SMALL)
+    margin 0 0 2rem
 
-    li
-      margin 0
+.recipe__tabs__item
+  flex 1 0 33.3333%
+  tabs_item()
 
-  .kind
-    margin-bottom .5rem
-    font_sans_heavy()
-    small_caps()
+.recipe__tabs__link
+  tabs_link()
 
-  header
-    margin 0 2rem 1rem 0
+// TODO: BEM-ify selectors(?)
+.recipe h3
+  margin 0 0 1em
+  font_sans_heavy()
+  small_caps()
 
-  h1
-    font_serif_heavy()
+// TODO: BEM-ify and/or relocate selector(?)
+.recipe .copy-block
+  padding .5rem 0
 
-  .toggle-favorite
-    right 0
-    top .25rem
+  h4
+    margin-bottom .25em
 
-    @media(min-width BREAKPOINT_LARGE)
-      right .5rem
-      top .75rem
+  p
+    font_sans()
 
-  h3
-    margin 0 0 1em
-    font_sans_heavy()
-    small_caps()
+// TODO: BEM-ify and/or relocate selector(?)
+.recipe .toggle-favorite
+  right 0
+  top .25rem
 
-  .copy-block
-    padding .5rem 0
+  @media(min-width BREAKPOINT_LARGE)
+    right .5rem
+    top .75rem
 
-    h4
-      margin-bottom .25em
+.no-touch .recipe__tabs__link
+  tabs_link__no_touch()
 
-    p
-      font_sans()
 
 </style>
