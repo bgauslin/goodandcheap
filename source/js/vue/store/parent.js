@@ -1,17 +1,17 @@
 const favorites = {
   state: {
-    parent: null
+    parent: null,
   },
 
   mutations: {
     setParent (state, parent) {
-      state.parent = parent
-    }
+      state.parent = parent;
+    },
   },
 
   getters: {
-    getParent: state => state.parent
-  }
+    getParent: state => state.parent,
+  },
 }
 
-export default favorites
+export default favorites;

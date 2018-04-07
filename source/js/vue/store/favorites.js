@@ -1,24 +1,25 @@
 const favorites = {
   state: {
-    favorites: JSON.parse(localStorage.getItem('favorites')) || []
+    favorites: JSON.parse(localStorage.getItem('favorites')) || [],
   },
 
   mutations: {
     addFavorite (state, item) {
-      state.favorites.push(item)
-      localStorage.setItem('favorites', JSON.stringify(state.favorites))
+      state.favorites.push(item);
+      localStorage.setItem('favorites', JSON.stringify(state.favorites));
     },
+
     removeFavorite (state, item) {
-      let i = state.favorites.indexOf(item)
-      state.favorites.splice(i, 1)
-      localStorage.setItem('favorites', JSON.stringify(state.favorites))
-    }
+      const i = state.favorites.indexOf(item);
+      state.favorites.splice(i, 1);
+      localStorage.setItem('favorites', JSON.stringify(state.favorites));
+    },
   },
 
   getters: {
     favoritesCount: state => state.favorites.length,
-    favoritesIds: state => state.favorites.map(favorite => favorite.id)
-  }
+    favoritesIds: state => state.favorites.map(favorite => favorite.id),
+  },
 }
 
-export default favorites
+export default favorites;
