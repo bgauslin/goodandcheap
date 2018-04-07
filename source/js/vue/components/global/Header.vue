@@ -10,7 +10,7 @@
         router-link(
           to="/",
           title="Home",
-          exact,
+          exact
         ) {{ heading }}
       search-bar
       favorites-counter

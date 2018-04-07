@@ -34,7 +34,7 @@
           )
             router-link(
               :to="{ name: 'recipe', params: { chapter: data.parent.slug, slug: data.slug } }",
-              exact,
+              exact
             ) Intro
 
           li(

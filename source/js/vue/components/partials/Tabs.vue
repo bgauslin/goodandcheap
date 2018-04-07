@@ -7,7 +7,7 @@
         v-if="tab.name",
         :to="{ name: tab.name }",
         :title="tab.label",
-        exact,
+        exact
       ) {{ tab.label }}
 </template>
 

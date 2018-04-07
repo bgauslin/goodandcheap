@@ -4,7 +4,7 @@
       :class="{ empty : !hasFavorites }",
       :to="{ name: 'favorites' }",
       title="Favorites",
-      exact,
+      exact
     ) {{ favoritesCount }}
 
 </template>

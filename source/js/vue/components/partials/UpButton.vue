@@ -12,7 +12,7 @@
       v-if="parent && !parent.slug",
       :to="{ name: parent.routeName }",
       :title="parent.title",
-      exact,
+      exact
     )
       span {{ parent.title }}
 </template>
