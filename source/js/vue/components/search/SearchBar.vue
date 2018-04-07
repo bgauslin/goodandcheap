@@ -105,17 +105,17 @@ input[type="search"]
     bottom px_to_rem(14)
     top px_to_rem(14)
 
-  &.closed
-    padding px_to_rem(4) 0
-    width 0
-    z-index -1
+.search-input:focus
+  outline none
 
-  &.open
-    padding px_to_rem(4)
-    width 100%
-    z-index 2
+.search-input.closed
+  padding px_to_rem(4) 0
+  width 0
+  z-index -1
 
-  &:focus
-    outline none
+.search-input.open
+  padding px_to_rem(4)
+  width 100%
+  z-index 2
 
 </style>
