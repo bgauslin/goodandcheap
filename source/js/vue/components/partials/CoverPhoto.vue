@@ -1,15 +1,14 @@
 <template lang="pug">
-  div.cover-photo
-    figure(
-      :style="'background-image:url(' + image.placeholder + ')'",
+  figure.cover-photo(
+    :style="'background: url(' + image.placeholder + ') center center / cover no-repeat'",
+  )
+    img.cover-photo__image(
+      v-if="!loading",
+      :alt="title",
+      :height="image.height",
+      :src="image.src",
+      :width="image.width",
     )
-      img.hi-res(
-        v-if="!loading",
-        :alt="title",
-        :height="image.height",
-        :src="image.src",
-        :width="image.width",
-      )
 </template>
 
 <script>
@@ -35,7 +34,7 @@ export default {
     loadImages () {
       this.loading = true;
       let that = this;
-      imagesLoaded(this.$el.querySelector('.hi-res'), that, instance => {
+      imagesLoaded(this.$el.querySelector('.cover-photo__image'), that, instance => {
         that.loading = false;
       });
     },
@@ -46,13 +45,7 @@ export default {
 <style lang="stylus">
 @import '../../../../stylus/_config/'
 
-.cover-photo
-  figure
-    background-position center center
-    background-repeat no-repeat
-    background-size cover
-
-  img
-    animation fadeIn 1s ease-out
+.cover-photo__image
+  animation fadeIn 1s ease-out
 
 </style>
