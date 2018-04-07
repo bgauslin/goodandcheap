@@ -2,15 +2,15 @@
   footer.footer(
     v-once,
   )
-    div
+    div.footer__content
       copyright
       p.license
-        a(
+        a.license__link(
           href="http://creativecommons.org/licenses/by-nc-sa/4.0/",
           rel="license",
           target="_blank",
         )
-          img(
+          img.license__image(
             alt="Creative Commons License",
             src="/ui/img/by-nc-sa-80x15.svg",
           )
@@ -33,18 +33,18 @@ export default {
   small_caps()
   text-align center
 
-  & > div
-    margin 0 auto
-    padding .75rem
+.footer__content
+  margin 0 auto
+  padding .75rem
 
-    @media(min-width BREAKPOINT_MEDIUM)
-      padding 1.5rem
+  @media(min-width BREAKPOINT_MEDIUM)
+    padding 1.5rem
 
 .license
   margin: .5rem 0
 
-  img
-    width auto
+.license__image
+  width auto
 
 
 </style>

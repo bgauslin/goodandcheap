@@ -1,13 +1,14 @@
 <template lang="pug">
   header.header
-    div.controls
+    div.header__controls
       up-button(
         :parent="parent",
       )
-      h1(
+      h1.site-name(
         :class="{ 'search-enabled' : hasSearch }",
       )
         router-link(
+          class="site-name__link",
           to="/",
           title="Home",
           exact
@@ -72,63 +73,60 @@ export default {
   position_it(fixed, 0, 0, null, 0)
   z-index 999
 
-  .controls
-    height HEADER_HEIGHT_BASE
-    position relative
+.header__controls
+  height HEADER_HEIGHT_BASE
+  position relative
 
-    @media(min-width BREAKPOINT_SMALL)
-      margin 0 MARGINS_SMALL
+  @media(min-width BREAKPOINT_SMALL)
+    margin 0 MARGINS_SMALL
 
-    @media(min-width BREAKPOINT_MEDIUM)
-      height HEADER_HEIGHT_MEDIUM
-      margin 0 MARGINS_MEDIUM
+  @media(min-width BREAKPOINT_MEDIUM)
+    height HEADER_HEIGHT_MEDIUM
+    margin 0 MARGINS_MEDIUM
 
-    @media(min-width BREAKPOINT_LARGE)
-      margin 0 MARGINS_LARGE
+  @media(min-width BREAKPOINT_LARGE)
+    margin 0 MARGINS_LARGE
 
-    @media(min-width BREAKPOINT_XLARGE)
-      margin 0 auto
-      width WIDTH_XLARGE
+  @media(min-width BREAKPOINT_XLARGE)
+    margin 0 auto
+    width WIDTH_XLARGE
 
-  h1
-    display flex
-    height HEADER_HEIGHT_BASE
-    justify-content center
-    position_it(absolute, 0, 0, null, 0)
-    font_sans_heavy()
-    small_caps(14)
-    white-space nowrap
+.site-name
+  display flex
+  height HEADER_HEIGHT_BASE
+  justify-content center
+  position_it(absolute, 0, 0, null, 0)
+  font_sans_heavy()
+  small_caps(14)
+  white-space nowrap
 
-    @media(max-width BREAKPOINT_LARGE)
-      &.search-enabled
-        display none
+  @media(max-width BREAKPOINT_LARGE)
+    &.search-enabled
+      display none
 
-    a
-      align-items center
-      align-self stretch
-      display flex
-      link(WHITE, WHITE, rgba(WHITE, .7))
-      position relative
-      z-index 2
+.site-name__link
+  align-items center
+  align-self stretch
+  display flex
+  link(WHITE, WHITE, rgba(WHITE, .7))
+  position relative
+  z-index 2
 
-      @media(min-width BREAKPOINT_MEDIUM)
-        height HEADER_HEIGHT_MEDIUM
+  @media(min-width BREAKPOINT_MEDIUM)
+    height HEADER_HEIGHT_MEDIUM
 
-      &:active
-        transform scale(.9)
-        transition .3s ease
+  &:active
+    transform scale(.9)
+    transition .3s ease
 
-.no-touch
-  .header
-    h1
-      a
-        link_hover(rgba(WHITE, .7))
+.no-touch .site-name__link
+  link_hover(rgba(WHITE, .7))
 
-        &.current
-          color WHITE
-          cursor default
+  &.current
+    color WHITE
+    cursor default
 
-          &:active
-            transform none
+    &:active
+      transform none
 
 </style>
