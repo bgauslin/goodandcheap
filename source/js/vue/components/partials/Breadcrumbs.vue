@@ -1,20 +1,21 @@
 <template lang="pug">
   nav.breadcrumbs
-    ul
-      li
+    ul.breadcrumbs__list
+      li.breadcrumbs__item
         router-link(
           :to="{ name: 'chapters' }",
           title="Recipes",
         ) Recipes
-      li(
+      li.breadcrumbs__item(
         v-if="parent",
       )
         router-link(
+          class="breadcrumbs__link",
           :to="{ name: parent.routeName, params: { slug: parent.slug } }",
           :title="parent.title",
         ) {{ parent.title }}
-      li
-        span {{ current }}
+      li.breadcrumbs__item
+        span.breadcrumbs__label {{ current }}
 </template>
 
 <script>
@@ -50,7 +51,6 @@ export default {
 <style lang="stylus">
 @import '../../../../stylus/_config/'
 
-// TODO: BEM-ify selectors
 .breadcrumbs
   color LIGHT_GREY
   overflow-x scroll
@@ -79,45 +79,43 @@ export default {
     margin-right auto
     width WIDTH_XLARGE
 
-  ul
-    display flex
-    padding 0 MARGINS_BASE
+.breadcrumbs__list
+  display flex
+  padding 0 MARGINS_BASE
 
-    @media (min-width BREAKPOINT_SMALL)
-      padding 0
+  @media (min-width BREAKPOINT_SMALL)
+    padding 0
 
-  li
-    list-style none
-    margin 0 .5em 0 0
+.breadcrumbs__item
+  list-style none
+  margin 0 .5em 0 0
+
+  &::after
+    content ICON_RIGHT_OPEN
+    font-size 75%
+    icon()
+    margin-left 1em
+    position relative
+    top -1px
+
+  &:last-child
+    margin-right 1rem
 
     &::after
-      content ICON_RIGHT_OPEN
-      font-size 75%
-      icon()
-      margin-left 1em
-      position relative
-      top -1px
+      display none
 
-    &:last-child
-      margin-right 1rem
+.breadcrumbs__link
+.breadcrumbs__label
+  display inline-block
+  padding 1rem 0
 
-      &::after
-        display none
+.breadcrumbs__link
+  link(BRAND_COLOR, BRAND_COLOR, DARK_GREY)
 
-  a
-  span
-    display inline-block
-    padding 1rem 0
+.breadcrumbs__label
+  padding-right MARGINS_BASE
 
-  a
-    link(BRAND_COLOR, BRAND_COLOR, DARK_GREY)
-
-  span
-    padding-right MARGINS_BASE
-
-.no-touch
-  .breadcrumbs
-    a
-      link_hover(MEDIUM_GREY)
+.no-touch .breadcrumbs__link
+  link_hover(MEDIUM_GREY)
 
 </style>
