@@ -2,8 +2,8 @@
   p.budget(
     v-if="budget",
   )
-    span.total {{ budget.totalCost }} Total
-    span.cost {{ budget.unitCost }} / {{ budget.units }}
+    span.budget__total {{ budget.totalCost }} Total
+    span.budget__cost {{ budget.unitCost }} / {{ budget.units }}
 </template>
 
 <script>
@@ -22,8 +22,8 @@ export default {
   position_it(absolute, 3em, 0, null, null)
   small_caps()
 
-  .total
-  .cost
-    display block
+.budget__total
+.budget__cost
+  display block
 
 </style>
