@@ -1,8 +1,8 @@
 <template lang="pug">
   div.search-results
-    h2
-      span.count {{ resultsCount }} for
-      span.query {{ query }}
+    h2.search-results__heading
+      span.search-results__count {{ resultsCount }} for
+      span.search-results__query {{ query }}
     div
       ol.previews
         recipe-preview(
@@ -58,7 +58,6 @@ export default {
       document.title = `${pageTitle} · ${this.$root.siteName}`;
     },
   },
-
 }
 </script>
 
@@ -71,30 +70,30 @@ export default {
   @media(min-width BREAKPOINT_MEDIUM)
     width WIDTH_MEDIUM
 
-  .preview
-    transition all .5s ease
+.search-results .preview
+  transition all .5s ease
 
-    @media(min-width BREAKPOINT_MEDIUM)
-      a
-        border-left 1px solid BORDER_COLOR
-        border-right 1px solid BORDER_COLOR
+  @media(min-width BREAKPOINT_MEDIUM)
+    a
+      border-left 1px solid BORDER_COLOR
+      border-right 1px solid BORDER_COLOR
 
-  h2
-    margin 0
-    padding 1.5rem 0
-    small_caps(14)
-    text-align center
+.search-results__heading
+  margin 0
+  padding 1.5rem 0
+  small_caps(14)
+  text-align center
 
-    @media(min-width BREAKPOINT_MEDIUM)
-      padding 2rem 0
+  @media(min-width BREAKPOINT_MEDIUM)
+    padding 2rem 0
 
-    .count
-      font_sans()
+.search-results__count
+  font_sans()
 
-    .query
-      font_sans_heavy()
+.search-results__query
+  font_sans_heavy()
 
-      &::before
-        content ' '
+  &::before
+    content ' '
 
 </style>

@@ -40,10 +40,9 @@ export default {
     &::before
       content ICON_CANCEL
 
-.no-touch
-  .search-toggle
-    &:hover
-    &:visited:hover
-      color rgba(WHITE, .7)
+.no-touch .search-toggle
+  &:hover
+  &:visited:hover
+    color rgba(WHITE, .7)
 
 </style>

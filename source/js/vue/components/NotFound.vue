@@ -1,15 +1,14 @@
 <template lang="pug">
   div.error404
-    h1 {{ title }}
-    p {{ message }}
-
+    h1.error404__heading {{ heading }}
+    p.error404__message {{ message }}
 </template>
 
 <script>
 export default {
   data () {
     return {
-      title: 'Error 404',
+      heading: 'Error 404',
       message: 'The page you requested cannot be found. :(',
     }
   }
@@ -27,13 +26,13 @@ export default {
   position_it(absolute, 0, 1rem, 0, 1rem)
   z-index -1
 
-  h1
-    margin 0 0 1rem
-    font_sans_heavy()
-    small_caps(14)
+.error404__heading
+  margin 0 0 1rem
+  font_sans_heavy()
+  small_caps(14)
 
-  p
-    font_serif()
-    text-align center
+.error404__message
+  font_serif()
+  text-align center
 
 </style>
