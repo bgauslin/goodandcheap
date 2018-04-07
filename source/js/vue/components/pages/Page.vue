@@ -1,16 +1,31 @@
 <template lang="pug">
-  div.page(:style="'background-image:' + backgroundImageCss", :class="{ 'has-background' : hasBackgroundImage }")
+  div.page(
+    :class="{ 'has-background' : hasBackgroundImage }",
+    :style="'background-image:' + backgroundImageCss",
+  )
     div.copy
       h1 {{ data.title }}
-      section.page-section(v-for="block in data.content")
-        h2(v-if="block.heading") {{ block.heading }}
-        div(v-if="block.copy", v-html="block.copy")
-        ul(v-if="block.list")
-          li(v-for="item in block.list") {{ item }}
+      section.page-section(
+        v-for="block in data.content",
+      )
+        h2(
+          v-if="block.heading",
+        ) {{ block.heading }}
+        div(
+          v-if="block.copy",
+          v-html="block.copy",
+        )
+        ul(
+          v-if="block.list",
+        )
+          li(
+            v-for="item in block.list",
+          ) {{ item }}
 </template>
 
 <script>
-import getBreakpointValue from '../../../helpers/getBreakpointValue'
+import getBreakpointValue from '../../../helpers/getBreakpointValue';
+
 export default {
   props: ['data'],
 
@@ -18,30 +33,30 @@ export default {
     return {
       hasBackgroundImage: null,
       backgroundImageCss: null,
-      backgroundImageOverlayCss: 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25))'
+      backgroundImageOverlayCss: 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25))',
     }
   },
 
   created () {
-    this.setBackgroundImage()
-    window.addEventListener('resize', this.setBackgroundImage)
+    this.setBackgroundImage();
+    window.addEventListener('resize', this.setBackgroundImage);
   },
 
   beforeDestroy () {
-    window.removeEventListener('resize', this.setBackgroundImage)
+    window.removeEventListener('resize', this.setBackgroundImage);
   },
 
   methods: {
     setBackgroundImage() {
       if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
-        this.backgroundImageCss = `${this.backgroundImageOverlayCss},url(${this.data.backgroundImage})`
-        this.hasBackgroundImage = true
+        this.backgroundImageCss = `${this.backgroundImageOverlayCss},url(${this.data.backgroundImage})`;
+        this.hasBackgroundImage = true;
       } else {
-        this.backgroundImageCss = 'none'
-        this.hasBackgroundImage = false
+        this.backgroundImageCss = 'none';
+        this.hasBackgroundImage = false;
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

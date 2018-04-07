@@ -4,15 +4,16 @@
       preview(
         v-for="page in pages",
         :item="page",
-        route-name="info"
+        route-name="info",
       )
 </template>
 
 <script>
-import Preview from '../partials/Preview.vue'
+import Preview from '../partials/Preview.vue';
+
 export default {
   components: { Preview },
-  props: ['pages']
+  props: ['pages'],
 }
 </script>
 

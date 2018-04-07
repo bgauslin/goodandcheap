@@ -1,24 +1,32 @@
 <template lang="pug">
   header.header
     div.controls
-      up-button(:parent="parent")
-      h1(:class="{ 'search-enabled' : hasSearch }")
+      up-button(
+        :parent="parent",
+      )
+      h1(
+        :class="{ 'search-enabled' : hasSearch }",
+      )
         router-link(
           to="/",
           title="Home",
-          exact
+          exact,
         ) {{ heading }}
       search-bar
       favorites-counter
 </template>
 
 <script>
-import FavoritesCounter from '../favorites/FavoritesCounter.vue'
-import SearchBar from '../search/SearchBar.vue'
-import UpButton from '../partials/UpButton.vue'
+import FavoritesCounter from '../favorites/FavoritesCounter.vue';
+import SearchBar from '../search/SearchBar.vue';
+import UpButton from '../partials/UpButton.vue';
 
 export default {
-  components: { FavoritesCounter, SearchBar, UpButton },
+  components: {
+    FavoritesCounter,
+    SearchBar,
+    UpButton,
+  },
 
   props: ['parent'],
 
@@ -35,7 +43,7 @@ export default {
           top : 'top',
           notTop : '-top',
           bottom : 'bottom',
-          notBottom : '-bottom'
+          notBottom : '-bottom',
         }
       }
     }
@@ -43,9 +51,9 @@ export default {
 
   computed: {
     hasSearch () {
-      return this.$store.getters.getShowSearch
-    }
-  }
+      return this.$store.getters.getShowSearch;
+    },
+  },
 }
 </script>
 
