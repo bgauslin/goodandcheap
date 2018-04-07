@@ -48,10 +48,10 @@
             ) Ingredients
 
           li.recipe__tabs__item(
-            class="recipe__tabs__link",
             v-if="data.instructions",
           )
             router-link(
+              class="recipe__tabs__link",
               :to="{ name: 'steps', params: { chapter: data.parent.slug, slug: data.slug } }",
             ) Steps
 
