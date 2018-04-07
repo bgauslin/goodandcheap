@@ -157,24 +157,22 @@ export default {
     position relative
     width 100%
 
-// TODO: BEM-ify and/or relocate selector(?)
-.recipe .recipe-cover
-  @media (min-width BREAKPOINT_LARGE)
-    position_it(absolute, 0, 0, null, null)
-    width 50%
-
 .recipe__overview
   padding 1rem 1rem 2rem
   position relative
 
   @media (min-width BREAKPOINT_LARGE)  
     height 100%
-    // padding-bottom 4rem
-    padding 1.5rem 1.5rem 3rem
+    padding 1.5rem 1.5rem 4rem
     -webkit-overflow-scrolling touch
     overflow-y scroll
     position_it(absolute, 0, null, null, 0)
     width 50%
+
+  h3
+    margin 0 0 1em
+    font_sans_heavy()
+    small_caps()
 
 .recipe__header
   margin 0 2rem 1rem 0
@@ -207,23 +205,7 @@ export default {
 .recipe__tabs__link
   tabs_link()
 
-// TODO: BEM-ify selectors(?)
-.recipe h3
-  margin 0 0 1em
-  font_sans_heavy()
-  small_caps()
-
-// TODO: BEM-ify and/or relocate selector(?)
-.recipe .copy-block
-  padding .5rem 0
-
-  h4
-    margin-bottom .25em
-
-  p
-    font_sans()
-
-// TODO: BEM-ify and/or relocate selector(?)
+// TODO: relocate selector(?)
 .recipe .toggle-favorite
   right 0
   top .25rem
@@ -234,6 +216,5 @@ export default {
 
 .no-touch .recipe__tabs__link
   tabs_link__no_touch()
-
 
 </style>
