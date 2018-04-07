@@ -8,9 +8,9 @@
         :image="item.thumb",
         :title="item.title",
       )
-      div.summary
+      div.preview__summary
         h3 {{ item.title }}
-        p.recipe-count(
+        p.preview__recipe-count(
           v-if="item.recipeCount",
         ) {{ item.recipeCount }} Recipes
 </template>
@@ -40,14 +40,13 @@ export default {
 .preview
   preview()
 
-  .recipe-count
-    display inline-block
-    margin-top .2rem
-    font_sans_heavy()
-    small_caps()
+.preview__recipe-count
+  display inline-block
+  margin-top .2rem
+  font_sans_heavy()
+  small_caps()
 
-.no-touch
-  .preview
-    preview_no_touch()
+.no-touch .preview
+  preview_no_touch()
 
 </style>
