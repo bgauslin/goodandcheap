@@ -49,11 +49,6 @@ export default function() {
       component: NotFound
     },
     {
-      name: 'favorites',
-      path: '/favorites',
-      component: Favorites
-    },
-    {
       name: 'search',
       path: '/search',
       component: Search,

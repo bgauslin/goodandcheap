@@ -140,16 +140,16 @@ export default {
     doFetch(to, from) {
       if (to.name === 'intro') {
         if (from.name === 'steps' || from.name === 'ingredients') {
-          return;
+          return false;
         }
       } else if (to.name === 'steps' || to.name === 'ingredients') {
-        return;
+        return false;
       } else if (from.name === 'pages' && to.name === 'chapters') {
-        return;
+        return false;
       } else if (from.name === 'chapters' && to.name === 'pages') {
-        return;
+        return false;
       } else if (to.name === 'favorites') {
-        return;
+        return false;
       } else {
         return true;
       }

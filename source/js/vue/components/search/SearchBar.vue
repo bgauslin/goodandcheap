@@ -68,7 +68,8 @@ export default {
 
   @media(min-width BREAKPOINT_SMALL)
     left 5.5rem
-    right 3.5rem
+    // right 3.5rem
+    right 0
 
   @media(min-width BREAKPOINT_MEDIUM)
     height HEADER_HEIGHT_MEDIUM

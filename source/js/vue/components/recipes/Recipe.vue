@@ -23,6 +23,7 @@
           )
 
         toggle-favorite(
+          v-if="allowFavorites",
           :favorite="data",
         )
 
@@ -79,6 +80,12 @@ export default {
   },
 
   props: ['data'],
+
+  data () {
+    return {
+      allowFavorites: false,
+    }
+  },
 
   created () {
     window.addEventListener('resize', this.minHeight);

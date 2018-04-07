@@ -36,7 +36,7 @@
           p.index {{ itemCount }}
 
       toggle-favorite(
-        v-if="favoriteButton === 'toggle'",
+        v-if="favoriteButton === 'toggle' && allowFavorites",
         :favorite="item",
       )
 
@@ -72,6 +72,7 @@ export default {
   data () {
     return {
       isVisited: false,
+      allowFavorites: false,
     }
   },
 

@@ -13,7 +13,9 @@
           exact
         ) {{ heading }}
       search-bar
-      favorites-counter
+      favorites-counter(
+        v-if="allowFavorites",
+      )
 </template>
 
 <script>
@@ -32,6 +34,7 @@ export default {
 
   data () {
     return {
+      allowFavorites: false,
       heading: 'Good And Cheap',
       headroomOptions: {
         offset: 0,
