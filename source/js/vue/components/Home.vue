@@ -1,15 +1,16 @@
 <template lang="pug">
   div
-    tabs(:tabs="tabs")
+    tabs(
+      :tabs="tabs",
+    )
     router-view(
       :chapters="data.chapters",
       :pages="data.pages",
     )
-
 </template>
 
 <script>
-import Tabs from './partials/Tabs.vue'
+import Tabs from './partials/Tabs.vue';
 
 export default {
   components: { Tabs },
@@ -23,6 +24,6 @@ export default {
         { label: 'Info', name: 'pages' },
       ]
     }
-  }
+  },
 }
 </script>
