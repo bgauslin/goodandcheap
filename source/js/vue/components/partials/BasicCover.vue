@@ -4,12 +4,12 @@
       :image="image",
       :title="title",
     )
-    div.blurb
-      h1 {{ title }}
-      div(
+    div.cover__content
+      h1.cover__title {{ title }}
+      div.cover__blurb(
         v-html="blurb",
       )
-      p.recipe-count(
+      p.cover__recipe-count(
         v-if="count",
       ) {{ count }}
 </template>
@@ -36,29 +36,29 @@ export default {
 .cover
   cover()
 
-  h1
-    font_serif_heavy()
-    margin-bottom .5em
+.cover__content
+  animation fadeIn .3s ease-out
+  padding 1rem
 
-    @media(min-width BREAKPOINT_LARGE)
-      font-size px_to_em(30)
+  @media(min-width BREAKPOINT_SMALL)
+    background rgba(WHITE, 0.95)
+    box-shadow 0 0 5px 0 LIGHT_GREY
+    padding 1.5rem
+    position_it(absolute, 0, 3rem, null, 3rem)
 
-  .blurb
-    animation fadeIn .3s ease-out
-    padding 1rem
+.cover__title
+  font_serif_heavy()
+  margin-bottom .5em
 
-    & > div
-      font_serif()
+  @media(min-width BREAKPOINT_LARGE)
+    font-size px_to_em(30)
 
-    @media(min-width BREAKPOINT_SMALL)
-      background rgba(WHITE, 0.95)
-      box-shadow 0 0 5px 0 LIGHT_GREY
-      padding 1.5rem
-      position_it(absolute, 0, 3rem, null, 3rem)
+.cover__blurb
+  font_serif()
 
-  .recipe-count
-    font_sans_heavy()
-    margin 1rem 0 0
-    small_caps()
+.cover__recipe-count
+  font_sans_heavy()
+  margin 1rem 0 0
+  small_caps()
 
 </style>
