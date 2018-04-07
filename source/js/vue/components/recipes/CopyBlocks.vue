@@ -1,25 +1,27 @@
 <template lang="pug">
   div
-    div.copy-block(
-      v-if="data.type === 'blurbWithHeading'",
+    template(
+      v-for="block in data",
     )
-      h4.copy-block__heading {{ data.heading }}
-      div.copy-block__text(
-        v-html="data.blurb",
+      div.copy-block(
+        v-if="block.type === 'blurbWithHeading'",
+      )
+        h4.copy-block__heading {{ block.heading }}
+        div.copy-block__text(
+          v-html="block.blurb",
+        )
+
+      div.blurb(
+        v-if="block.type === 'blurb'",
+        v-html="block.blurb",
       )
 
-    div.blurb(
-      v-if="data.type === 'blurb'",
-      v-html="data.blurb",
-    )
-
-    ul.blurb-list(
-      v-if="data.type === 'list'",
-    )
-      li.blurb-list__item(
-        v-for="item in data.list",
-      ) {{ item }}
-
+      ul.blurb-list(
+        v-if="block.type === 'list'",
+      )
+        li.blurb-list__item(
+          v-for="item in block.list",
+        ) {{ item }}
 </template>
 
 <script>
