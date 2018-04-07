@@ -36,16 +36,20 @@ export default {
       if (count > 0) {
         return count;
       }
-    }
+    },
   },
 
   watch: {
     favoritesCount () {
       this.updateCount();
-    }
+    },
   },
 
   methods: {
+    animationDone() {
+      this.$el.classList.remove('updated');
+    },
+
     showCounter() {
       const count = this.favoritesCount;
       return (count > 0) ? true : false;
@@ -57,12 +61,7 @@ export default {
         this.$el.classList.add('updated');
       }
     },
-
-    animationDone() {
-      this.$el.classList.remove('updated');
-    }
   },
-
 }
 </script>
 

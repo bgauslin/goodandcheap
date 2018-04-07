@@ -5,21 +5,20 @@
     h2 {{ favoritesCount }}
     div
       transition-group(
+        class="previews",
         name="favorites",
         tag="ol",
-        class="previews",
       )
         recipe-preview(
           v-for="(recipe, index) in favorites",
-          :item="recipe",
           :index="index",
+          :item="recipe",
           :key="recipe",
-          :showChapter="true",
           :showBadge="false",
+          :showChapter="true",
           favoriteButton="remove",
         )
 </template>
-
 
 <script>
 import RecipePreview from '../recipes/Preview.vue';
@@ -38,15 +37,15 @@ export default {
     favoritesCount () {
       let text;
       let count = this.$store.getters.favoritesCount;
-      if (count <= 0 ) {
+      if (count <= 0) {
         text = 'No Favorites :(';
       } else if (count === 1) {
         text = '1 Favorite';
       } else {
-        text = count + ' Favorites';
+        text = `${count} Favorites`;
       }
       return text;
-    }
+    },
   },
 
   mounted () {
@@ -60,14 +59,13 @@ export default {
 
   methods: {
     setHasFavorites (favorites) {
-      this.hasFavorites = (favorites.length > 0) ? true : false;
+      this.hasFavorites = (favorites.length > 0);
     },
 
     updateTitle (title) {
-      document.title = `${title} · ${this.$root.siteName}`
+      document.title = `${title} · ${this.$root.siteName}`;
     },
   },
-
 }
 </script>
 

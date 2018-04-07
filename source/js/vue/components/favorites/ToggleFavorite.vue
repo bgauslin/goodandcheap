@@ -1,7 +1,7 @@
 <template lang="pug">
   button.toggle-favorite(
     @click="toggleFavorite(favorite)",
-    :class="{ saved: isFavorite }"
+    :class="{ saved: isFavorite }",
   )
 </template>
 
@@ -11,33 +11,32 @@ export default {
 
   data () {
     return {
-      isFavorite: false
+      isFavorite: false,
     }
   },
 
   created () {
-    this.isFavorite = this.isInFavorites(this.favorite)
+    this.isFavorite = this.isInFavorites(this.favorite);
   },
 
   methods: {
-    toggleFavorite (item) {
-      if (this.isFavorite) {
-        this.$store.commit('removeFavorite', item)
-      } else {
-        this.$store.commit('addFavorite', item)
-      }
-      this.isFavorite = !this.isFavorite
+    isInFavorites (item) {
+      let ids = this.$store.getters.favoritesIds;
+      let index = ids.indexOf(item.id);
+      return (index !== -1);
     },
 
-    isInFavorites (item) {
-      let ids = this.$store.getters.favoritesIds
-      let index = ids.indexOf(item.id)
-      return (index !== -1) ? true : false
-    }
+    toggleFavorite (item) {
+      if (this.isFavorite) {
+        this.$store.commit('removeFavorite', item);
+      } else {
+        this.$store.commit('addFavorite', item);
+      }
+      this.isFavorite = !this.isFavorite;
+    },
   }
 }
 </script>
-
 
 <style lang="stylus">
 @import '../../../../stylus/_config/'
