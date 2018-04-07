@@ -1,12 +1,12 @@
 <template lang="pug">
-  div.ingredients-list
-    div.ingredients(
+  div.ingredients
+    div.ingredients__list(
       v-for="(block, index) in ingredients",
     )
-      h2(
+      h2.ingredients__heading(
         v-if="block.heading",
       ) {{ block.heading }}
-        span.item-count {{ itemsLabel(block.items) }}
+        span.ingredients__count {{ itemsLabel(block.items) }}
       checklist(
         :items="block.items",
         :listIndex="index",
@@ -42,21 +42,21 @@ export default {
 <style lang="stylus">
 @import '../../../../stylus/_config/'
 
-.ingredients-list
+.ingredients
   margin 0 0 1rem
 
-.ingredients
+.ingredients__list
   margin 0
 
-  h2
-    margin 1rem 0 .5rem
-    padding 0
-    font_sans_heavy()
-    small_caps()
+.ingredients__heading
+  margin 1rem 0 .5rem
+  padding 0
+  font_sans_heavy()
+  small_caps()
 
-  .item-count
-    color LIGHT_GREY
-    margin-left 1em
-    font_sans()
+.ingredients__count
+  color LIGHT_GREY
+  margin-left 1em
+  font_sans()
 
 </style>
