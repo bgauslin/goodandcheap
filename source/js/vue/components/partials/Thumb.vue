@@ -1,6 +1,6 @@
 <template lang="pug">
   figure.thumb
-    img(
+    img.thumb__image(
       v-if="!loading",
       :alt="title",
       :height="image.height",
@@ -51,8 +51,8 @@ export default {
   margin .5rem
   width 5rem
 
-  img
-    animation fadeIn .3s ease-out
-    border-radius .25em
+.thumb__image
+  animation fadeIn .3s ease-out
+  border-radius .25em
 
 </style>
