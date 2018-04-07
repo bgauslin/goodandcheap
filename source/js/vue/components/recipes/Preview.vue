@@ -3,7 +3,7 @@
     mode="out-in",
     name="remove",
   )
-    li.preview.recipe-preview
+    li.preview.preview--recipe
       router-link(
         :class="{ visited : isVisited }",
         :title="item.title",
@@ -14,14 +14,14 @@
           :title="item.title",
         )
 
-        div.summary
-          p.chapter-title(
+        div.preview__summary
+          p.preview__chapter-title(
             v-if="showChapter",
           ) {{ item.chapter.title }}
 
           h3 {{ item.title }}
           
-          p.tagline(
+          p.preview__tagline(
             v-if="item.tagline",
           ) {{ item.tagline }}
           
@@ -29,11 +29,11 @@
             v-if="item.new && showBadge",
           )
           
-          p.kind(
+          p.preview__kind(
             v-if="item.kind !== 'Recipe'",
           ) {{ item.kind }}
           
-          p.index {{ itemCount }}
+          p.preview__index {{ itemCount }}
 
       toggle-favorite(
         v-if="favoriteButton === 'toggle' && allowFavorites",
@@ -105,52 +105,47 @@ export default {
 .preview
   preview()
 
-// TODO: BEM-ify selectors
-.recipe-preview
+.preview--recipe
   a
     padding-right 3rem
 
-  .summary
-    margin-right 0
+.preview__summary
+  margin-right 0
 
-  .chapter-title
-  .tagline
-  .kind
-    small_caps()
+.preview__chapter-title
+  color LIGHT_GREY
+  font_sans()
+  small_caps()
 
-  .chapter-title
-    color LIGHT_GREY
-    font_sans()
+.preview__kind
+.preview__tagline
+  display inline-block
+  font_sans_heavy()
+  small_caps()
 
-  .kind
-  .tagline
-    display inline-block
-    font_sans_heavy()
+.preview__kind
+  margin-top .2rem
 
-  .kind
-    margin-top .2rem
+.preview__tagline
+  margin-right .4em
 
-  .tagline
-    margin-right .4em
+.preview__index
+  bottom 1rem
+  color LIGHT_GREY
+  line-height 1
+  position absolute
+  right 0
+  font_sans()
+  small_caps()
+  text-align center
+  width 3rem
 
-  .index
-    bottom 1rem
-    color LIGHT_GREY
-    line-height 1
-    position absolute
-    right 0
-    font_sans()
-    small_caps()
-    text-align center
-    width 3rem
-
-  .toggle-favorite
-  .remove-favorite
+.preview--recipe .toggle-favorite
+.preview--recipe .remove-favorite
     right 0
     top 0
 
-.no-touch
-  .preview
-    preview_no_touch()
+.no-touch .preview--recipe
+  preview_no_touch()
 
 </style>
