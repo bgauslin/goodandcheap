@@ -1,13 +1,13 @@
 <template lang="pug">
   p.copyright
-    span Content © 2014–{{ currentYear }}
-      a(
+    span.copyright__text Content © 2014–{{ currentYear }}
+      a.copyright__link(
         href="http://www.leannebrown.com/",
         target="_blank",
         title="Visit LeanneBrown.com",
       ) Leanne Brown
-    span Website © 2015–{{ currentYear }}
-      a(
+    span.copyright__text Website © 2015–{{ currentYear }}
+      a.copyright__link(
         href="http://gauslin.com/",
         target="_blank",
         title="Visit Gauslin.com",
@@ -32,21 +32,20 @@ export default {
 .copyright
   font-size px_to_em(13)
 
-  span
-    display block
+.copyright__text
+  display block
 
-    a
+  @media(min-width BREAKPOINT_SMALL)
+    display inline
+
+    &:not(:last-child)::after
+      content '·'
       display inline-block
-      padding .25rem 0 .25rem .5em
+      text-align center
+      width 1.5rem
 
-    @media(min-width BREAKPOINT_SMALL)
-      display inline
-
-      &:last-child
-        &::before
-          content '·'
-          display inline-block
-          text-align center
-          width 1.5rem
+.copyright__link
+  display inline-block
+  padding .25rem 0 .25rem .5em
 
 </style>
