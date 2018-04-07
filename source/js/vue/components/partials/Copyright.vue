@@ -1,20 +1,28 @@
 <template lang="pug">
   p.copyright
     span Content © 2014–{{ currentYear }}
-      a(href="http://www.leannebrown.com/" title="Visit LeanneBrown.com" target="_blank") Leanne Brown
+      a(
+        href="http://www.leannebrown.com/",
+        target="_blank",
+        title="Visit LeanneBrown.com",
+      ) Leanne Brown
     span Website © 2015–{{ currentYear }}
-      a(href="http://gauslin.com/" title="Visit Gauslin.com" target="_blank") Ben Gauslin
+      a(
+        href="http://gauslin.com/",
+        target="_blank",
+        title="Visit Gauslin.com",
+      ) Ben Gauslin
 </template>
 
 <script>
 export default {
   computed: {
     currentYear () {
-      let fullYear = new Date().getFullYear()
-      let shortYear = fullYear.toString().substr(2,2)
-      return shortYear
-    }
-  }
+      const fullYear = new Date().getFullYear();
+      const shortYear = fullYear.toString().substr(2,2);
+      return shortYear;
+    },
+  },
 }
 </script>
 

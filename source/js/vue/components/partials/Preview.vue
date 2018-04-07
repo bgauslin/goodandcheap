@@ -2,29 +2,35 @@
   li.preview
     router-link(
         :to="{ name: routeName, params: { slug: item.slug } }",
-        :title="item.title"
+        :title="item.title",
       )
       thumb(
         :image="item.thumb",
-        :title="item.title"
+        :title="item.title",
       )
       div.summary
         h3 {{ item.title }}
-        p.recipe-count(v-if="item.recipeCount") {{ item.recipeCount }} Recipes
+        p.recipe-count(
+          v-if="item.recipeCount",
+        ) {{ item.recipeCount }} Recipes
 </template>
 
 <script>
-import Thumb from './Thumb.vue'
+import Thumb from './Thumb.vue';
+
 export default {
   components: { Thumb },
 
-  props: ['item', 'routeName'],
+  props: [
+    'item',
+    'routeName',
+  ],
 
   computed: {
     itemCount () {
-      return this.index + 1
-    }
-  }
+      return this.index + 1;
+    },
+  },
 }
 </script>
 

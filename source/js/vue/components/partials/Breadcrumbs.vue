@@ -4,41 +4,46 @@
       li
         router-link(
           :to="{ name: 'chapters' }",
-          title="Recipes"
+          title="Recipes",
         ) Recipes
-      li(v-if="parent")
+      li(
+        v-if="parent",
+      )
         router-link(
           :to="{ name: parent.routeName, params: { slug: parent.slug } }",
-          :title="parent.title"
+          :title="parent.title",
         ) {{ parent.title }}
       li
         span {{ current }}
 </template>
 
 <script>
-import getBreakpointValue from '../../../helpers/getBreakpointValue'
+import getBreakpointValue from '../../../helpers/getBreakpointValue';
 export default {
-  props: ['parent', 'current'],
+  props: [
+    'current',
+    'parent',
+  ],
 
   mounted () {
-    this.scrollBreadcrumbs()
+    this.scrollBreadcrumbs();
   },
 
   methods: {
     scrollBreadcrumbs () {
-      let offset = this.$el.offsetHeight
+      const offset = this.$el.offsetHeight;
 
       if (getBreakpointValue() === 'base') {
         setTimeout(() => {
           window.scrollTo(0, offset)
-        }, 0)
+        }, 0);
       } else {
         setTimeout(() => {
           window.scrollTo(0, 0)
-        }, 0)
+        }, 0);
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

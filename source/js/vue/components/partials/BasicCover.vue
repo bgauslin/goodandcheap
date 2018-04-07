@@ -1,19 +1,32 @@
 <template lang="pug">
   div.cover
-    cover-photo(:image="image", :title="title")
+    cover-photo(
+      :image="image",
+      :title="title",
+    )
     div.blurb
       h1 {{ title }}
-      div(v-html="blurb")
-      p.recipe-count(v-if="count") {{ count }}
+      div(
+        v-html="blurb",
+      )
+      p.recipe-count(
+        v-if="count",
+      ) {{ count }}
 </template>
 
 <script>
-import CoverPhoto from './CoverPhoto.vue'
-import imagesLoaded from 'imagesloaded'
+import CoverPhoto from './CoverPhoto.vue';
+import imagesLoaded from 'imagesloaded';
 
 export default {
   components: { CoverPhoto },
-  props: ['blurb', 'count', 'image', 'title']
+
+  props: [
+    'blurb',
+    'count',
+    'image',
+    'title',
+  ],
 }
 </script>
 

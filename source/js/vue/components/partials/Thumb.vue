@@ -2,38 +2,41 @@
   figure.thumb
     img(
       v-if="!loading",
+      :alt="title",
+      :height="image.height",
       :src="image.src",
       :width="image.width",
-      :height="image.height",
-      :alt="title"
     )
 </template>
 
 <script>
-import imagesLoaded from 'imagesloaded'
+import imagesLoaded from 'imagesloaded';
 
 export default {
-  props: ['image', 'title'],
+  props: [
+    'image',
+    'title',
+  ],
 
   data () {
     return {
-      loading: null
+      loading: null,
     }
   },
 
   mounted () {
-    this.loadImages()
+    this.loadImages();
   },
 
   methods: {
     loadImages () {
-      this.loading = true
-      let that = this
+      this.loading = true;
+      let that = this;
       imagesLoaded(this.$el, that, instance => {
-        that.loading = false
-      })
-    }
-  }
+        that.loading = false;
+      });
+    },
+  },
 }
 </script>
 

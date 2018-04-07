@@ -1,42 +1,45 @@
 <template lang="pug">
   div.cover-photo
     figure(
-      :style="'background-image:url(' + image.placeholder + ')'"
+      :style="'background-image:url(' + image.placeholder + ')'",
     )
-      img(
+      img.hi-res(
         v-if="!loading",
+        :alt="title",
+        :height="image.height",
         :src="image.src",
         :width="image.width",
-        :height="image.height",
-        :alt="title",
-        class="hi-res"
       )
 </template>
 
 <script>
-import imagesLoaded from 'imagesloaded'
+import imagesLoaded from 'imagesloaded';
+
 export default {
-  props: ['image', 'title'],
+  props: [
+    'image',
+    'title',
+  ],
 
   data () {
     return {
-      loading: null
+      loading: null,
     }
   },
 
   mounted () {
-    this.loadImages()
+    this.loadImages();
   },
 
   methods: {
     loadImages () {
-      this.loading = true
-      let that = this
+      this.loading = true;
+      let that = this;
       imagesLoaded(this.$el.querySelector('.hi-res'), that, instance => {
-        that.loading = false
-      })
-    }
-  }
+        that.loading = false;
+      });
+    },
+  },
 }
 </script>
 

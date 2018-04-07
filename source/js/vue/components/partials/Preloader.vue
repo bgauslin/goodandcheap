@@ -3,16 +3,16 @@
 </template>
 
 <script>
-import Spinner from 'spin'
-export default {
+import Spinner from 'spin';
 
+export default {
   data () {
     return {
       spinnerOptions: {
         lines: 12,
         length: 8,
         width: 3,
-        radius: 8
+        radius: 8,
       }
     }
   },
@@ -23,10 +23,10 @@ export default {
 
   methods: {
     attachSpinner () {
-      let spinner = new Spinner(this.spinnerOptions).spin()
-      this.$el.appendChild(spinner.el)
-    }
-  }
+      let spinner = new Spinner(this.spinnerOptions).spin();
+      this.$el.appendChild(spinner.el);
+    },
+  },
 }
 </script>
 
