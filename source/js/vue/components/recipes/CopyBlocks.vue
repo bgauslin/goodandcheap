@@ -3,8 +3,8 @@
     div.copy-block(
       v-if="data.type === 'blurbWithHeading'",
     )
-      h4 {{ data.heading }}
-      div(
+      h4.copy-block__heading {{ data.heading }}
+      div.copy-block__text(
         v-html="data.blurb",
       )
 
@@ -16,7 +16,7 @@
     ul.blurb-list(
       v-if="data.type === 'list'",
     )
-      li(
+      li.blurb-list__item(
         v-for="item in data.list",
       ) {{ item }}
 
@@ -33,12 +33,13 @@ export default {
 
 .copy-block
   padding .5rem 0
+  
+.copy-block__heading
+  font_sans_heavy()
+  margin 0 0 .25em
+  small_caps()
 
-  h4
-    font_sans_heavy()
-    margin 0 0 .25em
-    small_caps()
-
+.copy-block__text
   p
     font_sans()
     font-size px_to_em(14)
@@ -46,10 +47,10 @@ export default {
 .blurb-list
   margin 0 0 1em
 
-  li
-    font_sans()
-    font-size px_to_em(14)
-    list-style none
-    margin 0 0 .5em
+.blurb-list__item
+  font_sans()
+  font-size px_to_em(14)
+  list-style none
+  margin 0 0 .5em
 
 </style>
