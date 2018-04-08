@@ -27,12 +27,14 @@ export default {
     },
 
     clickTarget () {
-      document.addEventListener('click', e => {
-        let el = e.target.id;
-        if (this.open && el !== 'query') {
-          this.toggle(this.open);
-        }
-      }, true);
+      if (this.$route.name !== 'search') {
+        document.addEventListener('click', e => {
+          let el = e.target.id;
+          if (this.open && el !== 'query') {
+            this.toggle(this.open);
+          }
+        }, true);
+      }
     },
   },
 }
