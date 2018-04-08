@@ -68,7 +68,7 @@ export default {
 ol.instructions__list
   padding 0 0 0 1.3rem
 
-ul.instructions__item
+ul .instructions__item
   list-style none
 
 .instructions__item
