@@ -187,7 +187,9 @@ export default {
     },
 
     isFavorites () {
-      this.$store.commit('setParent', null);
+      if (this.$route.name === 'favorites') {
+        this.$store.commit('setParent', null);
+      }
     },
 
     isHome () {
