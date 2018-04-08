@@ -1,6 +1,6 @@
 <template lang="pug">
   button.search-toggle(
-    @click="toggle(open)",
+    @click="toggleInput(open)",
     :class="{ open : open, closed : !open }",
   )
 </template>
@@ -9,26 +9,46 @@
 export default {
   props: ['open'],
 
+  data () {
+    return {
+      inputId: 'query',
+    }
+  },
+
+  computed: {
+    isSearchPage () {
+      return (this.$route.name === 'search');
+    },
+  },
+
   created () {
-    this.clickTarget();
+    this.getClickTarget();
   },
 
   methods: {
-    toggle (open) {
-      open = !open;
-      this.$store.commit('setSearch', open);
-      if (open) {
-        document.getElementById('query').focus();
-      }
-    },
-
-    clickTarget () {
+    getClickTarget () {
       document.addEventListener('click', e => {
-        let el = e.target.id;
-        if (this.open && el !== 'query' && this.$route.name !== 'search') {
-          this.toggle(this.open);
+        const el = e.target.id;
+        const isSearchInput = this.isSearchInput(el);
+
+        if (this.open && !isSearchInput && !this.isSearchPage) {
+          this.toggleInput(this.open);
         }
       }, true);
+    },
+
+    isSearchInput (el) {
+      return (el === this.inputId);
+    },
+
+    toggleInput (open) {
+      if (!this.isSearchPage) {
+        open = !open;
+        this.$store.commit('setSearch', open);
+        if (open) {
+          document.getElementById(this.inputId).focus();
+        }
+      }
     },
   },
 }

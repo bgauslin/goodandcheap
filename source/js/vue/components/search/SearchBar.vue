@@ -23,27 +23,11 @@ import SearchToggle from './SearchToggle.vue';
 export default {
   components: { SearchToggle },
 
-  data () {
-    return {
-      query: null,
-    }
-  },
-
-  created () {
-    this.getQuery();
-  },
+  props: ['query'],
 
   computed: {
     open () {
       return this.$store.getters.getShowSearch;
-    },
-  },
-
-  methods: {
-    getQuery () {
-      let query = window.location.search;
-      this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null;
-      this.$store.commit('setQuery', this.query);
     },
   },
 }

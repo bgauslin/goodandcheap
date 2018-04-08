@@ -22,13 +22,10 @@ import RecipePreview from '../recipes/Preview.vue';
 export default {
   components: { RecipePreview },
 
-  props: ['data'],
-
-  data () {
-    return {
-      query: this.$store.getters.getQuery,
-    }
-  },
+  props: [
+    'data',
+    'query',
+  ],
 
   computed: {
     resultsCount () {

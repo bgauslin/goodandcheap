@@ -3,6 +3,7 @@
     app-header(
       :home="home",
       :parent="parent",
+      :query="query",
     )
     div.content
       preloader(
@@ -19,6 +20,7 @@
           v-if="dataLoaded",
           :data="data",
           :key="data",
+          :query="query",
         )
     app-footer
 </template>
@@ -44,6 +46,7 @@ export default {
       dataLoaded: null,
       endpoint: '',
       home: null,
+      query: null,
       transitionEnter: null,
       transitionLeave: null,
     }
@@ -199,6 +202,13 @@ export default {
     isSearch () {
       const setSearch = (this.$route.name === 'search');
       this.$store.commit('setSearch', setSearch);
+
+      if (setSearch) {
+        let query = window.location.search;
+        this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null;
+      } else {
+        this.query = '';
+      }
     },
 
     notFound() {

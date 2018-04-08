@@ -13,7 +13,9 @@
           title="Home",
           exact
         ) {{ heading }}
-      search-bar
+      search-bar(
+        :query="query",
+      )
       favorites-counter(
         v-if="allowFavorites",
       )
@@ -31,7 +33,10 @@ export default {
     UpButton,
   },
 
-  props: ['parent'],
+  props: [
+    'parent',
+    'query',
+  ],
 
   data () {
     return {
