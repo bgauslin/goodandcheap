@@ -91,9 +91,11 @@ tabs_link()
 
 tabs_link__no_touch()
   &:hover
+  &:visited:hover
     background rgba(BRAND_COLOR, .1)
-    color BRAND_COLOR !important
+    color BRAND_COLOR
 
   &.current:hover
+  &.current:visited:hover
     background BRAND_COLOR
-    color WHITE !important
+    color WHITE
