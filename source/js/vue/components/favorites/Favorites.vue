@@ -93,13 +93,13 @@ export default {
   &.empty
     animation none
 
-  @media (min-width BREAKPOINT_MEDIUM)
+  @media BREAKPOINT_MEDIUM
     width WIDTH_MEDIUM
 
   .preview
     transition all .5s ease
 
-    @media (min-width BREAKPOINT_MEDIUM)
+    @media BREAKPOINT_MEDIUM
       a
         border-left 1px solid BORDER_COLOR
         border-right 1px solid BORDER_COLOR
@@ -111,7 +111,7 @@ export default {
     small_caps(14)
     text-align center
 
-    @media (min-width BREAKPOINT_MEDIUM)
+    @media BREAKPOINT_MEDIUM
       padding 2rem 0
 
 // animations for 'remove-favorite'
@@ -120,7 +120,7 @@ export default {
   position absolute
   transform translateX(-100%)
 
-  @media (min-width BREAKPOINT_MEDIUM)
+  @media BREAKPOINT_MEDIUM
     transform scale(.5)
     transform translateX(0)
     width WIDTH_MEDIUM

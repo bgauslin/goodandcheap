@@ -40,7 +40,7 @@ export default {
   animation fadeIn .3s ease-out
   padding 1rem
 
-  @media (min-width BREAKPOINT_SMALL)
+  @media BREAKPOINT_SMALL
     background rgba(WHITE, 0.95)
     box-shadow 0 0 5px 0 LIGHT_GREY
     padding 1.5rem
@@ -50,7 +50,7 @@ export default {
   font_serif_heavy()
   margin-bottom .5em
 
-  @media (min-width BREAKPOINT_LARGE)
+  @media BREAKPOINT_LARGE
     font-size px_to_em(30)
 
 .cover__blurb

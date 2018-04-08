@@ -37,7 +37,7 @@ export default {
   margin 0 auto
   padding .75rem
 
-  @media (min-width BREAKPOINT_MEDIUM)
+  @media BREAKPOINT_MEDIUM
     padding 1.5rem
 
 .license

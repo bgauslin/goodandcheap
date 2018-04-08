@@ -42,15 +42,15 @@ export default {
   height HEADER_HEIGHT_BASE
   position_it(absolute, 0, 2.5rem, null, MARGINS_BASE)
 
-  @media (min-width BREAKPOINT_SMALL)
+  @media BREAKPOINT_SMALL
     left 5.5rem
     right 3rem
 
-  @media (min-width BREAKPOINT_MEDIUM)
+  @media BREAKPOINT_MEDIUM
     height HEADER_HEIGHT_MEDIUM
     left 50%
 
-  @media (min-width BREAKPOINT_LARGE)
+  @media BREAKPOINT_LARGE
     left calc(50% + 6rem)
 
 .search-form
@@ -71,7 +71,7 @@ export default {
   position_it(absolute, .5rem, 0, .5rem, null)
   transition all .2s ease
 
-  @media (min-width BREAKPOINT_MEDIUM)
+  @media BREAKPOINT_MEDIUM
     bottom px_to_rem(14)
     top px_to_rem(14)
 

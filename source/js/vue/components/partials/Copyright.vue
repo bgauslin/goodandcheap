@@ -35,7 +35,7 @@ export default {
 .copyright__text
   display block
 
-  @media (min-width BREAKPOINT_SMALL)
+  @media BREAKPOINT_SMALL
     display inline
 
     &:not(:last-child)::after
