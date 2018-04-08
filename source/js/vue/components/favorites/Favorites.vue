@@ -1,23 +1,24 @@
 <template lang="pug">
-  div.favorites(
-    :class="{ 'empty' : !hasFavorites }"
-  )
-    h2 {{ favoritesCount }}
-    div
-      transition-group(
-        class="previews",
-        name="favorites",
-        tag="ol",
-      )
-        recipe-preview(
-          v-for="(recipe, index) in favorites",
-          :index="index",
-          :item="recipe",
-          :key="recipe",
-          :showBadge="false",
-          :showChapter="true",
-          favoriteButton="remove",
+  div
+    div.favorites(
+      :class="{ 'empty' : !hasFavorites }"
+    )
+      h2 {{ favoritesCount }}
+      div
+        transition-group(
+          class="previews",
+          name="favorites",
+          tag="ol",
         )
+          recipe-preview(
+            v-for="(recipe, index) in favorites",
+            :index="index",
+            :item="recipe",
+            :key="recipe",
+            :showBadge="false",
+            :showChapter="true",
+            favoriteButton="remove",
+          )
 </template>
 
 <script>
@@ -113,7 +114,7 @@ export default {
     @media (min-width BREAKPOINT_MEDIUM)
       padding 2rem 0
 
-// TODO: remove-favorite animations
+// animations for 'remove-favorite'
 .favorites-leave-active
   opacity 0
   position absolute
