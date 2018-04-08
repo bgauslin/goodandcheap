@@ -93,14 +93,14 @@ export default {
 
 .site-name
   display flex
+  font_sans_heavy()
   height HEADER_HEIGHT_BASE
   justify-content center
   position_it(absolute, 0, 0, null, 0)
-  font_sans_heavy()
   small_caps(14)
   white-space nowrap
 
-  @media (max-width BREAKPOINT_LARGE)
+  @media (max-width BREAKPOINT_MEDIUM)
     &.search-enabled
       display none
 

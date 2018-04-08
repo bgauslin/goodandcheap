@@ -64,22 +64,18 @@ export default {
   align-items center
   display flex
   height HEADER_HEIGHT_BASE
-  // position_it(absolute, 0, 0, null, MARGINS_BASE)
-  position_it(absolute, 0, 3rem, null, MARGINS_BASE)
+  position_it(absolute, 0, 2.5rem, null, MARGINS_BASE)
 
   @media (min-width BREAKPOINT_SMALL)
     left 5.5rem
-    right 3.5rem
-    // right 0
+    right 3rem
 
   @media (min-width BREAKPOINT_MEDIUM)
     height HEADER_HEIGHT_MEDIUM
+    left 50%
 
   @media (min-width BREAKPOINT_LARGE)
     left calc(50% + 6rem)
-
-  @media (min-width BREAKPOINT_XLARGE)
-    left calc(50% + 8rem)
 
 .search-form
   align-items center
