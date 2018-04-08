@@ -61,11 +61,11 @@ export default {
 
   created () {
     this.isHome();
-    this.isSearch();
     this.isFavorites();
+    this.isSearch();
 
     this.endpoint = this.$route.meta.endpoint;
-    if (this.endpoint !== undefined) {
+    if (this.endpoint !== undefined && this.endpoint !== 'favorites') {
       this.fetchData(this.endpoint);
     }
     // set dataLoaded flag for routes with no data fetching
@@ -77,8 +77,8 @@ export default {
   watch: {
     '$route' (to, from) {
       this.isHome();
-      this.isSearch();
       this.isFavorites();
+      this.isSearch();
 
       this.endpoint = this.$route.meta.endpoint;
       const fetch = this.doFetch(to, from);
@@ -187,7 +187,7 @@ export default {
     },
 
     isFavorites () {
-      this.parent = (this.$route.name !== 'favorites');
+      this.$store.commit('setParent', null);
     },
 
     isHome () {
