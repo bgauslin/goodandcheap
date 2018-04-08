@@ -9,6 +9,7 @@
         name="q",
         placeholder="Search",
         type="text",
+        autofocus,
       )
     search-toggle(
       :open="open",
@@ -45,7 +46,7 @@ export default {
     },
 
     focusInput () {
-      this.$el.querySelectorAll('.search-input')[0].focus();
+      this.$el.querySelector('.search-input').focus();
     },
 
     getQuery () {
@@ -84,18 +85,15 @@ export default {
   position relative
   width 100%
 
-input[type="search"]
-  appearance none
-  border-radius 0
-
 .search-input
   appearance none
   border none
-  border-radius 0
-  font-size px_to_em(13)
+  border-radius 2px
+  color black
+  font-family monospace
+  font-size 1em
   margin 0
   position_it(absolute, .5rem, 0, .5rem, null)
-  font_sans()
   transition all .2s ease
 
   @media (min-width BREAKPOINT_MEDIUM)
