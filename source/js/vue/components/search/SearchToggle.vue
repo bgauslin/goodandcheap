@@ -13,10 +13,6 @@ export default {
     this.clickTarget();
   },
 
-  beforeDestroy () {
-    document.removeEventListener('click');
-  },
-
   methods: {
     toggle (open) {
       open = !open;
@@ -27,14 +23,12 @@ export default {
     },
 
     clickTarget () {
-      if (this.$route.name !== 'search') {
-        document.addEventListener('click', e => {
-          let el = e.target.id;
-          if (this.open && el !== 'query') {
-            this.toggle(this.open);
-          }
-        }, true);
-      }
+      document.addEventListener('click', e => {
+        let el = e.target.id;
+        if (this.open && el !== 'query' && this.$route.name !== 'search') {
+          this.toggle(this.open);
+        }
+      }, true);
     },
   },
 }
@@ -58,9 +52,9 @@ export default {
     icon()
     font-size px_to_em(16)
 
-  &.open
-    &::before
-      content ICON_CANCEL
+  // &.open
+  //   &::before
+  //     content ICON_CANCEL
 
 .no-touch .search-toggle
   &:hover
