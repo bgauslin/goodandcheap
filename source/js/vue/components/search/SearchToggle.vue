@@ -9,10 +9,30 @@
 export default {
   props: ['open'],
 
+  created () {
+    this.clickTarget();
+  },
+
+  beforeDestroy () {
+    document.removeEventListener('click');
+  },
+
   methods: {
     toggle (open) {
       open = !open;
       this.$store.commit('setSearch', open);
+      if (open) {
+        document.getElementById('query').focus();
+      }
+    },
+
+    clickTarget () {
+      document.addEventListener('click', e => {
+        let el = e.target.id;
+        if (this.open && el !== 'query') {
+          this.toggle(this.open);
+        }
+      }, true);
     },
   },
 }

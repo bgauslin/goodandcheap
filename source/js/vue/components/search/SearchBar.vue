@@ -6,6 +6,7 @@
       input.search-input(
         :class="{ open : open, closed : !open }",
         :value="query",
+        id="query",
         name="q",
         placeholder="Search",
         type="text",
@@ -39,16 +40,6 @@ export default {
   },
 
   methods: {
-    closeIt () {
-      if (document.activeElement.tagName !== 'INPUT') {
-        this.$store.commit('setSearch', false);
-      }
-    },
-
-    focusInput () {
-      this.$el.querySelector('.search-input').focus();
-    },
-
     getQuery () {
       let query = window.location.search;
       this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null;
