@@ -36,6 +36,14 @@ export default function() {
       ]
     },
     {
+      name: 'favorites',
+      path: '/favorites',
+      component: Favorites,
+      meta: {
+        endpoint: 'favorites'
+      }
+    },
+    {
       name: 'info',
       path: '/info/:slug',
       component: Page,

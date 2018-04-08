@@ -62,6 +62,7 @@ export default {
   created () {
     this.isHome();
     this.isSearch();
+    this.isFavorites();
 
     this.endpoint = this.$route.meta.endpoint;
     if (this.endpoint !== undefined) {
@@ -77,6 +78,7 @@ export default {
     '$route' (to, from) {
       this.isHome();
       this.isSearch();
+      this.isFavorites();
 
       this.endpoint = this.$route.meta.endpoint;
       const fetch = this.doFetch(to, from);
@@ -184,6 +186,10 @@ export default {
           that.dataLoaded = true;
         }
       })
+    },
+
+    isFavorites () {
+      this.parent = (this.$route.name !== 'favorites');
     },
 
     isHome () {
