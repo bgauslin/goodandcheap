@@ -10,14 +10,17 @@ elixir.config.assetsPath = 'source';
 elixir.config.js.outputFolder = 'ui';
 elixir.config.css.outputFolder = 'ui';
 
-elixir(function(mix) {
+elixir(mix => {
   mix.browserify('goodandcheap.js')
   .stylus('goodandcheap.styl')
   .stylus('offline.styl')
   .copy('source/html', 'public')
   .copy('source/img', 'public/ui/img')
   .copy('source/webfonts', 'public/ui/webfonts')
-  .version(['public/ui/goodandcheap.js', 'public/ui/goodandcheap.css'])
+  .version([
+    'public/ui/goodandcheap.js',
+    'public/ui/goodandcheap.css'
+  ])
   .livereload()
   .browserSync({
     proxy: 'goodandcheap.test'
