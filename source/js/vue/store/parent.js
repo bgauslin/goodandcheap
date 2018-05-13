@@ -1,4 +1,4 @@
-const favorites = {
+const parent = {
   state: {
     parent: null,
   },
@@ -14,4 +14,4 @@ const favorites = {
   },
 }
 
-export default favorites;
+export default parent;
