@@ -14,7 +14,7 @@
             v-for="(recipe, index) in favorites",
             :index="index",
             :item="recipe",
-            :key="recipe",
+            :key="recipe.slug",
             :showBadge="false",
             :showChapter="true",
             favoriteButton="remove",

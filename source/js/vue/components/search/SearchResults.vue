@@ -9,7 +9,7 @@
           v-for="(recipe, index) in data.data",
           :index="index",
           :item="recipe",
-          :key="recipe",
+          :key="recipe.slug",
           :showBadge="false",
           :showChapter="true",
           favoriteButton="toggle",

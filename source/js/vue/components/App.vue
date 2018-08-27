@@ -19,7 +19,7 @@
         router-view(
           v-if="dataLoaded",
           :data="data",
-          :key="data",
+          :key="key",
           :query="query",
         )
     app-footer
@@ -46,6 +46,7 @@ export default {
       dataLoaded: null,
       endpoint: '',
       home: null,
+      key: null,
       query: null,
       transitionEnter: null,
       transitionLeave: null,
@@ -161,6 +162,7 @@ export default {
           that.data = response.body;
           that.$store.commit('setParent', response.body.parent);
           that.updateTitle(response.body.title);
+          that.key = that.data.slug;
           that.dataLoaded = true;
         }
       })
@@ -168,6 +170,7 @@ export default {
 
     isFavorites () {
       if (this.$route.name === 'favorites') {
+        this.key = 'favorites';
         this.$store.commit('setParent', null);
       }
     },
