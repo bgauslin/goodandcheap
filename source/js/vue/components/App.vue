@@ -96,27 +96,15 @@ export default {
 
   methods: {
     afterEnter (el) {
-      el.classList.remove(this.transitionEnter);
+      el.classList.remove(this.transitionEnterClass());
     },
 
     afterLeave (el) {
-      el.classList.remove(this.transitionLeave);
+      el.classList.remove(this.transitionLeaveClass());
     },
 
     beforeEnter (el) {
-      switch (this.direction) {
-        case 'forward':
-          this.transitionEnter = 'slide-in-right';
-          break
-        case 'back':
-          this.transitionEnter = 'slide-in-left';
-          break;
-        default:
-          this.transitionEnter = 'slide-in-up';
-          break;
-      }
-      el.classList.add(this.transitionEnter);
-
+      el.classList.add(this.transitionEnterClass());
       // reset scroll position for iOS
       setTimeout(() => {
         window.scrollTo(0, 1)
@@ -124,18 +112,7 @@ export default {
     },
 
     beforeLeave (el) {
-      switch (this.direction) {
-        case 'forward':
-          this.transitionLeave = 'slide-out-left';
-          break;
-        case 'back':
-          this.transitionLeave = 'slide-out-right';
-          break;
-        default:
-          this.transitionLeave = 'slide-out-down';
-          break;
-      }
-      el.classList.add(this.transitionLeave);
+      el.classList.add(this.transitionLeaveClass());
     },
 
     doFetch(to, from) {
@@ -213,6 +190,28 @@ export default {
 
     notFound() {
       window.location.replace('/404');
+    },
+
+    transitionEnterClass () {
+      switch (this.direction) {
+        case 'forward':
+          return 'slide-in-right';
+        case 'back':
+          return 'slide-in-left';
+        default:
+          return 'slide-in-up';
+      }
+    },
+
+    transitionLeaveClass (el) {
+      switch (this.direction) {
+        case 'forward':
+          return 'slide-out-left';
+        case 'back':
+          return 'slide-out-right';
+        default:
+          return 'slide-out-down';
+      }
     },
 
     updateTitle (title) {
