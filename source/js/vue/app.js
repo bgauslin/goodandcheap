@@ -17,6 +17,8 @@ import visited from './store/visited'
 Vue.use(Vuex)
 Vue.use(VueRouter)
 
+Vue.config.productionTip = false
+
 const apiDomain = getApiDomain()
 
 const router = new VueRouter({
