@@ -2,6 +2,7 @@
   button.search-toggle(
     @click="toggleInput(open)",
     :class="{ open : open, closed : !open }",
+    aria-label="Search this site",
   )
 </template>
 
