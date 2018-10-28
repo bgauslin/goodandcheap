@@ -26,6 +26,12 @@ gulp.task('html', () => {
     .pipe(gulp.dest(pkg.paths.html.dest));
 });
 
+// Copy project icons.
+gulp.task('icons', () => {
+  gulp.src(pkg.paths.icons.src)
+    .pipe(gulp.dest(pkg.paths.icons.dest));
+});
+
 // Copy image assets.
 gulp.task('img', () => {
   gulp.src(pkg.paths.img.src)
