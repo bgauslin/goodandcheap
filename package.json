@@ -1,27 +1,96 @@
 {
   "name": "goodandcheap_v2",
-  "version": "2.3.5",
   "description": "Good And Cheap web app via Vue.js",
+  "version": "2.3.5",
   "license": "CC-BY-NC-SA-4.0",
-  "repository": "https://bitbucket.org/bgauslin/goodandcheap_v2",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/bgauslin/goodandcheap_v2"
+  },
+  "private": true,
+  "devServer": "goodandcheap.test",
+  "paths": {
+    "html": {
+      "src": "source/html/**/*",
+      "dest": "public"
+    },
+    "img": {
+      "src": "source/img/**/*",
+      "dest": "public/ui/img"
+    },
+    "js": {
+      "src": "source/js/goodandcheap.js",
+      "dest": "public/ui/goodandcheap.js",
+      "bundleSrc": "goodandcheap.js",
+      "bundleDest": "public/ui"
+    },
+    "stylus": {
+      "src": [
+        "source/stylus/goodandcheap.styl",
+        "source/stylus/offline.styl"
+      ],
+      "dest": "public/ui"
+    },
+    "version": {
+      "src": [
+        "public/ui/goodandcheap.css",
+        "public/ui/goodandcheap.js"
+      ],
+      "dest": "public/build/ui",
+      "manifestFile": "public/build/manifest.json"
+    },
+    "webfonts": {
+      "src": "source/webfonts/**/*",
+      "dest": "public/ui/webfonts"
+    }
+  },
+  "tasks": {
+    "build": [
+      "html",
+      "js",
+      "img",
+      "stylus",
+      "webfonts"
+    ],
+    "default": [
+      "html",
+      "js",
+      "stylus"
+    ]
+  },
   "dependencies": {
     "fastclick": "^1.0.6",
     "imagesloaded": "^4.1.1",
-    "laravel-elixir": "^6.0.0-11",
-    "laravel-elixir-browserify-official": "^0.1.3",
-    "laravel-elixir-browsersync-official": "^1.0.0",
-    "laravel-elixir-livereload": "^1.1.6",
-    "laravel-elixir-pug": "^1.3.2",
-    "laravel-elixir-stylus": "^2.0.3",
-    "laravel-elixir-vueify": "^2.0.0",
     "pug": "^2.0.0-beta6",
     "spin": "0.0.1",
     "stylus": "^0.54.5",
     "superagent": "^2.3.0",
-    "vue": "^2.0.3",
+    "vue": "^2.2.0",
     "vue-router": "^2.0.1",
-    "vueify": "^9.2.4",
-    "vuex": "^2.0.0",
-    "vuex-router-sync": "^3.0.0"
+    "vuex": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "@babel/register": "^7.0.0-rc.1",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "next",
+    "browser-sync": "^2.24.6",
+    "browserify": "^16.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-hash": "^4.2.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uglify-es": "^1.0.4",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "vueify": "^9.4.1",
+    "vueify-insert-css": "^1.0.0"
   }
 }
