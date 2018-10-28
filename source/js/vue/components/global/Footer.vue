@@ -7,7 +7,7 @@
       p.license
         a.license__link(
           href="http://creativecommons.org/licenses/by-nc-sa/4.0/",
-          rel="license",
+          rel="license noopener",
           target="_blank",
         )
           img.license__image(
