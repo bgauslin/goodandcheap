@@ -28,7 +28,6 @@ export default {
 @import '../../../../stylus/_config/'
 
 .footer
-  color LIGHT_GREY
   font_sans()
   small_caps()
   text-align center
@@ -45,6 +44,5 @@ export default {
 
 .license__image
   width auto
-
 
 </style>
