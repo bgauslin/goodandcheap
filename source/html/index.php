@@ -2,27 +2,29 @@
 $site_name = 'Good And Cheap';
 $meta_description = 'Web app based on the cookbook by Leanne Brown';
 
-// default paths
+// Sets default paths.
 $site = 'goodandcheap';
 
-$css = 'ui/' . $site . '.css';
-$js = 'ui/' . $site . '.js';
-$css_path = '/' . $css;
-$js_path = '/' . $js;
+$css = $site . '.css';
+$js = $site . '.js';
 
-// get TLD for dev vs. production
+// Gets TLD for dev vs. production.
 $host = $_SERVER['HTTP_HOST'];
 $parts = explode('.', $host);
-$tld = array_pop((array_slice($parts, -1)));
+$tld_parts = array_slice($parts, -1);
+$tld = array_pop($tld_parts);
 
-// use manifest and update paths if production
+// Uses manifest and updates paths if production.
 if ($tld == 'website') {
-  $file = file_get_contents('./build/rev-manifest.json');
+  $file = file_get_contents('./build/manifest.json');
   $json = json_decode($file, true);
-  $css_prod = $json[$css];
-  $js_prod = $json[$js];
-  $css_path = '/build/' . $css_prod;
-  $js_path = '/build/' . $js_prod;
+  $css_v = $json[$css];
+  $js_v = $json[$js];
+  $css_path = '/build/ui/' . $css_v;
+  $js_path = '/build/ui/' . $js_v;
+} else {
+  $css_path = '/ui/' . $css;
+  $js_path = '/ui/' . $js;
 }
 ?>
 
