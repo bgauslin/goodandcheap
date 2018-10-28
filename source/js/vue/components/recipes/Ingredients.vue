@@ -55,7 +55,7 @@ export default {
   small_caps()
 
 .ingredients__count
-  color LIGHT_GREY
+  color MEDIUM_GREY
   margin-left 1em
   font_sans()
 

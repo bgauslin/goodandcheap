@@ -52,7 +52,7 @@ export default {
 @import '../../../../stylus/_config/'
 
 .breadcrumbs
-  color LIGHT_GREY
+  color MEDIUM_GREY
   overflow-x scroll
   -webkit-overflow-scrolling touch
   font_sans()

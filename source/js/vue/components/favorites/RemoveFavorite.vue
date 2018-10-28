@@ -33,7 +33,7 @@ export default {
 
 .remove-favorite
   &::before
-    color LIGHT_GREY
+    color MEDIUM_GREY
     content ICON_CANCEL_CIRCLED
     font-size px_to_em(20)
 
