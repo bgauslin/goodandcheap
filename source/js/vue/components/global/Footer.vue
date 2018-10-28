@@ -29,7 +29,7 @@ export default {
 
 .footer
   font_sans()
-  small_caps()
+  font-size px_to_em(12)
   text-align center
 
 .footer__content

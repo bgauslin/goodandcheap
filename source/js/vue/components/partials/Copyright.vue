@@ -31,20 +31,18 @@ export default {
 <style lang="stylus">
 @import '../../../../stylus/_config/'
 
-.copyright
-  font-size px_to_em(13)
-
 .copyright__text
   display block
 
   @media BREAKPOINT_SMALL
     display inline
 
-    &:not(:last-child)::after
-      content '·'
-      display inline-block
-      text-align center
-      width 1.5rem
+.copyright__text:not(:last-child)::after
+  @media BREAKPOINT_SMALL
+    content '·'
+    display inline-block
+    text-align center
+    width 1.5rem
 
 .copyright__link
   display inline-block
