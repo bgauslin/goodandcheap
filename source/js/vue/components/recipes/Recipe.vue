@@ -186,10 +186,10 @@ export default {
   font_serif_heavy()
 
 .recipe__tagline
-    display inline-block
-    margin-right 0.5rem
-    font_sans_heavy()
-    small_caps()
+  display inline-block
+  margin-right 0.5rem
+  font_sans_heavy()
+  small_caps()
 
 .recipe__tabs
   margin 0 0 1.5rem
@@ -199,7 +199,6 @@ export default {
     margin 0 0 2rem
 
 .recipe__tabs__item
-  flex 1 0 33.3333%
   tabs_item()
 
 .recipe__tabs__link

@@ -33,7 +33,6 @@ export default {
     margin 1.5rem auto
 
 .tabs__item
-  flex 0 0 50%
   tabs_item()
 
 .tabs__link
