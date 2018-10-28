@@ -10,6 +10,11 @@
   "private": true,
   "devServer": "goodandcheap.test",
   "paths": {
+    "apache": {
+      "src": "source/apache/_htaccess",
+      "name": ".htaccess",
+      "dest": "public"
+    },
     "html": {
       "src": "source/html/**/*",
       "dest": "public"
@@ -50,6 +55,7 @@
   },
   "tasks": {
     "build": [
+      "apache",
       "html",
       "icons",
       "img",

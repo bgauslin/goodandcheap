@@ -20,6 +20,13 @@ const onError = (err) => console.log(err);
 // ------------------------------------------------------------
 // Individual tasks.
 
+// Copy htaccess.
+gulp.task('apache', () => {
+  gulp.src(pkg.paths.apache.src)
+    .pipe(rename(pkg.paths.apache.name))
+    .pipe(gulp.dest(pkg.paths.apache.dest));
+});
+
 // Copy html.
 gulp.task('html', () => {
   gulp.src(pkg.paths.html.src)
