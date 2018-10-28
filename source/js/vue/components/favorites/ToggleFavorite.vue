@@ -2,6 +2,7 @@
   button.toggle-favorite(
     @click="toggleFavorite(favorite)",
     :class="{ saved: isFavorite }",
+    :aria-label="toggleLabel",
   )
 </template>
 
@@ -13,6 +14,12 @@ export default {
     return {
       isFavorite: false,
     }
+  },
+
+  computed: {
+    toggleLabel () {
+      return (this.isFavorite) ? 'Remove recipe from Favorites' : 'Add recipe to Favorites';
+    },
   },
 
   created () {
