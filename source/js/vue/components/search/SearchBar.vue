@@ -11,6 +11,7 @@
         placeholder="Search",
         type="text",
         autofocus,
+        aria-label="Your search keywords",
       )
     search-toggle(
       :open="open",
