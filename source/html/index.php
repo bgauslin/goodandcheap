@@ -34,7 +34,7 @@ if ($tld == 'website') {
     <meta charset="utf-8">
     <title><?php echo $site_name?></title>
     <meta name="description" content="<?php echo $meta_description?>">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scaleable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?t=<?php echo date('U') ?>">
     <link rel="icon" type="image/png" href="/favicon.png?t=<?php echo date('U') ?>">
