@@ -84,12 +84,6 @@ export default {
 
   props: ['data'],
 
-  computed: {
-    allowFavorites() {
-      return this.$store.getters.allowFavorites;
-    },
-  },
-
   created() {
     window.addEventListener('resize', this.minHeight);
   },
@@ -103,11 +97,23 @@ export default {
     window.removeEventListener('resize', this.minHeight);
   },
 
+  computed: {
+    /** @return {boolean} */
+    allowFavorites() {
+      return this.$store.getters.allowFavorites;
+    },
+  },
+
   methods: {
+    /**
+     * ...
+     * @param {string} id - ...
+     */
     addVisited(id) {
       this.$store.commit('addVisited', id);
     },
 
+    /** @description ... */
     minHeight() {
       const overview = this.$el.querySelector('.recipe__overview');
       const overviewWidthPx = overview.offsetWidth;

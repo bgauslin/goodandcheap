@@ -34,7 +34,17 @@ export default {
     }
   },
 
+  mounted() {
+    this.setHasFavorites(this.favorites);
+    this.updateTitle('Favorites');
+  },
+
+  updated() {
+    this.setHasFavorites(this.favorites);
+  },
+
   computed: {
+    /** @return {string} */
     favoritesCount() {
       let text;
       const count = this.$store.getters.favoritesCount;
@@ -49,20 +59,19 @@ export default {
     },
   },
 
-  mounted() {
-    this.setHasFavorites(this.favorites);
-    this.updateTitle('Favorites');
-  },
-
-  updated() {
-    this.setHasFavorites(this.favorites);
-  },
-
   methods: {
+    /** 
+     * @description ...
+     * @param {Array} favorites - ...
+     */
     setHasFavorites(favorites) {
       this.hasFavorites = (favorites.length > 0);
     },
 
+    /** 
+     * @description ...
+     * @param {string} title - ...
+     */
     updateTitle(title) {
       document.title = `${title} · ${this.$root.siteName}`;
     },

@@ -47,6 +47,7 @@ export default {
   },
 
   methods: {
+    /** @description ... */
     setBackgroundImage() {
       if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
         this.backgroundImageCss = `${this.backgroundImageOverlayCss},url(${this.data.backgroundImage})`;

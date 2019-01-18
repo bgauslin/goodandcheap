@@ -22,23 +22,32 @@ export default {
     }
   },
 
+  created() {
+    this.isSaved = this.isSavedIngredient(this.id);
+  },
+
   computed: {
+    /** @return {string} */
     id() {
       return `${this.parentId}.${this.listIndex}.${this.itemIndex}`;
     },
   },
 
-  created() {
-    this.isSaved = this.isSavedIngredient(this.id);
-  },
-
   methods: {
+    /** 
+     * @param {!string} id - ...
+     * @return {boolean}
+     */
     isSavedIngredient(id) {
       const ids = this.$store.getters.ingredientsIds;
       const index = ids.indexOf(id);
       return (index !== -1);
     },
 
+    /** 
+     * @param {!string} id - ...
+     * @return {boolean}
+     */
     toggleItem(id) {
       if (this.isSaved) {
         this.$store.commit('removeIngredient', id);

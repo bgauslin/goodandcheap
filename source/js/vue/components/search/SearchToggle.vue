@@ -16,17 +16,19 @@ export default {
     }
   },
 
+  created() {
+    this.getClickTarget();
+  },
+
   computed: {
+    /** @return {boolean} */
     isSearchPage() {
       return (this.$route.name === 'search');
     },
   },
 
-  created() {
-    this.getClickTarget();
-  },
-
   methods: {
+    /** @description ... */
     getClickTarget() {
       document.addEventListener('click', e => {
         const el = e.target.id;
@@ -38,10 +40,18 @@ export default {
       }, true);
     },
 
+    /**
+     * @description
+     * @param {!string} el -
+     */
     isSearchInput(el) {
       return (el === this.inputId);
     },
 
+    /**
+     * @description
+     * @param {!boolean} open -
+     */
     toggleInput(open) {
       if (!this.isSearchPage) {
         open = !open;

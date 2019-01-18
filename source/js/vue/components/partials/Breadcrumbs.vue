@@ -31,6 +31,7 @@ export default {
   },
 
   methods: {
+    /** @description ... */
     scrollBreadcrumbs() {
       const offset = this.$el.offsetHeight;
 

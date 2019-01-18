@@ -27,7 +27,12 @@ export default {
     'query',
   ],
 
+  mounted() {
+    this.updateTitle();
+  },
+
   computed: {
+    /** @return {string} */
     resultsCount() {
       const count = this.data.data.length;
       let text;
@@ -42,11 +47,8 @@ export default {
     },
   },
 
-  mounted() {
-    this.updateTitle();
-  },
-
   methods: {
+    /** @description */
     updateTitle() {
       let pageTitle;
       if (this.query) {

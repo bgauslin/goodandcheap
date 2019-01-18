@@ -30,7 +30,14 @@ export default {
     this.$el.removeEventListener('animationend');
   },
 
+  watch: {
+    favoritesCount() {
+      this.updateCount();
+    },
+  },
+
   computed: {
+    /** @return {number} */
     favoritesCount() {
       const count = this.$store.getters.favoritesCount;
       if (count > 0) {
@@ -39,22 +46,19 @@ export default {
     },
   },
 
-  watch: {
-    favoritesCount() {
-      this.updateCount();
-    },
-  },
-
   methods: {
+    /** @description ... */
     animationDone() {
       this.$el.classList.remove('updated');
     },
 
+    /** @return {boolean} */
     showCounter() {
       const count = this.favoritesCount;
-      return (count > 0) ? true : false;
+      return (count > 0);
     },
 
+    /** @description ... */
     updateCount() {
       const count = this.favoritesCount;
       if (count > 0) {

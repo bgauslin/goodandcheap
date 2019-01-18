@@ -19,6 +19,7 @@
 <script>
 export default {
   computed: {
+    /** @return {string} */
     currentYear() {
       const fullYear = new Date().getFullYear();
       return fullYear.toString().substr(2, 2);

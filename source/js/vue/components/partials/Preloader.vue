@@ -22,6 +22,7 @@ export default {
   },
 
   methods: {
+    /** @description ... */
     attachSpinner() {
       let spinner = new Spinner(this.spinnerOptions).spin();
       this.$el.appendChild(spinner.el);

@@ -58,10 +58,12 @@ export default {
   },
 
   computed: {
+    /** @return {boolean} */
     allowFavorites() {
       return this.$store.getters.allowFavorites;
     },
 
+    /** @return {boolean} */
     hasSearch() {
       return this.$store.getters.getShowSearch;
     },

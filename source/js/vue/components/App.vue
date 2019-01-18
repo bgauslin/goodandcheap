@@ -53,17 +53,7 @@ export default {
     }
   },
 
-  computed: {
-    parent () {
-      return this.$store.getters.getParent;
-    },
-
-    direction () {
-      return this.$store.getters.getDirection;
-    },
-  },
-
-  created () {
+  created() {
     this.isHome();
     this.isFavorites();
     this.isSearch();
@@ -95,16 +85,28 @@ export default {
     }
   },
 
+  computed: {
+    /** @return {} */
+    parent() {
+      return this.$store.getters.getParent;
+    },
+
+    /** @return {string} */
+    direction() {
+      return this.$store.getters.getDirection;
+    },
+  },
+
   methods: {
-    afterEnter (el) {
+    afterEnter(el) {
       el.classList.remove(this.transitionEnterClass());
     },
 
-    afterLeave (el) {
+    afterLeave(el) {
       el.classList.remove(this.transitionLeaveClass());
     },
 
-    beforeEnter (el) {
+    beforeEnter(el) {
       el.classList.add(this.transitionEnterClass());
       // reset scroll position for iOS
       setTimeout(() => {
@@ -112,7 +114,7 @@ export default {
       }, 0);
     },
 
-    beforeLeave (el) {
+    beforeLeave(el) {
       el.classList.add(this.transitionLeaveClass());
     },
 
@@ -134,7 +136,7 @@ export default {
       }
     },
 
-    fetchData (endpoint) {
+    fetchData(endpoint) {
       let endpointUrl = this.$root.apiBaseUrl + endpoint;
       let slug = this.$route.params.slug;
 
@@ -168,18 +170,18 @@ export default {
       })
     },
 
-    isFavorites () {
+    isFavorites() {
       if (this.$route.name === 'favorites') {
         this.key = 'favorites';
         this.$store.commit('setParent', null);
       }
     },
 
-    isHome () {
+    isHome() {
       this.home = (this.$route.name === 'chapters');
     },
 
-    isSearch () {
+    isSearch() {
       const setSearch = (this.$route.name === 'search');
       this.$store.commit('setSearch', setSearch);
 
@@ -195,7 +197,7 @@ export default {
       window.location.replace('/404');
     },
 
-    transitionEnterClass () {
+    transitionEnterClass() {
       switch (this.direction) {
         case 'forward':
           return 'slide-in-right';
@@ -206,7 +208,7 @@ export default {
       }
     },
 
-    transitionLeaveClass (el) {
+    transitionLeaveClass(el) {
       switch (this.direction) {
         case 'forward':
           return 'slide-out-left';
@@ -217,7 +219,7 @@ export default {
       }
     },
 
-    updateTitle (title) {
+    updateTitle(title) {
       document.title = (title !== undefined) ? `${title} · ${this.$root.siteName}` : this.$root.siteName;
     },
   },

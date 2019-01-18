@@ -27,6 +27,7 @@ export default {
   props: ['query'],
 
   computed: {
+    /** @return {boolean} */
     open() {
       return this.$store.getters.getShowSearch;
     },

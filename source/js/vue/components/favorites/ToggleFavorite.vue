@@ -16,23 +16,33 @@ export default {
     }
   },
 
+  created() {
+    this.isFavorite = this.isInFavorites(this.favorite);
+  },
+
   computed: {
+    /** @return {string} */
     toggleLabel() {
       return (this.isFavorite) ? 'Remove recipe from Favorites' : 'Add recipe to Favorites';
     },
   },
 
-  created() {
-    this.isFavorite = this.isInFavorites(this.favorite);
-  },
-
   methods: {
+    /**
+     * ...
+     * @param {!Object} item - ...
+     * @return {boolean}
+     */
     isInFavorites(item) {
       let ids = this.$store.getters.favoritesIds;
       let index = ids.indexOf(item.id);
       return (index !== -1);
     },
 
+    /**
+     * ...
+     * @param {!Object} item - ...
+     */
     toggleFavorite(item) {
       if (this.isFavorite) {
         this.$store.commit('removeFavorite', item);

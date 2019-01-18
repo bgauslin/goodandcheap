@@ -27,6 +27,7 @@ export default {
   ],
 
   computed: {
+    /** @return {number} */
     itemCount() {
       return this.index + 1;
     },

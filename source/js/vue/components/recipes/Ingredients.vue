@@ -27,6 +27,11 @@ export default {
   ],
 
   methods: {
+    /**
+     * ...
+     * @param {!number} count - ...
+     * @return {string}
+     */
     itemsLabel(count) {
       const number = count.length;
       let label = 'Item';

@@ -32,6 +32,11 @@ export default {
   props: ['instructions'],
 
   methods: {
+    /**
+     * ...
+     * @param {!number} count - ...
+     * @return {string}
+     */
     itemsLabel(count) {
       const number = count.length;
       if (number > 1) {

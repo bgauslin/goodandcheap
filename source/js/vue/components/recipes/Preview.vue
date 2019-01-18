@@ -75,18 +75,20 @@ export default {
     }
   },
 
+  mounted() {
+    this.isVisited = this.checkIfVisited(this.item.id);
+  },
+
   computed: {
+    /** @return {boolean} */
     allowFavorites() {
       return this.$store.getters.allowFavorites;
     },
     
+    /** @return {number} */
     itemCount() {
       return this.index + 1;
     },
-  },
-
-  mounted() {
-    this.isVisited = this.checkIfVisited(this.item.id);
   },
 
   methods: {

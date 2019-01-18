@@ -29,6 +29,7 @@ export default {
   },
 
   methods: {
+    /** @description ... */
     loadImages() {
       this.loading = true;
       let that = this;

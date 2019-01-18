@@ -9,6 +9,10 @@ export default {
   props: ['favorite'],
 
   methods: {
+    /**
+     * @description ...
+     * @param {!Object} favorite - ...
+     */
     removeItem(favorite) {
       this.$store.commit('removeFavorite', favorite);
     },
