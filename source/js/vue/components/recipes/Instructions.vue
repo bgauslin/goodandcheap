@@ -32,7 +32,7 @@ export default {
   props: ['instructions'],
 
   methods: {
-    itemsLabel (count) {
+    itemsLabel(count) {
       const number = count.length;
       if (number > 1) {
         return `${number} Steps`;

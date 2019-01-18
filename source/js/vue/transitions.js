@@ -1,4 +1,4 @@
-export default function(router) {
+export default (router) => {
 
   router.beforeEach((to, from, next) => {
     // chapters -> chapter

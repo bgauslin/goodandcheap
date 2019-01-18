@@ -69,28 +69,28 @@ export default {
     'showChapter',
   ],
 
-  data () {
+  data() {
     return {
       isVisited: false,
     }
   },
 
   computed: {
-    allowFavorites () {
+    allowFavorites() {
       return this.$store.getters.allowFavorites;
     },
     
-    itemCount () {
+    itemCount() {
       return this.index + 1;
     },
   },
 
-  mounted () {
+  mounted() {
     this.isVisited = this.checkIfVisited(this.item.id);
   },
 
   methods: {
-    checkIfVisited (id) {
+    checkIfVisited(id) {
       const ids = this.$store.getters.visitedIds;
       const index = ids.indexOf(id);
       return (index !== -1);

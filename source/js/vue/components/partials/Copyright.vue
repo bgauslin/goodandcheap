@@ -19,10 +19,9 @@
 <script>
 export default {
   computed: {
-    currentYear () {
+    currentYear() {
       const fullYear = new Date().getFullYear();
-      const shortYear = fullYear.toString().substr(2,2);
-      return shortYear;
+      return fullYear.toString().substr(2, 2);
     },
   },
 }

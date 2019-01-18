@@ -40,7 +40,7 @@ export default {
     Preloader,
   },
 
-  data () {
+  data() {
     return {
       data: null,
       dataLoaded: null,

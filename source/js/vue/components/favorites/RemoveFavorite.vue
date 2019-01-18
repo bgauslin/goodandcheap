@@ -9,7 +9,7 @@ export default {
   props: ['favorite'],
 
   methods: {
-    removeItem (favorite) {
+    removeItem(favorite) {
       this.$store.commit('removeFavorite', favorite);
     },
   },

@@ -18,18 +18,18 @@ export default {
     'title',
   ],
 
-  data () {
+  data() {
     return {
       loading: null,
     }
   },
 
-  mounted () {
+  mounted() {
     this.loadImages();
   },
 
   methods: {
-    loadImages () {
+    loadImages() {
       this.loading = true;
       let that = this;
       imagesLoaded(this.$el, that, instance => {

@@ -10,24 +10,24 @@
 export default {
   props: ['open'],
 
-  data () {
+  data() {
     return {
       inputId: 'query',
     }
   },
 
   computed: {
-    isSearchPage () {
+    isSearchPage() {
       return (this.$route.name === 'search');
     },
   },
 
-  created () {
+  created() {
     this.getClickTarget();
   },
 
   methods: {
-    getClickTarget () {
+    getClickTarget() {
       document.addEventListener('click', e => {
         const el = e.target.id;
         const isSearchInput = this.isSearchInput(el);
@@ -38,11 +38,11 @@ export default {
       }, true);
     },
 
-    isSearchInput (el) {
+    isSearchInput(el) {
       return (el === this.inputId);
     },
 
-    toggleInput (open) {
+    toggleInput(open) {
       if (!this.isSearchPage) {
         open = !open;
         this.$store.commit('setSearch', open);

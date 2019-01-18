@@ -29,7 +29,7 @@ import getBreakpointValue from '../../../helpers/getBreakpointValue';
 export default {
   props: ['data'],
 
-  data () {
+  data() {
     return {
       hasBackgroundImage: null,
       backgroundImageCss: null,
@@ -37,12 +37,12 @@ export default {
     }
   },
 
-  created () {
+  created() {
     this.setBackgroundImage();
     window.addEventListener('resize', this.setBackgroundImage);
   },
 
-  beforeDestroy () {
+  beforeDestroy() {
     window.removeEventListener('resize', this.setBackgroundImage);
   },
 

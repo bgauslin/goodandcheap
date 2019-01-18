@@ -17,7 +17,7 @@ export default {
 
   props: ['data'],
 
-  data () {
+  data() {
     return {
       tabs: [
         { label: 'Recipes', name: 'chapters' },

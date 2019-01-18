@@ -1,33 +1,30 @@
-import Vue from 'vue/dist/vue.js'
-import Vuex from 'vuex'
-import VueRouter from 'vue-router'
+import Vue from 'vue/dist/vue.js';
+import Vuex from 'vuex';
+import VueRouter from 'vue-router';
+import App from './components/App.vue';
+import getApiDomain from '../helpers/getApiDomain';
+import routeConfig from './routes';
+import direction from './store/direction';
+import favorites from './store/favorites';
+import ingredients from './store/ingredients';
+import parent from './store/parent';
+import search from './store/search';
+import visited from './store/visited';
+import transitions from './transitions';
 
-import App from './components/App.vue'
-import getApiDomain from '../helpers/getApiDomain'
-import routeConfig from './routes'
-import transitions from './transitions'
+Vue.use(Vuex);
+Vue.use(VueRouter);
+Vue.config.productionTip = false;
 
-import direction from './store/direction'
-import favorites from './store/favorites'
-import ingredients from './store/ingredients'
-import parent from './store/parent'
-import search from './store/search'
-import visited from './store/visited'
-
-Vue.use(Vuex)
-Vue.use(VueRouter)
-
-Vue.config.productionTip = false
-
-const apiDomain = getApiDomain()
+const apiDomain = getApiDomain();
 
 const router = new VueRouter({
   routes: routeConfig(),
   mode: 'history',
   linkActiveClass: 'current'
-})
+});
 
-transitions(router)
+transitions(router);
 
 const store = new Vuex.Store({
   modules: {
@@ -38,7 +35,7 @@ const store = new Vuex.Store({
     direction: direction,
     visited: visited
   }
-})
+});
 
 const app = new Vue({
   components: { App },
@@ -48,5 +45,4 @@ const app = new Vue({
     siteName: document.title,
     apiBaseUrl: apiDomain + '/v2/'
   }
-
-}).$mount('#app')
+}).$mount('#app');

@@ -10,30 +10,30 @@
 export default {
   props: ['favorite'],
 
-  data () {
+  data() {
     return {
       isFavorite: false,
     }
   },
 
   computed: {
-    toggleLabel () {
+    toggleLabel() {
       return (this.isFavorite) ? 'Remove recipe from Favorites' : 'Add recipe to Favorites';
     },
   },
 
-  created () {
+  created() {
     this.isFavorite = this.isInFavorites(this.favorite);
   },
 
   methods: {
-    isInFavorites (item) {
+    isInFavorites(item) {
       let ids = this.$store.getters.favoritesIds;
       let index = ids.indexOf(item.id);
       return (index !== -1);
     },
 
-    toggleFavorite (item) {
+    toggleFavorite(item) {
       if (this.isFavorite) {
         this.$store.commit('removeFavorite', item);
       } else {

@@ -85,26 +85,30 @@ export default {
   props: ['data'],
 
   computed: {
-    allowFavorites () {
+    allowFavorites() {
       return this.$store.getters.allowFavorites;
     },
   },
 
-  created () {
+  created() {
     window.addEventListener('resize', this.minHeight);
   },
 
-  mounted () {
+  mounted() {
     this.addVisited(this.data.id);
     this.minHeight();
   },
 
-  beforeDestroy () {
+  beforeDestroy() {
     window.removeEventListener('resize', this.minHeight);
   },
 
   methods: {
-    minHeight () {
+    addVisited(id) {
+      this.$store.commit('addVisited', id);
+    },
+
+    minHeight() {
       const overview = this.$el.querySelector('.recipe__overview');
       const overviewWidthPx = overview.offsetWidth;
       const overviewWidth = overviewWidthPx / 16 + 'em';
@@ -114,10 +118,6 @@ export default {
       } else {
         overview.style.minHeight = 'none';
       }
-    },
-
-    addVisited (id) {
-      this.$store.commit('addVisited', id);
     },
   },
 }

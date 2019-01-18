@@ -16,30 +16,30 @@ export default {
     'parentId',
   ],
 
-  data () {
+  data() {
     return {
       isSaved: false,
     }
   },
 
   computed: {
-    id () {
+    id() {
       return `${this.parentId}.${this.listIndex}.${this.itemIndex}`;
     },
   },
 
-  created () {
+  created() {
     this.isSaved = this.isSavedIngredient(this.id);
   },
 
   methods: {
-    isSavedIngredient (id) {
+    isSavedIngredient(id) {
       const ids = this.$store.getters.ingredientsIds;
       const index = ids.indexOf(id);
       return (index !== -1);
     },
 
-    toggleItem (id) {
+    toggleItem(id) {
       if (this.isSaved) {
         this.$store.commit('removeIngredient', id);
       } else {

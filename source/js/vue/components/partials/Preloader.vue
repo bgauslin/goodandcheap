@@ -6,7 +6,7 @@
 import Spinner from 'spin';
 
 export default {
-  data () {
+  data() {
     return {
       spinnerOptions: {
         lines: 12,
@@ -17,12 +17,12 @@ export default {
     }
   },
 
-  mounted () {
+  mounted() {
     this.attachSpinner()
   },
 
   methods: {
-    attachSpinner () {
+    attachSpinner() {
       let spinner = new Spinner(this.spinnerOptions).spin();
       this.$el.appendChild(spinner.el);
     },

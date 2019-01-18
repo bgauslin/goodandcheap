@@ -26,12 +26,12 @@ export default {
     'parent',
   ],
 
-  mounted () {
+  mounted() {
     this.scrollBreadcrumbs();
   },
 
   methods: {
-    scrollBreadcrumbs () {
+    scrollBreadcrumbs() {
       const offset = this.$el.offsetHeight;
 
       if (getBreakpointValue() === 'base') {

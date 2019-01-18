@@ -38,7 +38,7 @@ export default {
     'query',
   ],
 
-  data () {
+  data() {
     return {
       heading: 'Good And Cheap',
       headroomOptions: {
@@ -58,11 +58,11 @@ export default {
   },
 
   computed: {
-    allowFavorites () {
+    allowFavorites() {
       return this.$store.getters.allowFavorites;
     },
 
-    hasSearch () {
+    hasSearch() {
       return this.$store.getters.getShowSearch;
     },
   },

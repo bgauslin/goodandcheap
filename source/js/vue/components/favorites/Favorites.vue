@@ -27,7 +27,7 @@ import RecipePreview from '../recipes/Preview.vue';
 export default {
   components: { RecipePreview },
 
-  data () {
+  data() {
     return {
       favorites: this.$store.state.favorites.favorites.reverse(),
       hasFavorites: false,
@@ -35,7 +35,7 @@ export default {
   },
 
   computed: {
-    favoritesCount () {
+    favoritesCount() {
       let text;
       const count = this.$store.getters.favoritesCount;
       if (count <= 0) {
@@ -49,21 +49,21 @@ export default {
     },
   },
 
-  mounted () {
+  mounted() {
     this.setHasFavorites(this.favorites);
     this.updateTitle('Favorites');
   },
 
-  updated () {
+  updated() {
     this.setHasFavorites(this.favorites);
   },
 
   methods: {
-    setHasFavorites (favorites) {
+    setHasFavorites(favorites) {
       this.hasFavorites = (favorites.length > 0);
     },
 
-    updateTitle (title) {
+    updateTitle(title) {
       document.title = `${title} · ${this.$root.siteName}`;
     },
   },

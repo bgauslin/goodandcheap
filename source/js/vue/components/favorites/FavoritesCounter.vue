@@ -11,27 +11,27 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       hasFavorites: null,
     }
   },
 
-  mounted () {
+  mounted() {
     this.hasFavorites = this.showCounter();
     this.$el.addEventListener('animationend', this.animationDone, false);
   },
 
-  updated () {
+  updated() {
     this.hasFavorites = this.showCounter();
   },
 
-  beforeDestroy () {
+  beforeDestroy() {
     this.$el.removeEventListener('animationend');
   },
 
   computed: {
-    favoritesCount () {
+    favoritesCount() {
       const count = this.$store.getters.favoritesCount;
       if (count > 0) {
         return count;
@@ -40,7 +40,7 @@ export default {
   },
 
   watch: {
-    favoritesCount () {
+    favoritesCount() {
       this.updateCount();
     },
   },
@@ -55,7 +55,7 @@ export default {
       return (count > 0) ? true : false;
     },
 
-    updateCount () {
+    updateCount() {
       const count = this.favoritesCount;
       if (count > 0) {
         this.$el.classList.add('updated');

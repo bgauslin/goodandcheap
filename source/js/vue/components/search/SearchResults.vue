@@ -28,7 +28,7 @@ export default {
   ],
 
   computed: {
-    resultsCount () {
+    resultsCount() {
       const count = this.data.data.length;
       let text;
       if (count <= 0 ) {
@@ -42,12 +42,12 @@ export default {
     },
   },
 
-  mounted () {
+  mounted() {
     this.updateTitle();
   },
 
   methods: {
-    updateTitle () {
+    updateTitle() {
       let pageTitle;
       if (this.query) {
         pageTitle = `Search Results for ${this.query}`;

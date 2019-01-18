@@ -11,7 +11,7 @@ import RecipeIngredients from './components/recipes/Ingredients.vue';
 import RecipeInstructions from './components/recipes/Instructions.vue';
 import Search from './components/search/SearchResults.vue';
 
-export default function() {
+export default () => {
   const routes = [
     {
       path: '/',
@@ -22,7 +22,7 @@ export default function() {
           path: '/',
           component: Chapters,
           meta: {
-            endpoint: 'home'
+            endpoint: 'home',
           }
         },
         {
@@ -30,7 +30,7 @@ export default function() {
           path: '/info',
           component: Pages,
           meta: {
-            endpoint: 'home'
+            endpoint: 'home',
           }
         }
       ]
@@ -40,7 +40,7 @@ export default function() {
       path: '/favorites',
       component: Favorites,
       meta: {
-        endpoint: 'favorites'
+        endpoint: 'favorites',
       }
     },
     {
@@ -48,20 +48,20 @@ export default function() {
       path: '/info/:slug',
       component: Page,
       meta: {
-        endpoint: 'page'
+        endpoint: 'page',
       }
     },
     {
       name: '404',
       path: '/404',
-      component: NotFound
+      component: NotFound,
     },
     {
       name: 'search',
       path: '/search',
       component: Search,
       meta: {
-        endpoint: 'search'
+        endpoint: 'search',
       }
     },
     {
@@ -69,7 +69,7 @@ export default function() {
       path: '/:slug',
       component: Chapter,
       meta: {
-        endpoint: 'chapter'
+        endpoint: 'chapter',
       }
     },
     {
@@ -83,7 +83,7 @@ export default function() {
           path: '',
           component: RecipeBlurb,
           meta: {
-            endpoint: 'recipe'
+            endpoint: 'recipe',
           }
         },
         {
@@ -91,7 +91,7 @@ export default function() {
           path: 'ingredients',
           component: RecipeIngredients,
           meta: {
-            endpoint: 'recipe'
+            endpoint: 'recipe',
           }
         },
         {
@@ -99,7 +99,7 @@ export default function() {
           path: 'steps',
           component: RecipeInstructions,
           meta: {
-            endpoint: 'recipe'
+            endpoint: 'recipe',
           }
         }
       ]

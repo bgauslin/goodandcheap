@@ -27,12 +27,14 @@ export default {
   ],
 
   methods: {
-    itemsLabel (count) {
+    itemsLabel(count) {
       const number = count.length;
       let label = 'Item';
+
       if (number > 1) {
         label += 's';
       }
+
       return `${number} ${label}`;
     },
   },
