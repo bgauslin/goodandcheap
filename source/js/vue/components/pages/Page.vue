@@ -90,7 +90,7 @@ export default {
 
   @media Breakpoint.LARGE
     padding 3rem 4rem
-    width PAGE_MAX_WIDTH
+    width '%s' Layout.Width.PAGE_MAX_WIDTH
 
 .page__title
   font_serif_heavy()

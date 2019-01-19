@@ -66,12 +66,12 @@ export default {
 
   @media Breakpoint.SMALL
     margin '%s %s 0' % (Layout.HeaderHeight.BASE Layout.Margins.SMALL)
-    max-width STACKED_WIDTH
+    max-width '%s' % Layout.Width.STACKED
 
   @media Breakpoint.MEDIUM
     margin '%s auto 0' % Layout.HeaderHeight.MEDIUM
     max-width none
-    width STACKED_WIDTH
+    width '%s' % Layout.Width.STACKED
 
   @media Breakpoint.LARGE
     margin-left '%s' % Layout.Margins.LARGE

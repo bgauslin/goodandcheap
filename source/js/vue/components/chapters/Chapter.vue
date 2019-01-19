@@ -55,11 +55,11 @@ export default {
   margin 0 auto
   
   @media Breakpoint.SMALL
-    max-width STACKED_WIDTH
+    max-width '%s' % Layout.Width.STACKED
 
   @media Breakpoint.MEDIUM
     max-width none
-    width STACKED_WIDTH
+    width '%s' % Layout.Width.STACKED
 
   @media Breakpoint.LARGE
     overflow hidden
