@@ -15,6 +15,9 @@ Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
 
+/** @const {string} */
+const API_VERSION_PATH = '/v2/';
+
 /**
  * Gets JSON API's base URL based on server environment.
  * @return {string}
@@ -31,12 +34,12 @@ const apiBaseURL = () => {
  */
 const store = new Vuex.Store({
   modules: {
+    direction: direction,
     favorites: favorites,
     ingredients: ingredients,
     parent: parent,
     search: search,
-    direction: direction,
-    visited: visited
+    visited: visited,
   }
 });
 
@@ -45,9 +48,9 @@ const store = new Vuex.Store({
  * @instance
  */
 const router = new VueRouter({
-  routes: routeConfig(),
   mode: 'history',
-  linkActiveClass: 'current'
+  linkActiveClass: 'current',
+  routes: routeConfig(),
 });
 
 /** Bind transitions and router. */
@@ -59,10 +62,10 @@ transitions(router);
  */
 const app = new Vue({
   components: { App },
-  store,
-  router,
   data: {
     siteName: document.title,
-    apiBaseUrl: apiBaseURL() + '/v2/'
-  }
+    apiBaseUrl: `${apiBaseURL()}${API_VERSION_PATH}`,
+  },
+  router,
+  store,
 }).$mount('#app');
