@@ -95,7 +95,7 @@ export default {
   margin 0 .5em 0 0
 
   &::after
-    content ICON_RIGHT_OPEN
+    content '%s' % Icons.RIGHT_OPEN
     font-size 75%
     icon()
     margin-left 1em

@@ -73,7 +73,7 @@ export default {
 
   &::before
     color '%s' % Colors.LIGHTER_GREY
-    content ICON_CIRCLE_EMPTY
+    content '%s' % Icons.CIRCLE_EMPTY
     display inline-block
     font-size px_to_em(22)
     icon()
@@ -85,7 +85,7 @@ export default {
 
 .checklist__link.saved::before
   color green
-  content ICON_OK_CIRCLED
+  content '%s' % Icons.OK_CIRCLED
 
 .no-touch .checklist__link
   link_hover(BRAND_COLOR)

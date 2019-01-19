@@ -59,7 +59,7 @@ export default {
         display block
 
     &::before
-      content ICON_ANGLE_LEFT
+      content '%s' % Icons.ANGLE_LEFT
       font-size px_to_em(22)
       icon()
       margin-right .25em
