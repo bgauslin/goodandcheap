@@ -100,18 +100,17 @@ preview()
     border-bottom 1px solid '%s' % Branding.BORDER
 
 // @mixin
-preview_grid()
-  margin -1px 0 0 -1px
-  width calc(50% + 1px)
-
-// @mixin
-preview_grid_large()
-  width calc((1 / 3 * 100%) + 1px)
-
-// @mixin
 preview_no_touch()
   a
     link_hover(Branding.PRIMARY)
+
+// @mixin
+// @param String size
+preview_width(size)
+  if size == 'large'
+    width calc((1/3 * 100%) + 1px)
+  else
+    width calc(50% + 1px)
 
 // @mixin
 previews_grid()
@@ -180,12 +179,6 @@ tabs_link__no_touch()
   &.current:visited:hover
     background '%s' % Branding.PRIMARY
     color white
-
-// TODO: Remove transition_all() and apply propety transitions to
-// elements instead.
-// @mixin
-transition_all()
-  transition all .3s ease
 
 // @mixin
 // @param String name

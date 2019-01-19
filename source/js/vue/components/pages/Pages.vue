@@ -36,10 +36,12 @@ export default {
     previews_grid()
 
 .pages .preview
+  margin -1px 0 0 -1px
+
   @media Breakpoint.MEDIUM
-    preview_grid()
+    preview_width()
 
   @media Breakpoint.LARGE
-    preview_grid_large()
+    preview_width('large')
 
 </style>
