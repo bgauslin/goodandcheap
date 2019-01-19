@@ -75,7 +75,7 @@ export default {
 @import '../../../../stylus/_config/'
 
 .header
-  background rgba(BRAND_COLOR, .97)
+  background '%s' % rgba(Branding.PRIMARY, .97)
   box-shadow 0 0 5px 0 '%s' % Color.MEDIUM_GREY
   position_it(fixed, 0, 0, null, 0)
   z-index 999

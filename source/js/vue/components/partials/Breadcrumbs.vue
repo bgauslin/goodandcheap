@@ -114,10 +114,10 @@ export default {
   padding 1rem 0
 
 .breadcrumbs__link
-  link(BRAND_COLOR, BRAND_COLOR, Color.DARK_GREY)
+  link(Branding.PRIMARY, Branding.PRIMARY, Color.DARK_GREY)
 
 .breadcrumbs__label
-  padding-right Layout.Margins.BASE
+  padding-right '%s' % Layout.Margins.BASE
 
 .no-touch .breadcrumbs__link
   link_hover(Color.MEDIUM_GREY)

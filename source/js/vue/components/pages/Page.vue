@@ -110,7 +110,7 @@ export default {
   margin 0 0 1em
 
 .page__copy a
-  background rgba(BRAND_COLOR, .1)
+  background '%s' % rgba(Branding.PRIMARY, .1)
   border-radius 2px
   padding .1em .4em
 
@@ -129,6 +129,6 @@ export default {
 .no-touch .page__copy a
   &:hover
     color white
-    background BRAND_COLOR
+    background '%s' % Branding.PRIMARY
 
 </style>

@@ -102,9 +102,9 @@ preview()
   a
     align-items center
     background white
-    border-top 1px solid BORDER_COLOR
+    border-top 1px solid '%s' % Branding.BORDER
     display flex
-    link(Color.DARK_GREY, Color.MEDIUM_GREY, BRAND_COLOR)
+    link(Color.DARK_GREY, Color.MEDIUM_GREY, Branding.PRIMARY)
 
     &.visited
       color '%s' % Color.MEDIUM_GREY
@@ -120,7 +120,7 @@ preview()
 
   &:last-child
     a
-      border-bottom 1px solid BORDER_COLOR
+      border-bottom 1px solid '%s' % Branding.BORDER
 
 // @mixin
 preview_grid()
@@ -134,7 +134,7 @@ preview_grid_large()
 // @mixin
 preview_no_touch()
   a
-    link_hover(BRAND_COLOR)
+    link_hover(Branding.PRIMARY)
 
 // @mixin
 previews_grid()
@@ -145,7 +145,7 @@ previews_grid()
   @media Breakpoint.MEDIUM
     .preview
       a
-        border 1px solid BORDER_COLOR
+        border 1px solid '%s' % Branding.BORDER
 
 // @mixin
 // @param Number font_size [12]
@@ -157,7 +157,7 @@ small_caps(font_size = 12)
 // @mixin
 tabs()
   align-items center
-  border 1px solid BRAND_COLOR
+  border 1px solid '%s' % Branding.PRIMARY
   display flex
   overflow hidden
   
@@ -169,7 +169,7 @@ tabs_item()
   margin 0
 
   &:not(:last-child)
-    border-right 1px solid BRAND_COLOR
+    border-right 1px solid '%s' % Branding.PRIMARY
 
 // @mixin
 tabs_link()
@@ -182,26 +182,26 @@ tabs_link()
 
   &:link
   &:visited
-    color BRAND_COLOR
+    color '%s' % Branding.PRIMARY
 
   &:active
-    background rgba(BRAND_COLOR, .1)
-    color BRAND_COLOR
+    background '%s' % rgba(Branding.PRIMARY, .1)
+    color '%s' % Branding.PRIMARY
 
   &.current
-    background BRAND_COLOR
+    background '%s' % Branding.PRIMARY
     color white
 
 // @mixin
 tabs_link__no_touch()
   &:hover
   &:visited:hover
-    background rgba(BRAND_COLOR, .1)
-    color BRAND_COLOR
+    background '%s' % rgba(Branding.PRIMARY, .1)
+    color '%s' % Branding.PRIMARY
 
   &.current:hover
   &.current:visited:hover
-    background BRAND_COLOR
+    background '%s' % Branding.PRIMARY
     color white
 
 // @mixin

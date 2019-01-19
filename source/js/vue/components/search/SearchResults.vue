@@ -76,8 +76,8 @@ export default {
 
 @media Breakpoint.MEDIUM
   .search-results .preview a
-    border-left 1px solid BORDER_COLOR
-    border-right 1px solid BORDER_COLOR
+    border-left 1px solid '%s' % Branding.BORDER
+    border-right 1px solid '%s' % Branding.BORDER
 
 .search-results__heading
   margin 0

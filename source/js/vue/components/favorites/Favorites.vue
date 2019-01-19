@@ -97,8 +97,8 @@ export default {
 
 @media Breakpoint.MEDIUM
   .favorites .preview a
-    border-left 1px solid BORDER_COLOR
-    border-right 1px solid BORDER_COLOR
+    border-left 1px solid '%s' % Branding.BORDER
+    border-right 1px solid '%s' % Branding.BORDER
 
 .favorites h2
   margin 0

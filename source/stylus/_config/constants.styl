@@ -58,18 +58,6 @@ Layout = {
   }
 }
 
-// @type Color
-// @require Colors
-BORDER_COLOR = Color.LIGHTER_GREY
-
-// @type Color
-// @require Colors
-BRAND_COLOR = Color.MATERIAL_BLUE_800
-
-// @type Color
-// @require Colors
-BRAND_COLOR_VISITED = mix(Color.MATERIAL_BLUE_800, white, 50%)
-
 // @type String
 PAGE_MAX_WIDTH = px_to_rem(800)
 
@@ -77,7 +65,15 @@ PAGE_MAX_WIDTH = px_to_rem(800)
 STACKED_WIDTH = px_to_rem(560)
 
 // -----------------------------------------------------------------------------
-// Breakpoints
+// Hashes with hash dependencies
+
+// @type Hash
+// @require Colors
+Branding = {
+  BORDER: Color.LIGHTER_GREY
+  PRIMARY: Color.MATERIAL_BLUE_800
+  SECONDARY: mix(Color.MATERIAL_BLUE_800, white, 50%)
+}
 
 // @type Hash
 // @require Layout.BreakpointUnits
