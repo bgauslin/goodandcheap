@@ -30,7 +30,6 @@ import AppFooter from './global/Footer.vue';
 import AppHeader from './global/Header.vue';
 import Breadcrumbs from './partials/Breadcrumbs.vue';
 import Preloader from './partials/Preloader.vue';
-import request from 'superagent';
 
 export default {
   components: {
@@ -164,7 +163,7 @@ export default {
      * further (redundant) API calls.
      * @param {!string} endpoint - API endpoint.
      */
-    fetchData(endpoint) {
+    fetchData: async function(endpoint) {
       let endpointUrl = this.$root.apiBaseUrl + endpoint;
       let slug = this.$route.params.slug;
 
@@ -182,21 +181,18 @@ export default {
         endpointUrl += `/${slug}`;
       }
 
-      // TODO: Update with async/await.
-      // TOOD: Replace superagent.request with fetch, remove superagent
-      let that = this;
-      request.get(endpointUrl)
-        .end((error, response) => {
-          if (error || !response.ok) {
-            that.notFound();
-          } else {
-            that.data = response.body;
-            that.$store.commit('setParent', response.body.parent);
-            that.updateTitle(response.body.title);
-            that.key = that.data.slug;
-            that.dataLoaded = true;
-          }
-        })
+      const data = await fetch(endpointUrl);
+      const response = await data.json();
+
+      if (response.error) {
+        this.notFound();
+      } else {
+        this.data = response;
+        this.$store.commit('setParent', this.data.parent);
+        this.updateTitle(this.data.title);
+        this.key = this.data.slug;
+        this.dataLoaded = true;
+      }
     },
 
     /** @description Whether the current route is the 'favorites' page. */
