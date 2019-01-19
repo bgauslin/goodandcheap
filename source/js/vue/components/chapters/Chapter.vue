@@ -38,13 +38,13 @@ export default {
 
 .chapter
   @media Breakpoint.SMALL
-    margin '1.5rem %s 0' % Layout.Margins.SMALL
+    margin '1.5rem %s 0' % Layout.Margin.SMALL
 
   @media Breakpoint.MEDIUM
-    margin '2.25rem %s 0' % Layout.Margins.MEDIUM
+    margin '2.25rem %s 0' % Layout.Margin.MEDIUM
 
   @media Breakpoint.LARGE
-    margin '3rem %s 0' % Layout.Margins.LARGE
+    margin '3rem %s 0' % Layout.Margin.LARGE
 
   @media Breakpoint.XLARGE
     margin 3rem auto 0

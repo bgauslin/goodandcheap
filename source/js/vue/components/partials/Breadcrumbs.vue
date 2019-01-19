@@ -65,7 +65,7 @@ export default {
   width 100%
 
   @media Breakpoint.SMALL
-    margin '%s %s 0' % (Layout.HeaderHeight.BASE Layout.Margins.SMALL)
+    margin '%s %s 0' % (Layout.HeaderHeight.BASE Layout.Margin.SMALL)
     max-width '%s' % Layout.Width.STACKED
 
   @media Breakpoint.MEDIUM
@@ -74,8 +74,8 @@ export default {
     width '%s' % Layout.Width.STACKED
 
   @media Breakpoint.LARGE
-    margin-left '%s' % Layout.Margins.LARGE
-    margin-right '%s' % Layout.Margins.LARGE
+    margin-left '%s' % Layout.Margin.LARGE
+    margin-right '%s' % Layout.Margin.LARGE
     width auto
 
   @media Breakpoint.XLARGE
@@ -85,7 +85,7 @@ export default {
 
 .breadcrumbs__list
   display flex
-  padding '0 %s' % Layout.Margins.BASE
+  padding '0 %s' % Layout.Margin.BASE
 
   @media Breakpoint.SMALL
     padding 0
@@ -117,7 +117,7 @@ export default {
   link(Branding.PRIMARY, Branding.PRIMARY, Color.DARK_GREY)
 
 .breadcrumbs__label
-  padding-right '%s' % Layout.Margins.BASE
+  padding-right '%s' % Layout.Margin.BASE
 
 .no-touch .breadcrumbs__link
   link_hover(Color.MEDIUM_GREY)

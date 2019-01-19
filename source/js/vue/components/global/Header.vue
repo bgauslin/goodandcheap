@@ -85,14 +85,14 @@ export default {
   position relative
 
   @media Breakpoint.SMALL
-    margin '0 %s' % Layout.Margins.SMALL
+    margin '0 %s' % Layout.Margin.SMALL
 
   @media Breakpoint.MEDIUM
     height '%s' % Layout.HeaderHeight.MEDIUM
-    margin '0 %s' % Layout.Margins.MEDIUM
+    margin '0 %s' % Layout.Margin.MEDIUM
 
   @media Breakpoint.LARGE
-    margin '0 %s' % Layout.Margins.LARGE
+    margin '0 %s' % Layout.Margin.LARGE
 
   @media Breakpoint.XLARGE
     margin 0 auto
