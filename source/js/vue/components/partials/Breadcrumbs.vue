@@ -56,7 +56,7 @@ export default {
 @import '../../../../stylus/_config/'
 
 .breadcrumbs
-  color MEDIUM_GREY
+  color '%s' % Colors.MEDIUM_GREY
   overflow-x scroll
   -webkit-overflow-scrolling touch
   font_sans()
@@ -114,12 +114,12 @@ export default {
   padding 1rem 0
 
 .breadcrumbs__link
-  link(BRAND_COLOR, BRAND_COLOR, DARK_GREY)
+  link(BRAND_COLOR, BRAND_COLOR, Colors.DARK_GREY)
 
 .breadcrumbs__label
   padding-right MARGINS_BASE
 
 .no-touch .breadcrumbs__link
-  link_hover(MEDIUM_GREY)
+  link_hover(Colors.MEDIUM_GREY)
 
 </style>

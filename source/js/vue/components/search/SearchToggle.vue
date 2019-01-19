@@ -73,13 +73,13 @@ export default {
 
 .search-toggle
   align-self stretch
-  color WHITE
+  color white
   margin 0
   padding 0
   width 2.75rem
 
   &:active
-    color rgba(WHITE, .7)
+    color rgba(white, .7)
 
   &::before
     content ICON_SEARCH
@@ -89,6 +89,6 @@ export default {
 .no-touch .search-toggle
   &:hover
   &:visited:hover
-    color rgba(WHITE, .7)
+    color rgba(white, .7)
 
 </style>

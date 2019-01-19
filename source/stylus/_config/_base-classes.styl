@@ -13,13 +13,13 @@ preview()
 
   a
     align-items center
-    background WHITE
+    background white
     border-top 1px solid BORDER_COLOR
     display flex
-    link(DARK_GREY, MEDIUM_GREY, BRAND_COLOR)
+    link(Colors.DARK_GREY, Colors.MEDIUM_GREY, BRAND_COLOR)
 
     &.visited
-      color MEDIUM_GREY
+      color '%s' % Colors.MEDIUM_GREY
 
   h3
     line-height 1.1
@@ -71,7 +71,7 @@ tabs_item()
     border-right 1px solid BRAND_COLOR
 
 tabs_link()
-  background WHITE
+  background white
   display block
   font_sans_heavy()
   padding .75em 1em
@@ -88,7 +88,7 @@ tabs_link()
 
   &.current
     background BRAND_COLOR
-    color WHITE
+    color white
 
 tabs_link__no_touch()
   &:hover
@@ -99,4 +99,4 @@ tabs_link__no_touch()
   &.current:hover
   &.current:visited:hover
     background BRAND_COLOR
-    color WHITE
+    color white

@@ -60,7 +60,7 @@ export default {
   small_caps()
 
 .instructions__steps
-  color MEDIUM_GREY
+  color '%s' % Colors.MEDIUM_GREY
   margin-left 1em
   font_sans()
 

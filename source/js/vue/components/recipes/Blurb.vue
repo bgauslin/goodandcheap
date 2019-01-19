@@ -49,6 +49,6 @@ export default {
   .blurb
     a:hover
       background BRAND_COLOR
-      color WHITE
+      color white
 
 </style>

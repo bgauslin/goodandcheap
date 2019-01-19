@@ -8,7 +8,7 @@
 .badge
   background ORANGE
   border-radius 2px
-  color WHITE
+  color white
   display inline-block
   font_sans()
   padding .2em .75em

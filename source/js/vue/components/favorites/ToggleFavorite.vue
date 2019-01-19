@@ -72,7 +72,7 @@ export default {
 
 .toggle-favorite
   &::before
-    color MEDIUM_GREY
+    color '%s' % Colors.MEDIUM_GREY
     content ICON_HEART_EMPTY
 
   &.saved

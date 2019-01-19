@@ -40,7 +40,7 @@ export default {
     display flex
     height HEADER_HEIGHT_BASE
     line-height 1
-    link(WHITE, WHITE, rgba(WHITE, .7))
+    link(white, white, rgba(white, .7))
     padding-left .75rem
 
     @media BREAKPOINT_SMALL
@@ -73,6 +73,6 @@ export default {
 .no-touch
   .up-button
     a
-      link_hover(rgba(WHITE, .7))
+      link_hover(rgba(white, .7))
 
 </style>

@@ -76,7 +76,7 @@ export default {
 @import '../../../../stylus/_config/'
 
 .favorites-counter
-  color WHITE
+  color white
   display flex
   font-size px_to_em(12)
   height HEADER_HEIGHT_BASE
@@ -95,7 +95,7 @@ export default {
     align-items center
     align-self stretch
     display flex
-    link(WHITE, WHITE, rgba(WHITE, .7))
+    link(white, white, rgba(white, .7))
 
     &::after
       content ICON_HEART
@@ -111,15 +111,15 @@ export default {
       transition .3s ease
 
     &.current
-      color WHITE
+      color white
 
 .no-touch
   .favorites-counter
     a
-      link_hover(rgba(WHITE, .7))
+      link_hover(rgba(white, .7))
 
       &.current:hover
-        color WHITE
+        color white
         cursor default
 
 </style>

@@ -51,7 +51,7 @@ export default {
     width WIDTH_XLARGE
 
 .chapter__content
-  background WHITE
+  background white
   margin 0 auto
   
   @media BREAKPOINT_SMALL

@@ -76,7 +76,7 @@ export default {
 
 .header
   background rgba(BRAND_COLOR, .97)
-  box-shadow 0 0 5px 0 MEDIUM_GREY
+  box-shadow 0 0 5px 0 '%s' % Colors.MEDIUM_GREY
   position_it(fixed, 0, 0, null, 0)
   z-index 999
 
@@ -115,7 +115,7 @@ export default {
   align-items center
   align-self stretch
   display flex
-  link(WHITE, WHITE, rgba(WHITE, .7))
+  link(white, white, rgba(white, .7))
   position relative
   z-index 2
 
@@ -127,10 +127,10 @@ export default {
     transition .3s ease
 
 .no-touch .site-name__link
-  link_hover(rgba(WHITE, .7))
+  link_hover(rgba(white, .7))
 
   &.current
-    color WHITE
+    color white
     cursor default
 
     &:active

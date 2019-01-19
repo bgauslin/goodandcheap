@@ -78,7 +78,7 @@ export default {
     background-size cover
 
 .page__content
-  background WHITE
+  background white
   padding 1rem MARGINS_BASE
 
   @media BREAKPOINT_SMALL
@@ -130,7 +130,7 @@ export default {
 
 .no-touch .page__copy
   a:hover
-    color WHITE
+    color white
     background BRAND_COLOR
 
 </style>

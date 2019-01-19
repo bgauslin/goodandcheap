@@ -147,7 +147,7 @@ export default {
     width WIDTH_XLARGE
 
 .recipe__content
-  background WHITE
+  background white
   margin 0 auto
 
   @media BREAKPOINT_SMALL
