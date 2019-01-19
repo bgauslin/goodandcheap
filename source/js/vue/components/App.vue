@@ -182,7 +182,8 @@ export default {
         endpointUrl += `/${slug}`;
       }
 
-      // TODO: update with async/await.
+      // TODO: Update with async/await.
+      // TOOD: Replace superagent.request with fetch, remove superagent
       let that = this;
       request.get(endpointUrl)
         .end((error, response) => {
