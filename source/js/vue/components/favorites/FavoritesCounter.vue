@@ -47,7 +47,7 @@ export default {
   },
 
   methods: {
-    /** @description ... */
+    /** @description Removes CSS class after the icon's animation completes. */
     animationDone() {
       this.$el.classList.remove('updated');
     },
@@ -58,7 +58,10 @@ export default {
       return (count > 0);
     },
 
-    /** @description ... */
+    /**
+     * @description Adds CSS class that triggers an animation when user adds
+     * a new favorite.
+     */
     updateCount() {
       const count = this.favoritesCount;
       if (count > 0) {

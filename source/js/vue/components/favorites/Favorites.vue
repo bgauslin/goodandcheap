@@ -61,16 +61,16 @@ export default {
 
   methods: {
     /** 
-     * @description ...
-     * @param {Array} favorites - ...
+     * @description Sets a flag if user has any saved favorites.
+     * @param {Array} favorites - User's favorite recipes.
      */
     setHasFavorites(favorites) {
       this.hasFavorites = (favorites.length > 0);
     },
 
     /** 
-     * @description ...
-     * @param {string} title - ...
+     * @description Updates the document title.
+     * @param {string} title
      */
     updateTitle(title) {
       document.title = `${title} · ${this.$root.siteName}`;

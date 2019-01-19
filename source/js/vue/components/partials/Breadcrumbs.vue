@@ -31,7 +31,10 @@ export default {
   },
 
   methods: {
-    /** @description ... */
+    /**
+     * @description Moves the breadcrumbs list out of the viewport so that
+     * they're only revealed when the user scrolls up slightly.
+     */
     scrollBreadcrumbs() {
       const offset = this.$el.offsetHeight;
 

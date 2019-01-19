@@ -29,8 +29,8 @@ export default {
 
   methods: {
     /**
-     * ...
-     * @param {!Object} item - ...
+     * Whether the recipe is in user's favorites list.
+     * @param {!Object} item - The recipe.
      * @return {boolean}
      */
     isInFavorites(item) {
@@ -40,8 +40,8 @@ export default {
     },
 
     /**
-     * ...
-     * @param {!Object} item - ...
+     * Adds or removes recipe from user's favorites list.
+     * @param {!Object} item - The recipe.
      */
     toggleFavorite(item) {
       if (this.isFavorite) {

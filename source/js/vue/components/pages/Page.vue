@@ -47,7 +47,10 @@ export default {
   },
 
   methods: {
-    /** @description ... */
+    /**
+     * @description Attaches a background image to an element via an inline 
+     * 'style' tag.
+     */
     setBackgroundImage() {
       if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
         this.backgroundImageCss = `${this.backgroundImageOverlayCss},url(${this.data.backgroundImage})`;

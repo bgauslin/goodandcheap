@@ -10,8 +10,8 @@ export default {
 
   methods: {
     /**
-     * @description ...
-     * @param {!Object} favorite - ...
+     * @description Removes recipe from user's saved favorites.
+     * @param {!Object} favorite
      */
     removeItem(favorite) {
       this.$store.commit('removeFavorite', favorite);
