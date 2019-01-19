@@ -82,48 +82,34 @@ export default {
 <style lang="stylus">
 @import '../../../../stylus/_config/'
 
-@keyframes showFavorites
-  0%
-    opacity 0
-    transform translateY(100%)
-    visibility hidden
-  75%
-    opacity 0
-    transform translateY(100%)
-    visibility visible
-  100%
-    opacity 1
-    transform translateY(0)
-
 .favorites
   animation showFavorites 1s ease-out
   margin 0 auto
 
-  &.empty
-    animation none
-
   @media Breakpoint.MEDIUM
     width WIDTH_MEDIUM
 
-  .preview
-    transition all .5s ease
+.favorites.empty
+  animation none
 
-    @media Breakpoint.MEDIUM
-      a
-        border-left 1px solid BORDER_COLOR
-        border-right 1px solid BORDER_COLOR
+.favorites .preview
+  transition all .5s ease
 
-  h2
-    margin 0
-    padding 1.5rem 0
-    font_sans_heavy()
-    small_caps(14)
-    text-align center
+@media Breakpoint.MEDIUM
+  .favorites .preview a
+    border-left 1px solid BORDER_COLOR
+    border-right 1px solid BORDER_COLOR
 
-    @media Breakpoint.MEDIUM
-      padding 2rem 0
+.favorites h2
+  margin 0
+  padding 1.5rem 0
+  font_sans_heavy()
+  small_caps(14)
+  text-align center
 
-// animations for 'remove-favorite'
+  @media Breakpoint.MEDIUM
+    padding 2rem 0
+
 .favorites-leave-active
   opacity 0
   position absolute

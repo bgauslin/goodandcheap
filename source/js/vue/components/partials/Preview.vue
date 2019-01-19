@@ -43,8 +43,8 @@ export default {
 
 .preview__recipe-count
   display inline-block
-  margin-top .2rem
   font_sans_heavy()
+  margin-top .2rem
   small_caps()
 
 .no-touch .preview

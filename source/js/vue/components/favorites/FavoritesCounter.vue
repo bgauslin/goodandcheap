@@ -78,10 +78,10 @@ export default {
 .favorites-counter
   color white
   display flex
+  font_sans()
   font-size px_to_em(12)
   height HEADER_HEIGHT_BASE
   justify-content flex-end
-  font_sans()
   position_it(absolute, 0, 0, null, null)
   width 3rem
 

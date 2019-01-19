@@ -93,8 +93,8 @@ export default {
     width PAGE_MAX_WIDTH
 
 .page__title
-  margin .5em 0 1em
   font_serif_heavy()
+  margin .5em 0 1em
 
 .page__section
   margin 1em 0 2em

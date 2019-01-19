@@ -133,10 +133,10 @@ export default {
 .preview__index
   bottom 1rem
   color '%s' % Color.MEDIUM_GREY
+  font_sans()
   line-height 1
   position absolute
   right 0
-  font_sans()
   small_caps()
   text-align center
   width 3rem

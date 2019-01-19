@@ -61,8 +61,8 @@ export default {
 
 .instructions__steps
   color '%s' % Color.MEDIUM_GREY
-  margin-left 1em
   font_sans()
+  margin-left 1em
 
 .instructions__list
   font_sans()

@@ -27,8 +27,8 @@ export default {
   z-index -1
 
 .error404__heading
-  margin 0 0 1rem
   font_sans_heavy()
+  margin 0 0 1rem
   small_caps(14)
 
 .error404__message
