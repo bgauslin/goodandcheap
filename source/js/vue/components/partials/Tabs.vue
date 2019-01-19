@@ -27,7 +27,7 @@ export default {
 
   @media Breakpoint.SMALL
     margin 1rem auto
-    width WIDTH_SMALL
+    width '%s' % ElementWidth.SMALL
 
   @media Breakpoint.MEDIUM
     margin 1.5rem auto

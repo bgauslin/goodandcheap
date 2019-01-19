@@ -96,7 +96,7 @@ export default {
 
   @media Breakpoint.XLARGE
     margin 0 auto
-    width WIDTH_XLARGE
+    width '%s' % ElementWidth.XLARGE
 
 .site-name
   display flex
@@ -107,8 +107,7 @@ export default {
   small_caps(14)
   white-space nowrap
 
-// TODO: refactor constant
-@media BREAKPOINT_SEARCH_ENABLED
+@media Breakpoint.SEARCH_ENABLED
   .site-name.search-enabled
     display none
 

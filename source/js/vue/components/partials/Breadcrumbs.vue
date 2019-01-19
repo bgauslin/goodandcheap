@@ -81,7 +81,7 @@ export default {
   @media Breakpoint.XLARGE
     margin-left auto
     margin-right auto
-    width WIDTH_XLARGE
+    width '%s' % ElementWidth.XLARGE
 
 .breadcrumbs__list
   display flex
