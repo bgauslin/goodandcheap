@@ -133,16 +133,16 @@ export default {
 @import '../../../../stylus/_config/'
 
 .recipe
-  @media BREAKPOINT_SMALL
+  @media Breakpoint.SMALL
     margin 1.5rem MARGINS_SMALL 0
 
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     margin 2.25rem MARGINS_MEDIUM 0
 
-  @media BREAKPOINT_LARGE
+  @media Breakpoint.LARGE
     margin 3rem MARGINS_LARGE 0
 
-  @media BREAKPOINT_XLARGE
+  @media Breakpoint.XLARGE
     margin 3rem auto 0
     width WIDTH_XLARGE
 
@@ -150,14 +150,14 @@ export default {
   background white
   margin 0 auto
 
-  @media BREAKPOINT_SMALL
+  @media Breakpoint.SMALL
     max-width STACKED_WIDTH
 
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     max-width none
     width STACKED_WIDTH
 
-  @media BREAKPOINT_LARGE
+  @media Breakpoint.LARGE
     overflow hidden
     padding-bottom 50%
     position relative
@@ -167,7 +167,7 @@ export default {
   padding 1rem 1rem 2rem
   position relative
 
-  @media BREAKPOINT_LARGE
+  @media Breakpoint.LARGE
     height 100%
     padding 1.5rem 1.5rem 4rem
     -webkit-overflow-scrolling touch
@@ -201,7 +201,7 @@ export default {
   margin 0 0 1.5rem
   tabs()
 
-  @media BREAKPOINT_SMALL
+  @media Breakpoint.SMALL
     margin 0 0 2rem
 
 .recipe__tabs__item
@@ -215,7 +215,7 @@ export default {
   right 0
   top .25rem
 
-  @media BREAKPOINT_LARGE
+  @media Breakpoint.LARGE
     right .5rem
     top .75rem
 

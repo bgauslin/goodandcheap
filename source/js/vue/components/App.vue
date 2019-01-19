@@ -284,7 +284,7 @@ export default {
   margin HEADER_HEIGHT_BASE 0 0
   overflow hidden
 
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     margin-top HEADER_HEIGHT_MEDIUM
 
 .slide-in-left
@@ -314,7 +314,7 @@ export default {
 .slide-out-right
   animation-name slideOutRight
 
-@media BREAKPOINT_MEDIUM
+@media Breakpoint.MEDIUM
   .slide-in-left
   .slide-in-right
   .slide-in-up

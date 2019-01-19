@@ -1,6 +1,23 @@
 @import 'functions'
 
 // @type Hash
+BreakpointUnits = {
+  SMALL: px_to_rem(480)
+  MEDIUM: px_to_rem(768)
+  LARGE: px_to_rem(1024)
+  XLARGE: px_to_rem(1280)
+}
+
+// @type Hash
+// @require BreakpointUnits
+Breakpoint = {
+  SMALL: '(min-width: %s)' % BreakpointUnits.SMALL
+  MEDIUM: '(min-width: %s)' % BreakpointUnits.MEDIUM
+  LARGE: '(min-width: %s)' % BreakpointUnits.LARGE
+  XLARGE: '(min-width: %s)' % BreakpointUnits.XLARGE
+}
+
+// @type Hash
 Color = {
   DARK_RED: #c00
   DARK_GREY: #333
@@ -49,3 +66,48 @@ BRAND_COLOR = Color.MATERIAL_BLUE_800
 // @type Color
 // @require Colors
 BRAND_COLOR_VISITED = mix(Color.MATERIAL_BLUE_800, white, 50%)
+
+// @type String
+PAGE_MAX_WIDTH = px_to_rem(800)
+
+// @type String
+STACKED_WIDTH = px_to_rem(560)
+
+// -----------------------------------------------------------------------------
+// TODO: refactor HEADER_HEIGHT constants
+
+// @type String
+HEADER_HEIGHT_BASE = px_to_rem(44)
+
+// @type String
+HEADER_HEIGHT_MEDIUM = px_to_rem(56)
+
+// -----------------------------------------------------------------------------
+// TODO: refactor MARGINS constants
+
+// @type String
+MARGINS_BASE = px_to_rem(12)
+
+// @type String
+MARGINS_SMALL = px_to_rem(24)
+
+// @type String
+MARGINS_MEDIUM = px_to_rem(36)
+
+// @type String
+MARGINS_LARGE = px_to_rem(48)
+
+// -----------------------------------------------------------------------------
+// TODO: refactor WIDTH constants
+
+// @type String
+WIDTH_SMALL = BreakpointUnits.SMALL - (2 * MARGINS_SMALL)
+
+// @type String
+WIDTH_MEDIUM = BreakpointUnits.MEDIUM - (2 * MARGINS_MEDIUM)
+
+// @type String
+WIDTH_LARGE = BreakpointUnits.LARGE - (2 * MARGINS_LARGE)
+
+// @type String
+WIDTH_XLARGE = BreakpointUnits.XLARGE - (2 * MARGINS_LARGE)

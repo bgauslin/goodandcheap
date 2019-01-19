@@ -55,7 +55,7 @@ export default {
   margin-top 1.5rem
   width 5rem
 
-  @media BREAKPOINT_SMALL
+  @media Breakpoint.SMALL
     width 8rem
 
 </style>

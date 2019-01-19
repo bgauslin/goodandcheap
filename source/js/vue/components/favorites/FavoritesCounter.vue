@@ -85,7 +85,7 @@ export default {
   position_it(absolute, 0, 0, null, null)
   width 3rem
 
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     height HEADER_HEIGHT_MEDIUM
 
   &.updated

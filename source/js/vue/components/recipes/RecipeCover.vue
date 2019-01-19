@@ -35,7 +35,7 @@ export default {
   cover()
   overflow hidden
 
-  @media BREAKPOINT_LARGE
+  @media Breakpoint.LARGE
     position_it(absolute, 0, 0, null, null)
     width 50%
 

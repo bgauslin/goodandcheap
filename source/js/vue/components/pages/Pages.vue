@@ -21,25 +21,25 @@ export default {
 @import '../../../../stylus/_config/'
 
 .pages
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     margin 0 MARGINS_MEDIUM
 
-  @media BREAKPOINT_LARGE
+  @media Breakpoint.LARGE
     margin 0 MARGINS_LARGE
 
-  @media BREAKPOINT_XLARGE
+  @media Breakpoint.XLARGE
     margin 0 auto
     width WIDTH_XLARGE
 
 .pages .previews
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     previews_grid()
 
 .pages .preview
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     preview_grid()
 
-  @media BREAKPOINT_LARGE
+  @media Breakpoint.LARGE
     preview_grid_large()
 
 </style>

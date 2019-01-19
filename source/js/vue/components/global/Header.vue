@@ -84,17 +84,17 @@ export default {
   height HEADER_HEIGHT_BASE
   position relative
 
-  @media BREAKPOINT_SMALL
+  @media Breakpoint.SMALL
     margin 0 MARGINS_SMALL
 
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     height HEADER_HEIGHT_MEDIUM
     margin 0 MARGINS_MEDIUM
 
-  @media BREAKPOINT_LARGE
+  @media Breakpoint.LARGE
     margin 0 MARGINS_LARGE
 
-  @media BREAKPOINT_XLARGE
+  @media Breakpoint.XLARGE
     margin 0 auto
     width WIDTH_XLARGE
 
@@ -107,9 +107,10 @@ export default {
   small_caps(14)
   white-space nowrap
 
-  @media (max-width BREAKPOINT_MEDIUM_UNITS)
-    &.search-enabled
-      display none
+  // TODO: fix interpolation here
+  // @media '(max-width: %s)' % BreakpointUnits.MEDIUM
+  //   &.search-enabled
+  //     display none
 
 .site-name__link
   align-items center
@@ -119,7 +120,7 @@ export default {
   position relative
   z-index 2
 
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     height HEADER_HEIGHT_MEDIUM
 
   &:active

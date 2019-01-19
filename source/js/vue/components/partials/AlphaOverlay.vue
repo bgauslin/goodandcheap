@@ -8,7 +8,7 @@
 .alpha-overlay
   display none
 
-  @media BREAKPOINT_LARGE
+  @media Breakpoint.LARGE
     background linear-gradient(to bottom, rgba(white, 0), white)
     display block
     height 5rem

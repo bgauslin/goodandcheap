@@ -68,13 +68,13 @@ export default {
 .search-results
   margin 0 auto
 
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     width WIDTH_MEDIUM
 
 .search-results .preview
   transition all .5s ease
 
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     a
       border-left 1px solid BORDER_COLOR
       border-right 1px solid BORDER_COLOR
@@ -85,7 +85,7 @@ export default {
   small_caps(14)
   text-align center
 
-  @media BREAKPOINT_MEDIUM
+  @media Breakpoint.MEDIUM
     padding 2rem 0
 
 .search-results__count
