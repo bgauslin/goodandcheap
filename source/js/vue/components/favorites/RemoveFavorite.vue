@@ -43,6 +43,10 @@ export default {
 .remove-favorite:active::before
   color '%s' % Color.DARK_RED
 
+.preview--recipe .remove-favorite
+  right 0
+  top 0
+
 .no-touch.remove-favorite:hover::before
   color '%s' % Color.DARK_RED
 

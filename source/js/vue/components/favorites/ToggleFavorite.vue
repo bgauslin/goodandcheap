@@ -78,6 +78,18 @@ export default {
   color '%s' % Color.RED
   content '%s' % Icon.HEART
 
+.recipe .toggle-favorite
+  right 0
+  top .25rem
+
+  @media Breakpoint.LARGE
+    right .5rem
+    top .75rem
+
+.preview--recipe .toggle-favorite
+  right 0
+  top 0
+
 .no-touch .toggle-favorite
   &:hover
   &.saved:hover

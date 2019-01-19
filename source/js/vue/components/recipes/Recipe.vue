@@ -210,15 +210,6 @@ export default {
 .recipe__tabs__link
   tabs_link()
 
-// TODO: relocate selector to other component
-.recipe .toggle-favorite
-  right 0
-  top .25rem
-
-  @media Breakpoint.LARGE
-    right .5rem
-    top .75rem
-
 .no-touch .recipe__tabs__link
   tabs_link__no_touch()
 

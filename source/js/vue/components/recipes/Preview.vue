@@ -141,11 +141,6 @@ export default {
   text-align center
   width 3rem
 
-.preview--recipe .toggle-favorite
-.preview--recipe .remove-favorite
-  right 0
-  top 0
-
 .no-touch .preview--recipe
   preview_no_touch()
 
