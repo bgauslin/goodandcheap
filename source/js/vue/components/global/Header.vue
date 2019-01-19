@@ -107,10 +107,10 @@ export default {
   small_caps(14)
   white-space nowrap
 
-  // TODO: fix interpolation here
-  // @media '(max-width: %s)' % BreakpointUnits.MEDIUM
-  //   &.search-enabled
-  //     display none
+// TODO: refactor constant
+@media BREAKPOINT_SEARCH_ENABLED
+  .site-name.search-enabled
+    display none
 
 .site-name__link
   align-items center

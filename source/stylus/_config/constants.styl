@@ -74,8 +74,12 @@ PAGE_MAX_WIDTH = px_to_rem(800)
 STACKED_WIDTH = px_to_rem(560)
 
 // -----------------------------------------------------------------------------
-// TODO: refactor HEADER_HEIGHT constants
+// TODO: refactor BREAKPOINT_SEARCH_ENABLED constant
+// @type String
+BREAKPOINT_SEARCH_ENABLED  = '(max-width: %s)' % BreakpointUnits.MEDIUM
 
+// -----------------------------------------------------------------------------
+// TODO: refactor HEADER_HEIGHT constants
 // @type String
 HEADER_HEIGHT_BASE = px_to_rem(44)
 
@@ -84,7 +88,6 @@ HEADER_HEIGHT_MEDIUM = px_to_rem(56)
 
 // -----------------------------------------------------------------------------
 // TODO: refactor MARGINS constants
-
 // @type String
 MARGINS_BASE = px_to_rem(12)
 
@@ -99,7 +102,6 @@ MARGINS_LARGE = px_to_rem(48)
 
 // -----------------------------------------------------------------------------
 // TODO: refactor WIDTH constants
-
 // @type String
 WIDTH_SMALL = BreakpointUnits.SMALL - (2 * MARGINS_SMALL)
 
