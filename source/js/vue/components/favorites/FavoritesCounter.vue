@@ -98,13 +98,13 @@ export default {
     link(white, white, rgba(white, .7))
 
     &::after
-      content '%s' % Icons.HEART
+      content '%s' % Icon.HEART
       font-size 1rem
       icon()
       margin 0 1rem 0 .3em
 
     &.empty::after
-      content '%s' % Icons.HEART_EMPTY
+      content '%s' % Icon.HEART_EMPTY
 
     &:active
       transform scale(.9)

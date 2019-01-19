@@ -72,19 +72,19 @@ export default {
 
 .toggle-favorite
   &::before
-    color '%s' % Colors.MEDIUM_GREY
-    content '%s' % Icons.HEART_EMPTY
+    color '%s' % Color.MEDIUM_GREY
+    content '%s' % Icon.HEART_EMPTY
 
   &.saved
     &::before
-      color '%s' % Colors.RED
-      content '%s' % Icons.HEART
+      color '%s' % Color.RED
+      content '%s' % Icon.HEART
 
 .no-touch
   .toggle-favorite
     &:hover
     &.saved:hover
       &::before
-        color '%s' % Colors.RED
+        color '%s' % Color.RED
 
 </style>

@@ -37,18 +37,18 @@ export default {
 
 .remove-favorite
   &::before
-    color '%s' % Colors.MEDIUM_GREY
-    content '%s' % Icons.CANCEL_CIRCLED
+    color '%s' % Color.MEDIUM_GREY
+    content '%s' % Icon.CANCEL_CIRCLED
     font-size px_to_em(20)
 
   &:active
     &::before
-      color '%s' % Colors.DARK_RED
+      color '%s' % Color.DARK_RED
 
 .no-touch
   .remove-favorite
     &:hover
       &::before
-        color '%s' % Colors.DARK_RED
+        color '%s' % Color.DARK_RED
 
 </style>

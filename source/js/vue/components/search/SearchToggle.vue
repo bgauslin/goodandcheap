@@ -82,7 +82,7 @@ export default {
     color rgba(white, .7)
 
   &::before
-    content '%s' % Icons.SEARCH
+    content '%s' % Icon.SEARCH
     icon()
     font-size px_to_em(16)
 

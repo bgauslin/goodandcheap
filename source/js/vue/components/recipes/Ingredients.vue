@@ -62,7 +62,7 @@ export default {
   small_caps()
 
 .ingredients__count
-  color '%s' % Colors.MEDIUM_GREY
+  color '%s' % Color.MEDIUM_GREY
   margin-left 1em
   font_sans()
 

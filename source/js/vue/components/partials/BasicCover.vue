@@ -42,7 +42,7 @@ export default {
 
   @media BREAKPOINT_SMALL
     background rgba(white, .95)
-    box-shadow 0 0 5px 0 '%s' % Colors.LIGHT_GREY
+    box-shadow 0 0 5px 0 '%s' % Color.LIGHT_GREY
     padding 1.5rem
     position_it(absolute, 0, 3rem, null, 3rem)
 

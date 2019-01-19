@@ -47,7 +47,7 @@ export default {
 @import '../../../../stylus/_config/'
 
 .thumb
-  background-color '%s' % Colors.LIGHTER_GREY
+  background-color '%s' % Color.LIGHTER_GREY
   border-radius .25em
   flex-shrink 0
   height 5rem

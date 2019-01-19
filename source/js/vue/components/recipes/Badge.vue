@@ -6,7 +6,7 @@
 @import '../../../../stylus/_config/';
 
 .badge
-  background '%s' % Colors.ORANGE
+  background '%s' % Color.ORANGE
   border-radius 2px
   color white
   display inline-block
