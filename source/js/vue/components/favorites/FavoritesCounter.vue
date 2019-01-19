@@ -80,13 +80,13 @@ export default {
   display flex
   font_sans()
   font-size px_to_em(12)
-  height HEADER_HEIGHT_BASE
+  height '%s' % HeaderHeight.BASE
   justify-content flex-end
   position_it(absolute, 0, 0, null, null)
   width 3rem
 
   @media Breakpoint.MEDIUM
-    height HEADER_HEIGHT_MEDIUM
+    height '%s' % HeaderHeight.MEDIUM
 
 .favorites-counter.updated
   animation bounce .3s ease-out

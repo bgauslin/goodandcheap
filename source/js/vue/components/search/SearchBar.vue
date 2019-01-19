@@ -41,7 +41,7 @@ export default {
 .search-bar
   align-items center
   display flex
-  height HEADER_HEIGHT_BASE
+  height '%s' % HeaderHeight.BASE
   position_it(absolute, 0, 2.5rem, null, MARGINS_BASE)
 
   @media Breakpoint.SMALL
@@ -49,7 +49,7 @@ export default {
     right 3rem
 
   @media Breakpoint.MEDIUM
-    height HEADER_HEIGHT_MEDIUM
+    height '%s' % HeaderHeight.MEDIUM
     left 50%
 
   @media Breakpoint.LARGE

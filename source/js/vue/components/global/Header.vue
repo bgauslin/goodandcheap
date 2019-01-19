@@ -81,14 +81,14 @@ export default {
   z-index 999
 
 .header__controls
-  height HEADER_HEIGHT_BASE
+  height '%s' % HeaderHeight.BASE
   position relative
 
   @media Breakpoint.SMALL
     margin 0 MARGINS_SMALL
 
   @media Breakpoint.MEDIUM
-    height HEADER_HEIGHT_MEDIUM
+    height '%s' % HeaderHeight.MEDIUM
     margin 0 MARGINS_MEDIUM
 
   @media Breakpoint.LARGE
@@ -101,7 +101,7 @@ export default {
 .site-name
   display flex
   font_sans_heavy()
-  height HEADER_HEIGHT_BASE
+  height '%s' % HeaderHeight.BASE
   justify-content center
   position_it(absolute, 0, 0, null, 0)
   small_caps(14)
@@ -121,7 +121,7 @@ export default {
   z-index 2
 
   @media Breakpoint.MEDIUM
-    height HEADER_HEIGHT_MEDIUM
+    height '%s' % HeaderHeight.MEDIUM
 
 .site-name__link:active
   transform scale(.9)

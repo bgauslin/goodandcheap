@@ -65,11 +65,11 @@ export default {
   width 100%
 
   @media Breakpoint.SMALL
-    margin HEADER_HEIGHT_BASE MARGINS_SMALL 0
+    margin '%s %s 0' % (HeaderHeight.BASE MARGINS_SMALL)
     max-width STACKED_WIDTH
 
   @media Breakpoint.MEDIUM
-    margin HEADER_HEIGHT_MEDIUM auto 0
+    margin '%s auto 0' % HeaderHeight.MEDIUM
     max-width none
     width STACKED_WIDTH
 
