@@ -1,3 +1,31 @@
+@import 'animations'
+@import 'constants'
+@import 'functions'
+
+// @mixin
+// @param Number width
+// @param Number height
+aspect_ratio(width, height)
+  padding-bottom (height / width) * 100%
+  position relative
+
+  img
+    bottom 0
+    left 0
+    position absolute
+    right 0
+    top 0
+
+// @mixin
+cover()
+  position relative
+
+  figure
+    aspect_ratio(1, 1)
+
+  img
+    animation fadeIn .3s ease-out
+
 // @mixin
 font_sans()
   font-family 'Futura-Book', sans-serif
@@ -21,3 +49,173 @@ font_serif_heavy()
 // @mixin
 icon()
   font-family 'Icons', sans-serif
+
+// @mixin
+// @param Color link
+// @param Color visited
+// @param Color active
+link(link, visited, active)
+  &
+    &:link
+      color link
+
+    &:visited
+      color visited
+
+    &:active
+    &:visited:active
+      color active
+
+    &:focus
+      color active
+
+// @mixin
+// @param Color hover
+link_hover(hover)
+  &
+    &:hover
+    &:visited:hover
+      color hover
+
+// @mixin
+// @param String position
+// @param Number|String top
+// @param Number|String right
+// @param Number|String bottom
+// @param Number|String left
+position_it(position, top, right, bottom left)
+  position position
+  if top != null
+    top top
+  if right != null
+    right right
+  if bottom != null
+    bottom bottom
+  if left != null
+    left left
+
+// @mixin
+preview()
+  list-style none
+  position relative
+
+  a
+    align-items center
+    background white
+    border-top 1px solid BORDER_COLOR
+    display flex
+    link(Colors.DARK_GREY, Colors.MEDIUM_GREY, BRAND_COLOR)
+
+    &.visited
+      color '%s' % Colors.MEDIUM_GREY
+
+  h3
+    line-height 1.1
+    margin .2em 0
+    font_serif_heavy()
+
+  .summary
+    flex-grow 1
+    margin 0 1rem 0 .5rem
+
+  &:last-child
+    a
+      border-bottom 1px solid BORDER_COLOR
+
+// @mixin
+preview_grid()
+  margin -1px 0 0 -1px
+  width calc(50% + 1px)
+
+// @mixin
+preview_grid_large()
+  width calc((1/3 * 100%) + 1px)
+
+// @mixin
+preview_no_touch()
+  a
+    link_hover(BRAND_COLOR)
+
+// @mixin
+previews_grid()
+  display flex
+  flex-direction row
+  flex-wrap wrap
+
+  @media BREAKPOINT_MEDIUM
+    .preview
+      a
+        border 1px solid BORDER_COLOR
+
+// @mixin
+// @param Number font_size [12]
+small_caps(font_size = 12)
+  font-size px_to_em(font_size)
+  letter-spacing .1em
+  text-transform uppercase
+
+// @mixin
+tabs()
+  align-items center
+  border 1px solid BRAND_COLOR
+  display flex
+  overflow hidden
+  
+// @mixin
+tabs_item()
+  flex 1 1
+  line-height 1
+  list-style none
+  margin 0
+
+  &:not(:last-child)
+    border-right 1px solid BRAND_COLOR
+
+// @mixin
+tabs_link()
+  background white
+  display block
+  font_sans_heavy()
+  padding .75em 1em
+  small_caps()
+  text-align center
+
+  &:link
+  &:visited
+    color BRAND_COLOR
+
+  &:active
+    background rgba(BRAND_COLOR, .1)
+    color BRAND_COLOR
+
+  &.current
+    background BRAND_COLOR
+    color white
+
+// @mixin
+tabs_link__no_touch()
+  &:hover
+  &:visited:hover
+    background rgba(BRAND_COLOR, .1)
+    color BRAND_COLOR
+
+  &.current:hover
+  &.current:visited:hover
+    background BRAND_COLOR
+    color white
+
+// @mixin
+transition_all()
+  transition all .3s ease
+
+// @mixin
+// @param String name
+// @param String file
+webfont(name, file)
+  @font-face
+    font-display block
+    font-family name
+    src url(file + '.eot')
+    src url(file + '.woff') format('woff'),
+        url(file + '.woff2') format('woff2'),
+        url(file + '.ttf') format('truetype')
