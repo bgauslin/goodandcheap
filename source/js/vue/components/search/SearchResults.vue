@@ -36,6 +36,7 @@ export default {
     resultsCount() {
       const count = this.data.data.length;
       let text;
+
       if (count <= 0 ) {
         text = 'No Results';
       } else if (count === 1) {
@@ -43,12 +44,13 @@ export default {
       } else {
         text = `${count} Results`;
       }
+
       return text;
     },
   },
 
   methods: {
-    /** @description */
+    /** @description Updates the document title with the user's search query. */
     updateTitle() {
       let pageTitle;
       if (this.query) {

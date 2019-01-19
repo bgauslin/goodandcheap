@@ -61,7 +61,7 @@ export default {
 
   methods: {
     /** 
-     * @description Sets a flag if user has any saved favorites.
+     * Sets a flag if user has any saved favorites.
      * @param {Array} favorites - User's favorite recipes.
      */
     setHasFavorites(favorites) {
@@ -69,7 +69,7 @@ export default {
     },
 
     /** 
-     * @description Updates the document title.
+     * Updates the document title with the current page's title.
      * @param {string} title
      */
     updateTitle(title) {

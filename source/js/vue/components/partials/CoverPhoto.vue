@@ -31,7 +31,9 @@ export default {
   },
 
   methods: {
-    /** @description ... */
+    /** 
+     * @description Toggles loading flag after an image has fully downloaded.
+     */
     loadImages() {
       this.loading = true;
       let that = this;

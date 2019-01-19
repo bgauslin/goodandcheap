@@ -28,7 +28,9 @@ export default {
   },
 
   methods: {
-    /** @description ... */
+    /**
+     * @description Opens/closes the search box based on where the user clicked.
+     */
     getClickTarget() {
       document.addEventListener('click', e => {
         const el = e.target.id;
@@ -41,16 +43,17 @@ export default {
     },
 
     /**
-     * @description
-     * @param {!string} el -
+     * Whether the user clicked on the search toggle.
+     * @param {!string} element - The clicked element.
+     * @return {boolean}
      */
-    isSearchInput(el) {
-      return (el === this.inputId);
+    isSearchInput(element) {
+      return (element === this.inputId);
     },
 
     /**
-     * @description
-     * @param {!boolean} open -
+     * Focuses cursor in the search box if it's open.
+     * @param {!boolean} open
      */
     toggleInput(open) {
       if (!this.isSearchPage) {
@@ -82,10 +85,6 @@ export default {
     content ICON_SEARCH
     icon()
     font-size px_to_em(16)
-
-  // &.open
-  //   &::before
-  //     content ICON_CANCEL
 
 .no-touch .search-toggle
   &:hover

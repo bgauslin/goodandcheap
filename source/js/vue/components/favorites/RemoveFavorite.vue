@@ -10,7 +10,7 @@ export default {
 
   methods: {
     /**
-     * @description Removes recipe from user's saved favorites.
+     * Removes recipe from user's saved favorites.
      * @param {!Object} favorite
      */
     removeItem(favorite) {
