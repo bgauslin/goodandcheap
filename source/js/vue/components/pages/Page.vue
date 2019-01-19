@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import getBreakpointValue from '../../../helpers/getBreakpointValue';
+import getBreakpointValue from '../../../modules/getBreakpointValue';
 
 export default {
   props: ['data'],

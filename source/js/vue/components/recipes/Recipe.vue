@@ -70,7 +70,7 @@
 <script>
 import AlphaOverlay from '../partials/AlphaOverlay.vue';
 import Badge from './Badge.vue';
-import getBreakpointValue from '../../../helpers/getBreakpointValue';
+import getBreakpointValue from '../../../modules/getBreakpointValue';
 import RecipeCover from './RecipeCover.vue';
 import ToggleFavorite from '../favorites/ToggleFavorite.vue';
 
@@ -210,7 +210,7 @@ export default {
 .recipe__tabs__link
   tabs_link()
 
-// TODO: relocate selector(?)
+// TODO: relocate selector to other component
 .recipe .toggle-favorite
   right 0
   top .25rem
