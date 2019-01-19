@@ -86,7 +86,7 @@ export default {
   },
 
   computed: {
-    /** @return {} */
+    /** @return {Object} */
     parent() {
       return this.$store.getters.getParent;
     },
@@ -98,26 +98,49 @@ export default {
   },
 
   methods: {
-    afterEnter(el) {
-      el.classList.remove(this.transitionEnterClass());
+    /**
+     * @param {!Element} element - DOM element to remove a CSS class from after
+     * entering a new route.
+     */
+    afterEnter(element) {
+      element.classList.remove(this.transitionEnterClass());
     },
 
-    afterLeave(el) {
-      el.classList.remove(this.transitionLeaveClass());
+    /**
+     * @param {!Element} element - DOM element to remove a CSS class from after
+     * leaving the current route.
+     */
+    afterLeave(element) {
+      element.classList.remove(this.transitionLeaveClass());
     },
 
-    beforeEnter(el) {
-      el.classList.add(this.transitionEnterClass());
+    /**
+     * @param {!Element} element - DOM element to add a CSS class to before
+     * entering a new route.
+     */
+    beforeEnter(element) {
+      element.classList.add(this.transitionEnterClass());
       // reset scroll position for iOS
       setTimeout(() => {
         window.scrollTo(0, 1)
       }, 0);
     },
 
-    beforeLeave(el) {
-      el.classList.add(this.transitionLeaveClass());
+    /**
+     * @param {!Element} element - DOM element to remove a CSS class from before
+     * leaving the current route.
+     */
+    beforeLeave(element) {
+      element.classList.add(this.transitionLeaveClass());
     },
 
+    /**
+     * Whether to fetch data from JSON API depending on what page the user is
+     * coming from and going to.
+     * @param {!string} to - The route the user is going to. 
+     * @param {!string} from - The route the user is coming from.
+     * @return {boolean}
+     */
     doFetch(to, from) {
       if (to.name === 'intro') {
         if (from.name === 'steps' || from.name === 'ingredients') {
@@ -136,6 +159,11 @@ export default {
       }
     },
 
+    /**
+     * Fetches data from API endpoint, then stores that data to avoid
+     * further (redundant) API calls.
+     * @param {!string} endpoint - API endpoint.
+     */
     fetchData(endpoint) {
       let endpointUrl = this.$root.apiBaseUrl + endpoint;
       let slug = this.$route.params.slug;
@@ -151,25 +179,26 @@ export default {
       }
 
       if (slug !== undefined) {
-        endpointUrl += '/' + slug;
+        endpointUrl += `/${slug}`;
       }
 
+      // TODO: update with async/await.
       let that = this;
-      request
-      .get(endpointUrl)
-      .end((error, response) => {
-        if (error || !response.ok) {
-          that.notFound();
-        } else {
-          that.data = response.body;
-          that.$store.commit('setParent', response.body.parent);
-          that.updateTitle(response.body.title);
-          that.key = that.data.slug;
-          that.dataLoaded = true;
-        }
-      })
+      request.get(endpointUrl)
+        .end((error, response) => {
+          if (error || !response.ok) {
+            that.notFound();
+          } else {
+            that.data = response.body;
+            that.$store.commit('setParent', response.body.parent);
+            that.updateTitle(response.body.title);
+            that.key = that.data.slug;
+            that.dataLoaded = true;
+          }
+        })
     },
 
+    /** @description Whether the current route is the 'favorites' page. */
     isFavorites() {
       if (this.$route.name === 'favorites') {
         this.key = 'favorites';
@@ -177,10 +206,12 @@ export default {
       }
     },
 
+    /** @description Whether the current route is the home page. */
     isHome() {
       this.home = (this.$route.name === 'chapters');
     },
 
+    /** @description Whether the current route is the search results page. */
     isSearch() {
       const setSearch = (this.$route.name === 'search');
       this.$store.commit('setSearch', setSearch);
@@ -193,10 +224,15 @@ export default {
       }
     },
 
+    /** @description Redirects to 404 page if JSON API response is null. */
     notFound() {
       window.location.replace('/404');
     },
 
+    /**
+     * @return {string} The CSS class to apply on transition's 'enter' tick
+     * based on the current 'direction'.
+     */
     transitionEnterClass() {
       switch (this.direction) {
         case 'forward':
@@ -208,6 +244,10 @@ export default {
       }
     },
 
+    /**
+     * @return {string} The CSS class to apply on transition's 'leave' tick
+     * based on the current 'direction'.
+     */
     transitionLeaveClass(el) {
       switch (this.direction) {
         case 'forward':
@@ -219,8 +259,13 @@ export default {
       }
     },
 
-    updateTitle(title) {
-      document.title = (title !== undefined) ? `${title} · ${this.$root.siteName}` : this.$root.siteName;
+    /**
+     * Updates document title.
+     * @param {!string} pageTitle - Title of the current page.
+     * @return {string}
+     */
+    updateTitle(pageTitle) {
+      document.title = (pageTitle !== undefined) ? `${pageTitle} · ${this.$root.siteName}` : this.$root.siteName;
     },
   },
 }
