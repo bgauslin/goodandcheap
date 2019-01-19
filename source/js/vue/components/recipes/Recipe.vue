@@ -134,13 +134,13 @@ export default {
 
 .recipe
   @media Breakpoint.SMALL
-    margin '1.5rem %s 0' % Margins.SMALL
+    margin '1.5rem %s 0' % Layout.Margins.SMALL
 
   @media Breakpoint.MEDIUM
-    margin '2.25rem %s 0' % Margins.MEDIUM
+    margin '2.25rem %s 0' % Layout.Margins.MEDIUM
 
   @media Breakpoint.LARGE
-    margin '3rem %s 0' % Margins.LARGE
+    margin '3rem %s 0' % Layout.Margins.LARGE
 
   @media Breakpoint.XLARGE
     margin 3rem auto 0

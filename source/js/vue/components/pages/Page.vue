@@ -79,14 +79,14 @@ export default {
 
 .page__content
   background white
-  padding '1rem %s' % Margins.BASE
+  padding '1rem %s' % Layout.Margins.BASE
 
   @media Breakpoint.SMALL
     margin 0 auto
-    padding '1rem %s' % Margins.SMALL
+    padding '1rem %s' % Layout.Margins.SMALL
 
   @media Breakpoint.MEDIUM
-    padding '2rem %s' % Margins.MEDIUM
+    padding '2rem %s' % Layout.Margins.MEDIUM
 
   @media Breakpoint.LARGE
     padding 3rem 4rem

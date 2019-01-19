@@ -282,11 +282,11 @@ export default {
 
 .content
   flex 1
-  margin '%s 0 0' % HeaderHeight.BASE
+  margin '%s 0 0' % Layout.HeaderHeight.BASE
   overflow hidden
 
   @media Breakpoint.MEDIUM
-    margin-top '%s' % HeaderHeight.MEDIUM
+    margin-top '%s' % Layout.HeaderHeight.MEDIUM
 
 .slide-in-left
 .slide-in-right

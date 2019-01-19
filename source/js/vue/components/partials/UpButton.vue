@@ -38,7 +38,7 @@ export default {
   align-items center
   align-self stretch
   display flex
-  height '%s' % HeaderHeight.BASE
+  height '%s' % Layout.HeaderHeight.BASE
   line-height 1
   link(white, white, rgba(white, .7))
   padding-left .75rem
@@ -47,7 +47,7 @@ export default {
     padding-left 0
 
   @media Breakpoint.MEDIUM
-    height '%s' % HeaderHeight.MEDIUM
+    height '%s' % Layout.HeaderHeight.MEDIUM
 
 .up-button span
   display none
