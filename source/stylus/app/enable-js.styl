@@ -1,0 +1,17 @@
+.enable-js
+  align-items center
+  display flex
+  min-height 100vh
+  padding px_to_rem(16)
+
+.enable-js p
+  background white
+  border 1px solid '%s' % Color.LIGHTER_GREY
+  border-radius 4px
+  margin 0 auto
+  padding 1rem
+  text-align center
+
+  @media Breakpoint.MEDIUM
+    max-width px_to_rem(480)
+    padding px_to_rem(32)

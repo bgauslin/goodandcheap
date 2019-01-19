@@ -1,3 +1,9 @@
+webfont('Futura-Book', '/ui/webfonts/Futura-Book/Futura-Book')
+webfont('Futura-Bold', '/ui/webfonts/Futura-Bold/Futura-Bold')
+webfont('CarminaBT-Bold', '/ui/webfonts/CarminaBT-Bold/CarminaBT-Bold')
+webfont('CarminaBT-Light', '/ui/webfonts/CarminaBT-Light/CarminaBT-Light')
+webfont('Icons', '/ui/webfonts/icons/icons')
+
 body
   background '%s' % Color.OFF_WHITE
   color '%s' % Color.DARK_GREY
@@ -54,10 +60,9 @@ a
   link(BRAND_COLOR, BRAND_COLOR_VISITED, Color.DARK_GREY)
   text-decoration none
 
-.no-touch
-  a
-    link_hover(Color.DARK_GREY)
-    transition_all()
+.no-touch a
+  link_hover(Color.DARK_GREY)
+  transition_all()
 
 button
   background transparent
@@ -69,3 +74,7 @@ button
   outline none
   overflow visible
   text-transform none
+
+a:focus
+button:focus
+  outline none

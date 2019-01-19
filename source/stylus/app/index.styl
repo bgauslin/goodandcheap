@@ -1,7 +1,4 @@
-// webfonts first for old IE
-@import '__webfonts'
-
-// other styles ordered by alpha
-@import '_enable-js'
-@import '_html'
-@import '_set-breakpoint'
+// 'html' must go before everything else
+@import 'html'
+@import 'enable-js'
+@import 'breakpoint-hooks'
