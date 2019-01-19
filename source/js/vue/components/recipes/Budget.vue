@@ -16,11 +16,11 @@ export default {
 @import '../../../../stylus/config/';
 
 .budget
-  background rgba(white, 0.97)
-  font_sans_heavy()
+  background rgba(white, .97)
   padding .5em 2em .5em 1em
   position_it(absolute, 3em, 0, null, null)
   small_caps()
+  typeface('sans_bold')
 
 .budget__total
 .budget__cost

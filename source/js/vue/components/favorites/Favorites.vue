@@ -103,8 +103,8 @@ export default {
 .favorites h2
   margin 0
   padding 1.5rem 0
-  font_sans_heavy()
   small_caps(14)
+  typeface('sans_bold')
   text-align center
 
   @media Breakpoint.MEDIUM

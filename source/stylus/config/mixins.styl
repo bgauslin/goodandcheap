@@ -6,7 +6,7 @@
 // @param Number width
 // @param Number height
 aspect_ratio(width, height)
-  padding-bottom (height / width) * 100%
+  padding 0 0 ((height / width) * 100%)
   position relative
 
   img
@@ -27,26 +27,6 @@ cover()
     animation fadeIn .3s ease-out
 
 // @mixin
-font_sans()
-  font-family 'Futura-Book', sans-serif
-  font-weight normal
-
-// @mixin
-font_sans_heavy()
-  font-family 'Futura-Bold', sans-serif
-  font-weight normal
-
-// @mixin
-font_serif()
-  font-family 'CarminaBT-Light', serif
-  font-weight normal
-
-// @mixin
-font_serif_heavy()
-  font-family 'CarminaBT-Bold', serif
-  font-weight normal
-
-// @mixin
 icon()
   font-family 'Icons', sans-serif
 
@@ -62,11 +42,9 @@ link(link, visited, active)
     &:visited
       color visited
 
+    &:focus
     &:active
     &:visited:active
-      color active
-
-    &:focus
       color active
 
 // @mixin
@@ -83,7 +61,7 @@ link_hover(hover)
 // @param Number|String right
 // @param Number|String bottom
 // @param Number|String left
-position_it(position, top, right, bottom left)
+position_it(position, top, right, bottom, left)
   position position
   if top != null
     top top
@@ -106,21 +84,20 @@ preview()
     display flex
     link(Color.DARK_GREY, Color.MEDIUM_GREY, Branding.PRIMARY)
 
-    &.visited
-      color '%s' % Color.MEDIUM_GREY
+  a.visited
+    color '%s' % Color.MEDIUM_GREY
 
   h3
     line-height 1.1
     margin .2em 0
-    font_serif_heavy()
+    typeface('serif_bold')
 
   .summary
     flex-grow 1
     margin 0 1rem 0 .5rem
 
-  &:last-child
-    a
-      border-bottom 1px solid '%s' % Branding.BORDER
+  &:last-child a
+    border-bottom 1px solid '%s' % Branding.BORDER
 
 // @mixin
 preview_grid()
@@ -129,7 +106,7 @@ preview_grid()
 
 // @mixin
 preview_grid_large()
-  width calc((1/3 * 100%) + 1px)
+  width calc((1 / 3 * 100%) + 1px)
 
 // @mixin
 preview_no_touch()
@@ -143,9 +120,8 @@ previews_grid()
   flex-wrap wrap
 
   @media Breakpoint.MEDIUM
-    .preview
-      a
-        border 1px solid '%s' % Branding.BORDER
+    .preview a
+      border 1px solid '%s' % Branding.BORDER
 
 // @mixin
 // @param Number font_size [12]
@@ -175,15 +151,16 @@ tabs_item()
 tabs_link()
   background white
   display block
-  font_sans_heavy()
   padding .75em 1em
   small_caps()
   text-align center
+  typeface('sans_bold')
 
   &:link
   &:visited
     color '%s' % Branding.PRIMARY
 
+  &:focus
   &:active
     background '%s' % rgba(Branding.PRIMARY, .1)
     color '%s' % Branding.PRIMARY
@@ -204,9 +181,24 @@ tabs_link__no_touch()
     background '%s' % Branding.PRIMARY
     color white
 
+// TODO: Remove transition_all() and apply propety transitions to
+// elements instead.
 // @mixin
 transition_all()
   transition all .3s ease
+
+// @mixin
+// @param String name
+typeface(name)
+  if name == 'sans'
+    font-family 'Futura-Book', sans-serif
+  if name == 'sans_bold'
+    font-family 'Futura-Bold', sans-serif
+  if name == 'serif'
+    font-family 'CarminaBT-Light', serif
+  if name == 'serif_bold'
+    font-family 'CarminaBT-Bold', serif
+  font-weight normal
 
 // @mixin
 // @param String name

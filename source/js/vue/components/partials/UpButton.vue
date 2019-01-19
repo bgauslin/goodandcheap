@@ -51,8 +51,8 @@ export default {
 
 .up-button span
   display none
-  font_sans()
   small_caps(12)
+  typeface('sans')
   white-space nowrap
 
   @media Breakpoint.MEDIUM

@@ -176,26 +176,26 @@ export default {
     width 50%
 
 .recipe__overview h3
-  font_sans_heavy()
   margin 0 0 1em
   small_caps()
+  typeface('sans_bold')
 
 .recipe__header
   margin 0 2rem 1rem 0
 
 .recipe__kind
-  font_sans_heavy()
   margin-bottom .5rem
   small_caps()
+  typeface('sans_bold')
 
 .recipe__title
-  font_serif_heavy()
+  typeface('serif_bold')
 
 .recipe__tagline
   display inline-block
-  font_sans_heavy()
   margin-right 0.5rem
   small_caps()
+  typeface('sans_bold')
 
 .recipe__tabs
   margin 0 0 1.5rem

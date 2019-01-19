@@ -57,10 +57,10 @@ export default {
 
 .breadcrumbs
   color '%s' % Color.MEDIUM_GREY
-  font_sans()
   overflow-x scroll
   -webkit-overflow-scrolling touch
   small_caps(12)
+  typeface('sans')
   white-space nowrap
   width 100%
 

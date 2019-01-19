@@ -93,17 +93,17 @@ export default {
     width '%s' % Layout.Width.PAGE_MAX_WIDTH
 
 .page__title
-  font_serif_heavy()
   margin .5em 0 1em
+  typeface('serif_bold')
 
 .page__section
   margin 1em 0 2em
 
 .page__heading
-  font_sans_heavy()
   margin 0 0 1em
   small_caps()
   text-transform uppercase
+  typeface('sans_bold')
 
 .page__copy p
   font_serif()
@@ -119,7 +119,7 @@ export default {
 
 .page__list__item
   display inline-block
-  font_sans()
+  typeface('sans')
   list-style none
   margin-right 1em
 

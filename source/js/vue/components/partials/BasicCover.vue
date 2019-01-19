@@ -47,8 +47,8 @@ export default {
     position_it(absolute, 0, 3rem, null, 3rem)
 
 .cover__title
-  font_serif_heavy()
   margin-bottom .5em
+  typeface('serif_bold')
 
   @media Breakpoint.LARGE
     font-size px_to_em(30)
@@ -57,8 +57,8 @@ export default {
   font_serif()
 
 .cover__recipe-count
-  font_sans_heavy()
   margin 1rem 0 0
   small_caps()
+  typeface('sans_bold')
 
 </style>

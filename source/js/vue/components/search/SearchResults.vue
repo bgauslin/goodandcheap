@@ -89,10 +89,10 @@ export default {
     padding 2rem 0
 
 .search-results__count
-  font_sans()
+  typeface('sans')
 
 .search-results__query
-  font_sans_heavy()
+  typeface('sans_bold')
 
   &::before
     content ' '

@@ -10,8 +10,8 @@
   border-radius 2px
   color white
   display inline-block
-  font_sans()
   padding .2em .75em
   small_caps()
+  typeface('sans')
 
 </style>

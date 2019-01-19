@@ -43,9 +43,9 @@ export default {
 
 .preview__recipe-count
   display inline-block
-  font_sans_heavy()
   margin-top .2rem
   small_caps()
+  typeface('sans_bold')
 
 .no-touch .preview
   preview_no_touch()

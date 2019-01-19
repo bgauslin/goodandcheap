@@ -115,14 +115,14 @@ export default {
 
 .preview__chapter-title
   color '%s' % Color.MEDIUM_GREY
-  font_sans()
   small_caps()
+  typeface('sans')
 
 .preview__kind
 .preview__tagline
   display inline-block
-  font_sans_heavy()
   small_caps()
+  typeface('sans_bold')
 
 .preview__kind
   margin-top .2rem
@@ -133,12 +133,12 @@ export default {
 .preview__index
   bottom 1rem
   color '%s' % Color.MEDIUM_GREY
-  font_sans()
   line-height 1
   position absolute
   right 0
   small_caps()
   text-align center
+  typeface('sans')
   width 3rem
 
 .no-touch .preview--recipe

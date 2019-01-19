@@ -19,7 +19,7 @@ export default {
 @import '../../../../../stylus/config/'
 
 .variation__heading
-  font_sans_heavy()
   small_caps()
+  typeface('sans_bold')
 
 </style>

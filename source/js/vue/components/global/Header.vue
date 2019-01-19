@@ -100,11 +100,11 @@ export default {
 
 .site-name
   display flex
-  font_sans_heavy()
   height '%s' % Layout.HeaderHeight.BASE
   justify-content center
   position_it(absolute, 0, 0, null, 0)
   small_caps(14)
+  typeface('sans_bold')
   white-space nowrap
 
 @media Breakpoint.SEARCH_ENABLED

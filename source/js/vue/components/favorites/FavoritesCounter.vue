@@ -78,11 +78,11 @@ export default {
 .favorites-counter
   color white
   display flex
-  font_sans()
   font-size px_to_em(12)
   height '%s' % Layout.HeaderHeight.BASE
   justify-content flex-end
   position_it(absolute, 0, 0, null, null)
+  typeface('sans')
   width 3rem
 
   @media Breakpoint.MEDIUM

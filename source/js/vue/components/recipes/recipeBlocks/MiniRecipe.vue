@@ -41,9 +41,9 @@ export default {
   margin-right 1rem
 
 .mini-recipe__heading
-  font_sans_heavy()
   margin 0 0 1em
   small_caps()
+  typeface('sans_bold')
 
 .mini-recipe__blurb p
   font_serif()

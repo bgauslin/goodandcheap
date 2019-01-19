@@ -28,9 +28,9 @@ export default {
 @import '../../../../stylus/config/'
 
 .footer
-  font_sans()
   font-size px_to_em(12)
   text-align center
+  typeface('sans')
 
 .footer__content
   margin 0 auto
