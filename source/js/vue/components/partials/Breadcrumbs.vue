@@ -94,19 +94,19 @@ export default {
   list-style none
   margin 0 .5em 0 0
 
-  &::after
-    content '%s' % Icon.RIGHT_OPEN
-    font-size 75%
-    icon()
-    margin-left 1em
-    position relative
-    top -1px
+.breadcrumbs__item::after
+  content '%s' % Icon.RIGHT_OPEN
+  font-size 75%
+  icon()
+  margin-left 1em
+  position relative
+  top -1px
 
-  &:last-child
-    margin-right 1rem
+.breadcrumbs__item:last-child
+  margin-right 1rem
 
-    &::after
-      display none
+.breadcrumbs__item:last-child::after
+  display none
 
 .breadcrumbs__link
 .breadcrumbs__label

@@ -30,25 +30,20 @@ export default {
   text-align center
   width 3rem
 
-  &::before
-    height 2rem
-    icon()
-    line-height 2rem
+.remove-favorite::before
+  height 2rem
+  icon()
+  line-height 2rem
 
-.remove-favorite
-  &::before
-    color '%s' % Color.MEDIUM_GREY
-    content '%s' % Icon.CANCEL_CIRCLED
-    font-size px_to_em(20)
+.remove-favorite::before
+  color '%s' % Color.MEDIUM_GREY
+  content '%s' % Icon.CANCEL_CIRCLED
+  font-size px_to_em(20)
 
-  &:active
-    &::before
-      color '%s' % Color.DARK_RED
+.remove-favorite:active::before
+  color '%s' % Color.DARK_RED
 
-.no-touch
-  .remove-favorite
-    &:hover
-      &::before
-        color '%s' % Color.DARK_RED
+.no-touch.remove-favorite:hover::before
+  color '%s' % Color.DARK_RED
 
 </style>

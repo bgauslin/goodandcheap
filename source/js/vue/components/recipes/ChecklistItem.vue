@@ -71,17 +71,17 @@ export default {
   link(Color.DARK_GREY, Color.DARK_GREY, BRAND_COLOR)
   padding .5em 0 .5em 2em
 
-  &::before
-    color '%s' % Color.LIGHTER_GREY
-    content '%s' % Icon.CIRCLE_EMPTY
-    display inline-block
-    font-size px_to_em(22)
-    icon()
-    margin-left -1.3em
-    position relative
-    top .15em
-    vertical-align baseline
-    width 1.3em
+.checklist__link::before
+  color '%s' % Color.LIGHTER_GREY
+  content '%s' % Icon.CIRCLE_EMPTY
+  display inline-block
+  font-size px_to_em(22)
+  icon()
+  margin-left -1.3em
+  position relative
+  top .15em
+  vertical-align baseline
+  width 1.3em
 
 .checklist__link.saved::before
   color green

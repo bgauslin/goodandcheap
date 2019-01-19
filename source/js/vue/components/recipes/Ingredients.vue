@@ -56,14 +56,14 @@ export default {
   margin 0
 
 .ingredients__heading
+  font_sans_heavy()
   margin 1rem 0 .5rem
   padding 0
-  font_sans_heavy()
   small_caps()
 
 .ingredients__count
   color '%s' % Color.MEDIUM_GREY
-  margin-left 1em
   font_sans()
+  margin-left 1em
 
 </style>

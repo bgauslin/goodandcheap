@@ -65,26 +65,23 @@ export default {
   text-align center
   width 3rem
 
-  &::before
-    height 2rem
-    icon()
-    line-height 2rem
+.toggle-favorite::before
+  height 2rem
+  icon()
+  line-height 2rem
 
-.toggle-favorite
-  &::before
-    color '%s' % Color.MEDIUM_GREY
-    content '%s' % Icon.HEART_EMPTY
+.toggle-favorite::before
+  color '%s' % Color.MEDIUM_GREY
+  content '%s' % Icon.HEART_EMPTY
 
-  &.saved
+.toggle-favorite.saved::before
+  color '%s' % Color.RED
+  content '%s' % Icon.HEART
+
+.no-touch .toggle-favorite
+  &:hover
+  &.saved:hover
     &::before
       color '%s' % Color.RED
-      content '%s' % Icon.HEART
-
-.no-touch
-  .toggle-favorite
-    &:hover
-    &.saved:hover
-      &::before
-        color '%s' % Color.RED
 
 </style>

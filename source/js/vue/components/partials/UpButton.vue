@@ -34,45 +34,43 @@ export default {
   @media Breakpoint.MEDIUM
     width auto
 
-  a
-    align-items center
-    align-self stretch
-    display flex
-    height HEADER_HEIGHT_BASE
-    line-height 1
-    link(white, white, rgba(white, .7))
-    padding-left .75rem
+.up-button a
+  align-items center
+  align-self stretch
+  display flex
+  height HEADER_HEIGHT_BASE
+  line-height 1
+  link(white, white, rgba(white, .7))
+  padding-left .75rem
 
-    @media Breakpoint.SMALL
-      padding-left 0
+  @media Breakpoint.SMALL
+    padding-left 0
 
-    @media Breakpoint.MEDIUM
-      height HEADER_HEIGHT_MEDIUM
+  @media Breakpoint.MEDIUM
+    height HEADER_HEIGHT_MEDIUM
 
-    span
-      display none
-      font_sans()
-      small_caps(12)
-      white-space nowrap
+.up-button span
+  display none
+  font_sans()
+  small_caps(12)
+  white-space nowrap
 
-      @media Breakpoint.MEDIUM
-        display block
+  @media Breakpoint.MEDIUM
+    display block
 
-    &::before
-      content '%s' % Icon.ANGLE_LEFT
-      font-size px_to_em(22)
-      icon()
-      margin-right .25em
-      position relative
-      top -.05em
+.up-button a::before
+  content '%s' % Icon.ANGLE_LEFT
+  font-size px_to_em(22)
+  icon()
+  margin-right .25em
+  position relative
+  top -.05em
 
-    &:active
-      transform scale(.9)
-      transition .3s ease
+.up-button a:active
+  transform scale(.9)
+  transition .3s ease
 
-.no-touch
-  .up-button
-    a
-      link_hover(rgba(white, .7))
+.no-touch .up-button a
+  link_hover(rgba(white, .7))
 
 </style>

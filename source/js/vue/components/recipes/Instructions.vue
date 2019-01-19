@@ -54,9 +54,9 @@ export default {
   margin 0 0 1rem
 
 .instructions__heading
+  font_sans_heavy()
   margin 1rem 0
   padding 0
-  font_sans_heavy()
   small_caps()
 
 .instructions__steps

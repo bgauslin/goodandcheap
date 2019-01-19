@@ -39,8 +39,8 @@ export default {
   right 0
   top 0
 
-  .spinner
-    left 50%
-    top 50%
+.preloader .spinner
+  left 50%
+  top 50%
 
 </style>

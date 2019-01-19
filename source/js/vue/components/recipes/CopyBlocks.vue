@@ -41,10 +41,9 @@ export default {
   margin 0 0 .25em
   small_caps()
 
-.copy-block__text
-  p
-    font_sans()
-    font-size px_to_em(14)
+.copy-block__text p
+  font_sans()
+  font-size px_to_em(14)
 
 .blurb-list
   margin 0 0 1em

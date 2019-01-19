@@ -88,38 +88,36 @@ export default {
   @media Breakpoint.MEDIUM
     height HEADER_HEIGHT_MEDIUM
 
-  &.updated
-    animation bounce .3s ease-out
+.favorites-counter.updated
+  animation bounce .3s ease-out
 
-  a
-    align-items center
-    align-self stretch
-    display flex
-    link(white, white, rgba(white, .7))
+.favorites-counter a
+  align-items center
+  align-self stretch
+  display flex
+  link(white, white, rgba(white, .7))
 
-    &::after
-      content '%s' % Icon.HEART
-      font-size 1rem
-      icon()
-      margin 0 1rem 0 .3em
+.favorites-counter a::after
+  content '%s' % Icon.HEART
+  font-size 1rem
+  icon()
+  margin 0 1rem 0 .3em
 
-    &.empty::after
-      content '%s' % Icon.HEART_EMPTY
+.favorites-counter a.empty::after
+  content '%s' % Icon.HEART_EMPTY
 
-    &:active
-      transform scale(.9)
-      transition .3s ease
+.favorites-counter a:active
+  transform scale(.9)
+  transition .3s ease
 
-    &.current
-      color white
+.favorites-counter a.current
+  color white
 
-.no-touch
-  .favorites-counter
-    a
-      link_hover(rgba(white, .7))
+.no-touch .favorites-counter a
+  link_hover(rgba(white, .7))
 
-      &.current:hover
-        color white
-        cursor default
+  &.current:hover
+    color white
+    cursor default
 
 </style>

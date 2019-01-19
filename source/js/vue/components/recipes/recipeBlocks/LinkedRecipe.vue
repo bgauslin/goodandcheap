@@ -22,8 +22,7 @@ export default {
 .linked-recipe
   margin 0 0 1rem
 
-.linked-recipe__blurb
-  p
-    font_sans()
+.linked-recipe__blurb p
+  font_sans()
 
 </style>

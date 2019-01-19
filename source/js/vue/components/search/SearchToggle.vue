@@ -81,10 +81,10 @@ export default {
   &:active
     color rgba(white, .7)
 
-  &::before
-    content '%s' % Icon.SEARCH
-    icon()
-    font-size px_to_em(16)
+.search-toggle::before
+  content '%s' % Icon.SEARCH
+  icon()
+  font-size px_to_em(16)
 
 .no-touch .search-toggle
   &:hover

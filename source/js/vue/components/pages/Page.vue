@@ -71,11 +71,11 @@ export default {
   @media Breakpoint.LARGE
     padding 3rem 0
 
-  &.has-background
-    background-attachment scroll
-    background-position center center
-    background-repeat no-repeat
-    background-size cover
+.page.has-background
+  background-attachment scroll
+  background-position center center
+  background-repeat no-repeat
+  background-size cover
 
 .page__content
   background white
@@ -105,15 +105,14 @@ export default {
   small_caps()
   text-transform uppercase
 
-.page__copy
-  p
-    font_serif()
-    margin 0 0 1em
+.page__copy p
+  font_serif()
+  margin 0 0 1em
 
-  a
-    background rgba(BRAND_COLOR, .1)
-    border-radius 2px
-    padding .1em .4em
+.page__copy a
+  background rgba(BRAND_COLOR, .1)
+  border-radius 2px
+  padding .1em .4em
 
 .page__list
   margin 1em 0
@@ -124,12 +123,11 @@ export default {
   list-style none
   margin-right 1em
 
-.no-touch .page
-  &.has-background
-    background-attachment fixed
+.no-touch .page.has-background
+  background-attachment fixed
 
-.no-touch .page__copy
-  a:hover
+.no-touch .page__copy a
+  &:hover
     color white
     background BRAND_COLOR
 

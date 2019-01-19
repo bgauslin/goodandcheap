@@ -123,18 +123,18 @@ export default {
   @media Breakpoint.MEDIUM
     height HEADER_HEIGHT_MEDIUM
 
-  &:active
-    transform scale(.9)
-    transition .3s ease
+.site-name__link:active
+  transform scale(.9)
+  transition .3s ease
 
 .no-touch .site-name__link
   link_hover(rgba(white, .7))
 
-  &.current
-    color white
-    cursor default
+.no-touch .site-name__link.current
+  color white
+  cursor default
 
-    &:active
-      transform none
+.no-touch .site-name__link.current:active
+  transform none
 
 </style>

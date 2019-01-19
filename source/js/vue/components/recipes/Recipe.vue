@@ -175,10 +175,10 @@ export default {
     position_it(absolute, 0, null, null, 0)
     width 50%
 
-  h3
-    margin 0 0 1em
-    font_sans_heavy()
-    small_caps()
+.recipe__overview h3
+  margin 0 0 1em
+  font_sans_heavy()
+  small_caps()
 
 .recipe__header
   margin 0 2rem 1rem 0

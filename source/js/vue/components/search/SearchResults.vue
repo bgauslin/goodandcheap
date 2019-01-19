@@ -74,10 +74,10 @@ export default {
 .search-results .preview
   transition all .5s ease
 
-  @media Breakpoint.MEDIUM
-    a
-      border-left 1px solid BORDER_COLOR
-      border-right 1px solid BORDER_COLOR
+@media Breakpoint.MEDIUM
+  .search-results .preview a
+    border-left 1px solid BORDER_COLOR
+    border-right 1px solid BORDER_COLOR
 
 .search-results__heading
   margin 0

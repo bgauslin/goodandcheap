@@ -45,10 +45,9 @@ export default {
   margin 0 0 1em
   small_caps()
 
-.mini-recipe__blurb
-  p
-    font_serif()
-    margin 0 0 1em
+.mini-recipe__blurb p
+  font_serif()
+  margin 0 0 1em
 
 .mini-recipe__photo
   flex-shrink 0

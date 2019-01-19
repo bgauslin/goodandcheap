@@ -107,9 +107,8 @@ export default {
 .preview
   preview()
 
-.preview--recipe
-  a
-    padding-right 3rem
+.preview--recipe a
+  padding-right 3rem
 
 .preview__summary
   margin-right 0
@@ -144,8 +143,8 @@ export default {
 
 .preview--recipe .toggle-favorite
 .preview--recipe .remove-favorite
-    right 0
-    top 0
+  right 0
+  top 0
 
 .no-touch .preview--recipe
   preview_no_touch()
