@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/_config/'
+@import '../../../../stylus/config/'
 
 .ingredients
   margin 0 0 1rem

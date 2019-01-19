@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/_config/'
+@import '../../../../stylus/config/'
 
 .chapter
   @media Breakpoint.SMALL

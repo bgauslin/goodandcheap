@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/_config/'
+@import '../../../../stylus/config/'
 
 .pages
   @media Breakpoint.MEDIUM

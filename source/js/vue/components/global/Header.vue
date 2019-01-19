@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/_config/'
+@import '../../../../stylus/config/'
 
 .header
   background '%s' % rgba(Branding.PRIMARY, .97)

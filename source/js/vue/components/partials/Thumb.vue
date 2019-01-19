@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/_config/'
+@import '../../../../stylus/config/'
 
 .thumb
   background-color '%s' % Color.LIGHTER_GREY

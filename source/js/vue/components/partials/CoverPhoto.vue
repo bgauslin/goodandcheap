@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/_config/'
+@import '../../../../stylus/config/'
 
 .cover-photo__image
   animation fadeIn 1s ease-out

@@ -80,7 +80,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../../stylus/_config/'
+@import '../../../../stylus/config/'
 
 .favorites
   animation showFavorites 1s ease-out

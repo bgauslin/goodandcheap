@@ -3,7 +3,7 @@
 </template>
 
 <style lang="stylus">
-@import '../../../../stylus/_config/'
+@import '../../../../stylus/config/'
 
 .alpha-overlay
   display none
