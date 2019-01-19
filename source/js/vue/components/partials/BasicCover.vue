@@ -36,6 +36,9 @@ export default {
 .cover
   cover()
 
+.cover img
+  animation fadeIn .3s ease-out
+
 .cover__content
   animation fadeIn .3s ease-out
   padding 1rem
