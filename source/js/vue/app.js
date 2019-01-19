@@ -2,7 +2,6 @@ import Vue from 'vue/dist/vue.js';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import App from './components/App.vue';
-import getApiDomain from '../helpers/getApiDomain';
 import routeConfig from './routes';
 import direction from './store/direction';
 import favorites from './store/favorites';
@@ -16,16 +15,20 @@ Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
 
-const apiDomain = getApiDomain();
+/**
+ * Gets JSON API's base URL based on server environment.
+ * @return {string}
+ */
+const apiBaseURL = () => {
+  const hostnameParts = window.location.hostname.split('.');
+  const tld = hostnameParts[hostnameParts.length - 1];
+  return (tld === 'website') ? 'https://api.goodandcheap.website' : 'http://api.goodandcheap.test';
+}
 
-const router = new VueRouter({
-  routes: routeConfig(),
-  mode: 'history',
-  linkActiveClass: 'current'
-});
-
-transitions(router);
-
+/**
+ * Initialize data store with all modules.
+ * @instance
+ */
 const store = new Vuex.Store({
   modules: {
     favorites: favorites,
@@ -37,12 +40,29 @@ const store = new Vuex.Store({
   }
 });
 
+/**
+ * Initialize the router.
+ * @instance
+ */
+const router = new VueRouter({
+  routes: routeConfig(),
+  mode: 'history',
+  linkActiveClass: 'current'
+});
+
+/** Bind transitions and router. */
+transitions(router);
+
+/**
+ * Initialize app, pass it the store and router, and mount it to the DOM.
+ * @instance
+ */
 const app = new Vue({
   components: { App },
   store,
   router,
   data: {
     siteName: document.title,
-    apiBaseUrl: apiDomain + '/v2/'
+    apiBaseUrl: apiBaseURL() + '/v2/'
   }
 }).$mount('#app');
