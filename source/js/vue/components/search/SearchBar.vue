@@ -42,7 +42,7 @@ export default {
   align-items center
   display flex
   height '%s' % HeaderHeight.BASE
-  position_it(absolute, 0, 2.5rem, null, MARGINS_BASE)
+  position_it(absolute, 0, 2.5rem, null, Margins.BASE)
 
   @media Breakpoint.SMALL
     left 5.5rem

@@ -61,6 +61,14 @@ Icon = {
   USER: '\e805'  // not used
 }
 
+// @type Hash
+Margins = {
+  BASE: px_to_rem(12)
+  SMALL: px_to_rem(24)
+  MEDIUM: px_to_rem(36)
+  LARGE: px_to_rem(48)
+}
+
 // @type Color
 // @require Colors
 BORDER_COLOR = Color.LIGHTER_GREY
@@ -85,29 +93,15 @@ STACKED_WIDTH = px_to_rem(560)
 BREAKPOINT_SEARCH_ENABLED  = '(max-width: %s)' % BreakpointUnits.MEDIUM
 
 // -----------------------------------------------------------------------------
-// TODO: refactor MARGINS constants
-// @type String
-MARGINS_BASE = px_to_rem(12)
-
-// @type String
-MARGINS_SMALL = px_to_rem(24)
-
-// @type String
-MARGINS_MEDIUM = px_to_rem(36)
-
-// @type String
-MARGINS_LARGE = px_to_rem(48)
-
-// -----------------------------------------------------------------------------
 // TODO: refactor WIDTH constants
 // @type String
-WIDTH_SMALL = BreakpointUnits.SMALL - (2 * MARGINS_SMALL)
+WIDTH_SMALL = BreakpointUnits.SMALL - (2 * Margins.SMALL)
 
 // @type String
-WIDTH_MEDIUM = BreakpointUnits.MEDIUM - (2 * MARGINS_MEDIUM)
+WIDTH_MEDIUM = BreakpointUnits.MEDIUM - (2 * Margins.MEDIUM)
 
 // @type String
-WIDTH_LARGE = BreakpointUnits.LARGE - (2 * MARGINS_LARGE)
+WIDTH_LARGE = BreakpointUnits.LARGE - (2 * Margins.LARGE)
 
 // @type String
-WIDTH_XLARGE = BreakpointUnits.XLARGE - (2 * MARGINS_LARGE)
+WIDTH_XLARGE = BreakpointUnits.XLARGE - (2 * Margins.LARGE)
