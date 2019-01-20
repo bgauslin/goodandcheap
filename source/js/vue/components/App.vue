@@ -26,10 +26,10 @@
 </template>
 
 <script>
-import AppFooter from './global/Footer.vue';
-import AppHeader from './global/Header.vue';
-import Breadcrumbs from './partials/Breadcrumbs.vue';
-import Preloader from './partials/Preloader.vue';
+import AppFooter from './Footer.vue';
+import AppHeader from './Header.vue';
+import Breadcrumbs from './Breadcrumbs.vue';
+import Preloader from './Preloader.vue';
 
 export default {
   components: {

@@ -1,15 +1,15 @@
-import Chapters from './components/chapters/Chapters.vue';
-import Chapter from './components/chapters/Chapter.vue';
-import Favorites from './components/favorites/Favorites.vue';
+import Chapters from './components/Chapters.vue';
+import Chapter from './components/Chapter.vue';
+import Favorites from './components/Favorites.vue';
 import Home from './components/Home.vue';
 import NotFound from './components/NotFound.vue';
-import Pages from './components/pages/Pages.vue';
-import Page from './components/pages/Page.vue';
-import Recipe from './components/recipes/Recipe.vue';
-import RecipeBlurb from './components/recipes/Blurb.vue';
-import RecipeIngredients from './components/recipes/Ingredients.vue';
-import RecipeInstructions from './components/recipes/Instructions.vue';
-import Search from './components/search/SearchResults.vue';
+import Pages from './components/Pages.vue';
+import Page from './components/Page.vue';
+import Recipe from './components/Recipe.vue';
+import RecipeBlurb from './components/RecipeBlurb.vue';
+import RecipeIngredients from './components/RecipeIngredients.vue';
+import RecipeInstructions from './components/RecipeInstructions.vue';
+import Search from './components/SearchResults.vue';
 
 export default () => {
   const routes = [

@@ -1,0 +1,45 @@
+<template lang="pug">
+  div.recipe-cover
+    cover-photo(
+      :image="image",
+      :title="title",
+    )
+    budget(
+      :budget="budget",
+    )
+</template>
+
+<script>
+import Budget from './Budget.vue';
+import CoverPhoto from './CoverPhoto.vue';
+import imagesLoaded from 'imagesloaded';
+
+export default {
+  components: {
+    Budget,
+    CoverPhoto,
+  },
+
+  props: [
+    'budget',
+    'image',
+    'title',
+  ],
+}
+</script>
+
+<style lang="stylus">
+@import '../../../stylus/config/'
+
+.recipe-cover
+  cover()
+  overflow hidden
+
+  @media Breakpoint.LARGE
+    position_it(absolute, 0, 0, null, null)
+    width 50%
+
+.recipe-cover img
+  animation fadeIn .3s ease-out
+
+</style>
