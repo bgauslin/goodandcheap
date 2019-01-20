@@ -33,8 +33,8 @@ export default {
 
   methods: {
     /**
-     * ...
-     * @param {!number} count - ...
+     * Renders a label if there are multiple instruction steps in the recipe.
+     * @param {!number} count
      * @return {string}
      */
     itemsLabel(count) {

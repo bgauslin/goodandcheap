@@ -28,8 +28,9 @@ export default {
 
   methods: {
     /**
-     * ...
-     * @param {!number} count - ...
+     * Renders a label as singular or plural depending on the number of
+     * ingredients in the recipe.
+     * @param {!number} count
      * @return {string}
      */
     itemsLabel(count) {

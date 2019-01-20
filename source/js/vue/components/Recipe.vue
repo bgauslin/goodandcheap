@@ -106,14 +106,19 @@ export default {
 
   methods: {
     /**
-     * TODO...
-     * @param {string} id - TODO...
+     * Adds the recipe to a 'visited' array which sets a class that styles the
+     * recipe as visited for improved usablity.
+     * @param {string} id
      */
     addVisited(id) {
       this.$store.commit('addVisited', id);
     },
 
-    /** @description TODO... */
+    /**
+     * @description Sets a 'min-height' CSS property via inline 'style'
+     * depending on the media query breakpoint to ensure the text content panel
+     * and the photo panel are the same height.
+     */
     minHeight() {
       const overviewElement = this.$el.querySelector('.recipe__overview');
       const overviewWidthPx = overviewElement.offsetWidth;

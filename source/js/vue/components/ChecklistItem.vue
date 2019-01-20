@@ -35,7 +35,8 @@ export default {
 
   methods: {
     /** 
-     * @param {!string} id - ...
+     * Whether the ingredient has been checked by the user and saved.
+     * @param {!string} id
      * @return {boolean}
      */
     isSavedIngredient(id) {
@@ -45,7 +46,8 @@ export default {
     },
 
     /** 
-     * @param {!string} id - ...
+     * Adds/removes the ingredient from the user's saved list of ingredients.
+     * @param {!string} id
      * @return {boolean}
      */
     toggleItem(id) {
