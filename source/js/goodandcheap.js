@@ -14,13 +14,19 @@ import search from './vue/store/search';
 import visited from './vue/store/visited';
 import transitions from './vue/transitions';
 
-/** @const {string} */
-const API_VERSION_PATH = '/v2/';
+/** @enum {string} */
+const Config = {
+  API_DEV: 'http://api.goodandcheap.test',
+  API_PROD: 'https://api.goodandcheap.website',
+  API_VERSION: 'v2',
+  DOMAIN: 'goodandcheap.website',
+  GA_ID: 'UA-626192-14',
+}
 
 /** @const {Object} */
 const gaData = {
-  domain: 'goodandcheap.website',
-  id: 'UA-626192-14'
+  domain: Config.DOMAIN,
+  id: Config.GA_ID,
 }
 
 /** Set up Vue. */
@@ -38,9 +44,7 @@ noTouch();
  * @return {string}
  */
 const apiBaseURL = () => {
-  const hostnameParts = window.location.hostname.split('.');
-  const tld = hostnameParts[hostnameParts.length - 1];
-  return (tld === 'website') ? 'https://api.goodandcheap.website' : 'http://api.goodandcheap.test';
+  return (window.location.hostname !== Config.DOMAIN) ? Config.API_DEV : Config.API_PROD;
 }
 
 /**
@@ -79,7 +83,7 @@ const app = new Vue({
   components: { App },
   data: {
     siteName: document.title,
-    apiBaseUrl: `${apiBaseURL()}${API_VERSION_PATH}`,
+    apiBaseUrl: `${apiBaseURL()}/${Config.API_VERSION}/`,
   },
   router,
   store,
