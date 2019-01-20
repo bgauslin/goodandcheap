@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import getBreakpointValue from '../../modules/getBreakpointValue';
+import setup from '../../setup';
 
 export default {
   props: [
@@ -34,12 +34,13 @@ export default {
   methods: {
     /**
      * @description Moves the breadcrumbs list out of the viewport so that
-     * they're only revealed when the user scrolls up slightly.
+     * they're only revealed when the user scrolls up slightly, depending on
+     * media query breakpoint.
      */
     scrollBreadcrumbs() {
       const offset = this.$el.offsetHeight;
 
-      if (getBreakpointValue() === 'base') {
+      if (setup.getBreakpointValue() === 'base') {
         setTimeout(() => {
           window.scrollTo(0, offset)
         }, 0);

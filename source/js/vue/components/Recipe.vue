@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import getBreakpointValue from '../../modules/getBreakpointValue';
+import setup from '../../setup';
 import AlphaOverlay from './AlphaOverlay.vue';
 import Badge from './Badge.vue';
 import RecipeCover from './RecipeCover.vue';
@@ -106,23 +106,27 @@ export default {
 
   methods: {
     /**
-     * ...
-     * @param {string} id - ...
+     * TODO...
+     * @param {string} id - TODO...
      */
     addVisited(id) {
       this.$store.commit('addVisited', id);
     },
 
-    /** @description ... */
+    /** @description TODO... */
     minHeight() {
-      const overview = this.$el.querySelector('.recipe__overview');
-      const overviewWidthPx = overview.offsetWidth;
-      const overviewWidth = overviewWidthPx / 16 + 'em';
+      const overviewElement = this.$el.querySelector('.recipe__overview');
+      const overviewWidthPx = overviewElement.offsetWidth;
+      const overviewWidth = `${overviewWidthPx / 16}em`;
 
-      if (getBreakpointValue() !== 'large' || getBreakpointValue() !== 'xlarge') {
-        overview.style.minHeight = overviewWidth;
-      } else {
-        overview.style.minHeight = 'none';
+      switch(setup.getBreakpointValue()) {
+        case 'large':
+        case 'xlarge':
+          overviewElement.style.minHeight = overviewWidth;
+          break;
+        default:
+          overviewElement.style.minHeight = 'none';
+          break;
       }
     },
   },

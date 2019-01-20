@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import getBreakpointValue from '../../modules/getBreakpointValue';
+import setup from '../../setup';
 
 export default {
   props: ['data'],
@@ -49,15 +49,19 @@ export default {
   methods: {
     /**
      * @description Attaches a background image to an element via an inline 
-     * 'style' tag.
+     * 'style' tag based on media query breakpoint.
      */
     setBackgroundImage() {
-      if (getBreakpointValue() === 'large' || getBreakpointValue() === 'xlarge') {
-        this.backgroundImageCss = `${this.backgroundImageOverlayCss},url(${this.data.backgroundImage})`;
-        this.hasBackgroundImage = true;
-      } else {
-        this.backgroundImageCss = 'none';
-        this.hasBackgroundImage = false;
+      switch(setup.getBreakpointValue()) {
+        case 'large':
+        case 'xlarge':
+          this.backgroundImageCss = `${this.backgroundImageOverlayCss},url(${this.data.backgroundImage})`;
+          this.hasBackgroundImage = true;
+          break;
+        default:
+          this.backgroundImageCss = 'none';
+          this.hasBackgroundImage = false;
+          break;
       }
     },
   },

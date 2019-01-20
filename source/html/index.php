@@ -41,7 +41,7 @@ if ($tld == 'website') {
     <link rel="stylesheet" href="<?php echo $css_path ?>">
   </head>
 
-  <body ontouchstart>
+  <body class="no-touch" ontouchstart>
     <div id="app">
       <app></app>
 
