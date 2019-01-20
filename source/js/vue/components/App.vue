@@ -189,8 +189,9 @@ export default {
       } else {
         this.data = response;
         this.$store.commit('setParent', this.data.parent);
-        this.updateTitle(this.data.title);
         this.key = this.data.slug;
+        this.updateTitle(this.data.title);
+        this.sendPageview(this.data.title);
         this.dataLoaded = true;
       }
     },
@@ -223,7 +224,20 @@ export default {
 
     /** @description Redirects to 404 page if JSON API response is null. */
     notFound() {
+      this.sendPageview('404');
       window.location.replace('/404');
+    },
+
+    /**
+     * Gets global Google Analytics object and sends a new pageview.
+     */
+    sendPageview(pageTitle) {
+      const ga = window.ga;
+      if (ga) {
+        ga('set', 'page', this.$route.path);
+        ga('set', 'title', pageTitle);
+        ga('send', 'pageview');
+      }
     },
 
     /**
