@@ -46,7 +46,6 @@ gulp.task('img', () => {
 });
 
 // Compile and uglify JavaScript.
-// https://gist.github.com/alkrauss48/a3581391f120ec1c3e03
 gulp.task('js', () => {
   return browserify({ entries: pkg.paths.js.src, debug: true })
     .transform('babelify', { presets: ['@babel/preset-env'] })
