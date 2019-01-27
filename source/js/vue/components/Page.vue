@@ -110,7 +110,7 @@ export default {
   typeface('sans_bold')
 
 .page__copy p
-  font_serif()
+  typeface('serif')
   margin 0 0 1em
 
 .page__copy a

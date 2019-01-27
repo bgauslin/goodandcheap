@@ -46,7 +46,7 @@ export default {
   typeface('sans_bold')
 
 .mini-recipe__blurb p
-  font_serif()
+  typeface('serif')
   margin 0 0 1em
 
 .mini-recipe__photo

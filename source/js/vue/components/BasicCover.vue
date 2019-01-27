@@ -57,7 +57,7 @@ export default {
     font-size px_to_em(30)
 
 .cover__blurb
-  font_serif()
+  typeface('serif')
 
 .cover__recipe-count
   margin 1rem 0 0

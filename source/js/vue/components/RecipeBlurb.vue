@@ -36,7 +36,7 @@ export default {
 @import '../../../stylus/config/'
 
 .blurb p
-  font_serif()
+  typeface('serif')
   margin 0 0 1em
 
 .blurb a

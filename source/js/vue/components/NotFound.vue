@@ -32,7 +32,7 @@ export default {
   typeface('sans_bold')
 
 .error404__message
-  font_serif()
+  typeface('serif')
   text-align center
 
 </style>
