@@ -2,7 +2,7 @@
 
 // @type Hash
 Color = {
-  DARK_RED: #c00
+  BRAND_RED: #e5001f
   DARK_GREY: #333
   LIGHT_GREY: #aaa
   LIGHTER_GREY: #eee
@@ -10,7 +10,6 @@ Color = {
   MEDIUM_GREY: #777
   OFF_WHITE: #f2f2f2
   ORANGE: #ffc500
-  RED: #f00
 }
 
 // @type Hash
@@ -72,8 +71,10 @@ Layout = {
 // @require Color
 Branding = {
   BORDER: Color.LIGHTER_GREY
-  PRIMARY: Color.MATERIAL_BLUE_800
-  SECONDARY: mix(Color.MATERIAL_BLUE_800, white, 50%)
+  PRIMARY: Color.BRAND_RED
+  SECONDARY: mix(Color.BRAND_RED, white, 50%)
+  LINK: Color.MATERIAL_BLUE_800
+  LINK_VISITED: mix(Color.MATERIAL_BLUE_800, white, 50%)
 }
 
 // @type Hash

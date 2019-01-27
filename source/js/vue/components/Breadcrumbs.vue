@@ -116,7 +116,7 @@ export default {
   padding 1rem 0
 
 .breadcrumbs__link
-  link(Branding.PRIMARY, Branding.PRIMARY, Color.DARK_GREY)
+  link(Branding.LINK, Branding.LINK, Color.DARK_GREY)
 
 .breadcrumbs__label
   padding-right '%s' % Layout.Margin.BASE

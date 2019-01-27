@@ -114,7 +114,7 @@ export default {
   margin 0 0 1em
 
 .page__copy a
-  background '%s' % rgba(Branding.PRIMARY, .1)
+  background '%s' % rgba(Branding.LINK, .1)
   border-radius 2px
   padding .1em .4em
 
@@ -130,9 +130,8 @@ export default {
 .no-touch .page.has-background
   background-attachment fixed
 
-.no-touch .page__copy a
-  &:hover
-    color white
-    background '%s' % Branding.PRIMARY
+.no-touch .page__copy a:hover
+  color white
+  background '%s' % Branding.LINK
 
 </style>

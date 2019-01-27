@@ -40,13 +40,12 @@ export default {
   margin 0 0 1em
 
 .blurb a
-  background '%s' % rgba(Branding.PRIMARY, .1)
+  background '%s' % rgba(Branding.LINK, .1)
   border-radius 2px
   padding .1em .4em
 
-.no-touch .blurb a
-  &:hover
-    background '%s' % Branding.PRIMARY
-    color white
+.no-touch .blurb a:hover
+  background '%s' % Branding.LINK
+  color white
 
 </style>

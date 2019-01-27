@@ -41,13 +41,13 @@ export default {
   font-size px_to_em(20)
 
 .remove-favorite:active::before
-  color '%s' % Color.DARK_RED
+  color '%s' % Color.BRAND_RED
 
 .preview--recipe .remove-favorite
   right 0
   top 0
 
 .no-touch.remove-favorite:hover::before
-  color '%s' % Color.DARK_RED
+  color '%s' % Color.BRAND_RED
 
 </style>

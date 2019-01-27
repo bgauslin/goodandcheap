@@ -75,7 +75,7 @@ export default {
   content '%s' % Icon.HEART_EMPTY
 
 .toggle-favorite.saved::before
-  color '%s' % Color.RED
+  color '%s' % Color.BRAND_RED
   content '%s' % Icon.HEART
 
 .recipe .toggle-favorite
@@ -94,6 +94,6 @@ export default {
   &:hover
   &.saved:hover
     &::before
-      color '%s' % Color.RED
+      color '%s' % Color.BRAND_RED
 
 </style>
