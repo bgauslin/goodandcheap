@@ -20,8 +20,8 @@ if ($tld == 'website') {
   $json = json_decode($file, true);
   $css_v = $json[$css];
   $js_v = $json[$js];
-  $css_path = '/build/ui/css/' . $css_v;
-  $js_path = '/build/ui/js/' . $js_v;
+  $css_path = '/build/ui/' . $css_v;
+  $js_path = '/build/ui/' . $js_v;
 } else {
   $css_path = '/ui/css/' . $css;
   $js_path = '/ui/js/' . $js;
