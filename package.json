@@ -21,7 +21,7 @@
     },
     "icons": {
       "src": "source/icons/**/*",
-      "dest": "public"
+      "dest": "public/ui/icons"
     },
     "img": {
       "src": "source/img/**/*",
@@ -29,21 +29,21 @@
     },
     "js": {
       "src": "source/js/goodandcheap.js",
-      "dest": "public/ui/goodandcheap.js",
+      "dest": "public/ui/js/goodandcheap.js",
       "bundleSrc": "goodandcheap.js",
-      "bundleDest": "public/ui"
+      "bundleDest": "public/ui/js"
     },
     "stylus": {
       "src": [
         "source/stylus/goodandcheap.styl",
         "source/stylus/offline.styl"
       ],
-      "dest": "public/ui"
+      "dest": "public/ui/css"
     },
     "version": {
       "src": [
-        "public/ui/goodandcheap.css",
-        "public/ui/goodandcheap.js"
+        "public/ui/css/goodandcheap.css",
+        "public/ui/js/goodandcheap.js"
       ],
       "dest": "public/build/ui",
       "manifestFile": "public/build/manifest.json"

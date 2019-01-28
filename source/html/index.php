@@ -20,11 +20,11 @@ if ($tld == 'website') {
   $json = json_decode($file, true);
   $css_v = $json[$css];
   $js_v = $json[$js];
-  $css_path = '/build/ui/' . $css_v;
-  $js_path = '/build/ui/' . $js_v;
+  $css_path = '/build/ui/css/' . $css_v;
+  $js_path = '/build/ui/js/' . $js_v;
 } else {
-  $css_path = '/ui/' . $css;
-  $js_path = '/ui/' . $js;
+  $css_path = '/ui/css/' . $css;
+  $js_path = '/ui/js/' . $js;
 }
 ?>
 
@@ -36,8 +36,8 @@ if ($tld == 'website') {
     <meta name="description" content="<?php echo $meta_description?>">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png?t=<?php echo date('U') ?>">
-    <link rel="icon" type="image/png" href="/favicon.png?t=<?php echo date('U') ?>">
+    <link rel="apple-touch-icon" href="/ui/icons/touch-icon.png?t=<?php echo date('U') ?>">
+    <link rel="icon" type="image/png" href="/ui/icons/favicon.png?t=<?php echo date('U') ?>">
     <link rel="stylesheet" href="<?php echo $css_path ?>">
   </head>
 

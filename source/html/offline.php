@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <title>Good And Cheap</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <link rel="stylesheet" href="/ui/offline.css">
+    <link rel="apple-touch-icon" href="/ui/icons/touch-icon.png?t=<?php echo date('U') ?>">
+    <link rel="icon" type="image/png" href="/ui/icons/favicon.png?t=<?php echo date('U') ?>">
+    <link rel="stylesheet" href="/ui/css/offline.css">
   </head>
 
   <body>
