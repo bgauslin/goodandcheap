@@ -57,6 +57,12 @@ gulp.task('js', () => {
     .pipe(gulp.dest(pkg.paths.js.bundleDest));
 });
 
+// Copy JSON.
+gulp.task('json', () => {
+  gulp.src(pkg.paths.json.src)
+    .pipe(gulp.dest(pkg.paths.json.dest));
+});
+
 // Compile and minify stylus.
 gulp.task('stylus', () => {
   gulp.src(pkg.paths.stylus.src)

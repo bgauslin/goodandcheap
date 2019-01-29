@@ -2,26 +2,16 @@
 $site_name = 'Good And Cheap';
 $meta_description = 'Web app based on the cookbook by Leanne Brown';
 
-// Sets default paths.
-$site = 'goodandcheap';
+$prod_server = 'goodandcheap.website';
 
-$css = $site . '.css';
-$js = $site . '.js';
+$css = 'goodandcheap.css';
+$js = 'goodandcheap.js';
 
-// Gets TLD for dev vs. production.
-$host = $_SERVER['HTTP_HOST'];
-$parts = explode('.', $host);
-$tld_parts = array_slice($parts, -1);
-$tld = array_pop($tld_parts);
-
-// Uses manifest and updates paths if production.
-if ($tld == 'website') {
-  $file = file_get_contents('./build/manifest.json');
-  $json = json_decode($file, true);
-  $css_v = $json[$css];
-  $js_v = $json[$js];
-  $css_path = '/build/ui/' . $css_v;
-  $js_path = '/build/ui/' . $js_v;
+if ($_SERVER['SERVER_NAME'] == $prod_server) {
+  $manifest = file_get_contents('build/manifest.json');
+  $json = json_decode($manifest, true);
+  $css_path = '/build/ui/css/' . $json[$css];
+  $js_path = '/build/ui/js/' . $json[$js];
 } else {
   $css_path = '/ui/css/' . $css;
   $js_path = '/ui/js/' . $js;
@@ -53,5 +43,10 @@ if ($tld == 'website') {
     </div>
 
     <script src="<?php echo $js_path ?>"></script>
+
+  <?php if ($_SERVER['SERVER_NAME'] != $prod_server) { ?>
+    <div id="css-debugger" src="/ui/js/breakpoints.json" theme="dark"></div>
+    <script src="https://css.gauslin.com/js/debugger.js"></script>
+  <?php } ?>
   </body>
 </html>
