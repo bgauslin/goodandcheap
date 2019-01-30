@@ -10,8 +10,8 @@ $js = 'goodandcheap.js';
 if ($_SERVER['SERVER_NAME'] == $prod_server) {
   $manifest = file_get_contents('build/manifest.json');
   $json = json_decode($manifest, true);
-  $css_path = '/build/ui/css/' . $json[$css];
-  $js_path = '/build/ui/js/' . $json[$js];
+  $css_path = '/build/ui/' . $json[$css];
+  $js_path = '/build/ui/' . $json[$js];
 } else {
   $css_path = '/ui/css/' . $css;
   $js_path = '/ui/js/' . $js;
@@ -31,7 +31,7 @@ if ($_SERVER['SERVER_NAME'] == $prod_server) {
     <link rel="stylesheet" href="<?php echo $css_path ?>">
   </head>
 
-  <body class="no-touch" ontouchstart>
+  <body class="no-touch">
     <div id="app">
       <app></app>
 
