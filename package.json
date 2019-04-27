@@ -7,7 +7,6 @@
     "type": "git",
     "url": "https://github.com/bgauslin/goodandcheap_v2"
   },
-  "private": true,
   "devServer": "goodandcheap.test",
   "paths": {
     "apache": {
