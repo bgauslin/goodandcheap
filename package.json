@@ -20,7 +20,7 @@
     },
     "icons": {
       "src": "source/icons/**/*",
-      "dest": "public/ui/icons"
+      "dest": "public"
     },
     "img": {
       "src": "source/img/**/*",
