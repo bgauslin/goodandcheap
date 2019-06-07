@@ -10,9 +10,9 @@ I extracted all text and images from the PDF, placed the text into a CSV file, t
 
 With all data now residing in a CMS, I then created a JSON API with endpoints based on the various page types:
 
-- Home page
-- Info pages
-- Chapter pages
+- Home
+- Info
+- Chapter
 - Recipes
 
 ## Frontend
