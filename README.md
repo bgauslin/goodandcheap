@@ -2,6 +2,8 @@
 
 I first heard about this cookbook on NPR, downloaded it, and that was that. A few months later, I was trying to think of a good project to give myself for learning the ins and outs of Vue.js, and voilà, this project was born.
 
+![Good And Cheap](https://assets.gauslin.com/images/screenshots/good-and-cheap.png)
+
 ## Backend
 
 I extracted all text and images from the PDF, placed the text into a CSV file, then imported it all into Craft CMS.
