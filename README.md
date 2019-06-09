@@ -1,5 +1,7 @@
 # Good And Cheap
 
+<p class="callout warning">This README is a work in progress. Please proceed with caution.</p>
+
 I first heard about this cookbook on NPR, downloaded it, and that was that. A few months later, I was trying to think of a good project to give myself for learning the ins and outs of Vue.js, and voilà, this project was born.
 
 ![Good And Cheap](https://assets.gauslin.com/images/screenshots/good-and-cheap.png?v=2)
@@ -10,10 +12,10 @@ I extracted all text and images from the PDF, placed the text into a CSV file, t
 
 With all data now residing in a CMS, I then created a JSON API with endpoints based on the various page types:
 
-- Home
-- Info
-- Chapter
-- Recipes
+- [ ] Home
+- [ ] Info
+- [ ] Chapter
+- [ ] Recipes
 
 ## Frontend
 
