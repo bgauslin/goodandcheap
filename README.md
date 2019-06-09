@@ -1,21 +1,20 @@
 # Good And Cheap
 
-<p class="callout warning">This README is a work in progress. Please proceed with caution.</p>
-
-I first heard about this cookbook on NPR, downloaded it, and that was that. A few months later, I was trying to think of a good project to give myself for learning the ins and outs of Vue.js, and voilà, this project was born.
+I first heard about this cookbook on NPR, downloaded it, and it became the basis for learning the ins and outs of Vue a few months later.
 
 ![Good And Cheap](https://assets.gauslin.com/images/screenshots/good-and-cheap.png?v=2)
 
 ## Backend
 
-I extracted all text and images from the PDF, placed the text into a CSV file, then imported it all into Craft CMS.
+All text and images were extracted from the PDF, the text was placed into a CSV file, and then they were all imported into Craft CMS.
 
-With all data now residing in a CMS, I then created a JSON API with endpoints based on the various page types:
+Next a JSON API with endpoints based on the various page types was created, and this data is fetched by the frontend depending on the route:
 
-- [ ] Home
-- [ ] Info
-- [ ] Chapter
-- [ ] Recipes
+- Home
+- Info
+- Chapter
+- Recipes
+- Search
 
 ## Frontend
 
