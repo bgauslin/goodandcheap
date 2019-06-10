@@ -48,7 +48,7 @@ export default () => {
       path: '/info/:slug',
       component: Page,
       meta: {
-        endpoint: 'page',
+        endpoint: 'info',
       }
     },
     {
