@@ -162,6 +162,7 @@ export default {
      * Fetches data from API endpoint, then stores that data to avoid
      * further (redundant) API calls.
      * @param {!string} endpoint - API endpoint.
+     * @async
      */
     fetchData: async function(endpoint) {
       let endpointUrl = this.$root.apiBaseUrl + endpoint;
@@ -181,18 +182,16 @@ export default {
         endpointUrl += `/${slug}`;
       }
 
-      const data = await fetch(endpointUrl);
-      const response = await data.json();
-
-      if (response.error) {
-        this.notFound();
-      } else {
-        this.data = response;
+      try {
+        const response = await fetch(endpointUrl);
+        this.data = await response.json();
         this.$store.commit('setParent', this.data.parent);
         this.key = this.data.slug;
         this.updateTitle(this.data.title);
         this.sendPageview(this.data.title);
         this.dataLoaded = true;
+      } catch (e) {
+        this.notFound();
       }
     },
 
