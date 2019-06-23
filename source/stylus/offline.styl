@@ -1,8 +1,9 @@
 @import 'config/constants'
+@import 'app/root-vars'
 
 html
 body
-  background '%s' % Branding.PRIMARY
+  background var(--brand-color)
   color white
   margin 0
   padding 0
@@ -18,4 +19,5 @@ figure
 
 img
   height auto
+  vertical-align middle
   width 100%

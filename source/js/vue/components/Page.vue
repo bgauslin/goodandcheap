@@ -83,18 +83,18 @@ export default {
 
 .page__content
   background white
-  padding '1rem %s' % Layout.Margin.BASE
+  padding 1rem var(--margin)
 
   @media Breakpoint.SMALL
     margin 0 auto
-    padding '1rem %s' % Layout.Margin.SMALL
+    padding 1rem var(--margin)
 
   @media Breakpoint.MEDIUM
-    padding '2rem %s' % Layout.Margin.MEDIUM
+    padding 2rem var(--margin)
 
   @media Breakpoint.LARGE
     padding 3rem 4rem
-    width '%s' % Layout.Width.PAGE_MAX_WIDTH
+    width PAGE_MAX_WIDTH
 
 .page__title
   margin .5em 0 1em
@@ -114,7 +114,7 @@ export default {
   margin 0 0 1em
 
 .page__copy a
-  background '%s' % rgba(Branding.LINK, .1)
+  background rgba(LINK_COLOR, .1)
   border-radius 2px
   padding .1em .4em
 
@@ -132,6 +132,6 @@ export default {
 
 .no-touch .page__copy a:hover
   color white
-  background '%s' % Branding.LINK
+  background var(--link)
 
 </style>

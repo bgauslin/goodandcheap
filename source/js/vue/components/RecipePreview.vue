@@ -114,7 +114,7 @@ export default {
   margin-right 0
 
 .preview__chapter-title
-  color '%s' % Color.MEDIUM_GREY
+  color var(--color-grey-medium)
   small_caps()
   typeface('sans')
 
@@ -132,7 +132,7 @@ export default {
 
 .preview__index
   bottom 1rem
-  color '%s' % Color.MEDIUM_GREY
+  color var(--color-grey-medium)
   line-height 1
   position absolute
   right 0

@@ -79,14 +79,11 @@ export default {
   color white
   display flex
   font-size px_to_em(12)
-  height '%s' % Layout.HeaderHeight.BASE
+  height var(--header-height)
   justify-content flex-end
   position_it(absolute, 0, 0, null, null)
   typeface('sans')
   width 3rem
-
-  @media Breakpoint.MEDIUM
-    height '%s' % Layout.HeaderHeight.MEDIUM
 
 .favorites-counter.updated
   animation bounce .3s ease-out

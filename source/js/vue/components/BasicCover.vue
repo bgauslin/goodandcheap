@@ -45,7 +45,7 @@ export default {
 
   @media Breakpoint.SMALL
     background rgba(white, .95)
-    box-shadow 0 0 5px 0 '%s' % Color.LIGHT_GREY
+    box-shadow 0 0 5px 0 var(--color-grey-light)
     padding 1.5rem
     position_it(absolute, 0, 3rem, null, 3rem)
 

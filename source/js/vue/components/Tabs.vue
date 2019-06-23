@@ -22,7 +22,7 @@ export default {
 @import '../../../stylus/config/'
 
 .tabs
-  margin '1rem %s' % Layout.Margin.BASE
+  margin 1rem var(--margin)
   tabs()
 
   @media Breakpoint.SMALL

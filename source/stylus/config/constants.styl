@@ -1,25 +1,19 @@
 @import 'functions'
 
-// @type Hash
-Color = {
-  BRAND_RED: #e5001f
-  DARK_GREY: #333
-  LIGHT_GREY: #aaa
-  LIGHTER_GREY: #eee
-  MATERIAL_BLUE_800: #1565c0
-  MEDIUM_GREY: #777
-  OFF_WHITE: #f2f2f2
-  ORANGE: #ffc500
-}
+// @const String
+BRAND_COLOR = #e5001f
 
-// @type Hash
-FontSize = {
-  Base: {
-    H1: px_to_em(24)
-    H2: px_to_em(18)
-    H3: px_to_em(18)
-  }
-}
+// @const String
+LINK_COLOR = #1565c0
+
+// @const String
+LINK_VISITED = mix(LINK_COLOR, white, 50%)
+
+// @const String
+PAGE_MAX_WIDTH = px_to_rem(800)
+
+// @const String
+PAGE_WIDTH_STACKED = px_to_rem(560)
 
 // @type Hash
 Icon = {
@@ -37,61 +31,39 @@ Icon = {
   USER: '\e805'  // not used
 }
 
-// @type Hash
-Layout = {
-  BreakpointUnits: {
-    SMALL: px_to_rem(480)
-    MEDIUM: px_to_rem(768)
-    LARGE: px_to_rem(1024)
-    XLARGE: px_to_rem(1280)
-  }
-  HeaderHeight: {
-    BASE: px_to_rem(44)
-    MEDIUM: px_to_rem(56)
-  }
-  Margin: {
-    BASE: px_to_rem(12)
-    SMALL: px_to_rem(24)
-    MEDIUM: px_to_rem(36)
-    LARGE: px_to_rem(48)
-  }
-  Width: {
-    PAGE_MAX_WIDTH: px_to_rem(800)
-    STACKED: px_to_rem(560)
-  }
-}
-
-// TODO: create Transition hash and update selectors and properties
-// where applicable.
-
 // -----------------------------------------------------------------------------
-// Hashes with hash dependencies.
 
 // @type Hash
-// @require Color
-Branding = {
-  BORDER: Color.LIGHTER_GREY
-  PRIMARY: Color.BRAND_RED
-  SECONDARY: mix(Color.BRAND_RED, white, 50%)
-  LINK: Color.MATERIAL_BLUE_800
-  LINK_VISITED: mix(Color.MATERIAL_BLUE_800, white, 50%)
+BreakpointUnits = {
+  SMALL: px_to_rem(480)
+  MEDIUM: px_to_rem(768)
+  LARGE: px_to_rem(1024)
+  XLARGE: px_to_rem(1280)
 }
 
 // @type Hash
-// @require Layout
+Margin = {
+  BASE: px_to_rem(12)
+  SMALL: px_to_rem(24)
+  MEDIUM: px_to_rem(36)
+  LARGE: px_to_rem(48)
+}
+
+// @type Hash
+// @require BreakpointUnits
 Breakpoint = {
-  SMALL: '(min-width: %s)' % Layout.BreakpointUnits.SMALL
-  MEDIUM: '(min-width: %s)' % Layout.BreakpointUnits.MEDIUM
-  LARGE: '(min-width: %s)' % Layout.BreakpointUnits.LARGE
-  XLARGE: '(min-width: %s)' % Layout.BreakpointUnits.XLARGE
-  SEARCH_ENABLED: '(max-width: %s)' % Layout.BreakpointUnits.MEDIUM
+  SMALL: '(min-width: %s)' % BreakpointUnits.SMALL
+  MEDIUM: '(min-width: %s)' % BreakpointUnits.MEDIUM
+  LARGE: '(min-width: %s)' % BreakpointUnits.LARGE
+  XLARGE: '(min-width: %s)' % BreakpointUnits.XLARGE
+  SEARCH_ENABLED: '(max-width: %s)' % BreakpointUnits.MEDIUM
 }
 
 // @type Hash
-// @require Layout
+// @require BreakpointUnits
+// @require Margin
 ElementWidth = {
-  SMALL: Layout.BreakpointUnits.SMALL - (2 * Layout.Margin.SMALL)
-  MEDIUM: Layout.BreakpointUnits.MEDIUM - (2 * Layout.Margin.MEDIUM)
-  LARGE: Layout.BreakpointUnits.LARGE - (2 * Layout.Margin.LARGE) // not used
-  XLARGE: Layout.BreakpointUnits.XLARGE - (2 * Layout.Margin.LARGE)
+  SMALL: BreakpointUnits.SMALL - (2 * Margin.SMALL)
+  MEDIUM: BreakpointUnits.MEDIUM - (2 * Margin.MEDIUM)
+  XLARGE: BreakpointUnits.XLARGE - (2 * Margin.LARGE)
 }

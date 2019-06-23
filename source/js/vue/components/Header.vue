@@ -75,24 +75,17 @@ export default {
 @import '../../../stylus/config/'
 
 .header
-  background '%s' % rgba(Branding.PRIMARY, .97)
-  box-shadow 0 0 5px 0 '%s' % Color.MEDIUM_GREY
+  background rgba(BRAND_COLOR, .97)
+  box-shadow 0 0 5px 0 var(--color-grey-medium)
   position_it(fixed, 0, 0, null, 0)
   z-index 999
 
 .header__controls
-  height '%s' % Layout.HeaderHeight.BASE
+  height var(--header-height)
   position relative
 
   @media Breakpoint.SMALL
-    margin '0 %s' % Layout.Margin.SMALL
-
-  @media Breakpoint.MEDIUM
-    height '%s' % Layout.HeaderHeight.MEDIUM
-    margin '0 %s' % Layout.Margin.MEDIUM
-
-  @media Breakpoint.LARGE
-    margin '0 %s' % Layout.Margin.LARGE
+    margin 0 var(--margin)
 
   @media Breakpoint.XLARGE
     margin 0 auto
@@ -100,7 +93,7 @@ export default {
 
 .site-name
   display flex
-  height '%s' % Layout.HeaderHeight.BASE
+  height var(--header-height)
   justify-content center
   position_it(absolute, 0, 0, null, 0)
   small_caps(14)
@@ -115,12 +108,10 @@ export default {
   align-items center
   align-self stretch
   display flex
+  // height var(--header-height)
   link(white, white, rgba(white, .7))
   position relative
   z-index 2
-
-  @media Breakpoint.MEDIUM
-    height '%s' % Layout.HeaderHeight.MEDIUM
 
 .site-name__link:active
   transform scale(.9)

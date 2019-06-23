@@ -22,10 +22,7 @@ export default {
 
 .pages
   @media Breakpoint.MEDIUM
-    margin '0 %s' % Layout.Margin.MEDIUM
-
-  @media Breakpoint.LARGE
-    margin '0 %s' % Layout.Margin.LARGE
+    margin 0 var(--margin)
 
   @media Breakpoint.XLARGE
     margin 0 auto

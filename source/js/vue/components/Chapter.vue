@@ -38,13 +38,13 @@ export default {
 
 .chapter
   @media Breakpoint.SMALL
-    margin '1.5rem %s 0' % Layout.Margin.SMALL
+    margin 1.5rem var(--margin) 0
 
   @media Breakpoint.MEDIUM
-    margin '2.25rem %s 0' % Layout.Margin.MEDIUM
+    margin-top 2.25rem
 
   @media Breakpoint.LARGE
-    margin '3rem %s 0' % Layout.Margin.LARGE
+    margin-top 3rem
 
   @media Breakpoint.XLARGE
     margin 3rem auto 0
@@ -55,11 +55,11 @@ export default {
   margin 0 auto
   
   @media Breakpoint.SMALL
-    max-width '%s' % Layout.Width.STACKED
+    max-width PAGE_WIDTH_STACKED
 
   @media Breakpoint.MEDIUM
     max-width none
-    width '%s' % Layout.Width.STACKED
+    width PAGE_WIDTH_STACKED
 
   @media Breakpoint.LARGE
     overflow hidden

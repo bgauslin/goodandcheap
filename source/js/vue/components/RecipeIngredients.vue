@@ -63,7 +63,7 @@ export default {
   typeface('sans_bold')
 
 .ingredients__count
-  color '%s' % Color.MEDIUM_GREY
+  color var(--color-grey-medium)
   margin-left 1em
   typeface('sans')
 

@@ -70,11 +70,11 @@ export default {
 
 .checklist__link
   display block
-  link(Color.DARK_GREY, Color.DARK_GREY, Branding.PRIMARY)
+  link(var(--color-grey-dark), var(--color-grey-dark), var(--brand-color))
   padding .5em 0 .5em 2em
 
 .checklist__link::before
-  color '%s' % Color.LIGHTER_GREY
+  color var(--color-grey-lighter)
   content '%s' % Icon.CIRCLE_EMPTY
   display inline-block
   font-size px_to_em(22)
@@ -90,6 +90,6 @@ export default {
   content '%s' % Icon.OK_CIRCLED
 
 .no-touch .checklist__link
-  link_hover(Branding.PRIMARY)
+  link_hover(var(--brand-color))
 
 </style>

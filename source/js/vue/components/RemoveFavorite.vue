@@ -36,18 +36,18 @@ export default {
   line-height 2rem
 
 .remove-favorite::before
-  color '%s' % Color.MEDIUM_GREY
+  color var(--color-grey-medium)
   content '%s' % Icon.CANCEL_CIRCLED
   font-size px_to_em(20)
 
 .remove-favorite:active::before
-  color '%s' % Color.BRAND_RED
+  color var(--brand-color)
 
 .preview--recipe .remove-favorite
   right 0
   top 0
 
 .no-touch .remove-favorite:hover::before
-  color '%s' % Color.BRAND_RED
+  color var(--brand-color)
 
 </style>

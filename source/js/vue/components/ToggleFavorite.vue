@@ -71,11 +71,11 @@ export default {
   line-height 2rem
 
 .toggle-favorite::before
-  color '%s' % Color.MEDIUM_GREY
+  color var(--color-grey-medium)
   content '%s' % Icon.HEART_EMPTY
 
 .toggle-favorite.saved::before
-  color '%s' % Color.BRAND_RED
+  color var(--brand-color)
   content '%s' % Icon.HEART
 
 .recipe .toggle-favorite
@@ -94,6 +94,6 @@ export default {
   &:hover
   &.saved:hover
     &::before
-      color '%s' % Color.BRAND_RED
+      color var(--brand-color)
 
 </style>

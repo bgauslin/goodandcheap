@@ -76,12 +76,12 @@ preview()
   a
     align-items center
     background white
-    border-top 1px solid '%s' % Branding.BORDER
+    border-top 1px solid var(--border-color)
     display flex
-    link(Color.DARK_GREY, Color.MEDIUM_GREY, Branding.PRIMARY)
+    link(var(--color-grey-dark), var(--color-grey-medium), var(--brand-color))
 
   a.visited
-    color '%s' % Color.MEDIUM_GREY
+    color var(--color-grey-medium)
 
   h3
     line-height 1.1
@@ -93,12 +93,12 @@ preview()
     margin 0 1rem 0 .5rem
 
   &:last-child a
-    border-bottom 1px solid '%s' % Branding.BORDER
+    border-bottom 1px solid var(--border-color)
 
 // @mixin
 preview_no_touch()
   a
-    link_hover(Branding.PRIMARY)
+    link_hover(var(--brand-color))
 
 // @mixin
 // @param String size [null]
@@ -116,7 +116,7 @@ previews_grid()
 
   @media Breakpoint.MEDIUM
     .preview a
-      border 1px solid '%s' % Branding.BORDER
+      border 1px solid var(--border-color)
 
 // @mixin
 // @param Number font_size [12]
@@ -128,7 +128,7 @@ small_caps(font_size = 12)
 // @mixin
 tabs()
   align-items center
-  border 1px solid '%s' % Branding.PRIMARY
+  border 1px solid var(--brand-color)
   display flex
   overflow hidden
   
@@ -140,7 +140,7 @@ tabs_item()
   margin 0
 
   &:not(:last-child)
-    border-right 1px solid '%s' % Branding.PRIMARY
+    border-right 1px solid var(--brand-color)
 
 // @mixin
 tabs_link()
@@ -153,27 +153,27 @@ tabs_link()
 
   &:link
   &:visited
-    color '%s' % Branding.PRIMARY
+    color var(--brand-color)
 
   &:focus
   &:active
-    background '%s' % rgba(Branding.PRIMARY, .1)
-    color '%s' % Branding.PRIMARY
+    background rgba(BRAND_COLOR, .1)
+    color var(--brand-color)
 
   &.current
-    background '%s' % Branding.PRIMARY
+    background var(--brand-color)
     color white
 
 // @mixin
 tabs_link__no_touch()
   &:hover
   &:visited:hover
-    background '%s' % rgba(Branding.PRIMARY, .1)
-    color '%s' % Branding.PRIMARY
+    background rgba(BRAND_COLOR, .1)
+    color var(--brand-color)
 
   &.current:hover
   &.current:visited:hover
-    background '%s' % Branding.PRIMARY
+    background var(--brand-color)
     color white
 
 // @mixin

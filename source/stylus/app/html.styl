@@ -5,8 +5,8 @@ webfont('Futura-Bold', '/ui/webfonts/Futura-Bold/Futura-Bold')
 webfont('Icons', '/ui/webfonts/icons/icons')
 
 body
-  background '%s' % Color.OFF_WHITE
-  color '%s' % Color.DARK_GREY
+  background var(--color-off-white)
+  color var(--color-grey-dark)
   margin 0
   padding 0
 
@@ -39,14 +39,14 @@ h3
   line-height 1.1
 
 h1
-  font-size '%s' % FontSize.Base.H1
+  font-size var(--h1)
 
 h2
-  font-size '%s' % FontSize.Base.H2
+  font-size var(--h2)
   margin 1em 0
 
 h3
-  font-size '%s' % FontSize.Base.H3
+  font-size var(--h3)
 
 p
   line-height 1.5
@@ -57,11 +57,11 @@ strong
 
 a
   background transparent
-  link(Branding.LINK, Branding.LINK_VISITED, Color.DARK_GREY)
+  link(var(--link), var(--link-visited), var(--color-grey-dark))
   text-decoration none
 
 .no-touch a
-  link_hover(Color.DARK_GREY)
+  link_hover(var(--color-grey-dark))
   transition background .3s ease, border .3s ease, color .3s ease
 
 button

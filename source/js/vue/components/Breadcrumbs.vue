@@ -58,7 +58,7 @@ export default {
 @import '../../../stylus/config/'
 
 .breadcrumbs
-  color '%s' % Color.MEDIUM_GREY
+  color var(--color-grey-medium)
   overflow-x scroll
   -webkit-overflow-scrolling touch
   small_caps(12)
@@ -67,17 +67,17 @@ export default {
   width 100%
 
   @media Breakpoint.SMALL
-    margin '%s %s 0' % (Layout.HeaderHeight.BASE Layout.Margin.SMALL)
-    max-width '%s' % Layout.Width.STACKED
+    margin var(--header-height) '%s' 0 % Margin.SMALL
+    max-width PAGE_WIDTH_STACKED
 
   @media Breakpoint.MEDIUM
-    margin '%s auto 0' % Layout.HeaderHeight.MEDIUM
+    margin var(--header-height) auto 0
     max-width none
-    width '%s' % Layout.Width.STACKED
+    width PAGE_WIDTH_STACKED
 
   @media Breakpoint.LARGE
-    margin-left '%s' % Layout.Margin.LARGE
-    margin-right '%s' % Layout.Margin.LARGE
+    margin-left var(--margin)
+    margin-right var(--margin)
     width auto
 
   @media Breakpoint.XLARGE
@@ -87,7 +87,7 @@ export default {
 
 .breadcrumbs__list
   display flex
-  padding '0 %s' % Layout.Margin.BASE
+  padding 0 var(--margin)
 
   @media Breakpoint.SMALL
     padding 0
@@ -116,12 +116,12 @@ export default {
   padding 1rem 0
 
 .breadcrumbs__link
-  link(Branding.LINK, Branding.LINK, Color.DARK_GREY)
+  link(var(--link), var(--link), var(--color-grey-dark))
 
 .breadcrumbs__label
-  padding-right '%s' % Layout.Margin.BASE
+  padding-right var(--margin)
 
 .no-touch .breadcrumbs__link
-  link_hover(Color.MEDIUM_GREY)
+  link_hover(var(--color-grey-medium))
 
 </style>
