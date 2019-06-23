@@ -31,8 +31,6 @@ Icon = {
   USER: '\e805'  // not used
 }
 
-// -----------------------------------------------------------------------------
-
 // @type Hash
 BreakpointUnits = {
   SMALL: px_to_rem(480)
@@ -52,11 +50,11 @@ Margin = {
 // @type Hash
 // @require BreakpointUnits
 Breakpoint = {
-  SMALL: '(min-width: %s)' % BreakpointUnits.SMALL
-  MEDIUM: '(min-width: %s)' % BreakpointUnits.MEDIUM
-  LARGE: '(min-width: %s)' % BreakpointUnits.LARGE
-  XLARGE: '(min-width: %s)' % BreakpointUnits.XLARGE
-  SEARCH_ENABLED: '(max-width: %s)' % BreakpointUnits.MEDIUM
+  SMALL: 'screen and (min-width: %s)' % BreakpointUnits.SMALL
+  MEDIUM: 'screen and (min-width: %s)' % BreakpointUnits.MEDIUM
+  LARGE: 'screen and (min-width: %s)' % BreakpointUnits.LARGE
+  XLARGE: 'screen and (min-width: %s)' % BreakpointUnits.XLARGE
+  SEARCH_ENABLED: 'screen and (max-width: %s)' % BreakpointUnits.MEDIUM
 }
 
 // @type Hash
