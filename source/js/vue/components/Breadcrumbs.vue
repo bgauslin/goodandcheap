@@ -67,7 +67,7 @@ export default {
   width 100%
 
   @media Breakpoint.SMALL
-    margin var(--header-height) '%s' 0 % Margin.SMALL
+    margin var(--header-height) var(--margin) 0
     max-width PAGE_WIDTH_STACKED
 
   @media Breakpoint.MEDIUM
@@ -83,7 +83,7 @@ export default {
   @media Breakpoint.XLARGE
     margin-left auto
     margin-right auto
-    width '%s' % ElementWidth.XLARGE
+    width var(--element-width)
 
 .breadcrumbs__list
   display flex
