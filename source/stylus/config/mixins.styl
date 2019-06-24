@@ -66,6 +66,7 @@ position_it(position, top, right, bottom, left)
   if left != null
     left left
 
+// TODO: Remove mixin and place styles with refactored/BEM-ified selector.
 // @mixin
 preview()
   list-style none
@@ -108,13 +109,15 @@ small_caps(font_size = 12)
   letter-spacing .1em
   text-transform uppercase
 
+// TODO: Remove mixin and place styles with refactored/BEM-ified selector.
 // @mixin
 tabs()
   align-items center
   border 1px solid var(--brand-color)
   display flex
   overflow hidden
-  
+
+// TODO: Remove mixin and place styles with refactored/BEM-ified selector.
 // @mixin
 tabs_item()
   flex 1 1
@@ -125,6 +128,7 @@ tabs_item()
   &:not(:last-child)
     border-right 1px solid var(--brand-color)
 
+// TODO: Remove mixin and place styles with refactored/BEM-ified selector.
 // @mixin
 tabs_link()
   background white

@@ -21,6 +21,7 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/config/'
 
+// TODO: Refactor and BEM-ify selectors, then remove mixin calls.
 .tabs
   margin 1rem var(--margin)
   tabs()

@@ -206,6 +206,7 @@ export default {
   small_caps()
   typeface('sans_bold')
 
+// TODO: Refactor and BEM-ify selectors, then remove mixin calls.
 .recipe__tabs
   margin 0 0 1.5rem
   tabs()
