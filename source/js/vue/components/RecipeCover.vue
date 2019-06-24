@@ -32,14 +32,11 @@ export default {
 @import '../../../stylus/config/'
 
 .recipe-cover
-  cover()
   overflow hidden
+  position relative
 
   @media Breakpoint.LARGE
     position_it(absolute, 0, 0, null, null)
     width 50%
-
-.recipe-cover img
-  animation fadeIn .3s ease-out
 
 </style>

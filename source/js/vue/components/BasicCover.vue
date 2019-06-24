@@ -34,10 +34,7 @@ export default {
 @import '../../../stylus/config/'
 
 .cover
-  cover()
-
-.cover img
-  animation fadeIn .3s ease-out
+  position relative
 
 .cover__content
   animation fadeIn .3s ease-out
@@ -63,5 +60,9 @@ export default {
   margin 1rem 0 0
   small_caps()
   typeface('sans_bold')
+
+// TODO: Refactor/replace aspect_ratio() mixin since it writes element selectors.
+.cover-photo
+  aspect_ratio(1, 1)
 
 </style>
