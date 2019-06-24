@@ -43,6 +43,7 @@ link(link, visited, active)
     &:visited:active
       color active
 
+// TODO: Move link_hover() mixin to link() mixin.
 // @mixin
 // @param Color hover
 link_hover(hover)
@@ -95,6 +96,7 @@ preview()
   &:last-child a
     border-bottom 1px solid var(--border-color)
 
+// TODO: Move preview_no_touch() mixin to preview() mixin.
 // @mixin
 preview_no_touch()
   a
@@ -113,10 +115,6 @@ previews_grid()
   display flex
   flex-direction row
   flex-wrap wrap
-
-  @media Breakpoint.MEDIUM
-    .preview a
-      border 1px solid var(--border-color)
 
 // @mixin
 // @param Number font_size [12]
@@ -164,6 +162,7 @@ tabs_link()
     background var(--brand-color)
     color white
 
+// TODO: Move tabs_link__no_touch() mixin to tabs_link() mixin.
 // @mixin
 tabs_link__no_touch()
   &:hover

@@ -28,6 +28,7 @@ export default {
     margin 0 auto
     width '%s' % ContentWidth.XLARGE
 
+// TODO: BEM-ify selectors.
 .chapters .previews
   @media Breakpoint.MEDIUM
     previews_grid()
@@ -40,5 +41,9 @@ export default {
 
   @media Breakpoint.LARGE
     preview_width('large')
+
+@media Breakpoint.MEDIUM
+  .chapters .preview a
+    border 1px solid var(--border-color)
 
 </style>
