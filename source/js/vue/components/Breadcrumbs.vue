@@ -116,12 +116,9 @@ export default {
   padding 1rem 0
 
 .breadcrumbs__link
-  link(var(--link), var(--link), var(--color-grey-dark))
+  link(var(--link), var(--link), var(--color-grey-medium), var(--color-grey-dark))
 
 .breadcrumbs__label
   padding-right var(--margin)
-
-[no-touch] .breadcrumbs__link
-  link_hover(var(--color-grey-medium))
 
 </style>

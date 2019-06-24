@@ -40,7 +40,7 @@ export default {
   display flex
   height var(--header-height)
   line-height 1
-  link(white, white, rgba(white, .7))
+  link(white, white, rgba(white, .7), rgba(white, .7))
   padding-left .75rem
 
   @media Breakpoint.SMALL
@@ -67,7 +67,6 @@ export default {
   transform scale(.9)
   transition .3s ease
 
-[no-touch] .up-button a
-  link_hover(rgba(white, .7))
+
 
 </style>

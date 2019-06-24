@@ -29,8 +29,9 @@ icon()
 // @mixin
 // @param Color link
 // @param Color visited
+// @param Color hover
 // @param Color active
-link(link, visited, active)
+link(link, visited, hover, active)
   &
     &:link
       color link
@@ -43,11 +44,7 @@ link(link, visited, active)
     &:visited:active
       color active
 
-// TODO: Move link_hover() mixin to link() mixin.
-// @mixin
-// @param Color hover
-link_hover(hover)
-  &
+  [no-touch] &
     &:hover
     &:visited:hover
       color hover
@@ -79,7 +76,7 @@ preview()
     background white
     border-top 1px solid var(--border-color)
     display flex
-    link(var(--color-grey-dark), var(--color-grey-medium), var(--brand-color))
+    link(var(--color-grey-dark), var(--color-grey-medium), var(--brand-color), var(--brand-color))
 
   a.visited
     color var(--color-grey-medium)
@@ -95,12 +92,6 @@ preview()
 
   &:last-child a
     border-bottom 1px solid var(--border-color)
-
-// TODO: Move preview_no_touch() mixin to preview() mixin.
-// @mixin
-preview_no_touch()
-  a
-    link_hover(var(--brand-color))
 
 // @mixin
 // @param String size [null]

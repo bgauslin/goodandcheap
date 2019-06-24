@@ -109,16 +109,13 @@ export default {
   align-self stretch
   display flex
   // height var(--header-height)
-  link(white, white, rgba(white, .7))
+  link(white, white, rgba(white, .7), rgba(white, .7))
   position relative
   z-index 2
 
 .site-name__link:active
   transform scale(.9)
   transition .3s ease
-
-[no-touch] .site-name__link
-  link_hover(rgba(white, .7))
 
 [no-touch] .site-name__link.current
   color white

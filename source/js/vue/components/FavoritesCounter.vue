@@ -92,7 +92,7 @@ export default {
   align-items center
   align-self stretch
   display flex
-  link(white, white, rgba(white, .7))
+  link(white, white, rgba(white, .7), rgba(white, .7))
 
 .favorites-counter a::after
   content '%s' % Icon.HEART
@@ -110,11 +110,8 @@ export default {
 .favorites-counter a.current
   color white
 
-[no-touch] .favorites-counter a
-  link_hover(rgba(white, .7))
-
-  &.current:hover
-    color white
-    cursor default
+[no-touch] .favorites-counter a.current:hover
+  color white
+  cursor default
 
 </style>
