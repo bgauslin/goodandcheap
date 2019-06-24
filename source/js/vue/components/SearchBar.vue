@@ -42,7 +42,7 @@ export default {
   align-items center
   display flex
   height var(--header-height)
-  position_it(absolute, 0, 2.5rem, null, var(--margin))
+  position_it(absolute, 0, 2.5rem, null, Margin.BASE)
 
   @media Breakpoint.SMALL
     left 5.5rem // TODO: var() ???
