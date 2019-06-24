@@ -1,10 +1,18 @@
 <template lang="pug">
-  div.cover
+  div(
+    :class="['cover', 'cover--' + modifier]"
+  )
     cover-photo(
       :image="image",
       :title="title",
     )
-    div.cover__content
+    budget(
+      v-if="budget",
+      :budget="budget",
+    )
+    div.cover__content(
+      v-else
+    )
       h1.cover__title {{ title }}
       div.cover__blurb(
         v-html="blurb",
@@ -15,16 +23,22 @@
 </template>
 
 <script>
+import Budget from './Budget.vue';
 import CoverPhoto from './CoverPhoto.vue';
 import imagesLoaded from 'imagesloaded';
 
 export default {
-  components: { CoverPhoto },
+  components: {
+    Budget,
+    CoverPhoto,
+  },
 
   props: [
     'blurb',
+    'budget',
     'count',
     'image',
+    'modifier',
     'title',
   ],
 }
@@ -60,9 +74,5 @@ export default {
   margin 1rem 0 0
   small_caps()
   typeface('sans_bold')
-
-// TODO: Refactor/replace aspect_ratio() mixin since it writes element selectors.
-.cover-photo
-  aspect_ratio(1, 1)
 
 </style>

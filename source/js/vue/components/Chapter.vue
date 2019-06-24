@@ -2,11 +2,12 @@
   div.chapter
     div.chapter__content
       div.chapter__intro
-        basic-cover(
+        cover(
           :blurb="data.blurb",
           :count="data.recipeCount + ' Recipes'",
           :image="data.photo",
           :title="data.title",
+          modifier="chapter",
         )
       ol.chapter__previews
         recipe-preview(
@@ -20,12 +21,12 @@
 </template>
 
 <script>
-import BasicCover from './BasicCover.vue';
+import Cover from './Cover.vue';
 import RecipePreview from './RecipePreview.vue';
 
 export default {
   components: {
-    BasicCover,
+    Cover,
     RecipePreview,
   },
 

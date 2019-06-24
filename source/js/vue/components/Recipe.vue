@@ -1,10 +1,11 @@
 <template lang="pug">
   div.recipe
     div.recipe__content
-      recipe-cover(
+      cover(
         :budget="data.budget",
         :image="data.photo",
         :title="data.title",
+        modifier="recipe",
       )
       div.recipe__overview
         header.recipe__header
@@ -71,14 +72,14 @@
 import setup from '../../setup';
 import AlphaOverlay from './AlphaOverlay.vue';
 import Badge from './Badge.vue';
-import RecipeCover from './RecipeCover.vue';
+import Cover from './Cover.vue';
 import ToggleFavorite from './ToggleFavorite.vue';
 
 export default {
   components: {
     AlphaOverlay,
     Badge,
-    RecipeCover,
+    Cover,
     ToggleFavorite,
   },
 
@@ -118,6 +119,7 @@ export default {
      * @description Sets a 'min-height' CSS property via inline 'style'
      * depending on the media query breakpoint to ensure the text content panel
      * and the photo panel are the same height.
+     * TODO: Achieve this with CSS padding and positioning, then remove method.
      */
     minHeight() {
       const overviewElement = this.$el.querySelector('.recipe__overview');
@@ -131,7 +133,6 @@ export default {
           break;
         default:
           overviewElement.style.minHeight = 'none';
-          break;
       }
     },
   },
