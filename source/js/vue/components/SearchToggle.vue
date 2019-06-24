@@ -86,7 +86,7 @@ export default {
   font-size px_to_em(16)
   icon()
 
-.no-touch .search-toggle
+[no-touch] .search-toggle
   &:hover
   &:visited:hover
     color rgba(white, .7)

@@ -67,7 +67,7 @@ export default {
   transform scale(.9)
   transition .3s ease
 
-.no-touch .up-button a
+[no-touch] .up-button a
   link_hover(rgba(white, .7))
 
 </style>

@@ -47,7 +47,7 @@ export default {
   right 0
   top 0
 
-.no-touch .remove-favorite:hover::before
+[no-touch] .remove-favorite:hover::before
   color var(--brand-color)
 
 </style>

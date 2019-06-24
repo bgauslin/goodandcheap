@@ -117,14 +117,14 @@ export default {
   transform scale(.9)
   transition .3s ease
 
-.no-touch .site-name__link
+[no-touch] .site-name__link
   link_hover(rgba(white, .7))
 
-.no-touch .site-name__link.current
+[no-touch] .site-name__link.current
   color white
   cursor default
 
-.no-touch .site-name__link.current:active
+[no-touch] .site-name__link.current:active
   transform none
 
 </style>

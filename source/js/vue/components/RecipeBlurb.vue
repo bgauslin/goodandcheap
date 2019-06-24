@@ -44,7 +44,7 @@ export default {
   border-radius 2px
   padding .1em .4em
 
-.no-touch .blurb a:hover
+[no-touch] .blurb a:hover
   background var(--link)
   color white
 

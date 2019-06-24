@@ -141,7 +141,7 @@ export default {
   typeface('sans')
   width 3rem
 
-.no-touch .preview--recipe
+[no-touch] .preview--recipe
   preview_no_touch()
 
 </style>

@@ -89,7 +89,7 @@ export default {
   color green
   content '%s' % Icon.OK_CIRCLED
 
-.no-touch .checklist__link
+[no-touch] .checklist__link
   link_hover(var(--brand-color))
 
 </style>

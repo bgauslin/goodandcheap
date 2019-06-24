@@ -127,10 +127,10 @@ export default {
   list-style none
   margin-right 1em
 
-.no-touch .page.has-background
+[no-touch] .page.has-background
   background-attachment fixed
 
-.no-touch .page__copy a:hover
+[no-touch] .page__copy a:hover
   color white
   background var(--link)
 

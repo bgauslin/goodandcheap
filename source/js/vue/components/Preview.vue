@@ -47,7 +47,7 @@ export default {
   small_caps()
   typeface('sans_bold')
 
-.no-touch .preview
+[no-touch] .preview
   preview_no_touch()
 
 </style>

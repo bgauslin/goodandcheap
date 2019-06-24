@@ -110,7 +110,7 @@ export default {
 .favorites-counter a.current
   color white
 
-.no-touch .favorites-counter a
+[no-touch] .favorites-counter a
   link_hover(rgba(white, .7))
 
   &.current:hover

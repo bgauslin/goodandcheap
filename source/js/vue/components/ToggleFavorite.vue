@@ -90,7 +90,7 @@ export default {
   right 0
   top 0
 
-.no-touch .toggle-favorite
+[no-touch] .toggle-favorite
   &:hover
   &.saved:hover
     &::before

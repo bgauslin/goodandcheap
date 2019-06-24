@@ -19,12 +19,12 @@ export default class {
   }
 
   /**
-   * Removes 'no-touch' class if device isn't touch-enabled.
+   * Removes 'no-touch' attribute if device isn't touch-enabled.
    * @private
    */
   static noTouch_() {
     if ('ontouchstart' in window || navigator.msMaxTouchPoints > 0) {
-      document.body.classList.remove('no-touch');
+      document.body.removeAttribute('no-touch');
     }
   }
 
