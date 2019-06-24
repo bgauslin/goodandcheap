@@ -38,7 +38,4 @@ export default {
 .tabs__link
   tabs_link()
 
-[no-touch] .tabs__link
-  tabs_link__no_touch()
-
 </style>

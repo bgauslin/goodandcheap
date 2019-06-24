@@ -31,7 +31,8 @@ export default {
 // TODO: BEM-ify selectors.
 .chapters .previews
   @media Breakpoint.MEDIUM
-    previews_grid()
+    display flex
+    flex-wrap wrap
 
 .chapters .preview
   margin -1px 0 0 -1px

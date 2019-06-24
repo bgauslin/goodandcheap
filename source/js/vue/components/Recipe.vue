@@ -219,7 +219,4 @@ export default {
 .recipe__tabs__link
   tabs_link()
 
-[no-touch] .recipe__tabs__link
-  tabs_link__no_touch()
-
 </style>

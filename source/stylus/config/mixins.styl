@@ -102,12 +102,6 @@ preview_width(size = null)
     width calc(50% + 1px)
 
 // @mixin
-previews_grid()
-  display flex
-  flex-direction row
-  flex-wrap wrap
-
-// @mixin
 // @param Number font_size [12]
 small_caps(font_size = 12)
   font-size px_to_em(font_size)
@@ -153,18 +147,16 @@ tabs_link()
     background var(--brand-color)
     color white
 
-// TODO: Move tabs_link__no_touch() mixin to tabs_link() mixin.
-// @mixin
-tabs_link__no_touch()
-  &:hover
-  &:visited:hover
-    background rgba(BRAND_COLOR, .1)
-    color var(--brand-color)
+  [no_touch] &
+    &:hover
+    &:visited:hover
+      background rgba(BRAND_COLOR, .1)
+      color var(--brand-color)
 
-  &.current:hover
-  &.current:visited:hover
-    background var(--brand-color)
-    color white
+    &.current:hover
+    &.current:visited:hover
+      background var(--brand-color)
+      color white
 
 // @mixin
 // @param String name
