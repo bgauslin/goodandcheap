@@ -87,7 +87,7 @@ export default {
   margin 0 auto
 
   @media Breakpoint.MEDIUM
-    width '%s' % ElementWidth.MEDIUM
+    width '%s' % ContentWidth.MEDIUM
 
 .favorites.empty
   animation none
@@ -118,7 +118,7 @@ export default {
   @media Breakpoint.MEDIUM
     transform scale(.5)
     transform translateX(0)
-    width '%s' % ElementWidth.MEDIUM
+    width '%s' % ContentWidth.MEDIUM
 
 .favorites-move
   transition transform .3s

@@ -26,7 +26,7 @@ export default {
 
   @media Breakpoint.XLARGE
     margin 0 auto
-    width '%s' % ElementWidth.XLARGE
+    width '%s' % ContentWidth.XLARGE
 
 .chapters .previews
   @media Breakpoint.MEDIUM

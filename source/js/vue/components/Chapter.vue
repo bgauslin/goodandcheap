@@ -48,7 +48,7 @@ export default {
 
   @media Breakpoint.XLARGE
     margin 3rem auto 0
-    width '%s' % ElementWidth.XLARGE
+    width '%s' % ContentWidth.XLARGE
 
 .chapter__content
   background white
