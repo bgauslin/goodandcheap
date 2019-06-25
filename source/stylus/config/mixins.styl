@@ -34,13 +34,32 @@ link(link, visited, hover, active)
 
     &:focus
     &:active
-    &:visited:active
       color active
 
   [no-touch] &
     &:hover
-    &:visited:hover
       color hover
+
+// @mixin
+// @param Color link
+// @param Color visited
+// @param Color hover
+// @param Color active
+link_background(link, visited, hover, active)
+  &
+    &:link
+      background-color link
+
+    &:visited
+      background-color visited
+
+    &:focus
+    &:active
+      background-color active
+
+  [no-touch] &
+    &:hover
+      background-color hover
 
 // @mixin
 // @param String position
@@ -113,6 +132,7 @@ tabs()
 // TODO: Remove mixin and place styles with refactored/BEM-ified selector.
 // @mixin
 tabs_item()
+  background white
   flex 1 1
   line-height 1
   list-style none
@@ -124,34 +144,21 @@ tabs_item()
 // TODO: Remove mixin and place styles with refactored/BEM-ified selector.
 // @mixin
 tabs_link()
-  background white
   display block
+  link(var(--brand-color), var(--brand-color), var(--brand-color), var(--brand-color))
+  link_background(white, white, rgba(BRAND_COLOR, .1), rgba(BRAND_COLOR, .1))
   padding .75em 1em
   small_caps()
   text-align center
   typeface('sans_bold')
 
-  &:link
-  &:visited
-    color var(--brand-color)
-
-  &:focus
-  &:active
-    background rgba(BRAND_COLOR, .1)
-    color var(--brand-color)
-
   &.current
     background var(--brand-color)
     color white
+    cursor default
 
-  [no_touch] &
-    &:hover
-    &:visited:hover
-      background rgba(BRAND_COLOR, .1)
-      color var(--brand-color)
-
+  [no-touch] &
     &.current:hover
-    &.current:visited:hover
       background var(--brand-color)
       color white
 
