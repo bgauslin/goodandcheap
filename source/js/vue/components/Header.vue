@@ -1,7 +1,7 @@
 <template lang="pug">
   header.header
     div.header__controls
-      up-button(
+      back-button(
         :parent="parent",
       )
       h1.site-name(
@@ -22,15 +22,15 @@
 </template>
 
 <script>
+import BackButton from './BackButton.vue';
 import FavoritesCounter from './FavoritesCounter.vue';
 import SearchBar from './SearchBar.vue';
-import UpButton from './UpButton.vue';
 
 export default {
   components: {
+    BackButton,
     FavoritesCounter,
     SearchBar,
-    UpButton,
   },
 
   props: [

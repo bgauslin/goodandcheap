@@ -1,32 +1,41 @@
 <template lang="pug">
-  div.up-button(
-    v-if="parent !== null",
+  div.back-button(
+    v-if="parent",
   )
-    router-link(
-      v-if="parent && parent.slug",
-      :to="{ name: parent.routeName, params: { slug: parent.slug } }",
+    router-link.back-button__link(
+      :to="route()",
       :title="parent.title",
     )
-      span {{ parent.title }}
-    router-link(
-      v-if="parent && !parent.slug",
-      :to="{ name: parent.routeName }",
-      :title="parent.title",
-      exact
-    )
-      span {{ parent.title }}
+      span.back-button__label {{ parent.title }}
 </template>
 
 <script>
 export default {
   props: ['parent'],
+
+  methods: {
+    route() {
+      if (this.parent.slug) {
+        return {
+          name: this.parent.routeName,
+          params: { 
+            slug: this.parent.slug
+          }
+        };
+      } else {
+        return {
+          name: this.parent.routeName
+        };
+      }
+    }
+  },
 }
 </script>
 
 <style lang="stylus">
 @import '../../../stylus/config/'
 
-.up-button
+.back-button
   position_it(absolute, 0, null, null, 0)
   width 3rem
   z-index 2
@@ -34,7 +43,7 @@ export default {
   @media Breakpoint.MEDIUM
     width auto
 
-.up-button a
+.back-button__link
   align-items center
   align-self stretch
   display flex
@@ -46,16 +55,7 @@ export default {
   @media Breakpoint.SMALL
     padding-left 0
 
-.up-button span
-  display none
-  small_caps(12)
-  typeface('sans')
-  white-space nowrap
-
-  @media Breakpoint.MEDIUM
-    display block
-
-.up-button a::before
+.back-button__link::before
   content '%s' % Icon.ANGLE_LEFT
   font-size px_to_em(22)
   icon()
@@ -63,10 +63,17 @@ export default {
   position relative
   top -.05em
 
-.up-button a:active
+.back-button__link:active
   transform scale(.9)
   transition .3s ease
 
+.back-button__label
+  display none
+  small_caps(12)
+  typeface('sans')
+  white-space nowrap
 
+  @media Breakpoint.MEDIUM
+    display block
 
 </style>
