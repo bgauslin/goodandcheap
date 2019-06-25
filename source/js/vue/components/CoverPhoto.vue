@@ -1,8 +1,8 @@
 <template lang="pug">
-  figure.cover-photo(
+  figure.cover__photo(
     :style="'background: url(' + image.placeholder + ') center center / cover no-repeat'",
   )
-    img.cover-photo__image(
+    img.cover__image(
       v-if="!loading",
       :alt="title",
       :height="image.height",
@@ -37,7 +37,7 @@ export default {
     loadImages() {
       this.loading = true;
       let that = this;
-      imagesLoaded(this.$el.querySelector('.cover-photo__image'), that, instance => {
+      imagesLoaded(this.$el.querySelector('.cover__image'), that, instance => {
         that.loading = false;
       });
     },
@@ -48,7 +48,7 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/config/'
 
-.cover-photo__image
+.cover__image
   animation fadeIn 1s ease-out
 
 </style>
