@@ -7,9 +7,7 @@
         :item="chapter",
         :to="{ name: 'chapter', params: { slug: chapter.slug } }",
       )
-        p.preview__recipe-count(
-          v-if="chapter.recipeCount",
-        ) {{ chapter.recipeCount }} Recipes
+        p.recipe-count.recipe-count--preview {{ chapter.recipeCount }} Recipes
 </template>
 
 <script>
@@ -50,10 +48,8 @@ export default {
   .preview__link--chapter
     border 1px solid var(--border-color)
 
-.preview__recipe-count
+.recipe-count--preview
   display inline-block
   margin-top .2rem
-  small_caps()
-  typeface('sans_bold')
 
 </style>

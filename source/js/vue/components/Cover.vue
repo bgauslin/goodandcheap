@@ -17,7 +17,7 @@
       div.cover__blurb(
         v-html="blurb",
       )
-      p.cover__recipe-count(
+      p.recipe-count.recipe-count--cover(
         v-if="count",
       ) {{ count }}
 </template>
@@ -71,10 +71,8 @@ export default {
 .cover__blurb
   typeface('serif')
 
-.cover__recipe-count
+.recipe-count--cover
   margin 1rem 0 0
-  small_caps()
-  typeface('sans_bold')
 
 @media Breakpoint.LARGE
   .cover--recipe
