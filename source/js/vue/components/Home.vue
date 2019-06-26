@@ -4,8 +4,7 @@
       :tabs="tabs",
     )
     router-view(
-      :chapters="data.chapters",
-      :pages="data.pages",
+      :previews="previews",
     )
 </template>
 
@@ -25,5 +24,11 @@ export default {
       ]
     }
   },
+
+  computed: {
+    previews() {
+      return (this.$route.name === 'chapters') ? this.data.chapters : this.data.pages;
+    }
+  }
 }
 </script>

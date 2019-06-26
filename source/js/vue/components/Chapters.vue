@@ -3,7 +3,7 @@
     ol.previews.previews--chapters
       preview(
         modifier="chapter",
-        v-for="chapter in chapters",
+        v-for="chapter in previews",
         :item="chapter",
         :to="{ name: 'chapter', params: { slug: chapter.slug } }",
       )
@@ -15,7 +15,7 @@ import Preview from './Preview.vue';
 
 export default {
   components: { Preview },
-  props: ['chapters'],
+  props: ['previews'],
 }
 </script>
 

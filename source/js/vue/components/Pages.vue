@@ -3,7 +3,7 @@
     ol.previews.previews--info
       preview(
         modifier="info",
-        v-for="page in pages",
+        v-for="page in previews",
         :item="page",
         :to="{ name: 'info', params: { slug: page.slug } }",
       )
@@ -14,7 +14,7 @@ import Preview from './Preview.vue';
 
 export default {
   components: { Preview },
-  props: ['pages'],
+  props: ['previews'],
 }
 </script>
 
