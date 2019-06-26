@@ -13,38 +13,29 @@
           :image="item.thumb",
           :title="item.title",
         )
-
         div.preview__summary
           p.preview__chapter-title(
             v-if="showChapter",
           ) {{ item.chapter.title }}
-
           h3.preview__heading {{ item.title }}
-
           p.preview__tagline(
             v-if="item.tagline",
           ) {{ item.tagline }}
-          
           badge(
             v-if="item.new && showBadge",
           )
-          
           p.preview__kind(
             v-if="item.kind !== 'Recipe'",
           ) {{ item.kind }}
-          
           p.preview__index {{ itemCount }}
-
       toggle-favorite(
         v-if="favoriteButton === 'toggle' && allowFavorites",
         :favorite="item",
       )
-
       remove-favorite(
         v-if="favoriteButton === 'remove'",
         :favorite="item",
       )
-
 </template>
 
 <script>
