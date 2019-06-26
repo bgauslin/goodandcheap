@@ -5,7 +5,7 @@
   )
     li.preview.preview--recipe
       router-link(
-        :class="{ visited : isVisited }",
+        :class="['preview__link', 'preview__link--recipe', { 'visited' : isVisited }]",
         :title="item.title",
         :to="{ name: 'recipe', params: { chapter: item.chapter.slug, slug: item.slug } }",
       )
@@ -19,8 +19,8 @@
             v-if="showChapter",
           ) {{ item.chapter.title }}
 
-          h3 {{ item.title }}
-          
+          h3.preview__heading {{ item.title }}
+
           p.preview__tagline(
             v-if="item.tagline",
           ) {{ item.tagline }}
@@ -65,6 +65,7 @@ export default {
     'favoriteButton',
     'index',
     'item',
+    'modifier',
     'showBadge',
     'showChapter',
   ],
@@ -104,8 +105,8 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/config/'
 
-.preview
-  preview()
+// .preview
+//   preview()
 
 .preview--recipe a
   padding-right 3rem

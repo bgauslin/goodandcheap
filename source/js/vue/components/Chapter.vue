@@ -3,13 +3,13 @@
     div.chapter__content
       div.chapter__intro
         cover(
+          modifier="chapter",
           :blurb="data.blurb",
           :count="data.recipeCount + ' Recipes'",
           :image="data.photo",
           :title="data.title",
-          modifier="chapter",
         )
-      ol.chapter__previews
+      ol.previews.previews--chapter
         recipe-preview(
           v-for="(recipe, index) in data.recipes",
           :index="index",
@@ -68,7 +68,7 @@ export default {
     position relative
     width 100%
 
-.chapter__previews
+.previews--chapter
   @media Breakpoint.LARGE
     height 100%
     overflow-y scroll
