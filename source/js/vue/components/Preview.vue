@@ -1,18 +1,19 @@
 <template lang="pug">
-  li.preview
+  li(
+    :class="['preview', 'preview--' + modifier]"
+  )
     router-link(
-        :to="{ name: routeName, params: { slug: item.slug } }",
-        :title="item.title",
-      )
+      :class="['preview__link', 'preview__link--' + modifier]"
+      :to="to"
+      :title="item.title",
+    )
       thumb(
         :image="item.thumb",
         :title="item.title",
       )
       div.preview__summary
-        h3 {{ item.title }}
-        p.preview__recipe-count(
-          v-if="item.recipeCount",
-        ) {{ item.recipeCount }} Recipes
+        h3.preview__heading {{ item.title }}
+        slot
 </template>
 
 <script>
@@ -23,15 +24,9 @@ export default {
 
   props: [
     'item',
-    'routeName',
+    'modifier',
+    'to',
   ],
-
-  computed: {
-    /** @return {number} */
-    itemCount() {
-      return this.index + 1;
-    },
-  },
 }
 </script>
 
@@ -39,12 +34,26 @@ export default {
 @import '../../../stylus/config/'
 
 .preview
-  preview()
+  list-style none
+  position relative
 
-.preview__recipe-count
-  display inline-block
-  margin-top .2rem
-  small_caps()
-  typeface('sans_bold')
+.preview__link
+  align-items center
+  background white
+  border-top 1px solid var(--border-color)
+  display flex
+  link(var(--color-grey-dark), var(--color-grey-medium), var(--brand-color), var(--brand-color))
+
+.preview__summary
+  flex-grow 1
+  margin 0 1rem 0 .5rem
+
+.preview__heading
+  line-height 1.1
+  margin .2em 0
+  typeface('serif_bold')
+
+.preview:last-child > .preview__link
+  border-bottom 1px solid var(--border-color)
 
 </style>

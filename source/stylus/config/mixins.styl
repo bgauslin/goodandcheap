@@ -78,34 +78,6 @@ position_it(position, top, right, bottom, left)
   if left != null
     left left
 
-// TODO: Remove mixin and place styles with refactored/BEM-ified selector.
-// @mixin
-preview()
-  list-style none
-  position relative
-
-  a
-    align-items center
-    background white
-    border-top 1px solid var(--border-color)
-    display flex
-    link(var(--color-grey-dark), var(--color-grey-medium), var(--brand-color), var(--brand-color))
-
-  a.visited
-    color var(--color-grey-medium)
-
-  h3
-    line-height 1.1
-    margin .2em 0
-    typeface('serif_bold')
-
-  .summary
-    flex-grow 1
-    margin 0 1rem 0 .5rem
-
-  &:last-child a
-    border-bottom 1px solid var(--border-color)
-
 // @mixin
 // @param String size [null]
 preview_width(size = null)

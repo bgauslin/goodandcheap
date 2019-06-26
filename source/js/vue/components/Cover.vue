@@ -48,6 +48,7 @@ export default {
 @import '../../../stylus/config/'
 
 .cover
+  overflow hidden
   position relative
 
 .cover__content
@@ -74,5 +75,10 @@ export default {
   margin 1rem 0 0
   small_caps()
   typeface('sans_bold')
+
+@media Breakpoint.LARGE
+  .cover--recipe
+    position_it(absolute, 0, 0, null, null)
+    width 50%
 
 </style>

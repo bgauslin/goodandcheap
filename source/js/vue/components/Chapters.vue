@@ -1,11 +1,15 @@
 <template lang="pug">
   div.chapters
-    ol.previews
+    ol.previews.previews--chapters
       preview(
+        modifier="chapter",
         v-for="chapter in chapters",
         :item="chapter",
-        route-name="chapter"
+        :to="{ name: 'chapter', params: { slug: chapter.slug } }",
       )
+        p.preview__recipe-count(
+          v-if="chapter.recipeCount",
+        ) {{ chapter.recipeCount }} Recipes
 </template>
 
 <script>
@@ -28,13 +32,12 @@ export default {
     margin 0 auto
     width '%s' % ContentWidth.XLARGE
 
-// TODO: BEM-ify selectors.
-.chapters .previews
+.previews--chapters
   @media Breakpoint.MEDIUM
     display flex
     flex-wrap wrap
 
-.chapters .preview
+.preview--chapter
   margin -1px 0 0 -1px
 
   @media Breakpoint.MEDIUM
@@ -44,7 +47,13 @@ export default {
     preview_width('large')
 
 @media Breakpoint.MEDIUM
-  .chapters .preview a
+  .preview__link--chapter
     border 1px solid var(--border-color)
+
+.preview__recipe-count
+  display inline-block
+  margin-top .2rem
+  small_caps()
+  typeface('sans_bold')
 
 </style>

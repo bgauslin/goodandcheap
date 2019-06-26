@@ -1,10 +1,11 @@
 <template lang="pug">
-  div.pages
-    ol.previews
+  div.info
+    ol.previews.previews--info
       preview(
+        modifier="info",
         v-for="page in pages",
         :item="page",
-        route-name="info",
+        :to="{ name: 'info', params: { slug: page.slug } }",
       )
 </template>
 
@@ -20,7 +21,7 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/config/'
 
-.pages
+.info
   @media Breakpoint.MEDIUM
     margin 0 var(--margin)
 
@@ -28,13 +29,12 @@ export default {
     margin 0 auto
     width '%s' % ContentWidth.XLARGE
 
-// TODO: BEM-ify selectors.
-.pages .previews
+.previews--info
   @media Breakpoint.MEDIUM
     display flex
     flex-wrap wrap
 
-.pages .preview
+.preview--info
   margin -1px 0 0 -1px
 
   @media Breakpoint.MEDIUM
@@ -44,7 +44,7 @@ export default {
     preview_width('large')
 
 @media Breakpoint.MEDIUM
-  .pages .preview a
+  .preview__link--info
     border 1px solid var(--border-color)
 
 </style>
