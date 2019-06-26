@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     template(
-      v-for="block in data",
+      v-for="block in content",
     )
       variation(
         v-if="block.type === 'variation'",
@@ -29,6 +29,9 @@ export default {
     Variation,
   },
 
-  props: ['data'],
+  props: [
+    'content',
+    'parentId',
+  ],
 }
 </script>

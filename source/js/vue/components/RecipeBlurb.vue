@@ -1,16 +1,16 @@
 <template lang="pug">
   div
     div.blurb(
-      v-if="blurb",
-      v-html="blurb",
+      v-if="content.blurb",
+      v-html="content.blurb",
     )
     copy-blocks(
-      v-if="copyBlocks",
-      :data="copyBlocks",
+      v-if="content.copyBlocks",
+      :content="content.copyBlocks",
     )
     recipe-blocks(
-      v-if="recipeBlocks",
-      :data="recipeBlocks",
+      v-if="content.recipeBlocks",
+      :content="content.recipeBlocks",
     )
 </template>
 
@@ -25,9 +25,8 @@ export default {
   },
 
   props: [
-    'blurb',
-    'copyBlocks',
-    'recipeBlocks',
+    'content',
+    'parentId',  
   ],
 }
 </script>

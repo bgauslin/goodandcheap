@@ -1,7 +1,7 @@
 <template lang="pug">
   div.instructions
     div(
-      v-for="block in instructions",
+      v-for="block in content",
     )
       h2.instructions__heading(
         v-if="block.heading",
@@ -29,7 +29,10 @@
 
 <script>
 export default {
-  props: ['instructions'],
+  props: [
+    'content',
+    'parentId',
+  ],
 
   methods: {
     /**

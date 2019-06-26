@@ -28,6 +28,7 @@
           :favorite="data",
         )
 
+        //- TODO: Use Tabs component here and pass it an object.
         ul.recipe__tabs(
           v-if="data.ingredients || data.instructions",
         )
@@ -55,16 +56,10 @@
               class="recipe__tabs__link",
               :to="{ name: 'steps', params: { chapter: data.parent.slug, slug: data.slug } }",
             ) Steps
-
         router-view(
-          :blurb="data.blurb",
-          :copyBlocks="data.copyBlocks",
-          :ingredients="data.ingredients",
-          :instructions="data.instructions",
-          :recipeBlocks="data.recipeBlocks",
+          :content="content",
           :parentId="data.id",
         )
-
       alpha-overlay
 </template>
 
@@ -102,6 +97,24 @@ export default {
     /** @return {boolean} */
     allowFavorites() {
       return this.$store.getters.allowFavorites;
+    },
+
+    /** @return {Object} */
+    content() {
+      let content = {};
+      switch(this.$route.name) {
+        case 'ingredients':
+          return this.data.ingredients;
+          break;
+        case 'steps':
+          return this.data.instructions;
+          break;
+        default:
+          content.blurb = this.data.blurb;
+          content.copyBlocks = this.data.copyBlocks;
+          content.recipeBlocks = this.data.recipeBlocks;
+          return content;
+      }
     },
   },
 

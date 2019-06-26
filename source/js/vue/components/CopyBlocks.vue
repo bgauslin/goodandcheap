@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     template(
-      v-for="block in data",
+      v-for="block in content",
     )
       div.copy-block(
         v-if="block.type === 'blurbWithHeading'",
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  props: ['data']
+  props: ['content']
 }
 </script>
 
