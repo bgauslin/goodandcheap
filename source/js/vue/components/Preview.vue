@@ -1,19 +1,23 @@
 <template lang="pug">
-  li(
-    :class="['preview', 'preview--' + modifier]"
+  transition(
+    mode="out-in",
+    name="remove",
   )
-    router-link(
-      :class="['preview__link', 'preview__link--' + modifier]"
-      :to="to"
-      :title="item.title",
+    li(
+      :class="['preview', 'preview--' + modifier]",
     )
-      thumb(
-        :image="item.thumb",
+      router-link(
+        :class="['preview__link', 'preview__link--' + modifier]",
         :title="item.title",
+        :to="to",
       )
-      div.preview__summary
-        h3.preview__heading {{ item.title }}
-        slot
+        thumb(
+          :image="item.thumb",
+          :title="item.title",
+        )
+        div.preview__summary
+          h3.preview__heading {{ item.title }}
+          slot
 </template>
 
 <script>
@@ -45,7 +49,7 @@ export default {
   link(var(--color-grey-dark), var(--color-grey-medium), var(--brand-color), var(--brand-color))
 
 .preview__summary
-  flex-grow 1
+  flex 1 1
   margin 0 1rem 0 .5rem
 
 .preview__heading
