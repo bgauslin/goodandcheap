@@ -12,50 +12,21 @@
           p.recipe__kind(
             v-if="data.kind !== 'Recipe'",
           ) {{ data.kind }}
-
           h1.recipe__title {{ data.title }}
-          
           h2.recipe__tagline(
             v-if="data.tagline",
           ) {{ data.tagline }}
-          
           badge(
             v-if="data.badge",
           )
-
         toggle-favorite(
           v-if="allowFavorites",
           :favorite="data",
         )
-
-        //- TODO: Use Tabs component here and pass it an object.
-        ul.recipe__tabs(
-          v-if="data.ingredients || data.instructions",
+        tabs(
+          :tabs="tabs",
+          modifier="recipe",
         )
-          li.recipe__tabs__item(
-            v-if="data.blurb || data.recipeBlocks || data.copyBlocks",
-          )
-            router-link(
-              class="recipe__tabs__link",
-              :to="{ name: 'recipe', params: { chapter: data.parent.slug, slug: data.slug } }",
-              exact
-            ) Intro
-
-          li.recipe__tabs__item(
-            v-if="data.ingredients",
-          )
-            router-link(
-              class="recipe__tabs__link",
-              :to="{ name: 'ingredients', params: { chapter: data.parent.slug, slug: data.slug } }",
-            ) Ingredients
-
-          li.recipe__tabs__item(
-            v-if="data.instructions",
-          )
-            router-link(
-              class="recipe__tabs__link",
-              :to="{ name: 'steps', params: { chapter: data.parent.slug, slug: data.slug } }",
-            ) Steps
         router-view(
           :content="content",
           :parentId="data.id",
@@ -68,6 +39,7 @@ import setup from '../../setup';
 import AlphaOverlay from './AlphaOverlay.vue';
 import Badge from './Badge.vue';
 import Cover from './Cover.vue';
+import Tabs from './Tabs.vue';
 import ToggleFavorite from './ToggleFavorite.vue';
 
 export default {
@@ -75,12 +47,20 @@ export default {
     AlphaOverlay,
     Badge,
     Cover,
+    Tabs,
     ToggleFavorite,
   },
 
   props: ['data'],
 
+  data() {
+    return {
+      tabs: [],
+    }
+  },
+
   created() {
+    this.setTabs();
     window.addEventListener('resize', this.minHeight);
   },
 
@@ -148,6 +128,50 @@ export default {
           overviewElement.style.minHeight = 'none';
       }
     },
+
+    /**
+     * @description Creates labels and routes for tabs based on available data.
+     */
+    setTabs() {
+      if (this.data.blurb || this.data.recipeBlocks || this.data.copyBlocks) {
+        this.tabs.push({
+          label: 'Intro',
+          route: {
+            name: 'recipe',
+            params: {
+              chapter: this.data.parent.slug,
+              slug: this.data.slug,
+            }
+          }
+        });
+      }
+
+      if (this.data.ingredients) {
+        this.tabs.push({
+          label: 'Ingredients',
+          route: {
+            name: 'ingredients',
+            params: {
+              chapter: this.data.parent.slug,
+              slug: this.data.slug,
+            }
+          }
+        });
+      }
+
+      if (this.data.instructions) {
+        this.tabs.push({
+          label: 'Steps',
+          route: {
+            name: 'steps',
+            params: {
+              chapter: this.data.parent.slug,
+              slug: this.data.slug,
+            }
+          }
+        });
+      }
+    }
   },
 }
 </script>
@@ -220,18 +244,10 @@ export default {
   small_caps()
   typeface('sans_bold')
 
-// TODO: Refactor and BEM-ify selectors, then remove mixin calls.
-.recipe__tabs
+.tabs--recipe
   margin 0 0 1.5rem
-  tabs()
 
   @media Breakpoint.SMALL
     margin 0 0 2rem
-
-.recipe__tabs__item
-  tabs_item()
-
-.recipe__tabs__link
-  tabs_link()
 
 </style>

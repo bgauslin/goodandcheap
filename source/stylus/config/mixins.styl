@@ -2,20 +2,6 @@
 @import 'functions'
 
 // @mixin
-// @param Number width
-// @param Number height
-aspect_ratio(width, height)
-  padding 0 0 ((height / width) * 100%)
-  position relative
-
-  img
-    bottom 0
-    left 0
-    position absolute
-    right 0
-    top 0
-
-// @mixin
 icon()
   font-family 'Icons', sans-serif
 
@@ -78,6 +64,7 @@ position_it(position, top, right, bottom, left)
   if left != null
     left left
 
+// TODO: Refactor flexbox for affected elements and remove preview_width().
 // @mixin
 // @param String size [null]
 preview_width(size = null)
@@ -92,47 +79,6 @@ small_caps(font_size = 12)
   font-size px_to_em(font_size)
   letter-spacing .1em
   text-transform uppercase
-
-// TODO: Remove mixin and place styles with refactored/BEM-ified selector.
-// @mixin
-tabs()
-  align-items center
-  border 1px solid var(--brand-color)
-  display flex
-  overflow hidden
-
-// TODO: Remove mixin and place styles with refactored/BEM-ified selector.
-// @mixin
-tabs_item()
-  background white
-  flex 1 1
-  line-height 1
-  list-style none
-  margin 0
-
-  &:not(:last-child)
-    border-right 1px solid var(--brand-color)
-
-// TODO: Remove mixin and place styles with refactored/BEM-ified selector.
-// @mixin
-tabs_link()
-  display block
-  link(var(--brand-color), var(--brand-color), var(--brand-color), var(--brand-color))
-  link_background(white, white, rgba(BRAND_COLOR, .1), rgba(BRAND_COLOR, .1))
-  padding .75em 1em
-  small_caps()
-  text-align center
-  typeface('sans_bold')
-
-  &.current
-    background var(--brand-color)
-    color white
-    cursor default
-
-  [no-touch] &
-    &.current:hover
-      background var(--brand-color)
-      color white
 
 // @mixin
 // @param String name

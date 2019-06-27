@@ -1,12 +1,13 @@
 <template lang="pug">
-  ul.tabs
+  ul(
+    :class="['tabs', 'tabs--' + modifier]",
+  )
     li.tabs__item(
       v-for="tab in tabs",
     )
       router-link(
         class="tabs__link",
-        v-if="tab.name",
-        :to="{ name: tab.name }",
+        :to="tab.route",
         :title="tab.label",
         exact
       ) {{ tab.label }}
@@ -14,29 +15,49 @@
 
 <script>
 export default {
-  props: ['tabs'],
+  props: [
+    'modifier',
+    'tabs'
+  ],
 }
 </script>
 
 <style lang="stylus">
 @import '../../../stylus/config/'
 
-// TODO: Refactor and BEM-ify selectors, then remove mixin calls.
 .tabs
+  align-items center
+  border 1px solid var(--brand-color)
+  display flex
   margin 1rem var(--margin)
-  tabs()
-
-  @media Breakpoint.SMALL
-    margin 1rem auto
-    width '%s' % ContentWidth.SMALL
-
-  @media Breakpoint.MEDIUM
-    margin 1.5rem auto
+  overflow hidden
 
 .tabs__item
-  tabs_item()
+  background white
+  flex 1 1
+  line-height 1
+  list-style none
+  margin 0
+
+  &:not(:last-child)
+    border-right 1px solid var(--brand-color)
 
 .tabs__link
-  tabs_link()
+  display block
+  link(var(--brand-color), var(--brand-color), var(--brand-color), var(--brand-color))
+  link_background(white, white, rgba(BRAND_COLOR, .1), rgba(BRAND_COLOR, .1))
+  padding .75em 1em
+  small_caps()
+  text-align center
+  typeface('sans_bold')
+
+.tabs__link.current
+  background var(--brand-color)
+  color white
+  cursor default
+
+[no-touch] .tabs__link.current:hover
+  background var(--brand-color)
+  color white
 
 </style>
