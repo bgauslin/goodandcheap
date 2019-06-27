@@ -6,7 +6,7 @@
     div
       ol.previews
         recipe-preview(
-          v-for="(recipe, index) in data.data",
+          v-for="(recipe, index) in content.data",
           :index="index",
           :item="recipe",
           :key="recipe.slug",
@@ -23,7 +23,7 @@ export default {
   components: { RecipePreview },
 
   props: [
-    'data',
+    'content',
     'query',
   ],
 
@@ -34,7 +34,7 @@ export default {
   computed: {
     /** @return {string} */
     resultsCount() {
-      const count = this.data.data.length;
+      const count = this.content.data.length;
       let text;
 
       if (count <= 0 ) {

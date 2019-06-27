@@ -18,7 +18,7 @@
       )
         router-view(
           v-if="dataLoaded",
-          :data="data",
+          :content="data",
           :key="key",
           :query="query",
         )

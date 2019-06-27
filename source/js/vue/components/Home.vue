@@ -15,7 +15,7 @@ import Tabs from './Tabs.vue';
 export default {
   components: { Tabs },
 
-  props: ['data'],
+  props: ['content'],
 
   data() {
     return {
@@ -34,7 +34,7 @@ export default {
 
   computed: {
     previews() {
-      return (this.$route.name === 'chapters') ? this.data.chapters : this.data.pages;
+      return (this.$route.name === 'chapters') ? this.content.chapters : this.content.pages;
     }
   }
 }

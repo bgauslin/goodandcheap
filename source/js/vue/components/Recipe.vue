@@ -2,34 +2,34 @@
   div.recipe
     div.recipe__content
       cover(
-        :budget="data.budget",
-        :image="data.photo",
-        :title="data.title",
+        :budget="content.budget",
+        :image="content.photo",
+        :title="content.title",
         modifier="recipe",
       )
       div.recipe__overview
         header.recipe__header
           p.recipe__kind(
-            v-if="data.kind !== 'Recipe'",
-          ) {{ data.kind }}
-          h1.recipe__title {{ data.title }}
+            v-if="content.kind !== 'Recipe'",
+          ) {{ content.kind }}
+          h1.recipe__title {{ content.title }}
           h2.recipe__tagline(
-            v-if="data.tagline",
-          ) {{ data.tagline }}
+            v-if="content.tagline",
+          ) {{ content.tagline }}
           badge(
-            v-if="data.badge",
+            v-if="content.badge",
           )
         toggle-favorite(
           v-if="allowFavorites",
-          :favorite="data",
+          :favorite="content",
         )
         tabs(
           :tabs="tabs",
           modifier="recipe",
         )
         router-view(
-          :content="content",
-          :parentId="data.id",
+          :content="recipeContent",
+          :parentId="content.id",
         )
       alpha-overlay
 </template>
@@ -51,7 +51,7 @@ export default {
     ToggleFavorite,
   },
 
-  props: ['data'],
+  props: ['content'],
 
   data() {
     return {
@@ -65,7 +65,7 @@ export default {
   },
 
   mounted() {
-    this.addVisited(this.data.id);
+    this.addVisited(this.content.id);
     this.minHeight();
   },
 
@@ -80,19 +80,19 @@ export default {
     },
 
     /** @return {Object} */
-    content() {
+    recipeContent() {
       let content = {};
       switch(this.$route.name) {
         case 'ingredients':
-          return this.data.ingredients;
+          return this.content.ingredients;
           break;
         case 'steps':
-          return this.data.instructions;
+          return this.content.instructions;
           break;
         default:
-          content.blurb = this.data.blurb;
-          content.copyBlocks = this.data.copyBlocks;
-          content.recipeBlocks = this.data.recipeBlocks;
+          content.blurb = this.content.blurb;
+          content.copyBlocks = this.content.copyBlocks;
+          content.recipeBlocks = this.content.recipeBlocks;
           return content;
       }
     },
@@ -130,43 +130,43 @@ export default {
     },
 
     /**
-     * @description Creates labels and routes for tabs based on available data.
+     * @description Creates labels and routes for tabs based on available content.
      */
     setTabs() {
-      if (this.data.blurb || this.data.recipeBlocks || this.data.copyBlocks) {
+      if (this.content.blurb || this.content.recipeBlocks || this.content.copyBlocks) {
         this.tabs.push({
           label: 'Intro',
           route: {
             name: 'recipe',
             params: {
-              chapter: this.data.parent.slug,
-              slug: this.data.slug,
+              chapter: this.content.parent.slug,
+              slug: this.content.slug,
             }
           }
         });
       }
 
-      if (this.data.ingredients) {
+      if (this.content.ingredients) {
         this.tabs.push({
           label: 'Ingredients',
           route: {
             name: 'ingredients',
             params: {
-              chapter: this.data.parent.slug,
-              slug: this.data.slug,
+              chapter: this.content.parent.slug,
+              slug: this.content.slug,
             }
           }
         });
       }
 
-      if (this.data.instructions) {
+      if (this.content.instructions) {
         this.tabs.push({
           label: 'Steps',
           route: {
             name: 'steps',
             params: {
-              chapter: this.data.parent.slug,
-              slug: this.data.slug,
+              chapter: this.content.parent.slug,
+              slug: this.content.slug,
             }
           }
         });

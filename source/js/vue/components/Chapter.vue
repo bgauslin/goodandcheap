@@ -4,14 +4,14 @@
       div.chapter__intro
         cover(
           modifier="chapter",
-          :blurb="data.blurb",
-          :count="data.recipeCount + ' Recipes'",
-          :image="data.photo",
-          :title="data.title",
+          :blurb="content.blurb",
+          :count="content.recipeCount + ' Recipes'",
+          :image="content.photo",
+          :title="content.title",
         )
       ol.previews.previews--chapter
         recipe-preview(
-          v-for="(recipe, index) in data.recipes",
+          v-for="(recipe, index) in content.recipes",
           :index="index",
           :item="recipe",
           :showBadge="true",
@@ -30,7 +30,7 @@ export default {
     RecipePreview,
   },
 
-  props: ['data'],
+  props: ['content'],
 }
 </script>
 

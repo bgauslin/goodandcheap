@@ -4,9 +4,9 @@
     :style="'background-image:' + backgroundImageCss",
   )
     div.page__content
-      h1.page__title {{ data.title }}
+      h1.page__title {{ content.title }}
       section.page__section(
-        v-for="block in data.content",
+        v-for="block in content.content",
       )
         h2.page__heading(
           v-if="block.heading",
@@ -27,7 +27,7 @@
 import setup from '../../setup';
 
 export default {
-  props: ['data'],
+  props: ['content'],
 
   data() {
     return {
@@ -55,7 +55,7 @@ export default {
       switch(setup.getBreakpointValue()) {
         case 'large':
         case 'xlarge':
-          this.backgroundImageCss = `${this.backgroundImageOverlayCss},url(${this.data.backgroundImage})`;
+          this.backgroundImageCss = `${this.backgroundImageOverlayCss},url(${this.content.backgroundImage})`;
           this.hasBackgroundImage = true;
           break;
         default:
