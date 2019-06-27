@@ -11,7 +11,7 @@
       :budget="budget",
     )
     div.cover__content(
-      v-else
+      v-if="displayTitle === 'yes'",
     )
       h1.cover__title {{ title }}
       div.cover__blurb(
@@ -37,6 +37,7 @@ export default {
     'blurb',
     'budget',
     'count',
+    'displayTitle',
     'image',
     'modifier',
     'title',

@@ -3,11 +3,12 @@
     div.chapter__content
       div.chapter__intro
         cover(
-          modifier="chapter",
           :blurb="content.blurb",
           :count="content.recipeCount + ' Recipes'",
           :image="content.photo",
           :title="content.title",
+          displayTitle="yes",
+          modifier="chapter",
         )
       ol.previews.previews--chapter
         recipe-preview(

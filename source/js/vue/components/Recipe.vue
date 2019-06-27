@@ -5,6 +5,7 @@
         :budget="content.budget",
         :image="content.photo",
         :title="content.title",
+        displayTitle="no",
         modifier="recipe",
       )
       div.recipe__overview
@@ -24,6 +25,7 @@
           :favorite="content",
         )
         tabs(
+          v-if="tabs.length > 1",
           :tabs="tabs",
           modifier="recipe",
         )
