@@ -1,7 +1,6 @@
 <template lang="pug">
   div.site
     app-header(
-      :home="home",
       :parent="parent",
       :query="query",
     )
@@ -44,7 +43,6 @@ export default {
       data: null,
       dataLoaded: null,
       endpoint: '',
-      home: null,
       key: null,
       query: null,
       transitionEnter: null,
@@ -53,7 +51,6 @@ export default {
   },
 
   created() {
-    this.isHome();
     this.isFavorites();
     this.isSearch();
 
@@ -69,7 +66,6 @@ export default {
 
   watch: {
     '$route' (to, from) {
-      this.isHome();
       this.isFavorites();
       this.isSearch();
 
@@ -201,11 +197,6 @@ export default {
         this.key = 'favorites';
         this.$store.commit('setParent', null);
       }
-    },
-
-    /** @description Whether the current route is the home page. */
-    isHome() {
-      this.home = (this.$route.name === 'chapters');
     },
 
     /** @description Whether the current route is the search results page. */
