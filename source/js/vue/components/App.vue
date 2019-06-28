@@ -179,7 +179,7 @@ export default {
       try {
         const response = await fetch(endpointUrl);
         this.data = await response.json();
-        this.$store.commit('parent', this.data.parent);
+        this.$store.commit('updateParent', this.data.parent);
         this.key = this.data.slug;
         this.updateTitle(this.data.title);
         this.sendPageview(this.data.title);
@@ -196,7 +196,7 @@ export default {
     isFavoritesPage() {
       if (this.$route.name === 'favorites') {
         this.key = 'favorites';
-        this.$store.commit('parent', null);
+        this.$store.commit('updateParent', null);
       }
     },
 

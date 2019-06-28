@@ -4,7 +4,7 @@ const parent = {
   },
 
   mutations: {
-    parent (state, parent) {
+    updateParent (state, parent) {
       state.parent = parent;
     },
   },
