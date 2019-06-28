@@ -1,5 +1,4 @@
 export default (router) => {
-
   router.beforeEach((to, from, next) => {
     let direction;
 
@@ -32,7 +31,7 @@ export default (router) => {
       direction = 'up';
     }
 
-    router.app.$store.commit('direction', direction);
+    router.app.$store.commit('updateDirection', direction);
     next();
   });
 }
