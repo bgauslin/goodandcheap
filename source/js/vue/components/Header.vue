@@ -65,7 +65,7 @@ export default {
 
     /** @return {boolean} */
     hasSearch() {
-      return this.$store.getters.getShowSearch;
+      return this.$store.getters.showSearch;
     },
   },
 }

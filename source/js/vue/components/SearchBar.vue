@@ -4,7 +4,7 @@
       action="/search",
     )
       input.search-input(
-        :class="{ open : open, closed : !open }",
+        :class="{ 'open' : isOpen, 'closed' : !isOpen }",
         :value="query",
         id="query",
         name="q",
@@ -13,9 +13,7 @@
         autofocus,
         aria-label="Your search keywords",
       )
-    search-toggle(
-      :open="open",
-    )
+    search-toggle
 </template>
 
 <script>
@@ -28,8 +26,8 @@ export default {
 
   computed: {
     /** @return {boolean} */
-    open() {
-      return this.$store.getters.getShowSearch;
+    isOpen() {
+      return this.$store.getters.showSearch;
     },
   },
 }

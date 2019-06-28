@@ -10,7 +10,7 @@ const search = {
   },
 
   getters: {
-    getShowSearch: state => state.showSearch,
+    showSearch: state => state.showSearch,
   }
 }
 

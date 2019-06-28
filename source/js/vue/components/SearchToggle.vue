@@ -1,15 +1,13 @@
 <template lang="pug">
   button.search-toggle(
-    @click="toggleInput(open)",
-    :class="{ open : open, closed : !open }",
+    @click="toggleInput(isOpen)",
+    :class="{ 'open' : isOpen, 'closed' : !isOpen }",
     aria-label="Search this site",
   )
 </template>
 
 <script>
 export default {
-  props: ['open'],
-
   data() {
     return {
       inputId: 'query',
@@ -21,6 +19,11 @@ export default {
   },
 
   computed: {
+    /** @return {boolean} */
+    isOpen() {
+      return this.$store.getters.showSearch;
+    },
+
     /** @return {boolean} */
     isSearchPage() {
       return (this.$route.name === 'search');
@@ -36,8 +39,8 @@ export default {
         const el = e.target.id;
         const isSearchInput = this.isSearchInput(el);
 
-        if (this.open && !isSearchInput && !this.isSearchPage) {
-          this.toggleInput(this.open);
+        if (this.isOpen && !isSearchInput && !this.isSearchPage) {
+          this.toggleInput(this.isOpen);
         }
       }, true);
     },
@@ -53,13 +56,13 @@ export default {
 
     /**
      * Focuses cursor in the search box if it's open.
-     * @param {!boolean} open
+     * @param {!boolean} isOpen
      */
-    toggleInput(open) {
+    toggleInput(isOpen) {
       if (!this.isSearchPage) {
-        open = !open;
-        this.$store.commit('setSearch', open);
-        if (open) {
+        isOpen = !isOpen;
+        this.$store.commit('setSearch', isOpen);
+        if (isOpen) {
           document.getElementById(this.inputId).focus();
         }
       }
