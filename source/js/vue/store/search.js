@@ -4,7 +4,7 @@ const search = {
   },
 
   mutations: {
-    setSearch (state, flag) {
+    showSearch (state, flag) {
       state.showSearch = flag;
     },
   },

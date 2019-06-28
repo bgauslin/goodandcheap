@@ -61,7 +61,7 @@ export default {
     toggleInput(isOpen) {
       if (!this.isSearchPage) {
         isOpen = !isOpen;
-        this.$store.commit('setSearch', isOpen);
+        this.$store.commit('showSearch', isOpen);
         if (isOpen) {
           document.getElementById(this.inputId).focus();
         }

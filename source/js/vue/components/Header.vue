@@ -5,7 +5,7 @@
         :parent="parent",
       )
       h1.site-name(
-        :class="{ 'search-enabled' : hasSearch }",
+        :class="{ 'search-enabled' : showSearch }",
       )
         router-link(
           class="site-name__link",
@@ -13,9 +13,7 @@
           title="Home",
           exact
         ) {{ heading }}
-      search-bar(
-        :query="query",
-      )
+      search-bar
       favorites-counter(
         v-if="allowFavorites",
       )
@@ -33,10 +31,7 @@ export default {
     SearchBar,
   },
 
-  props: [
-    'parent',
-    'query',
-  ],
+  props: ['parent'],
 
   data() {
     return {
@@ -64,7 +59,7 @@ export default {
     },
 
     /** @return {boolean} */
-    hasSearch() {
+    showSearch() {
       return this.$store.getters.showSearch;
     },
   },

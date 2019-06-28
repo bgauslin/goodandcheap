@@ -2,7 +2,6 @@
   div.site
     app-header(
       :parent="parent",
-      :query="query",
     )
     div.content
       preloader(
@@ -19,7 +18,6 @@
           v-if="dataLoaded",
           :content="data",
           :key="key",
-          :query="query",
         )
     app-footer
 </template>
@@ -44,15 +42,14 @@ export default {
       dataLoaded: null,
       endpoint: '',
       key: null,
-      query: null,
       transitionEnter: null,
       transitionLeave: null,
     }
   },
 
   created() {
-    this.isFavorites();
-    this.isSearch();
+    this.isFavoritesPage();
+    this.isSearchPage();
 
     this.endpoint = this.$route.meta.endpoint;
     if (this.endpoint !== undefined && this.endpoint !== 'favorites') {
@@ -66,8 +63,8 @@ export default {
 
   watch: {
     '$route' (to, from) {
-      this.isFavorites();
-      this.isSearch();
+      this.isFavoritesPage();
+      this.isSearchPage();
 
       this.endpoint = this.$route.meta.endpoint;
       const fetch = this.doFetch(to, from);
@@ -192,7 +189,7 @@ export default {
     },
 
     /** @description Whether the current route is the 'favorites' page. */
-    isFavorites() {
+    isFavoritesPage() {
       if (this.$route.name === 'favorites') {
         this.key = 'favorites';
         this.$store.commit('setParent', null);
@@ -200,16 +197,8 @@ export default {
     },
 
     /** @description Whether the current route is the search results page. */
-    isSearch() {
-      const setSearch = (this.$route.name === 'search');
-      this.$store.commit('setSearch', setSearch);
-
-      if (setSearch) {
-        let query = window.location.search;
-        this.query = (query) ? query.replace('?q=', '').replace('%20', ' ') : null;
-      } else {
-        this.query = '';
-      }
+    isSearchPage() {
+      this.$store.commit('showSearch', this.$route.name === 'search');
     },
 
     /** @description Redirects to 404 page if JSON API response is null. */

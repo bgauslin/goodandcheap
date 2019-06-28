@@ -5,7 +5,7 @@
     )
       input.search-input(
         :class="{ 'open' : isOpen, 'closed' : !isOpen }",
-        :value="query",
+        :value="searchQuery",
         id="query",
         name="q",
         placeholder="Search",
@@ -22,12 +22,16 @@ import SearchToggle from './SearchToggle.vue';
 export default {
   components: { SearchToggle },
 
-  props: ['query'],
-
   computed: {
     /** @return {boolean} */
     isOpen() {
       return this.$store.getters.showSearch;
+    },
+
+    /** @return {string} */
+    searchQuery() {
+      let query = window.location.search;
+      return (query) ? query.replace('?q=', '').replace('%20', ' ') : '';
     },
   },
 }

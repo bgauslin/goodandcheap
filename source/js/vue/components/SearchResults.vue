@@ -2,7 +2,7 @@
   div.search-results
     h2.search-results__heading
       span.search-results__count {{ resultsCount }} for
-      span.search-results__query {{ query }}
+      span.search-results__query {{ searchQuery }}
     div
       ol.previews
         recipe-preview(
@@ -22,10 +22,7 @@ import RecipePreview from './RecipePreview.vue';
 export default {
   components: { RecipePreview },
 
-  props: [
-    'content',
-    'query',
-  ],
+  props: ['content'],
 
   mounted() {
     this.updateTitle();
@@ -47,14 +44,20 @@ export default {
 
       return text;
     },
+
+    /** @return {string} */
+    searchQuery() {
+      let query = window.location.search;
+      return (query) ? query.replace('?q=', '').replace('%20', ' ') : '';
+    },
   },
 
   methods: {
     /** @description Updates the document title with the user's search query. */
     updateTitle() {
       let pageTitle;
-      if (this.query) {
-        pageTitle = `Search Results for ${this.query}`;
+      if (this.searchQuery) {
+        pageTitle = `Search Results for ${this.searchQuery}`;
       }
       document.title = `${pageTitle} · ${this.$root.siteName}`;
     },
