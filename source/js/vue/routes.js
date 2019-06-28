@@ -106,5 +106,5 @@ export default () => {
     }
   ]
 
-  return routes
+  return routes;
 }
