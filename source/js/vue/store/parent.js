@@ -1,16 +1,16 @@
 const parent = {
   state: {
-    parent: null,
+    parent: '',
   },
 
   mutations: {
-    setParent (state, parent) {
+    parent (state, parent) {
       state.parent = parent;
     },
   },
 
   getters: {
-    getParent: state => state.parent,
+    parent: state => state.parent,
   },
 }
 

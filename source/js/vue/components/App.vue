@@ -81,12 +81,12 @@ export default {
   computed: {
     /** @return {string} */
     direction() {
-      return this.$store.getters.getDirection;
+      return this.$store.getters.direction;
     },
 
     /** @return {Object} */
     parent() {
-      return this.$store.getters.getParent;
+      return this.$store.getters.parent;
     },
   },
 
@@ -179,7 +179,7 @@ export default {
       try {
         const response = await fetch(endpointUrl);
         this.data = await response.json();
-        this.$store.commit('setParent', this.data.parent);
+        this.$store.commit('parent', this.data.parent);
         this.key = this.data.slug;
         this.updateTitle(this.data.title);
         this.sendPageview(this.data.title);
@@ -196,7 +196,7 @@ export default {
     isFavoritesPage() {
       if (this.$route.name === 'favorites') {
         this.key = 'favorites';
-        this.$store.commit('setParent', null);
+        this.$store.commit('parent', null);
       }
     },
 
