@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  div.home
     tabs(
       :tabs="tabs",
       modifier="home",

@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  div.recipe__intro
     div.blurb(
       v-if="content.blurb",
       v-html="content.blurb",

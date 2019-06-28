@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  div.recipe__copy
     template(
       v-for="block in content",
     )

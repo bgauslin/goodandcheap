@@ -1,24 +1,23 @@
 <template lang="pug">
-  div
-    div.favorites(
-      :class="{ 'empty' : !hasFavorites }"
-    )
-      h2 {{ favoritesCount }}
-      div
-        transition-group(
-          class="previews",
-          name="favorites",
-          tag="ol",
+  div.favorites(
+    :class="{ 'empty' : !hasFavorites }"
+  )
+    h2 {{ favoritesCount }}
+    div
+      transition-group(
+        class="previews",
+        name="favorites",
+        tag="ol",
+      )
+        recipe-preview(
+          v-for="(recipe, index) in favorites",
+          :index="index",
+          :item="recipe",
+          :key="recipe.slug",
+          :showBadge="false",
+          :showChapter="true",
+          favoriteButton="remove",
         )
-          recipe-preview(
-            v-for="(recipe, index) in favorites",
-            :index="index",
-            :item="recipe",
-            :key="recipe.slug",
-            :showBadge="false",
-            :showChapter="true",
-            favoriteButton="remove",
-          )
 </template>
 
 <script>
