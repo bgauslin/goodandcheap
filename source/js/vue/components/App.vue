@@ -42,6 +42,7 @@ export default {
       dataLoaded: null,
       endpoint: '',
       key: null,
+      searchQuery: '',
       transitionEnter: null,
       transitionLeave: null,
     }
@@ -78,14 +79,14 @@ export default {
   },
 
   computed: {
-    /** @return {Object} */
-    parent() {
-      return this.$store.getters.getParent;
-    },
-
     /** @return {string} */
     direction() {
       return this.$store.getters.getDirection;
+    },
+
+    /** @return {Object} */
+    parent() {
+      return this.$store.getters.getParent;
     },
   },
 
@@ -162,8 +163,8 @@ export default {
       let slug = this.$route.params.slug;
 
       // append query for search
-      if (window.location.search) {
-        endpointUrl += window.location.search;
+      if (this.searchQuery) {
+        endpointUrl += this.searchQuery;
       }
 
       // set slug to undefined when going from 'page' to 'info'
@@ -188,7 +189,10 @@ export default {
       }
     },
 
-    /** @description Whether the current route is the 'favorites' page. */
+    /**
+     * Updates transition key and parent prop if current route is the
+     * 'favorites' page.
+     */
     isFavoritesPage() {
       if (this.$route.name === 'favorites') {
         this.key = 'favorites';
@@ -196,12 +200,21 @@ export default {
       }
     },
 
-    /** @description Whether the current route is the search results page. */
+    /**
+     * Stores showSearch flag and search params (if they exist) for other
+     * components to access if current route is the search results page.
+     */
     isSearchPage() {
+      this.searchQuery = window.location.search;
+      if (this.searchQuery) {
+        this.$store.commit('searchQuery', this.searchQuery);
+      }
       this.$store.commit('showSearch', this.$route.name === 'search');
     },
 
-    /** @description Redirects to 404 page if JSON API response is null. */
+    /** 
+     * Redirects to 404 page if JSON API response is null.
+     */
     notFound() {
       this.sendPageview('404');
       window.location.replace('/404');

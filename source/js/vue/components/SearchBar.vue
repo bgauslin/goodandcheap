@@ -30,8 +30,7 @@ export default {
 
     /** @return {string} */
     searchQuery() {
-      let query = window.location.search;
-      return (query) ? query.replace('?q=', '').replace('%20', ' ') : '';
+      return this.$store.getters.searchQuery;
     },
   },
 }
