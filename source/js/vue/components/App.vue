@@ -56,7 +56,7 @@ export default {
     if (this.endpoint !== undefined && this.endpoint !== 'favorites') {
       this.fetchData(this.endpoint);
     }
-    // set dataLoaded flag for routes with no data fetching
+    // Set dataLoaded flag for routes with no data fetching.
     if (this.$route.name === 'favorites' || this.$route.name === '404') {
       this.dataLoaded = true;
     }
@@ -74,6 +74,10 @@ export default {
         this.data = null;
         this.dataLoaded = false;
         this.fetchData(this.endpoint);
+      } else {
+        // JSON isn't fetched for 'steps' and 'ingredients' tabs, so this will
+        // send a pageview for those.
+        this.sendPageview(document.title);
       }
     }
   },
@@ -97,6 +101,7 @@ export default {
      */
     afterEnter(element) {
       element.classList.remove(this.transitionEnterClass());
+      // TODO: Place sendPageview() here?
     },
 
     /**
@@ -113,7 +118,7 @@ export default {
      */
     beforeEnter(element) {
       element.classList.add(this.transitionEnterClass());
-      // reset scroll position for iOS
+      // Reset scroll position for iOS.
       setTimeout(() => {
         window.scrollTo(0, 1)
       }, 0);
@@ -162,12 +167,12 @@ export default {
       let endpointUrl = this.$root.apiBaseUrl + endpoint;
       let slug = this.$route.params.slug;
 
-      // append query for search
+      // Append query for search.
       if (this.searchQuery) {
         endpointUrl += this.searchQuery;
       }
 
-      // set slug to undefined when going from 'page' to 'info'
+      // Set slug to undefined when going from 'page' to 'info'.
       if (slug === null) {
         slug = undefined;
       }
@@ -222,6 +227,7 @@ export default {
 
     /**
      * Gets global Google Analytics object and sends a new pageview.
+     * @param {!string} pageTitle - Title of the current page.
      */
     sendPageview(pageTitle) {
       const ga = window.ga;
