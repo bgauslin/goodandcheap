@@ -42,7 +42,7 @@ export default {
   background white
   border-top 1px solid var(--border-color)
   display flex
-  link(var(--color-grey-dark), var(--color-grey-medium), var(--brand-color), var(--brand-color))
+  link(var(--dark-grey), var(--medium-grey), var(--brand-color), var(--brand-color))
 
 .preview__summary
   flex 1 1

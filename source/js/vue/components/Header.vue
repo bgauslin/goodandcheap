@@ -71,7 +71,7 @@ export default {
 
 .header
   background rgba(BRAND_COLOR, .97)
-  box-shadow 0 0 5px 0 var(--color-grey-medium)
+  box-shadow 0 0 5px 0 var(--medium-grey)
   position_it(fixed, 0, 0, null, 0)
   z-index 999
 

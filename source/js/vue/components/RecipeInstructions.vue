@@ -63,7 +63,7 @@ export default {
   typeface('sans_bold')
 
 .instructions__steps
-  color var(--color-grey-medium)
+  color var(--medium-grey)
   margin-left 1em
   typeface('sans')
 

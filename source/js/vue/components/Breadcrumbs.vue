@@ -58,7 +58,7 @@ export default {
 @import '../../../stylus/config/'
 
 .breadcrumbs
-  color var(--color-grey-medium)
+  color var(--medium-grey)
   overflow-x scroll
   -webkit-overflow-scrolling touch
   small_caps(12)
@@ -116,7 +116,7 @@ export default {
   padding 1rem 0
 
 .breadcrumbs__link
-  link(var(--link), var(--link), var(--color-grey-medium), var(--color-grey-dark))
+  link(var(--link), var(--link), var(--medium-grey), var(--dark-grey))
 
 .breadcrumbs__label
   padding-right var(--margin)

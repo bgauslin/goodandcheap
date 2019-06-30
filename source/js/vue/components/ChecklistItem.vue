@@ -70,11 +70,11 @@ export default {
 
 .checklist__link
   display block
-  link(var(--color-grey-dark), var(--color-grey-dark), var(--brand-color), var(--brand-color))
+  link(var(--dark-grey), var(--dark-grey), var(--brand-color), var(--brand-color))
   padding .5em 0 .5em 2em
 
 .checklist__link::before
-  color var(--color-grey-lighter)
+  color var(--lighter-grey)
   content '%s' % Icon.CIRCLE_EMPTY
   display inline-block
   font-size px_to_em(22)

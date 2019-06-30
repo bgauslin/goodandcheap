@@ -71,7 +71,7 @@ export default {
   line-height 2rem
 
 .toggle-favorite::before
-  color var(--color-grey-medium)
+  color var(--medium-grey)
   content '%s' % Icon.HEART_EMPTY
 
 .toggle-favorite.saved::before

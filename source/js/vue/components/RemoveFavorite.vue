@@ -36,7 +36,7 @@ export default {
   line-height 2rem
 
 .remove-favorite::before
-  color var(--color-grey-medium)
+  color var(--medium-grey)
   content '%s' % Icon.CANCEL_CIRCLED
   font-size px_to_em(20)
 
