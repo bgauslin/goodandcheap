@@ -23,7 +23,10 @@ export default {
   components: { Thumb },
 
   props: {
-    item: Object,
+    item: {
+      thumb: Object,
+      title: String,
+    },
     modifier: String,
     to: Object,
   },

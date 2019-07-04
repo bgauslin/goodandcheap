@@ -7,10 +7,7 @@
 <script>
 export default {
   props: {
-    favorite: {
-      type: Object,
-      required: true,
-    }
+    favorite: Object,
   },
 
   methods: {

@@ -26,7 +26,14 @@ export default {
   components: { Checklist },
 
   props: {
-    miniRecipe: Object,
+    miniRecipe: {
+      blurb: String,
+      photo: {
+        height: Number,
+        src: String,
+        title: String,
+        width: Number,
+    }
   }
 }
 </script>

@@ -13,7 +13,13 @@
 <script>
 export default {
   props: {
-    linkedRecipe: Object,
+    linkedRecipe: {
+      blurb: String,
+      link: {
+        slug: String,
+        title: String,
+      },
+    },
   }
 }
 </script>

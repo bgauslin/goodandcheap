@@ -25,7 +25,11 @@ export default {
   },
 
   props: {
-    content: Object,
+    content: {
+      blurb: String,
+      copyBlocks: Array,
+      recipeBlocks: Array,
+    },
     parentId: Number,  
   },
 }

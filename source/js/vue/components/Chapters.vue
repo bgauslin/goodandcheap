@@ -15,11 +15,9 @@ import Preview from './Preview.vue';
 
 export default {
   components: { Preview },
+
   props: {
-    previews: {
-      type: Array,
-      required: true,
-    }
+    previews: Array,
   }
 }
 </script>

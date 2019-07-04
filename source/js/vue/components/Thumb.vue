@@ -14,7 +14,11 @@ import imagesLoaded from 'imagesloaded';
 
 export default {
   props: {
-    image: Object,
+    image: {
+      height: Number,
+      src: String,
+      width: Number,
+    },
     title: String,
   },
 

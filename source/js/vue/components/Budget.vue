@@ -10,18 +10,9 @@
 export default {
   props: {
     budget: {
-      totalCost: {
-        type: String,
-        required: true,
-      },
-      unitCost: {
-        type: String,
-        required: true,
-      },
-      units: {
-        type: String,
-        required: true,
-      }
+      totalCost: String,
+      unitCost: String,
+      units: String,
     }
   }
 }

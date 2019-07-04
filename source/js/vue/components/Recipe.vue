@@ -54,7 +54,15 @@ export default {
   },
 
   props: {
-    content: Object,
+    content: {
+      badge: String,
+      budget: Object,
+      id: Number,
+      kind: String,
+      photo: Object,
+      tagline: String,
+      title: String,
+    },
   },
 
   data() {

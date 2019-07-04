@@ -16,7 +16,10 @@ export default {
   components: { Tabs },
 
   props: {
-    content: Object,
+    content: {
+      chapters: Array,
+      pages: Array,
+    }
   },
 
   data() {

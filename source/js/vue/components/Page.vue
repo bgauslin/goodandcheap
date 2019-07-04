@@ -28,7 +28,10 @@ import setup from '../../setup';
 
 export default {
   props: {
-    content: Object,
+    content: {
+      title: String,
+      content: Array,
+    },
   },
 
   data() {
