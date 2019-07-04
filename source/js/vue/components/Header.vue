@@ -31,7 +31,7 @@ export default {
     SearchBar,
   },
 
-  // TODO: String or Object is weird. Update this.
+  // TODO: String or Object here is weird. Update this.
   props: {
     parent: [String, Object],
   },

@@ -46,7 +46,7 @@ export default {
   position_it(absolute, 0, 2.5rem, null, Margin.BASE)
 
   @media Breakpoint.SMALL
-    left 5.5rem // TODO: var() ???
+    left 5.5rem
     right 3rem
 
   @media Breakpoint.MEDIUM

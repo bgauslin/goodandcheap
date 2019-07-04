@@ -101,7 +101,7 @@ export default {
      */
     afterEnter(element) {
       element.classList.remove(this.transitionEnterClass());
-      // TODO: Place sendPageview() here?
+      // TODO: Call sendPageview() here?
     },
 
     /**
