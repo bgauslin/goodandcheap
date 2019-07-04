@@ -27,7 +27,9 @@
 import setup from '../../setup';
 
 export default {
-  props: ['content'],
+  props: {
+    content: Object,
+  },
 
   data() {
     return {

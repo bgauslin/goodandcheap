@@ -11,7 +11,13 @@
 
 <script>
 export default {
-  props: ['parent'],
+  props: {
+    parent: {
+      routeName: String,
+      slug: String,
+      title: String,
+    },
+  },
 
   methods: {
     route() {

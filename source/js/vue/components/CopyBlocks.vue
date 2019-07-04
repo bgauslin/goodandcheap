@@ -26,7 +26,9 @@
 
 <script>
 export default {
-  props: ['content']
+  props: {
+    content: Array,
+  }
 }
 </script>
 

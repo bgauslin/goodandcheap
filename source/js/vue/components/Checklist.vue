@@ -14,11 +14,11 @@ import ChecklistItem from './ChecklistItem.vue';
 export default {
   components: { ChecklistItem },
   
-  props: [
-    'items',
-    'listIndex',
-    'parentId',
-  ],
+  props: {
+    items: Array,
+    listIndex: Number,
+    parentId: Number,
+  },
 }
 </script>
 

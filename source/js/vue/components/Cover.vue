@@ -33,15 +33,15 @@ export default {
     CoverPhoto,
   },
 
-  props: [
-    'blurb',
-    'budget',
-    'count',
-    'displayTitle',
-    'image',
-    'modifier',
-    'title',
-  ],
+  props: {
+    blurb: String,
+    budget: Object,
+    count: String,
+    displayTitle: String,
+    image: Object,
+    modifier: String,
+    title: String,
+  },
 }
 </script>
 

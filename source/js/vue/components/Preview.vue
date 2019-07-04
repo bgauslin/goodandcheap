@@ -22,11 +22,11 @@ import Thumb from './Thumb.vue';
 export default {
   components: { Thumb },
 
-  props: [
-    'item',
-    'modifier',
-    'to',
-  ],
+  props: {
+    item: Object,
+    modifier: String,
+    to: Object,
+  },
 }
 </script>
 

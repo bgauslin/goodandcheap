@@ -11,7 +11,17 @@
 
 <script>
 export default {
-  props: ['variation'],
+  props: {
+    variation: {
+      heading: String,
+      photo: {
+        title: String,
+        src: String,
+        height: Number,
+        width: Number,
+      }
+    }
+  }
 }
 </script>
 

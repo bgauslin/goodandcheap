@@ -52,14 +52,14 @@ export default {
     ToggleFavorite,
   },
 
-  props: [
-    'favoriteButton',
-    'index',
-    'item',
-    'modifier',
-    'showBadge',
-    'showChapter',
-  ],
+  props: {
+    favoriteButton: String,
+    index: Number,
+    item: Object,
+    modifier: String,
+    showBadge: Boolean,
+    showChapter: Boolean,
+  },
 
   data() {
     return {

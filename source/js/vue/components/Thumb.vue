@@ -13,10 +13,10 @@
 import imagesLoaded from 'imagesloaded';
 
 export default {
-  props: [
-    'image',
-    'title',
-  ],
+  props: {
+    image: Object,
+    title: String,
+  },
 
   data() {
     return {

@@ -31,6 +31,7 @@ export default {
     SearchBar,
   },
 
+  // TODO: prop validation for parent
   props: ['parent'],
 
   data() {

@@ -53,7 +53,9 @@ export default {
     ToggleFavorite,
   },
 
-  props: ['content'],
+  props: {
+    content: Object,
+  },
 
   data() {
     return {

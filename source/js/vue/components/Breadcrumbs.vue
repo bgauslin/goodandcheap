@@ -22,10 +22,14 @@
 import setup from '../../setup';
 
 export default {
-  props: [
-    'current',
-    'parent',
-  ],
+  props: {
+    current: String,
+    parent: {
+      routeName: String,
+      slug: String,
+      title: String,
+    },
+  },
 
   mounted() {
     this.scrollBreadcrumbs();

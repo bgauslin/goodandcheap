@@ -9,12 +9,12 @@
 
 <script>
 export default {
-  props: [
-    'item',
-    'itemIndex',
-    'listIndex',
-    'parentId',
-  ],
+  props: {
+    item: String,
+    itemIndex: Number,
+    listIndex: Number,
+    parentId: Number,
+  },
 
   data() {
     return {

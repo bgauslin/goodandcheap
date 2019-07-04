@@ -21,10 +21,10 @@ export default {
     Checklist,
   },
 
-  props: [
-    'content',
-    'parentId',
-  ],
+  props: {
+    content: Array,
+    parentId: Number,
+  },
 
   methods: {
     /**

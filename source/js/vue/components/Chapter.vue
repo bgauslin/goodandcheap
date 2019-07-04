@@ -31,7 +31,9 @@ export default {
     RecipePreview,
   },
 
-  props: ['content'],
+  props: {
+    content: Object,
+  }
 }
 </script>
 

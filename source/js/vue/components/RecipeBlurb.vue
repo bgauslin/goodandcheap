@@ -24,10 +24,10 @@ export default {
     RecipeBlocks,
   },
 
-  props: [
-    'content',
-    'parentId',  
-  ],
+  props: {
+    content: Object,
+    parentId: Number,  
+  },
 }
 </script>
 

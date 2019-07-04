@@ -22,7 +22,9 @@ import RecipePreview from './RecipePreview.vue';
 export default {
   components: { RecipePreview },
 
-  props: ['content'],
+  props: {
+    content: Object,
+  },
 
   mounted() {
     this.updateTitle();

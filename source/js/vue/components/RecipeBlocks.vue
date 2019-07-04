@@ -29,9 +29,9 @@ export default {
     Variation,
   },
 
-  props: [
-    'content',
-    'parentId',
-  ],
+  props: {
+    content: Array,
+    parentId: Number,  
+  },
 }
 </script>

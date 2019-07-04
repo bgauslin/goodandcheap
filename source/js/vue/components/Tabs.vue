@@ -15,10 +15,10 @@
 
 <script>
 export default {
-  props: [
-    'modifier',
-    'tabs'
-  ],
+  props: {
+    modifier: String,
+    tabs: Array,
+  }
 }
 </script>
 

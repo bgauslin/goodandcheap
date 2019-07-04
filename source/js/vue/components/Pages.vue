@@ -14,7 +14,10 @@ import Preview from './Preview.vue';
 
 export default {
   components: { Preview },
-  props: ['previews'],
+
+  props: {
+    previews: Array,
+  }
 }
 </script>
 

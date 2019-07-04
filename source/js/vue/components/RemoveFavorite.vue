@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  props: ['favorite'],
+  props: {
+    favorite: {
+      type: Object,
+      required: true,
+    }
+  },
 
   methods: {
     /**

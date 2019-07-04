@@ -12,7 +12,9 @@
 
 <script>
 export default {
-  props: ['linkedRecipe'],
+  props: {
+    linkedRecipe: Object,
+  }
 }
 </script>
 

@@ -15,7 +15,9 @@ import Tabs from './Tabs.vue';
 export default {
   components: { Tabs },
 
-  props: ['content'],
+  props: {
+    content: Object,
+  },
 
   data() {
     return {

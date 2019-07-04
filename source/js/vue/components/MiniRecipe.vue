@@ -24,7 +24,10 @@ import Checklist from './Checklist.vue';
 
 export default {
   components: { Checklist },
-  props: ['miniRecipe'],
+
+  props: {
+    miniRecipe: Object,
+  }
 }
 </script>
 
