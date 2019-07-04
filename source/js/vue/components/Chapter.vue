@@ -32,7 +32,13 @@ export default {
   },
 
   props: {
-    content: Object,
+    content: {
+      blurb: String,
+      photo: Object,
+      recipeCount: Number,
+      recipes: Array,
+      title: String,
+    }
   }
 }
 </script>

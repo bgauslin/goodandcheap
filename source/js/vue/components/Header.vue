@@ -31,8 +31,10 @@ export default {
     SearchBar,
   },
 
-  // TODO: prop validation for parent
-  props: ['parent'],
+  // TODO: String or Object is weird. Update this.
+  props: {
+    parent: [String, Object],
+  },
 
   data() {
     return {

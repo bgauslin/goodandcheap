@@ -33,6 +33,7 @@ export default {
         src: String,
         title: String,
         width: Number,
+      }
     }
   }
 }
