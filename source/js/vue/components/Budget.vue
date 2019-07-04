@@ -8,7 +8,22 @@
 
 <script>
 export default {
-  props: ['budget'],
+  props: {
+    budget: {
+      totalCost: {
+        type: String,
+        required: true,
+      },
+      unitCost: {
+        type: String,
+        required: true,
+      },
+      units: {
+        type: String,
+        required: true,
+      }
+    }
+  }
 }
 </script>
 
