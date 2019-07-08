@@ -71,9 +71,14 @@ module.exports = {
           }
         ]
       },
-      { // TODO: Put all generated webfonts into a folder.
+      {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader']
+        use: [{
+          loader: 'file-loader',
+          options: {
+            outputPath: 'fonts',
+          }
+        }]
       }
     ]
   }
