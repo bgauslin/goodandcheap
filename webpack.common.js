@@ -13,9 +13,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new CopyPlugin([
-      { from: 'src/apache' },
-      { from: 'src/icons' },
       { from: 'src/img', to: 'img' },
+      { from: 'src/root' },
     ]),
     new HtmlWebpackPlugin({
       filename: 'offline.html',
