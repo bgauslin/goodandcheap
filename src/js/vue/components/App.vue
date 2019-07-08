@@ -281,7 +281,8 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../../../stylus/config/'
+@import '../../../stylus/goodandcheap'
+// @import '../../../stylus/config/'
 
 .site
   display flex

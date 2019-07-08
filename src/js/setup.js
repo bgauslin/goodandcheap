@@ -1,4 +1,4 @@
-import attachFastClick from 'fastclick';
+import fastclick from 'fastclick';
 
 /** @enum {string} */
 const Config = {
@@ -13,7 +13,7 @@ const Config = {
 export default class {
   /** Intializes site-wide widgets, utilities, etc. */
   static init() {
-    attachFastClick(document.body);
+    fastclick.attach(document.body);
     this.noTouch_();
     this.googleAnalytics_();
   }
