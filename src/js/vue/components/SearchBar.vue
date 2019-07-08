@@ -4,7 +4,7 @@
       action="/search",
     )
       input.search-input(
-        :class="{ 'open' : isOpen, 'closed' : !isOpen }",
+        :class="{ 'open' : showSearch, 'closed' : !showSearch }",
         :value="searchQuery",
         id="query",
         name="q",
@@ -17,21 +17,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import SearchToggle from './SearchToggle.vue';
 
 export default {
   components: { SearchToggle },
 
   computed: {
-    /** @return {boolean} */
-    isOpen() {
-      return this.$store.getters.showSearch;
-    },
-
-    /** @return {string} */
-    searchQuery() {
-      return this.$store.getters.searchQuery;
-    },
+    ...mapGetters([
+      'searchQuery',
+      'showSearch',
+    ]),
   },
 }
 </script>

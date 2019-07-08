@@ -1,12 +1,14 @@
 <template lang="pug">
   button.search-toggle(
-    @click="toggleInput(isOpen)",
-    :class="{ 'open' : isOpen, 'closed' : !isOpen }",
+    @click="toggleInput(showSearch)",
+    :class="{ 'open' : showSearch, 'closed' : !showSearch }",
     aria-label="Search this site",
   )
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   data() {
     return {
@@ -19,10 +21,9 @@ export default {
   },
 
   computed: {
-    /** @return {boolean} */
-    isOpen() {
-      return this.$store.getters.showSearch;
-    },
+    ...mapGetters([
+      'showSearch',
+    ]),
 
     /** @return {boolean} */
     isSearchPage() {
@@ -39,8 +40,8 @@ export default {
         const el = e.target.id;
         const isSearchInput = this.isSearchInput(el);
 
-        if (this.isOpen && !isSearchInput && !this.isSearchPage) {
-          this.toggleInput(this.isOpen);
+        if (this.showSearch && !isSearchInput && !this.isSearchPage) {
+          this.toggleInput(this.showSearch);
         }
       }, true);
     },
@@ -56,13 +57,13 @@ export default {
 
     /**
      * Focuses cursor in the search box if it's open.
-     * @param {!boolean} isOpen
+     * @param {!boolean} open
      */
-    toggleInput(isOpen) {
+    toggleInput(open) {
       if (!this.isSearchPage) {
-        isOpen = !isOpen;
-        this.$store.commit('showSearch', isOpen);
-        if (isOpen) {
+        open = !open;
+        this.$store.commit('showSearch', open);
+        if (open) {
           document.getElementById(this.inputId).focus();
         }
       }

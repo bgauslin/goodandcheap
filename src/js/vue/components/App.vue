@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import AppFooter from './Footer.vue';
 import AppHeader from './Header.vue';
 import Breadcrumbs from './Breadcrumbs.vue';
@@ -83,15 +84,10 @@ export default {
   },
 
   computed: {
-    /** @return {string} */
-    direction() {
-      return this.$store.getters.direction;
-    },
-
-    /** @return {Object} */
-    parent() {
-      return this.$store.getters.parent;
-    },
+    ...mapGetters([
+      'direction',
+      'parent',
+    ]),
   },
 
   methods: {

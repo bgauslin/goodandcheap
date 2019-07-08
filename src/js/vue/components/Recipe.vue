@@ -38,6 +38,7 @@
 
 <script>
 import setup from '../../setup';
+import { mapGetters } from 'vuex';
 import AlphaOverlay from './AlphaOverlay.vue';
 import Badge from './Badge.vue';
 import Cover from './Cover.vue';
@@ -86,10 +87,9 @@ export default {
   },
 
   computed: {
-    /** @return {boolean} */
-    allowFavorites() {
-      return this.$store.getters.allowFavorites;
-    },
+    ...mapGetters([
+      'allowFavorites',
+    ]),
 
     /** @return {Object} */
     recipeContent() {

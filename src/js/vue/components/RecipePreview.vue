@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import Badge from './Badge.vue';
 import RemoveFavorite from './RemoveFavorite.vue';
 import Thumb from './Thumb.vue';
@@ -72,10 +73,9 @@ export default {
   },
 
   computed: {
-    /** @return {boolean} */
-    allowFavorites() {
-      return this.$store.getters.allowFavorites;
-    },
+    ...mapGetters([
+      'allowFavorites',
+    ]),
     
     /** @return {number} */
     itemCount() {

@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import RecipePreview from './RecipePreview.vue';
 
 export default {
@@ -31,6 +32,10 @@ export default {
   },
 
   computed: {
+    ...mapGetters([
+      'searchQuery',
+    ]),
+
     /** @return {string} */
     resultsCount() {
       const count = this.content.data.length;
@@ -45,11 +50,6 @@ export default {
       }
 
       return text;
-    },
-
-    /** @return {string} */
-    searchQuery() {
-      return this.$store.getters.searchQuery;
     },
   },
 

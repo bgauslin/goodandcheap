@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import BackButton from './BackButton.vue';
 import FavoritesCounter from './FavoritesCounter.vue';
 import SearchBar from './SearchBar.vue';
@@ -56,15 +57,10 @@ export default {
   },
 
   computed: {
-    /** @return {boolean} */
-    allowFavorites() {
-      return this.$store.getters.allowFavorites;
-    },
-
-    /** @return {boolean} */
-    showSearch() {
-      return this.$store.getters.showSearch;
-    },
+    ...mapGetters([
+      'allowFavorites',
+      'showSearch',
+    ]),
   },
 }
 </script>
