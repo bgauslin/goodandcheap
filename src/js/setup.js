@@ -1,5 +1,6 @@
 import fastclick from 'fastclick';
 
+// TODO(env): Set API base URL via environment instead of within compiled JS.
 /** @enum {string} */
 const Config = {
   API_DEV: 'http://api.goodandcheap.test',
