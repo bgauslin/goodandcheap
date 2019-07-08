@@ -4,6 +4,7 @@
       v-for="(item, index) in items",
       :item="item",
       :itemIndex="index",
+      :key="index",
       :listIndex="listIndex",
       :parentId="parentId",
     )

@@ -5,6 +5,7 @@
         modifier="info",
         v-for="page in previews",
         :item="page",
+        :key="page.slug",
         :to="{ name: 'info', params: { slug: page.slug } }",
       )
 </template>

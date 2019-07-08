@@ -15,6 +15,7 @@
           v-for="(recipe, index) in content.recipes",
           :index="index",
           :item="recipe",
+          :key="recipe.slug",
           :showBadge="true",
           :showChapter="false",
           favoriteButton="toggle",

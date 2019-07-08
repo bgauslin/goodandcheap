@@ -5,6 +5,7 @@
         modifier="chapter",
         v-for="chapter in previews",
         :item="chapter",
+        :key="chapter.slug",
         :to="{ name: 'chapter', params: { slug: chapter.slug } }",
       )
         p.recipe-count.recipe-count--preview {{ chapter.recipeCount }} Recipes
