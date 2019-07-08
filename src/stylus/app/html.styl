@@ -1,8 +1,15 @@
-// webfont('CarminaBT-Bold', '../webfonts/CarminaBT-Bold/CarminaBT-Bold')
-// webfont('CarminaBT-Light', '../webfonts/CarminaBT-Light/CarminaBT-Light')
-// webfont('Futura-Book', '../webfonts/Futura-Book/Futura-Book')
-// webfont('Futura-Bold', '../webfonts/Futura-Bold/Futura-Bold')
-// webfont('Icons', '../webfonts/icons/icons')
+webfont('CarminaBT-Bold', '../../../webfonts/CarminaBT-Bold/CarminaBT-Bold')
+webfont('CarminaBT-Light', '../../../webfonts/CarminaBT-Light/CarminaBT-Light')
+webfont('Futura-Book', '../../../webfonts/Futura-Book/Futura-Book')
+webfont('Futura-Bold', '../../../webfonts/Futura-Bold/Futura-Bold')
+
+// There's no .woff2 file for icons, so its font-face rules are hard-coded.
+@font-face
+  font-display block
+  font-family 'Icons'
+  src url(../../../webfonts/icons/icons.eot)
+  src url(../../../webfonts/icons/icons.woff),
+      url(../../../webfonts/icons/icons.ttf) format('truetype')
 
 body
   background var(--off-white)
