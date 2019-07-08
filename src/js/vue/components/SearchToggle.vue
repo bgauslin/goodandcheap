@@ -1,7 +1,7 @@
 <template lang="pug">
   button.search-toggle(
     @click="toggleInput(showSearch)",
-    :class="{ 'open' : showSearch, 'closed' : !showSearch }",
+    :class="[ showSearch ? 'open' : 'closed' ]",
     aria-label="Search this site",
   )
 </template>

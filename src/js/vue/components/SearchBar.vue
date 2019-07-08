@@ -4,7 +4,7 @@
       action="/search",
     )
       input.search-input(
-        :class="{ 'open' : showSearch, 'closed' : !showSearch }",
+        :class="[ showSearch ? 'open' : 'closed' ]",
         :value="searchQuery",
         id="query",
         name="q",
