@@ -14,7 +14,7 @@ module.exports = {
     new CopyPlugin([
       { from: 'src/apache' },
       { from: 'src/icons' },
-      { from: 'src/img', to: 'ui/img' },
+      { from: 'src/img', to: 'img' },
     ]),
     new VueLoaderPlugin(),
   ],
@@ -71,7 +71,7 @@ module.exports = {
           }
         ]
       },
-      {
+      { // TODO: Put all generated webfonts into a folder.
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ['file-loader']
       }

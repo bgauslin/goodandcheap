@@ -12,7 +12,7 @@
         )
           img.license__image(
             alt="Creative Commons License",
-            src="/ui/img/by-nc-sa-80x15.svg",
+            src="/img/by-nc-sa-80x15.svg",
           )
 </template>
 
