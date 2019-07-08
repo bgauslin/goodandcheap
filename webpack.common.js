@@ -2,6 +2,7 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: ['@babel/polyfill/noConflict', './src/js/goodandcheap.js'],
@@ -16,6 +17,11 @@ module.exports = {
       { from: 'src/icons' },
       { from: 'src/img', to: 'img' },
     ]),
+    new HtmlWebpackPlugin({
+      filename: 'offline.html',
+      template: 'src/html/offline.pug',
+      inject: false,
+    }),
     new VueLoaderPlugin(),
   ],
   module: {
