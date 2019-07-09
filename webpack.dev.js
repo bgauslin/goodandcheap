@@ -6,7 +6,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = merge(common, {
   mode: 'development',
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    historyApiFallback: {
+      index: '/index.html',
+    },
+    port: 3000,
   },
   output: {
     filename: 'goodandcheap.js',
