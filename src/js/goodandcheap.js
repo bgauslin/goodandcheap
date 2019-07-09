@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 import setup from './setup';
 import Vue from 'vue/dist/vue.js';
 import Vuex from 'vuex';
@@ -54,7 +56,6 @@ const app = new Vue({
   components: { App },
   data: {
     siteName: document.title,
-    apiBaseUrl: setup.apiBaseURL(),
   },
   router,
   store,

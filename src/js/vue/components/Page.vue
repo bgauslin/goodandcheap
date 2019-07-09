@@ -66,7 +66,6 @@ export default {
         default:
           this.backgroundImageCss = 'none';
           this.hasBackgroundImage = false;
-          break;
       }
     },
   },

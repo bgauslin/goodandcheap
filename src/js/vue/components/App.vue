@@ -160,7 +160,8 @@ export default {
      * @async
      */
     fetchData: async function(endpoint) {
-      let endpointUrl = this.$root.apiBaseUrl + endpoint;
+      const apiBaseUrl = (process.env.NODE_ENV === 'production') ? process.env.API_PROD : process.env.API_DEV;
+      let endpointUrl = `${apiBaseUrl}/${endpoint}`;
       let slug = this.$route.params.slug;
 
       // Append query for search.

@@ -1,8 +1,9 @@
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const DotenvWebpack = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: ['@babel/polyfill/noConflict', './src/js/goodandcheap.js'],
@@ -16,6 +17,7 @@ module.exports = {
       { from: 'src/img', to: 'img' },
       { from: 'src/root' },
     ]),
+    new DotenvWebpack(),
     new HtmlWebpackPlugin({
       filename: 'offline.html',
       template: 'src/html/offline.pug',
@@ -23,6 +25,9 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
   ],
+  node: {
+    fs: 'empty',
+  },
   module: {
     rules: [
       {
