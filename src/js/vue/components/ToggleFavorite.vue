@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   props: {
     favorite: Object,
@@ -30,6 +32,11 @@ export default {
   },
 
   methods: {
+    ...mapMutations([
+      'addFavorite',
+      'removeFavorite',
+    ]),
+
     /**
      * Whether the recipe is in user's favorites list.
      * @param {!Object} item - The recipe.
@@ -47,9 +54,9 @@ export default {
      */
     toggleFavorite(item) {
       if (this.isFavorite) {
-        this.$store.commit('removeFavorite', item);
+        this.removeFavorite(item);
       } else {
-        this.$store.commit('addFavorite', item);
+        this.addFavorite(item);
       }
       this.isFavorite = !this.isFavorite;
     },

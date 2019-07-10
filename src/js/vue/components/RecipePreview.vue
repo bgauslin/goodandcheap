@@ -73,9 +73,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters([
-      'allowFavorites',
-    ]),
+    ...mapGetters(['allowFavorites']),
     
     /** @return {number} */
     itemCount() {

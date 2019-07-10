@@ -5,11 +5,11 @@ const search = {
   },
 
   mutations: {
-    searchQuery (state, value) {
+    updateSearchQuery (state, value) {
       state.searchQuery = value.replace('?q=', '').replace(/%20/g, ' ');
     },
 
-    showSearch (state, flag) {
+    updateShowSearch (state, flag) {
       state.showSearch = flag;
     },
   },

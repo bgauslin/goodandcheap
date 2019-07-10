@@ -8,6 +8,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { mapMutations } from 'vuex';
 
 export default {
   data() {
@@ -21,9 +22,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters([
-      'showSearch',
-    ]),
+    ...mapGetters(['showSearch']),
 
     /** @return {boolean} */
     isSearchPage() {
@@ -32,6 +31,8 @@ export default {
   },
 
   methods: {
+    ...mapMutations(['updateShowSearch']),
+
     /**
      * @description Opens/closes the search box based on where the user clicked.
      */
@@ -62,7 +63,7 @@ export default {
     toggleInput(open) {
       if (!this.isSearchPage) {
         open = !open;
-        this.$store.commit('showSearch', open);
+        this.updateShowSearch(open);
         if (open) {
           document.getElementById(this.inputId).focus();
         }

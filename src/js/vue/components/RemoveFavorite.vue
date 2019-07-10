@@ -1,23 +1,19 @@
 <template lang="pug">
   button.remove-favorite(
-    @click="removeItem(favorite)",
+    @click="removeFavorite(favorite)",
   )
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   props: {
     favorite: Object,
   },
 
   methods: {
-    /**
-     * Removes recipe from user's saved favorites.
-     * @param {!Object} favorite
-     */
-    removeItem(favorite) {
-      this.$store.commit('removeFavorite', favorite);
-    },
+    ...mapMutations(['removeFavorite']),
   },
 }
 </script>

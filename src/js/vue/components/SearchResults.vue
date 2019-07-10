@@ -32,9 +32,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters([
-      'searchQuery',
-    ]),
+    ...mapGetters(['searchQuery']),
 
     /** @return {string} */
     resultsCount() {

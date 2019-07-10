@@ -24,6 +24,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { mapMutations } from 'vuex';
 import AppFooter from './Footer.vue';
 import AppHeader from './Header.vue';
 import Breadcrumbs from './Breadcrumbs.vue';
@@ -91,6 +92,11 @@ export default {
   },
 
   methods: {
+    ...mapMutations([
+      'updateParent',
+      'updateSearchQuery',
+      'updateShowSearch',
+    ]),
     /**
      * @param {!Element} element - DOM element to remove a CSS class from after
      * entering a new route.
@@ -181,7 +187,7 @@ export default {
       try {
         const response = await fetch(endpointUrl);
         this.data = await response.json();
-        this.$store.commit('updateParent', this.data.parent);
+        this.updateParent(this.data.parent);
         this.key = this.data.slug;
         this.updateTitle(this.data.title);
         this.sendPageview(this.data.title);
@@ -198,7 +204,7 @@ export default {
     isFavoritesPage() {
       if (this.$route.name === 'favorites') {
         this.key = 'favorites';
-        this.$store.commit('updateParent', null);
+        this.updateParent(null);
       }
     },
 
@@ -209,9 +215,9 @@ export default {
     isSearchPage() {
       this.searchQuery = window.location.search;
       if (this.searchQuery) {
-        this.$store.commit('searchQuery', this.searchQuery);
+        this.updateSearchQuery(this.searchQuery);
       }
-      this.$store.commit('showSearch', this.$route.name === 'search');
+      this.updateShowSearch(this.$route.name === 'search');
     },
 
     /** 
@@ -254,7 +260,7 @@ export default {
      * @return {string} The CSS class to apply on transition's 'leave' tick
      * based on the current 'direction'.
      */
-    transitionLeaveClass(el) {
+    transitionLeaveClass() {
       switch (this.direction) {
         case 'forward':
           return 'slide-out-left';

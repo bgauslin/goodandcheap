@@ -39,6 +39,7 @@
 <script>
 import setup from '../../setup';
 import { mapGetters } from 'vuex';
+import { mapMutations } from 'vuex';
 import AlphaOverlay from './AlphaOverlay.vue';
 import Badge from './Badge.vue';
 import Cover from './Cover.vue';
@@ -87,9 +88,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters([
-      'allowFavorites',
-    ]),
+    ...mapGetters(['allowFavorites']),
 
     /** @return {Object} */
     recipeContent() {
@@ -111,14 +110,7 @@ export default {
   },
 
   methods: {
-    /**
-     * Adds the recipe to a 'visited' array which sets a class that styles the
-     * recipe as visited for improved usablity.
-     * @param {string} id
-     */
-    addVisited(id) {
-      this.$store.commit('addVisited', id);
-    },
+    ...mapMutations(['addVisited']),
 
     /**
      * @description Sets a 'min-height' CSS property via inline 'style'

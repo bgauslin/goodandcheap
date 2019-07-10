@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   props: {
     item: String,
@@ -34,6 +36,10 @@ export default {
   },
 
   methods: {
+    ...mapMutations([
+      'addIngredient',
+      'removeIngredient',
+    ]),
     /** 
      * Whether the ingredient has been checked by the user and saved.
      * @param {!string} id
@@ -52,9 +58,9 @@ export default {
      */
     toggleItem(id) {
       if (this.isSaved) {
-        this.$store.commit('removeIngredient', id);
+        this.removeIngredient(id);
       } else {
-        this.$store.commit('addIngredient', id);
+        this.addIngredient(id);
       }
       this.isSaved = !this.isSaved;
     },
