@@ -71,8 +71,9 @@ export default {
 .header
   background rgba(BRAND_COLOR, .97)
   box-shadow 0 0 5px 0 var(--medium-grey)
-  position_it(fixed, 0, 0, null, 0)
-  z-index 999
+  position sticky
+  top 0
+  z-index 1
 
 .header__controls
   height var(--header-height)

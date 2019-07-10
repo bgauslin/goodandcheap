@@ -29,6 +29,7 @@ export default {
 
 .footer
   font-size px_to_em(12)
+  grid-row 3
   text-align center
   typeface('sans')
 

@@ -285,17 +285,15 @@ export default {
 
 <style lang="stylus">
 @import '../../../stylus/goodandcheap'
-// @import '../../../stylus/config/'
 
 .site
-  display flex
-  flex-direction column
+  display grid
+  grid-template-rows auto 1fr auto
+  grid-template-columns 1fr
   min-height 100vh
 
 .content
-  flex 1
-  margin var(--header-height) 0 0
-  overflow hidden
+  grid-row 2
 
 .slide-in-left
 .slide-in-right
