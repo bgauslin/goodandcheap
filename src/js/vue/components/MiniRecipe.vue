@@ -45,7 +45,6 @@ export default {
 .mini-recipe
   border-top 1px solid #eee
   display flex
-  flex-direction row
   padding 1rem 0
 
 .mini-recipe__content
