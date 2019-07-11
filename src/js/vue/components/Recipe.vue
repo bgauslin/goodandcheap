@@ -75,16 +75,10 @@ export default {
 
   created() {
     this.setTabs();
-    window.addEventListener('resize', this.minHeight);
   },
 
   mounted() {
     this.addVisited(this.content.id);
-    this.minHeight();
-  },
-
-  beforeDestroy() {
-    window.removeEventListener('resize', this.minHeight);
   },
 
   computed: {
@@ -111,27 +105,6 @@ export default {
 
   methods: {
     ...mapMutations(['addVisited']),
-
-    /**
-     * @description Sets a 'min-height' CSS property via inline 'style'
-     * depending on the media query breakpoint to ensure the text content panel
-     * and the photo panel are the same height.
-     * TODO: Achieve this with CSS padding and positioning, then remove method.
-     */
-    minHeight() {
-      const overviewElement = this.$el.querySelector('.recipe__overview');
-      const overviewWidthPx = overviewElement.offsetWidth;
-      const overviewWidth = `${overviewWidthPx / 16}em`;
-
-      switch(setup.getBreakpointValue()) {
-        case 'large':
-        case 'xlarge':
-          overviewElement.style.minHeight = overviewWidth;
-          break;
-        default:
-          overviewElement.style.minHeight = 'none';
-      }
-    },
 
     /**
      * @description Creates labels and routes for tabs based on available content.
