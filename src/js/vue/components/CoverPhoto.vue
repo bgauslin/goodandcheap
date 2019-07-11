@@ -53,7 +53,12 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/config/'
 
+.cover__photo
+  padding 0 0 100%
+  position relative
+
 .cover__image
   animation fadeIn 1s ease-out
+  position absolute
 
 </style>
