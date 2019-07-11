@@ -80,18 +80,17 @@ export default {
     padding 3rem 0
 
 .page.has-background
-  background-attachment scroll
-  background-position center center
-  background-repeat no-repeat
-  background-size cover
+  background scroll no-repeat center / cover
+
+[no-touch] .page.has-background
+  background-attachment fixed
 
 .page__content
-  background white
+  background-color white
   padding 1rem var(--margin)
 
   @media Breakpoint.SMALL
     margin 0 auto
-    padding 1rem var(--margin)
 
   @media Breakpoint.MEDIUM
     padding 2rem var(--margin)
@@ -114,28 +113,26 @@ export default {
   typeface('sans_bold')
 
 .page__copy p
-  typeface('serif')
   margin 0 0 1em
+  typeface('serif')
 
 .page__copy a
-  background rgba(LINK_COLOR, .1)
+  background-color rgba(LINK_COLOR, .1)
   border-radius 2px
   padding .1em .4em
+
+[no-touch] .page__copy a:hover
+[no-touch] .page__copy a:focus
+  background-color var(--link)
+  color white
 
 .page__list
   margin 1em 0
 
 .page__list__item
   display inline-block
-  typeface('sans')
   list-style none
   margin-right 1em
-
-[no-touch] .page.has-background
-  background-attachment fixed
-
-[no-touch] .page__copy a:hover
-  color white
-  background var(--link)
+  typeface('sans')
 
 </style>
