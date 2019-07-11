@@ -47,15 +47,6 @@ link_background(link, visited, hover, active)
     &:hover
       background-color hover
 
-// TODO: Refactor flexbox for affected elements and remove preview_width().
-// @mixin
-// @param String size [null]
-preview_width(size = null)
-  if size == 'large'
-    width calc((1/3 * 100%) + 1px)
-  else
-    width calc(50% + 1px)
-
 // @mixin
 // @param Number font_size [12]
 small_caps(font_size = 12)

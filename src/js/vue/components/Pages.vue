@@ -35,17 +35,11 @@ export default {
 
 .previews--info
   @media Breakpoint.MEDIUM
-    display flex
-    flex-wrap wrap
+    display grid
+    grid-template-columns repeat(var(--columns), 1fr)
 
 .preview--info
   margin -1px 0 0 -1px
-
-  @media Breakpoint.MEDIUM
-    preview_width()
-
-  @media Breakpoint.LARGE
-    preview_width('large')
 
 @media Breakpoint.MEDIUM
   .preview__link--info

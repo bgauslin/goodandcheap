@@ -34,19 +34,13 @@ export default {
     margin 0 auto
     width '%s' % ContentWidth.XLARGE
 
-.previews--chapters
-  @media Breakpoint.MEDIUM
-    display flex
-    flex-wrap wrap
+@media Breakpoint.MEDIUM
+  .previews--chapters
+    display grid
+    grid-template-columns repeat(var(--columns), 1fr)
 
 .preview--chapter
   margin -1px 0 0 -1px
-
-  @media Breakpoint.MEDIUM
-    preview_width()
-
-  @media Breakpoint.LARGE
-    preview_width('large')
 
 @media Breakpoint.MEDIUM
   .preview__link--chapter
