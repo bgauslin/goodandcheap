@@ -223,7 +223,7 @@ export default {
     padding 1.5rem 1.5rem 4rem
     -webkit-overflow-scrolling touch
     overflow-y scroll
-    position_it(absolute, 0, null, null, 0)
+    position absolute
     width 50%
 
 .recipe__overview h3

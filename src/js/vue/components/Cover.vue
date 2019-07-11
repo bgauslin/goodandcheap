@@ -59,8 +59,11 @@ export default {
   @media Breakpoint.SMALL
     background rgba(white, .95)
     box-shadow 0 0 5px 0 var(--light-grey)
+    left 3rem
     padding 1.5rem
-    position_it(absolute, 0, 3rem, null, 3rem)
+    position absolute
+    right 3rem
+    top 0
 
 .cover__title
   margin-bottom .5em
@@ -77,7 +80,9 @@ export default {
 
 @media Breakpoint.LARGE
   .cover--recipe
-    position_it(absolute, 0, 0, null, null)
+    position absolute
+    right 0
+    top 0
     width 50%
 
 </style>

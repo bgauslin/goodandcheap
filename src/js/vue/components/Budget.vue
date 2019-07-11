@@ -24,8 +24,10 @@ export default {
 .budget
   background rgba(white, .97)
   padding .5em 2em .5em 1em
-  position_it(absolute, 3em, 0, null, null)
+  position absolute
+  right 0
   small_caps()
+  top 3rem
   typeface('sans_bold')
 
 .budget__total

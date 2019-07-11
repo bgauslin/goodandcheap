@@ -42,7 +42,7 @@ export default {
 @import '../../../stylus/config/'
 
 .back-button
-  position_it(absolute, 0, null, null, 0)
+  position absolute
   width 3rem
   z-index 2
 

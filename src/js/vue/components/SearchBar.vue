@@ -39,7 +39,10 @@ export default {
   align-items center
   display flex
   height var(--header-height)
-  position_it(absolute, 0, 2.5rem, null, Margin.BASE)
+  left '%s' % Margin.BASE
+  position absolute
+  right 2.5rem
+  top 0
 
   @media Breakpoint.SMALL
     left 5.5rem
@@ -62,11 +65,14 @@ export default {
   appearance none
   border none
   border-radius 2px
+  bottom .5rem
   color black
   font-family monospace
   font-size 1em
   margin 0
-  position_it(absolute, .5rem, 0, .5rem, null)
+  position absolute
+  right 0
+  top .5rem
   transition all .2s ease
 
   @media Breakpoint.MEDIUM

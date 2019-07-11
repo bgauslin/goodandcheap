@@ -83,14 +83,16 @@ export default {
     height 100%
     overflow-y scroll
     -webkit-overflow-scrolling touch
-    position_it(absolute, 0, 0, null, null)
+    position absolute
+    right 0
+    top 0
     width 50%
 
 .chapter__intro
   overflow hidden
 
   @media Breakpoint.LARGE
-    position_it(absolute, 0, null, null, 0)
+    position absolute
     width 50%
 
 </style>

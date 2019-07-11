@@ -90,8 +90,11 @@ export default {
   display flex
   height var(--header-height)
   justify-content center
-  position_it(absolute, 0, 0, null, 0)
+  left 0
+  position absolute
+  right 0
   small_caps(14)
+  top 0
   typeface('sans_bold')
   white-space nowrap
 

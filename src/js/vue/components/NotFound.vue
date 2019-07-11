@@ -20,10 +20,14 @@ export default {
 
 .error404
   align-items center
+  bottom 0
   display flex
   flex-direction column
   justify-content center
-  position_it(absolute, 0, 1rem, 0, 1rem)
+  left 1rem
+  position absolute
+  right 1rem
+  top 0
   z-index -1
 
 .error404__heading

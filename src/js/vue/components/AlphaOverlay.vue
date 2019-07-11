@@ -10,9 +10,12 @@
 
   @media Breakpoint.LARGE
     background linear-gradient(to bottom, rgba(white, 0), white)
+    bottom 0
     display block
     height 5rem
-    position_it(absolute, null, 0, 0, 0)
+    left 0
+    position absolute
+    right 0
     width 50%
 
 </style>
