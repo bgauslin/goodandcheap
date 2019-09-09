@@ -1,23 +1,24 @@
 <template lang="pug">
-  div.favorites(
-    :class="{ 'empty' : !hasFavorites }"
-  )
-    h2 {{ favoritesCount }}
-    div
-      transition-group(
-        class="previews",
-        name="favorites",
-        tag="ol",
-      )
-        recipe-preview(
-          v-for="(recipe, index) in favorites",
-          :index="index",
-          :item="recipe",
-          :key="recipe.slug",
-          :showBadge="false",
-          :showChapter="true",
-          favoriteButton="remove",
+  div
+    div.favorites(
+      :class="{ 'empty' : !hasFavorites }"
+    )
+      h2 {{ favoritesCount }}
+      div
+        transition-group(
+          class="previews",
+          name="favorites",
+          tag="ol",
         )
+          recipe-preview(
+            v-for="(recipe, index) in favorites",
+            :index="index",
+            :item="recipe",
+            :key="recipe.slug",
+            :showBadge="false",
+            :showChapter="true",
+            favoriteButton="remove",
+          )
 </template>
 
 <script>
@@ -82,7 +83,6 @@ export default {
 @import '../../../stylus/config/'
 
 .favorites
-  animation showFavorites 1s ease-out
   margin 0 auto
 
   @media Breakpoint.MEDIUM
