@@ -6,6 +6,7 @@ const favorites = {
   mutations: {
     addVisited (state, item) {
       state.visited.push(item);
+      state.visited = [...new Set(state.visited)].sort();
       localStorage.setItem('visited', JSON.stringify(state.visited));
     },
   },
