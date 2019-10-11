@@ -2,8 +2,8 @@
   div.info
     ol.previews.previews--info
       preview(
-        modifier="info",
         v-for="page in previews",
+        modifier="info",
         :item="page",
         :key="page.slug",
         :to="{ name: 'info', params: { slug: page.slug } }",
