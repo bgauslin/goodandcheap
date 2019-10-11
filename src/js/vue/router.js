@@ -86,7 +86,7 @@ export default new VueRouter({
       name: 'recipe',
       path: '/:chapter/:slug',
       component: Recipe,
-      redirect: '/:chapter/:slug/',
+      redirect: '/:chapter/:slug',
       children: [
         {
           name: 'intro',
