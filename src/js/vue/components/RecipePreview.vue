@@ -94,10 +94,7 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/config/'
 
-// .preview
-//   preview()
-
-.preview--recipe a
+.preview__link--recipe
   padding-right 3rem
 
 .preview__summary

@@ -77,7 +77,7 @@ export default {
   transition all .5s ease
 
 @media Breakpoint.MEDIUM
-  .search-results .preview a
+  .search-results .preview__link--recipe
     border-left 1px solid var(--border-color)
     border-right 1px solid var(--border-color)
 
