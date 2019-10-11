@@ -23,7 +23,9 @@ export default (router) => {
       direction = 'up';
     }
 
-    router.app.$store.commit('updateDirection', direction);
+    if (router.app.$store) {
+      router.app.$store.commit('updateDirection', direction);  
+    }
     next();
   });
 }

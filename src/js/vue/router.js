@@ -1,18 +1,28 @@
-import Chapters from './components/Chapters.vue';
-import Chapter from './components/Chapter.vue';
-import Favorites from './components/Favorites.vue';
-import Home from './components/Home.vue';
-import NotFound from './components/NotFound.vue';
-import Pages from './components/Pages.vue';
-import Page from './components/Page.vue';
-import Recipe from './components/Recipe.vue';
-import RecipeBlurb from './components/RecipeBlurb.vue';
-import RecipeIngredients from './components/RecipeIngredients.vue';
-import RecipeInstructions from './components/RecipeInstructions.vue';
-import Search from './components/SearchResults.vue';
+import Vue from 'vue/dist/vue.js';
+import VueRouter from 'vue-router';
 
-export default () => {
-  const routes = [
+// TODO: Debug Pages breaking Search results styling when hot-loaded. 
+import Pages from './components/Pages.vue';
+
+const Chapters = () => import('./components/Chapters.vue');
+const Chapter = () => import('./components/Chapter.vue');
+const Favorites = () => import('./components/Favorites.vue');
+const Home = () => import('./components/Home.vue');
+const NotFound = () => import('./components/NotFound.vue');
+// const Pages = () => import('./components/Pages.vue');
+const Page = () => import('./components/Page.vue');
+const Recipe = () => import('./components/Recipe.vue');
+const RecipeBlurb = () => import('./components/RecipeBlurb.vue');
+const RecipeIngredients = () => import('./components/RecipeIngredients.vue');
+const RecipeInstructions = () => import('./components/RecipeInstructions.vue');
+const Search = () => import('./components/SearchResults.vue');
+
+Vue.use(VueRouter);
+
+export default new VueRouter({
+  mode: 'history',
+  linkActiveClass: 'current',
+  routes: [
     {
       path: '/',
       component: Home,
@@ -105,6 +115,4 @@ export default () => {
       ]
     }
   ]
-
-  return routes;
-}
+});
