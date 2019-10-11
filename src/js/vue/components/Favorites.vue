@@ -115,8 +115,7 @@ export default {
   transform translateX(-100%)
 
   @media Breakpoint.MEDIUM
-    transform scale(.5)
-    transform translateX(0)
+    transform scale(.5) translateX(0)
     width '%s' % ContentWidth.MEDIUM
 
 .favorites-move
