@@ -22,7 +22,7 @@ export default {
   },
 
   methods: {
-    /** @description Attaches a preloader spinner to the DOM. */
+    /** Attaches a preloader spinner to the DOM. */
     attachSpinner() {
       let spinner = new Spinner(this.spinnerOptions).spin();
       this.$el.appendChild(spinner.el);

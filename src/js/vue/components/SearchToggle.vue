@@ -33,9 +33,7 @@ export default {
   methods: {
     ...mapMutations(['updateShowSearch']),
 
-    /**
-     * @description Opens/closes the search box based on where the user clicked.
-     */
+    /** Opens/closes the search box based on where the user clicked. */
     getClickTarget() {
       document.addEventListener('click', e => {
         const el = e.target.id;

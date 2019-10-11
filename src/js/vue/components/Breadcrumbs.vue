@@ -37,7 +37,7 @@ export default {
 
   methods: {
     /**
-     * @description Moves the breadcrumbs list out of the viewport so that
+     * Moves the breadcrumbs list out of the viewport so that
      * they're only revealed when the user scrolls up slightly, depending on
      * media query breakpoint.
      */

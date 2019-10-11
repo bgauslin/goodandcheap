@@ -106,9 +106,7 @@ export default {
   methods: {
     ...mapMutations(['addVisited']),
 
-    /**
-     * @description Creates labels and routes for tabs based on available content.
-     */
+    /** Creates labels and routes for tabs based on available content. */
     setTabs() {
       if (this.content.blurb || this.content.recipeBlocks || this.content.copyBlocks) {
         this.tabs.push({

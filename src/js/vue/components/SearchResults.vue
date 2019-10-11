@@ -52,7 +52,7 @@ export default {
   },
 
   methods: {
-    /** @description Updates the document title with the user's search query. */
+    /** Updates the document title with the user's search query. */
     updateTitle() {
       let pageTitle;
       if (this.searchQuery) {

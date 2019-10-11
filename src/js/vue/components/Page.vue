@@ -53,8 +53,8 @@ export default {
 
   methods: {
     /**
-     * @description Attaches a background image to an element via an inline 
-     * 'style' tag based on media query breakpoint.
+     * Attaches a background image to an element via an inline  'style' tag
+     * based on media query breakpoint.
      */
     setBackgroundImage() {
       switch(setup.getBreakpointValue()) {
