@@ -1,7 +1,7 @@
 <template lang="pug">
   div.favorites-counter
     router-link(
-      :class="{ empty : !hasFavorites }",
+      :class="{ 'empty' : !hasFavorites }",
       :to="{ name: 'favorites' }",
       title="Favorites",
       exact

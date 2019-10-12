@@ -1,7 +1,7 @@
 <template lang="pug">
   button.toggle-favorite(
     @click="toggleFavorite()",
-    :class="{ saved: isFavorite }",
+    :class="{ 'saved' : isFavorite }",
     :aria-label="toggleLabel",
   )
 </template>
