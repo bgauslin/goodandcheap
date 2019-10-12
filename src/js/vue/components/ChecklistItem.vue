@@ -26,13 +26,13 @@ export default {
     ]),
 
     /** @return {string} */
-    id() {
+    itemId() {
       return `${this.parentId}.${this.listIndex}.${this.itemIndex}`;
     },
 
     /** @return {boolean} */
     isSaved() {
-      return this.ingredientsIds.includes(this.id);
+      return this.ingredientsIds.includes(this.itemId);
     },
   },
 
@@ -45,9 +45,9 @@ export default {
     /** Adds/removes the ingredient from the user's saved list of ingredients. */
     toggleItem() {
       if (this.isSaved) {
-        this.removeIngredient(this.id);
+        this.removeIngredient(this.itemId);
       } else {
-        this.addIngredient(this.id);
+        this.addIngredient(this.itemId);
       }
     },
   },
