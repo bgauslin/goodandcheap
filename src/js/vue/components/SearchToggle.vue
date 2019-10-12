@@ -31,7 +31,9 @@ export default {
   },
 
   methods: {
-    ...mapMutations(['updateShowSearch']),
+    ...mapMutations([
+      'updateShowSearch',
+    ]),
 
     /** Opens/closes the search box based on where the user clicked. */
     getClickTarget() {

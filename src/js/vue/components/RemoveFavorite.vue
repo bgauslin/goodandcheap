@@ -13,7 +13,9 @@ export default {
   },
 
   methods: {
-    ...mapMutations(['removeFavorite']),
+    ...mapMutations([
+      'removeFavorite',
+    ]),
   },
 }
 </script>

@@ -32,13 +32,14 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['searchQuery']),
+    ...mapGetters([
+      'searchQuery',
+    ]),
 
     /** @return {string} */
     resultsCount() {
       const count = this.content.data.length;
       let text;
-
       if (count <= 0 ) {
         text = 'No Results';
       } else if (count === 1) {
@@ -46,7 +47,6 @@ export default {
       } else {
         text = `${count} Results`;
       }
-
       return text;
     },
   },

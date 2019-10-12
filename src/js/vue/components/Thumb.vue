@@ -33,7 +33,7 @@ export default {
   },
 
   methods: {
-    /**  Toggles loading flag after an image has fully downloaded. */
+    /** Toggles loading flag after an image has fully downloaded. */
     loadImages() {
       this.loading = true;
       let that = this;
