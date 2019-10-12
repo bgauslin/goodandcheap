@@ -169,7 +169,7 @@ export default {
      * @param {!string} endpoint - API endpoint.
      * @async
      */
-    fetchData: async function(endpoint) {
+    async fetchData(endpoint) {
       const apiBaseUrl = (process.env.NODE_ENV === 'production') ? process.env.API_PROD : process.env.API_DEV;
       let endpointUrl = `${apiBaseUrl}/${endpoint}`;
       let slug = this.$route.params.slug;
