@@ -58,7 +58,8 @@ export default {
     if (this.endpoint !== undefined) {
       this.fetchData(this.endpoint);
     }
-    // Set dataLoaded flag for routes with no data fetching.
+
+    // Set dataLoaded flag for 404 route.
     if (this.$route.name === '404') {
       this.dataLoaded = true;
     }
@@ -97,26 +98,26 @@ export default {
       'updateSearchQuery',
       'updateShowSearch',
     ]),
+
     /**
-     * @param {!Element} element - DOM element to remove a CSS class from after
-     * entering a new route.
+     * Removes CSS class from an element after entering the new route.
+     * @param {!Element} element
      */
     afterEnter(element) {
       element.classList.remove(this.transitionEnterClass());
-      // TODO: Call sendPageview() here?
     },
 
     /**
-     * @param {!Element} element - DOM element to remove a CSS class from after
-     * leaving the current route.
+     * Removes CSS class from an element after leaving the current route.
+     * @param {!Element} element
      */
     afterLeave(element) {
       element.classList.remove(this.transitionLeaveClass());
     },
 
     /**
-     * @param {!Element} element - DOM element to add a CSS class to before
-     * entering a new route.
+     * Adds CSS class to an element before entering the new route.
+     * @param {!Element} element
      */
     beforeEnter(element) {
       element.classList.add(this.transitionEnterClass());
@@ -127,18 +128,18 @@ export default {
     },
 
     /**
-     * @param {!Element} element - DOM element to remove a CSS class from before
-     * leaving the current route.
+     * Removes CSS class from an element before leaving the current route.
+     * @param {!Element} element
      */
     beforeLeave(element) {
       element.classList.add(this.transitionLeaveClass());
     },
 
     /**
-     * Whether to fetch data from JSON API depending on what page the user is
+     * Whether to fetch data from an API depending on what route the user is
      * coming from and going to.
-     * @param {!string} to - The route the user is going to. 
-     * @param {!string} from - The route the user is coming from.
+     * @param {!string} to
+     * @param {!string} from
      * @return {boolean}
      */
     doFetch(to, from) {
@@ -164,9 +165,8 @@ export default {
     },
 
     /**
-     * Fetches data from API endpoint, then stores that data to avoid
-     * further (redundant) API calls.
-     * @param {!string} endpoint - API endpoint.
+     * Fetches data from an API endpoint.
+     * @param {!string} endpoint
      * @async
      */
     async fetchData(endpoint) {
@@ -184,6 +184,7 @@ export default {
         slug = undefined;
       }
 
+      // Append the slug only if it exists.
       if (slug !== undefined) {
         endpointUrl += `/${slug}`;
       }
@@ -202,8 +203,7 @@ export default {
     },
 
     /**
-     * Updates transition key and parent prop if current route is the
-     * 'favorites' page.
+     * Updates props and state if current route is 'favorites'.
      */
     favoritesPage() {
       if (this.$route.name === 'favorites') {
@@ -215,7 +215,7 @@ export default {
     },
 
     /**
-     * Stores showSearch flag and search params (if they exist) for other
+     * Stores 'showSearch' flag and search params (if they exist) for other
      * components to access if current route is the search results page.
      */
     searchPage() {
@@ -227,7 +227,7 @@ export default {
     },
 
     /** 
-     * Redirects to 404 page if JSON API response is null.
+     * Redirects to 404 page if there is no API response.
      */
     notFound() {
       this.sendPageview('404');
@@ -236,7 +236,7 @@ export default {
 
     /**
      * Gets global Google Analytics object and sends a new pageview.
-     * @param {!string} pageTitle - Title of the current page.
+     * @param {!string} pageTitle
      */
     sendPageview(pageTitle) {
       const ga = window.ga;
@@ -248,8 +248,9 @@ export default {
     },
 
     /**
-     * @return {string} The CSS class to apply on transition's 'enter' tick
-     * based on the current 'direction'.
+     * Returns a CSS class to apply on transition 'enter' tick based on
+     * current 'direction' state value.
+     * @return {string}
      */
     transitionEnterClass() {
       switch (this.direction) {
@@ -263,8 +264,9 @@ export default {
     },
 
     /**
-     * @return {string} The CSS class to apply on transition's 'leave' tick
-     * based on the current 'direction'.
+     * Returns a CSS class to apply on transition 'leave' tick based on
+     * current 'direction' state value.
+     * @return {string}
      */
     transitionLeaveClass() {
       switch (this.direction) {
@@ -279,7 +281,7 @@ export default {
 
     /**
      * Updates document title.
-     * @param {!string} pageTitle - Title of the current page.
+     * @param {!string} pageTitle
      * @return {string}
      */
     updateTitle(pageTitle) {
