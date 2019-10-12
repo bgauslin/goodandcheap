@@ -1,12 +1,13 @@
 <template lang="pug">
   button.toggle-favorite(
-    @click="toggleFavorite(favorite)",
+    @click="toggleFavorite()",
     :class="{ saved: isFavorite }",
     :aria-label="toggleLabel",
   )
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import { mapMutations } from 'vuex';
 
 export default {
@@ -14,17 +15,16 @@ export default {
     favorite: Object,
   },
 
-  data() {
-    return {
-      isFavorite: false,
-    }
-  },
-
-  created() {
-    this.isFavorite = this.isInFavorites(this.favorite);
-  },
-
   computed: {
+    ...mapGetters([
+      'favoritesIds',
+    ]),
+
+    /** @return {boolean} */
+    isFavorite() {
+      return this.favoritesIds.includes(this.favorite.id);
+    },
+
     /** @return {string} */
     toggleLabel() {
       return (this.isFavorite) ? 'Remove recipe from Favorites' : 'Add recipe to Favorites';
@@ -37,28 +37,13 @@ export default {
       'removeFavorite',
     ]),
 
-    /**
-     * Whether the recipe is in user's favorites list.
-     * @param {!Object} item - The recipe.
-     * @return {boolean}
-     */
-    isInFavorites(item) {
-      let ids = this.$store.getters.favoritesIds;
-      let index = ids.indexOf(item.id);
-      return (index !== -1);
-    },
-
-    /**
-     * Adds or removes recipe from user's favorites list.
-     * @param {!Object} item - The recipe.
-     */
-    toggleFavorite(item) {
+    /** Adds or removes a recipe from user's favorites list. */
+    toggleFavorite() {
       if (this.isFavorite) {
-        this.removeFavorite(item);
+        this.removeFavorite(this.favorite);
       } else {
-        this.addFavorite(item);
+        this.addFavorite(this.favorite);
       }
-      this.isFavorite = !this.isFavorite;
     },
   }
 }
