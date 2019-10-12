@@ -42,7 +42,7 @@ export default {
     return {
       data: null,
       dataLoaded: null,
-      endpoint: '',
+      fetch: null,
       key: null,
       searchQuery: '',
       transitionEnter: null,
@@ -54,7 +54,7 @@ export default {
     this.favoritesPage();
     this.searchPage();
 
-    this.endpoint = this.$route.meta.endpoint;
+    // this.endpoint = this.$route.meta.endpoint;
     if (this.endpoint !== undefined) {
       this.fetchData(this.endpoint);
     }
@@ -70,16 +70,14 @@ export default {
       this.favoritesPage();
       this.searchPage();
 
-      this.endpoint = this.$route.meta.endpoint;
-      const fetch = this.doFetch(to, from);
-
-      if (this.endpoint !== undefined && fetch !== false) {
+      this.fetch = this.doFetch(to, from);
+      if (this.endpoint && this.fetch) {
         this.data = null;
         this.dataLoaded = false;
         this.fetchData(this.endpoint);
       } else {
-        // JSON isn't fetched for 'steps' and 'ingredients' tabs, so this will
-        // send a pageview for those.
+        // Data isn't fetched for 'steps' and 'ingredients' tabs, but we still
+        // need to send a pageview.
         this.sendPageview(document.title);
       }
     }
@@ -90,6 +88,11 @@ export default {
       'direction',
       'parent',
     ]),
+
+    /** @return {string} */
+    endpoint() {
+      return this.$route.meta.endpoint;
+    }
   },
 
   methods: {
@@ -143,9 +146,12 @@ export default {
      * @return {boolean}
      */
     doFetch(to, from) {
+      // TODO: Refactor all of this to be more clean/clear.
       if (to.name === 'intro') {
         if (from.name === 'steps' || from.name === 'ingredients') {
           return false;
+        } else {
+          return true;
         }
       } else if (to.name === 'steps' || to.name === 'ingredients') {
         if (from.name === 'intro' || from.name === 'steps' || from.name === 'ingredients') {
@@ -171,29 +177,21 @@ export default {
      */
     async fetchData(endpoint) {
       const apiBaseUrl = (process.env.NODE_ENV === 'production') ? process.env.API_PROD : process.env.API_DEV;
-      let endpointUrl = `${apiBaseUrl}/${endpoint}`;
-      let slug = this.$route.params.slug;
-
-      // Append query for search.
-      if (this.searchQuery) {
-        endpointUrl += this.searchQuery;
-      }
-
-      // Set slug to undefined when going from 'page' to 'info'.
-      if (slug === null) {
-        slug = undefined;
-      }
-
-      // Append the slug only if it exists.
+      let fullEndpoint = `${apiBaseUrl}/${endpoint}`;
+      
+      // Append slug or search query only if they exist.
+      const slug = this.$route.params.slug;
       if (slug !== undefined) {
-        endpointUrl += `/${slug}`;
+        fullEndpoint += `/${slug}`;
+      } else if (this.searchQuery) {
+        fullEndpoint += this.searchQuery;
       }
 
       try {
-        const response = await fetch(endpointUrl);
+        const response = await fetch(fullEndpoint);
         this.data = await response.json();
-        this.updateParent(this.data.parent);
         this.key = this.data.slug;
+        this.updateParent(this.data.parent);
         this.updateTitle(this.data.title);
         this.sendPageview(this.data.title);
         this.dataLoaded = true;
@@ -209,8 +207,8 @@ export default {
       if (this.$route.name === 'favorites') {
         this.data = null;
         this.key = 'favorites';
-        this.dataLoaded = true;
         this.updateParent(null);
+        this.dataLoaded = true;
       }
     },
 
