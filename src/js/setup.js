@@ -4,6 +4,7 @@ import fastclick from 'fastclick';
 export default class {
   /**
    * Intializes site-wide widgets, utilities, etc.
+   * @public
    */
   static init() {
     this.noTouch_();
