@@ -57,21 +57,23 @@ export default {
   margin 0 0 1rem
 
 .instructions__heading
-  margin 1rem 0
-  padding 0
   small_caps()
   typeface('sans_bold')
+  margin 1rem 0
+  padding 0
+
+.instructions__steps
+.instructions__list
+  typeface('sans')
 
 .instructions__steps
   color var(--medium-grey)
   margin-left 1em
-  typeface('sans')
 
 .instructions__list
   font-size px_to_em(15)
   margin 0
   padding 0
-  typeface('sans')
 
 ol.instructions__list
   padding 0 0 0 1.3rem

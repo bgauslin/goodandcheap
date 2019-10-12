@@ -107,14 +107,14 @@ export default {
   margin 1em 0 2em
 
 .page__heading
-  margin 0 0 1em
   small_caps()
-  text-transform uppercase
   typeface('sans_bold')
+  margin 0 0 1em
+  text-transform uppercase
 
 .page__copy p
-  margin 0 0 1em
   typeface('serif')
+  margin 0 0 1em
 
 .page__copy a
   background-color rgba(LINK_COLOR, .1)
@@ -130,9 +130,9 @@ export default {
   margin 1em 0
 
 .page__list__item
+  typeface('sans')
   display inline-block
   list-style none
   margin-right 1em
-  typeface('sans')
 
 </style>

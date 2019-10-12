@@ -28,10 +28,10 @@ export default {
 @import '../../../stylus/config/'
 
 .footer
+  typeface('sans')
   font-size px_to_em(12)
   grid-row 3
   text-align center
-  typeface('sans')
 
 .footer__content
   margin 0 auto

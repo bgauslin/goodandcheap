@@ -31,8 +31,8 @@ export default {
   width 3rem
 
 .remove-favorite::before
-  height 2rem
   icon()
+  height 2rem
   line-height 2rem
 
 .remove-favorite::before

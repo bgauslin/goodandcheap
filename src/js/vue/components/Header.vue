@@ -84,15 +84,15 @@ export default {
     width '%s' % ContentWidth.XLARGE
 
 .site-name
+  small_caps(14)
+  typeface('sans_bold')
   display flex
   height var(--header-height)
   justify-content center
   left 0
   position absolute
   right 0
-  small_caps(14)
   top 0
-  typeface('sans_bold')
   white-space nowrap
 
 @media Breakpoint.SEARCH_ENABLED
@@ -100,11 +100,10 @@ export default {
     display none
 
 .site-name__link
+  link(white, white, rgba(white, .7), rgba(white, .7))
   align-items center
   align-self stretch
   display flex
-  // height var(--header-height)
-  link(white, white, rgba(white, .7), rgba(white, .7))
   position relative
   z-index 2
 

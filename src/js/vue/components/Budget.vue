@@ -22,13 +22,13 @@ export default {
 @import '../../../stylus/config/';
 
 .budget
+  small_caps()
+  typeface('sans_bold')
   background rgba(white, .97)
   padding .5em 2em .5em 1em
   position absolute
   right 0
-  small_caps()
   top 3rem
-  typeface('sans_bold')
 
 .budget__total
 .budget__cost

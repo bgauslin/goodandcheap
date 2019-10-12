@@ -31,9 +31,9 @@ export default {
   z-index -1
 
 .error404__heading
-  margin 0 0 1rem
   small_caps(14)
   typeface('sans_bold')
+  margin 0 0 1rem
 
 .error404__message
   typeface('serif')

@@ -39,17 +39,18 @@ export default {
   list-style none
   margin 0
 
-  &:not(:last-child)
-    border-right 1px solid var(--brand-color)
+.tabs__item:not(:last-child)
+  border-right 1px solid var(--brand-color)
 
 .tabs__link
-  display block
   link(var(--brand-color), var(--brand-color), var(--brand-color), var(--brand-color))
   link_background(white, white, rgba(BRAND_COLOR, .1), rgba(BRAND_COLOR, .1))
-  padding .75em 1em
   small_caps()
-  text-align center
   typeface('sans_bold')
+  display block
+  padding .75em 1em
+  text-align center
+  
 
 .tabs__link.current
   background var(--brand-color)

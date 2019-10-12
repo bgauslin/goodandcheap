@@ -3,7 +3,7 @@
     v-if="parent",
   )
     router-link.back-button__link(
-      :to="route()",
+      :to="route",
       :title="parent.title",
     )
       span.back-button__label {{ parent.title }}
@@ -19,7 +19,8 @@ export default {
     },
   },
 
-  methods: {
+  computed: {
+    /** @return {Object} */
     route() {
       if (this.parent.slug) {
         return {
@@ -50,21 +51,21 @@ export default {
     width auto
 
 .back-button__link
+  link(white, white, rgba(white, .7), rgba(white, .7))
   align-items center
   align-self stretch
   display flex
   height var(--header-height)
   line-height 1
-  link(white, white, rgba(white, .7), rgba(white, .7))
   padding-left .75rem
 
   @media Breakpoint.SMALL
     padding-left 0
 
 .back-button__link::before
+  icon()
   content '%s' % Icon.ANGLE_LEFT
   font-size px_to_em(22)
-  icon()
   margin-right .25em
   position relative
   top -.05em
@@ -74,9 +75,9 @@ export default {
   transition .3s ease
 
 .back-button__label
-  display none
   small_caps(12)
   typeface('sans')
+  display none
   white-space nowrap
 
   @media Breakpoint.MEDIUM

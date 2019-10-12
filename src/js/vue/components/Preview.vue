@@ -41,20 +41,20 @@ export default {
   position relative
 
 .preview__link
+  link(var(--dark-grey), var(--medium-grey), var(--brand-color), var(--brand-color))
   align-items center
   background white
   border-top 1px solid var(--border-color)
   display flex
-  link(var(--dark-grey), var(--medium-grey), var(--brand-color), var(--brand-color))
 
 .preview__summary
   flex 1 1
   margin 0 1rem 0 .5rem
 
 .preview__heading
+  typeface('serif_bold')
   line-height 1.1
   margin .2em 0
-  typeface('serif_bold')
 
 .preview:last-child > .preview__link
   border-bottom 1px solid var(--border-color)

@@ -39,13 +39,16 @@ export default {
   padding .5rem 0
   
 .copy-block__heading
-  margin 0 0 .25em
   small_caps()
   typeface('sans_bold')
+  margin 0 0 .25em
+
+.copy-block__text p
+.blurb-list__item
+  typeface('sans')
 
 .copy-block__text p
   font-size px_to_em(14)
-  typeface('sans')
 
 .blurb-list
   margin 0 0 1em
@@ -54,6 +57,5 @@ export default {
   font-size px_to_em(14)
   list-style none
   margin 0 0 .5em
-  typeface('sans')
 
 </style>

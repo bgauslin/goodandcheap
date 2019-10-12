@@ -57,14 +57,14 @@ export default {
   margin 0
 
 .ingredients__heading
-  margin 1rem 0 .5rem
-  padding 0
   small_caps()
   typeface('sans_bold')
+  margin 1rem 0 .5rem
+  padding 0
 
 .ingredients__count
+  typeface('sans')
   color var(--medium-grey)
   margin-left 1em
-  typeface('sans')
 
 </style>

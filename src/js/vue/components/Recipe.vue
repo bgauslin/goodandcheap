@@ -100,7 +100,9 @@ export default {
   },
 
   methods: {
-    ...mapMutations(['addVisited']),
+    ...mapMutations([
+      'addVisited',
+    ]),
 
     /** Creates labels and routes for tabs based on available content. */
     setTabs() {
@@ -194,17 +196,19 @@ export default {
     width 50%
 
 .recipe__overview h3
-  margin 0 0 1em
+.recipe__kind
+.recipe__tagline
   small_caps()
   typeface('sans_bold')
+
+.recipe__overview h3
+  margin 0 0 1em
 
 .recipe__header
   margin 0 2rem 1rem 0
 
 .recipe__kind
   margin-bottom .5rem
-  small_caps()
-  typeface('sans_bold')
 
 .recipe__title
   typeface('serif_bold')
@@ -212,8 +216,6 @@ export default {
 .recipe__tagline
   display inline-block
   margin-right 0.5rem
-  small_caps()
-  typeface('sans_bold')
 
 .tabs--recipe
   margin 0 0 1.5rem

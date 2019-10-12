@@ -61,16 +61,16 @@ export default {
   margin 0
 
 .checklist__link
-  display block
   link(var(--dark-grey), var(--dark-grey), var(--brand-color), var(--brand-color))
+  display block
   padding .5em 0 .5em 2em
 
 .checklist__link::before
+  icon()
   color var(--lighter-grey)
   content '%s' % Icon.CIRCLE_EMPTY
   display inline-block
   font-size px_to_em(22)
-  icon()
   margin-left -1.3em
   position relative
   top .15em

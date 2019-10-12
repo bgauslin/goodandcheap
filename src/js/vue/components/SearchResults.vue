@@ -82,9 +82,9 @@ export default {
     border-right 1px solid var(--border-color)
 
 .search-results__heading
+  small_caps(14)
   margin 0
   padding 1.5rem 0
-  small_caps(14)
   text-align center
 
   @media Breakpoint.MEDIUM
@@ -96,7 +96,7 @@ export default {
 .search-results__query
   typeface('sans_bold')
 
-  &::before
-    content ' '
+.search-results__query::before
+  content ' '
 
 </style>

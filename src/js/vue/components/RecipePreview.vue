@@ -90,15 +90,15 @@ export default {
   margin-right 0
 
 .preview__chapter-title
-  color var(--medium-grey)
   small_caps()
   typeface('sans')
+  color var(--medium-grey)
 
 .preview__kind
 .preview__tagline
-  display inline-block
   small_caps()
   typeface('sans_bold')
+  display inline-block
 
 .preview__kind
   margin-top .2rem
@@ -107,14 +107,14 @@ export default {
   margin-right .4em
 
 .preview__index
+  small_caps()
+  typeface('sans')
   bottom 1rem
   color var(--medium-grey)
   line-height 1
   position absolute
   right 0
-  small_caps()
   text-align center
-  typeface('sans')
   width 3rem
 
 </style>

@@ -62,11 +62,11 @@ export default {
 @import '../../../stylus/config/'
 
 .breadcrumbs
+  small_caps(12)
+  typeface('sans')
   color var(--medium-grey)
   overflow-x scroll
   -webkit-overflow-scrolling touch
-  small_caps(12)
-  typeface('sans')
   white-space nowrap
   width 100%
 
@@ -101,9 +101,9 @@ export default {
   margin 0 .5em 0 0
 
 .breadcrumbs__item::after
+  icon()
   content '%s' % Icon.RIGHT_OPEN
   font-size 75%
-  icon()
   margin-left 1em
   position relative
   top -1px

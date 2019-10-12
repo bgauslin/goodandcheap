@@ -66,8 +66,8 @@ export default {
     top 0
 
 .cover__title
-  margin-bottom .5em
   typeface('serif_bold')
+  margin-bottom .5em
 
   @media Breakpoint.LARGE
     font-size px_to_em(30)

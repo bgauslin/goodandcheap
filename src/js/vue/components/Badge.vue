@@ -6,12 +6,12 @@
 @import '../../../stylus/config/';
 
 .badge
+  small_caps()
+  typeface('sans')
   background var(--badge-color)
   border-radius 2px
   color white
   display inline-block
   padding .2em .75em
-  small_caps()
-  typeface('sans')
 
 </style>

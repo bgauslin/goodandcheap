@@ -63,6 +63,7 @@ export default {
 @import '../../../stylus/config/'
 
 .favorites-counter
+  typeface('sans')
   color white
   display flex
   font-size px_to_em(12)
@@ -71,22 +72,21 @@ export default {
   position absolute
   right 0
   top 0
-  typeface('sans')
   width 3rem
 
 .favorites-counter.updated
   animation bounce .3s ease-out
 
 .favorites-counter a
+  link(white, white, rgba(white, .7), rgba(white, .7))
   align-items center
   align-self stretch
   display flex
-  link(white, white, rgba(white, .7), rgba(white, .7))
 
 .favorites-counter a::after
+  icon()
   content '%s' % Icon.HEART
   font-size 1rem
-  icon()
   margin 0 1rem 0 .3em
 
 .favorites-counter a.empty::after

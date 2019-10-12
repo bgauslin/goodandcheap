@@ -92,10 +92,10 @@ export default {
     border-right 1px solid var(--border-color)
 
 .favorites h2
-  margin 0
-  padding 1.5rem 0
   small_caps(14)
   typeface('sans_bold')
+  margin 0
+  padding 1.5rem 0
   text-align center
 
   @media Breakpoint.MEDIUM
