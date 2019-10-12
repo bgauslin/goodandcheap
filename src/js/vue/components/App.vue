@@ -51,23 +51,23 @@ export default {
   },
 
   created() {
-    this.isFavoritesPage();
-    this.isSearchPage();
+    this.favoritesPage();
+    this.searchPage();
 
     this.endpoint = this.$route.meta.endpoint;
-    if (this.endpoint !== undefined && this.endpoint !== 'favorites') {
+    if (this.endpoint !== undefined) {
       this.fetchData(this.endpoint);
     }
     // Set dataLoaded flag for routes with no data fetching.
-    if (this.$route.name === 'favorites' || this.$route.name === '404') {
+    if (this.$route.name === '404') {
       this.dataLoaded = true;
     }
   },
 
   watch: {
     '$route' (to, from) {
-      this.isFavoritesPage();
-      this.isSearchPage();
+      this.favoritesPage();
+      this.searchPage();
 
       this.endpoint = this.$route.meta.endpoint;
       const fetch = this.doFetch(to, from);
@@ -147,7 +147,11 @@ export default {
           return false;
         }
       } else if (to.name === 'steps' || to.name === 'ingredients') {
-        return false;
+        if (from.name === 'intro' || from.name === 'steps' || from.name === 'ingredients') {
+          return false;
+        } else {
+          return true;
+        }
       } else if (from.name === 'pages' && to.name === 'chapters') {
         return false;
       } else if (from.name === 'chapters' && to.name === 'pages') {
@@ -201,9 +205,11 @@ export default {
      * Updates transition key and parent prop if current route is the
      * 'favorites' page.
      */
-    isFavoritesPage() {
+    favoritesPage() {
       if (this.$route.name === 'favorites') {
+        this.data = null;
         this.key = 'favorites';
+        this.dataLoaded = true;
         this.updateParent(null);
       }
     },
@@ -212,7 +218,7 @@ export default {
      * Stores showSearch flag and search params (if they exist) for other
      * components to access if current route is the search results page.
      */
-    isSearchPage() {
+    searchPage() {
       this.searchQuery = window.location.search;
       if (this.searchQuery) {
         this.updateSearchQuery(this.searchQuery);
