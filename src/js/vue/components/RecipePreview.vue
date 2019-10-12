@@ -29,7 +29,7 @@
           ) {{ item.kind }}
           p.preview__index {{ itemCount }}
       toggle-favorite(
-        v-if="favoriteButton === 'toggle' && allowFavorites",
+        v-if="favoriteButton === 'toggle'",
         :favorite="item",
       )
       remove-favorite(
@@ -64,7 +64,6 @@ export default {
 
   computed: {
     ...mapGetters([
-      'allowFavorites',
       'visitedIds',
     ]),
     

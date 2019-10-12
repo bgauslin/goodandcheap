@@ -14,9 +14,7 @@
           exact
         ) {{ heading }}
       search-bar
-      favorites-counter(
-        v-if="allowFavorites",
-      )
+      favorites-counter
 </template>
 
 <script>
@@ -58,7 +56,6 @@ export default {
 
   computed: {
     ...mapGetters([
-      'allowFavorites',
       'showSearch',
     ]),
   },

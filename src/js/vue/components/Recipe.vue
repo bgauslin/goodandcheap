@@ -21,7 +21,6 @@
             v-if="content.badge",
           )
         toggle-favorite(
-          v-if="allowFavorites",
           :favorite="content",
         )
         tabs(
@@ -38,7 +37,6 @@
 
 <script>
 import setup from '../../setup';
-import { mapGetters } from 'vuex';
 import { mapMutations } from 'vuex';
 import AlphaOverlay from './AlphaOverlay.vue';
 import Badge from './Badge.vue';
@@ -82,8 +80,6 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['allowFavorites']),
-
     /** @return {Object} */
     recipeContent() {
       let content = {};
