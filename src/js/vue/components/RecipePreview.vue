@@ -62,32 +62,22 @@ export default {
     showChapter: Boolean,
   },
 
-  data() {
-    return {
-      isVisited: false,
-    }
-  },
-
-  mounted() {
-    this.isVisited = this.checkIfVisited(this.item.id);
-  },
-
   computed: {
-    ...mapGetters(['allowFavorites']),
+    ...mapGetters([
+      'allowFavorites',
+      'visitedIds',
+    ]),
     
+    /** @return {boolean} */
+    isVisited() {
+      return this.visitedIds.has(this.item.id);
+    },
+
     /** @return {number} */
     itemCount() {
       return this.index + 1;
     },
   },
-
-  methods: {
-    checkIfVisited(id) {
-      const ids = this.$store.getters.visitedIds;
-      const index = ids.indexOf(id);
-      return (index !== -1);
-    },
-  }
 }
 </script>
 
