@@ -1,37 +1,38 @@
 <template lang="pug">
   li.checklist__item
     a.checklist__link(
-      :class="{ saved : isSaved }",
-      @click.prevent="toggleItem(id)",
+      :class="{ 'saved' : isSaved }",
+      @click.prevent="toggleItem()",
       href="#",
     ) {{ item }}
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import { mapMutations } from 'vuex';
 
 export default {
   props: {
+    id: Number,
     item: String,
     itemIndex: Number,
     listIndex: Number,
     parentId: Number,
   },
 
-  data() {
-    return {
-      isSaved: false,
-    }
-  },
-
-  created() {
-    this.isSaved = this.isSavedIngredient(this.id);
-  },
-
   computed: {
+    ...mapGetters([
+      'ingredientsIds',
+    ]),
+
     /** @return {string} */
     id() {
       return `${this.parentId}.${this.listIndex}.${this.itemIndex}`;
+    },
+
+    /** @return {boolean} */
+    isSaved() {
+      return this.ingredientsIds.includes(this.id);
     },
   },
 
@@ -40,29 +41,14 @@ export default {
       'addIngredient',
       'removeIngredient',
     ]),
-    /** 
-     * Whether the ingredient has been checked by the user and saved.
-     * @param {!string} id
-     * @return {boolean}
-     */
-    isSavedIngredient(id) {
-      const ids = this.$store.getters.ingredientsIds;
-      const index = ids.indexOf(id);
-      return (index !== -1);
-    },
 
-    /** 
-     * Adds/removes the ingredient from the user's saved list of ingredients.
-     * @param {!string} id
-     * @return {boolean}
-     */
-    toggleItem(id) {
+    /** Adds/removes the ingredient from the user's saved list of ingredients. */
+    toggleItem() {
       if (this.isSaved) {
-        this.removeIngredient(id);
+        this.removeIngredient(this.id);
       } else {
-        this.addIngredient(id);
+        this.addIngredient(this.id);
       }
-      this.isSaved = !this.isSaved;
     },
   },
 }
