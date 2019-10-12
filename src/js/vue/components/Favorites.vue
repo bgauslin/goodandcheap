@@ -3,7 +3,7 @@
     div.favorites(
       :class="{ 'empty' : !hasFavorites }"
     )
-      h2 {{ favoritesCount }}
+      h2 {{ count }}
       div
         transition-group(
           class="previews",
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import RecipePreview from './RecipePreview.vue';
 
 export default {
@@ -30,24 +31,23 @@ export default {
   data() {
     return {
       favorites: this.$store.state.favorites.favorites.reverse(),
-      hasFavorites: false,
     }
   },
 
   mounted() {
-    this.setHasFavorites(this.favorites);
     this.updateTitle('Favorites');
   },
 
-  updated() {
-    this.setHasFavorites(this.favorites);
-  },
-
   computed: {
+    ...mapGetters([
+      'favoritesCount',
+      'hasFavorites',
+    ]),
+
     /** @return {string} */
-    favoritesCount() {
+    count() {
       let text;
-      const count = this.$store.getters.favoritesCount;
+      const count = this.favoritesCount;
       if (count <= 0) {
         text = 'No Favorites :(';
       } else if (count === 1) {
@@ -60,14 +60,6 @@ export default {
   },
 
   methods: {
-    /** 
-     * Sets a flag if user has any saved favorites.
-     * @param {Array} favorites - User's favorite recipes.
-     */
-    setHasFavorites(favorites) {
-      this.hasFavorites = (favorites.length > 0);
-    },
-
     /** 
      * Updates the document title with the current page's title.
      * @param {string} title
