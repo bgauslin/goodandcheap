@@ -85,14 +85,12 @@ export default {
           ['pages', 'chapters'],
         ];
 
-        let i = 0;
-        while (i < noFetch.length) {
-          const [to_, from_] = noFetch[i];
+        noFetch.forEach((route) => {
+          const [to_, from_] = route;
           if (to_ === to.name && from_ === from.name) {
             isFetchable = false;
           }
-          i++;
-        }
+        });
       }
 
       if (isFetchable) {
