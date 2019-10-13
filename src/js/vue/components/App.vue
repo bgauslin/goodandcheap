@@ -5,7 +5,7 @@
     )
     div.content
       preloader(
-        v-if="!dataLoaded",
+        v-if="!hasData",
       )
       transition(
         @before-enter="beforeEnter",
@@ -15,7 +15,7 @@
         mode="out-in",
       )
         router-view(
-          v-if="dataLoaded",
+          v-if="hasData",
           :content="data",
           :key="key",
         )
@@ -40,28 +40,24 @@ export default {
 
   data() {
     return {
-      data: null,
-      dataLoaded: null,
-      fetch: null,
-      key: null,
+      data: {},
+      hasData: false,
+      isFetchable: false,
+      key: '',
       searchQuery: '',
-      transitionEnter: null,
-      transitionLeave: null,
+      transitionEnter: '',
+      transitionLeave: '',
     }
   },
 
   created() {
     this.favoritesPage();
     this.searchPage();
+    this.fetchData();
 
-    // this.endpoint = this.$route.meta.endpoint;
-    if (this.endpoint !== undefined) {
-      this.fetchData(this.endpoint);
-    }
-
-    // Set dataLoaded flag for 404 route.
+    // Set hasData flag for 404 route.
     if (this.$route.name === '404') {
-      this.dataLoaded = true;
+      this.hasData = true;
     }
   },
 
@@ -70,11 +66,11 @@ export default {
       this.favoritesPage();
       this.searchPage();
 
-      this.fetch = this.doFetch(to, from);
-      if (this.endpoint && this.fetch) {
+      this.isFetchable = this.doFetch(to, from);
+      if (this.isFetchable) {
         this.data = null;
-        this.dataLoaded = false;
-        this.fetchData(this.endpoint);
+        this.hasData = false;
+        this.fetchData();
       } else {
         // Data isn't fetched for 'steps' and 'ingredients' tabs, but we still
         // need to send a pageview.
@@ -172,29 +168,32 @@ export default {
 
     /**
      * Fetches data from an API endpoint.
-     * @param {!string} endpoint
      * @async
      */
-    async fetchData(endpoint) {
+    async fetchData() {
+      if (!this.endpoint) {
+        return;
+      }
+
       const apiBaseUrl = (process.env.NODE_ENV === 'production') ? process.env.API_PROD : process.env.API_DEV;
-      let fullEndpoint = `${apiBaseUrl}/${endpoint}`;
+      let endpoint = `${apiBaseUrl}/${this.endpoint}`;
       
       // Append slug or search query only if they exist.
       const slug = this.$route.params.slug;
       if (slug !== undefined) {
-        fullEndpoint += `/${slug}`;
+        endpoint += `/${slug}`;
       } else if (this.searchQuery) {
-        fullEndpoint += this.searchQuery;
+        endpoint += this.searchQuery;
       }
 
       try {
-        const response = await fetch(fullEndpoint);
+        const response = await fetch(endpoint);
         this.data = await response.json();
         this.key = this.data.slug;
         this.updateParent(this.data.parent);
         this.updateTitle(this.data.title);
         this.sendPageview(this.data.title);
-        this.dataLoaded = true;
+        this.hasData = true;
       } catch (e) {
         this.notFound();
       }
@@ -208,7 +207,7 @@ export default {
         this.data = null;
         this.key = 'favorites';
         this.updateParent(null);
-        this.dataLoaded = true;
+        this.hasData = true;
       }
     },
 
