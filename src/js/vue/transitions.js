@@ -2,7 +2,7 @@ export default (router) => {
   router.beforeEach((to, from, next) => {
     let direction = 'up';
 
-    const transition = [
+    const transitions = [
       {
         direction: 'back',
         toFrom: [
@@ -34,19 +34,14 @@ export default (router) => {
       },
     ];
 
-    let i = 0;
-    while (i < transition.length) {
-      const group = transition[i];
-      let j = 0;
-      while (j < group.toFrom.length) {
-        const [to_, from_] = group.toFrom[j];
+    transitions.forEach((transition) => {
+      transition.toFrom.forEach((route) => {
+        const [to_, from_] = route;
         if (to_ === to.name && from_ === from.name) {
-          direction = group.direction;
+          direction = transition.direction;
         }
-        j++;
-      }
-      i++;
-    }
+      });
+    });
 
     if (router.app.$store) {
       router.app.$store.commit('updateDirection', direction);  
