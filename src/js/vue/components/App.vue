@@ -50,6 +50,7 @@ export default {
   },
 
   created() {
+    // TODO: Make calls to favoritesPage() and searchPage() more DRY.
     this.favoritesPage();
     this.searchPage();
     this.fetchData();
@@ -62,6 +63,7 @@ export default {
 
   watch: {
     '$route' (to, from) {
+      // TODO: Make calls to favoritesPage() and searchPage() more DRY.
       this.favoritesPage();
       this.searchPage();
 
@@ -72,7 +74,7 @@ export default {
       if (this.$route.name === 'favorites') {
         isFetchable = false;
       } else {
-        const noFetchRequired = [
+        const noFetch = [
           ['intro', 'steps'],
           ['intro', 'ingredients'],
           ['ingredients', 'intro'],
@@ -84,8 +86,8 @@ export default {
         ];
 
         let i = 0;
-        while (i < noFetchRequired.length) {
-          const [to_, from_] = noFetchRequired[i];
+        while (i < noFetch.length) {
+          const [to_, from_] = noFetch[i];
           if (to_ === to.name && from_ === from.name) {
             isFetchable = false;
           }
@@ -138,15 +140,13 @@ export default {
     },
 
     /**
-     * Adds CSS class to an element before entering the new route.
+     * Adds CSS class to an element before entering the new route and resets
+     * scroll position for iOS.
      * @param {!Element} element
      */
     beforeEnter(element) {
       element.classList.add(this.transitionEnterClass());
-      // Reset scroll position for iOS.
-      setTimeout(() => {
-        window.scrollTo(0, 1)
-      }, 0);
+      setTimeout(() => window.scrollTo(0, 1), 0);
     },
 
     /**
