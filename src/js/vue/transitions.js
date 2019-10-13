@@ -1,28 +1,33 @@
 export default (router) => {
   router.beforeEach((to, from, next) => {
-    let direction;
+    let direction = 'up';
 
-    if (from.name === 'chapters' && to.name === 'chapter') {
-      direction = 'forward';
-    } else if (from.name === 'chapter' && to.name === 'chapters') {
-      direction = 'back';
-    } else if (from.name === 'pages' && to.name === 'info') {
-      direction = 'forward';
-    } else if (from.name === 'info' && to.name === 'pages') {
-      direction = 'back';
-    } else if (from.name === 'chapter' && to.name === 'intro') {
-      direction = 'forward';
-    } else if (from.name === 'intro' || from.name === 'ingredients' || from.name === 'steps' ) {
-      if (to.name === 'chapter') {
-        direction = 'back';
+    const routeTransition = [
+      ['chapter', 'chapters', 'forward'],
+      ['chapters', 'chapter', 'back'],
+      ['info', 'pages', 'forward'],
+      ['pages', 'info', 'back'],
+      ['chapter', 'intro', 'back'],
+      ['chapter', 'ingredients', 'back'],
+      ['chapter', 'steps', 'back'],
+      ['intro', 'chapter', 'forward'],
+      ['intro', 'ingredients', null],
+      ['intro', 'steps', null],
+      ['ingredients', 'intro', null],
+      ['ingredients', 'steps', null],
+      ['steps', 'intro', null],
+      ['steps', 'ingredients', null],
+    ];
+
+    let i = 0;
+    while (i < routeTransition.length) {
+      const [to_, from_, direction_] = routeTransition[i];
+      if (to_ === to.name && from_ === from.name) {
+        direction = direction_;
       }
-      if (to.name === 'intro' || to.name === 'ingredients' || to.name === 'steps' ) {
-        direction = null;
-      }
-    } else {
-      direction = 'up';
+      i++;
     }
-
+    
     if (router.app.$store) {
       router.app.$store.commit('updateDirection', direction);  
     }
