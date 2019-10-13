@@ -42,7 +42,6 @@ export default {
     return {
       data: {},
       hasData: false,
-      isFetchable: false,
       key: '',
       searchQuery: '',
       transitionEnter: '',
@@ -66,14 +65,38 @@ export default {
       this.favoritesPage();
       this.searchPage();
 
-      this.isFetchable = this.doFetch(to, from);
-      if (this.isFetchable) {
-        this.data = null;
+      // Determine if there should be an API request depending on where we're
+      // coming from and going to.
+      let isFetchable = true;
+
+      if (this.$route.name === 'favorites') {
+        isFetchable = false;
+      } else {
+        const noFetchRequired = [
+          ['intro', 'steps'],
+          ['intro', 'ingredients'],
+          ['ingredients', 'intro'],
+          ['ingredients', 'steps'],
+          ['steps', 'intro'],
+          ['steps', 'ingredients'],
+          ['chapters', 'pages'],
+          ['pages', 'chapters'],
+        ];
+
+        let i = 0;
+        while (i < noFetchRequired.length) {
+          const [to_, from_] = noFetchRequired[i];
+          if (to_ === to.name && from_ === from.name) {
+            isFetchable = false;
+          }
+          i++;
+        }
+      }
+
+      if (isFetchable) {
         this.hasData = false;
         this.fetchData();
       } else {
-        // Data isn't fetched for 'steps' and 'ingredients' tabs, but we still
-        // need to send a pageview.
         this.sendPageview(document.title);
       }
     }
@@ -132,38 +155,6 @@ export default {
      */
     beforeLeave(element) {
       element.classList.add(this.transitionLeaveClass());
-    },
-
-    /**
-     * Whether to fetch data from an API depending on what route the user is
-     * coming from and going to.
-     * @param {!string} to
-     * @param {!string} from
-     * @return {boolean}
-     */
-    doFetch(to, from) {
-      // TODO: Refactor all of this to be more clean/clear.
-      if (to.name === 'intro') {
-        if (from.name === 'steps' || from.name === 'ingredients') {
-          return false;
-        } else {
-          return true;
-        }
-      } else if (to.name === 'steps' || to.name === 'ingredients') {
-        if (from.name === 'intro' || from.name === 'steps' || from.name === 'ingredients') {
-          return false;
-        } else {
-          return true;
-        }
-      } else if (from.name === 'pages' && to.name === 'chapters') {
-        return false;
-      } else if (from.name === 'chapters' && to.name === 'pages') {
-        return false;
-      } else if (to.name === 'favorites') {
-        return false;
-      } else {
-        return true;
-      }
     },
 
     /**
