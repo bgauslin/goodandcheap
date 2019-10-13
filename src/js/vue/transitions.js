@@ -2,32 +2,52 @@ export default (router) => {
   router.beforeEach((to, from, next) => {
     let direction = 'up';
 
-    const routeTransition = [
-      ['chapter', 'chapters', 'forward'],
-      ['chapters', 'chapter', 'back'],
-      ['info', 'pages', 'forward'],
-      ['pages', 'info', 'back'],
-      ['chapter', 'intro', 'back'],
-      ['chapter', 'ingredients', 'back'],
-      ['chapter', 'steps', 'back'],
-      ['intro', 'chapter', 'forward'],
-      ['intro', 'ingredients', null],
-      ['intro', 'steps', null],
-      ['ingredients', 'intro', null],
-      ['ingredients', 'steps', null],
-      ['steps', 'intro', null],
-      ['steps', 'ingredients', null],
+    const transition = [
+      {
+        direction: 'back',
+        toFrom: [
+          ['chapter', 'intro'],
+          ['chapter', 'ingredients'],
+          ['chapter', 'steps'],
+          ['chapters', 'chapter'],
+          ['pages', 'info'],
+        ],
+      },
+      {
+        direction: 'forward',
+        toFrom: [
+          ['chapter', 'chapters'],
+          ['info', 'pages'],
+          ['intro', 'chapter'],
+        ],
+      },
+      {
+        direction: null,
+        toFrom: [
+          ['ingredients', 'intro'],
+          ['ingredients', 'steps'],
+          ['intro', 'ingredients'],
+          ['intro', 'steps'],
+          ['steps', 'intro'],
+          ['steps', 'ingredients'],
+        ],
+      },
     ];
 
     let i = 0;
-    while (i < routeTransition.length) {
-      const [to_, from_, direction_] = routeTransition[i];
-      if (to_ === to.name && from_ === from.name) {
-        direction = direction_;
+    while (i < transition.length) {
+      const group = transition[i];
+      let j = 0;
+      while (j < group.toFrom.length) {
+        const [to_, from_] = group.toFrom[j];
+        if (to_ === to.name && from_ === from.name) {
+          direction = group.direction;
+        }
+        j++;
       }
       i++;
     }
-    
+
     if (router.app.$store) {
       router.app.$store.commit('updateDirection', direction);  
     }
