@@ -8,6 +8,7 @@
         v-if="!hasData",
       )
       transition(
+        v-if="content && !notFound",
         @before-enter="beforeEnter",
         @after-enter="afterEnter",
         @before-leave="beforeLeave",
@@ -16,9 +17,12 @@
       )
         router-view(
           v-if="hasData",
-          :content="data",
+          :content="content",
           :key="key",
         )
+      not-found(
+        v-if="!content && notFound",
+      )
     app-footer
 </template>
 
@@ -28,6 +32,7 @@ import { mapMutations } from 'vuex';
 import AppFooter from './Footer.vue';
 import AppHeader from './Header.vue';
 import Breadcrumbs from './Breadcrumbs.vue';
+import NotFound from './NotFound.vue';
 import Preloader from './Preloader.vue';
 
 export default {
@@ -35,14 +40,16 @@ export default {
     AppFooter,
     AppHeader,
     Breadcrumbs,
+    NotFound,
     Preloader,
   },
 
   data() {
     return {
-      data: {},
+      content: {},
       hasData: false,
       key: '',
+      notFound: false,
       searchQuery: '',
       transitionEnter: '',
       transitionLeave: '',
@@ -54,12 +61,6 @@ export default {
     this.favoritesPage();
     this.searchPage();
     this.fetchData();
-
-    // TODO(404): Refactor 404 routing and logic - see slides project for details.
-    // Set hasData flag for 404 route.
-    if (this.$route.name === '404') {
-      this.hasData = true;
-    }
   },
 
   watch: {
@@ -178,14 +179,21 @@ export default {
 
       try {
         const response = await fetch(endpoint);
-        this.data = await response.json();
-        this.key = this.data.slug;
-        this.updateParent(this.data.parent);
-        this.updateTitle(this.data.title);
-        this.sendPageview(this.data.title);
-        this.hasData = true;
+        
+        if (response.status === 200) {
+          this.content = await response.json();
+          this.key = this.content.slug;
+          this.hasData = true;
+          this.updateParent(this.content.parent);
+          this.updateTitle(this.content.title);
+          this.sendPageview(this.content.title);
+        } else {
+          this.content = null;
+          this.hasData = true;
+          this.notFound = true;
+          this.sendPageview(this.content.title);
+        }
       } catch (e) {
-        // this.notFound();
       }
     },
 
@@ -194,7 +202,7 @@ export default {
      */
     favoritesPage() {
       if (this.$route.name === 'favorites') {
-        this.data = null;
+        this.content = null;
         this.key = 'favorites';
         this.updateParent(null);
         this.hasData = true;
@@ -211,15 +219,6 @@ export default {
         this.updateSearchQuery(this.searchQuery);
       }
       this.updateShowSearch(this.$route.name === 'search');
-    },
-
-    // TODO(404): Refactor 404 routing and logic - see slides project for details.
-    /** 
-     * Redirects to 404 page if there is no API response.
-     */
-    notFound() {
-      this.sendPageview('404');
-      window.location.replace('/404');
     },
 
     /**
