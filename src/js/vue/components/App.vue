@@ -8,7 +8,7 @@
         v-if="!hasData",
       )
       transition(
-        v-if="content && !notFound",
+        v-if="!notFound",
         @before-enter="beforeEnter",
         @after-enter="afterEnter",
         @before-leave="beforeLeave",
@@ -21,7 +21,7 @@
           :key="key",
         )
       not-found(
-        v-if="!content && notFound",
+        v-if="notFound",
       )
     app-footer
 </template>
@@ -69,10 +69,12 @@ export default {
       this.favoritesPage();
       this.searchPage();
 
+      // Reset notFound flag.
+      this.notFound = false;
+
       // Determine if there should be an API request depending on where we're
       // coming from and going to.
       let isFetchable = true;
-
       if (this.$route.name === 'favorites') {
         isFetchable = false;
       } else {
@@ -162,6 +164,10 @@ export default {
      * @async
      */
     async fetchData() {
+      if (this.$route.name === '404') {
+        this.show404();
+      }
+
       if (!this.endpoint) {
         return;
       }
@@ -188,10 +194,7 @@ export default {
           this.updateTitle(this.content.title);
           this.sendPageview(this.content.title);
         } else {
-          this.content = null;
-          this.hasData = true;
-          this.notFound = true;
-          this.sendPageview(this.content.title);
+          this.show404();
         }
       } catch (e) {
       }
@@ -232,6 +235,15 @@ export default {
         ga('set', 'title', pageTitle);
         ga('send', 'pageview');
       }
+    },
+
+    /**
+     * Displays a 404 message for URLs that don't exist.
+     */
+    show404() {
+      this.content = null;
+      this.hasData = true;
+      this.notFound = true;
     },
 
     /**
