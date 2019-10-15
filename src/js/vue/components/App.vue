@@ -5,10 +5,9 @@
     )
     div.content
       preloader(
-        v-if="!hasData",
+        v-if="loading",
       )
       transition(
-        v-if="!notFound",
         @before-enter="beforeEnter",
         @after-enter="afterEnter",
         @before-leave="beforeLeave",
@@ -16,13 +15,13 @@
         mode="out-in",
       )
         router-view(
-          v-if="hasData",
+          v-if="!notFound && !loading",
           :content="content",
           :key="key",
         )
-      not-found(
-        v-if="notFound",
-      )
+        not-found(
+          v-if="notFound",
+        )
     app-footer
 </template>
 
@@ -47,8 +46,8 @@ export default {
   data() {
     return {
       content: {},
-      hasData: false,
       key: '',
+      loading: true,
       notFound: false,
       searchQuery: '',
       transitionEnter: '',
@@ -98,7 +97,7 @@ export default {
       }
 
       if (isFetchable) {
-        this.hasData = false;
+        this.loading = true;
         this.fetchData();
       } else {
         this.sendPageview(document.title);
@@ -189,7 +188,7 @@ export default {
         if (response.status === 200) {
           this.content = await response.json();
           this.key = this.content.slug;
-          this.hasData = true;
+          this.loading = false;
           this.updateParent(this.content.parent);
           this.updateTitle(this.content.title);
           this.sendPageview(this.content.title);
@@ -205,10 +204,10 @@ export default {
      */
     favoritesPage() {
       if (this.$route.name === 'favorites') {
-        this.content = null;
+        this.content = 'favorites';
         this.key = 'favorites';
         this.updateParent(null);
-        this.hasData = true;
+        this.loading = false;
       }
     },
 
@@ -241,8 +240,9 @@ export default {
      * Displays a 404 message for URLs that don't exist.
      */
     show404() {
-      this.content = null;
-      this.hasData = true;
+      this.content = '404';
+      this.key = '404';
+      this.loading = false;
       this.notFound = true;
     },
 
