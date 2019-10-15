@@ -26,6 +26,11 @@ export default new VueRouter({
   linkActiveClass: 'current',
   routes: [
     {
+      name: '404',
+      path: '*',
+      component: NotFound,
+    },
+    {
       path: '/',
       component: Home,
       children: [
@@ -46,7 +51,7 @@ export default new VueRouter({
           }
         }
       ]
-    },
+    },    
     {
       name: 'favorites',
       path: '/favorites',
@@ -110,11 +115,6 @@ export default new VueRouter({
           }
         }
       ]
-    },
-    {
-      name: '404',
-      path: '*',
-      component: NotFound,
     },
   ]
 });
