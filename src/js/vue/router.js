@@ -8,6 +8,8 @@ const Chapters = () => import('./components/Chapters.vue');
 const Chapter = () => import('./components/Chapter.vue');
 const Favorites = () => import('./components/Favorites.vue');
 const Home = () => import('./components/Home.vue');
+
+// TODO(404): Refactor 404 routing and logic - see slides project for details.
 const NotFound = () => import('./components/NotFound.vue');
 // const Pages = () => import('./components/Pages.vue');
 const Page = () => import('./components/Page.vue');
@@ -62,11 +64,6 @@ export default new VueRouter({
       }
     },
     {
-      name: '404',
-      path: '/404',
-      component: NotFound,
-    },
-    {
       name: 'search',
       path: '/search',
       component: Search,
@@ -113,6 +110,11 @@ export default new VueRouter({
           }
         }
       ]
-    }
+    },
+    {
+      name: '404',
+      path: '*',
+      component: NotFound,
+    },
   ]
 });

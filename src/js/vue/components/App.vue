@@ -55,6 +55,7 @@ export default {
     this.searchPage();
     this.fetchData();
 
+    // TODO(404): Refactor 404 routing and logic - see slides project for details.
     // Set hasData flag for 404 route.
     if (this.$route.name === '404') {
       this.hasData = true;
@@ -184,7 +185,7 @@ export default {
         this.sendPageview(this.data.title);
         this.hasData = true;
       } catch (e) {
-        this.notFound();
+        // this.notFound();
       }
     },
 
@@ -212,6 +213,7 @@ export default {
       this.updateShowSearch(this.$route.name === 'search');
     },
 
+    // TODO(404): Refactor 404 routing and logic - see slides project for details.
     /** 
      * Redirects to 404 page if there is no API response.
      */
