@@ -1,15 +1,14 @@
 import Vue from 'vue/dist/vue.js';
 import VueRouter from 'vue-router';
 
-// TODO: Debug Pages breaking Search results styling when hot-loaded. 
+// TODO: Figure out why Pages component breaks Search results styling when
+// the component is hot-loaded. 
 import Pages from './components/Pages.vue';
 
 const Chapters = () => import('./components/Chapters.vue');
 const Chapter = () => import('./components/Chapter.vue');
 const Favorites = () => import('./components/Favorites.vue');
 const Home = () => import('./components/Home.vue');
-
-// TODO(404): Refactor 404 routing and logic - see slides project for details.
 const NotFound = () => import('./components/NotFound.vue');
 // const Pages = () => import('./components/Pages.vue');
 const Page = () => import('./components/Page.vue');
