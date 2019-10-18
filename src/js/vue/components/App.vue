@@ -59,6 +59,7 @@ export default {
     // TODO: Make calls to favoritesPage() and searchPage() more DRY.
     this.favoritesPage();
     this.searchPage();
+
     this.fetchData();
   },
 
@@ -226,7 +227,7 @@ export default {
      * @param {!Element} element
      */
     afterEnter(element) {
-      element.classList.remove(this.transitionEnterClass());
+      element.classList.remove(this.enterCssClass());
     },
 
     /**
@@ -234,7 +235,7 @@ export default {
      * @param {!Element} element
      */
     afterLeave(element) {
-      element.classList.remove(this.transitionLeaveClass());
+      element.classList.remove(this.leaveCssClass());
     },
 
     /**
@@ -242,7 +243,7 @@ export default {
      * @param {!Element} element
      */
     beforeEnter(element) {
-      element.classList.add(this.transitionEnterClass());
+      element.classList.add(this.enterCssClass());
     },
 
     /**
@@ -250,7 +251,7 @@ export default {
      * @param {!Element} element
      */
     beforeLeave(element) {
-      element.classList.add(this.transitionLeaveClass());
+      element.classList.add(this.leaveCssClass());
     },
 
     /**
@@ -258,7 +259,7 @@ export default {
      * current 'direction' state value.
      * @return {string}
      */
-    transitionEnterClass() {
+    enterCssClass() {
       switch (this.direction) {
         case 'forward':
           return 'slide-in-right';
@@ -274,7 +275,7 @@ export default {
      * current 'direction' state value.
      * @return {string}
      */
-    transitionLeaveClass() {
+    leaveCssClass() {
       switch (this.direction) {
         case 'forward':
           return 'slide-out-left';
