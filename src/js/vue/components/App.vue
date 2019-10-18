@@ -50,24 +50,19 @@ export default {
       loading: true,
       notFound: false,
       searchQuery: '',
-      transitionEnter: '',
-      transitionLeave: '',
     }
   },
 
   created() {
-    // TODO: Make calls to favoritesPage() and searchPage() more DRY.
-    this.favoritesPage();
-    this.searchPage();
-
+    this.showFavorites();
+    this.updateSearch();
     this.fetchData();
   },
 
   watch: {
     '$route' (to, from) {
-      // TODO: Make calls to favoritesPage() and searchPage() more DRY.
-      this.favoritesPage();
-      this.searchPage();
+      this.showFavorites();
+      this.updateSearch();
 
       // Reset notFound flag.
       this.notFound = false;
@@ -169,7 +164,7 @@ export default {
     /**
      * Updates props and state if current route is 'favorites'.
      */
-    favoritesPage() {
+    showFavorites() {
       if (this.$route.name === 'favorites') {
         this.content = 'favorites';
         this.key = 'favorites';
@@ -182,7 +177,7 @@ export default {
      * Stores 'showSearch' flag and search params (if they exist) for other
      * components to access if current route is the search results page.
      */
-    searchPage() {
+    updateSearch() {
       this.searchQuery = window.location.search;
       if (this.searchQuery) {
         this.updateSearchQuery(this.searchQuery);
