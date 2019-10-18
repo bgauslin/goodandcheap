@@ -141,13 +141,11 @@ export default {
     },
 
     /**
-     * Adds CSS class to an element before entering the new route and resets
-     * scroll position for iOS.
+     * Adds CSS class to an element before entering the new route.
      * @param {!Element} element
      */
     beforeEnter(element) {
       element.classList.add(this.transitionEnterClass());
-      setTimeout(() => window.scrollTo(0, 1), 0);
     },
 
     /**

@@ -20,9 +20,17 @@ const Search = () => import('./components/SearchResults.vue');
 
 Vue.use(VueRouter);
 
+const scrollBehavior = (to, from, savedPosition) => {
+  return {
+    x: 0,
+    y: 0,
+  }
+}
+
 export default new VueRouter({
   mode: 'history',
   linkActiveClass: 'current',
+  scrollBehavior,
   routes: [
     {
       name: '404',
