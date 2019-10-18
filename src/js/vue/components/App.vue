@@ -125,38 +125,6 @@ export default {
     ]),
 
     /**
-     * Removes CSS class from an element after entering the new route.
-     * @param {!Element} element
-     */
-    afterEnter(element) {
-      element.classList.remove(this.transitionEnterClass());
-    },
-
-    /**
-     * Removes CSS class from an element after leaving the current route.
-     * @param {!Element} element
-     */
-    afterLeave(element) {
-      element.classList.remove(this.transitionLeaveClass());
-    },
-
-    /**
-     * Adds CSS class to an element before entering the new route.
-     * @param {!Element} element
-     */
-    beforeEnter(element) {
-      element.classList.add(this.transitionEnterClass());
-    },
-
-    /**
-     * Removes CSS class from an element before leaving the current route.
-     * @param {!Element} element
-     */
-    beforeLeave(element) {
-      element.classList.add(this.transitionLeaveClass());
-    },
-
-    /**
      * Fetches data from an API endpoint.
      * @async
      */
@@ -222,6 +190,15 @@ export default {
     },
 
     /**
+     * Updates document title.
+     * @param {!string} pageTitle
+     * @return {string}
+     */
+    updateTitle(pageTitle) {
+      document.title = (pageTitle !== undefined) ? `${pageTitle} · ${this.$root.siteName}` : this.$root.siteName;
+    },
+
+    /**
      * Gets global Google Analytics object and sends a new pageview.
      * @param {!string} pageTitle
      */
@@ -242,6 +219,38 @@ export default {
       this.key = '404';
       this.loading = false;
       this.notFound = true;
+    },
+
+    /**
+     * Removes CSS class from an element after entering the new route.
+     * @param {!Element} element
+     */
+    afterEnter(element) {
+      element.classList.remove(this.transitionEnterClass());
+    },
+
+    /**
+     * Removes CSS class from an element after leaving the current route.
+     * @param {!Element} element
+     */
+    afterLeave(element) {
+      element.classList.remove(this.transitionLeaveClass());
+    },
+
+    /**
+     * Adds CSS class to an element before entering the new route.
+     * @param {!Element} element
+     */
+    beforeEnter(element) {
+      element.classList.add(this.transitionEnterClass());
+    },
+
+    /**
+     * Removes CSS class from an element before leaving the current route.
+     * @param {!Element} element
+     */
+    beforeLeave(element) {
+      element.classList.add(this.transitionLeaveClass());
     },
 
     /**
@@ -274,15 +283,6 @@ export default {
         default:
           return 'slide-out-down';
       }
-    },
-
-    /**
-     * Updates document title.
-     * @param {!string} pageTitle
-     * @return {string}
-     */
-    updateTitle(pageTitle) {
-      document.title = (pageTitle !== undefined) ? `${pageTitle} · ${this.$root.siteName}` : this.$root.siteName;
     },
   },
 }
