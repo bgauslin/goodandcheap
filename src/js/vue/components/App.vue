@@ -5,7 +5,7 @@
     )
     div.content
       preloader(
-        v-if="loading",
+        v-if="isLoading",
       )
       transition(
         @before-enter="beforeEnter",
@@ -15,12 +15,12 @@
         mode="out-in",
       )
         router-view(
-          v-if="!notFound && !loading",
+          v-if="!is404 && !isLoading",
           :content="content",
           :key="key",
         )
         not-found(
-          v-if="notFound",
+          v-if="is404",
         )
     app-footer
 </template>
@@ -45,10 +45,10 @@ export default {
 
   data() {
     return {
-      content: {},
+      content: null,
+      is404: false,
+      isLoading: true,
       key: '',
-      loading: true,
-      notFound: false,
       searchQuery: '',
     }
   },
@@ -64,8 +64,8 @@ export default {
       this.showFavorites();
       this.updateSearch();
 
-      // Reset notFound flag.
-      this.notFound = false;
+      // Reset 404 flag.
+      this.is404 = false;
 
       // Determine if there should be an API request depending on where we're
       // coming from and going to.
@@ -93,7 +93,7 @@ export default {
       }
 
       if (isFetchable) {
-        this.loading = true;
+        this.isLoading = true;
         this.fetchData();
       } else {
         this.sendPageview(document.title);
@@ -150,7 +150,7 @@ export default {
         if (response.status === 200) {
           this.content = await response.json();
           this.key = this.content.slug;
-          this.loading = false;
+          this.isLoading = false;
           this.updateParent(this.content.parent);
           this.updateTitle(this.content.title);
           this.sendPageview(this.content.title);
@@ -169,7 +169,7 @@ export default {
         this.content = 'favorites';
         this.key = 'favorites';
         this.updateParent(null);
-        this.loading = false;
+        this.isLoading = false;
       }
     },
 
@@ -213,8 +213,8 @@ export default {
     show404() {
       this.content = '404';
       this.key = '404';
-      this.loading = false;
-      this.notFound = true;
+      this.isLoading = false;
+      this.is404 = true;
     },
 
     /**
@@ -229,7 +229,7 @@ export default {
      * Removes CSS class from an element after leaving the current route.
      * @param {!Element} el
      */
-    afterLeave(element) {
+    afterLeave(el) {
       el.classList.remove();
     },
 
