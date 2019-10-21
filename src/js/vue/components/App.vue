@@ -219,34 +219,34 @@ export default {
 
     /**
      * Removes CSS class from an element after entering the new route.
-     * @param {!Element} element
+     * @param {!Element} el
      */
-    afterEnter(element) {
-      element.classList.remove(this.enterCssClass());
+    afterEnter(el) {
+      el.classList.remove();
     },
 
     /**
      * Removes CSS class from an element after leaving the current route.
-     * @param {!Element} element
+     * @param {!Element} el
      */
     afterLeave(element) {
-      element.classList.remove(this.leaveCssClass());
+      el.classList.remove();
     },
 
     /**
      * Adds CSS class to an element before entering the new route.
-     * @param {!Element} element
+     * @param {!Element} el
      */
-    beforeEnter(element) {
-      element.classList.add(this.enterCssClass());
+    beforeEnter(el) {
+      el.classList.add(this.enterCssClass());
     },
 
     /**
      * Removes CSS class from an element before leaving the current route.
-     * @param {!Element} element
+     * @param {!Element} el
      */
-    beforeLeave(element) {
-      element.classList.add(this.leaveCssClass());
+    beforeLeave(el) {
+      el.classList.add(this.leaveCssClass());
     },
 
     /**
