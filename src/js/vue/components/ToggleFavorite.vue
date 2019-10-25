@@ -60,8 +60,8 @@ export default {
   width 3rem
 
 .toggle-favorite::before
-  height 2rem
   icon()
+  height 2rem
   line-height 2rem
 
 .toggle-favorite::before
