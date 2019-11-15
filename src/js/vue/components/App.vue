@@ -302,7 +302,7 @@ export default {
 .slide-out-down
 .slide-out-left
 .slide-out-right
-  animation-duration .2s
+  animation-duration .3s
   animation-timing-function ease-out
 
 .slide-in-left
@@ -322,14 +322,5 @@ export default {
 
 .slide-out-right
   animation-name slideOutRight
-
-@media Breakpoint.MEDIUM
-  .slide-in-left
-  .slide-in-right
-  .slide-in-up
-  .slide-out-left
-  .slide-out-right
-  .slide-out-down
-    animation-duration .35s
 
 </style>
