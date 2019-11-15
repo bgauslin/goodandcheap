@@ -20,8 +20,11 @@ const Search = () => import('./components/SearchResults.vue');
 
 Vue.use(VueRouter);
 
+// Do not reset scroll position on recipe tab routes.
 const scrollBehavior = (to, from, savedPosition) => {
-  return { x: 0, y: 0 }
+  if (to.name !== 'intro' && to.name !== 'ingredients' && to.name !== 'steps') {
+    return { x: 0, y: 0 }
+  }
 }
 
 export default new VueRouter({
