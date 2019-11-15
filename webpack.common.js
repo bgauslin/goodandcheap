@@ -35,6 +35,7 @@ module.exports = {
         exclude: file => (
           /node_modules/.test(file) && !/\.vue\.js/.test(file)
         ),
+        // TODO(webpack): Remove ES5 transpilation.
         use: {
           loader: 'babel-loader',
           options: {
