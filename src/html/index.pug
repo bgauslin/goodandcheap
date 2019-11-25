@@ -1,10 +1,16 @@
+- const title = "Good And Cheap"
+- const description = "Web app based on the cookbook by Leanne Brown"
+- const devMode = (process.env.NODE_ENV === 'development')
+
 doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
-    title Good And Cheap
-    meta(name="description" content="Web app based on the cookbook by Leanne Brown")
+    title= title
+    meta(name="description" content=description)
     meta(name="viewport" content="width=device-width,initial-scale=1")
     meta(name="apple-mobile-web-app-capable" content="yes")
   body
     div#app
+  if devMode
+    script(src="https://css.gauslin.com/debugger.js" data-src="/breakpoints.json")

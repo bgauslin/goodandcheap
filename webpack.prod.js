@@ -9,8 +9,9 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'src/html/index.pug',
+      filename: 'offline.html',
+      template: 'src/html/offline.pug',
+      inject: false,
     }),
-  ]
+  ],
 });

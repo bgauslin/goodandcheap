@@ -19,9 +19,8 @@ module.exports = {
     ]),
     new DotenvWebpack(),
     new HtmlWebpackPlugin({
-      filename: 'offline.html',
-      template: 'src/html/offline.pug',
-      inject: false,
+      filename: 'index.html',
+      template: 'src/html/index.pug',
     }),
     new VueLoaderPlugin(),
   ],
