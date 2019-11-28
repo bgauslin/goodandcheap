@@ -295,6 +295,7 @@ export default {
 
 .content
   grid-row 2
+  padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
 
 .slide-in-left
 .slide-in-right

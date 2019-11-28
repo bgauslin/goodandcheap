@@ -31,6 +31,7 @@ export default {
   typeface('sans')
   font-size px_to_em(12)
   grid-row 3
+  padding 0 0 env(safe-area-inset-bottom)
   text-align center
 
 .footer__content

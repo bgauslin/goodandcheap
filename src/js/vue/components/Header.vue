@@ -68,6 +68,7 @@ export default {
 .header
   background rgba(BRAND_COLOR, .97)
   box-shadow 0 0 5px 0 var(--medium-grey)
+  padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
   position sticky
   top 0
   z-index 1
