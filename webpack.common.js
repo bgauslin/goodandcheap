@@ -16,6 +16,7 @@ module.exports = {
     new CopyPlugin([
       { from: 'src/img', to: 'img' },
       { from: 'src/root' },
+      { from: 'src/pwa', to: 'pwa' },
     ]),
     new DotenvWebpack(),
     new HtmlWebpackPlugin({

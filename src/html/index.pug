@@ -4,11 +4,14 @@
 doctype html
 html(lang="en")
   head
-    meta(charset="utf-8")
     title= title
+    meta(charset="utf-8")
     meta(name="description" content=description)
     meta(name="viewport" content="width=device-width,initial-scale=1")
+    meta(name="theme-color" content="#e5001f")
     meta(name="apple-mobile-web-app-capable" content="yes")
+    link(rel="apple-touch-icon" href="/apple-touch-icon.png")
+    link(rel="manifest" href="/pwa/manifest.json")
   body
     div#app
   if (process.env.NODE_ENV === 'development')
