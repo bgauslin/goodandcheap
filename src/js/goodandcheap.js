@@ -20,3 +20,10 @@ new Vue({
   store,
   template: '<app></app>',
 }).$mount('#app');
+
+// Register the Service Worker.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}

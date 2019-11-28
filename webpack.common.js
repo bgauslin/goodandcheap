@@ -4,6 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const DotenvWebpack = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: ['@babel/polyfill/noConflict', './src/js/goodandcheap.js'],
@@ -24,6 +25,11 @@ module.exports = {
       template: 'src/html/index.pug',
     }),
     new VueLoaderPlugin(),
+    new WorkboxPlugin.InjectManifest({
+      swSrc: 'src/js/sw.js',
+      swDest: 'sw.js',
+      exclude: [/\.htaccess$/, /robots\.txt$/],
+    }),
   ],
   node: {
     fs: 'empty',
