@@ -1,5 +1,6 @@
 - const title = "Good And Cheap"
 - const description = "Web app based on the cookbook by Leanne Brown"
+- const themeColor = "#e5001f"
 
 doctype html
 html(lang="en")
@@ -8,14 +9,46 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="description" content=description)
     meta(name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover")
-    meta(name="theme-color" content="#e5001f")
+    meta(name="theme-color" content=themeColor)
     meta(name="apple-mobile-web-app-capable" content="yes")
     link(rel="preconnect" href="https://api.goodandcheap.website")
     link(rel="preconnect" href="https://assets.goodandcheap.website")
     link(rel="apple-touch-icon" href="/apple-touch-icon.png")
     link(rel="manifest" href="/pwa/manifest.json")
   body
-    //- TODO: Add 'Enable JS' message and styles.
     div#app
+      div.no-js
+        img(src="/img/wordmark.png" alt=title)
+        noscript Please <a href="https://www.enable-javascript.com/" title="How to enable JavaScript in your browser">enable JavaScript</a> to view this app.
+      style.
+        html,
+        body {
+          background: #{themeColor};
+          color: #fff;
+          margin: 0;
+          padding: 0;
+        }
+        .no-js {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          font-family: sans-serif;
+          justify-content: center;
+          margin: auto;
+          max-width: 30rem;
+          min-height: 100vh;
+          padding: 0 1rem;
+        }
+        img {
+          height: auto;
+          width: 100%;
+        }
+        a {
+          color: #fff;
+          font-weight: bold;
+        }
+        a:hover {
+          opacity: .7;
+        }
   if (process.env.NODE_ENV === 'development')
     script(src="https://css.gauslin.com/debugger.js" data-src="/breakpoints.json")
