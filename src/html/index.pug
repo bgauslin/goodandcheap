@@ -17,38 +17,58 @@ html(lang="en")
     link(rel="manifest" href="/pwa/manifest.json")
   body
     div#app
-      div.no-js
-        img(src="/img/wordmark.png" alt=title)
-        noscript Please <a href="https://www.enable-javascript.com/" title="How to enable JavaScript in your browser">enable JavaScript</a> to view this app.
+      header.header
+        img.wordmark(src="/img/wordmark.png" alt=title)
+      noscript.content Please <a href="https://www.enable-javascript.com/" title="How to enable JavaScript in your browser">enable JavaScript</a> to view this app.
       style.
         html,
         body {
-          background: #{themeColor};
-          color: #fff;
+          background: #f2f2f2;
+          color: #333;
           margin: 0;
+          min-height: 100vh;
           padding: 0;
         }
-        .no-js {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
+        :root {
+          --header-height: 2.75rem;
+        }
+        @media screen and (min-width: 30rem) {
+          :root {
+            --header-height: 3.75rem;
+          }
+        }
+        #app {
+          display: grid;
+          grid-template-rows: auto 1fr;
           font-family: sans-serif;
-          justify-content: center;
-          margin: auto;
-          max-width: 30rem;
           min-height: 100vh;
-          padding: 0 1rem;
+        }
+        .header {
+          align-items: center;
+          background: #{themeColor};
+          display: flex;
+          height: var(--header-height);
+          justify-content: center;
+        }
+        .wordmark {
+          width: 9rem;
+        }
+        .content {
+          align-self: center;
+          justify-self: center;
+          padding: 1rem;
+          text-align: center;
         }
         img {
           height: auto;
           width: 100%;
         }
         a {
-          color: #fff;
+          color: #{themeColor};
           font-weight: bold;
         }
         a:hover {
-          opacity: .7;
+          color: #333;
         }
   if (process.env.NODE_ENV === 'development')
     script(src="https://css.gauslin.com/debugger.js" data-src="/breakpoints.json")
