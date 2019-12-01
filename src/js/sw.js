@@ -6,7 +6,7 @@ workbox.routing.registerNavigationRoute(
 
 // API responses.
 workbox.routing.registerRoute(
-  /https:\/\/api\.goodandcheap\.website\/v2/,
+  /https:\/\/api\.goodandcheap\.app\/v2/,
   new workbox.strategies.NetworkFirst({
     cacheName: 'content',
     plugins: [
@@ -19,7 +19,7 @@ workbox.routing.registerRoute(
 
 // Images.
 workbox.routing.registerRoute(
-  /https:\/\/assets\.goodandcheap\.website\/cache/,
+  /https:\/\/assets\.goodandcheap\.app\/cache/,
   new workbox.strategies.NetworkFirst({
     cacheName: 'images',
     plugins: [
