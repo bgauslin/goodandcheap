@@ -7,19 +7,18 @@ export default class {
    * @public
    */
   static init() {
-    this.isTouchEnabled_();
+    this.touchEnabled_();
     this.googleAnalytics_();
   }
 
   /**
-   * Removes 'no-touch' attribute and adds fastclick if device is touch-enabled.
-   * @private
+   * Gets breakpoint name as set by CSS as a hook for JS methods that occur at
+   * media query breakpoints.
+   * @return {string}
+   * @public
    */
-  static isTouchEnabled_() {
-    if ('ontouchstart' in window || window.DocumentTouch) {
-      document.body.removeAttribute('no-touch');
-      fastclick.attach(document.body);
-    }
+  static getBreakpointValue() {
+    return window.getComputedStyle(document.body,'::after').getPropertyValue('content').replace(/\"/g, '');
   }
 
   /**
@@ -37,12 +36,13 @@ export default class {
   }
 
   /**
-   * Gets breakpoint name as set by CSS as a hook for JS methods that occur at
-   * media query breakpoints.
-   * @return {string}
-   * @public
+   * Removes 'no-touch' attribute and adds fastclick if device is touch-enabled.
+   * @private
    */
-  static getBreakpointValue() {
-    return window.getComputedStyle(document.body,'::after').getPropertyValue('content').replace(/\"/g, '');
+  static touchEnabled_() {
+    if ('ontouchstart' in window || window.DocumentTouch) {
+      document.body.removeAttribute('no-touch');
+      fastclick.attach(document.body);
+    }
   }
 }
