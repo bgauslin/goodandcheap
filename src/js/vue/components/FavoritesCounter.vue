@@ -66,7 +66,7 @@ export default {
   typeface('sans')
   color white
   display flex
-  font-size px_to_em(12)
+  font-size em(12)
   height var(--header-height)
   justify-content flex-end
   position absolute

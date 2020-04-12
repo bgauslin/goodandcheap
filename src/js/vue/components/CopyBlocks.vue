@@ -48,13 +48,13 @@ export default {
   typeface('sans')
 
 .copy-block__text p
-  font-size px_to_em(14)
+  font-size em(14)
 
 .blurb-list
   margin 0 0 1em
 
 .blurb-list__item
-  font-size px_to_em(14)
+  font-size em(14)
   list-style none
   margin 0 0 .5em
 

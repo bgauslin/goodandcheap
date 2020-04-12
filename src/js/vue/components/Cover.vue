@@ -70,7 +70,7 @@ export default {
   margin-bottom .5em
 
   @media Breakpoint.LARGE
-    font-size px_to_em(30)
+    font-size em(30)
 
 .cover__blurb
   typeface('serif')

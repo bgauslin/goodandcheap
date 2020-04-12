@@ -71,7 +71,7 @@ export default {
   margin-left 1em
 
 .instructions__list
-  font-size px_to_em(15)
+  font-size em(15)
   margin 0
   padding 0
 

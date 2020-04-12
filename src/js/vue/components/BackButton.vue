@@ -65,7 +65,7 @@ export default {
 .back-button__link::before
   icon()
   content '%s' % Icon.ANGLE_LEFT
-  font-size px_to_em(22)
+  font-size em(22)
   margin-right .25em
   position relative
   top -.05em

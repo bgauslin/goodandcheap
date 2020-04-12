@@ -70,7 +70,7 @@ export default {
   color var(--lighter-grey)
   content '%s' % Icon.CIRCLE_EMPTY
   display inline-block
-  font-size px_to_em(22)
+  font-size em(22)
   margin-left -1.3em
   position relative
   top .15em

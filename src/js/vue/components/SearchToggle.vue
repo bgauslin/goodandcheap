@@ -89,7 +89,7 @@ export default {
 .search-toggle::before
   icon()
   content '%s' % Icon.SEARCH
-  font-size px_to_em(16)
+  font-size em(16)
 
 [no-touch] .search-toggle
   &:hover

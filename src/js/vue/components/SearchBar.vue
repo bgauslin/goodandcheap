@@ -76,19 +76,19 @@ export default {
   transition all .2s ease
 
   @media Breakpoint.MEDIUM
-    bottom px_to_rem(14)
-    top px_to_rem(14)
+    bottom rem(14)
+    top rem(14)
 
 .search-input:focus
   outline none
 
 .search-input.closed
-  padding px_to_rem(4) 0
+  padding rem(4) 0
   width 0
   z-index -1
 
 .search-input.open
-  padding px_to_rem(4)
+  padding rem(4)
   width 100%
   z-index 2
 
