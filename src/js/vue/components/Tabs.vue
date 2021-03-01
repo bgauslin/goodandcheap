@@ -43,22 +43,19 @@ export default {
   border-right 1px solid var(--brand-color)
 
 .tabs__link
-  link(var(--brand-color), var(--brand-color), var(--brand-color), var(--brand-color))
-  link_background(white, white, rgba(brand-color, .1), rgba(brand-color, .1))
+  link(var(--brand-color), var(--brand-color), var(--text-1-color), var(--text-1-color))
   small_caps()
   typeface('sans_bold')
   display block
   padding .75em 1em
   text-align center
-  
 
 .tabs__link.current
-  background var(--brand-color)
-  color white
   cursor default
 
+.tabs__link.current
 [no-touch] .tabs__link.current:hover
   background var(--brand-color)
-  color white
+  color var(--background-1)
 
 </style>

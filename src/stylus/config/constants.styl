@@ -1,9 +1,9 @@
 // Brand colors.
 brand-color = #e5001f
-brand-color-dark = #e5001f // TODO
+brand-color-dark = #ed4d62
 
 badge-color = #ffc500
-badge-color-dark = #ffc500 // TODO
+badge-color-dark = #ffd64d
 
 // Links and states.
 link-color = #0079fd
@@ -39,10 +39,20 @@ background-1-dark = gray-6-dark
 border-color-dark = gray-4-dark
 text-1-color-dark = gray-5
 text-2-color-dark = gray-1
-text-3-color-dark = gray-1 // TODO
+text-3-color-dark = gray-1 // TODO(darkmode): Test in browser / update value.
 
 // Blurry backgrounds.
 backdrop-effect = blur(10px)
+
+// Gradient overlay for overflow content at large breakpoint.
+overflow-overlay-background = linear-gradient(to bottom, rgba(background-1, 0), background-1)
+overflow-overlay-background-dark = linear-gradient(to bottom, rgba(background-1-dark, 0), background-1-dark)
+
+// Text overlay on photos.
+overlay-background = rgba(background-1, .97)
+overlay-background-dark = rgba(background-1-dark, .97)
+overlay-shadow = 0 0 5px 0 gray-3
+overlay-shadow-dark = none
 
 // Webfont icons.
 icon-angle-left = '\e802'

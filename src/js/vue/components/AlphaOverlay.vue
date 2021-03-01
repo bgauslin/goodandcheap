@@ -9,7 +9,7 @@
   display none
 
   @media breakpoint.large
-    background linear-gradient(to bottom, rgba(white, 0), white)
+    background var(--overflow-overlay-background)
     bottom 0
     display block
     height 5rem

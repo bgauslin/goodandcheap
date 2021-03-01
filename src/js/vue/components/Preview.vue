@@ -44,7 +44,7 @@ export default {
   link(var(--text-1-color), var(--text-2-color), var(--brand-color), var(--brand-color))
   align-items center
   background var(--background-1)
-  border-top 1px solid var(--border-color)
+  border-top 1px solid var(--background-0)
   display flex
 
 .preview__summary
@@ -57,6 +57,6 @@ export default {
   margin .2em 0
 
 .preview:last-child > .preview__link
-  border-bottom 1px solid var(--border-color)
+  border-bottom 1px solid var(--background-0)
 
 </style>

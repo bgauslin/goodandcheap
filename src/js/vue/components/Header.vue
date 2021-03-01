@@ -30,7 +30,7 @@ export default {
     SearchBar,
   },
 
-  // TODO: String or Object here is weird. Update this.
+  // TODO(app): String or Object here is weird. Update this.
   props: {
     parent: [String, Object],
   },
@@ -66,8 +66,8 @@ export default {
 @import '../../../stylus/config/'
 
 .header
-  background rgba(brand-color, .97) // TODO: Dark/light mode.
-  box-shadow 0 0 5px 0 var(--text-2-color)
+  backdrop-filter blur(10px)
+  background var(--brand-color)
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
   position sticky
   top 0

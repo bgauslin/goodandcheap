@@ -86,7 +86,7 @@ export default {
   background-attachment fixed
 
 .page__content
-  background-color white
+  background-color var(--background-1)
   padding 1rem var(--margin)
 
   @media breakpoint.small

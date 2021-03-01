@@ -24,7 +24,7 @@ export default {
 .budget
   small_caps()
   typeface('sans_bold')
-  background rgba(white, .97) // TODO: Light/dark mode.
+  background var(--overlay-background)
   padding .5em 2em .5em 1em
   position absolute
   right 0
