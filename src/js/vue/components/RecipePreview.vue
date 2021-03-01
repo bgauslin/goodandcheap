@@ -104,6 +104,7 @@ export default {
   margin-top .2rem
 
 .preview__tagline
+  color var(--text-2-color)
   margin-right .4em
 
 .preview__index
