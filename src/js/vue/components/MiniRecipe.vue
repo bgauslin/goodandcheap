@@ -43,7 +43,7 @@ export default {
 @import '../../../stylus/config/'
 
 .mini-recipe
-  border-top 1px solid #eee
+  border-top 1px solid var(--border-color)
   display flex
   padding 1rem 0
 
