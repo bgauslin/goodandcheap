@@ -77,7 +77,7 @@ export default {
   width 1.3em
 
 .checklist__link.saved::before
-  color green
+  color var(--checked-color)
   content icon-ok-circled
 
 </style>
