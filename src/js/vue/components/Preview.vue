@@ -40,11 +40,13 @@ export default {
   list-style none
   position relative
 
+.preview:not(:last-child)
+  border-bottom 1px solid var(--background-0)
+
 .preview__link
   link(var(--text-1-color), var(--text-2-color), var(--brand-color), var(--brand-color))
   align-items center
   background var(--background-1)
-  border-top 1px solid var(--background-0)
   display flex
 
 .preview__summary
@@ -55,8 +57,5 @@ export default {
   typeface('serif_bold')
   line-height 1.1
   margin .2em 0
-
-.preview:last-child > .preview__link
-  border-bottom 1px solid var(--background-0)
 
 </style>

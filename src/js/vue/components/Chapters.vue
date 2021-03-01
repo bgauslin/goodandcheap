@@ -34,17 +34,11 @@ export default {
     margin 0 auto
     width content-width-xlarge
 
-@media breakpoint.medium
-  .previews--chapters
-    display grid
-    grid-template-columns repeat(var(--columns), 1fr)
+.previews--chapters
+  @extends $previews-grid
 
-.preview--chapter
-  margin -1px 0 0 -1px
-
-@media breakpoint.medium
-  .preview__link--chapter
-    border 1px solid var(--border-color)
+.preview.preview--chapter
+  border 0
 
 .recipe-count--preview
   @extends $recipe-count

@@ -76,11 +76,6 @@ export default {
 .search-results .preview
   transition all .5s ease
 
-@media breakpoint.medium
-  .search-results .preview__link--recipe
-    border-left 1px solid var(--border-color)
-    border-right 1px solid var(--border-color)
-
 .search-results__heading
   small_caps(14)
   margin 0

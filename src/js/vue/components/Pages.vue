@@ -34,15 +34,10 @@ export default {
     width content-width-xlarge
 
 .previews--info
-  @media breakpoint.medium
-    display grid
-    grid-template-columns repeat(var(--columns), 1fr)
+  @extends $previews-grid
 
-.preview--info
-  margin -1px 0 0 -1px
+.preview.preview--info
+  border 0
 
-@media breakpoint.medium
-  .preview__link--info
-    border 1px solid var(--border-color)
 
 </style>
