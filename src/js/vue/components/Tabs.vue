@@ -44,7 +44,8 @@ export default {
   border-right 1px solid var(--brand-color)
 
 .tabs__link
-  link(var(--brand-color), var(--brand-color), var(--text-1-color), var(--text-1-color))
+  link(var(--brand-color), var(--brand-color), var(--brand-color), var(--brand-color))
+  link_background(transparent, transparent, var(--background-0), var(--background-0))
   small_caps()
   typeface('sans_bold')
   display block
