@@ -5,9 +5,6 @@ BRAND_COLOR = #e5001f
 LINK_COLOR = #1565c0
 LINK_VISITED = mix(LINK_COLOR, white, 50%)
 
-PAGE_MAX_WIDTH = rem(800)
-PAGE_WIDTH_STACKED = rem(560)
-
 // Webfont icons.
 icon-angle-left = '\e802'
 icon-angle-right = '\e803' // not used
@@ -22,32 +19,28 @@ icon-right-open = '\e801'
 icon-search = '\e804'
 icon-user = '\e805'  // not used
 
-// Breakpoints.
+// Dimensions.
 breakpoint-small-units = rem(480)
 breakpoint-medium-units = rem(768)
 breakpoint-large-units = rem(1024)
 breakpoint-xlarge-units = rem(1280)
+
+margin-base = rem(12)
+margin-small = rem(24)
+margin-medium = rem(36)
+margin-large = rem(48)
+
+PAGE_MAX_WIDTH = rem(800)
+PAGE_WIDTH_STACKED = rem(560)
+
+// Calculated constants and breakpoints.
+content-width-small = breakpoint-small-units - (2 * margin-small)
+content-width-medium = breakpoint-medium-units - (2 * margin-medium)
+content-width-xlarge = breakpoint-xlarge-units - (2 * margin-large)
 
 breakpoint = {
   small: 'screen and (min-width: %s)' % breakpoint-small-units
   medium: 'screen and (min-width: %s)' % breakpoint-medium-units
   large: 'screen and (min-width: %s)' % breakpoint-large-units
   xlarge: 'screen and (min-width: %s)' % breakpoint-xlarge-units
-}
-
-// @type Hash
-Margin = {
-  BASE: rem(12)
-  SMALL: rem(24)
-  MEDIUM: rem(36)
-  LARGE: rem(48)
-}
-
-// @type Hash
-// @require BreakpointUnits
-// @require Margin
-ContentWidth = {
-  SMALL: breakpoint-small-units - (2 * Margin.SMALL)
-  MEDIUM: breakpoint-medium-units - (2 * Margin.MEDIUM)
-  XLARGE: breakpoint-xlarge-units - (2 * Margin.LARGE)
 }

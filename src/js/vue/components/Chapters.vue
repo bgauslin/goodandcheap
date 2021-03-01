@@ -32,7 +32,7 @@ export default {
 
   @media breakpoint.xlarge
     margin 0 auto
-    width '%s' % ContentWidth.XLARGE
+    width content-width-xlarge
 
 @media breakpoint.medium
   .previews--chapters

@@ -51,7 +51,7 @@ export default {
 .tabs.tabs--home
   @media breakpoint.small
     margin 1rem auto
-    width '%s' % ContentWidth.SMALL
+    width content-width-small
 
   @media breakpoint.medium
     margin 1.5rem auto

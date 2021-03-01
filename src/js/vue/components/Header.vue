@@ -82,7 +82,7 @@ export default {
 
   @media breakpoint.xlarge
     margin 0 auto
-    width '%s' % ContentWidth.XLARGE
+    width content-width-xlarge
 
 .site-name
   small_caps(14)

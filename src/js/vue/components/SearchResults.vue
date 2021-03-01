@@ -71,7 +71,7 @@ export default {
   margin 0 auto
 
   @media breakpoint.medium
-    width '%s' % ContentWidth.MEDIUM
+    width content-width-medium
 
 .search-results .preview
   transition all .5s ease
