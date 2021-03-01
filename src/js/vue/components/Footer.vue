@@ -29,6 +29,7 @@ export default {
 
 .footer
   typeface('sans')
+  color var(--text-2-color)
   font-size em(12)
   grid-row 3
   padding 0 0 env(safe-area-inset-bottom)
