@@ -1,37 +1,36 @@
-@import 'functions'
+// Colors.
+brand-color = #e5001f
 
-BRAND_COLOR = #e5001f
-
-LINK_COLOR = #1565c0
-LINK_VISITED = mix(LINK_COLOR, white, 50%)
+link-color = #1565c0
+link-color-visited = mix(link-color, white, 50%)
 
 // Webfont icons.
 icon-angle-left = '\e802'
-icon-angle-right = '\e803' // not used
-icon-cancel = '\e809' // not used
 icon-cancel-circled = '\e808'
 icon-circle-empty = '\e806'
 icon-heart = '\e80a'
 icon-heart-empty = '\e80b'
-icon-left-open = '\e800' // not used
 icon-ok-circled = '\e807'
 icon-right-open = '\e801'
 icon-search = '\e804'
-icon-user = '\e805'  // not used
+
+// Unused webfont icons, included for reference since they're loaded anyway.
+// icon-left-open = '\e800'
+// icon-user = '\e805'
+// icon-angle-right = '\e803'
+// icon-cancel = '\e809'
 
 // Dimensions.
 breakpoint-small-units = rem(480)
 breakpoint-medium-units = rem(768)
 breakpoint-large-units = rem(1024)
 breakpoint-xlarge-units = rem(1280)
-
 margin-base = rem(12)
 margin-small = rem(24)
 margin-medium = rem(36)
 margin-large = rem(48)
-
-PAGE_MAX_WIDTH = rem(800)
-PAGE_WIDTH_STACKED = rem(560)
+page-width = rem(800)
+page-width-stacked = rem(560)
 
 // Calculated constants and breakpoints.
 content-width-small = breakpoint-small-units - (2 * margin-small)

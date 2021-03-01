@@ -66,7 +66,7 @@ export default {
 @import '../../../stylus/config/'
 
 .header
-  background rgba(BRAND_COLOR, .97)
+  background rgba(brand-color, .97)
   box-shadow 0 0 5px 0 var(--medium-grey)
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
   position sticky

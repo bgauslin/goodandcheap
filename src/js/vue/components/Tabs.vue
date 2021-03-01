@@ -44,7 +44,7 @@ export default {
 
 .tabs__link
   link(var(--brand-color), var(--brand-color), var(--brand-color), var(--brand-color))
-  link_background(white, white, rgba(BRAND_COLOR, .1), rgba(BRAND_COLOR, .1))
+  link_background(white, white, rgba(brand-color, .1), rgba(brand-color, .1))
   small_caps()
   typeface('sans_bold')
   display block

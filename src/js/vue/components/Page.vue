@@ -97,7 +97,7 @@ export default {
 
   @media breakpoint.large
     padding 3rem 4rem
-    width PAGE_MAX_WIDTH
+    width page-width
 
 .page__title
   margin .5em 0 1em
@@ -117,7 +117,7 @@ export default {
   margin 0 0 1em
 
 .page__copy a
-  background-color rgba(LINK_COLOR, .1)
+  background-color rgba(link-color, .1)
   border-radius 2px
   padding .1em .4em
 

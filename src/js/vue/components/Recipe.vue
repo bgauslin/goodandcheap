@@ -171,11 +171,11 @@ export default {
   margin 0 auto
 
   @media breakpoint.small
-    max-width PAGE_WIDTH_STACKED
+    max-width page-width-stacked
 
   @media breakpoint.medium
     max-width none
-    width PAGE_WIDTH_STACKED
+    width page-width-stacked
 
   @media breakpoint.large
     overflow hidden

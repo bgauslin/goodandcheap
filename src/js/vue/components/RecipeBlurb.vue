@@ -43,7 +43,7 @@ export default {
   margin 0 0 1em
 
 .blurb a
-  background rgba(LINK_COLOR, .1)
+  background rgba(link-color, .1)
   border-radius 2px
   padding .1em .4em
 

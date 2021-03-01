@@ -72,12 +72,12 @@ export default {
 
   @media breakpoint.small
     margin var(--header-height) var(--margin) 0
-    max-width PAGE_WIDTH_STACKED
+    max-width page-width-stacked
 
   @media breakpoint.medium
     margin var(--header-height) auto 0
     max-width none
-    width PAGE_WIDTH_STACKED
+    width page-width-stacked
 
   @media breakpoint.large
     margin-left var(--margin)
