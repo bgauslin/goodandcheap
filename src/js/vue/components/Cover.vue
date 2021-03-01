@@ -57,8 +57,8 @@ export default {
   padding 1rem
 
   @media breakpoint.small
-    background rgba(white, .95)
-    box-shadow 0 0 5px 0 var(--light-grey)
+    background rgba(white, .95) // TODO: Light/dark mode.
+    box-shadow 0 0 5px 0 #aaa // TODO: Light/dark mode.
     left 3rem
     padding 1.5rem
     position absolute

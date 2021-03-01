@@ -49,7 +49,7 @@ export default {
 @import '../../../stylus/config/'
 
 .thumb
-  background-color var(--lighter-grey)
+  background-color var(--background-1)
   border-radius .25em
   flex-shrink 0
   height 5rem

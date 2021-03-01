@@ -64,7 +64,7 @@ export default {
 
 .ingredients__count
   typeface('sans')
-  color var(--medium-grey)
+  color var(--text-2-color)
   margin-left 1em
 
 </style>

@@ -36,7 +36,7 @@ export default {
   line-height 2rem
 
 .remove-favorite::before
-  color var(--medium-grey)
+  color var(--text-2-color)
   content icon-cancel-circled
   font-size em(20)
 

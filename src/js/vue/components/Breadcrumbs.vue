@@ -64,7 +64,7 @@ export default {
 .breadcrumbs
   small_caps(12)
   typeface('sans')
-  color var(--medium-grey)
+  color var(--text-2-color)
   overflow-x scroll
   -webkit-overflow-scrolling touch
   white-space nowrap
@@ -119,7 +119,7 @@ export default {
   padding 1rem 0
 
 .breadcrumbs__link
-  link(var(--link-color), var(--link-color), var(--medium-grey), var(--dark-grey))
+  link(var(--link-color), var(--link-color), var(--text-2-color), var(--text-1-color))
 
 .breadcrumbs__label
   padding-right var(--margin)

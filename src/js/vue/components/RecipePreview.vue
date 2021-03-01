@@ -92,7 +92,7 @@ export default {
 .preview__chapter-title
   small_caps()
   typeface('sans')
-  color var(--medium-grey)
+  color var(--text-2-color)
 
 .preview__kind
 .preview__tagline
@@ -110,7 +110,7 @@ export default {
   small_caps()
   typeface('sans')
   bottom 1rem
-  color var(--medium-grey)
+  color var(--text-2-color)
   line-height 1
   position absolute
   right 0

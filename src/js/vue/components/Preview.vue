@@ -41,9 +41,9 @@ export default {
   position relative
 
 .preview__link
-  link(var(--dark-grey), var(--medium-grey), var(--brand-color), var(--brand-color))
+  link(var(--text-1-color), var(--text-2-color), var(--brand-color), var(--brand-color))
   align-items center
-  background white
+  background var(--background-1)
   border-top 1px solid var(--border-color)
   display flex
 

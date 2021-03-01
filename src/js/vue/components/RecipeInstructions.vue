@@ -67,7 +67,7 @@ export default {
   typeface('sans')
 
 .instructions__steps
-  color var(--medium-grey)
+  color var(--text-2-color)
   margin-left 1em
 
 .instructions__list

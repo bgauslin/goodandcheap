@@ -33,7 +33,7 @@ export default {
   overflow hidden
 
 .tabs__item
-  background white
+  background var(--background-1)
   flex 1 1
   line-height 1
   list-style none

@@ -66,8 +66,8 @@ export default {
 @import '../../../stylus/config/'
 
 .header
-  background rgba(brand-color, .97)
-  box-shadow 0 0 5px 0 var(--medium-grey)
+  background rgba(brand-color, .97) // TODO: Dark/light mode.
+  box-shadow 0 0 5px 0 var(--text-2-color)
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
   position sticky
   top 0

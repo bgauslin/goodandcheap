@@ -65,7 +65,7 @@ export default {
   line-height 2rem
 
 .toggle-favorite::before
-  color var(--medium-grey)
+  color var(--text-2-color)
   content icon-heart-empty
 
 .toggle-favorite.saved::before

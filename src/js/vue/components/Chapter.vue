@@ -62,7 +62,7 @@ export default {
     width content-width-xlarge
 
 .chapter__content
-  background white
+  background var(--background-1)
   margin 0 auto
   
   @media breakpoint.small
