@@ -63,8 +63,7 @@ export default {
     padding-left 0
 
 .back-button__link::before
-  icon()
-  content '%s' % Icon.ANGLE_LEFT
+  icon(icon-angle-left)
   font-size em(22)
   margin-right .25em
   position relative

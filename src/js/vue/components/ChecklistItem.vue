@@ -66,9 +66,8 @@ export default {
   padding .5em 0 .5em 2em
 
 .checklist__link::before
-  icon()
+  icon(icon-circle-empty)
   color var(--lighter-grey)
-  content '%s' % Icon.CIRCLE_EMPTY
   display inline-block
   font-size em(22)
   margin-left -1.3em
@@ -79,6 +78,6 @@ export default {
 
 .checklist__link.saved::before
   color green
-  content '%s' % Icon.OK_CIRCLED
+  content icon-ok-circled
 
 </style>

@@ -37,7 +37,7 @@ export default {
 
 .remove-favorite::before
   color var(--medium-grey)
-  content '%s' % Icon.CANCEL_CIRCLED
+  content icon-cancel-circled
   font-size em(20)
 
 .remove-favorite:active::before

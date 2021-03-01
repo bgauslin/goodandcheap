@@ -101,8 +101,7 @@ export default {
   margin 0 .5em 0 0
 
 .breadcrumbs__item::after
-  icon()
-  content '%s' % Icon.RIGHT_OPEN
+  icon(icon-right-open)
   font-size 75%
   margin-left 1em
   position relative

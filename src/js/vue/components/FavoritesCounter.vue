@@ -84,13 +84,12 @@ export default {
   display flex
 
 .favorites-counter a::after
-  icon()
-  content '%s' % Icon.HEART
+  icon(icon-heart)
   font-size 1rem
   margin 0 1rem 0 .3em
 
 .favorites-counter a.empty::after
-  content '%s' % Icon.HEART_EMPTY
+  content icon-heart-empty
 
 .favorites-counter a:active
   transform scale(.9)

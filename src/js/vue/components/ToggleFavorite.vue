@@ -66,11 +66,11 @@ export default {
 
 .toggle-favorite::before
   color var(--medium-grey)
-  content '%s' % Icon.HEART_EMPTY
+  content icon-heart-empty
 
 .toggle-favorite.saved::before
   color var(--brand-color)
-  content '%s' % Icon.HEART
+  content icon-heart
 
 .recipe .toggle-favorite
   right 0
