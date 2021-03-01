@@ -28,6 +28,7 @@ export default {
 .tabs
   align-items center
   border 1px solid var(--brand-color)
+  border-radius rem(4)
   display flex
   margin 1rem var(--margin)
   overflow hidden
