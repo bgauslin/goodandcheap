@@ -10,7 +10,7 @@
   typeface('sans')
   background var(--badge-color)
   border-radius 2px
-  color white
+  color black
   display inline-block
   padding .2em .75em
 

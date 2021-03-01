@@ -66,7 +66,7 @@ export default {
 @import '../../../stylus/config/'
 
 .header
-  backdrop-filter blur(10px)
+  backdrop-filter backdrop-effect
   background var(--brand-color)
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
   position sticky

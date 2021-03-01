@@ -57,6 +57,7 @@ export default {
   padding 1rem
 
   @media breakpoint.small
+    backdrop-filter backdrop-effect
     background var(--overlay-background)
     box-shadow var(--overlay-shadow)
     left 3rem

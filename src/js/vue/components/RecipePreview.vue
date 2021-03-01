@@ -98,13 +98,13 @@ export default {
 .preview__tagline
   small_caps()
   typeface('sans_bold')
+  color var(--text-2-color)
   display inline-block
 
 .preview__kind
   margin-top .2rem
 
 .preview__tagline
-  color var(--text-2-color)
   margin-right .4em
 
 .preview__index
