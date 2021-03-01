@@ -119,7 +119,7 @@ export default {
   padding 1rem 0
 
 .breadcrumbs__link
-  link(var(--link), var(--link), var(--medium-grey), var(--dark-grey))
+  link(var(--link-color), var(--link-color), var(--medium-grey), var(--dark-grey))
 
 .breadcrumbs__label
   padding-right var(--margin)

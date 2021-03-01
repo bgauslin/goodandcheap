@@ -48,7 +48,7 @@ export default {
   padding .1em .4em
 
 [no-touch] .blurb a:hover
-  background var(--link)
+  background var(--link-color)
   color white
 
 </style>

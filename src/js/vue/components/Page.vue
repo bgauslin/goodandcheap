@@ -123,7 +123,7 @@ export default {
 
 [no-touch] .page__copy a:hover
 [no-touch] .page__copy a:focus
-  background-color var(--link)
+  background-color var(--link-color)
   color white
 
 .page__list
