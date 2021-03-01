@@ -51,14 +51,14 @@ export default {
     width auto
 
 .back-button__link
-  link(white, white, rgba(white, .7), rgba(white, .7))
+  link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
   align-items center
   align-self stretch
   display flex
   height var(--header-height)
   line-height 1
   padding-left .75rem
-
+  
   @media breakpoint.small
     padding-left 0
 
@@ -71,7 +71,7 @@ export default {
 
 .back-button__link:active
   transform scale(.9)
-  transition .3s ease
+  transition transform .3s ease
 
 .back-button__label
   small_caps(12)

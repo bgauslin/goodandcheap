@@ -78,7 +78,7 @@ export default {
   animation bounce .3s ease-out
 
 .favorites-counter a
-  link(white, white, rgba(white, .7), rgba(white, .7))
+  link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
   align-items center
   align-self stretch
   display flex
@@ -96,10 +96,10 @@ export default {
   transition .3s ease
 
 .favorites-counter a.current
-  color white
+  color var(--header-color)
 
 [no-touch] .favorites-counter a.current:hover
-  color white
+  color var(--header-color)
   cursor default
 
 </style>

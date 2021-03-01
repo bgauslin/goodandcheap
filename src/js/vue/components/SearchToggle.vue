@@ -78,21 +78,21 @@ export default {
 
 .search-toggle
   align-self stretch
-  color white
+  color var(--header-color)
   margin 0
+  opacity 1
   padding 0
+  transition opacity .3s ease
   width 2.75rem
 
   &:active
-    color rgba(white, .7)
+  [no-touch] &
+    &:hover
+    &:visited:hover
+      opacity .7
 
 .search-toggle::before
   icon(icon-search)
   font-size em(16)
-
-[no-touch] .search-toggle
-  &:hover
-  &:visited:hover
-    color rgba(white, .7)
 
 </style>

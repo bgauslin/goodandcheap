@@ -101,7 +101,7 @@ export default {
     display none
 
 .site-name__link
-  link(white, white, rgba(white, .7), rgba(white, .7))
+  link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
   align-items center
   align-self stretch
   display flex
@@ -113,7 +113,7 @@ export default {
   transition .3s ease
 
 [no-touch] .site-name__link.current
-  color white
+  color var(--header-color)
   cursor default
 
 [no-touch] .site-name__link.current:active
