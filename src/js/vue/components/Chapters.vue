@@ -47,6 +47,7 @@ export default {
     border 1px solid var(--border-color)
 
 .recipe-count--preview
+  @extends $recipe-count
   display inline-block
   margin-top .2rem
 

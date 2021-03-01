@@ -76,6 +76,7 @@ export default {
   typeface('serif')
 
 .recipe-count--cover
+  @extends $recipe-count
   margin 1rem 0 0
 
 @media breakpoint.large
