@@ -47,7 +47,7 @@ export default {
   width 3rem
   z-index 2
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     width auto
 
 .back-button__link
@@ -59,7 +59,7 @@ export default {
   line-height 1
   padding-left .75rem
 
-  @media Breakpoint.SMALL
+  @media breakpoint.small
     padding-left 0
 
 .back-button__link::before
@@ -79,7 +79,7 @@ export default {
   display none
   white-space nowrap
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     display block
 
 </style>

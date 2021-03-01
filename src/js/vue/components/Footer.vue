@@ -38,7 +38,7 @@ export default {
   margin 0 auto
   padding .75rem
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     padding 1.5rem
 
 .license

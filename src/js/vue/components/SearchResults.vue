@@ -70,13 +70,13 @@ export default {
 .search-results
   margin 0 auto
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     width '%s' % ContentWidth.MEDIUM
 
 .search-results .preview
   transition all .5s ease
 
-@media Breakpoint.MEDIUM
+@media breakpoint.medium
   .search-results .preview__link--recipe
     border-left 1px solid var(--border-color)
     border-right 1px solid var(--border-color)
@@ -87,7 +87,7 @@ export default {
   padding 1.5rem 0
   text-align center
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     padding 2rem 0
 
 .search-results__count

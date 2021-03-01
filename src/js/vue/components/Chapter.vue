@@ -48,16 +48,16 @@ export default {
 @import '../../../stylus/config/'
 
 .chapter
-  @media Breakpoint.SMALL
+  @media breakpoint.small
     margin 1.5rem var(--margin) 0
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     margin-top 2.25rem
 
-  @media Breakpoint.LARGE
+  @media breakpoint.large
     margin-top 3rem
 
-  @media Breakpoint.XLARGE
+  @media breakpoint.xlarge
     margin 3rem auto 0
     width '%s' % ContentWidth.XLARGE
 
@@ -65,21 +65,21 @@ export default {
   background white
   margin 0 auto
   
-  @media Breakpoint.SMALL
+  @media breakpoint.small
     max-width PAGE_WIDTH_STACKED
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     max-width none
     width PAGE_WIDTH_STACKED
 
-  @media Breakpoint.LARGE
+  @media breakpoint.large
     overflow hidden
     padding-bottom 50%
     position relative
     width 100%
 
 .previews--chapter
-  @media Breakpoint.LARGE
+  @media breakpoint.large
     height 100%
     overflow-y scroll
     -webkit-overflow-scrolling touch
@@ -91,7 +91,7 @@ export default {
 .chapter__intro
   overflow hidden
 
-  @media Breakpoint.LARGE
+  @media breakpoint.large
     position absolute
     width 50%
 

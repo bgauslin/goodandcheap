@@ -77,10 +77,10 @@ export default {
   height var(--header-height)
   position relative
 
-  @media Breakpoint.SMALL
+  @media breakpoint.small
     margin 0 var(--margin)
 
-  @media Breakpoint.XLARGE
+  @media breakpoint.xlarge
     margin 0 auto
     width '%s' % ContentWidth.XLARGE
 
@@ -96,7 +96,7 @@ export default {
   top 0
   white-space nowrap
 
-@media Breakpoint.SEARCH_ENABLED
+@media breakpoint.medium
   .site-name.search-enabled
     display none
 

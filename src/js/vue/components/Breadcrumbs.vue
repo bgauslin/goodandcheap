@@ -70,21 +70,21 @@ export default {
   white-space nowrap
   width 100%
 
-  @media Breakpoint.SMALL
+  @media breakpoint.small
     margin var(--header-height) var(--margin) 0
     max-width PAGE_WIDTH_STACKED
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     margin var(--header-height) auto 0
     max-width none
     width PAGE_WIDTH_STACKED
 
-  @media Breakpoint.LARGE
+  @media breakpoint.large
     margin-left var(--margin)
     margin-right var(--margin)
     width auto
 
-  @media Breakpoint.XLARGE
+  @media breakpoint.xlarge
     margin-left auto
     margin-right auto
     width var(--element-width)
@@ -93,7 +93,7 @@ export default {
   display flex
   padding 0 var(--margin)
 
-  @media Breakpoint.SMALL
+  @media breakpoint.small
     padding 0
 
 .breadcrumbs__item

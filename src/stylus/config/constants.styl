@@ -22,12 +22,17 @@ icon-right-open = '\e801'
 icon-search = '\e804'
 icon-user = '\e805'  // not used
 
-// @type Hash
-BreakpointUnits = {
-  SMALL: rem(480)
-  MEDIUM: rem(768)
-  LARGE: rem(1024)
-  XLARGE: rem(1280)
+// Breakpoints.
+breakpoint-small-units = rem(480)
+breakpoint-medium-units = rem(768)
+breakpoint-large-units = rem(1024)
+breakpoint-xlarge-units = rem(1280)
+
+breakpoint = {
+  small: 'screen and (min-width: %s)' % breakpoint-small-units
+  medium: 'screen and (min-width: %s)' % breakpoint-medium-units
+  large: 'screen and (min-width: %s)' % breakpoint-large-units
+  xlarge: 'screen and (min-width: %s)' % breakpoint-xlarge-units
 }
 
 // @type Hash
@@ -40,19 +45,9 @@ Margin = {
 
 // @type Hash
 // @require BreakpointUnits
-Breakpoint = {
-  SMALL: 'screen and (min-width: %s)' % BreakpointUnits.SMALL
-  MEDIUM: 'screen and (min-width: %s)' % BreakpointUnits.MEDIUM
-  LARGE: 'screen and (min-width: %s)' % BreakpointUnits.LARGE
-  XLARGE: 'screen and (min-width: %s)' % BreakpointUnits.XLARGE
-  SEARCH_ENABLED: 'screen and (max-width: %s)' % BreakpointUnits.MEDIUM
-}
-
-// @type Hash
-// @require BreakpointUnits
 // @require Margin
 ContentWidth = {
-  SMALL: BreakpointUnits.SMALL - (2 * Margin.SMALL)
-  MEDIUM: BreakpointUnits.MEDIUM - (2 * Margin.MEDIUM)
-  XLARGE: BreakpointUnits.XLARGE - (2 * Margin.LARGE)
+  SMALL: breakpoint-small-units - (2 * Margin.SMALL)
+  MEDIUM: breakpoint-medium-units - (2 * Margin.MEDIUM)
+  XLARGE: breakpoint-xlarge-units - (2 * Margin.LARGE)
 }

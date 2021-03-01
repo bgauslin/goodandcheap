@@ -77,7 +77,7 @@ export default {
 .favorites
   margin 0 auto
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     width '%s' % ContentWidth.MEDIUM
 
 .favorites.empty
@@ -86,7 +86,7 @@ export default {
 .favorites .preview
   transition all .5s ease
 
-@media Breakpoint.MEDIUM
+@media breakpoint.medium
   .favorites .preview__link--recipe
     border-left 1px solid var(--border-color)
     border-right 1px solid var(--border-color)
@@ -98,7 +98,7 @@ export default {
   padding 1.5rem 0
   text-align center
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     padding 2rem 0
 
 .favorites-leave-active
@@ -106,7 +106,7 @@ export default {
   position absolute
   transform translateX(-100%)
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     transform scale(.5) translateX(0)
     width '%s' % ContentWidth.MEDIUM
 

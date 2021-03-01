@@ -49,11 +49,11 @@ export default {
 @import '../../../stylus/config/'
 
 .tabs.tabs--home
-  @media Breakpoint.SMALL
+  @media breakpoint.small
     margin 1rem auto
     width '%s' % ContentWidth.SMALL
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     margin 1.5rem auto
 
 </style>

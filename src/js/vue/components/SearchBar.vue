@@ -44,14 +44,14 @@ export default {
   right 2.5rem
   top 0
 
-  @media Breakpoint.SMALL
+  @media breakpoint.small
     left 5.5rem
     right 3rem
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     left 50%
 
-  @media Breakpoint.LARGE
+  @media breakpoint.large
     left calc(50% + 6rem)
 
 .search-form
@@ -75,7 +75,7 @@ export default {
   top .5rem
   transition all .2s ease
 
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     bottom rem(14)
     top rem(14)
 

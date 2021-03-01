@@ -76,7 +76,7 @@ export default {
   right 0
   top .25rem
 
-  @media Breakpoint.LARGE
+  @media breakpoint.large
     right .5rem
     top .75rem
 

@@ -56,7 +56,7 @@ export default {
   animation fadeIn .3s ease-out
   padding 1rem
 
-  @media Breakpoint.SMALL
+  @media breakpoint.small
     background rgba(white, .95)
     box-shadow 0 0 5px 0 var(--light-grey)
     left 3rem
@@ -69,7 +69,7 @@ export default {
   typeface('serif_bold')
   margin-bottom .5em
 
-  @media Breakpoint.LARGE
+  @media breakpoint.large
     font-size em(30)
 
 .cover__blurb
@@ -78,7 +78,7 @@ export default {
 .recipe-count--cover
   margin 1rem 0 0
 
-@media Breakpoint.LARGE
+@media breakpoint.large
   .cover--recipe
     position absolute
     right 0

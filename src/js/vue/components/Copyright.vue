@@ -34,11 +34,11 @@ export default {
 .copyright__text
   display block
 
-  @media Breakpoint.SMALL
+  @media breakpoint.small
     display inline
 
 .copyright__text:not(:last-child)::after
-  @media Breakpoint.SMALL
+  @media breakpoint.small
     content '·'
     display inline-block
     text-align center

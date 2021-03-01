@@ -26,22 +26,22 @@ export default {
 @import '../../../stylus/config/'
 
 .info
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     margin 0 var(--margin)
 
-  @media Breakpoint.XLARGE
+  @media breakpoint.xlarge
     margin 0 auto
     width '%s' % ContentWidth.XLARGE
 
 .previews--info
-  @media Breakpoint.MEDIUM
+  @media breakpoint.medium
     display grid
     grid-template-columns repeat(var(--columns), 1fr)
 
 .preview--info
   margin -1px 0 0 -1px
 
-@media Breakpoint.MEDIUM
+@media breakpoint.medium
   .preview__link--info
     border 1px solid var(--border-color)
 
