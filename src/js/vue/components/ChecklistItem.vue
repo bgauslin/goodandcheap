@@ -25,6 +25,8 @@ export default {
       'ingredientsIds',
     ]),
 
+    // TODO(ChecklistItem): On a page with matrix recipe blocks, parentId and listIndex are
+    // undefined. See /breakfast/oatmeal-6-ways
     /** @return {string} */
     itemId() {
       return `${this.parentId}.${this.listIndex}.${this.itemIndex}`;
