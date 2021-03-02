@@ -117,14 +117,7 @@ export default {
   margin 0 0 1em
 
 .page__copy a
-  background-color rgba(link-color, .1)
-  border-radius 2px
-  padding .1em .4em
-
-[no-touch] .page__copy a:hover
-[no-touch] .page__copy a:focus
-  background-color var(--link-color)
-  color white
+  typeface('serif_bold')
 
 .page__list
   margin 1em 0
