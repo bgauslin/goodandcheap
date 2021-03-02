@@ -30,7 +30,7 @@ export default {
       copyBlocks: Array,
       recipeBlocks: Array,
     },
-    parentId: Number,  
+    parentId: Number,
   },
 }
 </script>
@@ -43,12 +43,6 @@ export default {
   margin 0 0 1em
 
 .blurb a
-  background rgba(link-color, .1)
-  border-radius 2px
-  padding .1em .4em
-
-[no-touch] .blurb a:hover
-  background var(--link-color)
-  color white
+  typeface('serif_bold')
 
 </style>
