@@ -66,9 +66,9 @@ export default {
 @import '../../../stylus/config/'
 
 .header
+  elevation(2)
   backdrop-filter backdrop-effect
   background var(--brand-color)
-  box-shadow 0 0 5px 0 gray-1
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
   position sticky
   top 0

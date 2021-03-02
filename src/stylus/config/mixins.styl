@@ -1,5 +1,12 @@
-@import 'constants'
-@import 'functions'
+// @mixin
+// @param Number level
+elevation(level)
+  if (level == 0)
+    box-shadow 0 0 10px 0 rgba(black, .1)
+  if (level == 1)
+    box-shadow 0 0 3px rgba(black, .2), 0 0 3px rgba(black, .3)
+  if (level == 2)
+    box-shadow 0 0 6px rgba(black, .2), 0 0 6px rgba(black, .3)
 
 // @mixin
 // @param String content
