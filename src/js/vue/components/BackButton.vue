@@ -75,7 +75,7 @@ export default {
 
 .back-button__label
   small_caps(12)
-  typeface('sans')
+  typeface('sans_bold')
   display none
   white-space nowrap
 
