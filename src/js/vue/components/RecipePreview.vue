@@ -111,7 +111,7 @@ export default {
   small_caps()
   typeface('sans')
   bottom 1rem
-  color var(--text-2-color)
+  color var(--text-3-color)
   line-height 1
   position absolute
   right 0
