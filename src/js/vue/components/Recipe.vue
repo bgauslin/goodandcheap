@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import setup from '../../setup';
 import { mapMutations } from 'vuex';
 import AlphaOverlay from './AlphaOverlay.vue';
 import Badge from './Badge.vue';

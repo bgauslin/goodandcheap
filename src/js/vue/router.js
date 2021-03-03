@@ -1,8 +1,8 @@
 import Vue from 'vue/dist/vue.js';
 import VueRouter from 'vue-router';
 
-// TODO: Figure out why Pages component breaks Search results styling when
-// the component is hot-loaded. 
+// TODO(router): Why does Pages component break Search results styling when
+// the component is hot-loaded?
 import Pages from './components/Pages.vue';
 
 const Chapters = () => import('./components/Chapters.vue');
