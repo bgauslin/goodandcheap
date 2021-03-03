@@ -44,7 +44,7 @@ export default {
   border-bottom 1px solid var(--background-0)
 
 .preview__link
-  link(var(--text-1-color), var(--text-2-color), var(--brand-color), var(--brand-color))
+  link(var(--text-1-color), var(--text-2-color), var(--link-color), var(--link-color))
   align-items center
   background var(--background-1)
   display flex

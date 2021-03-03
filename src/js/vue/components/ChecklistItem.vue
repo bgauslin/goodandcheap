@@ -61,8 +61,8 @@ export default {
   margin 0
 
 .checklist__link
-  link(var(--text-1-color), var(--text-1-color), var(--brand-color), var(--brand-color))
-  display block
+  link(var(--text-1-color), var(--text-1-color), var(--link-color), var(--link-color))
+  display inline-block
   padding .5em 0 .5em 2em
 
 .checklist__link::before
