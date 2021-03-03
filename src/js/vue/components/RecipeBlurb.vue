@@ -11,6 +11,7 @@
     recipe-blocks(
       v-if="content.recipeBlocks",
       :content="content.recipeBlocks",
+      :parentId="parentId",
     )
 </template>
 

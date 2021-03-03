@@ -14,6 +14,7 @@
       mini-recipe(
         v-if="block.type === 'miniRecipe'",
         :miniRecipe="block",
+        :parentId="parentId",
       )
 </template>
 
@@ -31,7 +32,7 @@ export default {
 
   props: {
     content: Array,
-    parentId: Number,  
+    parentId: Number,
   },
 }
 </script>

@@ -7,6 +7,8 @@
       )
       checklist(
         :items="miniRecipe.ingredients",
+        :listIndex="miniRecipe.id",
+        :parentId="parentId",
       )
     figure.mini-recipe__photo(
       v-if="miniRecipe.photo",
@@ -28,13 +30,15 @@ export default {
   props: {
     miniRecipe: {
       blurb: String,
+      id: Number,
       photo: {
         height: Number,
         src: String,
         title: String,
         width: Number,
       }
-    }
+    },
+    parentId: Number,
   }
 }
 </script>
