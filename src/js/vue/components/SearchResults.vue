@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.search-results
+  .search-results
     h2.search-results__heading
       span.search-results__count {{ resultsCount }} for
       span.search-results__query {{ searchQuery }}

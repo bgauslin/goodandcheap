@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.instructions
+  .instructions
     div(
       v-for="block in content",
     )

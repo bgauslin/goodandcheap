@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.back-button(
+  .back-button(
     v-if="parent",
   )
     router-link.back-button__link(

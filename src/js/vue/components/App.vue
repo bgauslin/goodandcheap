@@ -1,9 +1,9 @@
 <template lang="pug">
-  div.site
+  .site
     app-header(
       :parent="parent",
     )
-    div.content
+    .content
       preloader(
         v-if="isLoading",
       )

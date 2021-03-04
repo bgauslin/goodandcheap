@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.error404
+  .error404
     h1.error404__heading {{ heading }}
     p.error404__message {{ message }}
 </template>

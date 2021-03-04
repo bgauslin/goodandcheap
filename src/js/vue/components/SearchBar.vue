@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.search-bar
+  .search-bar
     form.search-form(
       action="/search",
     )

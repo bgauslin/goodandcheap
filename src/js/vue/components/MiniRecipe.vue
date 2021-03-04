@@ -1,8 +1,8 @@
 <template lang="pug">
-  div.mini-recipe
-    div.mini-recipe__content
+  .mini-recipe
+    .mini-recipe__content
       h4.mini-recipe__heading {{ miniRecipe.heading }}
-      div.mini-recipe__blurb(
+      .mini-recipe__blurb(
         v-html="miniRecipe.blurb",
       )
       checklist(

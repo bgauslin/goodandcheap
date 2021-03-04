@@ -1,6 +1,6 @@
 <template lang="pug">
-  div.ingredients
-    div.ingredients__list(
+  .ingredients
+    .ingredients__list(
       v-for="(block, index) in content",
     )
       h2.ingredients__heading(

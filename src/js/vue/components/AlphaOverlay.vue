@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.alpha-overlay
+  .alpha-overlay
 </template>
 
 <style lang="stylus">

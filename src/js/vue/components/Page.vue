@@ -1,9 +1,9 @@
 <template lang="pug">
-  div.page(
+  .page(
     :class="{ 'has-background' : hasBackgroundImage }",
     :style="'background-image:' + backgroundImageCss",
   )
-    div.page__content
+    .page__content
       h1.page__title {{ content.title }}
       section.page__section(
         v-for="block in content.content",
@@ -11,7 +11,7 @@
         h2.page__heading(
           v-if="block.heading",
         ) {{ block.heading }}
-        div.page__copy(
+        .page__copy(
           v-if="block.copy",
           v-html="block.copy",
         )

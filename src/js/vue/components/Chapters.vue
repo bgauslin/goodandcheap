@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.chapters
+  .chapters
     ol.previews.previews--chapters
       preview(
         modifier="chapter",

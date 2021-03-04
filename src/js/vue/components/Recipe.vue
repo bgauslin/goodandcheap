@@ -1,6 +1,6 @@
 <template lang="pug">
-  div.recipe
-    div.recipe__content
+  .recipe
+    .recipe__content
       cover(
         :budget="content.budget",
         :image="content.photo",
@@ -8,7 +8,7 @@
         displayTitle="no",
         modifier="recipe",
       )
-      div.recipe__overview
+      .recipe__overview
         header.recipe__header
           p.recipe__kind(
             v-if="content.kind !== 'Recipe'",

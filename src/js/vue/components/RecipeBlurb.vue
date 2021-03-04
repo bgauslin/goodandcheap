@@ -1,6 +1,6 @@
 <template lang="pug">
-  div.recipe__intro
-    div.blurb(
+  .recipe__intro
+    .blurb(
       v-if="content.blurb",
       v-html="content.blurb",
     )

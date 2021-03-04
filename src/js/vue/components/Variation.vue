@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.variation
+  .variation
     img(
       :alt="variation.photo.title",
       :height="variation.photo.height",

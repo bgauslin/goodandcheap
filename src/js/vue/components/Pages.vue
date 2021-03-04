@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.info
+  .info
     ol.previews.previews--info
       preview(
         v-for="page in previews",

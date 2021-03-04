@@ -2,7 +2,7 @@
   footer.footer(
     v-once,
   )
-    div.footer__content
+    .footer__content
       copyright
       p.license
         a.license__link(

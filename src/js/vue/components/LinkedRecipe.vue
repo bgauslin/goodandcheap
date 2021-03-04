@@ -1,11 +1,11 @@
 <template lang="pug">
-  div.linked-recipe
+  .linked-recipe
     h3.linked-recipe__heading
       a.linked-recipe__link(
         :href="linkedRecipe.link.slug",
         :title="linkedRecipe.link.title",
       ) {{ linkedRecipe.heading }}
-    div.linked-recipe__blurb(
+    .linked-recipe__blurb(
       v-html="linkedRecipe.blurb",
     )
 </template>

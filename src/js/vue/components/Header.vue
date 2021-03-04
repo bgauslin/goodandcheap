@@ -1,6 +1,6 @@
 <template lang="pug">
   header.header
-    div.header__controls
+    .header__controls
       back-button(
         :parent="parent",
       )

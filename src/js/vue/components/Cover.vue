@@ -10,11 +10,11 @@
       v-if="budget",
       :budget="budget",
     )
-    div.cover__content(
+    .cover__content(
       v-if="displayTitle === 'yes'",
     )
       h1.cover__title {{ title }}
-      div.cover__blurb(
+      .cover__blurb(
         v-html="blurb",
       )
       p.recipe-count.recipe-count--cover(

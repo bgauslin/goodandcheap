@@ -1,7 +1,7 @@
 <template lang="pug">
-  div.chapter
-    div.chapter__content
-      div.chapter__intro
+  .chapter
+    .chapter__content
+      .chapter__intro
         cover(
           :blurb="content.blurb",
           :count="content.recipeCount + ' Recipes'",

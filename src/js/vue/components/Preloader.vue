@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.preloader
+  .preloader
 </template>
 
 <script>

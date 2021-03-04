@@ -13,7 +13,7 @@
           :image="item.thumb",
           :title="item.title",
         )
-        div.preview__summary
+        .preview__summary
           p.preview__chapter-title(
             v-if="showChapter",
           ) {{ item.chapter.title }}

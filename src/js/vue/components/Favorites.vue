@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    div.favorites(
+    .favorites(
       :class="{ 'empty' : !hasFavorites }"
     )
       h2 {{ count }}

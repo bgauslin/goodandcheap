@@ -11,7 +11,7 @@
         :image="item.thumb",
         :title="item.title",
       )
-      div.preview__summary
+      .preview__summary
         h3.preview__heading {{ item.title }}
         slot
 </template>
