@@ -62,7 +62,7 @@ export default {
   margin 0
 
 .checklist__link
-  link(var(--text-1-color), var(--text-1-color), var(--link-color), var(--link-color))
+  link(var(--text-1-color), var(--text-1-color), var(--text-2-color), var(--text-2-color))
   display inline-block
   padding .5em 0 .5em 2em
 

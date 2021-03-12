@@ -27,7 +27,7 @@ export default {
 
 .tabs
   align-items center
-  background var(--background-0)
+  background var(--background-2)
   border-radius 8px
   display flex
   margin 1rem var(--margin)
@@ -40,7 +40,7 @@ export default {
   margin 0
 
 .tabs__link
-  link(var(--text-2-color), var(--text-2-color), var(--brand-color), var(--brand-color))
+  link(var(--text-1-color), var(--text-1-color), var(--text-2-color), var(--text-2-color))
   small_caps()
   typeface('sans_bold')
   border-radius 4px
@@ -54,7 +54,7 @@ export default {
 
 .tabs__link.current
 [no-touch] .tabs__link.current:hover
-  background var(--background-2)
+  background var(--background-3, background-1)
   color var(--text-1-color)
 
 </style>
