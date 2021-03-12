@@ -1,16 +1,17 @@
 <template lang="pug">
-  ul(
+  div(
     :class="['tabs', 'tabs--' + modifier]",
   )
-    li.tabs__item(
-      v-for="tab in tabs",
-    )
-      router-link(
-        class="tabs__link",
-        :to="tab.route",
-        :title="tab.label",
-        exact
-      ) {{ tab.label }}
+    ul.tabs__list
+      li.tabs__item(
+        v-for="tab in tabs",
+      )
+        router-link(
+          class="tabs__link",
+          :to="tab.route",
+          :title="tab.label",
+          exact
+        ) {{ tab.label }}
 </template>
 
 <script>
@@ -26,11 +27,13 @@ export default {
 @import '../../../stylus/config/'
 
 .tabs
+  margin 1rem var(--margin)
+
+.tabs__list
   align-items center
   background var(--background-2)
   border-radius 8px
   display flex
-  margin 1rem var(--margin)
   padding 4px
 
 .tabs__item

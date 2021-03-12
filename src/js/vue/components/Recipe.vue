@@ -152,6 +152,12 @@ export default {
 @import '../../../stylus/config/'
 
 .recipe
+  --recipe-padding-x .75rem
+
+  @media breakpoint.large
+    --recipe-padding-x 1.5rem
+
+.recipe
   @media breakpoint.small
     margin 1.5rem var(--margin) 0
 
@@ -185,8 +191,13 @@ export default {
 // Ensure overview panel is at least a square via 'min-height' when there's not
 // much content in the panel.
 .recipe__overview
+  align-content start
+  display grid
+  grid-template-columns:
+    \[full-start\] minmax(var(--recipe-padding-x), 1fr) \
+    \[copy-start\] minmax(0, 100%) \[copy-end\] \
+    minmax(var(--recipe-padding-x), 1fr) \[full-end\]
   min-height 100vw
-  padding 1rem 1rem 2rem
   position relative
 
   @media breakpoint.medium
@@ -195,11 +206,20 @@ export default {
   @media breakpoint.large
     height 100%
     min-height page-width-stacked - 4rem
-    padding 1.5rem 1.5rem 4rem
     -webkit-overflow-scrolling touch
     overflow-y scroll
     position absolute
     width 50%
+
+.recipe__overview > *
+  grid-column copy
+
+.recipe__overview > *:last-child
+  overflow visible
+  padding-bottom 2rem
+
+  @media breakpoint.large
+    padding-bottom 4rem
 
 .recipe__overview h3
 .recipe__kind
@@ -211,7 +231,10 @@ export default {
   margin 0 0 1em
 
 .recipe__header
-  margin 0 2rem 1rem 0
+  margin 1rem 3.5rem 0 0
+
+  @media breakpoint.small
+    margin-top 1.5rem
 
 .recipe__kind
   margin-bottom .5rem
@@ -224,9 +247,15 @@ export default {
   margin-right 0.5rem
 
 .tabs--recipe
-  margin 0 0 1.5rem
+  background var(--background-1)
+  grid-column full
+  margin 0
+  padding .5rem var(--recipe-padding-x)
+  position sticky
+  top var(--header-height)
+  z-index 1
 
-  @media breakpoint.small
-    margin 0 0 2rem
+  @media breakpoint.large
+    top 0
 
 </style>

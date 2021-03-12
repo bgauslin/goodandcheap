@@ -1,6 +1,6 @@
 <template lang="pug">
   .ingredients
-    .ingredients__list(
+    template(
       v-for="(block, index) in content",
     )
       h2.ingredients__heading(
@@ -51,9 +51,6 @@ export default {
 @import '../../../stylus/config/'
 
 .ingredients
-  margin 0 0 1rem
-
-.ingredients__list
   margin 0
 
 .ingredients__heading

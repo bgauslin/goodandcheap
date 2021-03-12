@@ -73,7 +73,7 @@ export default {
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
   position sticky
   top 0
-  z-index 1
+  z-index 2
 
 .header__controls
   height var(--header-height)

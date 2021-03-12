@@ -1,5 +1,5 @@
 <template lang="pug">
-  .recipe__intro
+  .intro
     .blurb(
       v-if="content.blurb",
       v-html="content.blurb",
@@ -38,6 +38,9 @@ export default {
 
 <style lang="stylus">
 @import '../../../stylus/config/'
+
+.intro
+  margin 1rem 0 0
 
 .blurb p
   typeface('serif')

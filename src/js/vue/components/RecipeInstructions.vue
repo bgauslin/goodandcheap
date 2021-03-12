@@ -1,6 +1,6 @@
 <template lang="pug">
   .instructions
-    div(
+    template(
       v-for="block in content",
     )
       h2.instructions__heading(
@@ -52,9 +52,6 @@ export default {
 
 <style lang="stylus">
 @import '../../../stylus/config/'
-
-.instructions
-  margin 0 0 1rem
 
 .instructions__heading
   small_caps()

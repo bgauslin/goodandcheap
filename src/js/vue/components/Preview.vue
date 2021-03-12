@@ -37,11 +37,17 @@ export default {
 @import '../../../stylus/config/'
 
 .preview
+  border-top 1px solid var(--background-0)
   list-style none
   position relative
 
-.preview:not(:last-child)
-  border-bottom 1px solid var(--background-0)
+@media breakpoint.small
+  .preview:first-child
+    border-top 0
+
+@media breakpoint.medium
+  .preview:last-child
+    border-bottom 1px solid var(--background-0)
 
 .preview__link
   link(var(--text-1-color), var(--text-2-color), var(--text-1-color), var(--text-1-color))
