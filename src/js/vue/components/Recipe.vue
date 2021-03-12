@@ -194,9 +194,9 @@ export default {
   align-content start
   display grid
   grid-template-columns:
-    \[full-start\] minmax(var(--recipe-padding-x), 1fr) \
-    \[copy-start\] minmax(0, 100%) \[copy-end\] \
-    minmax(var(--recipe-padding-x), 1fr) \[full-end\]
+    \[full-start\] var(--recipe-padding-x) \
+    \[copy-start\] auto \[copy-end\] \
+    var(--recipe-padding-x) \[full-end\]
   min-height 100vw
   position relative
 
