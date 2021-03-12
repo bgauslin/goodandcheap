@@ -53,7 +53,7 @@ export default {
 
 .tabs__link.current
   cursor default
-  elevation(1)
+  elevation(0)
 
 .tabs__link.current
 [no-touch] .tabs__link.current:hover
