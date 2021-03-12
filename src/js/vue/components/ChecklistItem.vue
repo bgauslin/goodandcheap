@@ -1,10 +1,13 @@
 <template lang="pug">
-  //- TODO(#38): Refactor ChecklistItem with input[type=checkbox].
   li.checklist__item
-    a.checklist__link(
-      :class="{ 'saved' : isSaved }",
-      @click.prevent="toggleItem()",
-      href="#",
+    input.checklist__checkbox(
+      type="checkbox"
+      :id="itemId"
+      :checked="isSaved"
+      @click="toggleItem()"
+    )
+    label.checklist__label(
+      :for="itemId"
     ) {{ item }}
 </template>
 
@@ -59,26 +62,32 @@ export default {
 @import '../../../stylus/config/'
 
 .checklist__item
+  align-items center
+  display flex
   margin 0
 
-.checklist__link
-  link(var(--text-1-color), var(--text-1-color), var(--text-2-color), var(--text-2-color))
-  display inline-block
-  padding .5em 0 .5em 2em
+.checklist__checkbox
+  appearance none
+  height 100%
+  outline 0
+  width 1.5rem
 
-.checklist__link::before
+.checklist__checkbox
+.checklist__label
+  cursor pointer
+
+.checklist__checkbox::before
   icon(icon-circle-empty)
   color var(--text-3-color)
-  display inline-block
+  display block
   font-size em(22)
-  margin-left -1.3em
-  position relative
-  top .15em
-  vertical-align baseline
-  width 1.3em
 
-.checklist__link.saved::before
+.checklist__checkbox:checked::before
   color var(--checked-color)
   content icon-ok-circled
+
+.checklist__label
+  link(var(--text-1-color), var(--text-1-color), var(--text-2-color), var(--text-2-color))
+  padding .5em 0
 
 </style>
