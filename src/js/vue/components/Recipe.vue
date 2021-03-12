@@ -182,12 +182,19 @@ export default {
     position relative
     width 100%
 
+// Ensure overview panel is at least a square via 'min-height' when there's not
+// much content in the panel.
 .recipe__overview
+  min-height 100vw
   padding 1rem 1rem 2rem
   position relative
 
+  @media breakpoint.medium
+    min-height page-width-stacked
+
   @media breakpoint.large
     height 100%
+    min-height page-width-stacked - 4rem
     padding 1.5rem 1.5rem 4rem
     -webkit-overflow-scrolling touch
     overflow-y scroll
