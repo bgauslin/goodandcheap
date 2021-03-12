@@ -61,6 +61,8 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/config/'
 
+checkbox-size = rem(24)
+
 .checklist__item
   align-items center
   display flex
@@ -68,9 +70,10 @@ export default {
 
 .checklist__checkbox
   appearance none
-  height 100%
+  flex 0 0 checkbox-size
+  height checkbox-size
+  margin rem(8) 0
   outline 0
-  width 1.5rem
 
 .checklist__checkbox
 .checklist__label
@@ -80,7 +83,7 @@ export default {
   icon(icon-circle-empty)
   color var(--text-3-color)
   display block
-  font-size em(22)
+  font-size rem(22)
 
 .checklist__checkbox:checked::before
   color var(--checked-color)
@@ -88,6 +91,6 @@ export default {
 
 .checklist__label
   link(var(--text-1-color), var(--text-1-color), var(--text-2-color), var(--text-2-color))
-  padding .5em 0
+  padding rem(8) rem(4)
 
 </style>
