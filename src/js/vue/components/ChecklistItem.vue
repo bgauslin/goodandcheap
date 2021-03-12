@@ -70,6 +70,7 @@ checkbox-size = rem(24)
 
 .checklist__checkbox
   appearance none
+  border 0
   flex 0 0 checkbox-size
   height checkbox-size
   margin rem(8) 0
