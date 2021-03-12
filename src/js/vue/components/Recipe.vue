@@ -231,7 +231,7 @@ export default {
   margin 0 0 1em
 
 .recipe__header
-  margin 1rem 3.5rem 0 0
+  margin 1rem 2rem 0 0
 
   @media breakpoint.small
     margin-top 1.5rem

@@ -73,11 +73,10 @@ export default {
   content icon-heart
 
 .recipe .toggle-favorite
-  right 0
+  right -.75rem
   top .25rem
 
   @media breakpoint.large
-    right .5rem
     top .75rem
 
 .preview--recipe .toggle-favorite
