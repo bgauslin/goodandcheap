@@ -1,24 +1,24 @@
 <template lang="pug">
-  div
-    .favorites(
-      :class="{ 'empty' : !hasFavorites }"
+  .favorites
+    h2 {{ count }}
+    .no-favorites(
+      v-if="!hasFavorites"
     )
-      h2 {{ count }}
-      div
-        transition-group(
-          class="previews"
-          name="favorites"
-          tag="ol"
-        )
-          recipe-preview(
-            v-for="(recipe, index) in favorites"
-            :index="index"
-            :item="recipe"
-            :key="recipe.slug"
-            :showBadge="false"
-            :showChapter="true"
-            favoriteButton="remove"
-          )
+      h2 No Favorites :(
+    transition-group(
+      class="previews"
+      name="favorites"
+      tag="ol"
+    )
+      recipe-preview(
+        v-for="(recipe, index) in favorites"
+        :index="index"
+        :item="recipe"
+        :key="recipe.slug"
+        :showBadge="false"
+        :showChapter="true"
+        favoriteButton="remove"
+      )
 </template>
 
 <script>
@@ -46,14 +46,10 @@ export default {
 
     /** @return {string} */
     count() {
-      let text;
+      let text = null;
       const count = this.favoritesCount;
-      if (count <= 0) {
-        text = 'No Favorites :(';
-      } else if (count === 1) {
-        text = '1 Favorite';
-      } else {
-        text = `${count} Favorites`;
+      if (count > 0) {
+        text = (count === 1) ? '1 Favorite' : `${count} Favorites`;
       }
       return text;
     },
@@ -75,14 +71,12 @@ export default {
 @import '../../../stylus/config/'
 
 .favorites
+  height 100%
   margin 0 auto
+  position relative
 
   @media breakpoint.medium
     width content-width-medium
-
-// TODO(#36): Vertically center 'No Favorites' in the viewport.
-.favorites.empty
-  animation none
 
 .favorites .preview
   transition all .5s ease
@@ -93,9 +87,19 @@ export default {
   margin 0
   padding 1.5rem 0
   text-align center
+  width 100%
 
   @media breakpoint.medium
     padding 2rem 0
+
+.no-favorites
+  display flex
+  flex-direction column
+  height 100%
+  justify-content center
+  position absolute
+  top 0
+  width 100%
 
 .favorites-leave-active
   opacity 0
