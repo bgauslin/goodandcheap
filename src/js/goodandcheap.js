@@ -22,8 +22,10 @@ new Vue({
 }).$mount('#app');
 
 // Register the Service Worker.
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js');
-  });
+if (process.env.NODE_ENV === 'production') {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js');
+    });
+  }
 }
