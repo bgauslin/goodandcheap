@@ -65,6 +65,7 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/config/'
 
+// TODO(#39): Update header background with alpha and/or remove blur.
 .header
   elevation(2)
   backdrop-filter backdrop-effect

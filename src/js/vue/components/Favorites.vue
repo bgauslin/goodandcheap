@@ -80,6 +80,7 @@ export default {
   @media breakpoint.medium
     width content-width-medium
 
+// TODO(#36): Vertically center 'No Favorites' in the viewport.
 .favorites.empty
   animation none
 

@@ -1,4 +1,5 @@
 <template lang="pug">
+  //- TODO(#38): Refactor ChecklistItem with input[type=checkbox].
   li.checklist__item
     a.checklist__link(
       :class="{ 'saved' : isSaved }",
