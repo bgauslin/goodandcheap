@@ -3,16 +3,16 @@
     ul.breadcrumbs__list
       li.breadcrumbs__item
         router-link(
-          :to="{ name: 'chapters' }",
-          title="Recipes",
+          :to="{ name: 'chapters' }"
+          title="Recipes"
         ) Recipes
       li.breadcrumbs__item(
-        v-if="parent",
+        v-if="parent"
       )
         router-link(
-          class="breadcrumbs__link",
-          :to="{ name: parent.routeName, params: { slug: parent.slug } }",
-          :title="parent.title",
+          class="breadcrumbs__link"
+          :to="{ name: parent.routeName, params: { slug: parent.slug } }"
+          :title="parent.title"
         ) {{ parent.title }}
       li.breadcrumbs__item
         span.breadcrumbs__label {{ current }}

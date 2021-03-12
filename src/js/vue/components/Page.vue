@@ -1,25 +1,25 @@
 <template lang="pug">
   .page(
-    :class="{ 'has-background' : hasBackgroundImage }",
-    :style="'background-image:' + backgroundImageCss",
+    :class="{ 'has-background' : hasBackgroundImage }"
+    :style="'background-image:' + backgroundImageCss"
   )
     .page__content
       h1.page__title {{ content.title }}
       section.page__section(
-        v-for="block in content.content",
+        v-for="block in content.content"
       )
         h2.page__heading(
-          v-if="block.heading",
+          v-if="block.heading"
         ) {{ block.heading }}
         .page__copy(
-          v-if="block.copy",
-          v-html="block.copy",
+          v-if="block.copy"
+          v-html="block.copy"
         )
         ul.page__list(
-          v-if="block.list",
+          v-if="block.list"
         )
           li.page__list__item(
-            v-for="item in block.list",
+            v-for="item in block.list"
           ) {{ item }}
 </template>
 

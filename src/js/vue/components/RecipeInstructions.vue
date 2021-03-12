@@ -1,10 +1,10 @@
 <template lang="pug">
   .instructions
     template(
-      v-for="block in content",
+      v-for="block in content"
     )
       h2.instructions__heading(
-        v-if="block.heading",
+        v-if="block.heading"
       ) {{ block.heading }}
         span.instructions__steps {{ itemsLabel(block.steps) }}
 
@@ -13,17 +13,17 @@
       ) {{ itemsLabel(block.steps) }}
 
       ul.instructions__list(
-        v-if="block.steps.length === 1",
+        v-if="block.steps.length === 1"
       )
         li.instructions__item(
-          v-for="step in block.steps",
+          v-for="step in block.steps"
         ) {{ step }}
 
       ol.instructions__list(
         v-else
       )
         li.instructions__item(
-          v-for="step in block.steps",
+          v-for="step in block.steps"
         ) {{ step }}
 </template>
 

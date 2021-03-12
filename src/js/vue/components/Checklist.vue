@@ -1,12 +1,12 @@
 <template lang="pug">
   ul.checklist
     checklist-item(
-      v-for="(item, index) in items",
-      :item="item",
-      :itemIndex="index",
-      :key="index",
-      :listIndex="listIndex",
-      :parentId="parentId",
+      v-for="(item, index) in items"
+      :item="item"
+      :itemIndex="index"
+      :key="index"
+      :listIndex="listIndex"
+      :parentId="parentId"
     )
 </template>
 

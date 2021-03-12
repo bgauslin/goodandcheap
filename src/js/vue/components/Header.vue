@@ -2,15 +2,15 @@
   header.header
     .header__controls
       back-button(
-        :parent="parent",
+        :parent="parent"
       )
       h1.site-name(
-        :class="{ 'search-enabled' : showSearch }",
+        :class="{ 'search-enabled' : showSearch }"
       )
         router-link(
-          class="site-name__link",
-          to="/",
-          title="Home",
+          class="site-name__link"
+          to="/"
+          title="Home"
           exact
         ) {{ heading }}
       search-bar

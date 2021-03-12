@@ -1,10 +1,10 @@
 <template lang="pug">
   .back-button(
-    v-if="parent",
+    v-if="parent"
   )
     router-link.back-button__link(
-      :to="route",
-      :title="parent.title",
+      :to="route"
+      :title="parent.title"
     )
       span.back-button__label {{ parent.title }}
 </template>

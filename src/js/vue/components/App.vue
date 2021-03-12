@@ -1,26 +1,26 @@
 <template lang="pug">
   .site
     app-header(
-      :parent="parent",
+      :parent="parent"
     )
     .content
       preloader(
-        v-if="isLoading",
+        v-if="isLoading"
       )
       transition(
-        mode="out-in",
-        @before-enter="beforeEnter",
-        @after-enter="afterEnter",
-        @before-leave="beforeLeave",
-        @after-leave="afterLeave",
+        mode="out-in"
+        @before-enter="beforeEnter"
+        @after-enter="afterEnter"
+        @before-leave="beforeLeave"
+        @after-leave="afterLeave"
       )
         router-view(
-          v-if="!is404 && !isLoading",
-          :content="content",
-          :key="key",
+          v-if="!is404 && !isLoading"
+          :content="content"
+          :key="key"
         )
         not-found(
-          v-if="is404",
+          v-if="is404"
         )
     app-footer
 </template>

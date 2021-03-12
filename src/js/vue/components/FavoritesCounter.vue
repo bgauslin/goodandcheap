@@ -1,9 +1,9 @@
 <template lang="pug">
   .favorites-counter
     router-link(
-      :class="{ 'empty' : !hasFavorites }",
-      :to="{ name: 'favorites' }",
-      title="Favorites",
+      :class="{ 'empty' : !hasFavorites }"
+      :to="{ name: 'favorites' }"
+      title="Favorites"
       exact
     ) {{ favoritesCountLabel }}
 

@@ -1,6 +1,6 @@
 <template lang="pug">
   p.budget(
-    v-if="budget",
+    v-if="budget"
   )
     span.budget__total {{ budget.totalCost }} Total
     span.budget__cost {{ budget.unitCost }} / {{ budget.units }}

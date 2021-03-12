@@ -3,22 +3,22 @@
     :class="['cover', 'cover--' + modifier]"
   )
     cover-photo(
-      :image="image",
-      :title="title",
+      :image="image"
+      :title="title"
     )
     budget(
-      v-if="budget",
-      :budget="budget",
+      v-if="budget"
+      :budget="budget"
     )
     .cover__content(
-      v-if="displayTitle === 'yes'",
+      v-if="displayTitle === 'yes'"
     )
       h1.cover__title {{ title }}
       .cover__blurb(
-        v-html="blurb",
+        v-html="blurb"
       )
       p.recipe-count.recipe-count--cover(
-        v-if="count",
+        v-if="count"
       ) {{ count }}
 </template>
 

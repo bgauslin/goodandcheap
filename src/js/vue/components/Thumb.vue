@@ -1,11 +1,11 @@
 <template lang="pug">
   figure.thumb
     img.thumb__image(
-      v-if="!loading",
-      :alt="title",
-      :height="image.height",
-      :src="image.src",
-      :width="image.width",
+      v-if="!loading"
+      :alt="title"
+      :height="image.height"
+      :src="image.src"
+      :width="image.width"
     )
 </template>
 

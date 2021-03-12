@@ -6,13 +6,13 @@
     div
       ol.previews
         recipe-preview(
-          v-for="(recipe, index) in content.data",
-          :index="index",
-          :item="recipe",
-          :key="recipe.slug",
-          :showBadge="false",
-          :showChapter="true",
-          favoriteButton="toggle",
+          v-for="(recipe, index) in content.data"
+          :index="index"
+          :item="recipe"
+          :key="recipe.slug"
+          :showBadge="false"
+          :showChapter="true"
+          favoriteButton="toggle"
         )
 </template>
 

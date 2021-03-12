@@ -1,11 +1,11 @@
 <template lang="pug">
   .home
     tabs(
-      :tabs="tabs",
-      modifier="home",
+      :tabs="tabs"
+      modifier="home"
     )
     router-view(
-      :previews="previews",
+      :previews="previews"
     )
 </template>
 

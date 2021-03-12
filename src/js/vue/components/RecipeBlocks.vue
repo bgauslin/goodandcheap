@@ -1,20 +1,20 @@
 <template lang="pug">
   .recipe__blocks
     template(
-      v-for="block in content",
+      v-for="block in content"
     )
       variation(
-        v-if="block.type === 'variation'",
-        :variation="block",
+        v-if="block.type === 'variation'"
+        :variation="block"
       )
       linked-recipe(
-        v-if="block.type === 'linkedRecipe'",
-        :linkedRecipe="block",
+        v-if="block.type === 'linkedRecipe'"
+        :linkedRecipe="block"
       )
       mini-recipe(
-        v-if="block.type === 'miniRecipe'",
-        :miniRecipe="block",
-        :parentId="parentId",
+        v-if="block.type === 'miniRecipe'"
+        :miniRecipe="block"
+        :parentId="parentId"
       )
 </template>
 

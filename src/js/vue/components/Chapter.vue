@@ -3,22 +3,22 @@
     .chapter__content
       .chapter__intro
         cover(
-          :blurb="content.blurb",
-          :count="content.recipeCount + ' Recipes'",
-          :image="content.photo",
-          :title="content.title",
-          displayTitle="yes",
-          modifier="chapter",
+          :blurb="content.blurb"
+          :count="content.recipeCount + ' Recipes'"
+          :image="content.photo"
+          :title="content.title"
+          displayTitle="yes"
+          modifier="chapter"
         )
       ol.previews.previews--chapter
         recipe-preview(
-          v-for="(recipe, index) in content.recipes",
-          :index="index",
-          :item="recipe",
-          :key="recipe.slug",
-          :showBadge="true",
-          :showChapter="false",
-          favoriteButton="toggle",
+          v-for="(recipe, index) in content.recipes"
+          :index="index"
+          :item="recipe"
+          :key="recipe.slug"
+          :showBadge="true"
+          :showChapter="false"
+          favoriteButton="toggle"
         )
 </template>
 

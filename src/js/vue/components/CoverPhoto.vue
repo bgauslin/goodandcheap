@@ -1,13 +1,13 @@
 <template lang="pug">
   figure.cover__photo(
-    :style="'background: url(' + image.placeholder + ') center center / cover no-repeat'",
+    :style="'background: url(' + image.placeholder + ') center center / cover no-repeat'"
   )
     img.cover__image(
-      v-if="!loading",
-      :alt="title",
-      :height="image.height",
-      :src="image.src",
-      :width="image.width",
+      v-if="!loading"
+      :alt="title"
+      :height="image.height"
+      :src="image.src"
+      :width="image.width"
     )
 </template>
 

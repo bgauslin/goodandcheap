@@ -2,11 +2,11 @@
   .info
     ol.previews.previews--info
       preview(
-        v-for="page in previews",
-        modifier="info",
-        :item="page",
-        :key="page.slug",
-        :to="{ name: 'info', params: { slug: page.slug } }",
+        v-for="page in previews"
+        modifier="info"
+        :item="page"
+        :key="page.slug"
+        :to="{ name: 'info', params: { slug: page.slug } }"
       )
 </template>
 

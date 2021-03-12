@@ -1,17 +1,17 @@
 <template lang="pug">
   .intro
     .blurb(
-      v-if="content.blurb",
-      v-html="content.blurb",
+      v-if="content.blurb"
+      v-html="content.blurb"
     )
     copy-blocks(
-      v-if="content.copyBlocks",
-      :content="content.copyBlocks",
+      v-if="content.copyBlocks"
+      :content="content.copyBlocks"
     )
     recipe-blocks(
-      v-if="content.recipeBlocks",
-      :content="content.recipeBlocks",
-      :parentId="parentId",
+      v-if="content.recipeBlocks"
+      :content="content.recipeBlocks"
+      :parentId="parentId"
     )
 </template>
 

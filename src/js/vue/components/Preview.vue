@@ -1,15 +1,15 @@
 <template lang="pug">
   li(
-    :class="['preview', 'preview--' + modifier]",
+    :class="['preview', 'preview--' + modifier]"
   )
     router-link(
-      :class="['preview__link', 'preview__link--' + modifier]",
-      :title="item.title",
-      :to="to",
+      :class="['preview__link', 'preview__link--' + modifier]"
+      :title="item.title"
+      :to="to"
     )
       thumb(
-        :image="item.thumb",
-        :title="item.title",
+        :image="item.thumb"
+        :title="item.title"
       )
       .preview__summary
         h3.preview__heading {{ item.title }}

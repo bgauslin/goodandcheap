@@ -1,15 +1,15 @@
 <template lang="pug">
   div(
-    :class="['tabs', 'tabs--' + modifier]",
+    :class="['tabs', 'tabs--' + modifier]"
   )
     ul.tabs__list
       li.tabs__item(
-        v-for="tab in tabs",
+        v-for="tab in tabs"
       )
         router-link(
-          class="tabs__link",
-          :to="tab.route",
-          :title="tab.label",
+          class="tabs__link"
+          :to="tab.route"
+          :title="tab.label"
           exact
         ) {{ tab.label }}
 </template>

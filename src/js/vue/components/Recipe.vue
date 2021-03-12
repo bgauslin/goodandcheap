@@ -2,35 +2,35 @@
   .recipe
     .recipe__content
       cover(
-        :budget="content.budget",
-        :image="content.photo",
-        :title="content.title",
-        displayTitle="no",
-        modifier="recipe",
+        :budget="content.budget"
+        :image="content.photo"
+        :title="content.title"
+        displayTitle="no"
+        modifier="recipe"
       )
       .recipe__overview
         header.recipe__header
           p.recipe__kind(
-            v-if="content.kind !== 'Recipe'",
+            v-if="content.kind !== 'Recipe'"
           ) {{ content.kind }}
           h1.recipe__title {{ content.title }}
           h2.recipe__tagline(
-            v-if="content.tagline",
+            v-if="content.tagline"
           ) {{ content.tagline }}
           badge(
-            v-if="content.badge",
+            v-if="content.badge"
           )
         toggle-favorite(
-          :favorite="content",
+          :favorite="content"
         )
         tabs(
-          v-if="tabs.length > 1",
-          :tabs="tabs",
-          modifier="recipe",
+          v-if="tabs.length > 1"
+          :tabs="tabs"
+          modifier="recipe"
         )
         router-view(
-          :content="recipeContent",
-          :parentId="content.id",
+          :content="recipeContent"
+          :parentId="content.id"
         )
       alpha-overlay
 </template>

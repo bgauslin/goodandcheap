@@ -6,13 +6,12 @@
       copyright
       p.license
         a.license__link(
-          href="http://creativecommons.org/licenses/by-nc-sa/4.0/",
-          rel="license noopener",
-          target="_blank",
+          href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+          rel="license"
         )
           img.license__image(
-            alt="Creative Commons License",
-            src="/img/by-nc-sa-80x15.svg",
+            alt="Creative Commons License"
+            src="/img/by-nc-sa-80x15.svg"
           )
 </template>
 

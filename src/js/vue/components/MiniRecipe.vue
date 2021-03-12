@@ -3,21 +3,21 @@
     .mini-recipe__content
       h4.mini-recipe__heading {{ miniRecipe.heading }}
       .mini-recipe__blurb(
-        v-html="miniRecipe.blurb",
+        v-html="miniRecipe.blurb"
       )
       checklist(
-        :items="miniRecipe.ingredients",
-        :listIndex="miniRecipe.id",
-        :parentId="parentId",
+        :items="miniRecipe.ingredients"
+        :listIndex="miniRecipe.id"
+        :parentId="parentId"
       )
     figure.mini-recipe__photo(
-      v-if="miniRecipe.photo",
+      v-if="miniRecipe.photo"
     )
       img(
-        :height="miniRecipe.photo.height",
-        :src="miniRecipe.photo.src",
-        :title="miniRecipe.photo.title",
-        :width="miniRecipe.photo.width",
+        :height="miniRecipe.photo.height"
+        :src="miniRecipe.photo.src"
+        :title="miniRecipe.photo.title"
+        :width="miniRecipe.photo.width"
       )
 </template>
 

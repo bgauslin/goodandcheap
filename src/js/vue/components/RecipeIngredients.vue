@@ -1,16 +1,16 @@
 <template lang="pug">
   .ingredients
     template(
-      v-for="(block, index) in content",
+      v-for="(block, index) in content"
     )
       h2.ingredients__heading(
-        v-if="block.heading",
+        v-if="block.heading"
       ) {{ block.heading }}
         span.ingredients__count {{ itemsLabel(block.items) }}
       checklist(
-        :items="block.items",
-        :listIndex="index",
-        :parentId="parentId",
+        :items="block.items"
+        :listIndex="index"
+        :parentId="parentId"
       )
 </template>
 

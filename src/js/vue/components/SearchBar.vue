@@ -1,17 +1,17 @@
 <template lang="pug">
   .search-bar
     form.search-form(
-      action="/search",
+      action="/search"
     )
       input.search-input(
-        :class="[ showSearch ? 'open' : 'closed' ]",
-        :value="searchQuery",
-        id="query",
-        name="q",
-        placeholder="Search",
-        type="text",
+        :class="[ showSearch ? 'open' : 'closed' ]"
+        :value="searchQuery"
+        id="query"
+        name="q"
+        placeholder="Search"
+        type="text"
         autofocus,
-        aria-label="Your search keywords",
+        aria-label="Your search keywords"
       )
     search-toggle
 </template>

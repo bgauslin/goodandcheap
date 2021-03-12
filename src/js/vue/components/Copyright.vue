@@ -2,17 +2,13 @@
   p.copyright
     span.copyright__text Content © 2014–{{ currentYear }}
       a.copyright__link(
-        href="http://www.leannebrown.com/",
-        rel="noopener",
-        target="_blank",
-        title="Visit LeanneBrown.com",
+        href="http://www.leannebrown.com/"
+        title="Visit LeanneBrown.com"
       ) Leanne Brown
     span.copyright__text Website © 2015–{{ currentYear }}
       a.copyright__link(
-        href="http://gauslin.com/",
-        rel="noopener",
-        target="_blank",
-        title="Visit Gauslin.com",
+        href="http://gauslin.com/"
+        title="Visit Gauslin.com"
       ) Ben Gauslin
 </template>
 
