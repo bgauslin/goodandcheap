@@ -1,10 +1,16 @@
 <template lang="pug">
-  router-link.back-button(
+  router-link.back(
     v-if="parent"
     :to="route"
     :title="parent.title"
-  )
-    span.back-button__label {{ parent.title }}
+    exact
+  ) {{ parent.title }}
+  router-link.back(
+    v-else
+    to="/"
+    title="Home"
+    exact
+  ) Good And Cheap
 </template>
 
 <script>
@@ -40,40 +46,29 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/config/'
 
-.back-button
+.back
   link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
-  align-items center
-  align-self stretch
-  display flex
-  height 100%
-  line-height 1
-  padding-left .75rem
-  width 3rem
-  
-  @media breakpoint.small
-    padding-left 0
-
-  @media breakpoint.medium
-    width auto
-
-.back-button::before
-  icon(icon-angle-left)
-  font-size em(22)
-  margin-right .25em
-  position relative
-  top -.05em
-
-.back-button:active
-  transform scale(.9)
-  transition transform .3s ease
-
-.back-button__label
-  small_caps(12)
+  small_caps(14)
   typeface('sans_bold')
-  display none
+  line-height controls-size
+  overflow hidden
+  text-overflow ellipsis
+  transform-origin 0 50%
+  transition transform .3s ease
   white-space nowrap
 
-  @media breakpoint.medium
-    display block
+.back:active
+  transform scale(.9)
+
+.back::before
+  icon(icon-angle-left)
+  font-size em(22)
+  margin-inline-end .25rem
+
+.back.exact.active
+  pointer-events none
+
+.back.exact.active::before
+  display none
 
 </style>

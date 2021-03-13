@@ -30,6 +30,7 @@ const scrollBehavior = (to, from, savedPosition) => {
 
 export default new VueRouter({
   mode: 'history',
+  linkExactActiveClass: 'exact',
   linkActiveClass: 'current',
   scrollBehavior,
   routes: [

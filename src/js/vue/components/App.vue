@@ -1,6 +1,8 @@
 <template lang="pug">
   .app
-    app-header
+    app-header(
+      :parent="parent"
+    )
     main.content
       preloader(
         v-if="isLoading"

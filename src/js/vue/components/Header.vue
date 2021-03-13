@@ -1,14 +1,28 @@
 <template lang="pug">
-  header.header
+  nav.header
     .header__frame
-      h1.app-name
-        router-link(
-          class="app-name__link"
-          to="/"
-          title="Home"
-          exact
-        ) Good And Cheap
+      back-button(
+        :parent="parent"
+      )
+      favorites-counter
 </template>
+
+<script>
+import BackButton from './BackButton.vue';
+import FavoritesCounter from './FavoritesCounter.vue';
+
+export default {
+  components: {
+    BackButton,
+    FavoritesCounter,
+  },
+
+  // TODO(app): String or Object here is weird. Update this.
+  props: {
+    parent: [String, Object],
+  },
+}
+</script>
 
 <style lang="stylus">
 @import '../../../stylus/config/'
@@ -23,36 +37,9 @@
 
 .header__frame
   @extends $app-bar-child
-
-.app-name
-  small_caps(14)
-  typeface('sans_bold')
-  display flex
-  height 100%
-  place-content center
-  white-space nowrap
-
-@media breakpoint.medium
-  .app-name.search-enabled
-    display none
-
-.app-name__link
-  link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
   align-items center
-  align-self stretch
-  display flex
-  position relative
-  z-index 2
-
-.app-name__link:active
-  transform scale(.9)
-  transition .3s ease
-
-[no-touch] .app-name__link.current
-  color var(--header-color)
-  cursor default
-
-[no-touch] .app-name__link.current:active
-  transform none
+  display grid
+  grid-template-areas 'back . favorites'
+  grid-template-columns minmax(0, auto) 1fr auto
 
 </style>
