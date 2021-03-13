@@ -32,6 +32,7 @@
           :content="recipeContent"
           :parentId="content.id"
         )
+        copyright.copyright--recipe
       alpha-overlay
 </template>
 
@@ -39,6 +40,7 @@
 import { mapMutations } from 'vuex';
 import AlphaOverlay from './AlphaOverlay.vue';
 import Badge from './Badge.vue';
+import Copyright from './Copyright.vue';
 import Cover from './Cover.vue';
 import Tabs from './Tabs.vue';
 import ToggleFavorite from './ToggleFavorite.vue';
@@ -48,6 +50,7 @@ export default {
     AlphaOverlay,
     Badge,
     Cover,
+    Copyright,
     Tabs,
     ToggleFavorite,
   },
@@ -189,10 +192,9 @@ export default {
 
 .recipe__overview > *:last-child
   overflow visible
-  padding-bottom 2rem
 
   @media breakpoint.large
-    padding-bottom 4rem
+    padding-bottom 5rem
 
 .recipe__overview h3
 .recipe__kind

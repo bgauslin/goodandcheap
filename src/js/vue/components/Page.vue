@@ -21,10 +21,17 @@
           li.page__list__item(
             v-for="item in block.list"
           ) {{ item }}
+      copyright.copyright--page
 </template>
 
 <script>
+import Copyright from './Copyright.vue';
+
 export default {
+  components: {
+    Copyright,
+  },
+
   props: {
     content: {
       title: String,

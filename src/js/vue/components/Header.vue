@@ -5,19 +5,16 @@
         :parent="parent"
       )
       search-bar
-      app-info
       favorites-counter
 </template>
 
 <script>
-import AppInfo from './AppInfo.vue';
 import BackButton from './BackButton.vue';
 import FavoritesCounter from './FavoritesCounter.vue';
 import SearchBar from './SearchBar.vue';
 
 export default {
   components: {
-    AppInfo,
     BackButton,
     FavoritesCounter,
     SearchBar,
@@ -45,7 +42,7 @@ export default {
   @extends $app-bar-child
   align-items center
   display grid
-  grid-template-areas 'back . info favorites'
-  grid-template-columns minmax(0, auto) 1fr controls-size controls-size
+  grid-template-areas 'back . favorites'
+  grid-template-columns minmax(0, auto) 1fr controls-size
 
 </style>

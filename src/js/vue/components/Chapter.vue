@@ -10,24 +10,28 @@
           displayTitle="yes"
           modifier="chapter"
         )
-      ol.previews.previews--chapter
-        recipe-preview(
-          v-for="(recipe, index) in content.recipes"
-          :index="index"
-          :item="recipe"
-          :key="recipe.slug"
-          :showBadge="true"
-          :showChapter="false"
-          favoriteButton="toggle"
-        )
+      .previews.previews--chapter
+        ol
+          recipe-preview(
+            v-for="(recipe, index) in content.recipes"
+            :index="index"
+            :item="recipe"
+            :key="recipe.slug"
+            :showBadge="true"
+            :showChapter="false"
+            favoriteButton="toggle"
+          )
+        copyright.copyright--chapter
 </template>
 
 <script>
+import Copyright from './Copyright.vue';
 import Cover from './Cover.vue';
 import RecipePreview from './RecipePreview.vue';
 
 export default {
   components: {
+    Copyright,
     Cover,
     RecipePreview,
   },
@@ -62,6 +66,8 @@ export default {
 
 .previews--chapter
   @media breakpoint.large
+    display flex
+    flex-direction column
     height 100%
     overflow-y scroll
     -webkit-overflow-scrolling touch

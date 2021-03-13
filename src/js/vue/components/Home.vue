@@ -7,13 +7,18 @@
     router-view(
       :previews="previews"
     )
+    copyright.copyright--home
 </template>
 
 <script>
+import Copyright from './Copyright.vue';
 import Tabs from './Tabs.vue';
 
 export default {
-  components: { Tabs },
+  components: {
+    Copyright,
+    Tabs,
+  },
 
   props: {
     content: {
