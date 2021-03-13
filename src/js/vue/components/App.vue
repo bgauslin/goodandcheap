@@ -1,8 +1,6 @@
 <template lang="pug">
   .app
-    app-header(
-      :parent="parent"
-    )
+    heading-nav
     main.content
       preloader(
         v-if="isLoading"
@@ -27,13 +25,13 @@
 <script>
 import { mapGetters } from 'vuex';
 import { mapMutations } from 'vuex';
-import AppHeader from './Header.vue';
+import HeadingNav from './HeadingNav.vue';
 import NotFound from './NotFound.vue';
 import Preloader from './Preloader.vue';
 
 export default {
   components: {
-    AppHeader,
+    HeadingNav,
     NotFound,
     Preloader,
   },
@@ -99,7 +97,6 @@ export default {
   computed: {
     ...mapGetters([
       'direction',
-      'parent',
     ]),
 
     /** @return {string} */
