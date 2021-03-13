@@ -86,10 +86,12 @@ export default {
   display inline-flex
   grid-area heading
   height var(--header-height)
+  margin-left var(--margin)
   transform-origin 0 50%
   transition transform var(--transition)
 
   @media breakpoint.small
+    margin-left 0
     width auto
 
 .header__link:active

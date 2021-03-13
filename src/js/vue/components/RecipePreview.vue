@@ -17,7 +17,7 @@
           p.preview__chapter-title(
             v-if="showChapter"
           ) {{ item.chapter.title }}
-          h3.preview__heading {{ item.title }}
+          h2.preview__heading {{ item.title }}
           p.preview__tagline(
             v-if="item.tagline"
           ) {{ item.tagline }}

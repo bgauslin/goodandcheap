@@ -12,7 +12,7 @@
         :title="item.title"
       )
       .preview__summary
-        h3.preview__heading {{ item.title }}
+        h2.preview__heading {{ item.title }}
         slot
 </template>
 
