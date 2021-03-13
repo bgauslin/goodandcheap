@@ -67,7 +67,7 @@ export default {
   color white
   display flex
   font-size em(12)
-  height var(--header-height)
+  height 100%
   justify-content flex-end
   position absolute
   right 0

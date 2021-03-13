@@ -68,13 +68,15 @@ export default {
 .header
   elevation(2)
   background var(--brand-color)
+  grid-area header
+  height var(--header-height)
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
   position sticky
   top 0
   z-index 2
 
 .header__controls
-  height var(--header-height)
+  height 100%
   position relative
 
   @media breakpoint.small
@@ -88,7 +90,7 @@ export default {
   small_caps(14)
   typeface('sans_bold')
   display flex
-  height var(--header-height)
+  height 100%
   justify-content center
   left 0
   position absolute

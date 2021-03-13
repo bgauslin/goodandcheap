@@ -44,6 +44,7 @@ export default {
 
 .back-button
   position absolute
+  height 100%
   width 3rem
   z-index 2
 
@@ -55,7 +56,7 @@ export default {
   align-items center
   align-self stretch
   display flex
-  height var(--header-height)
+  height 100%
   line-height 1
   padding-left .75rem
   

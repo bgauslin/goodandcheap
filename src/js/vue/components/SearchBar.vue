@@ -38,7 +38,7 @@ export default {
 .search-bar
   align-items center
   display flex
-  height var(--header-height)
+  height 100%
   left margin-base
   position absolute
   right 2.5rem
