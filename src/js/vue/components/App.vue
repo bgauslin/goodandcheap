@@ -292,9 +292,8 @@ export default {
 .content
   display flex
   grid-area main
-  // margin 0 auto
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
-  width 100%
+  width 100vw
 
 .home
   margin 0 auto
