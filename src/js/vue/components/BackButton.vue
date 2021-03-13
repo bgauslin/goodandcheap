@@ -50,6 +50,7 @@ export default {
   link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
   small_caps(14)
   typeface('sans_bold')
+  grid-area back
   line-height controls-size
   overflow hidden
   text-overflow ellipsis

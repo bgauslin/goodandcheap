@@ -22,23 +22,18 @@
         not-found(
           v-if="is404"
         )
-    controls(
-      :parent="parent"
-    )
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import { mapMutations } from 'vuex';
 import AppHeader from './Header.vue';
-import Controls from './Controls.vue';
 import NotFound from './NotFound.vue';
 import Preloader from './Preloader.vue';
 
 export default {
   components: {
     AppHeader,
-    Controls,
     NotFound,
     Preloader,
   },
@@ -291,9 +286,8 @@ export default {
   display grid
   grid-template-areas:
     'header'\
-    'main'\
-    'controls'
-  grid-template-rows var(--header-height) 1fr var(--controls-height)
+    'main'
+  grid-template-rows var(--header-height) 1fr
   grid-template-columns 1fr
   min-height calc(var(--vh, 1vh) * 100)
 
