@@ -27,10 +27,11 @@ export default {
 @import '../../../stylus/config/'
 
 .footer
+  background var(--background-2)
   typeface('sans')
   color var(--text-2-color)
   font-size em(12)
-  grid-row 3
+  grid-area footer
   padding 0 0 env(safe-area-inset-bottom)
   text-align center
 

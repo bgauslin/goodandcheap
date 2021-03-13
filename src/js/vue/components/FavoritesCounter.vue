@@ -1,11 +1,10 @@
 <template lang="pug">
-  .favorites-counter
-    router-link(
-      :class="{ 'empty' : !hasFavorites }"
-      :to="{ name: 'favorites' }"
-      title="Favorites"
-      exact
-    ) {{ favoritesCountLabel }}
+  router-link.favorites-counter(
+    :class="{ 'empty' : !hasFavorites }"
+    :to="{ name: 'favorites' }"
+    title="Favorites"
+    exact
+  ) {{ favoritesCountLabel }}
 
 </template>
 
@@ -63,43 +62,39 @@ export default {
 @import '../../../stylus/config/'
 
 .favorites-counter
+  link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
   typeface('sans')
-  color white
+  align-items center
+  background pink
+  border-radius 50%
   display flex
   font-size em(12)
-  height 100%
-  justify-content flex-end
-  position absolute
-  right 0
-  top 0
-  width 3rem
+  grid-area favorites
+  height controls-size
+  justify-content center
+  justify-self end
+  width controls-size
 
 .favorites-counter.updated
   animation bounce .3s ease-out
 
-.favorites-counter a
-  link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
-  align-items center
-  align-self stretch
-  display flex
-
-.favorites-counter a::after
+.favorites-counter::after
   icon(icon-heart)
-  font-size 1rem
-  margin 0 1rem 0 .3em
+  font-size rem(16)
 
-.favorites-counter a.empty::after
+.favorites-counter.empty::after
   content icon-heart-empty
 
-.favorites-counter a:active
+.favorites-counter:active
   transform scale(.9)
   transition .3s ease
 
-.favorites-counter a.current
-  color var(--header-color)
-
-[no-touch] .favorites-counter a.current:hover
+.favorites-counter.current
   color var(--header-color)
   cursor default
+  pointer-events none
+
+[no-touch] .favorites-counter.current:hover
+  color var(--header-color)
 
 </style>

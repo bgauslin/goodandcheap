@@ -1,12 +1,10 @@
 <template lang="pug">
-  .back-button(
+  router-link.back-button(
     v-if="parent"
+    :to="route"
+    :title="parent.title"
   )
-    router-link.back-button__link(
-      :to="route"
-      :title="parent.title"
-    )
-      span.back-button__label {{ parent.title }}
+    span.back-button__label {{ parent.title }}
 </template>
 
 <script>
@@ -43,15 +41,6 @@ export default {
 @import '../../../stylus/config/'
 
 .back-button
-  position absolute
-  height 100%
-  width 3rem
-  z-index 2
-
-  @media breakpoint.medium
-    width auto
-
-.back-button__link
   link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
   align-items center
   align-self stretch
@@ -59,18 +48,22 @@ export default {
   height 100%
   line-height 1
   padding-left .75rem
+  width 3rem
   
   @media breakpoint.small
     padding-left 0
 
-.back-button__link::before
+  @media breakpoint.medium
+    width auto
+
+.back-button::before
   icon(icon-angle-left)
   font-size em(22)
   margin-right .25em
   position relative
   top -.05em
 
-.back-button__link:active
+.back-button:active
   transform scale(.9)
   transition transform .3s ease
 

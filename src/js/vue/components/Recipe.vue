@@ -152,41 +152,14 @@ export default {
 @import '../../../stylus/config/'
 
 .recipe
+  @extends $content-layout-parent
   --recipe-padding-x .75rem
 
   @media breakpoint.large
     --recipe-padding-x 1.5rem
 
-.recipe
-  @media breakpoint.small
-    margin 1.5rem var(--margin) 0
-
-  @media breakpoint.medium
-    margin-top 2.25rem
-
-  @media breakpoint.large
-    margin-top 3rem
-
-  @media breakpoint.xlarge
-    margin 3rem auto 0
-    width content-width-xlarge
-
 .recipe__content
-  background var(--background-1)
-  margin 0 auto
-
-  @media breakpoint.small
-    max-width page-width-stacked
-
-  @media breakpoint.medium
-    max-width none
-    width page-width-stacked
-
-  @media breakpoint.large
-    overflow hidden
-    padding-bottom 50%
-    position relative
-    width 100%
+  @extends $content-layout-child
 
 // Ensure overview panel is at least a square via 'min-height' when there's not
 // much content in the panel.

@@ -1,3 +1,60 @@
+$app-bar-parent
+  height var(--header-height)
+  padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
+  z-index 2
+
+$app-bar-child
+  margin 0 auto
+  padding 0 var(--margin)
+  height 100%
+
+  @media breakpoint.small
+    max-width page-width-stacked + (margin-small * 2)
+
+  @media breakpoint.medium
+    max-width none
+    padding 0
+    width page-width-stacked
+
+  @media breakpoint.large
+    padding 0 var(--margin)
+    width 100%
+
+  @media breakpoint.xlarge
+    padding 0
+    width content-width-xlarge
+
+$content-layout-parent
+  @media breakpoint.small
+    margin 1.5rem var(--margin)
+
+  @media breakpoint.medium
+    margin 2.25rem var(--margin)
+
+  @media breakpoint.large
+    margin 3rem var(--margin)
+
+  @media breakpoint.xlarge
+    margin 3rem auto
+    width content-width-xlarge
+
+$content-layout-child
+  background var(--background-1)
+  margin 0 auto
+
+  @media breakpoint.small
+    max-width page-width-stacked
+
+  @media breakpoint.medium
+    max-width none
+    width page-width-stacked
+
+  @media breakpoint.large
+    overflow hidden
+    padding-bottom 50%
+    position relative
+    width 100%
+
 $previews-grid
   display grid
   grid-gap var(--previews-gap)

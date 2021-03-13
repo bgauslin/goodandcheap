@@ -48,35 +48,17 @@ export default {
 @import '../../../stylus/config/'
 
 .chapter
-  @media breakpoint.small
-    margin 1.5rem var(--margin) 0
-
-  @media breakpoint.medium
-    margin-top 2.25rem
-
-  @media breakpoint.large
-    margin-top 3rem
-
-  @media breakpoint.xlarge
-    margin 3rem auto 0
-    width content-width-xlarge
+  @extends $content-layout-parent
 
 .chapter__content
-  background var(--background-1)
-  margin 0 auto
-  
-  @media breakpoint.small
-    max-width page-width-stacked
+  @extends $content-layout-child
 
-  @media breakpoint.medium
-    max-width none
-    width page-width-stacked
+.chapter__intro
+  overflow hidden
 
   @media breakpoint.large
-    overflow hidden
-    padding-bottom 50%
-    position relative
-    width 100%
+    position absolute
+    width 50%
 
 .previews--chapter
   @media breakpoint.large
@@ -86,13 +68,6 @@ export default {
     position absolute
     right 0
     top 0
-    width 50%
-
-.chapter__intro
-  overflow hidden
-
-  @media breakpoint.large
-    position absolute
     width 50%
 
 </style>

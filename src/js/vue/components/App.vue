@@ -1,9 +1,7 @@
 <template lang="pug">
-  .site
-    app-header(
-      :parent="parent"
-    )
-    .content
+  .app
+    app-header
+    main.content
       preloader(
         v-if="isLoading"
       )
@@ -22,23 +20,23 @@
         not-found(
           v-if="is404"
         )
-    app-footer
+    controls(
+      :parent="parent"
+    )
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import { mapMutations } from 'vuex';
-import AppFooter from './Footer.vue';
 import AppHeader from './Header.vue';
-import Breadcrumbs from './Breadcrumbs.vue';
+import Controls from './Controls.vue';
 import NotFound from './NotFound.vue';
 import Preloader from './Preloader.vue';
 
 export default {
   components: {
-    AppFooter,
     AppHeader,
-    Breadcrumbs,
+    Controls,
     NotFound,
     Preloader,
   },
@@ -287,14 +285,18 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/goodandcheap'
 
-.site
+.app
   display grid
-  grid-template-rows auto 1fr auto
+  grid-template-areas:
+    'header'\
+    'main'\
+    'controls'
+  grid-template-rows var(--header-height) 1fr var(--controls-height)
   grid-template-columns 1fr
-  min-height 100vh
+  min-height calc(var(--vh, 1vh) * 100)
 
 .content
-  grid-row 2
+  grid-area main
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
 
 .slide-in-left
