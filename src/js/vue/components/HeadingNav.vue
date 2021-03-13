@@ -37,13 +37,15 @@ export default {
      */
     linkLabel() {
       switch (this.$route.name) {
+        case 'chapter':
+          return 'Recipes';
         case 'chapters':
+        case 'favorites':
         case 'pages':
+        case 'search':
           return 'Good And Cheap';
         case 'info':
           return 'Info';
-        case 'chapter':
-          return 'Recipes';
         default:
           return this.parent.title;
       }
@@ -55,9 +57,11 @@ export default {
      */
     linkRoute() {
       switch (this.$route.name) {
-        case 'chapters':
-        case 'pages':
         case 'chapter':
+        case 'chapters':
+        case 'favorites':
+        case 'pages':
+        case 'search':
           return {name: 'chapters'};
         case 'info':
           return {name: 'pages'};

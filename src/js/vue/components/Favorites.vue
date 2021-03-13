@@ -74,6 +74,7 @@ export default {
   height 100%
   margin 0 auto
   position relative
+  width 100%
 
   @media breakpoint.medium
     width content-width-medium

@@ -2,7 +2,7 @@
   nav.header
     .header__frame
       heading-nav
-      search-bar
+      //- search-bar
       favorites-counter
 </template>
 
@@ -43,14 +43,15 @@ export default {
   width 100%
 
   @media breakpoint.small
-    max-width page-width-stacked + (margin-small * 2)
+    padding 0 var(--margin)
+    // max-width page-width-stacked + (margin-small * 2)
 
-  @media breakpoint.medium
-    max-width none
-    width page-width-stacked
+  // @media breakpoint.medium
+  //   max-width none
+  //   width page-width-stacked
 
   @media breakpoint.large
-    padding 0 var(--margin)
+    // padding 0 var(--margin)
     width 100%
 
   @media breakpoint.xlarge
