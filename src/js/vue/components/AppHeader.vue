@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import HeadingNav from './HeadingNav.vue';
+import HeadingNav from './HeaderLink.vue';
 import FavoritesCounter from './FavoritesCounter.vue';
 import SearchBar from './SearchBar.vue';
 
@@ -44,14 +44,8 @@ export default {
 
   @media breakpoint.small
     padding 0 var(--margin)
-    // max-width page-width-stacked + (margin-small * 2)
-
-  // @media breakpoint.medium
-  //   max-width none
-  //   width page-width-stacked
 
   @media breakpoint.large
-    // padding 0 var(--margin)
     width 100%
 
   @media breakpoint.xlarge

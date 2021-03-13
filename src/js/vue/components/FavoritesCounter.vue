@@ -65,7 +65,6 @@ export default {
   link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
   typeface('sans')
   align-items center
-  // background pink
   border-radius 50%
   display flex
   font-size em(12)

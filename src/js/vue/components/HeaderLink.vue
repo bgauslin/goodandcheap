@@ -1,18 +1,17 @@
 <template lang="pug">
-  h1.heading
-    router-link.heading__link(
-      :to="linkRoute"
-      :title="linkLabel"
-    ) 
-      svg.icon.icon--back(
-        v-if="hasIcon"
-        viewbox="0 0 32 32"
-        aria-hidden="true"
+  router-link.header__link(
+    :to="linkRoute"
+    :title="linkLabel"
+  )
+    svg.icon.icon--back(
+      v-if="hasIcon"
+      viewbox="0 0 32 32"
+      aria-hidden="true"
+    )
+      path.icon__path(
+        d="m21.08768,26.09236l-10.17537,-10.1165l10.12708,-10.06822"
       )
-        path.icon__path(
-          d="m21.08768,26.09236l-10.17537,-10.1165l10.12708,-10.06822"
-        )
-      span {{ linkLabel }}
+    h1.header__link__label {{ linkLabel }}
 </template>
 
 <script>
@@ -81,35 +80,38 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/goodandcheap'
 
-.heading
-  small_caps(14)
-  typeface('sans_bold')
-  grid-area heading
-
-.heading__link
+.header__link
   link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
-  line-height controls-size
-  margin-left var(--margin)
-  overflow hidden
-  text-overflow ellipsis
+  align-items center
+  display inline-flex
+  grid-area heading
+  height var(--header-height)
   transform-origin 0 50%
-  transition transform .3s ease
-  white-space nowrap
+  transition transform var(--transition)
 
   @media breakpoint.small
-    margin-left 0
+    width auto
 
-.heading__link:active
+.header__link:active
   transform scale(.9)
 
-.heading__link.exact
+.header__link.exact
   pointer-events none
+  transform none
+
+.header__link__label
+  small_caps(14)
+  typeface('sans_bold')
+  margin 0
+  overflow hidden
+  text-overflow ellipsis
+  transition color var(--transition)
+  white-space nowrap
 
 .icon--back
   height rem(32)
+  margin 0 rem(-4) 0 rem(-12)
   transform scale(.6)
-  margin rem(-2) 0 0 rem(-9)
-  vertical-align middle
   width rem(32)
 
 .icon__path
