@@ -1,10 +1,10 @@
 <template lang="pug">
   .favorites
-    h2 {{ count }}
+    h1.favorites__count {{ count }}
     .no-favorites(
       v-if="!hasFavorites"
     )
-      h2 No Favorites :(
+      h1.favorites__count No Favorites :(
     transition-group(
       class="previews"
       name="favorites"
@@ -82,7 +82,7 @@ export default {
 .favorites .preview
   transition all .5s ease
 
-.favorites h2
+.favorites__count
   small_caps(14)
   typeface('sans_bold')
   margin 0

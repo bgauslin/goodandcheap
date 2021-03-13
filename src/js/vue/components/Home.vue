@@ -53,6 +53,10 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/config/'
 
+.home
+  margin 0 auto
+  width 100%
+
 .tabs.tabs--home
   @media breakpoint.small
     margin 1rem auto

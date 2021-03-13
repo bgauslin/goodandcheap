@@ -295,9 +295,6 @@ export default {
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
   width 100vw
 
-.home
-  margin 0 auto
-
 .slide-in-left
 .slide-in-right
 .slide-in-up
