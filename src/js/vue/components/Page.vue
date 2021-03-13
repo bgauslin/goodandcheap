@@ -24,8 +24,6 @@
 </template>
 
 <script>
-import setup from '../../setup';
-
 export default {
   props: {
     content: {
@@ -57,7 +55,9 @@ export default {
      * based on media query breakpoint.
      */
     setBackgroundImage() {
-      switch(setup.getBreakpointValue()) {
+      const breakpointValue = window.getComputedStyle(document.body,'::after').getPropertyValue('content').replace(/\"/g, '');
+      
+      switch(breakpointValue) {
         case 'large':
         case 'xlarge':
           this.backgroundImageCss = `${this.backgroundImageOverlayCss},url(${this.content.backgroundImage})`;

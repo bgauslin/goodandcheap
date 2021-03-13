@@ -3,29 +3,22 @@ import fastclick from 'fastclick';
 /** @class */
 export default class {
   /**
-   * Intializes site-wide widgets, utilities, etc.
+   * Intializes site-wide utilities.
    * @public
    */
   static init() {
-    this.touchEnabled_();
-    this.googleAnalytics_();
-  }
+    this.touchEnabled();
+    this.googleAnalytics();
 
-  /**
-   * Gets breakpoint name as set by CSS as a hook for JS methods that occur at
-   * media query breakpoints.
-   * @return {string}
-   * @public
-   */
-  static getBreakpointValue() {
-    return window.getComputedStyle(document.body,'::after').getPropertyValue('content').replace(/\"/g, '');
+    this.viewportHeight();
+    window.addEventListener('resize', this.viewportHeight);
   }
 
   /**
    * Initializes Google Analytics.
    * @private
    */
-  static googleAnalytics_() {
+  static googleAnalytics() {
     if (process.env.NODE_ENV === 'production') {
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -39,10 +32,18 @@ export default class {
    * Removes 'no-touch' attribute and adds fastclick if device is touch-enabled.
    * @private
    */
-  static touchEnabled_() {
+  static touchEnabled() {
     if ('ontouchstart' in window || window.DocumentTouch) {
       document.body.removeAttribute('no-touch');
       fastclick.attach(document.body);
     }
+  }
+
+  /**
+   * Sets custom property for viewport height that updates 'vh' calculation due
+   * to iOS Safari behavior where chrome appears and disappears when scrolling.
+   */
+   static viewportHeight() {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`);
   }
 }
