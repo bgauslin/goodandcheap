@@ -4,7 +4,8 @@
     :to="{ name: 'favorites' }"
     title="Favorites"
     exact
-  ) {{ favoritesCountLabel }}
+  )
+    span.favorites-counter__count {{ favoritesCountLabel }}
 
 </template>
 
@@ -71,6 +72,7 @@ export default {
   grid-area favorites
   height controls-size
   justify-content center
+  position relative
   width controls-size
 
 .favorites-counter.updated
@@ -94,5 +96,10 @@ export default {
 
 [no-touch] .favorites-counter.current:hover
   color var(--header-color)
+
+.favorites-counter__count
+  right controls-size - rem(8)
+  position absolute
+  text-align right
 
 </style>
