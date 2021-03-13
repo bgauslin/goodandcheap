@@ -39,27 +39,13 @@ export default {
   align-items center
   display flex
   height 100%
-  left margin-base
-  position absolute
-  right 2.5rem
-  top 0
-
-  @media breakpoint.small
-    left 5.5rem
-    right 3rem
-
-  @media breakpoint.medium
-    left 50%
-
-  @media breakpoint.large
-    left calc(50% + 6rem)
+  justify-self end
 
 .search-form
   align-items center
   display flex
   height 100%
   position relative
-  width 100%
 
 .search-input
   appearance none
@@ -89,7 +75,7 @@ export default {
 
 .search-input.open
   padding rem(4)
-  width 100%
+  width 50vw
   z-index 2
 
 </style>

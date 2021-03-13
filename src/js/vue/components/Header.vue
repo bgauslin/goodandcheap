@@ -4,6 +4,7 @@
       back-button(
         :parent="parent"
       )
+      search-bar
       app-info
       favorites-counter
 </template>
@@ -12,12 +13,14 @@
 import AppInfo from './AppInfo.vue';
 import BackButton from './BackButton.vue';
 import FavoritesCounter from './FavoritesCounter.vue';
+import SearchBar from './SearchBar.vue';
 
 export default {
   components: {
     AppInfo,
     BackButton,
     FavoritesCounter,
+    SearchBar,
   },
 
   // TODO(app): String or Object here is weird. Update this.
