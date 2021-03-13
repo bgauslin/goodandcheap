@@ -1,28 +1,21 @@
 <template lang="pug">
   nav.header
     .header__frame
-      back-button(
-        :parent="parent"
-      )
+      heading-nav
       search-bar
       favorites-counter
 </template>
 
 <script>
-import BackButton from './BackButton.vue';
+import HeadingNav from './HeadingNav.vue';
 import FavoritesCounter from './FavoritesCounter.vue';
 import SearchBar from './SearchBar.vue';
 
 export default {
   components: {
-    BackButton,
+    HeadingNav,
     FavoritesCounter,
     SearchBar,
-  },
-
-  // TODO(app): String or Object here is weird. Update this.
-  props: {
-    parent: [String, Object],
   },
 }
 </script>
@@ -31,18 +24,37 @@ export default {
 @import '../../../stylus/config/'
 
 .header
-  @extends $app-bar-parent
   elevation(2)
   background var(--brand-color)
   grid-area header
+  height var(--header-height)
+  padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
   position sticky
   top 0
+  z-index 2
 
 .header__frame
-  @extends $app-bar-child
   align-items center
   display grid
-  grid-template-areas 'back . favorites'
+  grid-template-areas 'heading . favorites'
   grid-template-columns minmax(0, auto) 1fr controls-size
+  height 100%
+  margin 0 auto
+  width 100%
+
+  @media breakpoint.small
+    max-width page-width-stacked + (margin-small * 2)
+
+  @media breakpoint.medium
+    max-width none
+    width page-width-stacked
+
+  @media breakpoint.large
+    padding 0 var(--margin)
+    width 100%
+
+  @media breakpoint.xlarge
+    padding 0
+    width content-width-xlarge
 
 </style>

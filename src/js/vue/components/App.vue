@@ -1,6 +1,6 @@
 <template lang="pug">
   .app
-    heading-nav
+    app-header
     main.content
       preloader(
         v-if="isLoading"
@@ -25,13 +25,13 @@
 <script>
 import { mapGetters } from 'vuex';
 import { mapMutations } from 'vuex';
-import HeadingNav from './HeadingNav.vue';
+import AppHeader from './AppHeader.vue';
 import NotFound from './NotFound.vue';
 import Preloader from './Preloader.vue';
 
 export default {
   components: {
-    HeadingNav,
+    AppHeader,
     NotFound,
     Preloader,
   },
@@ -288,9 +288,16 @@ export default {
   grid-template-columns 1fr
   min-height calc(var(--vh, 1vh) * 100)
 
+// Use flex to prevent sliding transitions from jumping up and down.
 .content
+  display flex
   grid-area main
+  // margin 0 auto
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
+  width 100%
+
+.home
+  margin 0 auto
 
 .slide-in-left
 .slide-in-right

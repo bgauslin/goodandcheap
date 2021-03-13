@@ -83,6 +83,8 @@ export default {
 @import '../../../stylus/config/'
 
 .page
+  width 100%
+
   @media breakpoint.large
     padding 3rem 0
 
@@ -94,6 +96,7 @@ export default {
 
 .page__content
   background-color var(--background-1)
+  margin 0 auto
   padding 1rem var(--margin)
 
   @media breakpoint.small

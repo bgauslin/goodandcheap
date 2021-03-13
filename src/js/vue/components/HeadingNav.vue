@@ -1,6 +1,6 @@
 <template lang="pug">
-  h1
-    router-link(
+  h1.heading
+    router-link.heading__link(
       :to="linkRoute"
       :title="linkLabel"
     ) 
@@ -56,18 +56,11 @@ export default {
     linkRoute() {
       switch (this.$route.name) {
         case 'chapters':
-        case 'chapter':
         case 'pages':
-          return {
-            name: 'chapters',
-          };
+        case 'chapter':
+          return {name: 'chapters'};
         case 'info':
-          return {
-            name: 'pages',
-            params: {
-              slug: this.parent.slug,
-            },
-          };
+          return {name: 'pages'};
         default:
           return {
             name: this.parent.routeName,
@@ -84,15 +77,36 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/goodandcheap'
 
+.heading
+  small_caps(14)
+  typeface('sans_bold')
+  grid-area heading
+
+.heading__link
+  link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
+  line-height controls-size
+  margin-left var(--margin)
+  overflow hidden
+  text-overflow ellipsis
+  transform-origin 0 50%
+  transition transform .3s ease
+  white-space nowrap
+
+  @media breakpoint.small
+    margin-left 0
+
+.heading__link:active
+  transform scale(.9)
+
+.heading__link.exact
+  pointer-events none
+
 .icon--back
   height rem(32)
-  margin 0 rem(-4) 0 rem(-12)
   transform scale(.6)
+  margin rem(-2) 0 0 rem(-9)
+  vertical-align middle
   width rem(32)
-
-  @media breakpoint.medium
-    margin-right 0
-    transform 'scale(.7) translateY(%s)' % rem(2)
 
 .icon__path
   fill none
