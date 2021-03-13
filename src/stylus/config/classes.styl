@@ -1,4 +1,6 @@
 $content-layout-parent
+  width 100%
+  
   @media breakpoint.small
     margin 1.5rem auto
 
@@ -14,6 +16,7 @@ $content-layout-parent
 $content-layout-child
   background var(--background-1)
   margin 0 auto
+  padding-bottom env(safe-area-inset-bottom)
 
   @media breakpoint.small
     max-width page-width-stacked

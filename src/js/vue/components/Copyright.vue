@@ -28,6 +28,7 @@ export default {
   small_caps(11)
   typeface('sans')
   color var(--text-2-color)
+  padding-bottom env(safe-area-inset-bottom)
 
 .copyright > a
   margin-left rem(4)
