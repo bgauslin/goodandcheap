@@ -41,12 +41,11 @@ export default {
   list-style none
   position relative
 
-@media breakpoint.small
-  .preview:first-child
-    border-top 0
+  &:first-child
+    @media breakpoint.small
+      border-top 0
 
-@media breakpoint.medium
-  .preview:last-child
+  &:last-child
     border-bottom 1px solid var(--background-0)
 
 .preview__link
