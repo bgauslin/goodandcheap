@@ -3,14 +3,12 @@
     :to="linkRoute"
     :title="linkLabel"
   )
-    svg.icon.icon--back(
+    svg.back-arrow(
       v-if="hasIcon"
-      viewbox="0 0 32 32"
+      viewbox="0 0 24 24"
       aria-hidden="true"
     )
-      path.icon__path(
-        d="m21.08768,26.09236l-10.17537,-10.1165l10.12708,-10.06822"
-      )
+      polyline(points="14,6 8,12 14,18")
     h1.header__link__label {{ linkLabel }}
 </template>
 
@@ -27,7 +25,7 @@ export default {
      * @return {boolean}
      */
     hasIcon() {
-      return this.$route.name !== 'chapters';
+      return this.$route.name !== 'chapters' && this.$route.name !== 'pages';
     },
 
     /**
@@ -99,7 +97,6 @@ export default {
 
 .header__link.exact
   pointer-events none
-  transform none
 
 .header__link__label
   small_caps(14)
@@ -110,16 +107,14 @@ export default {
   transition color var(--transition)
   white-space nowrap
 
-.icon--back
-  height rem(32)
-  margin 0 rem(-4) 0 rem(-12)
-  transform scale(.6)
-  width rem(32)
+.back-arrow
+  height rem(24)
+  width rem(24)
 
-.icon__path
+.back-arrow > polyline
   fill none
   stroke currentColor
-  stroke-width 4
+  stroke-width 3
   transition all var(--transition)
 
 </style>
