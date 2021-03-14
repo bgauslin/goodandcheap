@@ -86,7 +86,7 @@ export default {
   height var(--header-height)
   margin-left var(--margin)
   transform-origin 0 50%
-  transition transform var(--transition)
+  transition transform transition
 
   @media breakpoint.small
     margin-left 0
@@ -104,7 +104,7 @@ export default {
   margin 0
   overflow hidden
   text-overflow ellipsis
-  transition color var(--transition)
+  transition color transition
   white-space nowrap
 
 .back-arrow
@@ -115,6 +115,6 @@ export default {
   fill none
   stroke currentColor
   stroke-width 3
-  transition all var(--transition)
+  transition all transition
 
 </style>
