@@ -94,7 +94,6 @@ checkbox-size = rem(24)
   cursor pointer
   display inline-flex
   padding rem(8) rem(4)
-  user-select none
 
 .checklist__checkbox
   appearance none
