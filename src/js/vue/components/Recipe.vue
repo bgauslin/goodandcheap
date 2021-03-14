@@ -14,15 +14,15 @@
             v-if="content.kind !== 'Recipe'"
           ) {{ content.kind }}
           h1.recipe__title {{ content.title }}
-          h2.recipe__tagline(
+          p.recipe__tagline(
             v-if="content.tagline"
           ) {{ content.tagline }}
           badge(
             v-if="content.badge"
           )
-        toggle-favorite(
-          :favorite="content"
-        )
+          toggle-favorite(
+            :favorite="content"
+          )
         tabs(
           v-if="tabs.length > 1"
           :tabs="tabs"
@@ -174,7 +174,6 @@ export default {
     \[copy-start\] auto \[copy-end\] \
     var(--recipe-padding-x) \[full-end\]
   min-height 100vw
-  position relative
 
   @media breakpoint.medium
     min-height page-width-stacked
@@ -206,10 +205,12 @@ export default {
   margin 0 0 1em
 
 .recipe__header
-  margin 1rem 2rem 0 0
+  margin .25rem 0 0
+  padding .75rem controls-size 0 0
+  position relative
 
   @media breakpoint.small
-    margin-top 1.5rem
+    margin-top .75rem
 
 .recipe__kind
   margin-bottom .5rem
@@ -219,7 +220,7 @@ export default {
 
 .recipe__tagline
   display inline-block
-  margin-right 0.5rem
+  margin 1em .5rem 1em 0
 
 .tabs--recipe
   background var(--background-1)

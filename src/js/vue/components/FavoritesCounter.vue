@@ -99,7 +99,6 @@ export default {
   position absolute
   text-align right
 
-// TODO(#45): SVG icon styles.
 .favorites-counter__icon
   height rem(24)
   width rem(24)

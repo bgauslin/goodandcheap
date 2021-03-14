@@ -60,17 +60,14 @@ export default {
 
 .toggle-favorite
   align-items center
-  // border-radius 50%
-  // color var(--header-color)
-  display flex
-  font-size em(12)
-  grid-area favorites
+  display inline-flex
   height controls-size
   justify-content center
   position absolute
+  right 0
+  top 0
   width controls-size
 
-// TODO(#45): SVG icon styles.
 .toggle-favorite__icon
   height rem(24)
   width rem(24)
@@ -86,14 +83,6 @@ export default {
 
 .recipe .toggle-favorite
   right -.75rem
-  top .25rem
-
-  @media breakpoint.large
-    top .75rem
-
-.preview--recipe .toggle-favorite
-  right 0
-  top 0
 
 [no-touch] .toggle-favorite
   &:hover
