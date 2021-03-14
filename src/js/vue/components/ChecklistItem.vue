@@ -89,11 +89,16 @@ checkbox-size = rem(24)
   margin 0
 
 .checklist__label
-  link(var(--text-1-color), var(--text-1-color), var(--text-2-color), var(--text-2-color))
   align-items center
   cursor pointer
   display inline-flex
   padding rem(8) rem(4)
+  transition color transition
+
+  &:focus
+  &:active
+  [no-touch] &:hover
+    color var(--text-2-color)
 
 .checklist__checkbox
   appearance none
