@@ -4,6 +4,12 @@
     :class="{ 'saved' : isFavorite }"
     :aria-label="toggleLabel"
   )
+    svg.toggle-favorite__icon(
+      :class="{'saved' : isFavorite}"
+      viewbox="0 0 24 24"
+      aria-hidden="true"
+    )
+      path(d="M12,21 L21,12 A2,2 45 0,0 14,5 L12,7 L10,5 A4,4 -45 0,0 3,12 Z")
 </template>
 
 <script>
@@ -53,24 +59,30 @@ export default {
 @import '../../../stylus/config/'
 
 .toggle-favorite
-  display block
-  padding .5rem
+  align-items center
+  // border-radius 50%
+  // color var(--header-color)
+  display flex
+  font-size em(12)
+  grid-area favorites
+  height controls-size
+  justify-content center
   position absolute
-  text-align center
-  width 3rem
+  width controls-size
 
-.toggle-favorite::before
-  icon()
-  height 2rem
-  line-height 2rem
+// TODO(#45): SVG icon styles.
+.toggle-favorite__icon
+  height rem(24)
+  width rem(24)
 
-.toggle-favorite::before
-  color var(--text-2-color)
-  content icon-heart-empty
+.toggle-favorite__icon > path
+  fill none
+  stroke var(--text-3-color)
+  stroke-width 2
 
-.toggle-favorite.saved::before
-  color var(--brand-color)
-  content icon-heart
+.toggle-favorite__icon.saved > path
+  fill var(--brand-color)
+  stroke var(--brand-color)
 
 .recipe .toggle-favorite
   right -.75rem
@@ -86,7 +98,6 @@ export default {
 [no-touch] .toggle-favorite
   &:hover
   &.saved:hover
-    &::before
-      color var(--brand-color)
+    color var(--brand-color)
 
 </style>

@@ -5,8 +5,12 @@
     title="Favorites"
     exact
   )
+    svg.favorites-counter__icon(
+      viewbox="0 0 24 24"
+      aria-hidden="true"
+    )
+      path(d="M12,21 L21,12 A2,2 45 0,0 14,5 L12,7 L10,5 A4,4 -45 0,0 3,12 Z")
     span.favorites-counter__count {{ favoritesCountLabel }}
-
 </template>
 
 <script>
@@ -63,10 +67,10 @@ export default {
 @import '../../../stylus/config/'
 
 .favorites-counter
-  link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
   typeface('sans')
   align-items center
   border-radius 50%
+  color var(--header-color)
   display flex
   font-size em(12)
   grid-area favorites
@@ -78,20 +82,12 @@ export default {
 .favorites-counter.updated
   animation bounce .3s ease-out
 
-.favorites-counter::after
-  icon(icon-heart)
-  font-size rem(16)
-
-.favorites-counter.empty::after
-  content icon-heart-empty
-
 .favorites-counter:active
   transform scale(.9)
   transition .3s ease
 
 .favorites-counter.current
   color var(--header-color)
-  cursor default
   pointer-events none
 
 [no-touch] .favorites-counter.current:hover
@@ -101,5 +97,15 @@ export default {
   right controls-size - rem(8)
   position absolute
   text-align right
+
+// TODO(#45): SVG icon styles.
+.favorites-counter__icon
+  height rem(24)
+  width rem(24)
+
+.favorites-counter__icon > path
+  fill var(--header-color)
+  stroke var(--header-color)
+  stroke-width 1.5
 
 </style>
