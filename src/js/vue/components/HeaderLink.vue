@@ -3,7 +3,7 @@
     :to="linkRoute"
     :title="linkLabel"
   )
-    svg.back-arrow(
+    svg.header__link__icon(
       v-if="hasIcon"
       viewbox="0 0 24 24"
       aria-hidden="true"
@@ -107,11 +107,11 @@ export default {
   transition color transition
   white-space nowrap
 
-.back-arrow
+.header__link__icon
   height rem(24)
   width rem(24)
 
-.back-arrow > polyline
+.header__link__icon > polyline
   fill none
   stroke currentColor
   stroke-width 3
