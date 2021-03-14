@@ -9,7 +9,7 @@
       viewbox="0 0 24 24"
       aria-hidden="true"
     )
-      path(d="M12,21 L21,12 A2,2 45 0,0 14,5 L12,7 L10,5 A4,4 -45 0,0 3,12 Z")
+      path(d="M12,21 L20,13 A2,2 45 0,0 14,6 L12,8 L10,6 A4,4 -45 0,0 4,13 Z")
     span.favorites-counter__count {{ favoritesCountLabel }}
 </template>
 
@@ -67,10 +67,10 @@ export default {
 @import '../../../stylus/config/'
 
 .favorites-counter
+  link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
   typeface('sans')
   align-items center
   border-radius 50%
-  color var(--header-color)
   display flex
   font-size em(12)
   grid-area favorites
@@ -94,6 +94,7 @@ export default {
   color var(--header-color)
 
 .favorites-counter__count
+  color inherit
   right controls-size - rem(8)
   position absolute
   text-align right
