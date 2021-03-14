@@ -68,6 +68,13 @@ export default {
   top 0
   width controls-size
 
+  &:focus path
+  [no-touch] &:hover path
+    stroke var(--brand-color)
+
+.recipe .toggle-favorite
+  right -.75rem
+
 .toggle-favorite__icon
   height rem(24)
   width rem(24)
@@ -75,18 +82,10 @@ export default {
 .toggle-favorite__icon > path
   fill none
   stroke var(--text-3-color)
-  stroke-width 2
+  stroke-width 1.5
 
 .toggle-favorite__icon.saved > path
   fill var(--brand-color)
   stroke var(--brand-color)
-
-.recipe .toggle-favorite
-  right -.75rem
-
-[no-touch] .toggle-favorite
-  &:hover
-  &.saved:hover
-    color var(--brand-color)
 
 </style>

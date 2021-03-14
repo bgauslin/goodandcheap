@@ -104,8 +104,11 @@ export default {
   width rem(24)
 
 .favorites-counter__icon > path
-  fill var(--header-color)
+  fill none
   stroke var(--header-color)
   stroke-width 1.5
+
+.favorites-counter.current path
+  fill var(--header-color)
 
 </style>
