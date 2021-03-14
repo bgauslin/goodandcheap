@@ -9,7 +9,7 @@
       viewbox="0 0 24 24"
       aria-hidden="true"
     )
-      path(d="M12,21 L20,13 A2,2 45 0,0 14,6 L12,8 L10,6 A4,4 -45 0,0 4,13 Z")
+      path(d="M12,21 L19,14 A1,1 45 0,0 14,8 L12,10 L10,8 A1,1 -45 0,0 5,14 Z")
     span.favorites-counter__count {{ favoritesCountLabel }}
 </template>
 
