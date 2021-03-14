@@ -86,6 +86,10 @@ export default {
 .preview__link--recipe
   padding-right 3rem
 
+.preview--recipe .remove-favorite
+  right 0
+  top rem(8)
+
 .preview__summary
   margin-right 0
 
