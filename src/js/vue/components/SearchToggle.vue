@@ -4,6 +4,16 @@
     :class="[ showSearch ? 'open' : 'closed' ]"
     aria-label="Search this site"
   )
+    svg.search-toggle__icon(
+      viewbox="0 0 24 24"
+      aria-hidden="true"
+    )
+      circle(
+        cx="12" cy="12" r="6"
+      )
+      line(
+        x1="16" y1="16" x2="21" y2="21"
+      )
 </template>
 
 <script>
@@ -91,8 +101,14 @@ export default {
     &:visited:hover
       opacity .7
 
-.search-toggle::before
-  icon(icon-search)
-  font-size em(16)
+.search-toggle__icon
+  height rem(24)
+  width rem(24)
+
+.search-toggle__icon > circle
+.search-toggle__icon > line
+  fill none
+  stroke white
+  stroke-width 2.5
 
 </style>
