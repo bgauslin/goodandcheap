@@ -8,15 +8,8 @@
       aria-hidden="true"
       aria-label="Remove Favorite"
     )
-      circle(
-        cx="12" cy="12" r="10"
-      )
-      line(
-        x1="8" y1="8" x2="16" y2="16"
-      )
-      line(
-        x1="8" y1="16" x2="16" y2="8"
-      )
+      circle(cx="12" cy="12" r="10")
+      path(d="M8,8 L16,16 M8,16 L16,8")
 </template>
 
 <script>
@@ -39,26 +32,28 @@ export default {
 @import '../../../stylus/config/'
 
 .remove-favorite
+  color var(--text-2-color)
   display block
   position absolute
   text-align center
-  width 3rem
+  width rem(48)
+
+.remove-favorite:active
+[no-touch] .remove-favorite:hover
+  color var(--brand-color)
 
 .remove-favorite__icon
   height rem(24)
   width rem(24)
 
 .remove-favorite__icon > circle
-  fill var(--text-3-color)
-  transition fill transition
-
-.remove-favorite__icon > line
-  stroke var(--background-1)
-  stroke-linecap round
+.remove-favorite__icon > path
+  fill none
+  stroke currentColor
   stroke-width 2
+  transition stroke transition
 
-.remove-favorite:active circle
-[no-touch] .remove-favorite:hover circle
-  fill var(--brand-color)
+.remove-favorite__icon > path
+  stroke-linecap round
 
 </style>
