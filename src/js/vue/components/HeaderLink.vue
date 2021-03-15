@@ -52,9 +52,9 @@ export default {
      * The route to go to when header link is clicked.
      * @return {Object}
      */
-    // TODO: Troubleshoot vue-router console warning.
     linkRoute() {
       switch (this.$route.name) {
+        case null:
         case 'chapter':
         case 'chapters':
         case 'favorites':
@@ -69,7 +69,7 @@ export default {
             params: {
               slug: this.parent.slug,
             },
-          };      
+          };
       }
     },
   }
