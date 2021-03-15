@@ -1,12 +1,11 @@
 <template lang="pug">
   button.remove-favorite(
     @click="removeFavorite(favorite)"
+    aria-label="Remove Favorite"
   )
     svg.remove-favorite__icon(
-      class="cancel-filled"
       viewbox="0 0 24 24"
       aria-hidden="true"
-      aria-label="Remove Favorite"
     )
       circle(cx="12" cy="12" r="10")
       path(d="M8,8 L16,16 M8,16 L16,8")

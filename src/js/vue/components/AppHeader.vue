@@ -1,19 +1,19 @@
 <template lang="pug">
   nav.header
     .header__frame
-      heading-nav
+      header-link
       //- search-bar
       favorites-counter
 </template>
 
 <script>
-import HeadingNav from './HeaderLink.vue';
+import HeaderLink from './HeaderLink.vue';
 import FavoritesCounter from './FavoritesCounter.vue';
 import SearchBar from './SearchBar.vue';
 
 export default {
   components: {
-    HeadingNav,
+    HeaderLink,
     FavoritesCounter,
     SearchBar,
   },
