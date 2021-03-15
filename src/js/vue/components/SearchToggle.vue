@@ -8,12 +8,8 @@
       viewbox="0 0 24 24"
       aria-hidden="true"
     )
-      circle(
-        cx="12" cy="12" r="6"
-      )
-      line(
-        x1="16" y1="16" x2="21" y2="21"
-      )
+      circle(cx="12" cy="12" r="6")
+      line(x1="16" y1="16" x2="21" y2="21")
 </template>
 
 <script>

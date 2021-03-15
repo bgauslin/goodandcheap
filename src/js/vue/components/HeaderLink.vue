@@ -8,7 +8,7 @@
       viewbox="0 0 24 24"
       aria-hidden="true"
     )
-      polyline(points="14,6 8,12 14,18")
+      path(d="M14,6 L8,12 L14,18")
     h1.header__link__label {{ linkLabel }}
 </template>
 
@@ -52,6 +52,7 @@ export default {
      * The route to go to when header link is clicked.
      * @return {Object}
      */
+    // TODO: Troubleshoot vue-router console warning.
     linkRoute() {
       switch (this.$route.name) {
         case 'chapter':
@@ -111,7 +112,7 @@ export default {
   height rem(24)
   width rem(24)
 
-.header__link__icon > polyline
+.header__link__icon > path
   fill none
   stroke currentColor
   stroke-width 3
