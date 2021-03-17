@@ -89,10 +89,10 @@ checkbox-size = rem(24)
   margin 0
 
 .checklist__label
-  align-items center
   cursor pointer
-  display inline-flex
-  padding rem(8) rem(4)
+  display inline-block
+  line-height 1
+  padding rem(8) rem(4) rem(8) rem(32)
   transition color transition
 
   &:focus
@@ -110,7 +110,7 @@ checkbox-size = rem(24)
 
 .checklist__icon
   height rem(24)
-  margin-right rem(8)
+  margin rem(-2) rem(8) 0 rem(-32)
   width rem(24)
 
 .checklist__icon--unchecked
