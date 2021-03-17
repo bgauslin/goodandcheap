@@ -80,7 +80,7 @@ export default {
 @import '../../../stylus/goodandcheap'
 
 .header__link
-  link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
+  link(var(--brand-color), var(--brand-color), var(--text-1-color), var(--brand-color))
   align-items center
   display inline-flex
   grid-area heading
@@ -92,6 +92,9 @@ export default {
   @media breakpoint.small
     margin-left 0
     width auto
+
+[no-touch] .header__link
+  transition color transition, transform transition
 
 .header__link:active
   transform scale(.9)
@@ -105,7 +108,6 @@ export default {
   margin 0
   overflow hidden
   text-overflow ellipsis
-  transition color transition
   white-space nowrap
 
 .header__link__icon
@@ -116,6 +118,5 @@ export default {
   fill none
   stroke currentColor
   stroke-width 3
-  transition all transition
 
 </style>

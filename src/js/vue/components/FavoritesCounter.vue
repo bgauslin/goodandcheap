@@ -67,7 +67,7 @@ export default {
 @import '../../../stylus/config/'
 
 .favorites-counter
-  link(var(--header-color), var(--header-color), var(--header-color), var(--header-color))
+  link(var(--brand-color), var(--brand-color), var(--text-1-color), var(--brand-color))
   typeface('sans')
   align-items center
   border-radius 50%
@@ -77,21 +77,25 @@ export default {
   height controls-size
   justify-content center
   position relative
+  transition transform transition
   width controls-size
 
-.favorites-counter.updated
-  animation bounce .3s ease-out
+[no-touch] .favorites-counter
+  transition color transition, transform transition
+
+.favorites-counter.current:focus
+[no-touch] .favorites-counter.current:hover
+  color var(--brand-color)
 
 .favorites-counter:active
   transform scale(.9)
-  transition .3s ease
 
 .favorites-counter.current
-  color var(--header-color)
+  color var(--brand-color)
   pointer-events none
 
-[no-touch] .favorites-counter.current:hover
-  color var(--header-color)
+.favorites-counter.updated
+  animation bounce .3s ease-out
 
 .favorites-counter__count
   color inherit
@@ -105,10 +109,10 @@ export default {
 
 .favorites-counter__icon > path
   fill none
-  stroke var(--header-color)
+  stroke currentColor
   stroke-width 1.5
 
 .favorites-counter.current path
-  fill var(--header-color)
+  fill var(--brand-color)
 
 </style>

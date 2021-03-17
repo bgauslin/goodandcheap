@@ -51,6 +51,9 @@ export default {
   padding .75em 1em
   text-align center
 
+[no-touch] .tabs__link
+  transition background transition, color transition
+
 .tabs__link.current
   cursor default
   elevation(0)

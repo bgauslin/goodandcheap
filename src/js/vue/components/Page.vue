@@ -129,6 +129,9 @@ export default {
 .page__copy a
   typeface('serif_bold')
 
+[no-touch] .page__copy a
+  transition color transition
+
 .page__list
   margin 1em 0
 

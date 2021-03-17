@@ -24,14 +24,19 @@ export default {
 @import '../../../stylus/config/'
 
 .header
-  elevation(2)
-  background var(--brand-color)
+  elevation(1)
+  background var(--header-background)
+  color var(--brand-color)
   grid-area header
   height var(--header-height)
   padding 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
   position sticky
   top 0
   z-index 2
+
+  @supports (backdrop-filter backdrop-effect)
+    backdrop-filter backdrop-effect
+    background var(--header-backdrop-background)
 
 .header__frame
   align-items center

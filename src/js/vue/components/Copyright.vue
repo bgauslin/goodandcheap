@@ -33,6 +33,9 @@ export default {
 .copyright > a
   margin-left rem(4)
 
+[no-touch] .copyright > a
+  transition color transition
+
 .copyright--page
   margin 1rem 0
 

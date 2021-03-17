@@ -84,7 +84,7 @@ export default {
 
 .search-toggle
   align-self stretch
-  color var(--header-color)
+  color var(--brand-color)
   margin 0
   opacity 1
   padding 0

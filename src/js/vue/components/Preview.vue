@@ -54,6 +54,9 @@ export default {
   align-items center
   display flex
 
+[no-touch] .preview__link
+  transition background transition, color transition
+
 .preview__summary
   flex 1 1
   margin 0 1rem 0 .5rem

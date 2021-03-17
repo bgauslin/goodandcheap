@@ -19,7 +19,6 @@ background-0 = gray-6
 background-1 = white
 background-2 = gray-5
 border-color = gray-4
-header-color = white
 text-1-color = black
 text-2-color = gray-3-dark
 text-3-color = gray-1
@@ -30,7 +29,6 @@ background-1-dark = gray-6-dark
 background-2-dark = gray-5-dark
 background-3-dark = gray-3-dark
 border-color-dark = gray-4-dark
-header-color-dark = black
 text-1-color-dark = gray-5
 text-2-color-dark = gray-2
 text-3-color-dark = gray-3-dark
@@ -47,6 +45,14 @@ checked-color-dark = #80c080
 
 // Blurry backgrounds.
 backdrop-effect = blur(10px)
+
+// Header background with no backdrop-filter support.
+header-background = rgba(white, .95)
+header-background-dark = rgba(black, .95)
+
+// Header background with blur effect.
+header-backdrop-background = rgba(white, .65)
+header-backdrop-background-dark = rgba(gray-6-dark, .65)
 
 // Gradient overlay for overflow content at large breakpoint.
 overflow-overlay-background = linear-gradient(to bottom, rgba(background-1, 0), background-1)
