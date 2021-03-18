@@ -107,6 +107,7 @@ checkbox-size = rem(24)
   height 0
   margin 0
   outline 0
+  width 0
 
 .checklist__icon
   height rem(24)
