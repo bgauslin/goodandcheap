@@ -112,7 +112,11 @@ export default {
 
 .header__link__icon
   height rem(24)
+  margin-left rem(-8)
   width rem(24)
+
+  @media breakpoint.small
+    margin-left rem(-24)
 
 .header__link__icon > path
   fill none
