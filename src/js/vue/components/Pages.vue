@@ -39,5 +39,4 @@ export default {
 .preview.preview--info
   border 0
 
-
 </style>

@@ -34,7 +34,6 @@ export default {
     margin 0 auto
     width content-width-xlarge
 
-
 .previews--chapters
   @extends $previews-grid
 
