@@ -1,15 +1,6 @@
 <template lang="pug">
   .mini-recipe
-    .mini-recipe__content
-      h4.mini-recipe__heading {{ miniRecipe.heading }}
-      .mini-recipe__blurb(
-        v-html="miniRecipe.blurb"
-      )
-      checklist(
-        :items="miniRecipe.ingredients"
-        :listIndex="miniRecipe.id"
-        :parentId="parentId"
-      )
+    h4.mini-recipe__heading {{ miniRecipe.heading }}
     figure.mini-recipe__photo(
       v-if="miniRecipe.photo"
     )
@@ -19,6 +10,14 @@
         :title="miniRecipe.photo.title"
         :width="miniRecipe.photo.width"
       )
+    .mini-recipe__blurb(
+      v-html="miniRecipe.blurb"
+    )
+    checklist.mini-recipe__checklist(
+      :items="miniRecipe.ingredients"
+      :listIndex="miniRecipe.id"
+      :parentId="parentId"
+    )
 </template>
 
 <script>
@@ -47,12 +46,22 @@ export default {
 @import '../../../stylus/config/'
 
 .mini-recipe
+  --photo-width 5rem
+
+  @media breakpoint.small
+    --photo-width 8rem
+
+.mini-recipe
   border-top 1px solid var(--border-color)
-  display flex
+  align-content start
+  display grid
+  grid-gap 0 1rem
+  grid-template-columns 1fr var(--photo-width)
   padding 1rem 0
 
-.mini-recipe__content
-  margin-right 1rem
+.mini-recipe__heading
+.mini-recipe__checklist
+  grid-column 1/3
 
 .mini-recipe__heading
   small_caps()
@@ -61,14 +70,12 @@ export default {
 
 .mini-recipe__blurb p
   typeface('serif')
+  grid-column 1
+  grid-row 2
   margin 0 0 1em
 
 .mini-recipe__photo
-  flex-shrink 0
-  margin-top 1.5rem
-  width 5rem
-
-  @media breakpoint.small
-    width 8rem
+  grid-column 2
+  grid-row 2
 
 </style>
