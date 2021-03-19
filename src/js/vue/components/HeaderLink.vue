@@ -85,13 +85,9 @@ export default {
   display inline-flex
   grid-area heading
   height var(--header-height)
-  margin-left var(--margin)
+  margin-left rem(12)
   transform-origin 0 50%
   transition transform transition
-
-  @media breakpoint.small
-    margin-left 0
-    width auto
 
 [no-touch] .header__link
   transition color transition, transform transition
@@ -114,9 +110,6 @@ export default {
   height rem(24)
   margin-left rem(-8)
   width rem(24)
-
-  @media breakpoint.small
-    margin-left rem(-24)
 
 .header__link__icon > path
   fill none
