@@ -40,7 +40,7 @@ export default {
 @import '../../../stylus/config/'
 
 .intro
-  margin 1rem 0 0
+  margin 1rem var(--recipe-padding-x) 0
 
 .blurb p
   typeface('serif')

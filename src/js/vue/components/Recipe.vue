@@ -167,12 +167,8 @@ export default {
 // Ensure overview panel is at least a square via 'min-height' when there's not
 // much content in the panel.
 .recipe__overview
-  align-content start
-  display grid
-  grid-template-columns:
-    \[full-start\] var(--recipe-padding-x) \
-    \[copy-start\] auto \[copy-end\] \
-    var(--recipe-padding-x) \[full-end\]
+  display flex
+  flex-direction column
   min-height 100vw
 
   @media breakpoint.medium
@@ -185,9 +181,6 @@ export default {
     overflow-y scroll
     position absolute
     width 50%
-
-.recipe__overview > *
-  grid-column copy
 
 .recipe__overview > *:last-child
   overflow visible
@@ -206,7 +199,7 @@ export default {
 
 .recipe__header
   margin .25rem 0 0
-  padding .75rem controls-size 0 0
+  padding .75rem controls-size 0 var(--recipe-padding-x)
   position relative
 
   @media breakpoint.small

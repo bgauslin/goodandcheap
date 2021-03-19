@@ -53,6 +53,9 @@ export default {
 <style lang="stylus">
 @import '../../../stylus/config/'
 
+.instructions
+  margin 0 var(--recipe-padding-x)
+
 .instructions__heading
   small_caps()
   typeface('sans_bold')

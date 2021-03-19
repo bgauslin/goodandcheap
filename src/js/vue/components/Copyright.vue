@@ -49,6 +49,7 @@ export default {
   text-align center
 
 .copyright--recipe
-  margin 3rem 0 1rem
+  margin auto 0 1rem
+  padding 3rem var(--recipe-padding-x) 0
 
 </style>

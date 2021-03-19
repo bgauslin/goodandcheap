@@ -51,7 +51,7 @@ export default {
 @import '../../../stylus/config/'
 
 .ingredients
-  margin 0
+  margin 0 var(--recipe-padding-x)
 
 .ingredients__heading
   small_caps()

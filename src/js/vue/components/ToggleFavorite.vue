@@ -72,8 +72,9 @@ export default {
   [no-touch] &:hover path
     stroke var(--brand-color)
 
-.recipe .toggle-favorite
-  right -.75rem
+@media breakpoint.large
+  .recipe .toggle-favorite
+    right .75rem
 
 .toggle-favorite__icon
   height rem(24)
