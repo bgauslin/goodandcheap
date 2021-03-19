@@ -223,13 +223,17 @@ export default {
   margin 1em .5rem 1em 0
 
 .tabs--recipe
-  background var(--background-1)
+  background var(--header-background)
   grid-column full
   margin 0
   padding .5rem var(--recipe-padding-x)
   position sticky
   top var(--header-height)
   z-index 1
+
+  @supports (backdrop-filter backdrop-effect)
+    backdrop-filter backdrop-effect
+    background var(--header-backdrop-background)
 
   @media breakpoint.large
     top 0
