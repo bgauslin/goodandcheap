@@ -84,6 +84,7 @@ export default {
 @import '../../../stylus/config/'
 
 .preview__link--recipe
+  border-radius 0
   padding-right 3rem
 
 .preview--recipe .remove-favorite

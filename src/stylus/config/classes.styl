@@ -31,6 +31,9 @@ $previews-grid
   display grid
   grid-gap var(--previews-gap)
   grid-template-columns repeat(var(--previews-columns, 1), 1fr)
+  
+  @media breakpoint.medium
+    padding 0 var(--previews-gap)
 
 $recipe-count
   small_caps()

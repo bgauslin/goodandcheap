@@ -33,9 +33,6 @@ export default {
 .previews--chapters
   @extends $previews-grid
 
-.preview.preview--chapter
-  border 0
-
 .recipe-count--preview
   @extends $recipe-count
   display inline-block

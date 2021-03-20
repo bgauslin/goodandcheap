@@ -52,6 +52,7 @@ export default {
   link(var(--text-1-color), var(--text-2-color), var(--text-1-color), var(--text-1-color))
   link_background(var(--background-1), var(--background-1), var(--background-2), var(--background-2))
   align-items center
+  border-radius var(--preview-border-radius, 0)
   display flex
 
 [no-touch] .preview__link
