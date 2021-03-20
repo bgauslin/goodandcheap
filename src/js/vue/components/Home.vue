@@ -54,11 +54,14 @@ export default {
 @import '../../../stylus/config/'
 
 .home
+  display flex
+  flex-direction column
   margin 0 auto
   width 100%
 
 .tabs.tabs--home
   max-width rem(480)
+  width 100%
 
   @media breakpoint.small
     margin 1rem auto
