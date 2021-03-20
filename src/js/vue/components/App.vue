@@ -154,13 +154,18 @@ export default {
     },
 
     /**
-     * Updates props and state if current route is 'favorites'.
+     * Updates props and state with manual values if current route is
+     * 'favorites', which does not have an API endpoint.
      */
     showFavorites() {
       if (this.$route.name === 'favorites') {
         this.content = 'favorites';
         this.key = 'favorites';
-        this.updateParent(null);
+        this.updateParent({
+          routeName: 'chapters',
+          slug: null,
+          title: 'Recipes',
+        }); 
         this.isLoading = false;
       }
     },

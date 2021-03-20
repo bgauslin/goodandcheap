@@ -48,8 +48,6 @@ export default {
       }
     },
 
-    // TODO(HeaderLink): Fix bug with undefined slug when leaving Favorites
-    // and going to a Recipe.
     /**
      * The route to go to when header link is clicked.
      * @return {Object}
