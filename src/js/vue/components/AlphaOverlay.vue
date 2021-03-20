@@ -12,7 +12,7 @@
     background var(--overflow-overlay-background)
     bottom 0
     display block
-    height 5rem
+    height overlay-height
     left 0
     position absolute
     right 0

@@ -58,9 +58,10 @@ export default {
   width 100%
 
 .tabs.tabs--home
+  max-width rem(480)
+
   @media breakpoint.small
     margin 1rem auto
-    width content-width-small
 
   @media breakpoint.medium
     margin 1.5rem auto

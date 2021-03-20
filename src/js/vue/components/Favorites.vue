@@ -73,11 +73,9 @@ export default {
 .favorites
   height 100%
   margin 0 auto
+  max-width stack-width
   position relative
   width 100%
-
-  @media breakpoint.medium
-    width content-width-medium
 
 .favorites .preview
   transition all .5s ease
@@ -109,7 +107,6 @@ export default {
 
   @media breakpoint.medium
     transform scale(.5) translateX(0)
-    width content-width-medium
 
 .favorites-move
   transition transform .3s

@@ -172,11 +172,11 @@ export default {
   min-height 100vw
 
   @media breakpoint.medium
-    min-height page-width-stacked
+    min-height stack-width
 
   @media breakpoint.large
     height 100%
-    min-height page-width-stacked - 4rem
+    min-height stack-width - overlay-height
     -webkit-overflow-scrolling touch
     overflow-y scroll
     position absolute
@@ -186,7 +186,7 @@ export default {
   overflow visible
 
   @media breakpoint.large
-    padding-bottom 5rem
+    padding-bottom overlay-height
 
 .recipe__overview h3
 .recipe__kind

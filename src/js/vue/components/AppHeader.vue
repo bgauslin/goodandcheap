@@ -45,7 +45,7 @@ export default {
   grid-template-columns minmax(0, auto) 1fr controls-size
   height 100%
   margin 0 auto
-  max-width content-width-xlarge + rem(12)
+  max-width content-max-width
   width 100%
 
 </style>

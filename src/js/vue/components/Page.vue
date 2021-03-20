@@ -97,17 +97,14 @@ export default {
 .page__content
   background-color var(--background-1)
   margin 0 auto
+  max-width rem(800)
   padding 1rem var(--margin)
-
-  @media breakpoint.small
-    margin 0 auto
 
   @media breakpoint.medium
     padding 2rem var(--margin)
 
   @media breakpoint.large
     padding 3rem 4rem
-    width page-width
 
 .page__title
   margin .5em 0 1em

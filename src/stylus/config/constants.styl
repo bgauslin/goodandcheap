@@ -65,28 +65,24 @@ overlay-shadow = 0 0 5px 0 gray-3
 overlay-shadow-dark = none
 
 // Dimensions.
-breakpoint-small-units = rem(480)
-breakpoint-medium-units = rem(768)
-breakpoint-large-units = rem(1024)
-breakpoint-xlarge-units = rem(1280)
 controls-size = rem(48)
+
 margin-base = rem(12)
 margin-small = rem(24)
 margin-medium = rem(36)
 margin-large = rem(48)
-page-width = rem(800)
-page-width-stacked = rem(560)
 
-// Calculated constants and breakpoints.
-content-width-small = breakpoint-small-units - (2 * margin-small)
-content-width-medium = breakpoint-medium-units - (2 * margin-medium)
-content-width-xlarge = breakpoint-xlarge-units - (2 * margin-large)
+overlay-height = 5rem //
 
+content-max-width = rem(1280)
+stack-width = rem(560)
+
+// Breakpoints.
 breakpoint = {
-  small: 'screen and (min-width: %s)' % breakpoint-small-units
-  medium: 'screen and (min-width: %s)' % breakpoint-medium-units
-  large: 'screen and (min-width: %s)' % breakpoint-large-units
-  xlarge: 'screen and (min-width: %s)' % breakpoint-xlarge-units
+  small: 'screen and (min-width: %s)' % stack-width
+  medium: 'screen and (min-width: %s)' % rem(768)
+  large: 'screen and (min-width: %s)' % rem(1024)
+  xlarge: 'screen and (min-width: %s)' % content-max-width
 }
 
 // Transitions and animations.

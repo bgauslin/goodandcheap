@@ -1,5 +1,5 @@
 $content-layout-parent
-  max-width content-width-xlarge
+  max-width content-max-width
   width 100%
   
   @media breakpoint.small
@@ -14,14 +14,12 @@ $content-layout-parent
 $content-layout-child
   background var(--background-1)
   margin 0 auto
+  max-width stack-width
   padding-bottom env(safe-area-inset-bottom)
 
   @media breakpoint.small
-    max-width page-width-stacked
-
-  @media breakpoint.medium
     max-width none
-    width page-width-stacked
+    width stack-width
 
   @media breakpoint.large
     overflow hidden

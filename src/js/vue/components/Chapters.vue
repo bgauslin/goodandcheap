@@ -27,12 +27,8 @@ export default {
 @import '../../../stylus/config/'
 
 .chapters
-  @media breakpoint.medium
-    margin 0 var(--margin)
-
-  @media breakpoint.xlarge
-    margin 0 auto
-    width content-width-xlarge
+  margin 0 auto
+  max-width content-max-width
 
 .previews--chapters
   @extends $previews-grid
