@@ -1,7 +1,6 @@
 <template lang="pug">
   .page(
-    :class="{ 'has-background' : hasBackgroundImage }"
-    :style="'background-image:' + backgroundImageCss"
+    :style="backgroundImage"
   )
     .page__content
       h1.page__title {{ content.title }}
@@ -39,42 +38,11 @@ export default {
     },
   },
 
-  data() {
-    return {
-      hasBackgroundImage: null,
-      backgroundImageCss: null,
-      backgroundImageOverlayCss: 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25))',
+  computed: {
+    backgroundImage() {
+      const overlay = 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25))';
+      return `background-image: ${overlay},url(${this.content.backgroundImage})`;
     }
-  },
-
-  created() {
-    this.setBackgroundImage();
-    window.addEventListener('resize', this.setBackgroundImage);
-  },
-
-  beforeDestroy() {
-    window.removeEventListener('resize', this.setBackgroundImage);
-  },
-
-  methods: {
-    /**
-     * Attaches a background image to an element via an inline  'style' tag
-     * based on media query breakpoint.
-     */
-    setBackgroundImage() {
-      const breakpointValue = window.getComputedStyle(document.body,'::after').getPropertyValue('content').replace(/\"/g, '');
-      
-      switch(breakpointValue) {
-        case 'large':
-        case 'xlarge':
-          this.backgroundImageCss = `${this.backgroundImageOverlayCss},url(${this.content.backgroundImage})`;
-          this.hasBackgroundImage = true;
-          break;
-        default:
-          this.backgroundImageCss = 'none';
-          this.hasBackgroundImage = false;
-      }
-    },
   },
 }
 </script>
@@ -83,15 +51,13 @@ export default {
 @import '../../../stylus/config/'
 
 .page
+  background scroll no-repeat center / cover
   width 100%
 
   @media breakpoint.large
     padding 3rem 0
 
-.page.has-background
-  background scroll no-repeat center / cover
-
-[no-touch] .page.has-background
+[no-touch] .page
   background-attachment fixed
 
 .page__content
