@@ -50,14 +50,12 @@ export default {
 
 .thumb
   background-color var(--background-1)
-  border-radius .25em
-  flex-shrink 0
-  height 5rem
+  flex 0 0 thumb-size
+  height thumb-size
   margin .5rem
-  width 5rem
 
 .thumb__image
   animation fadeIn .3s ease-out
-  border-radius .25em
+  border-radius 4px
 
 </style>

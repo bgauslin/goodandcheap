@@ -40,7 +40,7 @@ export default {
   margin 1rem 0
 
   @media breakpoint.large
-    margin-top 3rem
+    margin-top rem(48)
 
 .copyright--home
 .copyright--chapter
@@ -49,7 +49,7 @@ export default {
   text-align center
 
 .copyright--recipe
-  margin auto 0 1rem
+  margin auto 0 0
   padding 3rem var(--recipe-padding-x) 0
 
 </style>

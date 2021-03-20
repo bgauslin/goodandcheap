@@ -27,7 +27,7 @@ export default {
 @import '../../../stylus/config/'
 
 .tabs
-  margin 1rem var(--margin)
+  padding 1rem var(--margin)
 
 .tabs__list
   align-items center

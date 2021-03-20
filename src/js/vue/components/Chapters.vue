@@ -29,6 +29,7 @@ export default {
 .chapters
   margin 0 auto
   max-width content-max-width
+  width 100%
 
 .previews--chapters
   @extends $previews-grid

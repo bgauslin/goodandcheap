@@ -28,6 +28,7 @@ export default {
 .info
   margin 0 auto
   max-width content-max-width
+  width 100%
 
 .previews--info
   @extends $previews-grid
