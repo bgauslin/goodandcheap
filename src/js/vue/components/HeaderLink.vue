@@ -48,6 +48,8 @@ export default {
       }
     },
 
+    // TODO(HeaderLink): Fix bug with undefined slug when leaving Favorites
+    // and going to a Recipe.
     /**
      * The route to go to when header link is clicked.
      * @return {Object}
@@ -64,10 +66,11 @@ export default {
         case 'info':
           return {name: 'pages'};
         default:
-          const slug = this.parent.slug ? this.parent.slug : 'foo';
           return {
             name: this.parent.routeName,
-            params: {slug},
+            params: {
+              slug: this.parent.slug,
+            },
           };
       }
     },
