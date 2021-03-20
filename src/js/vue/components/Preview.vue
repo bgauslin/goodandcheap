@@ -61,10 +61,11 @@ export default {
 .preview__summary
   flex 1 1
   margin 0 1rem 0 .5rem
+  min-width 0
 
 .preview__heading
   typeface('serif_bold')
-  line-height 1.1
-  margin .2em 0
+  line-height 1.2
+  margin 0
 
 </style>

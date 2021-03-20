@@ -91,9 +91,6 @@ export default {
   right 0
   top rem(8)
 
-.preview__summary
-  margin-right 0
-
 .preview__chapter-title
   small_caps()
   typeface('sans')
@@ -110,7 +107,7 @@ export default {
   margin-top .2rem
 
 .preview__tagline
-  margin-right .4em
+  margin .2rem .4em 0 0
 
 .preview__index
   small_caps()
