@@ -80,18 +80,7 @@ export default {
   transition transform transition
   width controls-size
 
-[no-touch] .favorites-counter
-  transition color transition, transform transition
-
-.favorites-counter.current:focus
-[no-touch] .favorites-counter.current:hover
-  color var(--brand-color)
-
-.favorites-counter:active
-  transform scale(.9)
-
 .favorites-counter.current
-  color var(--brand-color)
   pointer-events none
 
 .favorites-counter.updated

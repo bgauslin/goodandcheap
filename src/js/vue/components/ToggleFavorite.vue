@@ -66,11 +66,15 @@ export default {
   position absolute
   right 0
   top 0
+  transition transform transition
   width controls-size
 
   &:focus path
   [no-touch] &:hover path
     stroke var(--brand-color)
+
+  &:active
+    transform scale(.8)
 
 @media breakpoint.large
   .recipe .toggle-favorite
@@ -82,7 +86,7 @@ export default {
 
 .toggle-favorite__icon > path
   fill none
-  stroke var(--text-3-color)
+  stroke var(--text-2-color)
   stroke-width 1.5
 
 .toggle-favorite__icon.saved > path
