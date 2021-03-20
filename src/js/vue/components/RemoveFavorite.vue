@@ -7,8 +7,8 @@
       viewbox="0 0 24 24"
       aria-hidden="true"
     )
-      circle(cx="12" cy="12" r="10")
-      path(d="M8,8 L16,16 M8,16 L16,8")
+      circle(cx="12" cy="12" r="9")
+      path(d="M9,9 l6,6 M9,15 l6,-6")
 </template>
 
 <script>
@@ -31,7 +31,7 @@ export default {
 @import '../../../stylus/config/'
 
 .remove-favorite
-  color var(--text-2-color)
+  color var(--text-3-color)
   display block
   position absolute
   text-align center
@@ -46,10 +46,13 @@ export default {
   width rem(24)
 
 .remove-favorite__icon > circle
+  fill currentColor
+  stroke none
+
 .remove-favorite__icon > path
   fill none
-  stroke currentColor
-  stroke-width 2
+  stroke var(--background-1)
+  stroke-width 1.5
   transition stroke transition
 
 .remove-favorite__icon > path
