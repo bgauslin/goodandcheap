@@ -64,11 +64,10 @@ export default {
         case 'info':
           return {name: 'pages'};
         default:
+          const slug = this.parent.slug ? this.parent.slug : 'foo';
           return {
             name: this.parent.routeName,
-            params: {
-              slug: this.parent.slug,
-            },
+            params: {slug},
           };
       }
     },
