@@ -1,0 +1,20 @@
+{
+  "title": "Fast Melon Sorbet",
+  "badge": "For Four",
+  "image": "fast-melon-sorbet",
+  "cost": [
+    "$2.40 Total",
+    "$0.60 / Serving"
+  ],
+  "overview": "<p>When you see lovely watermelons, honeydews, and cantaloupes on sale, buy them up. Eat half, then cube and freeze the other half. When you want a quick dessert or smoothie, pull out a bag of frozen melon and whip this up.</p><p>Add all the ingredients to a food processor or blender until just smooth. Don’t blend too much, or the sorbet will become oversoft. Serve immediately or stick it into the freezer to enjoy later.</p>",
+  "ingredients": [
+    {
+      "items": [
+        "2 cups frozen melon",
+        "½ cup plain yogurt",
+        "¼ cup sugar",
+        "1 tsp vanilla or lime juice (optional)"
+      ]
+    }
+  ]
+}

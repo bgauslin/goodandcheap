@@ -1,0 +1,30 @@
+{
+  "title": "Peanut Sauce",
+  "badge": "Makes One Cup",
+  "image": "peanut-sauce",
+  "cost": [
+    "$3 Total",
+    "$3 / Cup"
+  ],,
+  "ingredients": [
+    {
+      "items": [
+        "1 jalapeño or other chili, finely chopped (or 2 tbsp chili paste)",
+        "3 cloves garlic",
+        "1 shallot (or equivalent of any onion)",
+        "cooking oil",
+        "1 tsp turmeric (optional)",
+        "½ to 1 cup coconut milk",
+        "½ cup sugarless peanut butter",
+        "1 tbsp soy sauce",
+        "1 tbsp brown sugar (optional)",
+        "½ tsp sesame oil"
+      ]
+    }
+  ],
+  "steps": [
+      "Finely chop the pepper, garlic, and shallot, or use a food processor to make them into a paste. (If you’re using chili paste instead of a fresh pepper, hold off on it for now.)",
+      "Splash some oil in a saucepan on medium heat. Once it’s warm, add the chili, garlic, and shallot and sauté until everything’s translucent. Add the turmeric, coconut milk, and chili paste if applicable.",
+      "Let it come to a boil, then turn the heat down. Add the peanut butter and soy sauce and stir to combine. Once it’s all combined, taste it and add whatever you think it needs—but think about the salt and spice in particular."
+  ]
+}

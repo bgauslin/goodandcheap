@@ -1,0 +1,40 @@
+{
+  "title": "Kale Salad",
+  "badge": "For Two, or Four as a Side",
+  "image": "kale-salad",
+  "cost": [
+    "$4.50 Total",
+    "$2.25 / Serving"
+  ],
+  "overview": "<p>This kale is treated like romaine lettuce in a Caesar salad. The bitterness of the greens is delicious alongside the rich, fatty dressing. You could also use Swiss chard. If you’re worried about the raw egg yolk in the dressing, feel free to omit it.</p>",
+  "ingredients": [
+    {
+      "items": [
+        "1 large bunch kale",
+        "2 cups bread cubes",
+        "2 tbsp butter (more as needed)",
+        "salt and pepper",
+        "Romano or Parmesan, freshly grated"
+      ]
+    },
+    {
+      "label": "Dressing",
+      "items": [
+        "1 egg yolk, raw, from a high-quality fresh egg",
+        "2 tsp lemon juice",
+        "2 tsp Dijon mustard",
+        "1 clove garlic, finely grated (optional)",
+        "1 anchovy, finely chopped (optional)",
+        "3 tbsp olive oil",
+        "salt and pepper"
+      ]
+    }
+  ],
+  "steps": [
+      "Start by making croutons.",
+      "To make the dressing, drop the egg yolk into a large mixing bowl. Add the lemon juice, mustard, garlic, and anchovy. Whisk briskly until the dressing is light and frothy. Slowly add the olive oil, whisking the whole time. Once everything is incorporated, add the salt and pepper, then adjust to your taste. I like it very lemony.",
+      "Cut the kale leaves to remove the large stem from the center. (Lacinato kale, sometimes called Tuscan kale, has the easiest stems to remove.) Slice the leaves in half lengthwise, then cut into thin ribbons. Chopping the kale into small pieces disguises its tough texture.",
+      "Toss the kale in the bowl to coat it with dressing. Set aside for 10 minutes or leave in the fridge for a few hours. The kale will become tender as it marinates.",
+      "Before serving, toss in the croutons and top with Romano cheese."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Handheld",
+  "content": "<p>Sometimes you just don’t want to deal with plates and cutlery. Plus, eating with your hands is fun! These recipes are great for lunch, dinner, or for a casual party.</p>",
+  "image": "handheld",
+  "recipes": [
+    {
+      "title": "Cauliflower Tacos",
+      "chapter": "handheld",
+      "slug": "cauliflower-tacos",
+      "image": "cauliflower-tacos"
+    },
+    {
+      "title": "Potato Leek Pizza",
+      "chapter": "handheld",
+      "slug": "potato-leek-pizza",
+      "image": "potato-leek-pizza"
+    },
+    {
+      "title": "Broccoli Rabe and Mozzarella Calzones",
+      "chapter": "handheld",
+      "slug": "broccoli-rabe-and-mozzarella-calzones",
+      "image": "broccoli-rabe-and-mozzarella-calzones"
+    },
+    {
+      "title": "Broccoli, Egg, and Cheddar Empanadas",
+      "chapter": "handheld",
+      "slug": "broccoli-egg-and-cheddar-empanadas",
+      "image": "broccoli-egg-and-cheddar-empanadas"
+    },
+    {
+      "title": "Potato and Kale Rolls with Raita",
+      "chapter": "handheld",
+      "slug": "potato-and-kale-rolls-with-raita",
+      "image": "potato-and-kale-rolls-with-raita"
+    },
+    {
+      "title": "Leftovers",
+      "chapter": "handheld",
+      "slug": "leftovers",
+      "image": "leftovers"
+    }
+  ]
+}

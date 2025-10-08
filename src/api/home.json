@@ -1,0 +1,91 @@
+{
+  "chapters": [
+    {
+      "title": "Breakfast",
+      "image": "breakfast",
+      "slug": "breakfast"
+    },
+    {
+      "title": "Soup",
+      "image": "soup",
+      "slug": "soup"
+    },
+    {
+      "title": "Salad",
+      "image": "salad",
+      "slug": "salad"
+    },
+    {
+      "title": "Snacks, Sides &amp; Small Bites",
+      "image": "snacks-sides-small-bites",
+      "slug": "snacks-sides-and-small-bites"
+    },
+    {
+      "title": "Handheld",
+      "image": "handheld",
+      "slug": "handheld"
+    },
+    {
+      "title": "Dinner",
+      "image": "dinner",
+      "slug": "dinner"
+    },
+    {
+      "title": "Big Batch",
+      "image": "big-batch",
+      "slug": "big-batch"
+    },
+    {
+      "title": "Staples",
+      "image": "staples",
+      "slug": "staples"
+    },
+    {
+      "title": "Drinks",
+      "image": "drinks",
+      "slug": "drinks"
+    },
+    {
+      "title": "Desserts",
+      "image": "desserts",
+      "slug": "desserts"
+    },
+    {
+      "title": "Flavor",
+      "image": "flavor",
+      "slug": "flavor"
+    }
+  ],
+  "pages": [
+    {
+      "title": "Introduction",
+      "image": "blueberries",
+      "slug": "introduction"
+    },
+    {
+      "title": "A Note on $4/Day",
+      "image": "shells",
+      "slug": "a-note-on-4-day"
+    },
+    {
+      "title": "My Philosophy",
+      "image": "black-beans-2",
+      "slug": "my-philosophy"
+    },
+    {
+      "title": "About this Book",
+      "image": "corn-stalks-2",
+      "slug": "about-this-book"
+    },
+    {
+      "title": "Tips for Eating and Shopping Well",
+      "image": "salsa-1",
+      "slug": "tips-for-eating-and-shopping-well"
+    },
+    {
+      "title": "Pantry Basics",
+      "image": "cans-2",
+      "slug": "pantry-basics"
+    }
+  ]
+}

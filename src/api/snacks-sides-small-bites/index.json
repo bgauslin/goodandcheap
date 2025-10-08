@@ -1,0 +1,67 @@
+{
+  "title": "Snacks, Sides &amp; Small Bites",
+  "content": "<p>When cooking on a budget, snacks are often the first thing you shave away. If you’re creative, though, you can make plenty of cheap, healthy and delightful snacks to enjoy in all seasons and on any occasion. (And remember, leftovers make great snacks, too!)</p>",
+  "image": "snacks-sides-small-bites",
+  "recipes": [
+    {
+      "title": "Jacket Sweet Potato",
+      "chapter": "snacks-sides-small-bites",
+      "slug": "jacket-sweet-potato",
+      "image": "jacket-sweet-potato"
+    },
+    {
+      "title": "Smoky and Spicy Roasted Cauliflower",
+      "chapter": "snacks-sides-small-bites",
+      "slug": "smoky-and-spicy-roasted-cauliflower",
+      "image": "smoky-and-spicy-roasted-cauliflower"
+    },
+    {
+      "title": "Spicy Green Beans",
+      "chapter": "snacks-sides-small-bites",
+      "slug": "spicy-green-beans",
+      "image": "spicy-green-beans"
+    },
+    {
+      "title": "Mexican Street Corn",
+      "chapter": "snacks-sides-small-bites",
+      "slug": "mexican-street-corn",
+      "image": "mexican-street-corn"
+    },
+    {
+      "title": "Green Chili and Cheddar Quesadillas",
+      "chapter": "snacks-sides-small-bites",
+      "slug": "green-chili-and-cheddar-quesadillas",
+      "image": "green-chili-and-cheddar-quesadillas"
+    },
+    {
+      "title": "Cornmeal Crusted Veggies",
+      "chapter": "snacks-sides-small-bites",
+      "slug": "cornmeal-crusted-veggies",
+      "image": "cornmeal-crusted-veggies"
+    },
+    {
+      "title": "Brussels Sprout Hash and Eggs",
+      "chapter": "snacks-sides-small-bites",
+      "slug": "brussels-sprout-hash-and-eggs",
+      "image": "brussels-sprout-hash-and-eggs"
+    },
+    {
+      "title": "Poutine",
+      "chapter": "snacks-sides-small-bites",
+      "slug": "poutine",
+      "image": "poutine"
+    },
+    {
+      "title": "Things On Toast",
+      "chapter": "snacks-sides-small-bites",
+      "slug": "things-on-toast",
+      "image": "toast"
+    },
+    {
+      "title": "Popcorn",
+      "chapter": "snacks-sides-small-bites",
+      "slug": "popcorn",
+      "image": ""
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "title": "Salad",
+  "content": "<p>There isn’t much to a great salad: just fresh vegetables, anything crunchy, and one or two rich ingredients like cheese, nuts, a buttery crouton, or a creamy dressing. The dressing should be well seasoned with salt and have a nice hit of vinegar or citrus to bring out the other flavors. Don’t bother with store-bought dressing. It usually tastes lousy and is full of cheap oils and chemicals; you can make better and cheaper dressing at home with just a few pantry items. Salad shouldn’t be a side dish you grudgingly serve as an afterthought. Make it a meal you look forward to by building it around your favorite flavors.</p>",
+  "image": "salad",
+  "recipes": [
+    {
+      "title": "Broiled Eggplant Salad",
+      "chapter": "salad",
+      "slug": "broiled-eggplant-salad",
+      "image": "broiled-eggplant-salad"
+    },
+    {
+      "title": "Kale Salad",
+      "chapter": "salad",
+      "slug": "kale-salad",
+      "image": "kale-salad"
+    },
+    {
+      "title": "Ever-Popular Potato Salad",
+      "chapter": "salad",
+      "slug": "ever-popular-potato-salad",
+      "image": "ever-popular-potato-salad"
+    },
+    {
+      "title": "Spicy Panzanella",
+      "chapter": "salad",
+      "slug": "spicy-panzanella",
+      "image": "spicy-panzanella"
+    },
+    {
+      "title": "Cold (and Spicy?) Asian Noodles",
+      "chapter": "salad",
+      "slug": "cold-and-spicy-asian-noodles",
+      "image": "cold-and-spicy-asian-noodles"
+    },
+    {
+      "title": "Taco Salad",
+      "chapter": "salad",
+      "slug": "taco-salad",
+      "image": "taco-salad"
+    },
+    {
+      "title": "Beet and Chickpea Salad",
+      "chapter": "salad",
+      "slug": "beet-and-chickpea-salad",
+      "image": "beet-and-chickpea-salad"
+    },
+    {
+      "title": "Broccoli Apple Salad",
+      "chapter": "salad",
+      "slug": "broccoli-apple-salad",
+      "image": "broccoli-apple-salad"
+    },
+    {
+      "title": "Charred Summer Salad",
+      "chapter": "salad",
+      "slug": "charred-summer-salad",
+      "image": "charred-summer-salad"
+    }
+  ]
+}

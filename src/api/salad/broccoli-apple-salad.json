@@ -1,0 +1,43 @@
+{
+  "title": "Broccoli Apple Salad",
+  "badge": "For Four",
+  "image": "broccoli-apple-salad",
+  "cost": [
+    "$3.20 Total",
+    "$0.80 / Serving"
+  ],
+  "overview": "<p>The bitterness of broccoli is delicious next to the sweet tartness of apples. Plenty of crunch, too!</p>",
+  "ingredients": [
+    {
+      "items": [
+        "1 large crown and stem of broccoli",
+        "2 apples"
+      ]
+    },
+    {
+      "label": "Dressing",
+      "items": [
+        "1 lemon, juiced",
+        "1 tbsp olive oil",
+        "salt and pepper"
+      ]
+    },
+    {
+      "label": "Alternate Dressing",
+      "items": [
+        "1 tbsp yogurt",
+        "1 tsp olive oil",
+        "1 tsp lemon juice",
+        "1 tsp fresh dill, chopped",
+        "salt and pepper"
+      ]
+    }
+  ],
+  "steps": [
+      "Slice the stem of the broccoli into ⅛&quot; discs. If you can’t get them that thin, don’t worry, but the thinner the better if you have the patience! Once you reach the crown of the broccoli, cut each of the florets off and slice each of them as thinly as you can as well. Set the broccoli in a bowl.",
+      "Halve and core the apples, then place the apples flat side down on your cutting board to make them easier to slice. Slice the apples into ⅛&quot; pieces as well, then dump them into the same bowl.",
+      "Choose either of the dressing options and prepare it by simply mixing the ingredients together in a small bowl. Taste it and season with more salt and pepper to match your preferences.",
+      "Pour the dressing over the bowl of vegetables and mix it all together.",
+      "If you put a plate in the fridge for 10 minutes before serving the salad, it’ll stay crisp slightly longer. For the best presentation, pile the salad as high and tight as you can manage."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Poutine",
+  "badge": "For Four",
+  "image": "poutine",
+  "cost": [
+    "$7 Total",
+    "$1.75 / Serving"
+  ],
+  "overview": "<p>Poutine isn’t an everyday meal, but it’s a favorite. Since I don’t like deep-frying at home, I bake the fries; they still get crispy without the fuss of frying.</p><p>Montreal-style poutine is made with vegetable gravy, as in this recipe, but you can also make your favorite beef or turkey gravy.</p><p>Of course, proper poutine uses cheese curds, and if you can find them do use those, but fresh mozzarella works for me. It has the same spongy quality, just maybe with a little less squeak. This recipe does comes out a little more expensive than you would think because of the fresh mozzarella. If you use less or skip the cheese entirely, you can cut the price in half.</p>",
+  "ingredients": [
+    {
+      "items": [
+        "2-3 medium Russet potatoes, sliced into sticks",
+        "2 tbsp vegetable oil",
+        "salt and pepper",
+        "scallions, chopped",
+        "6 oz fresh mozzarella, diced"
+      ]
+    },
+    {
+      "label": "Gravy",
+      "items": [
+        "2 tbsp butter",
+        "1 shallot or 3 scallions, finely chopped",
+        "3 cloves garlic, finely chopped",
+        "2 tbsp all-purpose flour",
+        "1½ cups vegetable broth",
+        "1 tsp soy sauce",
+        "½ tsp cayenne pepper",
+        "salt and pepper",
+        "6 leaves fresh sage, finely chopped (optional)"
+      ]
+    }
+  ],
+  "steps": [
+      "Set the oven to 400°F.",
+      "Pour 1 tablespoon of vegetable oil onto a baking sheet. Spread the oil around, then spread out the sticks of sliced potato. Pour the rest of the oil over the top and sprinkle generously with salt and pepper. Use your hands to ensure the potatoes are coated with oil, salt, and pepper, and evenly spread across the pan. Place them in the oven and bake for 20 minutes.",
+      "Meanwhile, prepare the gravy. Melt the butter in a saucepan on medium heat. Add the shallot and garlic. Let them cook for 2 minutes until translucent, but not brown. Add the flour and quickly stir with a spoon. Add a little broth if gets too clumpy.",
+      "Let the mixture cook until it turns light brown. Add the vegetable broth, soy sauce, and cayenne pepper. Bring the gravy to a boil, then turn down the heat and let it cook for about 5 minutes, stirring occasionally. Taste it, adding salt and pepper as needed. Turn down the heat to very low, just enough to keep the gravy warm until the fries come out of the oven.",
+      "Dice the mozzarella.",
+      "After the fries have baked for 20 minutes, remove them from the oven. Lift them with a spatula and test their tenderness with a fork. If it goes through easily, the fries are ready. If you want them a little more crispy, flip them over and put them back in the over for a few more minutes.",
+      "Once they’re done, pile one layer of fries onto a plate. Top with cheese and then the hot gravy. Repeat with a second layer before sprinkling with scallions and more freshly ground black pepper."
+  ]
+}

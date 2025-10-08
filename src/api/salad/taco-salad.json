@@ -1,0 +1,45 @@
+{
+  "title": "Taco Salad",
+  "badge": "For Two",
+  "image": "taco-salad",
+  "cost": [
+    "$5.20 Total",
+    "$2.60 / Serving"
+  ],
+  "overview": "<p>This salad is a great use for leftover beans (or pulled pork)—crunchy, fresh, yet satisfying enough to be a whole meal. I like to make taco salad in a week where I’ve made a large batch of beans and I’m craving something fresh.</p>",
+  "ingredients": [
+    {
+      "items": [
+        "4 cups lettuce, chopped",
+        "1 cup beans, pulled pork, or ground beef",
+        "2 small tomatoes, chopped",
+        "½ cup corn, canned or fresh",
+        "2-3 scallions, finely chopped",
+        "1 cup tortilla chips, roughly crushed",
+        "sharp cheddar or queso fresco, for sprinkling"
+      ]
+    },
+    {
+      "label": "Dressing",
+      "items": [
+        "¼ cup sour cream or yogurt",
+        "juice of one lime",
+        "salt and pepper"
+      ]
+    },
+    {
+      "label": "Additions",
+      "items": [
+        "cucumber",
+        "jalapeño",
+        "bell peppers",
+        "grated carrots",
+        "salsa"
+      ]
+    }
+  ],
+  "steps": [
+      "Mix up the dressing and taste it. Adjust the salt, pepper, and lime to your liking.",
+      "Mix the other ingredients in a large bowl. Pour the dressing over just before serving and toss to coat the salad evenly. Eat immediately, maybe with a few extra tortilla chips on the side."
+  ]
+}
