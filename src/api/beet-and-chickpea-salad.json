@@ -1,0 +1,34 @@
+{
+  "chapter": "salad",
+  "title": "Beet and Chickpea Salad",
+  "badge": "For Two",
+  "image": "beet-and-chickpea-salad",
+  "cost": [
+    "$3.50 Total",
+    "$1.75 / Serving"
+  ],
+  "overview": "<p>This dish is spicy, crunchy, and almost certainly the pinkest salad you’ll ever eat! Don’t be scared.</p>",
+  "ingredients": [
+    {
+      "items": [
+        "2 to 3 beets, peeled and grated",
+        "1 cup chickpeas, cooked or canned",
+        "3 tbsp peanuts"
+      ]
+    },
+    {
+      "label": "Dressing",
+      "items": [
+        "1 tbsp lime juice",
+        "1 tsp chili sauce",
+        "1 tbsp olive oil",
+        "salt and pepper"
+      ]
+    }
+  ],
+  "steps": [
+      "Peel the raw beets, removing the stems if necessary, then shred the beets with a box grater. Place the beets in a bowl along with the chickpeas and nuts.",
+      "Mix up the dressing ingredients in another small bowl and stir to combine. Taste and adjust the salt and pepper to your liking.",
+      "Add the dressing to the other bowl and mix up all the ingredients. Let it sit for about 5 minutes so that the flavors can soak into the vegetables and the beet juices can mingle with the dressing."
+  ]
+}

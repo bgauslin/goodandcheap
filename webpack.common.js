@@ -17,6 +17,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: 'src/root' },
+        { from: 'src/api', to: 'api' },
       ],
     }),
     new FontPreloadPlugin({

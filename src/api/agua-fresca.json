@@ -1,0 +1,39 @@
+{
+  "chapter": "drinks",
+  "title": "Agua Fresca",
+  "badge": "Serves Four to Six",
+  "image": "agua-fresca",
+  "overview": "<p>Refreshing and hydrating, these beautiful drinks are great at a party, and they can help you use up any fruit that you won’t be able to eat before it goes off. This is certainly not the master recipe, just a good starting point.</p><p>For a very lightly flavored agua fresca, just mix the water and fruit together. Done! Obviously, if you want more fruit flavor, then use less water; if you want less flavor, then use more water.</p><p>I usually run my agua fresca through the blender, however. If you want the drink to be clear, strain the pulpy leftovers of the fruit after blending. If you’re using blueberries or oranges or other fruit with a skin, you’ll almost certainly want to strain it.</p><p>For some fruits, you can also choose to leave the pulp: it’s particularly great when making a melon agua fresca since it mostly disappears.</p><p>Serve over ice. Try some of the variations I’ve suggested or whatever fruits you like!</p>",
+  "ingredients": [
+    {
+      "items": [
+        "2 cups fruit, chopped",
+        "4 cups water"
+      ]
+    },
+    {
+      "label": "Additions",
+      "items": [
+        "1 tsp vanilla",
+        "squeeze of lemon or lime juice",
+        "sugar",
+        "mint leaves",
+        "other herb leaves"
+      ]
+    },
+    {
+      "label": "Variations",
+      "items": [
+        "blueberry and lemon",
+        "cucumber and lemon",
+        "mango and lime",
+        "melon",
+        "orange",
+        "papaya",
+        "peach and vanilla",
+        "pineapple",
+        "strawberry and mint"
+      ]
+    }
+  ]
+}

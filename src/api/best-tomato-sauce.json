@@ -1,0 +1,27 @@
+{
+  "chapter": "staples",
+  "title": "Best Tomato Sauce",
+  "badge": "Makes Three and a Half Cups",
+  "image": "best-tomato-sauce",
+  "cost": [
+    "$3.50 Total",
+    "$1 / Cup"
+  ],
+  "overview": "<p>There are many ways to make tomato sauce. I don’t find that the more complex recipes taste any better; this one is boldly tomatoey and works on just about anything. It also takes 5 minutes to make. Can’t beat that.</p>",
+  "ingredients": [
+    {
+      "items": [
+        "1 tbsp olive oil",
+        "3 cloves garlic, finely chopped",
+        "½ tsp chili flakes",
+        "28 oz can tomatoes, crushed or diced",
+        "½ lemon, zested (optional)",
+        "salt and pepper"
+      ]
+    }
+  ],
+  "steps": [
+      "Add the olive oil to a saucepan on medium heat. Sauté the garlic for 1 minute, until it smells great and becomes translucent. Add the chili flakes and cook for 30 seconds. Add the can of tomatoes, mix, and cook until warmed through. Add a little lemon zest, then salt and pepper to taste. Since canned tomatoes are often already salted, you may not need to add any.",
+      "If you want a thicker sauce that will stick to pasta better, cook for 10 to 20 minutes to evaporate more of the liquid. Use immediately or keep in a jar in the fridge for later use."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "chapter": "desserts",
+  "title": "Avocado Milkshake",
+  "badge": "For Two",
+  "image": "avocado-milkshake",
+  "cost": [
+    "$2.30 Total",
+    "$1.15 / Serving"
+  ],
+  "overview": "<p>John, the reader who introduced me to the silky magic of this milkshake, lives in California, where avocados are often less than a dollar. If you can find a similar deal, whip up a batch of these! If your avocado isn’t quite ripe, a bit more lime juice will bring out the flavor.</p>",
+  "ingredients": [
+    {
+      "items": [
+        "1 avocado",
+        "2 cups milk",
+        "1 tsp vanilla",
+        "1 tbsp lime juice",
+        "1 pinch salt",
+        "2 tbsp sugar"
+      ]
+    }
+  ],
+  "steps": [
+      "Toss all the ingredients in a blender and whizz them up! Let it go for a while because the avocados need to break down and blend with the milk. Once the liquid is Kermit the Frog green, it’s ready. Taste it and add more sugar or lime juice as needed.",
+      "These shakes are even better if you use “coconut milk beverage,” almond milk, or rice milk instead of regular milk. Each adds a little of its own flavor to the drink."
+  ]
+}

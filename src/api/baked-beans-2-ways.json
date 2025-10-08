@@ -1,0 +1,58 @@
+{
+  "chapter": "dinner",
+  "title": "Baked Beans 2 Ways",
+  "badge": "For Two, or Four as a Side",
+  "image": "baked-beans",
+  "cost": [
+    "$3 Total",
+    "$1.50 / Serving"
+  ],
+  "overview": "<p>My dad loves beans in basically any form. This is his formula for the quickest, easiest way to get beans on his plate without missing out on great flavor. Dad’s beans rely on a can of baked beans as the base, while my version uses dried beans you might have left over from another meal. Mine requires a little more cooking and chopping to create the sauce, but comes out even less expensive because of the dried beans. They both taste great, so go with what works best for you: super quick and cheap, or quick and cheaper.</p>",
+  "ingredients": [
+    {
+      "label": "My Dad’s Baked Beans",
+      "items": [
+        "2 cans (27 oz) baked beans",
+        "2 tbsp mustard",
+        "2 tbsp molasses or brown sugar",
+        "2 tsp chipotle en adobo, or any chili sauce"
+      ]
+    },
+    {
+      "label": "My Baked Beans",
+      "items": [
+        "3 cups dried pinto, red, or black beans, cooked",
+        "½ cup canned tomatoes, puréed or chopped, with juice",
+        "¼ onion, finely chopped",
+        "2 tbsp mustard",
+        "2 tbsp molasses or brown sugar",
+        "2 tsp chipotle en adobo, or any chili sauce"
+      ]
+    },
+    {
+      "label": "Variations",
+      "items": [
+        "spicy mustard",
+        "no chipotle"
+      ]
+    },
+    {
+      "label": "Toppings",
+      "items": [
+        "salsa",
+        "scallions",
+        "fresh cilantro",
+        "avocado",
+        "tomato",
+        "crumbled bacon",
+        "chunks of ham"
+      ]
+    }
+  ],
+  "steps": [
+      "If you’re using the chipotle en adobo, chop it finely to be sure the spice will be evenly distributed.",
+      "For my dad’s recipe, Mix all the ingredients into a pot and heat on the stove until the beans are warmed through. Give it a stir and serve. Or do it all in the microwave—works just as well!",
+      "For my recipe, cook everything in a pot on medium heat for approximately 5 minutes, or until the juices thicken. That’s it!",
+      "Serve with rice, or just in a bowl. For an English-style breakfast, try spreading the beans over toast. Or throw them into a burrito, or scramble them with eggs, or stir-fry with onions and bell pepper."
+  ]
+}

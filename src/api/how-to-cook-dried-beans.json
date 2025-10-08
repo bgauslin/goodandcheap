@@ -1,0 +1,30 @@
+{
+  "chapter": "staples",
+  "title": "How to Cook Dried Beans",
+  "badge": "Method",
+  "image": "how-to-cook-dried-beans",
+  "overview": "<p>TODO(layout): No content section.</p>",
+  "ingredients": [
+    {
+      "label": "Additions While Cooking",
+      "items": [
+        "a bay leaf",
+        "a bouquet garni of favourite",
+        "tough herbs",
+        "dried herbs and spices",
+        "onion",
+        "garlic",
+        "chilies",
+        "ginger root"
+      ]
+    }
+  ],
+  "steps": [
+      "The best way to prepare dried beans is to soak them overnight. The next day, drain the water and rinse thoroughly before cooking in fresh water.",
+      "If you didn’t have the foresight to soak the beans ahead of time, you can make up for it. Cover the beans with water, then bring them to a boil in a large pot. After 10 minutes, take them off the heat and drain them. Proceed with the next step.",
+      "Cover the drained beans with fresh water in a large pot. Bring to a boil on medium heat, then turn down the heat so that the beans boil gently. Put a lid on the pot, but leave it askew so the water doesn’t boil over. Check on the beans every half hour or so, making sure to keep them covered with water if it boils away.",
+      "Beans take vastly different lengths of time to become tender. The older and bigger they are, the longer they take to cook. Very old, very large beans can take as long as four hours.",
+      "If you are making refried beans or beans for a soup or stew, don’t worry about overcooking them; it’s fine if they’re mushy. If you want to maintain their shape and integrity, however, monitor them closely once they’re getting close to done.",
+      "Once the beans are tender, you can drain them or leave them wet, depending on what you’re using them for. Add salt to taste—they will need a fair bit!"
+  ]
+}
