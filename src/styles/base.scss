@@ -1,0 +1,77 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Carmina Bold';
+  src: url('../fonts/CarminaBT-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Carmina Light';
+  src: url('../fonts/CarminaBT-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Futura Bold';
+  src: url('../fonts/Futura-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Futura Book';
+  src: url('../fonts/Futura-Book.woff2') format('woff2');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+body {
+  background-color: var(--fill-0);
+  block-size: 100dvh;
+  color: var(--text-color);
+  display: grid;
+  font-family: 'Avenir Variable', sans-serif;
+  font-variation-settings: 'wght' 500;
+  margin: 0;
+  overflow: hidden;
+  place-content: center; 
+}
+
+noscript {
+  padding: 1.5em;
+  text-align: center;
+}
+
+a {
+  color: var(--link-color);
+  outline: none;
+  text-decoration: none;
+
+  &:visited {
+    color: var(--link-visited-color);
+  }
+  
+  &:focus-visible {
+    color: var(--link-focus-color);
+  }
+  
+  &:active {
+    color: var(--link-active-color, var(--link-focus-color));
+  }
+  
+  @media (any-hover: hover) {
+    & {
+      transition: color var(--transition);
+    }
+  
+    &:hover {
+      color: var(--link-focus-color);
+    }
+  }
+}
