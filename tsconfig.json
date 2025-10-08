@@ -14,5 +14,6 @@
   "files": [
     "src/js/index.ts",
     "src/js/components/app/app.ts",
+    "src/js/components/recipe/recipe.ts",
   ]
 }

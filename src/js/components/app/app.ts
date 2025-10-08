@@ -23,6 +23,8 @@ class App extends LitElement {
   }
 
   protected render() {
-    return html``;
+    return html`
+      <goodandcheap-recipe></goodandcheap-recipe>
+    `;
   }
 }
