@@ -8,9 +8,6 @@ interface page {
   image: string,
 }
 
-/**
- * Web component for a page.
- */
 @customElement('gc-page')
 class Page extends LitElement {
   @property() page: string;

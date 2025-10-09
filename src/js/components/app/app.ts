@@ -1,9 +1,6 @@
 import {LitElement, html} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 
-/**
- * Web component for Good And Cheap app.
- */
 @customElement('gc-app')
 class App extends LitElement {
   private clickHandler: EventListenerObject;

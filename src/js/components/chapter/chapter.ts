@@ -14,9 +14,6 @@ interface chapter {
   }[],
 }
 
-/**
- * Web component for a chapter of recipes.
- */
 @customElement('gc-chapter')
 class Chapter extends LitElement {
   @property() chapter: string;

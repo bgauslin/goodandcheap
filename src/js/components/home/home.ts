@@ -13,9 +13,6 @@ interface home {
   pages: item[],
 }
 
-/**
- * Web component for the home page.
- */
 @customElement('gc-home')
 class Home extends LitElement {
   @state() data: home;
@@ -73,7 +70,4 @@ class Home extends LitElement {
       </ul>
     `;
   }
-
-
-
 }

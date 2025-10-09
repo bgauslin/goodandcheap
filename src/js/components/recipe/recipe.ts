@@ -15,9 +15,6 @@ interface recipe {
   steps?: string[],
 }
 
-/**
- * Web component for a recipe.
- */
 @customElement('gc-recipe')
 class Recipe extends LitElement {
   @property() recipe: string;
@@ -61,7 +58,7 @@ class Recipe extends LitElement {
   protected render() {
     if (!this.data) return;
 
-    const {badge, cost, image, ingredients, overview, steps, title} = this.data;
+    const {badge, cost, ingredients, overview, steps, title} = this.data;
 
     const cost_ = cost ? cost.map(item => html`<p>${item}</p>`) : nothing;
 
@@ -69,23 +66,36 @@ class Recipe extends LitElement {
         ingredients.map(group => {
           const {label, items} = group;
           return html`
-            <h4>${label}</h4>
+            <h3>${label}</h3>
             <ul>
               ${items.map(item => html`<li>${item}</li>`)}
             </ul>
           `;
-        }) : nothing;
+        }) :
+        nothing;
 
     const steps_ = steps ?
-        html`<ol>${steps.map(step => html`<li>${step}</li>`)}</ol>` : nothing;
+        html`<ol>${steps.map(step => html`<li>${step}</li>`)}</ol>` :
+        nothing;
 
     return html`
-      <h2>${title}</h2>
-      <div class="badge">${badge}</div>
-      ${cost_}
-      ${unsafeHTML(overview)}
-      ${ingredients_}
-      ${steps_}
+      <section class="cover">
+        <h1>${title}</h1>
+        <div class="badge">${badge}</div>
+        ${cost_}
+      </section>
+      <section class="overview">
+        <h2>Overview</h2>
+        ${unsafeHTML(overview)}
+      </section>
+      <section class="ingredients">
+        <h2>Ingredients</h2>
+        ${ingredients_}
+      </section>
+      <section class="steps">
+        <h2>Steps</h2>
+        ${steps_}
+      </section>
     `;
   }
 }
