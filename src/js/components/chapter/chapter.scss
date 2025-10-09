@@ -1,0 +1,8 @@
+gc-chapter a > * {
+  pointer-events: none;
+}
+
+gc-chapter :is(ul, ol) {
+  list-style: none;
+  padding: 0;
+}

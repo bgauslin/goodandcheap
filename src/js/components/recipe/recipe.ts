@@ -18,8 +18,8 @@ interface recipe {
 /**
  * Web component for a recipe.
  */
-@customElement('goodandcheap-recipe')
-class App extends LitElement {
+@customElement('gc-recipe')
+class Recipe extends LitElement {
   @property() recipe: string;
   @state() endpoint: string;
   @state() data: recipe;
@@ -82,7 +82,6 @@ class App extends LitElement {
     return html`
       <h2>${title}</h2>
       <div class="badge">${badge}</div>
-      <img src="${image}" alt="">
       ${cost_}
       ${unsafeHTML(overview)}
       ${ingredients_}
