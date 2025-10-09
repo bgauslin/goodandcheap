@@ -2,6 +2,7 @@ import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, property, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
+
 interface page {
   content: string,
   image: string,
@@ -11,7 +12,6 @@ interface page {
 @customElement('gc-page')
 class Page extends LitElement {
   @property() page: string;
-  @state() endpoint: string;
   @state() data: page;
 
   constructor() {
@@ -32,15 +32,13 @@ class Page extends LitElement {
 
   protected willUpdate(changedProperties: PropertyValues<this>) {
     if (changedProperties.has('page')) {
-      this.fetchPage();
+      this.fetchData();
     }
   }
 
-  private async fetchPage(): Promise<any> {
-    this.endpoint = `/api/${this.page}.json`;
-
+  private async fetchData(): Promise<any> {
     try {
-      const response = await fetch(this.endpoint);
+      const response = await fetch(`/api/${this.page}.json`);
       this.data = await response.json();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
@@ -52,7 +50,6 @@ class Page extends LitElement {
     if (!this.data) return;
 
     const {title, content} = this.data;
-
     return html`
       <h1>${title}</h1>
       ${unsafeHTML(content)}

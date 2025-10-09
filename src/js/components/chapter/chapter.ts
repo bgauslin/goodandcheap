@@ -2,6 +2,7 @@ import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, property, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
+
 interface chapter {
   content: string,
   image: string,
@@ -17,7 +18,6 @@ interface chapter {
 @customElement('gc-chapter')
 class Chapter extends LitElement {
   @property() chapter: string;
-  @state() endpoint: string;
   @state() data: chapter;
 
   constructor() {
@@ -38,15 +38,13 @@ class Chapter extends LitElement {
 
   protected willUpdate(changedProperties: PropertyValues<this>) {
     if (changedProperties.has('chapter')) {
-      this.fetchChapter();
+      this.fetchData();
     }
   }
 
-  private async fetchChapter(): Promise<any> {
-    this.endpoint = `/api/${this.chapter}.json`;
-
+  private async fetchData(): Promise<any> {
     try {
-      const response = await fetch(this.endpoint);
+      const response = await fetch(`/api/${this.chapter}.json`);
       this.data = await response.json();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');

@@ -2,6 +2,7 @@ import {LitElement, html, nothing, PropertyValues} from 'lit';
 import {customElement, property, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
+
 interface recipe {
   badge: string,
   cost?: {
@@ -22,9 +23,7 @@ interface recipe {
 @customElement('gc-recipe')
 class Recipe extends LitElement {
   @property() recipe: string;
-
   @state() data: recipe;
-  @state() endpoint: string;
 
   constructor() {
     super();
@@ -44,15 +43,13 @@ class Recipe extends LitElement {
 
   protected willUpdate(changedProperties: PropertyValues<this>) {
     if (changedProperties.has('recipe')) {
-      this.fetchRecipe();
+      this.fetchData();
     }
   }
 
-  private async fetchRecipe(): Promise<any> {
-    this.endpoint = `/api/${this.recipe}.json`;
-
+  private async fetchData(): Promise<any> {
     try {
-      const response = await fetch(this.endpoint);
+      const response = await fetch(`/api/${this.recipe}.json`);
       this.data = await response.json();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');

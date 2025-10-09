@@ -1,6 +1,6 @@
-
 import {LitElement, html} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
+
 
 interface item {
   image: string,
@@ -47,10 +47,11 @@ class Home extends LitElement {
   protected render() {
     if (!this.data) return;
 
-    const {chapters} = this.data;
+    const {chapters, pages} = this.data;
 
     return html`
-      ${this.renderList('Chapters', chapters, 'chapter')}      
+      ${this.renderList('Chapters', chapters, 'chapter')}  
+      ${this.renderList('Pages', pages, 'page')}      
     `;
   }
 

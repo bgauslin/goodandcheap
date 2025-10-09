@@ -1,5 +1,6 @@
-import {LitElement, html, PropertyValues} from 'lit';
+import {LitElement, html} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
+
 
 interface allData {
   chapters: string[];
@@ -12,8 +13,6 @@ class App extends LitElement {
   private clickHandler: EventListenerObject;
   private popstateHandler: EventListenerObject;
 
-  @state() allChapters: string[];
-  @state() allPages: string[];
   @state() chapter: string;
   @state() context: string = 'home';
   @state() data: allData;
@@ -31,7 +30,7 @@ class App extends LitElement {
     super.connectedCallback();
     this.addEventListener('click', this.clickHandler);
     window.addEventListener('popstate', this.popstateHandler);
-    this.fetchInfo();
+    this.fetchData();
   }
 
   disconnectedCallback() {
@@ -44,7 +43,7 @@ class App extends LitElement {
     return this;
   }
 
-  private async fetchInfo() {
+  private async fetchData() {
     try {
       const response = await fetch('/api/all.json');
       this.data = await response.json();
@@ -117,7 +116,6 @@ class App extends LitElement {
     if (context) {
       path = `${this.root}/${context}/${slug}`;
     }
-    
     history.pushState(null, '', path);
   }
 
