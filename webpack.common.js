@@ -39,27 +39,6 @@ module.exports = {
         use: 'ts-loader',
       },
       {
-        // Encapsulated shadow DOM styles in web components.
-        test: /\.scss$/,
-        include: [
-          path.resolve(__dirname, 'src/js/components')
-        ],
-        use: [
-          'lit-css-loader',
-          'postcss-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              api: 'modern',
-              sassOptions: {
-                outputStyle: 'compressed',
-              },
-            },
-          },
-        ],
-      },
-      {
-        // App shell styles and custom properties.
         test: /\.scss$/,
         include: [
           path.resolve(__dirname, 'src/styles')
