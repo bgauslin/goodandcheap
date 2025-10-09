@@ -65,10 +65,13 @@ class Chapter extends LitElement {
       <img src="${image}" alt="">
       <ul>
       ${recipes.map(recipe => {
-        const {title, slug} = recipe;
+        const {image, slug, title} = recipe;
         return html`
           <li>
-            <a href="${slug}" data-type="recipe">${title}</a>
+            <a href="${slug}" data-type="recipe">
+              <img src="/images/${image}@thumb.webp" alt="">
+              ${title}
+            </a>
           </li>
         `;
       })}

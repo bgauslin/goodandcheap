@@ -18,6 +18,7 @@ module.exports = {
       patterns: [
         { from: 'src/root' },
         { from: 'src/api', to: 'api' },
+        { from: 'src/images', to: 'images' },
       ],
     }),
     new FontPreloadPlugin({

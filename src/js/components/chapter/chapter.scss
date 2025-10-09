@@ -1,5 +1,15 @@
+gc-chapter a {
+  display: block;
+}
+
 gc-chapter a > * {
   pointer-events: none;
+}
+
+gc-chapter a > img {
+  aspect-ratio: 1;
+  block-size: 7rem;
+  object-fit: cover;
 }
 
 gc-chapter :is(ul, ol) {

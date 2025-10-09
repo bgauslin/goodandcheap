@@ -1,3 +1,13 @@
+gc-home a {
+  display: block;
+}
+
+gc-home a > img {
+  aspect-ratio: 1;
+  block-size: 7rem;
+  object-fit: cover;
+}
+
 gc-home a > * {
   pointer-events: none;
 }

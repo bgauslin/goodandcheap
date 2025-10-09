@@ -60,10 +60,13 @@ class Home extends LitElement {
       <h2>${heading}</h2>
       <ul>
       ${items.map(item => {
-        const {slug, title} = item;
+        const {image, slug, title} = item;
         return html`
           <li>
-            <a href="${slug}" data-type="${type}">${title}</a>
+            <a href="${slug}" data-type="${type}">
+              <img src="/images/${image}@thumb.webp" alt="">
+              ${title}
+            </a>
           </li>
         `;
       })}

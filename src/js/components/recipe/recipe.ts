@@ -62,7 +62,7 @@ class Recipe extends LitElement {
   protected render() {
     if (!this.data) return;
 
-    const {badge, cost, ingredients, overview, steps, title} = this.data;
+    const {badge, cost, image, ingredients, overview, steps, title} = this.data;
 
     const cost_ = cost ?
       html`
@@ -112,6 +112,7 @@ class Recipe extends LitElement {
         <h1>${title}</h1>
         <div class="badge">${badge}</div>
         ${cost_}
+        <img src="/images/${image}@large.webp" alt="">
       </section>
       ${overview_}
       ${ingredients_}
