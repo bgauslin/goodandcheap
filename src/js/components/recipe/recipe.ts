@@ -70,7 +70,6 @@ class Recipe extends LitElement {
 
     const overview_ = overview ? html`
       <section class="overview">
-        <h2>Overview</h2>
         ${unsafeHTML(overview)}
       </section>` : nothing;
 

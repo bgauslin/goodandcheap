@@ -2,15 +2,15 @@ import {LitElement, html} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 
 
+interface home {
+  chapters: item[],
+  pages: item[],
+}
+
 interface item {
   image: string,
   slug: string,
   title: string,
-}
-
-interface home {
-  chapters: item[],
-  pages: item[],
 }
 
 @customElement('gc-home')
