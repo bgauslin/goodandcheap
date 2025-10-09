@@ -3,10 +3,11 @@
   "title": "Broiled Eggplant Salad",
   "badge": "For Two",
   "image": "broiled-eggplant-salad",
-  "cost": [
-    "$4.50 Total",
-    "$2.25 / Serving"
-  ],
+  "cost": {
+    "total": "$4.50",
+    "each": "$2.25",
+    "units": "Serving"
+  },
   "overview": "<p>Even if you aren’t a big eggplant fan, you might enjoy this despite yourself. Broiled eggplant has a crunchy and meaty texture, and the tahini dressing makes the salad rich and creamy.</p>",
   "ingredients": [
     {

@@ -3,10 +3,11 @@
   "title": "Deconstructed Cabbage Rolls",
   "badge": "For Six",
   "image": "deconstructed-cabbage-rolls",
-  "cost": [
-    "$9.00 Total",
-    "$1.50 / Serving"
-  ],
+  "cost": {
+    "total": "$9",
+    "each": "$1.50",
+    "units": "Serving"
+  },
   "overview": "<p>Casseroles are a great way to stretch your cooking-without-a-recipe muscles. As one reader, Carolie, reminded me, they require little prep time, yield many meals, and the leftovers are easy to store. Casseroles also let you easily tailor an existing recipe to your own tastes.</p><p>So here’s my adaptation of one of Carolie’s favorite casseroles, itself a play on cabbage rolls, a traditional Eastern European dish that is delicious but labor-intensive. This version is a good way to use up leftover rice or grains and lentils, including leftover rainbow rice.</p>",
   "ingredients": [
     {

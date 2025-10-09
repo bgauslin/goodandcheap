@@ -3,10 +3,11 @@
   "title": "Spicy, Crunchy, Creamy Polenta",
   "badge": "For Two",
   "image": "spicy-crunchy-creamy-polenta",
-  "cost": [
-    "$3.50 Total",
-    "$1.75 / Serving"
-  ],
+  "cost": {
+    "total": "$3.50",
+    "each": "$1.75",
+    "units": "Serving"
+  },
   "overview": "<p>Polenta plus vegetable plus egg equals satisfying and delicious. You can also add a can of corn to the polenta for deep, rich, corny flavor. Or go a little different by adding frozen peas, scallions, olives, or (my favorite) green chilies to the polenta. Or skip the Romano and add ¼ cup of grated cheddar to the polenta.</p>",
   "ingredients": [
     {

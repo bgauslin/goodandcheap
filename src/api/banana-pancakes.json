@@ -3,10 +3,11 @@
   "title": "Banana Pancakes",
   "badge": "Makes Ten to Fourteen Pancakes",
   "image": "banana-pancakes",
-  "cost": [
-    "$2.80 Total",
-    "$0.70 / Serving"
-  ],
+  "cost": {
+    "total": "$2.80",
+    "each": "$0.70",
+    "units": "Serving"
+  },
   "overview": "<p>With the creamy texture and delicious flavor of bananas, these pancakes are stunningly good. You will be seriously popular if you feed these to your family or friends. Another plus: this is a great way to get rid of mushy bananas (that doesn’t involve making banana bread).</p>",
   "ingredients": [
     {

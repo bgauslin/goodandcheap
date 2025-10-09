@@ -3,10 +3,11 @@
   "title": "Whole-Wheat Jalapeño Cheddar Scones",
   "badge": "Makes Six",
   "image": "whole-wheat-jalapeno-cheddar-scones",
-  "cost": [
-    "$4.50 Total",
-    "$0.75 / Scone"
-  ],
+  "cost": {
+    "total": "$4.50",
+    "each": "$0.75",
+    "units": "Scone"
+  },
   "overview": "<p>These are delicious for breakfast or with a plate of beans, a pile of vegetables, or alongside a chili or stew. Spicy, cheesy, flaky—these are best eaten straight out of the oven.</p>",
   "ingredients": [
     {

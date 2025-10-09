@@ -3,10 +3,11 @@
   "title": "Omelette",
   "badge": "For Two",
   "image": "omelette",
-  "cost": [
-    "$1.60 Total",
-    "$0.80 / Serving"
-  ],
+  "cost": {
+    "total": "$1.60",
+    "each": "$0.80",
+    "units": "Serving"
+  },
   "overview": "<p>I make this omelette at least once a week. It’s insanely delicious, whether laden with veggies or kept simple. I love it with dill, but it’s good with almost any herb or scallions. Once you are a pro at making this, add any other cooked veggies you have around.</p>",
   "ingredients": [
     {

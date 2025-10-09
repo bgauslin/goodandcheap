@@ -3,10 +3,11 @@
   "title": "Spicy Panzanella",
   "badge": "For Four",
   "image": "spicy-panzanella",
-  "cost": [
-    "$5.20 Total",
-    "$1.30 / Serving"
-  ],
+  "cost": {
+    "total": "$5.20",
+    "each": "$1.30",
+    "units": "Serving"
+  },
   "overview": "<p>A former classmate, George, likes salads with a little kick. (As you can maybe tell, I do too!) For inspiration, I turned to panzanella, a classic Italian bread-and-tomato salad. The Italians are true masters of making leftovers delicious. Here, old hard bread soaks up tomato juice and dressing for a super flavorful and filling salad. You can toss in any vegetable or fruit so long as it’s juicy. Bell peppers or carrots won’t work so well, but peaches, grapes, and zucchini all do. If you don’t like spicy salads as much as George and I do, feel free to replace the jalapeño with garlic or shallot.</p>",
   "ingredients": [
     {

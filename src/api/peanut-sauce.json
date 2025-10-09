@@ -3,10 +3,11 @@
   "title": "Peanut Sauce",
   "badge": "Makes One Cup",
   "image": "peanut-sauce",
-  "cost": [
-    "$3 Total",
-    "$3 / Cup"
-  ],,
+  "cost": {
+    "total": "$3",
+    "each": "$3",
+    "units": "Cup"
+  },
   "ingredients": [
     {
       "items": [

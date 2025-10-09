@@ -3,10 +3,11 @@
   "title": "Ever-Popular Potato Salad",
   "badge": "For Four",
   "image": "ever-popular-potato-salad",
-  "cost": [
-    "$3.00 Total",
-    "$0.75 / Serving"
-  ],
+  "cost": {
+    "total": "$3",
+    "each": "$0.75",
+    "units": "Serving"
+  },
   "overview": "<p>I developed this salad because I’m not a big fan of mayonnaise-based potato salads. This is really the simplest thing: just potatoes in a regular vinaigrette. You can add all kinds of extras to it to make it more festive, but people always rave about the salad as is. The secret is that potatoes actually have really nice flavor—all you have to do is season them properly. Let potatoes be potatoes, no need to hide ’em!</p><p>If you have leftover roasted potatoes or other root vegetables, the same idea works great. Just skip the cooking part and go straight to the dressing.</p>",
   "ingredients": [
     {

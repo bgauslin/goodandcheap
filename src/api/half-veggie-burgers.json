@@ -3,10 +3,11 @@
   "title": "Half-Veggie Burgers",
   "badge": "For Eight",
   "image": "half-veggie-burgers",
-  "cost": [
-    "$7.20 Total",
-    "$0.90 / Serving"
-  ],
+  "cost": {
+    "total": "$7.20",
+    "each": "$0.90",
+    "units": "Serving"
+  },
   "overview": "<p>When a reader named Quinn suggested a recipe that used both lentils and meat, I started thinking about how veggie burgers and beef burgers each have their own strengths. Why not combine the two ideas to create a burger with meaty flavor but the lean protein and low cost of lentils? And so I offer you the half-veggie burger. May it rest a little lighter in your belly.</p>",
   "ingredients": [
     {

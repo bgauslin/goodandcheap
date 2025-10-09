@@ -3,10 +3,11 @@
   "title": "Taco Salad",
   "badge": "For Two",
   "image": "taco-salad",
-  "cost": [
-    "$5.20 Total",
-    "$2.60 / Serving"
-  ],
+  "cost": {
+    "total": "$5.20",
+    "each": "$2.60",
+    "units": "Serving"
+  },
   "overview": "<p>This salad is a great use for leftover beans (or pulled pork)—crunchy, fresh, yet satisfying enough to be a whole meal. I like to make taco salad in a week where I’ve made a large batch of beans and I’m craving something fresh.</p>",
   "ingredients": [
     {

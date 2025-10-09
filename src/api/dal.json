@@ -3,10 +3,11 @@
   "title": "Dal",
   "badge": "For Four",
   "image": "dal",
-  "cost": [
-    "$2.40 Total",
-    "$0.60 / Serving"
-  ],
+  "cost": {
+    "total": "$2.40",
+    "each": "$0.60",
+    "units": "Serving"
+  },
   "overview": "<p>This thick lentil soup is a flavor-packed staple of the Indian table. There are a ton of ways to prepare dal, but the core—beyond the lentils themselves—is usually ginger, garlic, and chili, along with some dry spices.</p>",
   "ingredients": [
     {

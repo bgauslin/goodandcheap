@@ -3,10 +3,11 @@
   "title": "Beef Stroganoff",
   "badge": "For Six",
   "image": "beef-stroganoff",
-  "cost": [
-    "$16.50 Total",
-    "$2.75 / Serving"
-  ],
+  "cost": {
+    "total": "$16.50",
+    "each": "$2.75",
+    "units": "Serving"
+  },
   "overview": "<p>Beef stroganoff is one of my husband’s favorites, so I make it as a treat for him—and one of my early readers, Dave, says his mother made it for him growing up. It’s a classic winter meal from Eastern Europe that warms up a cold house and fills the air with rich aroma. You can use any cut of beef; just adjust the cooking time based on the toughness. Dave’s mom made it with red pepper instead of carrot, so feel free to do the same if you can get red peppers at a good price.</p>",
   "ingredients": [
     {

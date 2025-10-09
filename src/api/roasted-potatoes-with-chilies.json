@@ -3,10 +3,11 @@
   "title": "Roasted Potatoes with Chilies",
   "badge": "For Four",
   "image": "roasted-potatoes-with-chilies-1",
-  "cost": [
-    "$3 Total",
-    "$0.75 / Serving"
-  ],
+  "cost": {
+    "total": "$3",
+    "each": "$0.75",
+    "units": "Serving"
+  },
   "overview": "<p>It doesn’t get much simpler or more satisfying than this. You can use any pepper you like—from large, dark poblanos, to Hungarian wax chilies, to bell peppers.</p>",
   "ingredients": [
     {

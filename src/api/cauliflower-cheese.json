@@ -3,10 +3,11 @@
   "title": "Cauliflower Cheese",
   "badge": "For Four",
   "image": "cauliflower-cheese",
-  "cost": [
-    "$6.60 Total",
-    "$1.65 / Serving"
-  ],
+  "cost": {
+    "total": "$6.60",
+    "each": "$1.65",
+    "units": "Serving"
+  },
   "overview": "<p>This is a classic side dish in Great Britain: creamy, cheesy sauce over cauliflower, baked in the oven until the edges get crunchy and bubbly. It’s like a healthier and more flavorful version of macaroni and cheese. Alternatively, try this with broccoli or cooked winter squash—everyone will love it.</p>",
   "ingredients": [
     {

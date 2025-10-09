@@ -3,10 +3,11 @@
   "title": "Roast Chicken",
   "badge": "For Six",
   "image": "roast-chicken",
-  "cost": [
-    "$8-$15 Total",
-    "$1.50-$2.75 / Serving"
-  ],
+  "cost": {
+    "total": "$8-15",
+    "each": "$1.50-2.75",
+    "units": "Serving"
+  },
   "overview": "<p>A whole chicken is usually less expensive than buying single pieces like breasts or thighs—plus you can make stock later from the bones and any meat too difficult to get off. The leftovers can be used in sandwiches, tacos, over a salad, or tossed with sauce and mixed into pasta. This is a base recipe: add spices to the butter or sprinkle over the surface of the chicken to change up the flavor in any way you like.</p>",
   "ingredients": [
     {

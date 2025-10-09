@@ -3,10 +3,11 @@
   "title": "Chocolate Zucchini Muffins",
   "badge": "Makes Twenty-four Small Muffins",
   "image": "chocolate-zucchini-muffins",
-  "cost": [
-    "$4.80 Total",
-    "$0.20 / Muffin"
-  ],
+  "cost": {
+    "total": "$4.80",
+    "each": "$0.20",
+    "units": "Muffin"
+  },
   "overview": "<p>When my friend Michael challenged me to create a recipe that used dark chocolate, I got a little worried: dark chocolate is expensive!</p><p>But then I remembered that cocoa powder is deeply, darkly chocolaty, without the expense. I thought of the chocolate zucchini cake my mother made when I was growing up and knew I had something.</p><p>This is a great breakfast treat that uses staples you should generally have on hand like flour, oats, and yogurt. The yogurt and zucchini make these muffins super moist and yummy, but still a reasonably nutritious (if slightly sugary) choice for breakfast.</p><p>Make these in mid-summer, during the height of zucchini season, when larger zucchini are really cheap. Big zucchini are generally a bit woodier, but they’re still great for baking.</p>",
   "ingredients": [
     {

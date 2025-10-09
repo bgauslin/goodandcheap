@@ -3,10 +3,11 @@
   "title": "Peach Coffee Cake",
   "badge": "For Twelve",
   "image": "peach-coffee-cake",
-  "cost": [
-    "$9 Total",
-    "$0.75 / Serving"
-  ],
+  "cost": {
+    "total": "$9",
+    "each": "$0.75",
+    "units": "Serving"
+  },
   "overview": "<p>This is adapted from the apple cake often served during Rosh Hashanah. It’s simple and wonderful for dessert, with tea, or as a sweet breakfast. The juicy peaches add a ton of flavor to this simple cake. If you buy peaches in season, the cost can be quite reasonable.</p>",
   "ingredients": [
     {

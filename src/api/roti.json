@@ -3,10 +3,11 @@
   "title": "Roti",
   "badge": "Makes Sixteen",
   "image": "roti",
-  "cost": [
-    "$0.50 Total",
-    "$0.03 / Roti"
-  ],
+  "cost": {
+    "total": "$0.50",
+    "each": "$0.03",
+    "units": "Roti"
+  },
   "overview": "<p>These are a staple flatbread in many parts of India. They’re quick to make and very tasty when fresh. Enjoy them with a curried filling, dip them in soups or stews, or fill them with eggs at breakfast.</p>",
   "ingredients": [
     {

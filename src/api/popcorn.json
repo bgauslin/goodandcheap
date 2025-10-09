@@ -3,10 +3,11 @@
   "title": "Popcorn",
   "badge": "Ideas",
   "image": "",
-  "cost": [
-    "$1 Total",
-    "$0.25 / Serving"
-  ],
+  "cost": {
+    "total": "$1",
+    "each": "$0.25",
+    "units": "Serving"
+  },
   "overview": "<p>Popcorn is such a great snack. It’s easy to forget how easy and cheap it is to prepare at home. Try some different toppings!</p><ul><li>Scallion and cilantro</li><li>Turmeric and coriander</li><li>Spice oil</li><li>Parm and black pepper</li><li>Cayenne and smoked paprika</li><li>Brown sugar and orange zest</li><li>Chili powder and lime</li><li>Parm and oregano</li></ul><p>TODO(layout): Images for each listed variant.</p>",
   "ingredients": [
     {

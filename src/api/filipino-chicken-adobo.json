@@ -3,10 +3,11 @@
   "title": "Filipino Chicken Adobo",
   "badge": "For Eight",
   "image": "filipino-chicken-adobo",
-  "cost": [
-    "$10.40 Total",
-    "$1.30 / Serving"
-  ],
+  "cost": {
+    "total": "$10.40",
+    "each": "$1.30",
+    "units": "Serving"
+  },
   "overview": "<p>This ultra-adaptable recipe comes to us care of Tony Pangilinan, who grew up on food stamps after his family immigrated from the Philippines “with nothing but four suitcases and a lot of dreams.” After several decades of struggling to achieve those dreams, Tony can now help support family members who remain in poverty in the Philippines. Despite their hard circumstances, he notes that his relatives “still feel blessed.”</p><p>Filipino adobo—very different from Spanish adobo—is basically anything cooked in vinegar, soy sauce, and garlic. Although this version is chicken, you can use any meat or vegetables you like. It’s a brilliant dish that turns basic staples into deliciousness. Because it’s vinegar-based, it also keeps well in the fridge!</p>",
   "ingredients": [
     {

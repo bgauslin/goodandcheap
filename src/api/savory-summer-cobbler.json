@@ -3,10 +3,11 @@
   "title": "Savory Summer Cobbler",
   "badge": "For Four",
   "image": "savory-summer-cobbler",
-  "cost": [
-    "$8 Total",
-    "$2 / Serving"
-  ],
+  "cost": {
+    "total": "$8",
+    "each": "$2",
+    "units": "Serving"
+  },
   "overview": "<p>Celebrate summer’s most ubiquitous vegetables, tomato and zucchini, with a crunchy Southern biscuit topping.</p>",
   "ingredients": [
     {

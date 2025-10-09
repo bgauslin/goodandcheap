@@ -3,10 +3,11 @@
   "title": "Avocado Milkshake",
   "badge": "For Two",
   "image": "avocado-milkshake",
-  "cost": [
-    "$2.30 Total",
-    "$1.15 / Serving"
-  ],
+  "cost": {
+    "total": "$2.30",
+    "each": "$1.15",
+    "units": "Serving"
+  },
   "overview": "<p>John, the reader who introduced me to the silky magic of this milkshake, lives in California, where avocados are often less than a dollar. If you can find a similar deal, whip up a batch of these! If your avocado isn’t quite ripe, a bit more lime juice will bring out the flavor.</p>",
   "ingredients": [
     {

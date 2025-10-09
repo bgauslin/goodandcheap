@@ -3,10 +3,11 @@
   "title": "Salsa",
   "badge": "Makes Three Cups",
   "image": "salsa",
-  "cost": [
-    "$2.25 Total",
-    "$0.75 / Cup"
-  ],
+  "cost": {
+    "total": "$2.25",
+    "each": "$0.75",
+    "units": "Cup"
+  },
   "overview": "<p>Summertime salsas combine a load of fresh tomatoes with smaller amounts of choice vegetables and fruit. In the winter, cook canned tomatoes for a few minutes first.</p>",
   "ingredients": [
     {

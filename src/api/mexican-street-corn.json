@@ -3,10 +3,11 @@
   "title": "Mexican Street Corn",
   "badge": "For Four",
   "image": "mexican-street-corn",
-  "cost": [
-    "$4 Total",
-    "$1 / Serving"
-  ],
+  "cost": {
+    "total": "$4",
+    "each": "$1",
+    "units": "Serving"
+  },
   "overview": "<p>This recipe takes fresh, sweet summer corn—already amazing—and adds salt, tang, and spice to the experience. If you have an outdoor grill, prepare the corn that way, but for those without, a broiler is a great shortcut!</p>",
   "ingredients": [
     {

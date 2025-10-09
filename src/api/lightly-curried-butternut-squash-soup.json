@@ -3,10 +3,11 @@
   "title": "Lightly Curried Butternut Squash Soup",
   "badge": "For Four",
   "image": "lightly-curried-butternut-squash-soup",
-  "cost": [
-    "$6 Total",
-    "$1.50 / Serving"
-  ],
+  "cost": {
+    "total": "$6",
+    "each": "$1.50",
+    "units": "Serving"
+  },
   "overview": "<p>Squash is almost the perfect vegetable for soup: it’s flavorful and has a divinely smooth texture when cooked and puréed. Serve this soup to people who think they don’t like squash or curry, and you’ll change some minds. You can substitute any winter squash for the butternut; I just like butternut because it’s faster to peel and chop than its many cousins.</p>",
   "ingredients": [
     {

@@ -3,10 +3,11 @@
   "title": "Spicy Green Beans",
   "badge": "For Two",
   "image": "spicy-green-beans",
-  "cost": [
-    "$1.30 Total",
-    "$0.65 / Serving"
-  ],
+  "cost": {
+    "total": "$1.30",
+    "each": "$0.65",
+    "units": "Serving"
+  },
   "overview": "<p>Whenever I make these, I think, “why don’t I have this every day?” Throw a fried egg on top, serve with rice, and you have a delicious meal.</p>",
   "ingredients": [
     {

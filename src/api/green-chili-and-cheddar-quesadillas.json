@@ -3,10 +3,11 @@
   "title": "Green Chili and Cheddar Quesadillas",
   "badge": "For Two",
   "image": "green-chili-and-cheddar-quesadillas",
-  "cost": [
-    "$3.50 Total",
-    "$1.75 / Serving"
-  ],
+  "cost": {
+    "total": "$3.50",
+    "each": "$1.75",
+    "units": "Serving"
+  },
   "overview": "<p>These are a great snack or a quick meal, and you can add pretty much anything to them! To make ’em cheaper, use fresh tortillas.</p>",
   "ingredients": [
     {

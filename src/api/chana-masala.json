@@ -3,10 +3,11 @@
   "title": "Chana Masala",
   "badge": "For Two",
   "image": "chana-masala",
-  "cost": [
-    "$3 Total",
-    "$1.50 / Serving"
-  ],
+  "cost": {
+    "total": "$3",
+    "each": "$1.50",
+    "units": "Serving"
+  },
   "overview": "<p>This Indian chickpea dish is a staple in my home. If you don’t have cooked chickpeas around, you can use canned, but it will cost about $1 more.</p>",
   "ingredients": [
     {

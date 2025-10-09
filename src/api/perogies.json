@@ -3,10 +3,11 @@
   "title": "Perogies",
   "badge": "Makes Sixty to Seventy-two",
   "image": "perogies",
-  "cost": [
-    "$14 Total",
-    "$0.20 / Perogy"
-  ],
+  "cost": {
+    "total": "$14",
+    "each": "$0.20",
+    "units": "Perogy"
+  },
   "overview": "<p>This is a huge recipe that will feed you for days. It takes time and effort, but the results are worth it. The most fun approach is to invite a couple of friends over for a perogy-making party. Everyone takes home a bag or two for the freezer, and it’s a great time!</p>",
   "ingredients": [
     {

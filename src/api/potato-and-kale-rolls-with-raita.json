@@ -3,10 +3,11 @@
   "title": "Potato and Kale Rolls with Raita",
   "badge": "For Four",
   "image": "potato-and-kale-rolls-with-raita",
-  "cost": [
-    "$5.25 Total",
-    "$0.66 / Roll"
-  ],
+  "cost": {
+    "total": "$5.25",
+    "each": "$0.66",
+    "units": "Roll"
+  },
   "overview": "<p>These are a great meal to make when you have leftover roti and raita. The filling comes together in minutes and could be anything, but potatoes and greens are tasty and filling.</p>",
   "ingredients": [
     {

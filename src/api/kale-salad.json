@@ -3,10 +3,11 @@
   "title": "Kale Salad",
   "badge": "For Two, or Four as a Side",
   "image": "kale-salad",
-  "cost": [
-    "$4.50 Total",
-    "$2.25 / Serving"
-  ],
+  "cost": {
+    "total": "$4.50",
+    "each": "$2.25",
+    "units": "Serving"
+  },
   "overview": "<p>This kale is treated like romaine lettuce in a Caesar salad. The bitterness of the greens is delicious alongside the rich, fatty dressing. You could also use Swiss chard. If you’re worried about the raw egg yolk in the dressing, feel free to omit it.</p>",
   "ingredients": [
     {

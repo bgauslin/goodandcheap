@@ -3,10 +3,11 @@
   "title": "Flour Tortillas",
   "badge": "Makes Twenty-four Small",
   "image": "flour-tortillas",
-  "cost": [
-    "$1.70 Total",
-    "$0.07 / Tortilla"
-  ],
+  "cost": {
+    "total": "$1.70",
+    "each": "$0.07",
+    "units": "Tortilla"
+  },
   "overview": "<p>Homemade tortillas are a bit of work, but they’re totally worth it. With practice, you’ll get quicker and enjoy the process as much as the results.</p>",
   "ingredients": [
     {

@@ -3,10 +3,11 @@
   "title": "Cornmeal Crusted Veggies",
   "badge": "For Four",
   "image": "cornmeal-crusted-veggies",
-  "cost": [
-    "$2.60 Total",
-    "$0.65 / Serving"
-  ],
+  "cost": {
+    "total": "$2.60",
+    "each": "$0.65",
+    "units": "Serving"
+  },
   "overview": "<p>These are kind of like having veggie french fries. The cornmeal makes them super crunchy, and they’re great with a dipping sauce. Might I suggest peanut sauce? This breading process can be done with almost any vegetable; some of my favorites include zucchini wedges, bell peppers, and cooked winter squash. It’s sort of like fried green tomatoes or okra, but this baked version skips the expense and mess of the oil, yet keeps the crunch.</p>",
   "ingredients": [
     {

@@ -3,10 +3,11 @@
   "title": "Beet and Chickpea Salad",
   "badge": "For Two",
   "image": "beet-and-chickpea-salad",
-  "cost": [
-    "$3.50 Total",
-    "$1.75 / Serving"
-  ],
+  "cost": {
+    "total": "$3.50",
+    "each": "$1.75",
+    "units": "Serving"
+  },
   "overview": "<p>This dish is spicy, crunchy, and almost certainly the pinkest salad you’ll ever eat! Don’t be scared.</p>",
   "ingredients": [
     {

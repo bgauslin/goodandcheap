@@ -3,10 +3,11 @@
   "title": "Vegetable Jambalaya",
   "badge": "For Six",
   "image": "vegetable-jambalaya",
-  "cost": [
-    "$3.90 Total",
-    "$0.65 / Serving"
-  ],
+  "cost": {
+    "total": "$3.90",
+    "each": "$0.65",
+    "units": "Serving"
+  },
   "overview": "<p>I don’t make jambalaya exactly the way they do down south, but this vegetable-heavy version is faster and just as good—a great, throw-everything-in-the-pot kind of meal. It’s spicy, savory and deeply satisfying. The leftovers are great for making burritos or warmed up with a fried egg on top.</p>",
   "ingredients": [
     {

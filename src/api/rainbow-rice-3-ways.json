@@ -3,10 +3,11 @@
   "title": "Rainbow Rice 3 Ways",
   "badge": "For Two",
   "image": "rainbow-rice",
-  "cost": [
-    "$1.50 Total",
-    "$0.75 / Serving"
-  ],
+  "cost": {
+    "total": "$1.50",
+    "each": "$0.75",
+    "units": "Serving"
+  },
   "overview": "<p>Here are three quick ways to make plain rice a little more exciting. An early reader, Charles, said he loves rice with vegetables, but these treatments work for grains other than rice as well—everything from quinoa to barley to farro. Vegetables are a great way to liven up the usual rice and beans.</p><p>TODO(layout): Four separate recipes and ingredients.</p>",
   "ingredients": [
     {

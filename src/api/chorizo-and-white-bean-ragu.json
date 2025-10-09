@@ -3,10 +3,11 @@
   "title": "Chorizo and White Bean Ragu",
   "badge": "Makes Three Cups",
   "image": "chorizo-and-white-bean-ragu",
-  "cost": [
-    "$3.75 Total",
-    "$1.25 / Cup"
-  ],
+  "cost": {
+    "total": "$3.75",
+    "each": "$1.25",
+    "units": "Cup"
+  },
   "overview": "<p>When my friend Chris told me he loves a good ragu, I worked to develop a version that is as hearty as a meaty tomato sauce without the expense and heaviness of a traditional ragu. A batch of this is probably enough for four people, served with grated Romano or Parmesan over pasta, polenta, or grits.</p>",
   "ingredients": [
     {

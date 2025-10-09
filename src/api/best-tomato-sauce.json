@@ -3,10 +3,11 @@
   "title": "Best Tomato Sauce",
   "badge": "Makes Three and a Half Cups",
   "image": "best-tomato-sauce",
-  "cost": [
-    "$3.50 Total",
-    "$1 / Cup"
-  ],
+  "cost": {
+    "total": "$3.50",
+    "each": "$1",
+    "units": "Cup"
+  },
   "overview": "<p>There are many ways to make tomato sauce. I don’t find that the more complex recipes taste any better; this one is boldly tomatoey and works on just about anything. It also takes 5 minutes to make. Can’t beat that.</p>",
   "ingredients": [
     {

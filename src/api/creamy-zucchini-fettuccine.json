@@ -3,10 +3,11 @@
   "title": "Creamy Zucchini Fettuccine",
   "badge": "For Three",
   "image": "creamy-zucchini-fettuccine",
-  "cost": [
-    "$3.50 Total",
-    "$1.17 / Serving"
-  ],
+  "cost": {
+    "total": "$3.50",
+    "each": "$1.17",
+    "units": "Serving"
+  },
   "overview": "<p>Zucchini and summer squash are so abundant in the summer months. This simple pasta is like a lighter, brighter fettuccine alfredo. It also comes together in no time—the veggies will be ready by the time your pasta is cooked. You’ll love it, I promise.</p>",
   "ingredients": [
     {

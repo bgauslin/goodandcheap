@@ -3,10 +3,11 @@
   "title": "Brussels Sprout Hash and Eggs",
   "badge": "For Two",
   "image": "brussels-sprout-hash-and-eggs",
-  "cost": [
-    "$2.80 Total",
-    "$1.40 / Serving"
-  ],
+  "cost": {
+    "total": "$2.80",
+    "each": "$1.40",
+    "units": "Serving"
+  },
   "overview": "<p>This is a great light lunch or side dish. The Brussels sprouts get salty and tangy from the olive and lemon, then crispy and caramelized on the bottom. Mix in the little bit of fat from the egg yolk, and wow is this delicious.</p>",
   "ingredients": [
     {

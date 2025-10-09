@@ -3,10 +3,11 @@
   "title": "Black-Eyed Peas and Collards",
   "badge": "For Four",
   "image": "black-eyed-peas-and-collards",
-  "cost": [
-    "$5 Total",
-    "$1.25 / Serving"
-  ],
+  "cost": {
+    "total": "$5",
+    "each": "$1.25",
+    "units": "Serving"
+  },
   "overview": "<p>This is similar to the southern classic Hoppin’ John. If you have them, you can add more vegetables to the base along with the onion—celery, carrot, bell pepper, and some canned tomato would all be great in this. If you want to skip the bacon, just add smoked paprika to replace the smoky flavor.</p>",
   "ingredients": [
     {

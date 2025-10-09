@@ -3,10 +3,11 @@
   "title": "Peanut Butter and Jelly Granola Bars",
   "badge": "Makes Twelve",
   "image": "peanut-butter-and-jelly-granola-bars",
-  "cost": [
-    "$3.60 Total",
-    "$0.30 / Bar"
-  ],
+  "cost": {
+    "total": "$3.60",
+    "each": "$0.30",
+    "units": "Bar"
+  },
   "overview": "<p>Tired of endless PB+J sandwiches? Give these bars a try instead! I designed them for my friend Alex, who is allergic to gluten and is the best long-distance runner I know. I wanted to create a simple but nutritious breakfast that he could grab on his way out for a run. They are a little more crumbly than a store-bought granola bar, however.</p><p>As a bonus, these are made entirely from ingredients that you can find in any corner store or food pantry. Any kind of jam or jelly will do; I used blueberry, but grape or strawberry or any other flavor would be tasty.</p>",
   "ingredients": [
     {

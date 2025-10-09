@@ -3,10 +3,11 @@
   "title": "Fresh Pasta",
   "badge": "For One Large Entree",
   "image": "fresh-pasta-3",
-  "cost": [
-    "$0.35 Total",
-    "$0.35 / Serving"
-  ],
+  "cost": {
+    "total": "$0.35",
+    "each": "$0.35",
+    "units": "Serving"
+  },
   "overview": "<p>When a reader, Jeanne, asked for a good pasta dish, I decided to show her how to create it from scratch. Sure, making pasta by hand requires elbow grease and a good rolling pin, but you’ll be surprised at how simple, cheap, and tasty it is. If an Italian grandmother can do it, so can you! Because fresh pasta is so wonderful, the sauce doesn’t need to be complicated. I love this with tomato sauce and a little cheese.</p>",
   "ingredients": [
     {

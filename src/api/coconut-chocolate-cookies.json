@@ -3,10 +3,11 @@
   "title": "Coconut Chocolate Cookies",
   "badge": "Makes Forty",
   "image": "coconut-chocolate-cookies",
-  "cost": [
-    "10 Total",
-    "$0.25 / Cookie"
-  ],
+  "cost": {
+    "total": "$10",
+    "each": "$0.25",
+    "units": "Cookie"
+  },
   "overview": "<p>A just-chewy-enough, just-crispy-enough, just-gooey-enough cookie that’s perfect for a special treat.</p>",
   "ingredients": [
     {

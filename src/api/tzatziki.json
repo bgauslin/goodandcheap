@@ -3,10 +3,11 @@
   "title": "Tzatziki",
   "badge": "Makes Two Cups",
   "image": "tzatziki",
-  "cost": [
-    "$3.50 Total",
-    "$1.75 / Cup"
-  ],
+  "cost": {
+    "total": "$3.50",
+    "each": "$1.75",
+    "units": "Cup"
+  },
   "overview": "<p>If you’re in a hurry, you don’t have to strain this at all: you can just mix the ingredients together. However, removing the water from the cucumber and yogurt intensifies the flavor. Your patience will be rewarded by a thick sauce that gives you a new perspective on cucumbers.</p>",
   "ingredients": [
     {

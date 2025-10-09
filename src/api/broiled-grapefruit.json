@@ -3,10 +3,11 @@
   "title": "Broiled Grapefruit",
   "badge": "For Two",
   "image": "broiled-grapefruit",
-  "cost": [
-    "$2 Total",
-    "$1 / Serving"
-  ],
+  "cost": {
+    "total": "$2",
+    "each": "$1",
+    "units": "Serving"
+  },
   "overview": "<p>If your oven has a broiler, this is a fast and fun way to liven up a standard, healthy breakfast of grapefruit. This method produces a hot and sticky treat.</p><p>This breakfast will make a grapefruit lover out of you!</p>",
   "ingredients": [
     {

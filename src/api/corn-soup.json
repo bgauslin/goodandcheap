@@ -3,10 +3,11 @@
   "title": "Corn Soup",
   "badge": "For Four to Six",
   "image": "corn-soup",
-  "cost": [
-    "$5 Total",
-    "$1.25 / Serving"
-  ],
+  "cost": {
+    "total": "$5",
+    "each": "$1.25",
+    "units": "Serving"
+  },
   "overview": "<p>This thick, sweet, satisfying soup is a favorite of kids and adults. This is wonderful to make at the beginning of autumn when corn on the cob is at its peak, but canned corn can also make it a warm reminder of summer in the depths of winter.</p>",
   "ingredients": [
     {

@@ -3,10 +3,11 @@
   "title": "Potato Leek Pizza",
   "badge": "Makes Four Pizzas",
   "image": "potato-leek-pizza",
-  "cost": [
-    "$9 Total",
-    "$2.25 / Pizza"
-  ],
+  "cost": {
+    "total": "$9",
+    "each": "$2.25",
+    "units": "Pizza"
+  },
   "overview": "<p>Obviously you should just make all kinds of pizza. Seriously, do it. Make it a Thursday-night tradition and an excuse to use up leftovers. This pizza, for one, is a fun variation that confounds expectations-proof that, indeed, anything is good on pizza!</p>",
   "ingredients": [
     {

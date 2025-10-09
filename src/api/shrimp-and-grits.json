@@ -3,10 +3,11 @@
   "title": "Shrimp and Grits",
   "badge": "For Four",
   "image": "shrimp-and-grits",
-  "cost": [
-    "$12 Total",
-    "$3 / Serving"
-  ],
+  "cost": {
+    "total": "$12",
+    "each": "$3",
+    "units": "Serving"
+  },
   "overview": "<p>The cost of shrimp has jumped sharply since I wrote this recipe, so save this one until you can find a deal—under about $8 per pound. This is far from an authentic Southern version of this dish, but it is absolutely delicious. Southerners will demand you use white stone-ground corn for this, and I won’t quibble, but feel free to use yellow if it doesn’t offend you.</p>",
   "ingredients": [
     {

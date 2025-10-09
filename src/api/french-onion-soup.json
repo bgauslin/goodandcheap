@@ -3,10 +3,11 @@
   "title": "French Onion Soup",
   "badge": "For Six",
   "image": "french-onion-soup",
-  "cost": [
-    "$9 Total",
-    "$1.50 / Serving"
-  ],
+  "cost": {
+    "total": "$9",
+    "each": "$1.50",
+    "units": "Serving"
+  },
   "overview": "<p>Best if you accept it now: you are going to cry making this recipe, since the first step is to chop a mountain of onions. But crying is good for us from time to time. Soon you will be on to the magical part, watching a colossal pile of onions shrink and caramelize to make a sweet, flavorful, wonderful soup. Save this recipe for the winter, when other vegetables are out of season and you want to fill your home with warm aromas. As my friend Marilyn, who suggested this recipe, said, “the smell in your kitchen is absolute heaven.”</p>",
   "ingredients": [
     {

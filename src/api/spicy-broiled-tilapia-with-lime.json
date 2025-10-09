@@ -3,10 +3,11 @@
   "title": "Spicy Broiled Tilapia with Lime",
   "badge": "For Two",
   "image": "spicy-broiled-tilapia-with-lime",
-  "cost": [
-    "$9 Total",
-    "$4.50 / Serving"
-  ],
+  "cost": {
+    "total": "$9",
+    "each": "$4.50",
+    "units": "Serving"
+  },
   "overview": "<p>This meal comes together so quickly it’s astonishing. Broiled fish is crispy on the outside and flaky and moist on the inside. If you quickly sauté some vegetables while the fish cooks, dinner will be on the table in minutes.</p>",
   "ingredients": [
     {

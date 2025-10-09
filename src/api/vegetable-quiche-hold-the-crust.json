@@ -3,10 +3,11 @@
   "title": "Vegetable Quiche, Hold the Crust",
   "badge": "For Four",
   "image": "vegetable-quiche-hold-the-crust",
-  "cost": [
-    "$6 Total",
-    "$1.50 / Serving"
-  ],
+  "cost": {
+    "total": "$6",
+    "each": "$1.50",
+    "units": "Serving"
+  },
   "overview": "<p>Much as I love this quiche hot, I like it even better cold out of the fridge the next day. It makes a great fast breakfast or lunch. The quiche in the picture uses broccoli, but you can make it with pretty much any kind of vegetable. Some of my favorites are roasted green chilies and cheddar, winter squash with goat cheese, zucchini and tomato, or spinach and olive.</p>",
   "ingredients": [
     {

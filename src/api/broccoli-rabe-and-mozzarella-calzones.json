@@ -3,10 +3,11 @@
   "title": "Broccoli Rabe and Mozzarella Calzones",
   "badge": "Makes Four Calzones",
   "image": "broccoli-rabe-and-mozzarella-calzones",
-  "cost": [
-    "$6 Total",
-    "$1.50 / Calzone"
-  ],
+  "cost": {
+    "total": "$6",
+    "each": "$1.50",
+    "units": "Calzone"
+  },
   "overview": "<p>Calzones are pizza in a slightly different form—a form that lets you get stuff in more filling without weighing down the crust. Broccoli rabe is great, but you can use any bitter green, or even broccoli or cauliflower. You’ll love these crusty pockets full of oozy goodness!</p>",
   "ingredients": [
     {
@@ -23,7 +24,7 @@
     }
   ],
   "steps": [
-      "Turn the oven to 500 °F (or as hot as your oven gets). Sprinkle a small amount of flour or cornmeal over a baking sheet and set aside.",
+      "Turn the oven to 500°F (or as hot as your oven gets). Sprinkle a small amount of flour or cornmeal over a baking sheet and set aside.",
       "Place a large pan on medium heat and add the olive oil. Once the oil is hot, add the tough stem ends of the broccoli rabe and cook for 2 minutes. Next, add the rest of the broccoli rabe, including the leafy parts, along with the garlic, chili flakes, and anchovies. Give the ingredients a stir and let it cook for about 5 minutes, stirring occasionally. Add salt and pepper to taste. The broccoli rabe is done when the stems are tender. Set the filling aside.",
       "Divide the pizza dough into 4 equal pieces. Sprinkle flour over the countertop and place one of the four pieces of dough on it. Using your hands or a rolling pin, roll out the dough as you would for pizza.",
       "Roll the dough out quite thin. Pile ¼ of your broccoli rabe mixture and ½ cup of mozzarella onto one side of the circle, leaving a lip around the edge.",

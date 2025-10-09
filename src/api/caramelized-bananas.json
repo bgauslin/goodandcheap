@@ -3,10 +3,11 @@
   "title": "Caramelized Bananas",
   "badge": "For Two",
   "image": "caramelized-bananas",
-  "cost": [
-    "$0.70 Total",
-    "$0.35 / Serving"
-  ],
+  "cost": {
+    "total": "$0.70",
+    "each": "$0.35",
+    "units": "Serving"
+  },
   "overview": "<p>These bananas—cooked in just a bit of caramel—are crispy and gooey on the outside and almost like a soft pudding inside. Sweet, messy, and irresistible.</p>",
   "ingredients": [
     {

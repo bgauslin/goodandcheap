@@ -3,10 +3,11 @@
   "title": "Deviled Eggs 6 Ways",
   "badge": "Makes Twenty-four Half Eggs",
   "image": "deviled-eggs",
-  "cost": [
-    "$3.60 Total",
-    "$0.15 / Half Egg"
-  ],
+  "cost": {
+    "total": "$3.60",
+    "each": "$0.15",
+    "units": "Half Egg"
+  },
   "overview": "<p>Deviled eggs are my favorite party food and the perfect recipe to dedicate to my friend Camilla. At parties, I often eat too much random junk food and end up feeling gross. These eggs are a great antidote: festive and delicious without being empty calories. Although they’re a little fussy, they aren’t actually difficult to make. I’ll start you off with these few ideas, but you can add whatever flavors suit your fancy.</p>",
   "ingredients": [
     {

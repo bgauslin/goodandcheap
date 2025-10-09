@@ -3,10 +3,11 @@
   "title": "Spice Oil",
   "badge": "Makes One Cup",
   "image": "spice-oil",
-  "cost": [
-    "$3.50 Total",
-    "$3.50 / Cup"
-  ],
+  "cost": {
+    "total": "$3.50",
+    "each": "$3.50",
+    "units": "Cup"
+  },
   "overview": "<p>Use this spice oil on salads, in cold noodle dishes, or on roasted or sautéed vegetables. If you have trouble finding the spices, you can get all of them at most Asian grocery stores.</p>",
   "ingredients": [
     {

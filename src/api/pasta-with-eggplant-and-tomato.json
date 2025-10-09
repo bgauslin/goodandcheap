@@ -3,10 +3,11 @@
   "title": "Pasta with Eggplant and Tomato",
   "badge": "For Two",
   "image": "pasta-with-eggplant-and-tomato",
-  "cost": [
-    "$5 Total",
-    "$2.50 / Serving"
-  ],
+  "cost": {
+    "total": "$5",
+    "each": "$2.50",
+    "units": "Serving"
+  },
   "overview": "<p>This is similar to a traditional pasta alla norma, but without anchovies and ricotta salata. I like to use a tubular pasta for this dish, but you can use anything, even spaghetti. The eggplant and tomatoes come together into a sauce that is thick and jammy and savory.</p>",
   "ingredients": [
     {

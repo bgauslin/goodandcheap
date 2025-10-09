@@ -3,10 +3,11 @@
   "title": "Spicy Pulled Pork",
   "badge": "For Ten",
   "image": "spicy-pulled-pork",
-  "cost": [
-    "$14 Total",
-    "$1.40 / Serving"
-  ],
+  "cost": {
+    "total": "$14",
+    "each": "$1.40",
+    "units": "Serving"
+  },
   "overview": "<p>Pulled pork is a celebration, worthy of a special day. It’s incredibly flavorful, rich, spicy, and remarkably versatile. Although it seems expensive, it’s quite a bargain when you look at the price per serving. As with most celebratory meals, this one takes quite a long time to prepare. Most of the time, however, is just spent waiting for it to cook “low and slow.”</p>",
   "ingredients": [
     {

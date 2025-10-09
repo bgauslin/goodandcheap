@@ -3,10 +3,11 @@
   "title": "Charred Summer Salad",
   "badge": "For Two, or Four as a Side",
   "image": "charred-summer-salad",
-  "cost": [
-    "$5.50 Total",
-    "$2.75 / Serving"
-  ],
+  "cost": {
+    "total": "$5.50",
+    "each": "$2.75",
+    "units": "Serving"
+  },
   "overview": "<p>One of the early supporters of this book, Gina, can’t eat gluten and wanted more Mexican-inspired options. I designed this spicy summer salad for her, topped with popcorn for a crunch like croutons. Use smaller zucchini, and save the big ones for muffins. If you own a grill, use it instead of the broiler!</p>",
   "ingredients": [
     {

@@ -3,10 +3,11 @@
   "title": "Poutine",
   "badge": "For Four",
   "image": "poutine",
-  "cost": [
-    "$7 Total",
-    "$1.75 / Serving"
-  ],
+  "cost": {
+    "total": "$7",
+    "each": "$1.75",
+    "units": "Serving"
+  },
   "overview": "<p>Poutine isn’t an everyday meal, but it’s a favorite. Since I don’t like deep-frying at home, I bake the fries; they still get crispy without the fuss of frying.</p><p>Montreal-style poutine is made with vegetable gravy, as in this recipe, but you can also make your favorite beef or turkey gravy.</p><p>Of course, proper poutine uses cheese curds, and if you can find them do use those, but fresh mozzarella works for me. It has the same spongy quality, just maybe with a little less squeak. This recipe does comes out a little more expensive than you would think because of the fresh mozzarella. If you use less or skip the cheese entirely, you can cut the price in half.</p>",
   "ingredients": [
     {
