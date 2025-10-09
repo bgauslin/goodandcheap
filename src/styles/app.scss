@@ -1,0 +1,40 @@
+:is(gc-chapter, gc-home) {
+  :is(ul, ol) {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    font-family: 'Futura Bold';
+  }
+  
+  a {
+    align-items: center;
+    display: grid;
+    font-family: 'Futura Bold';
+    font-weight: normal;
+    gap: 1rem;
+    grid: 'thumb copy' var(--thumb-size) / var(--thumb-size) 1fr;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  a > * {
+    pointer-events: none;
+  }
+
+  a > img {
+    aspect-ratio: 1;
+    grid-area: thumb;
+    object-fit: cover;
+  }
+}
+
+:is(gc-chapter, gc-recipe) {
+  display: block;
+  max-inline-size: var(--section-max-width);
+}
+
+gc-chapter :is(h1, p) {
+  margin-inline: 1rem;
+}
