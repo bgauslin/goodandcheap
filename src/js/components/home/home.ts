@@ -3,9 +3,9 @@ import {LitElement, html} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 
 interface item {
-  title: string,
-  slug: string,
   image: string,
+  slug: string,
+  title: string,
 }
 
 interface home {
@@ -47,10 +47,9 @@ class Home extends LitElement {
   protected render() {
     if (!this.data) return;
 
-    const {chapters, pages} = this.data;
+    const {chapters} = this.data;
 
     return html`
-      ${this.renderList('Pages', pages, 'page')}
       ${this.renderList('Chapters', chapters, 'chapter')}      
     `;
   }
