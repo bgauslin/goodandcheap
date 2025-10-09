@@ -3,9 +3,9 @@ import {customElement, property, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 interface page {
-  title: string,
   content: string,
   image: string,
+  title: string,
 }
 
 @customElement('gc-page')
