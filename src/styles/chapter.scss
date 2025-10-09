@@ -13,7 +13,7 @@ gc-chapter a {
   font-family: 'Futura Bold';
   font-weight: normal;
   gap: 1rem;
-  grid: 'thumb copy' auto / auto 1fr;
+  grid: 'thumb copy' 7rem / 7rem 1fr;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
@@ -24,7 +24,6 @@ gc-chapter a > * {
 
 gc-chapter a > img {
   aspect-ratio: 1;
-  block-size: 7rem;
   object-fit: cover;
   grid-area: thumb;
 }

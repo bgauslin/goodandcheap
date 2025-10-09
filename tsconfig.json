@@ -13,10 +13,10 @@
   ],
   "files": [
     "src/js/index.ts",
-    "src/js/components/app/app.ts",
-    "src/js/components/chapter/chapter.ts",
-    "src/js/components/home/home.ts",
-    "src/js/components/page/page.ts",
-    "src/js/components/recipe/recipe.ts",
+    "src/js/app.ts",
+    "src/js/chapter.ts",
+    "src/js/home.ts",
+    "src/js/page.ts",
+    "src/js/recipe.ts",
   ]
 }

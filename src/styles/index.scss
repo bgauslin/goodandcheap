@@ -1,6 +1,6 @@
 @use 'vars';
 @use 'base';
-@use '../js/components/chapter/chapter';
-@use '../js/components/home/home';
-@use '../js/components/recipe/recipe';
+@use 'chapter';
+@use 'home';
+@use 'recipe';
 
