@@ -11,5 +11,8 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     })
-  ]
+  ],
+  devServer: {
+    historyApiFallback: true,
+  },
 });
