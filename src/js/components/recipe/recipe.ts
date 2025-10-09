@@ -6,7 +6,11 @@ interface recipe {
   title: string,
   badge: string,
   image: string,
-  cost?: string[],
+  cost?: {
+    total: string,
+    each: string,
+    units: string
+  },
   overview: string,
   ingredients?: {
     label?: string,
@@ -60,22 +64,47 @@ class Recipe extends LitElement {
 
     const {badge, cost, ingredients, overview, steps, title} = this.data;
 
-    const cost_ = cost ? cost.map(item => html`<p>${item}</p>`) : nothing;
+    const cost_ = cost ?
+      html`
+        <p class="cost">
+          ${cost.total} Total<br>
+          ${cost.each} / ${cost.units}
+        </p>
+      ` : nothing;
+
+    const overview_ = overview ?
+      html`
+        <section class="overview">
+          <h2>Overview</h2>
+          ${unsafeHTML(overview)}
+        </section>
+      ` : nothing;
 
     const ingredients_ = ingredients ?
-        ingredients.map(group => {
+        ingredients.map((group, index) => {
           const {label, items} = group;
           return html`
-            <h3>${label}</h3>
-            <ul>
-              ${items.map(item => html`<li>${item}</li>`)}
-            </ul>
+            ${index === 0 ?
+              html`
+                <section class="ingredients">
+                  <h2>Ingredients</h2>
+              ` : nothing}
+                  ${label ? html`<h3>${label}</h3>` : nothing}
+                  <ul>
+                    ${items.map(item => html`<li>${item}</li>`)}
+                  </ul>
+            ${index === items.length ? html`</section>` : nothing}
           `;
-        }) :
-        nothing;
+        }) : nothing;
 
     const steps_ = steps ?
-        html`<ol>${steps.map(step => html`<li>${step}</li>`)}</ol>` :
+        html`
+          <section class="steps">
+            <h2>Steps</h2>
+            <ol>
+              ${steps.map(step => html`<li>${step}</li>`)}
+            </ol>
+          </section>` :
         nothing;
 
     return html`
@@ -84,18 +113,9 @@ class Recipe extends LitElement {
         <div class="badge">${badge}</div>
         ${cost_}
       </section>
-      <section class="overview">
-        <h2>Overview</h2>
-        ${unsafeHTML(overview)}
-      </section>
-      <section class="ingredients">
-        <h2>Ingredients</h2>
-        ${ingredients_}
-      </section>
-      <section class="steps">
-        <h2>Steps</h2>
-        ${steps_}
-      </section>
+      ${overview_}
+      ${ingredients_}
+      ${steps_}
     `;
   }
 }
