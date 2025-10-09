@@ -1,7 +1,6 @@
-import {LitElement, css, html} from 'lit';
-import {customElement} from 'lit/decorators.js';
-
-import shadowStyles from './recipe.scss';
+import {LitElement, html, nothing, PropertyValues} from 'lit';
+import {customElement, property, state} from 'lit/decorators.js';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 interface recipe {
   title: string,
@@ -17,14 +16,13 @@ interface recipe {
 }
 
 /**
- * Web component for a clock with nine sets of hands.
+ * Web component for a recipe.
  */
 @customElement('goodandcheap-recipe')
 class App extends LitElement {
-  private endpoint: string = '/api/breakfast/omelette.json';
-  private recipe: recipe;
-
-  static styles = css`${shadowStyles}`;
+  @property() recipe: string;
+  @state() endpoint: string;
+  @state() data: recipe;
 
   constructor() {
     super();
@@ -32,22 +30,28 @@ class App extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-
-    console.log('goodandcheap-recipe');
-    this.fetchRecipe();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
   }
 
+  protected createRenderRoot() {
+    return this;
+  }
+
+  protected willUpdate(changedProperties: PropertyValues<this>) {
+    if (changedProperties.has('recipe')) {
+      this.fetchRecipe();
+    }
+  }
+
   private async fetchRecipe(): Promise<any> {
-    console.log('this.endpoint', this.endpoint);
+    this.endpoint = `/api/${this.recipe}.json`;
 
     try {
       const response = await fetch(this.endpoint);
-      this.recipe = await response.json();
-      console.log('this.recipe', this.recipe);
+      this.data = await response.json();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
       return;
@@ -55,19 +59,14 @@ class App extends LitElement {
   }
 
   protected render() {
-    if (this.recipe) {
+    if (!this.data) return;
 
-      console.log('render this.recipe', this.recipe);
+    const {badge, cost, image, ingredients, overview, steps, title} = this.data;
 
-      const {title, badge, image, cost, overview, ingredients, steps} = this.recipe;
-      
-      return html`
-        <h2>${title}</h2>
-        <div class="badge">${badge}</div>
-        <img src="${image}" alt="">
-        ${cost.map(item => html`<p>${item}</p>`)}
-        ${overview}
-        ${ingredients.map(group => {
+    const cost_ = cost ? cost.map(item => html`<p>${item}</p>`) : nothing;
+
+    const ingredients_ = ingredients ?
+        ingredients.map(group => {
           const {label, items} = group;
           return html`
             <h4>${label}</h4>
@@ -75,11 +74,19 @@ class App extends LitElement {
               ${items.map(item => html`<li>${item}</li>`)}
             </ul>
           `;
-        })}
-        <ol>
-          ${steps.map(step => html`<li>${step}</li>`)}
-        </ol>
-      `;
-    }
+        }) : nothing;
+
+    const steps_ = steps ?
+        html`<ol>${steps.map(step => html`<li>${step}</li>`)}</ol>` : nothing;
+
+    return html`
+      <h2>${title}</h2>
+      <div class="badge">${badge}</div>
+      <img src="${image}" alt="">
+      ${cost_}
+      ${unsafeHTML(overview)}
+      ${ingredients_}
+      ${steps_}
+    `;
   }
 }
