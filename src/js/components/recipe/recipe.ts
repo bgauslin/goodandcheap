@@ -97,10 +97,10 @@ class Recipe extends LitElement {
 
     return html`
       <section class="cover">
+        <img src="/images/${image}@large.webp" alt="">  
         <h1>${title}</h1>
         <div class="badge">${badge}</div>
         ${cost_}
-        <img src="/images/${image}@large.webp" alt="">
       </section>
       ${overview_}
       ${ingredients_}

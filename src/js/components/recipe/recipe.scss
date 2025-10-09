@@ -1,6 +1,69 @@
-.cover > img {
+gc-recipe {
+  display: block;
+  max-inline-size: var(--section-max-width);
+}
+
+gc-recipe .cover {
+  position: relative;
+}
+
+gc-recipe h1 {
+  margin-block-end: 0;
+  margin-inline: 1rem;
+}
+
+gc-recipe .badge {
+  margin-block: 0 1rem;
+  margin-inline: 1rem;
+}
+
+gc-recipe .cost {
+  background-color: var(--fill-1);
+  inset-block: 2rem auto;
+  inset-inline: auto 0;
+  margin: 0;
+  padding-block: .5rem;
+  padding-inline: 1rem;
+  position: absolute;
+}
+
+gc-recipe section:not(.cover) {
+  margin-block: 2.5rem;
+  padding-inline: 1rem;
+}
+
+gc-recipe section.overview {
+  margin-block-start: 0;
+}
+
+gc-recipe :is(.cost, .badge, h2, h3) {
+  font-family: 'Futura Bold';
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+gc-recipe :is(h2, h3) {
+  font-size: 85%;
+}
+
+gc-recipe :is(.cost, .badge) {
+  font-size: 70%;
+}
+
+gc-recipe .cover > img {
   aspect-ratio: 1;
-  block-size: 34rem;
   display: block;
   object-fit: cover;
+}
+
+gc-recipe :is(ul, ol) {
+  padding-inline: 1.5em 0;
+}
+
+gc-recipe .ingredients li {
+  font-family: 'Futura Book';  
+}
+
+gc-recipe .steps li {
+  margin-block: 1em;
 }

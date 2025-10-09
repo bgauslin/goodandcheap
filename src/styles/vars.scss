@@ -19,6 +19,9 @@
   // Global properties.
   --transition: .25s;
 
+  // Elements.
+  --section-max-width: 30rem;
+
   @media (prefers-color-scheme: dark) {
     // Dark mode theming.
     --fill-0: var(--gray6);

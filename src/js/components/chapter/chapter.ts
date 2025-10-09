@@ -58,9 +58,9 @@ class Chapter extends LitElement {
     const {title, content, image, recipes} = this.data;
 
     return html`
+      <img src="/images/${image}@large.webp" alt="">  
       <h1>${title}</h1>
       ${unsafeHTML(content)}
-      <img src="/images/${image}@large.webp" alt="">
       <ul>
       ${recipes.map(recipe => {
         const {chapter, image, slug, title} = recipe;

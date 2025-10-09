@@ -1,10 +1,18 @@
 gc-home a {
-  display: block;
+  align-items: center;
+  display: grid;
+  font-family: 'Futura Bold';
+  font-weight: normal;
+  gap: 1rem;
+  grid: 'thumb copy' auto / auto 1fr;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 gc-home a > img {
   aspect-ratio: 1;
   block-size: 7rem;
+  grid-area: thumb;
   object-fit: cover;
 }
 

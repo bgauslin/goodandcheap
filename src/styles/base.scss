@@ -1,26 +1,26 @@
-// @font-face {
-//   font-display: swap;
-//   font-family: 'Carmina Bold';
-//   src: url('../fonts/CarminaBT-Bold.woff2') format('woff2');
-// }
+@font-face {
+  font-display: swap;
+  font-family: 'Carmina Bold';
+  src: url('../fonts/CarminaBT-Bold.woff2') format('woff2');
+}
 
-// @font-face {
-//   font-display: swap;
-//   font-family: 'Carmina Light';
-//   src: url('../fonts/CarminaBT-Light.woff2') format('woff2');
-// }
+@font-face {
+  font-display: swap;
+  font-family: 'Carmina Light';
+  src: url('../fonts/CarminaBT-Light.woff2') format('woff2');
+}
 
-// @font-face {
-//   font-display: swap;
-//   font-family: 'Futura Bold';
-//   src: url('../fonts/Futura-Bold.woff2') format('woff2');
-// }
+@font-face {
+  font-display: swap;
+  font-family: 'Futura Bold';
+  src: url('../fonts/Futura-Bold.woff2') format('woff2');
+}
 
-// @font-face {
-//   font-display: swap;
-//   font-family: 'Futura Book';
-//   src: url('../fonts/Futura-Book.woff2') format('woff2');
-// }
+@font-face {
+  font-display: swap;
+  font-family: 'Futura Book';
+  src: url('../fonts/Futura-Book.woff2') format('woff2');
+}
 
 * {
   box-sizing: border-box;
@@ -33,6 +33,7 @@ html {
 
 body {
   background-color: var(--fill-0);
+  font-family: 'Carmina Light';
   color: var(--text-color);
   margin: 0;
 }
@@ -40,6 +41,10 @@ body {
 noscript {
   padding: 1.5em;
   text-align: center;
+}
+
+[hidden] {
+  display: none;
 }
 
 a {
@@ -68,4 +73,18 @@ a {
       color: var(--link-focus-color);
     }
   }
+}
+
+h1 {
+  font-family: 'Carmina Bold';
+}
+
+:is(p, li) {
+  line-height: 1.5;
+}
+
+img {
+  block-size: auto;
+  inline-size: 100%;
+  vertical-align: middle;
 }
