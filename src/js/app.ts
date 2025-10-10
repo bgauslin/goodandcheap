@@ -126,8 +126,6 @@ class App extends LitElement {
       default:
         break;
     }
-
-    window.requestAnimationFrame(() => window.scrollTo(0, 0));
   }
 
   private handlePopstate() {
@@ -150,8 +148,6 @@ class App extends LitElement {
     } else {
       this.context = 'home';
     }
-
-    window.requestAnimationFrame(() => window.scrollTo(0, 0));
   }
 
   private updateBrowser(slug: string, context?: string) {
@@ -165,19 +161,19 @@ class App extends LitElement {
   protected render() {
     return html`
       <gc-home
-        ?hidden="${this.context !== 'home'}"
+        aria-hidden="${this.context !== 'home'}"
         transition="${this.transitionHome}"></gc-home>
       <gc-page
+        aria-hidden="${this.context !== 'page'}"  
         page="${this.page}"
-        ?hidden="${this.context !== 'page'}"
         transition="${this.transitionPage}"></gc-page>
       <gc-chapter
+        aria-hidden="${this.context !== 'chapter'}"
         chapter="${this.chapter}"
-        ?hidden="${this.context !== 'chapter'}"
         transition="${this.transitionChapter}"></gc-chapter>
       <gc-recipe
+        aria-hidden="${this.context !== 'recipe'}"
         recipe="${this.recipe}"
-        ?hidden="${this.context !== 'recipe'}"
         transition="${this.transitionRecipe}"></gc-recipe>
     `;
   }

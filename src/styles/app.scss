@@ -1,3 +1,19 @@
+gc-app {
+  display: grid;
+  grid: 'content' 1fr / 1fr;
+  max-inline-size: var(--section-max-width);
+  overflow: hidden;
+}
+
+gc-app > * {
+  grid-area: content;
+}
+
+:is(gc-home, gc-chapter, gc-recipe, gc-page) {
+  max-block-size: 100dvh;
+  overflow: auto;
+}
+
 :is(gc-home, gc-chapter) {
   :is(ul, ol) {
     list-style: none;
@@ -37,4 +53,71 @@
 
 gc-chapter :is(h1, p) {
   margin-inline: 1rem;
+}
+
+[aria-hidden='true'] {
+  z-index: -1;
+  pointer-events: none;
+}
+
+[aria-hidden='false'] {
+  z-index: 1;
+}
+
+[transition] {
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-duration: .3s;
+}
+
+[transition='start-in'] {
+  animation-name: startIn;
+}
+
+[transition='start-out'] {
+  animation-name: startOut;
+}
+
+[transition='end-in'] {
+  animation-name: endIn;
+}
+
+[transition='end-out'] {
+  animation-name: endOut;
+}
+
+@keyframes startIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes startOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes endIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes endOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
