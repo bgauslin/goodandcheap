@@ -39,6 +39,8 @@ class Page extends LitElement {
   private async fetchData(): Promise<any> {
     if (!this.page) return;
 
+    console.log('this.page', this.page);
+
     try {
       const response = await fetch(`/api/${this.page}.json`);
       this.data = await response.json();
@@ -51,8 +53,9 @@ class Page extends LitElement {
   protected render() {
     if (!this.data) return;
 
-    const {title, content} = this.data;
+    const {image, content, title} = this.data;
     return html`
+      <img src="/images/${image}@large.webp" alt="">
       <h1>${title}</h1>
       ${unsafeHTML(content)}
     `;

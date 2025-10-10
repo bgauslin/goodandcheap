@@ -1,3 +1,6 @@
+// --------------------------------------------------
+// Layout.
+
 gc-app {
   display: grid;
   grid: 'content' 1fr / 1fr;
@@ -19,19 +22,24 @@ gc-app > * {
   }
 }
 
+:is(gc-chapter, gc-recipe) {
+  display: block;
+  max-inline-size: var(--section-max-width);
+}
+
+gc-chapter :is(h1, p) {
+  margin-inline: 1rem;
+}
+
+// --------------------------------------------------
+// Previews.
+
 :is(gc-home, gc-chapter) {
   :is(ul, ol) {
     list-style: none;
     padding: 0;
   }
 
-  li {
-    font-family: 'Futura Bold';
-    font-size: var(--subhead-font-size);
-    letter-spacing: .1em;
-    text-transform: uppercase;
-  }
-  
   a {
     align-items: center;
     display: grid;
@@ -50,14 +58,24 @@ gc-app > * {
   }
 }
 
-:is(gc-chapter, gc-recipe) {
-  display: block;
-  max-inline-size: var(--section-max-width);
+// --------------------------------------------------
+// Typography.
+
+gc-page h2,
+gc-recipe :is(.badge, .cost, h2, h3),
+:is(gc-home, gc-chapter) li {
+  font-family: 'Futura Bold';
+  font-size: var(--subhead-font-size);
+  letter-spacing: .2em;
+  text-transform: uppercase;
 }
 
-gc-chapter :is(h1, p) {
-  margin-inline: 1rem;
+:is(gc-page, .ingredients) li {
+  font-family: 'Futura Book';  
 }
+
+// --------------------------------------------------
+// Transitions.
 
 [aria-hidden='true'] {
   z-index: -1;

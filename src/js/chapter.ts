@@ -60,7 +60,7 @@ class Chapter extends LitElement {
     const {title, content, image, recipes} = this.data;
 
     return html`
-      <img src="/images/${image}@large.webp" alt="">  
+      <img src="/images/${image}@large.webp" alt="">
       <h1>${title}</h1>
       ${unsafeHTML(content)}
       <ul>

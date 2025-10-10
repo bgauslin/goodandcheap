@@ -25,16 +25,6 @@ gc-recipe {
     margin-inline: 1rem;
   }
 
-  :is(.badge, .cost, h2, h3) {
-    font-family: 'Futura Bold';
-    letter-spacing: .2em;
-    text-transform: uppercase;
-  }
-
-  :is(.badge, .cost, h2, h3) {
-    font-size: var(--subhead-font-size);
-  }
-
   .badge {
     margin-block: .5rem 2rem;
     margin-inline: 1rem;
@@ -52,10 +42,6 @@ gc-recipe {
 
   :is(ul, ol) {
     padding-inline: 1.5em 0;
-  }
-
-  .ingredients li {
-    font-family: 'Futura Book';  
   }
 
   .steps li {

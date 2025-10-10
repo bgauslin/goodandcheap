@@ -60,32 +60,32 @@
     {
       "title": "Introduction",
       "image": "blueberries",
-      "slug": "introduction"
+      "slug": "intro"
     },
     {
       "title": "A Note on $4/Day",
       "image": "shells",
-      "slug": "a-note-on-4-day"
+      "slug": "note"
     },
     {
       "title": "My Philosophy",
       "image": "black-beans-2",
-      "slug": "my-philosophy"
+      "slug": "philosophy"
     },
     {
       "title": "About this Book",
       "image": "corn-stalks-2",
-      "slug": "about-this-book"
+      "slug": "about"
     },
     {
       "title": "Tips for Eating and Shopping Well",
       "image": "salsa-1",
-      "slug": "tips-for-eating-and-shopping-well"
+      "slug": "tips"
     },
     {
       "title": "Pantry Basics",
       "image": "cans-2",
-      "slug": "pantry-basics"
+      "slug": "basics"
     }
   ]
 }
