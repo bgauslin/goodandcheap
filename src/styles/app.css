@@ -1,5 +1,5 @@
-// --------------------------------------------------
-// Layout: root.
+/* -------------------------------------------------- */
+/* Layout: root. */
 
 gc-app {
   block-size: 100dvh;
@@ -52,8 +52,8 @@ gc-app > footer > img {
   inline-size: auto;
 }
 
-// --------------------------------------------------
-// Layout: views.
+/* -------------------------------------------------- */
+/* Layout: views. */
 
 :is(gc-home, gc-chapter, gc-recipe, gc-page) {
   padding-block: var(--header-size) var(--footer-size);
@@ -74,8 +74,8 @@ gc-app > footer > img {
   padding-inline: 1rem;
 }
 
-// --------------------------------------------------
-// Previews.
+/* -------------------------------------------------- */
+/* Previews. */
 
 .previews {
   display: grid;
@@ -121,8 +121,8 @@ gc-app > footer > img {
   grid-area: counter;
 }
 
-// --------------------------------------------------
-// Typography.
+/* -------------------------------------------------- */
+/* Typography. */
 
 gc-home h2 {
   font-family: 'Futura Book';
@@ -159,8 +159,8 @@ gc-recipe :is(.badge, .cost, h2, h3),
   opacity: .7;
 }
 
-// --------------------------------------------------
-// Transitions.
+/* -------------------------------------------------- */
+/* Transitions. */
 
 [aria-hidden='true'] {
   z-index: -1;

@@ -1,6 +1,7 @@
 const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const FontPreloadPlugin = require('webpack-font-preload-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -40,25 +41,24 @@ module.exports = {
         use: 'ts-loader',
       },
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         include: [
           path.resolve(__dirname, 'src/styles')
         ],
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'postcss-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              api: 'modern',
-            },
-          },
         ],
       },
     ],
   },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+  },
   resolve: {
-    extensions: ['.ts', '.js', '.scss'],
+    extensions: ['.ts', '.js', '.css'],
   },
 }
