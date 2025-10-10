@@ -18,6 +18,7 @@ class App extends LitElement {
   @query('gc-recipe') recipeElement: HTMLElement;
 
   @state() baseTitle: string;
+  @state() baseUrl: string = '/goodandcheap';
   @state() chapter: string;
   @state() chapterTransition: string;
   @state() context: string = 'home';
@@ -27,7 +28,7 @@ class App extends LitElement {
   @state() pageTransition: string;
   @state() recipe: string;
   @state() recipeTransition: string;
-  @state() root: string = '';
+
 
   constructor() {
     super();
@@ -118,9 +119,9 @@ class App extends LitElement {
   }
 
   private updateBrowser(slug: string, context?: string) {
-    let path = `${this.root}/${slug}`;
+    let path = `${this.baseUrl}/${slug}`;
     if (context) {
-      path = `${this.root}/${context}/${slug}`;
+      path = `${this.baseUrl}/${context}/${slug}`;
     }
     history.pushState(null, '', path);
 
