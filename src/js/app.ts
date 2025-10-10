@@ -199,7 +199,7 @@ class App extends LitElement {
       </main>
 
       <footer>
-        <img src="by-nc-sa-80x15.svg" alt="Creative Commons License">
+        <img src="/img/by-nc-sa-80x15.svg" alt="Creative Commons License">
       </footer>
     `;
   }
