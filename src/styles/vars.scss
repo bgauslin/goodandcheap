@@ -1,14 +1,4 @@
 :root {
-  // Theming.
-  --brand-color: #e5001f;
-  --fill-0: var(--gray6);
-  --fill-1: white;
-  --fill-2: var(--gray5);
-  --link-color: var(--text-color);
-  --link-focus-color: var(--brand-color);
-  --link-visited-color: var(--text-color); // TODO: Update value.
-  --text-color: rgb(44, 44, 46); // Gray5 dark.
-
   // Apple HGI light mode colors.
   --gray1: rgb(142, 142, 147);
   --gray2: rgb(174, 174, 178);
@@ -16,25 +6,29 @@
   --gray4: rgb(209, 209, 214);
   --gray5: rgb(229, 229, 234);
   --gray6: rgb(242, 242, 247);
-  
+
+  // Theming.
+  --fill-0: var(--gray6);
+  --fill-1: white;
+  --fill-2: var(--gray5);
+  --link-color: var(--text-color);
+  --link-focus-color: var(--brand-color);
+  --link-visited-color: var(--text-color); // TODO: Update value.
+
   // Global properties.
   --transition: .25s;
 
-  // Elements.
+  // Branding and elements.
+  --brand-color: #e5001f;
+  --header-background: rgba(255, 255, 255, .9);
   --header-size: 3rem;
   --footer-size: 3rem;
   --section-max-width: 40rem;
   --subhead-font-size: 80%;
+  --text-color: rgb(44, 44, 46); // Gray5 dark.
   --thumb-size: 6rem;
 
   @media (prefers-color-scheme: dark) {
-    // Dark mode theming.
-    --brand-color: #ed4d62;
-    --fill-0: var(--gray6);
-    --fill-1: var(--gray5);
-    --fill-2: var(--gray4);
-    --text-color: rgb(229, 229, 234); // Gray5 light.
-
     // Apple HGI dark mode colors.
     --gray1: rgb(142, 142, 147);
     --gray2: rgb(99, 99, 102);
@@ -42,5 +36,15 @@
     --gray4: rgb(58, 58, 60);
     --gray5: rgb(44, 44, 46);
     --gray6: rgb(28, 28, 30);
+
+    // Dark mode theming.
+    --fill-0: var(--gray6);
+    --fill-1: var(--gray5);
+    --fill-2: var(--gray4);
+
+    // Dark mode branding and elements.
+    --brand-color: #ed4d62;
+    --header-background: rgba(0, 0, 0, .5);    
+    --text-color: rgb(229, 229, 234); // Gray5 light.
   }
 }
