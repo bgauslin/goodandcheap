@@ -1,5 +1,5 @@
-@import 'vars';
 @import 'base';
+@import 'vars';
 @import 'app';
 @import 'page';
 @import 'recipe';
