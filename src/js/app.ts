@@ -176,21 +176,31 @@ class App extends LitElement {
 
   protected render() {
     return html`
-      <gc-home
-        aria-hidden="${this.context !== 'home'}"
-        transition="${this.homeTransition}"></gc-home>
-      <gc-page
-        aria-hidden="${this.context !== 'page'}"  
-        page="${this.page}"
-        transition="${this.pageTransition}"></gc-page>
-      <gc-chapter
-        aria-hidden="${this.context !== 'chapter'}"
-        chapter="${this.chapter}"
-        transition="${this.chapterTransition}"></gc-chapter>
-      <gc-recipe
-        aria-hidden="${this.context !== 'recipe'}"
-        recipe="${this.recipe}"
-        transition="${this.recipeTransition}"></gc-recipe>
+      <header>
+        <img src="/img/wordmark.png" alt="Good And Cheap">
+      </header>
+
+      <main>
+        <gc-home
+          aria-hidden="${this.context !== 'home'}"
+          transition="${this.homeTransition}"></gc-home>
+        <gc-page
+          aria-hidden="${this.context !== 'page'}"  
+          page="${this.page}"
+          transition="${this.pageTransition}"></gc-page>
+        <gc-chapter
+          aria-hidden="${this.context !== 'chapter'}"
+          chapter="${this.chapter}"
+          transition="${this.chapterTransition}"></gc-chapter>
+        <gc-recipe
+          aria-hidden="${this.context !== 'recipe'}"
+          recipe="${this.recipe}"
+          transition="${this.recipeTransition}"></gc-recipe>
+      </main>
+
+      <footer>
+        <img src="by-nc-sa-80x15.svg" alt="Creative Commons License">
+      </footer>
     `;
   }
 }

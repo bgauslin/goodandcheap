@@ -3,13 +3,40 @@
 
 gc-app {
   display: grid;
+  grid: 'header header header' var(--header-size) '. main .' auto 'footer footer footer' auto / 1fr auto 1fr;
+}
+
+gc-app > header {
+  border-bottom: 1px solid blue;
+  display: grid;
+  grid: var(--header-size) / 1fr;
+  // grid-area: header;
+  inline-size: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+gc-app > header > img {
+  block-size: 100%;
+  inline-size: auto;
+  place-self: center;
+}
+
+gc-app > main {
+  display: grid;
   grid: 'content' 1fr / 1fr;
+  // inline-size: 100%;
+  grid-area: main;
   max-inline-size: var(--section-max-width);
   overflow: hidden;
 }
 
-gc-app > * {
+gc-app > main > * {
   grid-area: content;
+}
+
+gc-app > footer {
+  grid-area: footer;
 }
 
 :is(gc-home, gc-chapter, gc-recipe, gc-page) {
