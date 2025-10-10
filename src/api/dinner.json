@@ -2,123 +2,144 @@
   "title": "Dinner",
   "content": "<p>My favorite meal of the day. For me, eating dinner indicates that the hard work is done: it’s time for family, relaxing, and the more optional endeavors. A great dinner is an opportunity to show love to those you are cooking for and to yourself.</p>",
   "image": "dinner",
+  "count": "20",
   "recipes": [
     {
       "title": "Creamy Zucchini Fettuccine",
+      "badge": "For Three",
       "chapter": "dinner",
       "slug": "creamy-zucchini-fettuccine",
       "image": "creamy-zucchini-fettuccine"
     },
     {
       "title": "Pasta with Eggplant and Tomato",
+      "badge": "For Two",
       "chapter": "dinner",
       "slug": "pasta-with-eggplant-and-tomato",
       "image": "pasta-with-eggplant-and-tomato"
     },
     {
       "title": "Chana Masala",
+      "badge": "For Two",
       "chapter": "dinner",
       "slug": "chana-masala",
       "image": "chana-masala"
     },
     {
       "title": "Black-Eyed Peas and Collards",
+      "badge": "For Four",
       "chapter": "dinner",
       "slug": "black-eyed-peas-and-collards",
       "image": "black-eyed-peas-and-collards"
     },
     {
       "title": "Vegetable Jambalaya",
+      "badge": "For Six",
       "chapter": "dinner",
       "slug": "vegetable-jambalaya",
       "image": "vegetable-jambalaya"
     },
     {
       "title": "Filipino Chicken Adobo",
+      "badge": "For Eight",
       "chapter": "dinner",
       "slug": "filipino-chicken-adobo",
       "image": "filipino-chicken-adobo"
     },
     {
       "title": "Baked Beans 2 Ways",
+      "badge": "For Two, or Four as a Side",
       "chapter": "dinner",
       "slug": "baked-beans-2-ways",
       "image": "baked-beans"
     },
     {
       "title": "Half-Veggie Burgers",
+      "badge": "For Eight",
       "chapter": "dinner",
       "slug": "half-veggie-burgers",
       "image": "half-veggie-burgers"
     },
     {
       "title": "Beef Stroganoff",
+      "badge": "For Six",
       "chapter": "dinner",
       "slug": "beef-stroganoff",
       "image": "beef-stroganoff"
     },
     {
       "title": "Tofu Hot Pot",
+      "badge": "For Four",
       "chapter": "dinner",
       "slug": "tofu-hot-pot",
       "image": "tofu-hot-pot"
     },
     {
       "title": "Deconstructed Cabbage Rolls",
+      "badge": "For Six",
       "chapter": "dinner",
       "slug": "deconstructed-cabbage-rolls",
       "image": "deconstructed-cabbage-rolls"
     },
     {
       "title": "Savory Summer Cobbler",
+      "badge": "For Four",
       "chapter": "dinner",
       "slug": "savory-summer-cobbler",
       "image": "savory-summer-cobbler"
     },
     {
       "title": "Cauliflower Cheese",
+      "badge": "For Four",
       "chapter": "dinner",
       "slug": "cauliflower-cheese",
       "image": "cauliflower-cheese"
     },
     {
       "title": "Vegetable Quiche, Hold the Crust",
+      "badge": "For Four",
       "chapter": "dinner",
       "slug": "vegetable-quiche-hold-the-crust",
       "image": "vegetable-quiche-hold-the-crust"
     },
     {
       "title": "Shrimp and Grits",
+      "badge": "For Four",
       "chapter": "dinner",
       "slug": "shrimp-and-grits",
       "image": "shrimp-and-grits"
     },
     {
       "title": "Spicy, Crunchy, Creamy Polenta",
+      "badge": "For Two",
       "chapter": "dinner",
       "slug": "spicy-crunchy-creamy-polenta",
       "image": "spicy-crunchy-creamy-polenta"
     },
     {
       "title": "Roast Chicken",
+      "badge": "For Six",
       "chapter": "dinner",
       "slug": "roast-chicken",
       "image": "roast-chicken"
     },
     {
       "title": "Roasted Vegetables",
+      "badge": "Method",
       "chapter": "dinner",
       "slug": "roasted-vegetables",
       "image": "roasted-vegetables"
     },
     {
       "title": "Roasted Potatoes with Chilies",
+      "badge": "For Four",
       "chapter": "dinner",
       "slug": "roasted-potatoes-with-chilies",
       "image": "roasted-potatoes-with-chilies-1"
     },
     {
       "title": "Spicy Broiled Tilapia with Lime",
+      "badge": "For Two",
       "chapter": "dinner",
       "slug": "spicy-broiled-tilapia-with-lime",
       "image": "spicy-broiled-tilapia-with-lime"

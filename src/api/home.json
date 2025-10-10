@@ -3,57 +3,68 @@
     {
       "title": "Breakfast",
       "image": "breakfast",
-      "slug": "breakfast"
+      "slug": "breakfast",
+      "count": "10"
     },
     {
       "title": "Soup",
       "image": "soup",
-      "slug": "soup"
+      "slug": "soup",
+      "count": "4"
     },
     {
       "title": "Salad",
       "image": "salad",
-      "slug": "salad"
+      "slug": "salad",
+      "count": "9"
     },
     {
       "title": "Snacks, Sides &amp; Small Bites",
       "image": "snacks-sides-small-bites",
-      "slug": "snacks-sides-and-small-bites"
+      "slug": "snacks-sides-and-small-bites",
+      "count": "10"
     },
     {
       "title": "Handheld",
       "image": "handheld",
-      "slug": "handheld"
+      "slug": "handheld",
+      "count": "6"
     },
     {
       "title": "Dinner",
       "image": "dinner",
-      "slug": "dinner"
+      "slug": "dinner",
+      "count": "20"
     },
     {
       "title": "Big Batch",
       "image": "big-batch",
-      "slug": "big-batch"
+      "slug": "big-batch",
+      "count": "4"
     },
     {
       "title": "Staples",
       "image": "staples",
-      "slug": "staples"
+      "slug": "staples",
+      "count": "9"
     },
     {
       "title": "Drinks",
       "image": "drinks",
-      "slug": "drinks"
+      "slug": "drinks",
+      "count": "2"
     },
     {
       "title": "Desserts",
       "image": "desserts",
-      "slug": "desserts"
+      "slug": "desserts",
+      "count": "5"
     },
     {
       "title": "Flavor",
       "image": "flavor",
-      "slug": "flavor"
+      "slug": "flavor",
+      "count": "6"
     }
   ],
   "pages": [

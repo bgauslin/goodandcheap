@@ -2,33 +2,39 @@
   "title": "Desserts",
   "content": "<p>Whether it’s been a rough day, it’s time to celebrate, or just because it’s Wednesday, these sweets are totally worth it.</p>",
   "image": "desserts",
+  "count": "5",
   "recipes": [
     {
       "title": "Caramelized Bananas",
+      "badge": "For Two",
       "chapter": "desserts",
       "slug": "caramelized-bananas",
       "image": "caramelized-bananas"
     },
     {
       "title": "Coconut Chocolate Cookies",
+      "badge": "Makes Forty",
       "chapter": "desserts",
       "slug": "coconut-chocolate-cookies",
       "image": "coconut-chocolate-cookies"
     },
     {
       "title": "Peach Coffee Cake",
+      "badge": "For Twelve",
       "chapter": "desserts",
       "slug": "peach-coffee-cake",
       "image": "peach-coffee-cake"
     },
     {
       "title": "Fast Melon Sorbet",
+      "badge": "For Four",
       "chapter": "desserts",
       "slug": "fast-melon-sorbet",
       "image": "fast-melon-sorbet"
     },
     {
       "title": "Avocado Milkshake",
+      "badge": "For Two",
       "chapter": "desserts",
       "slug": "avocado-milkshake",
       "image": "avocado-milkshake"

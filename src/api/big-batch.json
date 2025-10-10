@@ -2,27 +2,32 @@
   "title": "Big Batch",
   "content": "<p>It’s simple economics: usually making a large amount of something is cheaper and more efficient than making lots of different small dishes. You can blow a whole batch all on a big celebration or portion these dishes out and freeze them for later use. You’ll be extremely grateful to your past self when you pull delicious home-made food out of the freezer on a busy Monday evening!</p>",
   "image": "big-batch",
+  "count": "4",
   "recipes": [
     {
       "title": "Spicy Pulled Pork",
+      "badge": "For Ten",
       "chapter": "big-batch",
       "slug": "spicy-pulled-pork",
       "image": "spicy-pulled-pork"
     },
     {
       "title": "Deviled Eggs 6 Ways",
+      "badge": "Makes Twenty-four Half Eggs",
       "chapter": "big-batch",
       "slug": "deviled-eggs-6-ways",
       "image": "deviled-eggs"
     },
     {
       "title": "Perogies",
+      "badge": "Makes Sixty to Seventy-two",
       "chapter": "big-batch",
       "slug": "perogies",
       "image": "perogies"
     },
     {
       "title": "Dumplings 2 Ways",
+      "badge": "Makes Sixty",
       "chapter": "big-batch",
       "slug": "dumplings-2-ways",
       "image": "dumplings"

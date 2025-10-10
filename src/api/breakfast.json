@@ -2,63 +2,74 @@
   "title": "Breakfast",
   "content": "<p>Fast, healthy, and cheap is usually the game plan for breakfast—with as much pleasing flavor as I can manage in my grouchy morning state. Whether you have hours or minutes, there’s a great breakfast to be had for little.</p>",
   "image": "breakfast",
+  "count": "10",
   "recipes": [
     {
       "title": "Tomato Scrambled Eggs",
+      "badge": "For Two",
       "chapter": "breakfast",
       "slug": "tomato-scrambled-eggs",
       "image": "tomato-scrambled-eggs"
     },
     {
       "title": "Broiled Grapefruit",
+      "badge": "For Two",
       "chapter": "breakfast",
       "slug": "broiled-grapefruit",
       "image": "broiled-grapefruit"
     },
     {
       "title": "Omelette",
+      "badge": "For Two",
       "chapter": "breakfast",
       "slug": "omelette",
       "image": "omelette"
     },
     {
       "title": "Banana Pancakes",
+      "badge": "Makes Ten to Fourteen Pancakes",
       "chapter": "breakfast",
       "slug": "banana-pancakes",
       "image": "banana-pancakes"
     },
     {
       "title": "Chocolate Zucchini Muffins",
+      "badge": "Makes Twenty-four Small Muffins",
       "chapter": "breakfast",
       "slug": "chocolate-zucchini-muffins",
       "image": "chocolate-zucchini-muffins"
     },
     {
       "title": "Whole-Wheat Jalapeño Cheddar Scones",
+      "badge": "Makes Six",
       "chapter": "breakfast",
       "slug": "whole-wheat-jalapeno-cheddar-scones",
       "image": "whole-wheat-jalapeno-cheddar-scones"
     },
     {
       "title": "Peanut Butter and Jelly Granola Bars",
+      "badge": "Makes Twelve",
       "chapter": "breakfast",
       "slug": "peanut-butter-and-jelly-granola-bars",
       "image": "peanut-butter-and-jelly-granola-bars"
     },
     {
       "title": "Egg Sandwich with Mushroom Hash",
+      "badge": "For Two",
       "chapter": "breakfast",
       "slug": "egg-sandwich-with-mushroom-hash",
       "image": "egg-sandwich-with-mushroom-hash"
     },
     {
       "title": "Oatmeal",
+      "badge": "Ideas",
       "chapter": "breakfast",
       "slug": "oatmeal",
       "image": "oatmeal"
     },
     {
       "title": "Yogurt Smash!",
+      "badge": "Ideas",
       "chapter": "breakfast",
       "slug": "yogurt-smash",
       "image": "yogurt-smash"

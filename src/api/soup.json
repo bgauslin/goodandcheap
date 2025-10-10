@@ -2,27 +2,32 @@
   "title": "Soup",
   "content": "<p>It’s a cliché, but as soon as the weather gets cold, my apartment fills with the smell of vegetables simmering for soup. Vegetable soups are so simple that you can easily invent your own, using the stuff you and your family like. Start with some onion, carrot, celery, maybe a pepper; then add broth and a large amount of, say, spinach, and suddenly you have spinach soup! It’s a great way for new cooks to gain some confidence. Just remember to season it enough. Dunk a grilled-cheese sandwich in it and even mediocre soup tastes great.</p>",
   "image": "soup",
+  "count": "4",
   "recipes": [
     {
       "title": "Dal",
+      "badge": "For Four",
       "chapter": "soup",
       "slug": "dal",
       "image": "dal"
     },
     {
       "title": "Corn Soup",
+      "badge": "For Four to Six",
       "chapter": "soup",
       "slug": "corn-soup",
       "image": "corn-soup"
     },
     {
       "title": "French Onion Soup",
+      "badge": "For Six",
       "chapter": "soup",
       "slug": "french-onion-soup",
       "image": "french-onion-soup"
     },
     {
       "title": "Lightly Curried Butternut Squash Soup",
+      "badge": "For Four",
       "chapter": "soup",
       "slug": "lightly-curried-butternut-squash-soup",
       "image": "lightly-curried-butternut-squash-soup"
