@@ -63,11 +63,15 @@ class Chapter extends LitElement {
 
     return html`
       <img src="/images/${image}@large.webp" alt="">
-      <h1>${title}</h1>
-      ${unsafeHTML(content)}
-      <p class="count">${count} Recipes</p>
+      
+      <section class="overview">
+        <h1>${title}</h1>
+        ${unsafeHTML(content)}
+        <p class="count">${count} Recipes</p>
+      </section>
+
       <ul class="previews">
-      ${recipes.map(recipe => {
+      ${recipes.map((recipe, index) => {
         const {badge, chapter, image, slug, title} = recipe;
         return html`
           <li>
@@ -79,6 +83,7 @@ class Chapter extends LitElement {
                 <h3>${title}</h3>
                 <p class="badge">${badge}</p>
               </div>
+              <div class="counter">${index + 1}</div>
             </a>
           </li>
         `;
