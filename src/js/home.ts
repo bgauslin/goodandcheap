@@ -50,8 +50,8 @@ class Home extends LitElement {
     const {chapters, pages} = this.data;
 
     return html`
-      ${this.renderList('Pages', pages, 'page')}  
-      ${this.renderList('Chapters', chapters, 'chapter')}
+      ${this.renderList('Recipes', chapters, 'chapter')}
+      ${this.renderList('More Info', pages, 'page')}
     `;
   }
 

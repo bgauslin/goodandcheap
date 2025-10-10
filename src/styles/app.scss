@@ -40,7 +40,8 @@ gc-chapter :is(h1, p) {
     grid: auto-flow / 1fr;
     gap: 1rem 0;
     list-style: none;
-    margin-block: 2rem 4rem;
+    margin-block: 0 4rem;
+    margin-inline: 1rem;
     padding: 0;
   }
 
@@ -66,12 +67,21 @@ gc-chapter :is(h1, p) {
 // --------------------------------------------------
 // Typography.
 
+gc-home h2 {
+  font-family: 'Futura Book';
+  font-size: var(--subhead-font-size);
+  letter-spacing: .25em;
+  margin-block: 1rem;
+  margin-inline: 1rem;
+  text-transform: uppercase;
+}
+
 gc-page h2,
 gc-recipe :is(.badge, .cost, h2, h3),
 :is(gc-home, gc-chapter) li {
   font-family: 'Futura Bold';
   font-size: var(--subhead-font-size);
-  letter-spacing: .2em;
+  letter-spacing: .25em;
   text-transform: uppercase;
 }
 

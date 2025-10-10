@@ -1,6 +1,6 @@
 gc-recipe {
   section {
-    margin-block: 3rem;
+    margin-block: 3em;
     padding-inline: 1rem;
   }
 
@@ -26,7 +26,7 @@ gc-recipe {
   }
 
   .badge {
-    margin-block: .5rem 2rem;
+    margin-block: .5em 2em;
     margin-inline: 1rem;
   }
 
@@ -41,6 +41,7 @@ gc-recipe {
   }
 
   :is(ul, ol) {
+    margin-block: 0 2em;
     padding-inline: 1.5em 0;
   }
 
