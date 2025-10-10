@@ -4,7 +4,7 @@ gc-recipe {
     padding-inline: 1rem;
   }
 
-  .overview {
+  [id='overview'] {
     margin-block-start: 0;
   }
 
@@ -45,7 +45,7 @@ gc-recipe {
     padding-inline: 1.5em 0;
   }
 
-  .steps li {
+  [id='steps'] li {
     margin-block: 1em;
   }
 }

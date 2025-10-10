@@ -71,12 +71,12 @@ class Recipe extends LitElement {
       </p>` : nothing;
 
     const overview_ = overview ? html`
-      <section class="overview">
+      <section class="overview" id="overview">
         ${unsafeHTML(overview)}
       </section>` : nothing;
 
     const ingredients_ = ingredients ? html`
-      <section class="ingredients">
+      <section id="ingredients">
       ${ingredients.map((group, index) => {
         const {label, items} = group;
         return html`
@@ -90,7 +90,7 @@ class Recipe extends LitElement {
       </section>` : nothing;
 
     const steps_ = steps ? html`
-      <section class="steps">
+      <section id="steps">
         <h2>Steps</h2>
         <ol>
           ${steps.map(step => html`<li>${step}</li>`)}
