@@ -47,45 +47,6 @@ class App extends LitElement {
     return this;
   }
 
-  protected willUpdate(changedProperties: PropertyValues<this>) {
-    if (changedProperties.has('context')) {
-      const prev = changedProperties.get('context');
-      const next = this.context;
-
-      // Going down.
-      if (prev === 'home' && next === 'chapter') {
-        this.transitionHome = 'start-out';
-        this.transitionChapter = 'end-in';
-      }
-
-      if (prev === 'chapter' && next === 'recipe') {
-        this.transitionChapter = 'start-out';
-        this.transitionRecipe = 'end-in';
-      }
-
-      if (prev === 'home' && next === 'page') {
-        this.transitionHome = 'start-out';
-        this.transitionPage = 'end-in';
-      }
-
-      // Coming back up.
-      if (prev === 'recipe' && next === 'chapter') {    
-        this.transitionChapter = 'start-in';
-        this.transitionRecipe = 'end-out';
-      }
-
-      if (prev === 'chapter' && next === 'home') {
-        this.transitionHome = 'start-in';
-        this.transitionChapter = 'end-out';
-      }
-
-      if (prev === 'page' && next === 'home') {
-        this.transitionHome = 'start-in';
-        this.transitionPage = 'end-out';
-      } 
-    }
-  }
-
   private async fetchData() {
     try {
       const response = await fetch('/api/all.json');
@@ -156,6 +117,45 @@ class App extends LitElement {
       path = `${this.root}/${context}/${slug}`;
     }
     history.pushState(null, '', path);
+  }
+
+  protected willUpdate(changedProperties: PropertyValues<this>) {
+    if (changedProperties.has('context')) {
+      const prev = changedProperties.get('context');
+      const next = this.context;
+
+      // Going down.
+      if (prev === 'home' && next === 'chapter') {
+        this.transitionHome = 'start-out';
+        this.transitionChapter = 'end-in';
+      }
+
+      if (prev === 'chapter' && next === 'recipe') {
+        this.transitionChapter = 'start-out';
+        this.transitionRecipe = 'end-in';
+      }
+
+      if (prev === 'home' && next === 'page') {
+        this.transitionHome = 'start-out';
+        this.transitionPage = 'end-in';
+      }
+
+      // Coming back up.
+      if (prev === 'recipe' && next === 'chapter') {    
+        this.transitionChapter = 'start-in';
+        this.transitionRecipe = 'end-out';
+      }
+
+      if (prev === 'chapter' && next === 'home') {
+        this.transitionHome = 'start-in';
+        this.transitionChapter = 'end-out';
+      }
+
+      if (prev === 'page' && next === 'home') {
+        this.transitionHome = 'start-in';
+        this.transitionPage = 'end-out';
+      } 
+    }
   }
 
   protected render() {
