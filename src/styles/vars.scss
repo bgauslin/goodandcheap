@@ -1,11 +1,12 @@
 :root {
   // Theming.
+  --brand-color: #e5001f;
   --fill-0: var(--gray6);
   --fill-1: white;
   --fill-2: var(--gray5);
-  --link-color: DodgerBlue;
-  --link-focus-color: OrangeRed;
-  --link-visited-color: RebeccaPurple;
+  --link-color: var(--text-color);
+  --link-focus-color: var(--brand-color);
+  --link-visited-color: var(--text-color); // TODO: Update value.
   --text-color: rgb(44, 44, 46); // Gray5 dark.
 
   // Apple HGI light mode colors.
@@ -28,12 +29,10 @@
 
   @media (prefers-color-scheme: dark) {
     // Dark mode theming.
+    --brand-color: #ed4d62;
     --fill-0: var(--gray6);
     --fill-1: var(--gray5);
     --fill-2: var(--gray4);
-    --link-color: CornflowerBlue;
-    --link-focus-color: DarkOrange;
-    --link-visited-color: MediumPurple;
     --text-color: rgb(229, 229, 234); // Gray5 light.
 
     // Apple HGI dark mode colors.

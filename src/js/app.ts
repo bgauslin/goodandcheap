@@ -177,7 +177,12 @@ class App extends LitElement {
   protected render() {
     return html`
       <header>
-        <img src="/img/wordmark.png" alt="Good And Cheap">
+        <picture>
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcset="/img/wordmark-dark.png">
+          <img src="/img/wordmark.png" alt="Good And Cheap">
+        </picture>
       </header>
 
       <main>

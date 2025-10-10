@@ -17,10 +17,13 @@ gc-app > header {
   z-index: 2;
 }
 
-gc-app > header > img {
+gc-app > header > picture {
+  place-self: center;
+}
+
+gc-app > header > picture > img {
   block-size: var(--header-size);
   inline-size: auto;
-  place-self: center;
 }
 
 gc-app > main {
