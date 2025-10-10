@@ -12,6 +12,11 @@ gc-app > * {
 :is(gc-home, gc-chapter, gc-recipe, gc-page) {
   max-block-size: 100dvh;
   overflow: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 :is(gc-home, gc-chapter) {
@@ -22,17 +27,16 @@ gc-app > * {
 
   li {
     font-family: 'Futura Bold';
+    font-size: var(--subhead-font-size);
+    letter-spacing: .1em;
+    text-transform: uppercase;
   }
   
   a {
     align-items: center;
     display: grid;
-    font-family: 'Futura Bold';
-    font-weight: normal;
     gap: 1rem;
     grid: 'thumb copy' var(--thumb-size) / var(--thumb-size) 1fr;
-    letter-spacing: .1em;
-    text-transform: uppercase;
   }
 
   a > * {

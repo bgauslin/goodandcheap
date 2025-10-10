@@ -1,5 +1,5 @@
 import {LitElement, html, PropertyValues} from 'lit';
-import {customElement, state} from 'lit/decorators.js';
+import {customElement, query, state} from 'lit/decorators.js';
 
 
 interface allData {
@@ -13,21 +13,27 @@ class App extends LitElement {
   private clickHandler: EventListenerObject;
   private popstateHandler: EventListenerObject;
 
+  @query('gc-chapter') chapterElement: HTMLElement;
+  @query('gc-page') pageElement: HTMLElement;
+  @query('gc-recipe') recipeElement: HTMLElement;
+
+  @state() baseTitle: string;
   @state() chapter: string;
+  @state() chapterTransition: string;
   @state() context: string = 'home';
   @state() data: allData;
+  @state() homeTransition: string;
   @state() page: string;
+  @state() pageTransition: string;
   @state() recipe: string;
+  @state() recipeTransition: string;
   @state() root: string = '';
-  @state() transitionHome: string;
-  @state() transitionPage: string;
-  @state() transitionChapter: string;
-  @state() transitionRecipe: string;
 
   constructor() {
     super();
     this.clickHandler = this.handleClick.bind(this);
     this.popstateHandler = this.handlePopstate.bind(this);
+    this.baseTitle = document.title;
   }
 
   connectedCallback() {
@@ -117,6 +123,13 @@ class App extends LitElement {
       path = `${this.root}/${context}/${slug}`;
     }
     history.pushState(null, '', path);
+
+    if (this.context === 'home') {
+      document.title = this.baseTitle;
+    } else {
+      // TODO: Get title of current view;
+      document.title = `PAGE · ${this.baseTitle}`;
+    }
   }
 
   protected willUpdate(changedProperties: PropertyValues<this>) {
@@ -126,34 +139,37 @@ class App extends LitElement {
 
       // Going down.
       if (prev === 'home' && next === 'chapter') {
-        this.transitionHome = 'start-out';
-        this.transitionChapter = 'end-in';
+        this.homeTransition = 'start-out';
+        this.chapterTransition = 'end-in';
+        window.requestAnimationFrame(() => this.chapterElement.scrollTo(0, 0));
       }
 
       if (prev === 'chapter' && next === 'recipe') {
-        this.transitionChapter = 'start-out';
-        this.transitionRecipe = 'end-in';
+        this.chapterTransition = 'start-out';
+        this.recipeTransition = 'end-in';
+        window.requestAnimationFrame(() => this.recipeElement.scrollTo(0, 0));
       }
 
       if (prev === 'home' && next === 'page') {
-        this.transitionHome = 'start-out';
-        this.transitionPage = 'end-in';
+        this.homeTransition = 'start-out';
+        this.pageTransition = 'end-in';
+        window.requestAnimationFrame(() => this.pageElement.scrollTo(0, 0));
       }
 
       // Coming back up.
       if (prev === 'recipe' && next === 'chapter') {    
-        this.transitionChapter = 'start-in';
-        this.transitionRecipe = 'end-out';
+        this.chapterTransition = 'start-in';
+        this.recipeTransition = 'end-out';
       }
 
       if (prev === 'chapter' && next === 'home') {
-        this.transitionHome = 'start-in';
-        this.transitionChapter = 'end-out';
+        this.homeTransition = 'start-in';
+        this.chapterTransition = 'end-out';
       }
 
       if (prev === 'page' && next === 'home') {
-        this.transitionHome = 'start-in';
-        this.transitionPage = 'end-out';
+        this.homeTransition = 'start-in';
+        this.pageTransition = 'end-out';
       } 
     }
   }
@@ -162,19 +178,19 @@ class App extends LitElement {
     return html`
       <gc-home
         aria-hidden="${this.context !== 'home'}"
-        transition="${this.transitionHome}"></gc-home>
+        transition="${this.homeTransition}"></gc-home>
       <gc-page
         aria-hidden="${this.context !== 'page'}"  
         page="${this.page}"
-        transition="${this.transitionPage}"></gc-page>
+        transition="${this.pageTransition}"></gc-page>
       <gc-chapter
         aria-hidden="${this.context !== 'chapter'}"
         chapter="${this.chapter}"
-        transition="${this.transitionChapter}"></gc-chapter>
+        transition="${this.chapterTransition}"></gc-chapter>
       <gc-recipe
         aria-hidden="${this.context !== 'recipe'}"
         recipe="${this.recipe}"
-        transition="${this.transitionRecipe}"></gc-recipe>
+        transition="${this.recipeTransition}"></gc-recipe>
     `;
   }
 }
