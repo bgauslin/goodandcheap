@@ -48,6 +48,8 @@ class Recipe extends LitElement {
   }
 
   private async fetchData(): Promise<any> {
+    if (!this.recipe) return;
+
     try {
       const response = await fetch(`/api/${this.recipe}.json`);
       this.data = await response.json();

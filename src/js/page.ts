@@ -37,6 +37,8 @@ class Page extends LitElement {
   }
 
   private async fetchData(): Promise<any> {
+    if (!this.page) return;
+
     try {
       const response = await fetch(`/api/${this.page}.json`);
       this.data = await response.json();

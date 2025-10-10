@@ -43,6 +43,8 @@ class Chapter extends LitElement {
   }
 
   private async fetchData(): Promise<any> {
+    if (!this.chapter) return;
+
     try {
       const response = await fetch(`/api/${this.chapter}.json`);
       this.data = await response.json();
