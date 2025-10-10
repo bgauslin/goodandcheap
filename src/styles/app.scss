@@ -36,7 +36,11 @@ gc-chapter :is(h1, p) {
 
 :is(gc-home, gc-chapter) {
   :is(ul, ol) {
+    display: grid;
+    grid: auto-flow / 1fr;
+    gap: 1rem 0;
     list-style: none;
+    margin-block: 2rem 4rem;
     padding: 0;
   }
 
@@ -53,6 +57,7 @@ gc-chapter :is(h1, p) {
 
   a > img {
     aspect-ratio: 1;
+    border-radius: .25rem;
     grid-area: thumb;
     object-fit: cover;
   }
