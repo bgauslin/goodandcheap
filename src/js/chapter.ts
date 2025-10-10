@@ -5,8 +5,10 @@ import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 interface chapter {
   content: string,
+  count: string,
   image: string,
   recipes: {
+    badge: string,
     chapter: string,
     image: string,
     slug: string,
@@ -57,22 +59,26 @@ class Chapter extends LitElement {
   protected render() {
     if (!this.data) return;
 
-    const {title, content, image, recipes} = this.data;
+    const {content, count, image, recipes, title} = this.data;
 
     return html`
       <img src="/images/${image}@large.webp" alt="">
       <h1>${title}</h1>
       ${unsafeHTML(content)}
-      <ul>
+      <p class="count">${count} Recipes</p>
+      <ul class="previews">
       ${recipes.map(recipe => {
-        const {chapter, image, slug, title} = recipe;
+        const {badge, chapter, image, slug, title} = recipe;
         return html`
           <li>
             <a href="${slug}"
               data-context="${chapter}"  
               data-type="recipe">
               <img src="/images/${image}@thumb.webp" alt="">
-              ${title}
+              <div class="blurb">
+                <h3>${title}</h3>
+                <p class="badge">${badge}</p>
+              </div>
             </a>
           </li>
         `;

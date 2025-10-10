@@ -1,4 +1,4 @@
-import {LitElement, html} from 'lit';
+import {LitElement, html, nothing} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 
 
@@ -8,6 +8,7 @@ interface home {
 }
 
 interface item {
+  count: string,
   image: string,
   slug: string,
   title: string,
@@ -50,22 +51,25 @@ class Home extends LitElement {
     const {chapters, pages} = this.data;
 
     return html`
-      ${this.renderList('Recipes', chapters, 'chapter')}
-      ${this.renderList('More Info', pages, 'page')}
+      ${this.renderList('Recipes', chapters, 'chapter', true)}
+      ${this.renderList('More Info', pages, 'page', false)}
     `;
   }
 
-  private renderList(heading: string, items: item[], type: string) {
+  private renderList(heading: string, items: item[], type: string, count: boolean) {
     return html`
       <h2>${heading}</h2>
-      <ul>
+      <ul class="previews">
       ${items.map(item => {
-        const {image, slug, title} = item;
+        const {count, image, slug, title} = item;
         return html`
           <li>
             <a href="${slug}" data-type="${type}">
               <img src="/images/${image}@thumb.webp" alt="">
-              ${title}
+              <div class="blurb">
+                <h3>${title}</h3>
+                ${count ? html`<p class="count">${count} Recipes</p>` : nothing }
+              </div>
             </a>
           </li>
         `;
