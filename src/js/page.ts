@@ -56,8 +56,10 @@ class Page extends LitElement {
     const {image, content, title} = this.data;
     return html`
       <img src="/images/${image}@large.webp" alt="">
-      <h1>${title}</h1>
-      ${unsafeHTML(content)}
+      <section>
+        <h1>${title}</h1>
+        ${unsafeHTML(content)}
+      </section>
     `;
   }
 }
