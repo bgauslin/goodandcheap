@@ -1,4 +1,4 @@
-import {LitElement, html} from 'lit';
+import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 
 
@@ -19,6 +19,10 @@ class App extends LitElement {
   @state() page: string;
   @state() recipe: string;
   @state() root: string = '';
+  @state() transitionHome: string;
+  @state() transitionPage: string;
+  @state() transitionChapter: string;
+  @state() transitionRecipe: string;
 
   constructor() {
     super();
@@ -41,6 +45,45 @@ class App extends LitElement {
 
   protected createRenderRoot() {
     return this;
+  }
+
+  protected willUpdate(changedProperties: PropertyValues<this>) {
+    if (changedProperties.has('context')) {
+      const prev = changedProperties.get('context');
+      const next = this.context;
+
+      // Going down.
+      if (prev === 'home' && next === 'chapter') {
+        this.transitionHome = 'start-out';
+        this.transitionChapter = 'end-in';
+      }
+
+      if (prev === 'chapter' && next === 'recipe') {
+        this.transitionChapter = 'start-out';
+        this.transitionRecipe = 'end-in';
+      }
+
+      if (prev === 'home' && next === 'page') {
+        this.transitionHome = 'start-out';
+        this.transitionPage = 'end-in';
+      }
+
+      // Coming back up.
+      if (prev === 'recipe' && next === 'chapter') {    
+        this.transitionChapter = 'start-in';
+        this.transitionRecipe = 'end-out';
+      }
+
+      if (prev === 'chapter' && next === 'home') {
+        this.transitionHome = 'start-in';
+        this.transitionChapter = 'end-out';
+      }
+
+      if (prev === 'page' && next === 'home') {
+        this.transitionHome = 'start-in';
+        this.transitionPage = 'end-out';
+      } 
+    }
   }
 
   private async fetchData() {
@@ -122,16 +165,20 @@ class App extends LitElement {
   protected render() {
     return html`
       <gc-home
-        ?hidden="${this.context !== 'home'}"></gc-home>
+        ?hidden="${this.context !== 'home'}"
+        transition="${this.transitionHome}"></gc-home>
       <gc-page
         page="${this.page}"
-        ?hidden="${this.context !== 'page'}"></gc-page>
+        ?hidden="${this.context !== 'page'}"
+        transition="${this.transitionPage}"></gc-page>
       <gc-chapter
         chapter="${this.chapter}"
-        ?hidden="${this.context !== 'chapter'}"></gc-chapter>
+        ?hidden="${this.context !== 'chapter'}"
+        transition="${this.transitionChapter}"></gc-chapter>
       <gc-recipe
         recipe="${this.recipe}"
-        ?hidden="${this.context !== 'recipe'}"></gc-recipe>
+        ?hidden="${this.context !== 'recipe'}"
+        transition="${this.transitionRecipe}"></gc-recipe>
     `;
   }
 }
