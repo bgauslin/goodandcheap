@@ -10,7 +10,7 @@ interface Data {
 }
 
 @customElement('gc-app')
-class App extends LitElement {
+class GoodAndCheapApp extends LitElement {
   private clickHandler: EventListenerObject;
   private popstateHandler: EventListenerObject;
 

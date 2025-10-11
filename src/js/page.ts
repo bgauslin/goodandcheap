@@ -1,14 +1,9 @@
-import {LitElement, html} from 'lit';
-import {customElement, state} from 'lit/decorators.js';
-import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {Page} from './_types';
 
 
-@customElement('gc-page')
-class GoodAndCheapPage extends LitElement {
+customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
+  private data: Page;
   private dataListener: EventListenerObject;
-  
-  @state() data: Page;
 
   constructor() {
     super();
@@ -16,33 +11,28 @@ class GoodAndCheapPage extends LitElement {
   }
 
   connectedCallback() {
-    super.connectedCallback();
     this.addEventListener('data', this.dataListener);
   }
 
   disconnectedCallback() {
-    super.disconnectedCallback();
     this.removeEventListener('data', this.dataListener);
-  }
-
-  protected createRenderRoot() {
-    return this;
   }
 
   private updateData(event: CustomEvent) {
     this.data = event.detail;
+    this.render();
   }
 
-  protected render() {
+  private render() {
     if (!this.data) return;
 
     const {image, content, title} = this.data;
-    return html`
+    this.innerHTML = `
       <img src="./images/${image}@large.webp" alt="">
       <section>
         <h1>${title}</h1>
-        ${unsafeHTML(content)}
+        ${content}
       </section>
     `;
   }
-}
+});
