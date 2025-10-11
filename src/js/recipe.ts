@@ -1,62 +1,36 @@
-import {LitElement, html, nothing, PropertyValues} from 'lit';
-import {customElement, property, state} from 'lit/decorators.js';
+import {LitElement, html, nothing} from 'lit';
+import {customElement, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
+import {Recipe} from './_types';
 
-
-interface recipe {
-  badge: string,
-  cost?: {
-    each: string,
-    total: string,
-    units: string
-  },
-  image: string,
-  ingredients?: {
-    items: string[],
-    label?: string,
-  }[],
-  overview: string,
-  steps?: string[],
-  title: string,
-}
 
 @customElement('gc-recipe')
-class Recipe extends LitElement {
-  @property() recipe: string;
-  @state() data: recipe;
+class GoodAndCheapRecipe extends LitElement {
+  private dataListener: EventListenerObject;
+
+  @state() data: Recipe;
 
   constructor() {
     super();
+    this.dataListener = this.updateData.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
+    this.addEventListener('recipe', this.dataListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
+    this.removeEventListener('recipe', this.dataListener);
   }
 
   protected createRenderRoot() {
     return this;
   }
 
-  protected willUpdate(changedProperties: PropertyValues<this>) {
-    if (changedProperties.has('recipe')) {
-      this.fetchData();
-    }
-  }
-
-  private async fetchData(): Promise<any> {
-    if (!this.recipe) return;
-
-    try {
-      const response = await fetch(`./api/${this.recipe}.json`);
-      this.data = await response.json();
-    } catch (error) {
-      console.warn('Currently unable to fetch data. :(');
-      return;
-    }
+  private updateData(event: CustomEvent) {
+    this.data = event.detail;
   }
 
   protected render() {

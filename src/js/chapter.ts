@@ -1,59 +1,36 @@
-import {LitElement, html, PropertyValues} from 'lit';
-import {customElement, property, state} from 'lit/decorators.js';
+import {LitElement, html} from 'lit';
+import {customElement, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
+import {Chapter} from './_types';
 
-
-interface chapter {
-  content: string,
-  count: string,
-  image: string,
-  recipes: {
-    badge: string,
-    chapter: string,
-    image: string,
-    slug: string,
-    title: string,
-  }[],
-  title: string,
-}
 
 @customElement('gc-chapter')
-class Chapter extends LitElement {
-  @property() chapter: string;
-  @state() data: chapter;
+class GoodAndCheapChapter extends LitElement {
+  private dataListener: EventListenerObject;
+
+  @state() data: Chapter;
 
   constructor() {
     super();
+    this.dataListener = this.updateData.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
+    this.addEventListener('chapter', this.dataListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
+    this.removeEventListener('chapter', this.dataListener);
   }
 
   protected createRenderRoot() {
     return this;
   }
 
-  protected willUpdate(changedProperties: PropertyValues<this>) {
-    if (changedProperties.has('chapter')) {
-      this.fetchData();
-    }
-  }
-
-  private async fetchData(): Promise<any> {
-    if (!this.chapter) return;
-
-    try {
-      const response = await fetch(`./api/${this.chapter}.json`);
-      this.data = await response.json();
-    } catch (error) {
-      console.warn('Currently unable to fetch data. :(');
-      return;
-    }
+  private updateData(event: CustomEvent) {
+    this.data = event.detail;
   }
 
   protected render() {

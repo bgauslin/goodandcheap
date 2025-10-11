@@ -1,53 +1,36 @@
-import {LitElement, html, PropertyValues} from 'lit';
-import {customElement, property, state} from 'lit/decorators.js';
+import {LitElement, html} from 'lit';
+import {customElement, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
+import {Page} from './_types';
 
-
-interface page {
-  content: string,
-  image: string,
-  title: string,
-}
 
 @customElement('gc-page')
-class Page extends LitElement {
-  @property() page: string;
-  @state() data: page;
+class GoodAndCheapPage extends LitElement {
+  private dataListener: EventListenerObject;
+  
+  @state() data: Page;
 
   constructor() {
     super();
+    this.dataListener = this.updateData.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
+    this.addEventListener('page', this.dataListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
+    this.removeEventListener('page', this.dataListener);
   }
 
   protected createRenderRoot() {
     return this;
   }
 
-  protected willUpdate(changedProperties: PropertyValues<this>) {
-    if (changedProperties.has('page')) {
-      this.fetchData();
-    }
-  }
-
-  private async fetchData(): Promise<any> {
-    if (!this.page) return;
-
-    console.log('this.page', this.page);
-
-    try {
-      const response = await fetch(`./api/${this.page}.json`);
-      this.data = await response.json();
-    } catch (error) {
-      console.warn('Currently unable to fetch data. :(');
-      return;
-    }
+  private updateData(event: CustomEvent) {
+    this.data = event.detail;
   }
 
   protected render() {

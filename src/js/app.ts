@@ -1,11 +1,12 @@
 import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
+import {Chapter, Page, Recipe} from './_types';
 
 
-interface allData {
-  chapters: string[];
-  pages: string[];
-  recipes: string[];
+interface Data {
+  chapters: Chapter[];
+  pages: Page[];
+  recipes: Recipe[];
 }
 
 @customElement('gc-app')
@@ -18,16 +19,12 @@ class App extends LitElement {
   @query('gc-recipe') recipeElement: HTMLElement;
 
   @state() baseTitle: string;
-  @state() chapter: string;
   @state() chapterTransition: string;
   @state() context: string = 'home';
-  @state() data: allData;
+  @state() data: Data;
   @state() homeTransition: string;
-  @state() page: string;
   @state() pageTransition: string;
-  @state() recipe: string;
   @state() recipeTransition: string;
-
 
   constructor() {
     super();
@@ -55,7 +52,7 @@ class App extends LitElement {
 
   private async fetchData() {
     try {
-      const response = await fetch('./api/all.json');
+      const response = await fetch('./api/goodandcheap.json');
       this.data = await response.json();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
@@ -71,24 +68,24 @@ class App extends LitElement {
 
     if (!['chapter', 'page', 'recipe'].includes(type)) return;
 
+    const {chapters, pages, recipes} = this.data;
     const href = (<HTMLAnchorElement>target).getAttribute('href');
-
     switch (type) {
       case 'chapter':
-        this.chapter = href;
-        this.context = 'chapter';
-        this.updateBrowser(this.chapter);
+        const chapter_ = chapters.find((chapter: Chapter) => chapter.slug === href);
+        this.updateChapter(chapter_);
+        this.updateBrowser(href);
         break;
       case 'page':
-        this.page = href;
-        this.context = 'page';
-        this.updateBrowser(this.page);
+        const page_ = pages.find((page: Page) => page.slug === href);
+        this.updatePage(page_);
+        this.updateBrowser(href);
         break;
       case 'recipe':
-        this.recipe = href;
-        this.context = 'recipe';
+        const recipe_ = recipes.find((recipe: Recipe) => recipe.slug === href);
         const chapter = (<HTMLElement>target).dataset.context;
-        this.updateBrowser(this.recipe, chapter);
+        this.updateRecipe(recipe_);
+        this.updateBrowser(href, chapter);
         break;
       default:
         break;
@@ -100,21 +97,49 @@ class App extends LitElement {
     const {pathname} = url;
     const segments = pathname.split('/');
     const lastSegment = segments[segments.length - 1];
-    
+
     const {chapters, pages, recipes} = this.data;
 
-    if (recipes.includes(lastSegment)) {
-      this.context = 'recipe';
-      this.recipe = lastSegment;
-    } else if (chapters.includes(lastSegment)) {
-      this.context = 'chapter';
-      this.chapter = lastSegment;
-    } else if (pages.includes(lastSegment)) {
-      this.context = 'page';
-      this.page = lastSegment;
+    const chapter = chapters.find((chapter: Chapter) => chapter.slug === lastSegment);
+    const page = pages.find((page: Page) => page.slug === lastSegment);
+    const recipe = recipes.find((recipe: Recipe) => recipe.slug === lastSegment);
+
+    if (chapter) {
+      this.updateChapter(chapter);
+    } else if (page) {
+      this.updatePage(page);
+    } else if (recipe) {
+      this.updateRecipe(recipe);
     } else {
       this.context = 'home';
     }
+  }
+
+  private updateChapter(detail: Chapter) {
+    this.context = 'chapter';
+    this.chapterElement.dispatchEvent(new CustomEvent('chapter', {
+      bubbles: true,
+      composed: true,
+      detail,
+    }));
+  }
+
+  private updatePage(detail: Page) {
+    this.context = 'page';
+    this.pageElement.dispatchEvent(new CustomEvent('page', {
+      bubbles: true,
+      composed: true,
+      detail,
+    }));
+  }
+
+  private updateRecipe(detail: Recipe) {
+    this.context = 'recipe';
+    this.recipeElement.dispatchEvent(new CustomEvent('recipe', {
+      bubbles: true,
+      composed: true,
+      detail,
+    }));
   }
 
   private updateBrowser(slug: string, context?: string) {
@@ -190,16 +215,13 @@ class App extends LitElement {
           aria-hidden="${this.context !== 'home'}"
           transition="${this.homeTransition}"></gc-home>
         <gc-page
-          aria-hidden="${this.context !== 'page'}"  
-          page="${this.page}"
+          aria-hidden="${this.context !== 'page'}"
           transition="${this.pageTransition}"></gc-page>
         <gc-chapter
           aria-hidden="${this.context !== 'chapter'}"
-          chapter="${this.chapter}"
           transition="${this.chapterTransition}"></gc-chapter>
         <gc-recipe
           aria-hidden="${this.context !== 'recipe'}"
-          recipe="${this.recipe}"
           transition="${this.recipeTransition}"></gc-recipe>
       </main>
 
