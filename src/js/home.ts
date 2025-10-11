@@ -1,5 +1,6 @@
 import {LitElement, html, nothing} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 
 interface Home {
@@ -71,7 +72,7 @@ class GoodAndCheapHome extends LitElement {
             <a href="${slug}" data-type="${type}">
               <img src="./images/${image}@thumb.webp" alt="">
               <div class="blurb">
-                <h3>${title}</h3>
+                <h3>${unsafeHTML(title)}</h3>
                 ${count ? html`<p class="count">${count} Recipes</p>` : nothing }
               </div>
             </a>

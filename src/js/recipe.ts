@@ -57,7 +57,7 @@ class GoodAndCheapRecipe extends LitElement {
           ${index === 0 ? html`<h2>Ingredients</h2>` : nothing}
           ${label ? html`<h3>${label}</h3>` : nothing}
           <ul>
-            ${items.map(item => html`<li>${item}</li>`)}
+            ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
           </ul>
         `;
       })}
@@ -67,14 +67,14 @@ class GoodAndCheapRecipe extends LitElement {
       <section id="steps">
         <h2>Steps</h2>
         <ol>
-          ${steps.map(step => html`<li>${step}</li>`)}
+          ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
         </ol>
       </section>` : nothing;
 
     return html`
       <section class="cover">
         <img src="./images/${image}@large.webp" alt="">  
-        <h1>${title}</h1>
+        <h1>${unsafeHTML(title)}</h1>
         <div class="badge">${badge}</div>
         ${cost_}
       </section>
