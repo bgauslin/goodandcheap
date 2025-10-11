@@ -24,8 +24,6 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
   }
 
   private render() {
-    if (!this.data) return;
-
     const {content, count, image, recipes, title} = this.data;
 
     let items = '';

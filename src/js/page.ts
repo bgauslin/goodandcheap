@@ -24,8 +24,6 @@ customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
   }
 
   private render() {
-    if (!this.data) return;
-
     const {image, content, title} = this.data;
     this.innerHTML = `
       <img src="./images/${image}@large.webp" alt="">
