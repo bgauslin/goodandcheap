@@ -43,7 +43,7 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
           </a>
         </li>
       `;
-      }
+    }
 
     this.innerHTML = `
       <img src="./images/${image}@large.webp" alt="">
