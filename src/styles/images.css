@@ -7,10 +7,9 @@ img {
 
 /* Cover photo for everything but home page. */
 .cover-photo {
-  margin: 0;
-  padding: 0;
   aspect-ratio: 1;
   inline-size: 100%;
+  margin: 0;
 }
 
 .cover-photo > img {

@@ -1,17 +1,13 @@
-gc-page > section {
-  padding-block: 0 4rem;
-  padding-inline: 1rem;
-}
+gc-page {
+  section {
+    padding-block: 0 4rem;
+    padding-inline: 1rem;
+  }
 
-gc-page > img {
-  aspect-ratio: 1;
-  display: block;
-  object-fit: cover;
-}
-
-gc-page ul {
-  columns: 3;
-  list-style: none;
-  margin-block: 1em 3em;
-  padding: 0;
+  ul {
+    columns: 3;
+    list-style: none;
+    margin-block: 1em 3em;
+    padding: 0;
+  }
 }

@@ -49,8 +49,8 @@ gc-app > main > * {
 /* Main components */
 
 :is(gc-home, gc-chapter, gc-recipe, gc-page) {
-  padding-block: var(--header-size) var(--footer-size);
   overflow: auto;
+  padding-block: var(--header-size) var(--footer-size);
   scrollbar-width: none;
 
   &::-webkit-scrollbar {

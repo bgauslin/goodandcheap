@@ -1,7 +1,7 @@
 .previews {
   display: grid;
-  grid: auto-flow / 1fr;
   gap: 1rem 0;
+  grid: auto-flow / 1fr;
   list-style: none;
   margin-block: 0 4rem;
   margin-inline: 1rem;
