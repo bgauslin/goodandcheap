@@ -33,6 +33,8 @@ class GoodAndCheapRecipe extends LitElement {
   }
 
   private updateData(event: CustomEvent) {
+    this.loading = true;
+
     this.data = event.detail;
 
     window.requestAnimationFrame(() => {
