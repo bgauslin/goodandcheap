@@ -745,6 +745,7 @@
           "each": "$1.40",
           "units": "Serving"
         },
+        "overview": "<p>Pulled pork is a celebration, worthy of a special day. It’s incredibly flavorful, rich, spicy, and remarkably versatile. Although it seems expensive, it’s quite a bargain when you look at the price per serving. As with most celebratory meals, this one takes quite a long time to prepare. Most of the time, however, is just spent waiting for it to cook “low and slow.”</p>",
         "ingredients": [
           {
             "items": [
@@ -791,6 +792,7 @@
           "each": "$0.15",
           "units": "Half Egg"
         },
+        "overview": "<p>Deviled eggs are my favorite party food and the perfect recipe to dedicate to my friend Camilla. At parties, I often eat too much random junk food and end up feeling gross. These eggs are a great antidote: festive and delicious without being empty calories. Although they’re a little fussy, they aren’t actually difficult to make. I’ll start you off with these few ideas, but you can add whatever flavors suit your fancy.</p>",
         "ingredients": [
           {
             "items": [
@@ -884,6 +886,7 @@
           "each": "$0.20",
           "units": "Perogy"
         },
+        "overview": "<p>This is a huge recipe that will feed you for days. It takes time and effort, but the results are worth it. The most fun approach is to invite a couple of friends over for a perogy-making party. Everyone takes home a bag or two for the freezer, and it’s a great time!</p>",
         "ingredients": [
           {
             "label": "Dough",
@@ -943,6 +946,7 @@
           "each": "$0.12",
           "units": "Dumpling"
         },
+        "overview": "<p>My friend Raffaella comes from a huge family and fondly recalls making dumplings with her sisters growing up. (Her brothers just ate them.) Dumplings are a great way to use up veggies that don’t look fresh anymore. Minced inside a dumpling, they come back to life! I’ve provided a couple of ideas here, but as with so many recipes, the filling is up to you. If you mess up and it comes out bland, just dip the dumpling in soy sauce or chili sauce and you’ll still be happy.</p>",
         "ingredients": [
           {
             "label": "Dough",
@@ -1008,6 +1012,7 @@
           "each": "$1.80",
           "units": "Serving"
         },
+        "overview": "<p>For today’s breakfast, fluffy, creamy eggs hold together a mass of tangy, juicy, sweet tomatoes. Best enjoyed when tomatoes are in season.</p>",
         "ingredients": [
           {
             "items": [
@@ -1043,6 +1048,7 @@
           "each": "$1",
           "units": "Serving"
         },
+        "overview": "<p>If your oven has a broiler, this is a fast and fun way to liven up a standard, healthy breakfast of grapefruit. This method produces a hot and sticky treat.</p><p>This breakfast will make a grapefruit lover out of you!</p>",
         "ingredients": [
           {
             "items": [
@@ -1070,6 +1076,7 @@
           "each": "$0.80",
           "units": "Serving"
         },
+        "overview": "<p>I make this omelette at least once a week. It’s insanely delicious, whether laden with veggies or kept simple. I love it with dill, but it’s good with almost any herb or scallions. Once you are a pro at making this, add any other cooked veggies you have around.</p>",
         "ingredients": [
           {
             "items": [
@@ -1101,6 +1108,7 @@
           "each": "$0.70",
           "units": "Serving"
         },
+        "overview": "<p>With the creamy texture and delicious flavor of bananas, these pancakes are stunningly good. You will be seriously popular if you feed these to your family or friends. Another plus: this is a great way to get rid of mushy bananas (that doesn’t involve making banana bread).</p>",
         "ingredients": [
           {
             "items": [
@@ -1137,6 +1145,7 @@
           "each": "$0.20",
           "units": "Muffin"
         },
+        "overview": "<p>When my friend Michael challenged me to create a recipe that used dark chocolate, I got a little worried: dark chocolate is expensive!</p><p>But then I remembered that cocoa powder is deeply, darkly chocolaty, without the expense. I thought of the chocolate zucchini cake my mother made when I was growing up and knew I had something.</p><p>This is a great breakfast treat that uses staples you should generally have on hand like flour, oats, and yogurt. The yogurt and zucchini make these muffins super moist and yummy, but still a reasonably nutritious (if slightly sugary) choice for breakfast.</p><p>Make these in mid-summer, during the height of zucchini season, when larger zucchini are really cheap. Big zucchini are generally a bit woodier, but they’re still great for baking.</p>",
         "ingredients": [
           {
             "items": [
@@ -1176,6 +1185,7 @@
           "each": "$0.75",
           "units": "Scone"
         },
+        "overview": "<p>These are delicious for breakfast or with a plate of beans, a pile of vegetables, or alongside a chili or stew. Spicy, cheesy, flaky—these are best eaten straight out of the oven.</p>",
         "ingredients": [
           {
             "items": [
@@ -1218,6 +1228,7 @@
           "each": "$0.30",
           "units": "Bar"
         },
+        "overview": "<p>Tired of endless PB+J sandwiches? Give these bars a try instead! I designed them for my friend Alex, who is allergic to gluten and is the best long-distance runner I know. I wanted to create a simple but nutritious breakfast that he could grab on his way out for a run. They are a little more crumbly than a store-bought granola bar, however.</p><p>As a bonus, these are made entirely from ingredients that you can find in any corner store or food pantry. Any kind of jam or jelly will do; I used blueberry, but grape or strawberry or any other flavor would be tasty.</p>",
         "ingredients": [
           {
             "items": [
@@ -1261,6 +1272,7 @@
           "each": "$1.80",
           "units": "Sandwich"
         },
+        "overview": "<p>Egg sandwiches are a mainstay of every corner deli in NYC, and for good reason: they’re cheap and easy, fast and delicious. I knew I had to include one when Charlene, one of my early supporters, asked for a recipe with eggs and mushrooms. (I’m thankful she did! Because I don’t really like mushrooms, they’re scarce in this book, even though plenty of people love them.) Like most sandwiches, this recipe is really flexible. In particular, you can change the hash to use whatever you have around. Sad leftovers can take on new life when turned into a hash and matched with the rich fattiness of a morning egg.</p>",
         "ingredients": [
           {
             "items": [
@@ -1312,6 +1324,7 @@
           "each": "$0.13",
           "units": "Serving"
         },
+        "overview": "<p>This basic recipe can be dressed up in so many ways, you’ll never get bored. Oatmeal makes a hot and comforting breakfast; it’ll give you energy for a great morning. It’s also extremely inexpensive, so you can spend a bit more on lunch and dinner.</p><p>This is just the basic recipe; several ideas for how to make it your own follow on the next pages. Whether it’s milky and sweet or savory and salty, I’m sure you can find a favorite way to enjoy a hot bowl of oats in the morning!</p><p>TODO(layout): Multiple variants with ingredients.</p>",
         "ingredients": [
           {
             "items": [
@@ -1334,7 +1347,8 @@
         "title": "Yogurt Smash!",
         "slug": "yogurt-smash",
         "badge": "Ideas",
-        "image": "yogurt-smash"
+        "image": "yogurt-smash",
+        "overview": "<p>There are so many types of yogurt in the grocery store: some low in fat and high in sugar, some with cute animal pictures. Some are Greek. Some have chocolate shavings and candy. Some have names like “key lime pie.”</p><p>Now forget about all of that. The best value for your money are the big buckets of plain yogurt. The fat content is your choice—just check that it doesn’t contain gelatin and you’re all set. Starting with plain yogurt, you can make super flavors in your own kitchen, where you know exactly what’s going into it.</p><p>If you have kids, ask them what flavors they can imagine and go make it! It’s a lot more fun than letting the supermarket choose for you. Try something new and smash it in! Check out the ideas on the adjoining page.</p><p>If you want a thicker Greek-style yogurt, all you have to do is strain regular American yogurt through cheesecloth to remove the extra water.</p><p>Yogurt’s versatility makes it a great staple to keep in the fridge. Mix it with some of the items you see on the next page or turn it into a savory sauce like raita or tzatziki.</p>"
       },
       {
         "chapter": "desserts",
@@ -1347,6 +1361,7 @@
           "each": "$0.35",
           "units": "Serving"
         },
+        "overview": "<p>These bananas—cooked in just a bit of caramel—are crispy and gooey on the outside and almost like a soft pudding inside. Sweet, messy, and irresistible.</p>",
         "ingredients": [
           {
             "items": [
@@ -1372,6 +1387,7 @@
           "each": "$0.25",
           "units": "Cookie"
         },
+        "overview": "<p>A just-chewy-enough, just-crispy-enough, just-gooey-enough cookie that’s perfect for a special treat.</p>",
         "ingredients": [
           {
             "items": [
@@ -1411,6 +1427,7 @@
           "each": "$0.75",
           "units": "Serving"
         },
+        "overview": "<p>This is adapted from the apple cake often served during Rosh Hashanah. It’s simple and wonderful for dessert, with tea, or as a sweet breakfast. The juicy peaches add a ton of flavor to this simple cake. If you buy peaches in season, the cost can be quite reasonable.</p>",
         "ingredients": [
           {
             "items": [
@@ -1451,6 +1468,7 @@
           "each": "$0.60",
           "units": "Serving"
         },
+        "overview": "<p>When you see lovely watermelons, honeydews, and cantaloupes on sale, buy them up. Eat half, then cube and freeze the other half. When you want a quick dessert or smoothie, pull out a bag of frozen melon and whip this up.</p><p>Add all the ingredients to a food processor or blender until just smooth. Don’t blend too much, or the sorbet will become oversoft. Serve immediately or stick it into the freezer to enjoy later.</p>",
         "ingredients": [
           {
             "items": [
@@ -1473,6 +1491,7 @@
           "each": "$1.15",
           "units": "Serving"
         },
+        "overview": "<p>John, the reader who introduced me to the silky magic of this milkshake, lives in California, where avocados are often less than a dollar. If you can find a similar deal, whip up a batch of these! If your avocado isn’t quite ripe, a bit more lime juice will bring out the flavor.</p>",
         "ingredients": [
           {
             "items": [
@@ -1501,6 +1520,7 @@
           "each": "$1.17",
           "units": "Serving"
         },
+        "overview": "<p>Zucchini and summer squash are so abundant in the summer months. This simple pasta is like a lighter, brighter fettuccine alfredo. It also comes together in no time—the veggies will be ready by the time your pasta is cooked. You’ll love it, I promise.</p>",
         "ingredients": [
           {
             "items": [
@@ -1535,6 +1555,7 @@
           "each": "$2.50",
           "units": "Serving"
         },
+        "overview": "<p>This is similar to a traditional pasta alla norma, but without anchovies and ricotta salata. I like to use a tubular pasta for this dish, but you can use anything, even spaghetti. The eggplant and tomatoes come together into a sauce that is thick and jammy and savory.</p>",
         "ingredients": [
           {
             "items": [
@@ -1569,6 +1590,7 @@
           "each": "$1.50",
           "units": "Serving"
         },
+        "overview": "<p>This Indian chickpea dish is a staple in my home. If you don’t have cooked chickpeas around, you can use canned, but it will cost about $1 more.</p>",
         "ingredients": [
           {
             "items": [
@@ -1614,6 +1636,7 @@
           "each": "$1.25",
           "units": "Serving"
         },
+        "overview": "<p>This is similar to the southern classic Hoppin’ John. If you have them, you can add more vegetables to the base along with the onion—celery, carrot, bell pepper, and some canned tomato would all be great in this. If you want to skip the bacon, just add smoked paprika to replace the smoky flavor.</p>",
         "ingredients": [
           {
             "items": [
@@ -1647,6 +1670,7 @@
           "each": "$0.65",
           "units": "Serving"
         },
+        "overview": "<p>I don’t make jambalaya exactly the way they do down south, but this vegetable-heavy version is faster and just as good—a great, throw-everything-in-the-pot kind of meal. It’s spicy, savory and deeply satisfying. The leftovers are great for making burritos or warmed up with a fried egg on top.</p>",
         "ingredients": [
           {
             "items": [
@@ -1697,6 +1721,7 @@
           "each": "$1.30",
           "units": "Serving"
         },
+        "overview": "<p>This ultra-adaptable recipe comes to us care of Tony Pangilinan, who grew up on food stamps after his family immigrated from the Philippines “with nothing but four suitcases and a lot of dreams.” After several decades of struggling to achieve those dreams, Tony can now help support family members who remain in poverty in the Philippines. Despite their hard circumstances, he notes that his relatives “still feel blessed.”</p><p>Filipino adobo—very different from Spanish adobo—is basically anything cooked in vinegar, soy sauce, and garlic. Although this version is chicken, you can use any meat or vegetables you like. It’s a brilliant dish that turns basic staples into deliciousness. Because it’s vinegar-based, it also keeps well in the fridge!</p>",
         "ingredients": [
           {
             "items": [
@@ -1751,6 +1776,7 @@
           "each": "$1.50",
           "units": "Serving"
         },
+        "overview": "<p>My dad loves beans in basically any form. This is his formula for the quickest, easiest way to get beans on his plate without missing out on great flavor. Dad’s beans rely on a can of baked beans as the base, while my version uses dried beans you might have left over from another meal. Mine requires a little more cooking and chopping to create the sauce, but comes out even less expensive because of the dried beans. They both taste great, so go with what works best for you: super quick and cheap, or quick and cheaper.</p>",
         "ingredients": [
           {
             "label": "My Dad’s Baked Beans",
@@ -1810,6 +1836,7 @@
           "each": "$0.90",
           "units": "Serving"
         },
+        "overview": "<p>When a reader named Quinn suggested a recipe that used both lentils and meat, I started thinking about how veggie burgers and beef burgers each have their own strengths. Why not combine the two ideas to create a burger with meaty flavor but the lean protein and low cost of lentils? And so I offer you the half-veggie burger. May it rest a little lighter in your belly.</p>",
         "ingredients": [
           {
             "items": [
@@ -1842,6 +1869,7 @@
           "each": "$2.75",
           "units": "Serving"
         },
+        "overview": "<p>Beef stroganoff is one of my husband’s favorites, so I make it as a treat for him—and one of my early readers, Dave, says his mother made it for him growing up. It’s a classic winter meal from Eastern Europe that warms up a cold house and fills the air with rich aroma. You can use any cut of beef; just adjust the cooking time based on the toughness. Dave’s mom made it with red pepper instead of carrot, so feel free to do the same if you can get red peppers at a good price.</p>",
         "ingredients": [
           {
             "items": [
@@ -1891,6 +1919,7 @@
           "each": "$1.80",
           "units": "Serving"
         },
+        "overview": "<p>I got really excited when my friend Iva asked for a recipe that featured the Chinese flavors she grew up with. After all, Chinese cooking depends on the same general principles as Good and Cheap: build bright flavors from a few key ingredients; use lots of veggies and just a little meat or fish. The ginger-garlic broth in this hot pot is spectacular! You can use whatever vegetables you have around, but mushrooms help create an earthy broth. The effect of such a small amount of toasted sesame oil is remarkable, too—an investment, but a transformative flavor.</p>",
         "ingredients": [
           {
             "items": [
@@ -1945,6 +1974,7 @@
           "each": "$1.50",
           "units": "Serving"
         },
+        "overview": "<p>Casseroles are a great way to stretch your cooking-without-a-recipe muscles. As one reader, Carolie, reminded me, they require little prep time, yield many meals, and the leftovers are easy to store. Casseroles also let you easily tailor an existing recipe to your own tastes.</p><p>So here’s my adaptation of one of Carolie’s favorite casseroles, itself a play on cabbage rolls, a traditional Eastern European dish that is delicious but labor-intensive. This version is a good way to use up leftover rice or grains and lentils, including leftover rainbow rice.</p>",
         "ingredients": [
           {
             "items": [
@@ -1997,6 +2027,7 @@
           "each": "$2",
           "units": "Serving"
         },
+        "overview": "<p>Celebrate summer’s most ubiquitous vegetables, tomato and zucchini, with a crunchy Southern biscuit topping.</p>",
         "ingredients": [
           {
             "items": [
@@ -2046,6 +2077,7 @@
           "each": "$1.65",
           "units": "Serving"
         },
+        "overview": "<p>This is a classic side dish in Great Britain: creamy, cheesy sauce over cauliflower, baked in the oven until the edges get crunchy and bubbly. It’s like a healthier and more flavorful version of macaroni and cheese. Alternatively, try this with broccoli or cooked winter squash—everyone will love it.</p>",
         "ingredients": [
           {
             "items": [
@@ -2093,6 +2125,7 @@
           "each": "$1.50",
           "units": "Serving"
         },
+        "overview": "<p>Much as I love this quiche hot, I like it even better cold out of the fridge the next day. It makes a great fast breakfast or lunch. The quiche in the picture uses broccoli, but you can make it with pretty much any kind of vegetable. Some of my favorites are roasted green chilies and cheddar, winter squash with goat cheese, zucchini and tomato, or spinach and olive.</p>",
         "ingredients": [
           {
             "items": [
@@ -2129,6 +2162,7 @@
           "each": "$3",
           "units": "Serving"
         },
+        "overview": "<p>The cost of shrimp has jumped sharply since I wrote this recipe, so save this one until you can find a deal—under about $8 per pound. This is far from an authentic Southern version of this dish, but it is absolutely delicious. Southerners will demand you use white stone-ground corn for this, and I won’t quibble, but feel free to use yellow if it doesn’t offend you.</p>",
         "ingredients": [
           {
             "label": "Grits",
@@ -2171,6 +2205,7 @@
           "each": "$1.75",
           "units": "Serving"
         },
+        "overview": "<p>Polenta plus vegetable plus egg equals satisfying and delicious. You can also add a can of corn to the polenta for deep, rich, corny flavor. Or go a little different by adding frozen peas, scallions, olives, or (my favorite) green chilies to the polenta. Or skip the Romano and add ¼ cup of grated cheddar to the polenta.</p>",
         "ingredients": [
           {
             "items": [
@@ -2208,6 +2243,7 @@
           "each": "$1.50-2.75",
           "units": "Serving"
         },
+        "overview": "<p>A whole chicken is usually less expensive than buying single pieces like breasts or thighs—plus you can make stock later from the bones and any meat too difficult to get off. The leftovers can be used in sandwiches, tacos, over a salad, or tossed with sauce and mixed into pasta. This is a base recipe: add spices to the butter or sprinkle over the surface of the chicken to change up the flavor in any way you like.</p>",
         "ingredients": [
           {
             "items": [
@@ -2234,6 +2270,7 @@
         "slug": "roasted-vegetables",
         "badge": "Method",
         "image": "roasted-vegetables",
+        "overview": "<p>When the weather turns cool, I want only to eat warm, flavorful food. Roasting is easy, it warms up the kitchen, and it makes the house smell like the holidays. If you’re uncertain how to prepare a new vegetable, you usually can’t go wrong with roasting—most things end up sweeter, with nice crunchy bits. If you roast a bunch of vegetables at the beginning of the week, you can eat them throughout the week in various ways: with eggs at breakfast, folded into an omelette, as a side dish, in a taco or sandwich, on toast, or with any grain.</p>",
         "ingredients": [
           {
             "items": [
@@ -2304,6 +2341,7 @@
           "each": "$0.75",
           "units": "Serving"
         },
+        "overview": "<p>It doesn’t get much simpler or more satisfying than this. You can use any pepper you like—from large, dark poblanos, to Hungarian wax chilies, to bell peppers.</p>",
         "ingredients": [
           {
             "items": [
@@ -2334,6 +2372,7 @@
           "each": "$4.50",
           "units": "Serving"
         },
+        "overview": "<p>This meal comes together so quickly it’s astonishing. Broiled fish is crispy on the outside and flaky and moist on the inside. If you quickly sauté some vegetables while the fish cooks, dinner will be on the table in minutes.</p>",
         "ingredients": [
           {
             "items": [
@@ -2362,6 +2401,7 @@
         "slug": "agua-fresca",
         "badge": "Serves Four to Six",
         "image": "agua-fresca",
+        "overview": "<p>Refreshing and hydrating, these beautiful drinks are great at a party, and they can help you use up any fruit that you won’t be able to eat before it goes off. This is certainly not the master recipe, just a good starting point.</p><p>For a very lightly flavored agua fresca, just mix the water and fruit together. Done! Obviously, if you want more fruit flavor, then use less water; if you want less flavor, then use more water.</p><p>I usually run my agua fresca through the blender, however. If you want the drink to be clear, strain the pulpy leftovers of the fruit after blending. If you’re using blueberries or oranges or other fruit with a skin, you’ll almost certainly want to strain it.</p><p>For some fruits, you can also choose to leave the pulp: it’s particularly great when making a melon agua fresca since it mostly disappears.</p><p>Serve over ice. Try some of the variations I’ve suggested or whatever fruits you like!</p>",
         "ingredients": [
           {
             "items": [
@@ -2400,7 +2440,8 @@
         "title": "Smoothies 4 Ways",
         "slug": "smoothies-4-ways",
         "badge": "For Two",
-        "image": "smoothies"
+        "image": "smoothies",
+        "overview": "<p>I have four types of smoothies here, but of course there are many more. Give these a try when you have overripe fruit that you wouldn’t eat otherwise. Add a teaspoon of vanilla to any of these and they will seem incredibly professional. The frozen melon drinks, in particular, are the most refreshing treat on a hot summer day.</p><h2>Drinkable Yogurt</h2><p>If you like the grocery store’s yogurt drinks, try making these at home for less! You don’t even need to blend them—just add the juice and yogurt to a jar, then shake.</p><ul><li>½ cup plain yogurt</li><li>½ cup fruit juice</li></ul><h2>Melon Smoothie</h2><p>When you buy a melon, dice and freeze whatever you don’t eat. Pull it out and blend it with a bit of water or juice to thin it out. It’s like a better slushy!</p><ul><li>1 cup frozen melon</li><li>½ cup water or juice</li><li>1 tsp vanilla</li></ul><h2>Berry Smoothie</h2><p>Blend until smooth, then adjust with more berries or milk to your taste.</p><ul><li>½ cup yogurt</li><li>1 cup frozen berries</li><li>milk or juice to thin as needed</li></ul><h2>Mango Lassi (not pictured)</h2><p>Blend the mango and yogurt together. If it’s too thick to drink with a straw, add some milk to thin it out. A ripe and juicy mango combined with thin yogurt is often all you need. Be warned: if you make this for children, they will request it over and over.</p><ul><li>1 mango, diced</li><li>1 cup yogurt</li><li>milk to thin as needed</li></ul><p>TODO(layout): Multiple variants with ingredients.</p>"
       },
       {
         "chapter": "flavor",
@@ -2446,6 +2487,7 @@
           "each": "$3.50",
           "units": "Cup"
         },
+        "overview": "<p>Use this spice oil on salads, in cold noodle dishes, or on roasted or sautéed vegetables. If you have trouble finding the spices, you can get all of them at most Asian grocery stores.</p>",
         "ingredients": [
           {
             "items": [
@@ -2478,6 +2520,7 @@
           "each": "$0.75",
           "units": "Cup"
         },
+        "overview": "<p>Summertime salsas combine a load of fresh tomatoes with smaller amounts of choice vegetables and fruit. In the winter, cook canned tomatoes for a few minutes first.</p>",
         "ingredients": [
           {
             "items": [
@@ -2518,6 +2561,7 @@
           "each": "$1.25",
           "units": "Cup"
         },
+        "overview": "<p>Raita is a traditional Indian sauce served with all kinds of things. It’s simple and surprisingly tasty. Spoon it onto chana masala, the potato and kale rolls, or anything spicy to cool things down.</p><ol><li>This recipe is extremely loose. Basically, just stir some of your favorite chopped vegetables into yogurt and add salt and pepper. Use this as a stepping stone to develop your own.</li><li>After you stir all the ingredients together, store the raita in a covered container in the fridge until you’re ready to use it.</li></ol>",
         "ingredients": [
           {
             "items": [
@@ -2553,6 +2597,7 @@
           "each": "$1.75",
           "units": "Cup"
         },
+        "overview": "<p>If you’re in a hurry, you don’t have to strain this at all: you can just mix the ingredients together. However, removing the water from the cucumber and yogurt intensifies the flavor. Your patience will be rewarded by a thick sauce that gives you a new perspective on cucumbers.</p>",
         "ingredients": [
           {
             "items": [
@@ -2577,7 +2622,8 @@
         "title": "Spices and Aromatics",
         "slug": "spices-and-aromatics",
         "badge": "Ideas",
-        "image": "spices-and-aromatics"
+        "image": "spices-and-aromatics",
+        "overview": "<p>So many of the recipes in this collection can be easily modified to your taste. Learning to cook with different spices, herbs, and aromatics will instantly elevate your cooking and open up new and interesting possibilities. Spices are expensive to buy, but since you use such small amounts, they end up costing pennies per recipe. If you’re able to shop around, look for inexpensive spices in bulk at ethnic markets.</p><p>Below, I’ve ranked what I feel are the most important seasonings, but if you already know what you like, please listen to yourself! I know that my sister would rank chipotle powder just under salt, so do as your heart commands.</p><h2>Chili Flakes</h2><p>Chili is a great choice if you like things a little spicy. I add just a dash of chili flakes to almost all savory dishes to give them a little more dimension. Plus, chili flakes are usually pretty cheap.</p><h2>Cumin or Cumin Seeds</h2><p>Cumin goes well with so many flavors, and is essential in Mexican and Indian cuisine.</p><h2>Curry Powder</h2><p>Curry powder is a bunch of south Asian spices blended together. I prefer to make my own out of individual spices, but if you’re new to curry, consider buying a blend to start out. If you love it, start buying the separate spices.</p><h2>Dried Oregano and Dried Thyme</h2><p>Both of these herbs are still tasty when dried. They add a lot of flavor to chili, soups, or roasted vegetables. However, don’t bother with dried basil, dried cilantro, or dried dill unless you particularly like them and can’t afford to get them fresh. They lose almost all their magic when dried.</p><h2>Cinnamon</h2><p>This is probably everyone’s favorite “sweet” spice. If you like baking, get some as soon as possible.</p><h2>Paprika and Smoked Paprika</h2><p>Paprika adds a bit of heat, although not nearly as much as chili flakes. Instead, it gives you a great mild pepper taste. Smoked paprika is my favorite way to get smoky flavors into a dish. These are by no means essential, but they’re lots of fun.</p><hr><p>Try the flavor combinations below on anything from rice to roasted chicken to vegetables. Mix them into butter, or add them to popcorn, toast, or vegetables. In short, experiment!</p><ul><li>lemon zest and garlic</li><li>oregano, cumin, and chili powder</li><li>cumin seeds, coriander seeds, and mustard seeds</li><li>onion, garlic, and ginger</li><li>anchovy, garlic, and chili</li><li>salt, pepper, and Romano or Parmesan</li><li>onion, chili, and fresh cilantro</li><li>sage, rosemary, and thyme</li><li>lemon, olives, and garlic</li><li>chipotle powder and lime</li><li>pickling spices</li><li>paprika and fresh dill</li><li>garlic and fresh parsley</li><li>fennel seeds and fresh parsley</li><li>orange, lemon, and lime zest</li><li>ginger, cinnamon, and black pepper</li><li>cardamom, coriander, and bay leaf</li><li>coconut, chili, and lime</li><li>scallions and fresh cilantro</li><li>garlic and fresh basil</li></ul>"
       },
       {
         "chapter": "handheld",
@@ -2590,6 +2636,7 @@
           "each": "$2-3",
           "units": "Serving"
         },
+        "overview": "<p>This is one of my favorite ways to use roasted cauliflower other than eating it straight. It’s a delicious change from the usual vegetable taco offerings. Just look at all those crunchy bits!</p>",
         "ingredients": [
           {
             "items": [
@@ -2617,6 +2664,7 @@
           "each": "$2.25",
           "units": "Pizza"
         },
+        "overview": "<p>Obviously you should just make all kinds of pizza. Seriously, do it. Make it a Thursday-night tradition and an excuse to use up leftovers. This pizza, for one, is a fun variation that confounds expectations-proof that, indeed, anything is good on pizza!</p>",
         "ingredients": [
           {
             "items": [
@@ -2651,6 +2699,7 @@
           "each": "$1.50",
           "units": "Calzone"
         },
+        "overview": "<p>Calzones are pizza in a slightly different form—a form that lets you get stuff in more filling without weighing down the crust. Broccoli rabe is great, but you can use any bitter green, or even broccoli or cauliflower. You’ll love these crusty pockets full of oozy goodness!</p>",
         "ingredients": [
           {
             "items": [
@@ -2685,6 +2734,7 @@
           "each": "$0.60",
           "units": "Empanada"
         },
+        "overview": "<p>In case you can’t tell by now, I am partial to tasty dough stuffed with something even tastier. Every culture has its own version, so when you think about it that way, having empanadas, dumplings, perogies, and calzones in one book isn’t that crazy—right? My friend Barb felt the same way, so I created this recipe for her.</p>",
         "ingredients": [
           {
             "items": [
@@ -2733,6 +2783,7 @@
           "each": "$0.66",
           "units": "Roll"
         },
+        "overview": "<p>These are a great meal to make when you have leftover roti and raita. The filling comes together in minutes and could be anything, but potatoes and greens are tasty and filling.</p>",
         "ingredients": [
           {
             "items": [
@@ -2768,7 +2819,8 @@
         "title": "Leftovers",
         "slug": "leftovers",
         "badge": "Ideas",
-        "image": "leftovers"
+        "image": "leftovers",
+        "overview": "<p>Leftovers are convenient, but can seem unappealing, limp, and cold after sitting in the fridge for a couple of days. That’s why the sandwich, the wrap, and the taco are your friend. Here are just a few ideas for how to give leftovers a makeover very quickly for a whole new meal!</p><h2>Tomato Scrambled Eggs Wrap</h2><p>Throw the tomato eggs into a wrap and add some roasted potatoes or rice for bulk.</p><h2>Jacket Sweet Potatoes Spread</h2><p>Mash up leftover baked sweet potatoes, then spread them in a bacon sandwich for a sweet counterpoint.</p><h2>Toast Toppings on Anything</h2><p>Any of the toast toppings would work in a wrap, as a calzone filling, or as a pizza topping.</p><h2>Cauliflower Tacos</h2><p>Tacos are the perfect re-use of roasted cauliflower.</p><h2>Chana Masala Wrap</h2><p>Sounds strange, but spread some herbed mayo on the wrap and then pile in the chana masala.</p><h2>Black-eyed Peas and Collards Wrap</h2><p>Fold the black-eyed peas and collards into a wrap with a little hot sauce or some tzatziki.</p><h2>Vegetable Jambalaya Burrito</h2><p>Add some salsa or any leftover beans.</p><h2>Cauliflower Cheese Sandwich</h2><p>Add some crunchy greens and mustard. Yum!</p><h2>Roasted Vegetables Sandwich</h2><p>Add some extra spices or sauces to liven up the vegetables and grill the bread for some crunch.</p><h2>Roasted Potatoes and Chilies</h2><p>This dish is great in a taco—just add a little salsa and grated cheese. I like green salsa here.</p><h2>Tilapia Taco</h2><p>For a makeshift fish taco, chop up some crunchy cabbage and cilantro.</p>"
       },
       {
         "chapter": "salad",
@@ -2781,6 +2833,7 @@
           "each": "$2.25",
           "units": "Serving"
         },
+        "overview": "<p>Even if you aren’t a big eggplant fan, you might enjoy this despite yourself. Broiled eggplant has a crunchy and meaty texture, and the tahini dressing makes the salad rich and creamy.</p>",
         "ingredients": [
           {
             "items": [
@@ -2809,6 +2862,7 @@
           "each": "$2.25",
           "units": "Serving"
         },
+        "overview": "<p>This kale is treated like romaine lettuce in a Caesar salad. The bitterness of the greens is delicious alongside the rich, fatty dressing. You could also use Swiss chard. If you’re worried about the raw egg yolk in the dressing, feel free to omit it.</p>",
         "ingredients": [
           {
             "items": [
@@ -2851,6 +2905,7 @@
           "each": "$0.75",
           "units": "Serving"
         },
+        "overview": "<p>I developed this salad because I’m not a big fan of mayonnaise-based potato salads. This is really the simplest thing: just potatoes in a regular vinaigrette. You can add all kinds of extras to it to make it more festive, but people always rave about the salad as is. The secret is that potatoes actually have really nice flavor—all you have to do is season them properly. Let potatoes be potatoes, no need to hide ’em!</p><p>If you have leftover roasted potatoes or other root vegetables, the same idea works great. Just skip the cooking part and go straight to the dressing.</p>",
         "ingredients": [
           {
             "items": [
@@ -2895,6 +2950,7 @@
           "each": "$1.30",
           "units": "Serving"
         },
+        "overview": "<p>A former classmate, George, likes salads with a little kick. (As you can maybe tell, I do too!) For inspiration, I turned to panzanella, a classic Italian bread-and-tomato salad. The Italians are true masters of making leftovers delicious. Here, old hard bread soaks up tomato juice and dressing for a super flavorful and filling salad. You can toss in any vegetable or fruit so long as it’s juicy. Bell peppers or carrots won’t work so well, but peaches, grapes, and zucchini all do. If you don’t like spicy salads as much as George and I do, feel free to replace the jalapeño with garlic or shallot.</p>",
         "ingredients": [
           {
             "items": [
@@ -2947,6 +3003,7 @@
           "each": "$1.25",
           "units": "Serving"
         },
+        "overview": "<p>On a hot day, this is all I want to eat. Cold but spicy food is refreshing and delicious in the summer. If you have some spice oil on hand, be sure to add it. It’s amazing in this.</p>",
         "ingredients": [
           {
             "items": [
@@ -2988,6 +3045,7 @@
           "each": "$2.60",
           "units": "Serving"
         },
+        "overview": "<p>This salad is a great use for leftover beans (or pulled pork)—crunchy, fresh, yet satisfying enough to be a whole meal. I like to make taco salad in a week where I’ve made a large batch of beans and I’m craving something fresh.</p>",
         "ingredients": [
           {
             "items": [
@@ -3035,6 +3093,7 @@
           "each": "$1.75",
           "units": "Serving"
         },
+        "overview": "<p>This dish is spicy, crunchy, and almost certainly the pinkest salad you’ll ever eat! Don’t be scared.</p>",
         "ingredients": [
           {
             "items": [
@@ -3070,6 +3129,7 @@
           "each": "$0.80",
           "units": "Serving"
         },
+        "overview": "<p>The bitterness of broccoli is delicious next to the sweet tartness of apples. Plenty of crunch, too!</p>",
         "ingredients": [
           {
             "items": [
@@ -3115,6 +3175,7 @@
           "each": "$2.75",
           "units": "Serving"
         },
+        "overview": "<p>One of the early supporters of this book, Gina, can’t eat gluten and wanted more Mexican-inspired options. I designed this spicy summer salad for her, topped with popcorn for a crunch like croutons. Use smaller zucchini, and save the big ones for muffins. If you own a grill, use it instead of the broiler!</p>",
         "ingredients": [
           {
             "items": [
@@ -3154,6 +3215,7 @@
           "each": "$1.20",
           "units": "Serving"
         },
+        "overview": "<p>I like to serve these with all kinds of toppings, usually leftovers from other meals. Try filling them with roast chicken, beans and cheese, corn and tomatoes—whatever you have around.</p>",
         "ingredients": [
           {
             "items": [
@@ -3182,6 +3244,7 @@
           "each": "$0.85",
           "units": "Serving"
         },
+        "overview": "<p>Roasted veggies are always delicious, but there’s something magical that happens to cauliflower in the oven. It gets so crispy and nutty, and that flavor is brought out even more with the spices here. I’m happy to just eat a bowl of this for dinner, maybe with an egg on top.</p>",
         "ingredients": [
           {
             "items": [
@@ -3211,6 +3274,7 @@
           "each": "$0.65",
           "units": "Serving"
         },
+        "overview": "<p>Whenever I make these, I think, “why don’t I have this every day?” Throw a fried egg on top, serve with rice, and you have a delicious meal.</p>",
         "ingredients": [
           {
             "items": [
@@ -3247,6 +3311,7 @@
           "each": "$1",
           "units": "Serving"
         },
+        "overview": "<p>This recipe takes fresh, sweet summer corn—already amazing—and adds salt, tang, and spice to the experience. If you have an outdoor grill, prepare the corn that way, but for those without, a broiler is a great shortcut!</p>",
         "ingredients": [
           {
             "items": [
@@ -3278,6 +3343,7 @@
           "each": "$1.75",
           "units": "Serving"
         },
+        "overview": "<p>These are a great snack or a quick meal, and you can add pretty much anything to them! To make ’em cheaper, use fresh tortillas.</p>",
         "ingredients": [
           {
             "items": [
@@ -3304,6 +3370,7 @@
           "each": "$0.65",
           "units": "Serving"
         },
+        "overview": "<p>These are kind of like having veggie french fries. The cornmeal makes them super crunchy, and they’re great with a dipping sauce. Might I suggest peanut sauce? This breading process can be done with almost any vegetable; some of my favorites include zucchini wedges, bell peppers, and cooked winter squash. It’s sort of like fried green tomatoes or okra, but this baked version skips the expense and mess of the oil, yet keeps the crunch.</p>",
         "ingredients": [
           {
             "items": [
@@ -3352,6 +3419,7 @@
           "each": "$1.40",
           "units": "Serving"
         },
+        "overview": "<p>This is a great light lunch or side dish. The Brussels sprouts get salty and tangy from the olive and lemon, then crispy and caramelized on the bottom. Mix in the little bit of fat from the egg yolk, and wow is this delicious.</p>",
         "ingredients": [
           {
             "items": [
@@ -3383,6 +3451,7 @@
           "each": "$1.75",
           "units": "Serving"
         },
+        "overview": "<p>Poutine isn’t an everyday meal, but it’s a favorite. Since I don’t like deep-frying at home, I bake the fries; they still get crispy without the fuss of frying.</p><p>Montreal-style poutine is made with vegetable gravy, as in this recipe, but you can also make your favorite beef or turkey gravy.</p><p>Of course, proper poutine uses cheese curds, and if you can find them do use those, but fresh mozzarella works for me. It has the same spongy quality, just maybe with a little less squeak. This recipe does comes out a little more expensive than you would think because of the fresh mozzarella. If you use less or skip the cheese entirely, you can cut the price in half.</p>",
         "ingredients": [
           {
             "items": [
@@ -3429,6 +3498,7 @@
           "each": "$0.75",
           "units": "Serving"
         },
+        "overview": "<p>I love bread, and toast in particular is my comfort food—I crave it when I’m sick or worn down. Here, I would like to suggest that you take some toast and put something tasty on it. That’s it!</p><p>Certainly toast can feed a crowd, but I like this meal for times when I’m on my own and want a quick meal or snack. It’s a great way to use leftovers or turn a side dish into a full meal.</p><p>What makes this more like a special dinner than a quick snack is the way you treat the bread—toasting it in the pan like a nice piece of fish.</p><p>A pile of sautéed or raw veggies over buttered, toasty bread is the perfect meal for one and a great way to try a new vegetable. I’ve suggested a few other toast variations on the following pages, but you can use pretty much any veggie dish from this book or invent your own. Add a fried egg on top if you’re extra hungry.</p><h2>Peas and Lemon</h2><p>This is like a less-salty, more-rustic version of the British classic mushy peas. Add a bit of olive oil to a pan on medium heat. Drop in the garlic and peas along with 2 tablespoons of water so that the peas can steam a bit. Leave them until they turn bright green. Sprinkle with lemon juice, Romano, salt, and pepper, then remove the peas from the heat and mash with the back of a fork, either in the pan or in a bowl. Pile onto toast and enjoy!</p><ul><li>1 tsp olive oil</li><li>2 cloves garlic, finely chopped</li><li>1 cup peas, fresh or frozen</li><li>1 tsp lemon juice</li><li>Romano or Parmesan, freshly grated</li><li>salt and pepper</li></ul><p>$2 Total<br>$1 / serving</p><h2>Asian Greens Gra Prow</h2><p>This works with any Asian green, from bok choy to tatsoi to gai lan. Splash the oil in a pan on medium heat. Sauté the garlic for 2 minutes, then add the ginger, soy sauce, and the stem part of the greens. Cook for 4 to 5 minutes, until almost tender. Add the leafy part of the greens and cook for 2 more minutes. Turn off the heat and mix in the Thai basil. Taste and add salt and pepper, unless the soy sauce is salty enough on its own.</p><ul><li>1 bunch Asian greens, stem separated from leaves</li><li>1 tsp vegetable oil</li><li>2 cloves garlic, finely chopped</li><li>1 tsp ginger root, grated</li><li>2 tsp soy sauce</li><li>1 handful Thai basil</li><li>salt and pepper</li></ul><p>$5 Total<br>$2.50 / Serving</p><h2>Caramelized Onions and Cheddar</h2><p>Melt the butter in a pan on low heat. Add the onions and let them cook slowly, about 20 minutes. As the onions darken, stir them occasionally, adding a bit of water to loosen up the sticky onion bits on the bottom and keep them from burning. Leave the onions until they’re dark purple. They will now be sweet and caramelized. Spread them over toast and top with slices of aged cheddar, salt, and pepper. Put the toast back in the pan and cover with a lid until the cheese is bubbly, then serve it up.</p><ul><li>1 tbsp butter</li><li>1 red onion, thinly sliced</li><li>sharp cheddar, thinly sliced</li><li>salt and pepper</li></ul><p>$2 Total<br>$1 / Serving</p><h2>Roasted Vegetables</h2><p>This is one of my favorite ways to eat leftover roasted vegetables. Simply create a ridiculously tall pile of vegetables like the winter squash and leeks pictured here, then sprinkle with grated Romano or Parmesan and fresh pepper. You can also add any sauce you have on hand or sprinkle crushed nuts on top.</p><ul><li>roasted vegetables</li><li>Romano or Parmesan, freshly grated</li><li>pepper</li></ul><p>$2 Total<br>$1 / Serving</p><h2>Salty Broccoli</h2><p>Warm up the oil in a pan on medium heat. Add the garlic and chili flakes and cook for 2 minutes, until they smell great but are not yet brown. Add the anchovy and cook for another minute. Add the broccoli and about ¼ cup of water. Cover the pan, steam for 3 minutes, then toss and cook for 2 minutes, until the broccoli is tender and the water is gone. Spoon onto toast; top with cheese, salt, and pepper!</p><ul><li>1 tsp olive oil</li><li>3 cloves garlic, finely chopped</li><li>1 tsp chili flakes</li><li>1 anchovy, finely chopped</li><li>1 crown and stem of broccoli, chopped</li><li>Romano or Parmesan, freshly grated</li><li>salt and pepper</li></ul><p>$3 Total<br>$1.50 / Serving</p><h2>Broiled Eggplant Salad</h2><p>Here’s yet another use for leftovers—or just a way to make a great salad more substantial. Simply dollop the broiled eggplant salad onto toast, then add some herbs or greens to the top for a fresh counterpoint, along with a bit of cheese.</p><ul><li>broiled eggplant salad</li><li>fresh herbs or greens</li><li>any cheese, crumbled or grated</li></ul><p>$3.50 Total<br>$1.75 / Serving</p><h2>Black-eyed Peas and Collards</h2><p>Oh man, is there anything more comforting than beans on toast? Friends and family will be delighted even if you’re secretly using up leftovers. To make the meal a little more fancy, use jalapeño-cheddar scones instead of toast.</p><ul><li>black-eyed peas and collards</li><li>jalapeño-cheddar scones (optional)</li></ul><p>$2 Total<br>$1 / Serving</p><h2>Spinach and Chickpea</h2><p>This is a popular tapas dish in Spain. The recipe makes a little more topping than you need for two pieces of toast—but hey, leftovers are tasty. Melt the butter in a pan on medium heat. Add the garlic and cook for 2 minutes. Add the chickpeas and spinach, then cook for 2 to 5 minutes, until the spinach cooks down but is still bright green. Taste and add salt and pepper, then spoon it over toast. If you have it, sprinkle with smoked paprika.</p><ul><li>1 tsp butter</li><li>2 cloves garlic, finely chopped</li><li>1 cup cooked chickpeas</li><li>1 bunch spinach</li><li>salt and pepper</li><li>smoked paprika (optional)</li></ul><p>$4.50 Total<br>$2.25 / Serving</p><p>TODO(layout): Multiple recipes, ingredients, costs.</p>",
         "ingredients": [
           {
             "items": [
@@ -3458,6 +3528,7 @@
           "each": "$0.25",
           "units": "Serving"
         },
+        "overview": "<p>Popcorn is such a great snack. It’s easy to forget how easy and cheap it is to prepare at home. Try some different toppings!</p><ul><li>Scallion and cilantro</li><li>Turmeric and coriander</li><li>Spice oil</li><li>Parm and black pepper</li><li>Cayenne and smoked paprika</li><li>Brown sugar and orange zest</li><li>Chili powder and lime</li><li>Parm and oregano</li></ul><p>TODO(layout): Images for each listed variant.</p>",
         "ingredients": [
           {
             "items": [
@@ -3487,6 +3558,7 @@
           "each": "$0.60",
           "units": "Serving"
         },
+        "overview": "<p>This thick lentil soup is a flavor-packed staple of the Indian table. There are a ton of ways to prepare dal, but the core—beyond the lentils themselves—is usually ginger, garlic, and chili, along with some dry spices.</p>",
         "ingredients": [
           {
             "items": [
@@ -3521,6 +3593,7 @@
           "each": "$1.25",
           "units": "Serving"
         },
+        "overview": "<p>This thick, sweet, satisfying soup is a favorite of kids and adults. This is wonderful to make at the beginning of autumn when corn on the cob is at its peak, but canned corn can also make it a warm reminder of summer in the depths of winter.</p>",
         "ingredients": [
           {
             "items": [
@@ -3573,6 +3646,7 @@
           "each": "$1.50",
           "units": "Serving"
         },
+        "overview": "<p>Best if you accept it now: you are going to cry making this recipe, since the first step is to chop a mountain of onions. But crying is good for us from time to time. Soon you will be on to the magical part, watching a colossal pile of onions shrink and caramelize to make a sweet, flavorful, wonderful soup. Save this recipe for the winter, when other vegetables are out of season and you want to fill your home with warm aromas. As my friend Marilyn, who suggested this recipe, said, “the smell in your kitchen is absolute heaven.”</p>",
         "ingredients": [
           {
             "items": [
@@ -3619,6 +3693,7 @@
           "each": "$1.50",
           "units": "Serving"
         },
+        "overview": "<p>Squash is almost the perfect vegetable for soup: it’s flavorful and has a divinely smooth texture when cooked and puréed. Serve this soup to people who think they don’t like squash or curry, and you’ll change some minds. You can substitute any winter squash for the butternut; I just like butternut because it’s faster to peel and chop than its many cousins.</p>",
         "ingredients": [
           {
             "items": [
@@ -3667,6 +3742,7 @@
           "each": "$0.07",
           "units": "Tortilla"
         },
+        "overview": "<p>Homemade tortillas are a bit of work, but they’re totally worth it. With practice, you’ll get quicker and enjoy the process as much as the results.</p>",
         "ingredients": [
           {
             "items": [
@@ -3698,6 +3774,7 @@
           "each": "$0.03",
           "units": "Roti"
         },
+        "overview": "<p>These are a staple flatbread in many parts of India. They’re quick to make and very tasty when fresh. Enjoy them with a curried filling, dip them in soups or stews, or fill them with eggs at breakfast.</p>",
         "ingredients": [
           {
             "items": [
@@ -3727,6 +3804,7 @@
           "each": "$0.20",
           "units": "Crust"
         },
+        "overview": "<p>There are two ways to make pizza dough: the fast way and the slow way. They’re the same amount of work, just with different waits. The slow method is convenient for a weekday if you make it before bed the night before, pop it in the fridge, then pull it out to rise before dinner.</p><h2>Fast Method</h2><p>TODO(layout): Content in default steps field</p><h2>Slow Method</h2><ul><li>If you’re organized enough to make the slow dough, I recommend taking the extra time: it’s the best.</li><li>Use the same process as at left, but add only ½ teaspoon of yeast to the flour mixture. Rather than room temperature, the water should be very cold.</li><li>After you place the dough ball in a bowl and cover it, put it into the fridge overnight. Letting the yeast work overnight creates a better flavor; it also makes the dough more elastic and easier to work with.</li><li>The next day, 2 to 3 hours before you want to bake your pizzas, remove the dough from the fridge to return to room temperature.</li></ul><p>TODO(layout): Two separate sets of steps, with headings.</p>",
         "ingredients": [
           {
             "items": [
@@ -3755,6 +3833,7 @@
           "each": "$0.35",
           "units": "Serving"
         },
+        "overview": "<p>When a reader, Jeanne, asked for a good pasta dish, I decided to show her how to create it from scratch. Sure, making pasta by hand requires elbow grease and a good rolling pin, but you’ll be surprised at how simple, cheap, and tasty it is. If an Italian grandmother can do it, so can you! Because fresh pasta is so wonderful, the sauce doesn’t need to be complicated. I love this with tomato sauce and a little cheese.</p>",
         "ingredients": [
           {
             "items": [
@@ -3787,6 +3866,7 @@
           "each": "$1",
           "units": "Cup"
         },
+        "overview": "<p>There are many ways to make tomato sauce. I don’t find that the more complex recipes taste any better; this one is boldly tomatoey and works on just about anything. It also takes 5 minutes to make. Can’t beat that.</p>",
         "ingredients": [
           {
             "items": [
@@ -3815,6 +3895,7 @@
           "each": "$1.25",
           "units": "Cup"
         },
+        "overview": "<p>When my friend Chris told me he loves a good ragu, I worked to develop a version that is as hearty as a meaty tomato sauce without the expense and heaviness of a traditional ragu. A batch of this is probably enough for four people, served with grated Romano or Parmesan over pasta, polenta, or grits.</p>",
         "ingredients": [
           {
             "items": [
@@ -3845,6 +3926,7 @@
           "each": "$0.75",
           "units": "Serving"
         },
+        "overview": "<p>Here are three quick ways to make plain rice a little more exciting. An early reader, Charles, said he loves rice with vegetables, but these treatments work for grains other than rice as well—everything from quinoa to barley to farro. Vegetables are a great way to liven up the usual rice and beans.</p><p>TODO(layout): Four separate recipes and ingredients.</p>",
         "ingredients": [
           {
             "items": [
@@ -3915,6 +3997,7 @@
         "slug": "croutons-or-breadcrumbs",
         "badge": "Method",
         "image": "croutons-or-breadcrumbs-1",
+        "overview": "<p>I am constantly haunted by the hard, several-day-old bread that I have neglected. Luckily there are plenty of delicious solutions that avoid the trash can. Croutons and breadcrumbs will keep for ages in a sealed container on the counter, and when you have them around you’ll find yourself using them everywhere and finding excuses to make a salad.</p>",
         "ingredients": [
           {
             "items": [
