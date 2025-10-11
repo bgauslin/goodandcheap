@@ -35,6 +35,7 @@ class Home extends LitElement {
     return this;
   }
 
+  // TODO: Replace with custom event.
   private async fetchData(): Promise<any> {
     try {
       const response = await fetch('./api/home.json');

@@ -52,7 +52,7 @@ class App extends LitElement {
 
   private async fetchData() {
     try {
-      const response = await fetch('./api/goodandcheap.json');
+      const response = await fetch('./api/app.json');
       this.data = await response.json();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
