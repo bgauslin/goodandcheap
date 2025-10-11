@@ -14,9 +14,9 @@ class App extends LitElement {
   private clickHandler: EventListenerObject;
   private popstateHandler: EventListenerObject;
 
-  @query('gc-chapter') chapterElement: HTMLElement;
-  @query('gc-page') pageElement: HTMLElement;
-  @query('gc-recipe') recipeElement: HTMLElement;
+  @query('gc-chapter') chapter: HTMLElement;
+  @query('gc-page') page: HTMLElement;
+  @query('gc-recipe') recipe: HTMLElement;
 
   @state() baseTitle: string;
   @state() chapterTransition: string;
@@ -50,6 +50,9 @@ class App extends LitElement {
     return this;
   }
 
+  /**
+   * Gets all data for rendering.
+   */
   private async fetchData() {
     try {
       const response = await fetch('./api/app.json');
@@ -60,6 +63,9 @@ class App extends LitElement {
     }
   }
 
+  /**
+   * Updates the app when a link is clicked.
+   */
   private handleClick(event: Event) {
     event.preventDefault();
 
@@ -69,29 +75,34 @@ class App extends LitElement {
     if (!['chapter', 'page', 'recipe'].includes(type)) return;
 
     const {chapters, pages, recipes} = this.data;
-    const href = (<HTMLAnchorElement>target).getAttribute('href');
+    const slug = (<HTMLAnchorElement>target).getAttribute('href');
     switch (type) {
       case 'chapter':
-        const chapter_ = chapters.find((chapter: Chapter) => chapter.slug === href);
-        this.updateComponent(this.chapterElement, chapter_, 'chapter');
-        this.updateBrowser(href);
+        const chapter_ = chapters.find((chapter: Chapter) => chapter.slug === slug);
+        this.updateComponent(this.chapter, chapter_, 'chapter');
+        this.updateBrowser(slug);
         break;
       case 'page':
-        const page_ = pages.find((page: Page) => page.slug === href);
-        this.updateComponent(this.pageElement, page_, 'page');
-        this.updateBrowser(href);
+        const page_ = pages.find((page: Page) => page.slug === slug);
+        this.updateComponent(this.page, page_, 'page');
+        this.updateBrowser(slug);
         break;
       case 'recipe':
-        const recipe_ = recipes.find((recipe: Recipe) => recipe.slug === href);
+        const recipe_ = recipes.find((recipe: Recipe) => recipe.slug === slug);
         const chapter = (<HTMLElement>target).dataset.context;
-        this.updateComponent(this.recipeElement, recipe_, 'recipe');
-        this.updateBrowser(href, chapter);
+        this.updateComponent(this.recipe, recipe_, 'recipe');
+        this.updateBrowser(slug, chapter);
         break;
       default:
         break;
     }
+
+    this.updateDocument(slug);
   }
 
+  /**
+   * Updates the app when browser's back and forward buttons are clickes.
+   */ 
   private handlePopstate() {
     const url = new URL(window.location.href);
     const {pathname} = url;
@@ -99,22 +110,26 @@ class App extends LitElement {
     const lastSegment = segments[segments.length - 1];
 
     const {chapters, pages, recipes} = this.data;
-
     const chapter = chapters.find((chapter: Chapter) => chapter.slug === lastSegment);
     const page = pages.find((page: Page) => page.slug === lastSegment);
     const recipe = recipes.find((recipe: Recipe) => recipe.slug === lastSegment);
 
     if (chapter) {
-      this.updateComponent(this.chapterElement, chapter, 'chapter');
+      this.updateComponent(this.chapter, chapter, 'chapter');
     } else if (page) {
-      this.updateComponent(this.pageElement, page, 'page');
+      this.updateComponent(this.page, page, 'page');
     } else if (recipe) {
-      this.updateComponent(this.recipeElement, recipe, 'recipe');
+      this.updateComponent(this.recipe, recipe, 'recipe');
     } else {
       this.context = 'home';
     }
+
+    this.updateDocument(lastSegment);
   }
 
+  /**
+   * Dispatches custom event to a component with data for rendering.
+   */ 
   private updateComponent(element: HTMLElement, detail: Chapter|Page|Recipe, context: string) {
     element.dispatchEvent(new CustomEvent('data', {
       bubbles: true,
@@ -124,46 +139,66 @@ class App extends LitElement {
     this.context = context;
   }
 
+  /**
+   * Updates URL in the address bar.
+   */ 
   private updateBrowser(slug: string, context?: string) {
     let path = `./${slug}`;
     if (context) {
       path = `./${context}/${slug}`;
     }
     history.pushState(null, '', path);
-
-    if (this.context === 'home') {
-      document.title = this.baseTitle;
-    } else {
-      // TODO: Get title of current view;
-      document.title = `PAGE · ${this.baseTitle}`;
-    }
   }
 
+  /**
+   * Updates document title (and browser history).
+   */ 
+  private updateDocument(slug: string) {
+    let title = null;
+    const {chapters, pages, recipes} = this.data;
+
+    if (this.context === 'chapter') {
+      const chapter = chapters.find((chapter: Chapter) => chapter.slug === slug);
+      title = chapter.title;
+    } else if (this.context === 'page') {
+      const page = pages.find((page: Page) => page.slug === slug);
+      title = page.title;
+    } else if (this.context === 'recipe') {
+      const recipe = recipes.find((recipe: Recipe) => recipe.slug === slug);
+      title = recipe.title;
+    }
+
+    document.title = title ? `${title} · ${this.baseTitle}` : this.baseTitle;
+  }
+
+  /**
+   * Sets attributes on elements for in/out and forward/back transitions.
+   */
   protected willUpdate(changedProperties: PropertyValues<this>) {
     if (changedProperties.has('context')) {
       const prev = changedProperties.get('context');
       const next = this.context;
 
-      // Going down.
+      // Going forward.
       if (prev === 'home' && next === 'chapter') {
         this.homeTransition = 'start-out';
         this.chapterTransition = 'end-in';
-        window.requestAnimationFrame(() => this.chapterElement.scrollTo(0, 0));
+        window.requestAnimationFrame(() => this.chapter.scrollTo(0, 0));
       }
 
       if (prev === 'chapter' && next === 'recipe') {
         this.chapterTransition = 'start-out';
         this.recipeTransition = 'end-in';
-        window.requestAnimationFrame(() => this.recipeElement.scrollTo(0, 0));
+        window.requestAnimationFrame(() => this.recipe.scrollTo(0, 0));
       }
 
       if (prev === 'home' && next === 'page') {
         this.homeTransition = 'start-out';
         this.pageTransition = 'end-in';
-        window.requestAnimationFrame(() => this.pageElement.scrollTo(0, 0));
+        window.requestAnimationFrame(() => this.page.scrollTo(0, 0));
       }
 
-      // Coming back up.
+      // Coming back.
       if (prev === 'recipe' && next === 'chapter') {    
         this.chapterTransition = 'start-in';
         this.recipeTransition = 'end-out';
