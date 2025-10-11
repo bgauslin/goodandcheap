@@ -1,0 +1,20 @@
+/* Responsive images */
+img {
+  block-size: auto;
+  inline-size: 100%;
+  vertical-align: middle;
+}
+
+/* Cover photo for everything but home page. */
+.cover-photo {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 1;
+  inline-size: 100%;
+}
+
+.cover-photo > img {
+  aspect-ratio: 1;
+  background: var(--fill-2);
+  object-fit: cover;
+}

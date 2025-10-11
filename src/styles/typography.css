@@ -1,0 +1,42 @@
+h1 {
+  font-family: 'Carmina Bold';
+}
+
+:is(p, li) {
+  line-height: 1.5;
+}
+
+gc-home h2 {
+  font-family: 'Futura Book';
+  font-size: var(--subhead-font-size);
+  letter-spacing: .25em;
+  margin-block: 1rem;
+  margin-inline: 1rem;
+  text-transform: uppercase;
+}
+
+gc-page h2,
+gc-recipe :is(.badge, .cost, h2, h3),
+.previews h3 {
+  font-family: 'Futura Bold';
+  font-size: var(--subhead-font-size);
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+.count,
+[id='ingredients'] li,
+.previews :is(.badge, .counter) {
+  font-family: 'Futura Book'; 
+}
+
+.count,
+.previews :is(.badge, .counter) {
+  font-size: var(--subhead-font-size);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.previews .counter {
+  opacity: .7;
+}

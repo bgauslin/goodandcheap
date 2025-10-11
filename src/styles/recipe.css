@@ -4,20 +4,14 @@ gc-recipe {
     padding-inline: 1rem;
   }
 
-  [id='overview'] {
-    margin-block-start: 0;
-  }
-
   .cover {
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    /* padding: 0; */
     position: relative;
   }
 
-  .cover > img {
-    aspect-ratio: 1;
-    display: block;
-    object-fit: cover;
+  [id='overview'] {
+    margin-block-start: 0;
   }
 
   h1 {

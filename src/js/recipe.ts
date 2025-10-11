@@ -72,12 +72,16 @@ class GoodAndCheapRecipe extends LitElement {
       </section>` : nothing;
 
     return html`
-      <section class="cover">
-        <img src="./images/${image}@large.webp" alt="">  
+      <div class="cover">
+        <figure class="cover-photo">
+          <img src="./images/${image}@large.webp" alt="">
+        </figure>
+
         <h1>${unsafeHTML(title)}</h1>
         <div class="badge">${badge}</div>
         ${cost_}
-      </section>
+      </div>
+
       ${overview_}
       ${ingredients_}
       ${steps_}

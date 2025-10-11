@@ -1,0 +1,44 @@
+.previews {
+  display: grid;
+  grid: auto-flow / 1fr;
+  gap: 1rem 0;
+  list-style: none;
+  margin-block: 0 4rem;
+  margin-inline: 1rem;
+  padding: 0;
+}
+
+.previews a {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid: 'thumb blurb counter' var(--thumb-size) / var(--thumb-size) 1fr;
+}
+
+.previews a > * {
+  pointer-events: none;
+}
+
+.previews a > img {
+  aspect-ratio: 1;
+  background: var(--fill-2);
+  border-radius: .25rem;
+  grid-area: thumb;
+  object-fit: cover;
+}
+
+.previews .blurb {
+  grid-area: blurb;
+}
+
+.previews h3 {
+  margin-block: 0;
+}
+
+.previews :is(.badge, .count) {
+  margin-block: .2em 0;
+}
+
+.previews .counter {
+  grid-area: counter;
+}

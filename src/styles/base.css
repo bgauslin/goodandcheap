@@ -76,16 +76,4 @@ a {
   }
 }
 
-h1 {
-  font-family: 'Carmina Bold';
-}
 
-:is(p, li) {
-  line-height: 1.5;
-}
-
-img {
-  block-size: auto;
-  inline-size: 100%;
-  vertical-align: middle;
-}

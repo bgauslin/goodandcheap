@@ -1,0 +1,66 @@
+[aria-hidden='true'] {
+  z-index: -1;
+  pointer-events: none;
+}
+
+[aria-hidden='false'] {
+  z-index: 1;
+}
+
+[transition] {
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+[transition='start-in'] {
+  animation-name: startIn;
+}
+
+[transition='start-out'] {
+  animation-name: startOut;
+}
+
+[transition='end-in'] {
+  animation-name: endIn;
+}
+
+[transition='end-out'] {
+  animation-name: endOut;
+}
+
+@keyframes startIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes startOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes endIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes endOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

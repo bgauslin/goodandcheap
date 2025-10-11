@@ -1,11 +1,14 @@
-/* -------------------------------------------------- */
-/* Layout: root. */
+/* ---------------------------------------- */
+/* App */
 
 gc-app {
   block-size: 100dvh;
   display: grid;
   grid: var(--header-size) 1fr var(--footer-size) / 1fr auto 1fr;
 }
+
+/* ---------------------------------------- */
+/* Header */
 
 gc-app > header {
   background-color: var(--header-background);
@@ -26,6 +29,9 @@ gc-app > header > picture > img {
   inline-size: auto;
 }
 
+/* ---------------------------------------- */
+/* Main */
+
 gc-app > main {
   block-size: calc(100dvh - var(--footer-size));
   display: grid;
@@ -39,21 +45,8 @@ gc-app > main > * {
   grid-area: content;
 }
 
-gc-app > footer {
-  block-size: var(--footer-size);
-  display: grid;
-  grid: 1fr / 1fr;
-  grid-area: 3 / 1 / 3 / 4;
-  place-items: center;
-}
-
-gc-app > footer > img {
-  block-size: 1rem;
-  inline-size: auto;
-}
-
-/* -------------------------------------------------- */
-/* Layout: views. */
+/* ---------------------------------------- */
+/* Main components */
 
 :is(gc-home, gc-chapter, gc-recipe, gc-page) {
   padding-block: var(--header-size) var(--footer-size);
@@ -74,157 +67,18 @@ gc-app > footer > img {
   padding-inline: 1rem;
 }
 
-/* -------------------------------------------------- */
-/* Previews. */
+/* ---------------------------------------- */
+/* Footer */
 
-.previews {
+gc-app > footer {
+  block-size: var(--footer-size);
   display: grid;
-  grid: auto-flow / 1fr;
-  gap: 1rem 0;
-  list-style: none;
-  margin-block: 0 4rem;
-  margin-inline: 1rem;
-  padding: 0;
+  grid: 1fr / 1fr;
+  grid-area: 3 / 1 / 3 / 4;
+  place-items: center;
 }
 
-.previews a {
-  align-items: center;
-  display: grid;
-  gap: 1rem;
-  grid: 'thumb blurb counter' var(--thumb-size) / var(--thumb-size) 1fr;
-}
-
-.previews a > * {
-  pointer-events: none;
-}
-
-.previews a > img {
-  aspect-ratio: 1;
-  border-radius: .25rem;
-  grid-area: thumb;
-  object-fit: cover;
-}
-
-.previews .blurb {
-  grid-area: blurb;
-}
-
-.previews h3 {
-  margin-block: 0;
-}
-
-.previews :is(.badge, .count) {
-  margin-block: .2em 0;
-}
-
-.previews .counter {
-  grid-area: counter;
-}
-
-/* -------------------------------------------------- */
-/* Typography. */
-
-gc-home h2 {
-  font-family: 'Futura Book';
-  font-size: var(--subhead-font-size);
-  letter-spacing: .25em;
-  margin-block: 1rem;
-  margin-inline: 1rem;
-  text-transform: uppercase;
-}
-
-gc-page h2,
-gc-recipe :is(.badge, .cost, h2, h3),
-.previews h3 {
-  font-family: 'Futura Bold';
-  font-size: var(--subhead-font-size);
-  letter-spacing: .25em;
-  text-transform: uppercase;
-}
-
-.count,
-[id='ingredients'] li,
-.previews :is(.badge, .counter) {
-  font-family: 'Futura Book'; 
-}
-
-.count,
-.previews :is(.badge, .counter) {
-  font-size: var(--subhead-font-size);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.previews .counter {
-  opacity: .7;
-}
-
-/* -------------------------------------------------- */
-/* Transitions. */
-
-[aria-hidden='true'] {
-  z-index: -1;
-  pointer-events: none;
-}
-
-[aria-hidden='false'] {
-  z-index: 1;
-}
-
-[transition] {
-  animation-duration: .3s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-}
-
-[transition='start-in'] {
-  animation-name: startIn;
-}
-
-[transition='start-out'] {
-  animation-name: startOut;
-}
-
-[transition='end-in'] {
-  animation-name: endIn;
-}
-
-[transition='end-out'] {
-  animation-name: endOut;
-}
-
-@keyframes startIn {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes startOut {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes endIn {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes endOut {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
-  }
+gc-app > footer > img {
+  block-size: 1rem;
+  inline-size: auto;
 }
