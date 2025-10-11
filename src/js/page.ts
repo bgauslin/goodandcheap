@@ -42,7 +42,7 @@ class Page extends LitElement {
     console.log('this.page', this.page);
 
     try {
-      const response = await fetch(`/api/${this.page}.json`);
+      const response = await fetch(`./api/${this.page}.json`);
       this.data = await response.json();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
@@ -55,7 +55,7 @@ class Page extends LitElement {
 
     const {image, content, title} = this.data;
     return html`
-      <img src="/images/${image}@large.webp" alt="">
+      <img src="./images/${image}@large.webp" alt="">
       <section>
         <h1>${title}</h1>
         ${unsafeHTML(content)}

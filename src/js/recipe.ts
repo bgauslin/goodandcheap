@@ -51,7 +51,7 @@ class Recipe extends LitElement {
     if (!this.recipe) return;
 
     try {
-      const response = await fetch(`/api/${this.recipe}.json`);
+      const response = await fetch(`./api/${this.recipe}.json`);
       this.data = await response.json();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
@@ -99,7 +99,7 @@ class Recipe extends LitElement {
 
     return html`
       <section class="cover">
-        <img src="/images/${image}@large.webp" alt="">  
+        <img src="./images/${image}@large.webp" alt="">  
         <h1>${title}</h1>
         <div class="badge">${badge}</div>
         ${cost_}

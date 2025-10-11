@@ -37,7 +37,7 @@ class Home extends LitElement {
 
   private async fetchData(): Promise<any> {
     try {
-      const response = await fetch('/api/home.json');
+      const response = await fetch('./api/home.json');
       this.data = await response.json();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
@@ -65,7 +65,7 @@ class Home extends LitElement {
         return html`
           <li>
             <a href="${slug}" data-type="${type}">
-              <img src="/images/${image}@thumb.webp" alt="">
+              <img src="./images/${image}@thumb.webp" alt="">
               <div class="blurb">
                 <h3>${title}</h3>
                 ${count ? html`<p class="count">${count} Recipes</p>` : nothing }

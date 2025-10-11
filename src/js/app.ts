@@ -18,7 +18,6 @@ class App extends LitElement {
   @query('gc-recipe') recipeElement: HTMLElement;
 
   @state() baseTitle: string;
-  @state() baseUrl: string = '/goodandcheap';
   @state() chapter: string;
   @state() chapterTransition: string;
   @state() context: string = 'home';
@@ -56,7 +55,7 @@ class App extends LitElement {
 
   private async fetchData() {
     try {
-      const response = await fetch('/api/all.json');
+      const response = await fetch('./api/all.json');
       this.data = await response.json();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
@@ -119,9 +118,9 @@ class App extends LitElement {
   }
 
   private updateBrowser(slug: string, context?: string) {
-    let path = `${this.baseUrl}/${slug}`;
+    let path = `./${slug}`;
     if (context) {
-      path = `${this.baseUrl}/${context}/${slug}`;
+      path = `./${context}/${slug}`;
     }
     history.pushState(null, '', path);
 
@@ -181,8 +180,8 @@ class App extends LitElement {
         <picture>
           <source
             media="(prefers-color-scheme: dark)"
-            srcset="/img/wordmark-dark.png">
-          <img src="/img/wordmark.png" alt="Good And Cheap">
+            srcset="./img/wordmark-dark.png">
+          <img src="./img/wordmark.png" alt="Good And Cheap">
         </picture>
       </header>
 
@@ -205,7 +204,7 @@ class App extends LitElement {
       </main>
 
       <footer>
-        <img src="/img/by-nc-sa-80x15.svg" alt="Creative Commons License">
+        <img src="./img/by-nc-sa-80x15.svg" alt="Creative Commons License">
       </footer>
     `;
   }

@@ -48,7 +48,7 @@ class Chapter extends LitElement {
     if (!this.chapter) return;
 
     try {
-      const response = await fetch(`/api/${this.chapter}.json`);
+      const response = await fetch(`./api/${this.chapter}.json`);
       this.data = await response.json();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
@@ -62,7 +62,7 @@ class Chapter extends LitElement {
     const {content, count, image, recipes, title} = this.data;
 
     return html`
-      <img src="/images/${image}@large.webp" alt="">
+      <img src="./images/${image}@large.webp" alt="">
       
       <section class="overview">
         <h1>${title}</h1>
@@ -78,7 +78,7 @@ class Chapter extends LitElement {
             <a href="${slug}"
               data-context="${chapter}"  
               data-type="recipe">
-              <img src="/images/${image}@thumb.webp" alt="">
+              <img src="./images/${image}@thumb.webp" alt="">
               <div class="blurb">
                 <h3>${title}</h3>
                 <p class="badge">${badge}</p>
