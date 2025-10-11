@@ -1,4 +1,4 @@
-iimport {LitElement, html, PropertyValues} from 'lit';
+import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
 import {Chapter, Page, Recipe} from './_types';
 
