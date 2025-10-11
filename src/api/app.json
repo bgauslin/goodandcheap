@@ -133,7 +133,7 @@
         {
           "title": "Kale Salad",
           "badge": "For Two, or Four as a Side",
-          "image": "kale-salad",
+          "image": "kale-salad-1",
           "chapter": "salad",
           "slug": "kale-salad"
         },
@@ -233,7 +233,7 @@
         {
           "title": "Cornmeal Crusted Veggies",
           "badge": "For Four",
-          "image": "cornmeal-crusted-veggies",
+          "image": "cornmeal-crusted-veggies-1",
           "chapter": "snacks-sides-and-small-bites",
           "slug": "cornmeal-crusted-veggies"
         },
@@ -261,7 +261,7 @@
         {
           "title": "Popcorn",
           "badge": "Ideas",
-          "image": "",
+          "image": "popcorn",
           "chapter": "snacks-sides-and-small-bites",
           "slug": "popcorn"
         }
@@ -923,7 +923,7 @@
         ],
         "steps": [
             "In a large bowl, mix the flour and salt. Pour in the yogurt, eggs, and a tablespoon of water. Mix it slowly and carefully. The dough will be quite sticky. Cover it with a towel or plastic wrap while you make the filling.",
-            "[object Object]",
+            "Put the chopped potatoes in a pot and cover with water, then add a bit of salt. Cover with a lid and bring to a boil over medium-high heat before removing the lid. Let the potatoes cook until tender, about 20 minutes. Test them with a fork: if it goes through easily, they’re done.",
             "Drain the potatoes and add shredded cheese, salt, pepper, and any additions you might enjoy. I like strong aged cheese because you don’t have to use as much. I usually use several additions, and you should play around with some of your favorite things—there aren’t many flavors that don’t work in potatoes! Next, mash the potatoes with an electric mixer or just two forks. Once the filling is ready, gather some friends because shaping takes some time!",
             "Flour your countertop liberally. Split the dough in half. Keep one half covered, but place the other half on the floured surface. Use a rolling pin to flatten the dough, about ¼&quot; thick. Punch out as many 3&quot; to 4&quot; dough circles as possible, using a round cookie cutter or a drinking glass. Squish the scraps into the remaining covered half of the dough.",
             "Drop about a tablespoon of filling in the center of one circle of dough. Fold the dough over the filling and press the edges to create a dumpling. The stickiness should ensure a tight seal. Lay the dumpling on a floured surface and use a fork to squish the edges together. Repeat until you run out of circles, then repeat everything with the remaining dough.",
@@ -1199,7 +1199,7 @@
         ],
         "steps": [
             "Place the butter in the freezer for 30 minutes.",
-            "Turn the oven to 400° F. Line a baking sheet with parchment paper, or lightly grease the pan if you don’t have the paper.",
+            "Turn the oven to 400°F. Line a baking sheet with parchment paper, or lightly grease the pan if you don’t have the paper.",
             "In a large bowl, combine the flour, baking powder, and salt.",
             "Prepare your jalapeño and cheese. Cutting the cheese into cubes rather than grating it means you’ll have pockets of gooey cheese that contrast nicely with the scone. If you want the spice of the jalapeño, leave the seeds and membrane; if you like it milder, remove them and chop up only the pepper itself.",
             "Remove the butter from the freezer and grate it directly into the flour mixture. (Use a cheese grater—it’s the best way to break up butter without melting it.) Using your hands, gently squish the butter into the flour until everything is incorporated but not smooth. The chunks of butter will create flaky scones. Add the jalapeño, cheese, eggs, and milk to the bowl, then use your hands to gently mix everything until it just comes together. It will probably be a little shaggy, but that’s just fine.",
@@ -2803,7 +2803,7 @@
         "title": "Kale Salad",
         "slug": "kale-salad",
         "badge": "For Two, or Four as a Side",
-        "image": "kale-salad",
+        "image": "kale-salad-1",
         "cost": {
           "total": "$4.50",
           "each": "$2.25",
@@ -3298,7 +3298,7 @@
         "title": "Cornmeal Crusted Veggies",
         "slug": "cornmeal-crusted-veggies",
         "badge": "For Four",
-        "image": "cornmeal-crusted-veggies",
+        "image": "cornmeal-crusted-veggies-1",
         "cost": {
           "total": "$2.60",
           "each": "$0.65",
@@ -3452,7 +3452,7 @@
         "title": "Popcorn",
         "slug": "popcorn",
         "badge": "Ideas",
-        "image": "",
+        "image": "popcorn",
         "cost": {
           "total": "$1",
           "each": "$0.25",
