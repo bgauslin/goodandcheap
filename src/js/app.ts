@@ -28,9 +28,9 @@ class App extends LitElement {
 
   constructor() {
     super();
+    this.baseTitle = document.title;
     this.clickHandler = this.handleClick.bind(this);
     this.popstateHandler = this.handlePopstate.bind(this);
-    this.baseTitle = document.title;
   }
 
   connectedCallback() {
@@ -53,7 +53,7 @@ class App extends LitElement {
   /**
    * Gets all data for rendering.
    */
-  private async fetchData() {
+  private async fetchData(): Promise<Data> {
     try {
       const response = await fetch('./api/app.json');
       this.data = await response.json();

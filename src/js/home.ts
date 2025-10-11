@@ -2,12 +2,12 @@ import {LitElement, html, nothing} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 
 
-interface home {
-  chapters: item[],
-  pages: item[],
+interface Home {
+  chapters: Item[],
+  pages: Item[],
 }
 
-interface item {
+interface Item {
   count: string,
   image: string,
   slug: string,
@@ -15,8 +15,8 @@ interface item {
 }
 
 @customElement('gc-home')
-class Home extends LitElement {
-  @state() data: home;
+class GoodAndCheapHome extends LitElement {
+  @state() data: Home;
 
   constructor() {
     super();
@@ -35,8 +35,11 @@ class Home extends LitElement {
     return this;
   }
 
-  // TODO: Replace with custom event.
-  private async fetchData(): Promise<any> {
+  /**
+   * This component fetches its own data to quickly render it while the
+   * app is busy fetching data for everything else.
+   */
+  private async fetchData(): Promise<Home> {
     try {
       const response = await fetch('./api/home.json');
       this.data = await response.json();
@@ -52,12 +55,12 @@ class Home extends LitElement {
     const {chapters, pages} = this.data;
 
     return html`
-      ${this.renderList('Recipes', chapters, 'chapter', true)}
-      ${this.renderList('More Info', pages, 'page', false)}
+      ${this.renderList('Recipes', chapters, 'chapter')}
+      ${this.renderList('More Info', pages, 'page')}
     `;
   }
 
-  private renderList(heading: string, items: item[], type: string, count: boolean) {
+  private renderList(heading: string, items: Item[], type: string) {
     return html`
       <h2>${heading}</h2>
       <ul class="previews">
