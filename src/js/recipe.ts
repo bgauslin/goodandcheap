@@ -17,12 +17,12 @@ class GoodAndCheapRecipe extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.addEventListener('recipe', this.dataListener);
+    this.addEventListener('data', this.dataListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.removeEventListener('recipe', this.dataListener);
+    this.removeEventListener('data', this.dataListener);
   }
 
   protected createRenderRoot() {

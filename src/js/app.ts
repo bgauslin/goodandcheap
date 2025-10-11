@@ -73,18 +73,18 @@ class App extends LitElement {
     switch (type) {
       case 'chapter':
         const chapter_ = chapters.find((chapter: Chapter) => chapter.slug === href);
-        this.updateChapter(chapter_);
+        this.updateComponent(this.chapterElement, chapter_, 'chapter');
         this.updateBrowser(href);
         break;
       case 'page':
         const page_ = pages.find((page: Page) => page.slug === href);
-        this.updatePage(page_);
+        this.updateComponent(this.pageElement, page_, 'page');
         this.updateBrowser(href);
         break;
       case 'recipe':
         const recipe_ = recipes.find((recipe: Recipe) => recipe.slug === href);
         const chapter = (<HTMLElement>target).dataset.context;
-        this.updateRecipe(recipe_);
+        this.updateComponent(this.recipeElement, recipe_, 'recipe');
         this.updateBrowser(href, chapter);
         break;
       default:
@@ -105,41 +105,23 @@ class App extends LitElement {
     const recipe = recipes.find((recipe: Recipe) => recipe.slug === lastSegment);
 
     if (chapter) {
-      this.updateChapter(chapter);
+      this.updateComponent(this.chapterElement, chapter, 'chapter');
     } else if (page) {
-      this.updatePage(page);
+      this.updateComponent(this.pageElement, page, 'page');
     } else if (recipe) {
-      this.updateRecipe(recipe);
+      this.updateComponent(this.recipeElement, recipe, 'recipe');
     } else {
       this.context = 'home';
     }
   }
 
-  private updateChapter(detail: Chapter) {
-    this.context = 'chapter';
-    this.chapterElement.dispatchEvent(new CustomEvent('chapter', {
+  private updateComponent(element: HTMLElement, detail: Chapter|Page|Recipe, context: string) {
+    element.dispatchEvent(new CustomEvent('data', {
       bubbles: true,
       composed: true,
       detail,
     }));
-  }
-
-  private updatePage(detail: Page) {
-    this.context = 'page';
-    this.pageElement.dispatchEvent(new CustomEvent('page', {
-      bubbles: true,
-      composed: true,
-      detail,
-    }));
-  }
-
-  private updateRecipe(detail: Recipe) {
-    this.context = 'recipe';
-    this.recipeElement.dispatchEvent(new CustomEvent('recipe', {
-      bubbles: true,
-      composed: true,
-      detail,
-    }));
+    this.context = context;
   }
 
   private updateBrowser(slug: string, context?: string) {
