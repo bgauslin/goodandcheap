@@ -8,12 +8,16 @@ img {
 /* Cover photo for everything but home page. */
 .cover-photo {
   aspect-ratio: 1;
+  background: var(--fill-2);
   inline-size: 100%;
   margin: 0;
 }
 
 .cover-photo > img {
   aspect-ratio: 1;
-  background: var(--fill-2);
   object-fit: cover;
+}
+
+img[aria-hidden='true'] {
+  visibility: hidden;
 }

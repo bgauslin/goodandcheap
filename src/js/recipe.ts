@@ -1,5 +1,5 @@
 import {LitElement, html, nothing} from 'lit';
-import {customElement, state} from 'lit/decorators.js';
+import {customElement, query, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {Recipe} from './_types';
 
@@ -8,7 +8,10 @@ import {Recipe} from './_types';
 class GoodAndCheapRecipe extends LitElement {
   private dataListener: EventListenerObject;
 
+  @query('.cover-photo > img') coverPhoto: HTMLImageElement;
+  
   @state() data: Recipe;
+  @state() loading: boolean = true;
 
   constructor() {
     super();
@@ -31,6 +34,12 @@ class GoodAndCheapRecipe extends LitElement {
 
   private updateData(event: CustomEvent) {
     this.data = event.detail;
+
+    window.requestAnimationFrame(() => {
+      if (!this.coverPhoto.complete) {
+        this.coverPhoto.onload = () => this.loading = false;
+      }
+    });
   }
 
   protected render() {
@@ -74,7 +83,10 @@ class GoodAndCheapRecipe extends LitElement {
     return html`
       <div class="cover">
         <figure class="cover-photo">
-          <img src="./images/${image}@large.webp" alt="">
+          <img
+            alt=""
+            aria-hidden="${this.loading}"
+            src="./images/${image}@large.webp">
         </figure>
 
         <h1>${unsafeHTML(title)}</h1>
