@@ -1,4 +1,4 @@
-import {LitElement, html, PropertyValues} from 'lit';
+iimport {LitElement, html, PropertyValues} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
 import {Chapter, Page, Recipe} from './_types';
 
@@ -101,7 +101,7 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
-   * Updates the app when browser's back and forward buttons are clickes.
+   * Updates the app when browser's back and forward buttons are clicked.
    */ 
   private handlePopstate() {
     const url = new URL(window.location.href);
