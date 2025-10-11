@@ -1,12 +1,3 @@
-[aria-hidden='true'] {
-  pointer-events: none;
-  z-index: -1;
-}
-
-[aria-hidden='false'] {
-  z-index: 1;
-}
-
 [transition] {
   animation-duration: .3s;
   animation-fill-mode: forwards;

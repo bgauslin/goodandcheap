@@ -63,6 +63,18 @@ gc-app > main > * {
   max-inline-size: var(--section-max-width);
 }
 
+/* Disable non-visible components. */
+:where(gc-chapter, gc-page, gc-recipe) {
+  &[aria-hidden='true'] {
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &[aria-hidden='false'] {
+    z-index: 1;
+  }
+}
+
 .overview {
   padding-inline: 1rem;
 }
