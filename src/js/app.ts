@@ -57,6 +57,7 @@ class GoodAndCheapApp extends LitElement {
     try {
       const response = await fetch('./api/app.json');
       this.data = await response.json();
+      this.updateFromUrl();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
       return;

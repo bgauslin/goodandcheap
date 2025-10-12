@@ -49,6 +49,7 @@ gc-app > main > * {
 /* Main components */
 
 :is(gc-home, gc-chapter, gc-recipe, gc-page) {
+  background-color: var(--fill-0);
   overflow: auto;
   padding-block: var(--header-size) var(--footer-size);
   scrollbar-width: none;
@@ -56,15 +57,7 @@ gc-app > main > * {
   &::-webkit-scrollbar {
     display: none;
   }
-}
 
-:is(gc-chapter, gc-recipe) {
-  display: block;
-  max-inline-size: var(--section-max-width);
-}
-
-/* Disable non-visible components. */
-:where(gc-chapter, gc-page, gc-recipe) {
   &[aria-hidden='true'] {
     pointer-events: none;
     z-index: -1;
@@ -73,6 +66,11 @@ gc-app > main > * {
   &[aria-hidden='false'] {
     z-index: 1;
   }
+}
+
+:is(gc-chapter, gc-recipe) {
+  display: block;
+  max-inline-size: var(--section-max-width);
 }
 
 .overview {
