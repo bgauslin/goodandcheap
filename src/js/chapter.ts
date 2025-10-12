@@ -24,16 +24,14 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
   }
 
   private render() {
-    const {content, count, image, recipes, title} = this.data;
+    const {content, image, recipes, title} = this.data;
 
     let items = '';
     for (const [index, recipe] of recipes.entries()) {
-      const {badge, chapter, image, slug, title} = recipe;
+      const {badge, image, slug, title} = recipe;
       items += `
         <li>
-          <a href="${slug}"
-            data-context="${chapter}"  
-            data-type="recipe">
+          <a href="${slug}" data-type="recipe">
             <img src="./images/${image}@thumb.webp" alt="">
             <div class="blurb">
               <h3>${title}</h3>
@@ -55,7 +53,7 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
       <section class="overview">
         <h1>${title}</h1>
         ${content}
-        <p class="count">${count} Recipes</p>
+        <p class="count">${recipes.length} Recipes</p>
       </section>
 
       <ul class="previews">

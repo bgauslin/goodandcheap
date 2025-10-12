@@ -1,6 +1,5 @@
 export interface Chapter {
   content: string,
-  count: string,
   image: string,
   recipes: {
     badge: string,
@@ -22,6 +21,7 @@ export interface Page {
 
 export interface Recipe {
   badge: string,
+  chapter: string,
   cost?: {
     each: string,
     total: string,

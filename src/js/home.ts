@@ -56,24 +56,24 @@ class GoodAndCheapHome extends LitElement {
     const {chapters, pages} = this.data;
 
     return html`
-      ${this.renderList('Recipes', chapters, 'chapter')}
-      ${this.renderList('More Info', pages, 'page')}
+      ${this.renderList('Recipes', 'chapter', chapters, true)}
+      ${this.renderList('More Info', 'page', pages)}
     `;
   }
 
-  private renderList(heading: string, items: Item[], type: string) {
+  private renderList(heading: string, type: string, items: Item[], count:boolean = false) {
     return html`
       <h2>${heading}</h2>
       <ul class="previews">
       ${items.map(item => {
-        const {count, image, slug, title} = item;
+        const {image, slug, title} = item;
         return html`
           <li>
             <a href="${slug}" data-type="${type}">
               <img src="./images/${image}@thumb.webp" alt="">
               <div class="blurb">
                 <h3>${unsafeHTML(title)}</h3>
-                ${count ? html`<p class="count">${count} Recipes</p>` : nothing }
+                ${count ? html`<p class="count">${items.length} Recipes</p>` : nothing }
               </div>
             </a>
           </li>
