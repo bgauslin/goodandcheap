@@ -1,6 +1,7 @@
 import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
 import {Chapter, Page, Recipe} from './_types';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 
 interface Data {
@@ -270,7 +271,7 @@ class GoodAndCheapApp extends LitElement {
           title="${this.backLabel}"
           type="button"
           @click="${this.handleBackButton}">
-          <span>${this.backLabel}</span>
+          <span>${unsafeHTML(this.backLabel)}</span>
         </button>
 
         <picture>

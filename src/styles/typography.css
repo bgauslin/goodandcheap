@@ -6,13 +6,17 @@ h1 {
   line-height: 1.5;
 }
 
-gc-home h2 {
+gc-home h2,
+header > [id='back'] {
   font-family: 'Futura Book';
   font-size: var(--subhead-font-size);
   letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+gc-home h2 {
   margin-block: 1rem;
   margin-inline: 1rem;
-  text-transform: uppercase;
 }
 
 gc-page h2,
