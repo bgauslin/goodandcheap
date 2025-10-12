@@ -1,0 +1,35 @@
+/* ---------------------------------------- */
+/* Header */
+
+header {
+  background-color: var(--header-background);
+  display: grid;
+  grid: 'back wordmark .' var(--header-size) / 1fr auto 1fr;
+  inset-block: 0 auto;
+  inset-inline: 0 0;
+  position: fixed;
+  z-index: 2;
+}
+
+header > picture {
+  grid-area: wordmark;
+  place-self: center;
+}
+
+header > picture > img {
+  block-size: var(--header-size);
+  inline-size: auto;
+}
+
+header > [id='back'] {
+  grid-area: back;
+  place-self: center start;
+
+  & > * {
+    pointer-events: none;
+  }
+
+  &[aria-hidden='true'] {
+    display: none;
+  }
+}

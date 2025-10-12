@@ -14,17 +14,19 @@ class GoodAndCheapApp extends LitElement {
   private clickHandler: EventListenerObject;
   private popstateHandler: EventListenerObject;
 
-  @query('gc-chapter') chapter: HTMLElement;
-  @query('gc-page') page: HTMLElement;
-  @query('gc-recipe') recipe: HTMLElement;
+  @query('gc-chapter') chapterElement: HTMLElement;
+  @query('gc-page') pageElement: HTMLElement;
+  @query('gc-recipe') recipeElement: HTMLElement;
 
-  @state() baseTitle: string;
   @state() chapterTransition: string;
-  @state() context: string = 'home';
-  @state() data: Data;
   @state() homeTransition: string;
   @state() pageTransition: string;
   @state() recipeTransition: string;
+
+  @state() backLabel: string = 'Home';
+  @state() baseTitle: string;
+  @state() context: string = 'home';
+  @state() data: Data;
 
   constructor() {
     super();
@@ -84,49 +86,91 @@ class GoodAndCheapApp extends LitElement {
 
     if (type === 'chapter') {
       this.context = 'chapter';
-      this.updateComponent(this.chapter, chapter);
+      this.updateComponent(this.chapterElement, chapter);
       this.updateAddressBar(slug);
     } else if (type === 'page') {
       this.context = 'page';
-      this.updateComponent(this.page, page);
+      this.updateComponent(this.pageElement, page);
       this.updateAddressBar(slug);
     } else if (type === 'recipe') {
       this.context = 'recipe';
-      this.updateComponent(this.recipe, recipe);
+      this.updateComponent(this.recipeElement, recipe);
       this.updateAddressBar(slug, recipe.chapter);
     }
 
+    this.updateButtonLabel();
     this.updateDocumentTitle(slug);
+  }
+
+  private handleBackButton() {
+    if (this.context === 'recipe') {
+      const segment = this.getSlug();
+      const {chapters, recipes} = this.data;
+      const recipe = recipes.find(recipe => recipe.slug === segment);
+      const chapter = chapters.find(chapter => chapter.slug === recipe.chapter);
+      const {slug} = chapter;
+
+      this.context = 'chapter';
+      this.updateComponent(this.chapterElement, chapter);
+      this.updateAddressBar(slug);
+      this.updateDocumentTitle(slug);
+      this.updateButtonLabel();
+    } else {
+      this.context = 'home';
+      this.updateAddressBar('');
+      this.updateDocumentTitle();
+    }
+  }
+
+  private updateButtonLabel() {
+    this.backLabel = 'Home'
+
+    if (this.context === 'recipe') {
+      const segment = this.getSlug();
+      const {chapters, recipes} = this.data;
+      const recipe = recipes.find(recipe => recipe.slug === segment);
+      const chapter = chapters.find(chapter => chapter.slug === recipe.chapter);
+      this.backLabel = chapter.title;
+    }
   }
 
   /**
    * Updates the app when browser's back and forward buttons are clicked.
    */ 
   private updateFromUrl() {
-    const url = new URL(window.location.href);
-    const {pathname} = url;
-    const segments = pathname.split('/');
-    const lastSegment = segments[segments.length - 1];
+    const slug = this.getSlug();
 
     const {chapters, pages, recipes} = this.data;
-    const chapter = chapters.find((chapter: Chapter) => chapter.slug === lastSegment);
-    const page = pages.find((page: Page) => page.slug === lastSegment);
-    const recipe = recipes.find((recipe: Recipe) => recipe.slug === lastSegment);
+    const chapter = chapters.find((chapter: Chapter) => chapter.slug === slug);
+    const page = pages.find((page: Page) => page.slug === slug);
+    const recipe = recipes.find((recipe: Recipe) => recipe.slug === slug);
 
     if (chapter) {
       this.context = 'chapter';
-      this.updateComponent(this.chapter, chapter);
+      this.updateComponent(this.chapterElement, chapter);
     } else if (page) {
       this.context = 'page';
-      this.updateComponent(this.page, page);
+      this.updateComponent(this.pageElement, page);
     } else if (recipe) {
       this.context = 'recipe';
-      this.updateComponent(this.recipe, recipe);
+      this.updateComponent(this.recipeElement, recipe);
     } else {
       this.context = 'home';
     }
 
-    this.updateDocumentTitle(lastSegment);
+    this.updateButtonLabel();
+    this.updateDocumentTitle(slug);
+  }
+
+  /**
+   * Helper function for getting last URL segment from address bar.
+   */
+  private getSlug(): string {
+    const url = new URL(window.location.href);
+    const {pathname} = url;
+    const segments = pathname.split('/');
+    
+    return segments[segments.length - 1];
   }
 
   /**
@@ -154,7 +198,7 @@ class GoodAndCheapApp extends LitElement {
   /**
    * Updates document title (and browser history).
    */ 
-  private updateDocumentTitle(slug: string) {
+  private updateDocumentTitle(slug?: string) {
     let title = null;
     const {chapters, pages, recipes} = this.data;
 
@@ -184,19 +228,19 @@ class GoodAndCheapApp extends LitElement {
       if (prev === 'home' && next === 'chapter') {
         this.homeTransition = 'start-out';
         this.chapterTransition = 'end-in';
-        window.requestAnimationFrame(() => this.chapter.scrollTo(0, 0));
+        window.requestAnimationFrame(() => this.chapterElement.scrollTo(0, 0));
       }
 
       if (prev === 'chapter' && next === 'recipe') {
         this.chapterTransition = 'start-out';
         this.recipeTransition = 'end-in';
-        window.requestAnimationFrame(() => this.recipe.scrollTo(0, 0));
+        window.requestAnimationFrame(() => this.recipeElement.scrollTo(0, 0));
       }
 
       if (prev === 'home' && next === 'page') {
         this.homeTransition = 'start-out';
         this.pageTransition = 'end-in';
-        window.requestAnimationFrame(() => this.page.scrollTo(0, 0));
+        window.requestAnimationFrame(() => this.pageElement.scrollTo(0, 0));
       }
 
       // Coming back.
@@ -220,6 +264,15 @@ class GoodAndCheapApp extends LitElement {
   protected render() {
     return html`
       <header>
+        <button
+          aria-hidden="${this.context === 'home'}"
+          id="back"
+          title="${this.backLabel}"
+          type="button"
+          @click="${this.handleBackButton}">
+          <span>${this.backLabel}</span>
+        </button>
+
         <picture>
           <source
             media="(prefers-color-scheme: dark)"

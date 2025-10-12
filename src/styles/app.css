@@ -8,28 +8,6 @@ gc-app {
 }
 
 /* ---------------------------------------- */
-/* Header */
-
-gc-app > header {
-  background-color: var(--header-background);
-  display: grid;
-  grid: 1fr / 1fr;
-  inset-block: 0 auto;
-  inset-inline: 0 0;
-  position: fixed;
-  z-index: 2;
-}
-
-gc-app > header > picture {
-  place-self: center;
-}
-
-gc-app > header > picture > img {
-  block-size: var(--header-size);
-  inline-size: auto;
-}
-
-/* ---------------------------------------- */
 /* Main */
 
 gc-app > main {
@@ -60,7 +38,6 @@ gc-app > main > * {
 
   &[aria-hidden='true'] {
     pointer-events: none;
-    z-index: -1;
   }
 
   &[aria-hidden='false'] {

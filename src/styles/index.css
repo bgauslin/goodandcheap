@@ -2,6 +2,7 @@
 @import 'vars';
 
 @import 'app';
+@import 'header';
 @import 'images';
 @import 'page';
 @import 'previews';
