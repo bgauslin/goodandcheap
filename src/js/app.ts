@@ -1,7 +1,7 @@
 import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
-import {Chapter, Page, Recipe} from './_types';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
+import {Chapter, Page, Recipe} from './_types';
 
 
 interface Data {
@@ -103,40 +103,54 @@ class GoodAndCheapApp extends LitElement {
     this.updateDocumentTitle(slug);
   }
 
+  /**
+   * Updates the app when the 'Back' button is clicked.
+   */
   private handleBackButton() {
     if (this.context === 'recipe') {
-      const segment = this.getSlug();
-      const {chapters, recipes} = this.data;
-      const recipe = recipes.find(recipe => recipe.slug === segment);
-      const chapter = chapters.find(chapter => chapter.slug === recipe.chapter);
-      const {slug} = chapter;
-
       this.context = 'chapter';
-      this.updateComponent(this.chapterElement, chapter);
-      this.updateAddressBar(slug);
-      this.updateDocumentTitle(slug);
+
+      const slug = this.getSlug();
+      const chapter = this.getChapter(slug);
+
       this.updateButtonLabel();
+      this.updateComponent(this.chapterElement, chapter);
+      this.updateAddressBar(chapter.slug);
+      this.updateDocumentTitle(chapter.slug);
     } else {
       this.context = 'home';
+
       this.updateAddressBar('');
       this.updateDocumentTitle();
     }
   }
 
-  private updateButtonLabel() {
-    this.backLabel = 'Home'
+  /**
+   * Dispatches custom event to a component with data for rendering.
+   */ 
+  private updateComponent(element: HTMLElement, detail: Chapter|Page|Recipe) {
+    element.dispatchEvent(new CustomEvent('data', {
+      bubbles: true,
+      composed: true,
+      detail,
+    }));
+  }
 
+  /**
+   * Updates the 'Back' button's label on page load and view transition.
+   */
+  private updateButtonLabel() {
     if (this.context === 'recipe') {
-      const segment = this.getSlug();
-      const {chapters, recipes} = this.data;
-      const recipe = recipes.find(recipe => recipe.slug === segment);
-      const chapter = chapters.find(chapter => chapter.slug === recipe.chapter);
+      const slug = this.getSlug();
+      const chapter = this.getChapter(slug);
       this.backLabel = chapter.title;
+    } else {
+      this.backLabel = 'Home'
     }
   }
 
   /**
-   * Updates the app when browser's back and forward buttons are clicked.
+   * Updates the app when browser's 'Back' and 'Forward' buttons are clicked.
    */ 
   private updateFromUrl() {
     const slug = this.getSlug();
@@ -164,7 +178,7 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
-   * Helper function for getting last URL segment from address bar.
+   * Helper function that gets the last URL segment from the address bar.
    */
   private getSlug(): string {
     const url = new URL(window.location.href);
@@ -175,14 +189,15 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
-   * Dispatches custom event to a component with data for rendering.
-   */ 
-  private updateComponent(element: HTMLElement, detail: Chapter|Page|Recipe) {
-    element.dispatchEvent(new CustomEvent('data', {
-      bubbles: true,
-      composed: true,
-      detail,
-    }));
+   * Helper function that gets the parent Chapter of a Recipe for updating
+   * elements and the browser window.
+   */
+  private getChapter(slug: string): Chapter {
+    const {chapters, recipes} = this.data;
+    const recipe = recipes.find(recipe => recipe.slug === slug);
+    const chapter = chapters.find(chapter => chapter.slug === recipe.chapter);
+    
+    return chapter;
   }
 
   /**
@@ -218,7 +233,7 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
-   * Sets attributes on elements for in/out and forward/back transitions.
+   * Sets attribute values for in/out and forward/back transitions.
    */
   protected willUpdate(changedProperties: PropertyValues<this>) {
     if (changedProperties.has('context')) {
