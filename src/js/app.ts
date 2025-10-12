@@ -30,7 +30,7 @@ class GoodAndCheapApp extends LitElement {
     super();
     this.baseTitle = document.title;
     this.clickHandler = this.handleClick.bind(this);
-    this.popstateHandler = this.handlePopstate.bind(this);
+    this.popstateHandler = this.updateFromUrl.bind(this);
   }
 
   connectedCallback() {
@@ -74,36 +74,34 @@ class GoodAndCheapApp extends LitElement {
 
     if (!['chapter', 'page', 'recipe'].includes(type)) return;
 
+    this.context = type;
+
     const {chapters, pages, recipes} = this.data;
     const slug = (<HTMLAnchorElement>target).getAttribute('href');
-    switch (type) {
-      case 'chapter':
-        const chapter_ = chapters.find((chapter: Chapter) => chapter.slug === slug);
-        this.updateComponent(this.chapter, chapter_, 'chapter');
-        this.updateBrowser(slug);
-        break;
-      case 'page':
-        const page_ = pages.find((page: Page) => page.slug === slug);
-        this.updateComponent(this.page, page_, 'page');
-        this.updateBrowser(slug);
-        break;
-      case 'recipe':
-        const recipe_ = recipes.find((recipe: Recipe) => recipe.slug === slug);
-        const chapter = (<HTMLElement>target).dataset.context;
-        this.updateComponent(this.recipe, recipe_, 'recipe');
-        this.updateBrowser(slug, chapter);
-        break;
-      default:
-        break;
+
+    const chapter = chapters.find((chapter: Chapter) => chapter.slug === slug);
+    const page = pages.find((page: Page) => page.slug === slug);
+    const recipe = recipes.find((recipe: Recipe) => recipe.slug === slug);
+
+    if (this.context === 'chapter') {
+      this.updateComponent(this.chapter, chapter);
+      this.updateAddressBar(slug);
+    } else if (this.context === 'page') {
+      this.updateComponent(this.page, page);
+      this.updateAddressBar(slug);
+    } else if (this.context === 'recipe') {
+      const chapter_ = (<HTMLElement>target).dataset.context;
+      this.updateComponent(this.recipe, recipe);
+      this.updateAddressBar(slug, chapter_);
     }
 
-    this.updateDocument(slug);
+    this.updateDocumentTitle(slug);
   }
 
   /**
    * Updates the app when browser's back and forward buttons are clicked.
    */ 
-  private handlePopstate() {
+  private updateFromUrl() {
     const url = new URL(window.location.href);
     const {pathname} = url;
     const segments = pathname.split('/');
@@ -115,37 +113,39 @@ class GoodAndCheapApp extends LitElement {
     const recipe = recipes.find((recipe: Recipe) => recipe.slug === lastSegment);
 
     if (chapter) {
-      this.updateComponent(this.chapter, chapter, 'chapter');
+      this.context = 'chapter';
+      this.updateComponent(this.chapter, chapter);
     } else if (page) {
-      this.updateComponent(this.page, page, 'page');
+      this.context = 'page';
+      this.updateComponent(this.page, page);
     } else if (recipe) {
-      this.updateComponent(this.recipe, recipe, 'recipe');
+      this.context = 'recipe'; // TODO: chapter.slug
+      this.updateComponent(this.recipe, recipe);
     } else {
       this.context = 'home';
     }
 
-    this.updateDocument(lastSegment);
+    this.updateDocumentTitle(lastSegment);
   }
 
   /**
    * Dispatches custom event to a component with data for rendering.
    */ 
-  private updateComponent(element: HTMLElement, detail: Chapter|Page|Recipe, context: string) {
+  private updateComponent(element: HTMLElement, detail: Chapter|Page|Recipe) {
     element.dispatchEvent(new CustomEvent('data', {
       bubbles: true,
       composed: true,
       detail,
     }));
-    this.context = context;
   }
 
   /**
    * Updates URL in the address bar.
    */ 
-  private updateBrowser(slug: string, context?: string) {
+  private updateAddressBar(slug: string, parent?: string) {
     let path = `./${slug}`;
-    if (context) {
-      path = `./${context}/${slug}`;
+    if (parent) {
+      path = `./${parent}/${slug}`;
     }
     history.pushState(null, '', path);
   }
@@ -153,7 +153,7 @@ class GoodAndCheapApp extends LitElement {
   /**
    * Updates document title (and browser history).
    */ 
-  private updateDocument(slug: string) {
+  private updateDocumentTitle(slug: string) {
     let title = null;
     const {chapters, pages, recipes} = this.data;
 
