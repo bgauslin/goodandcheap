@@ -225,7 +225,7 @@ class GoodAndCheapApp extends LitElement {
       title = recipe.title;
     }
 
-    document.title = title ? `${title} · ${this.baseTitle}` : this.baseTitle;
+    document.title = title ? `${title.replace('&amp;', '&')} · ${this.baseTitle}` : this.baseTitle;
   }
 
   /**
