@@ -2,16 +2,30 @@
 .cover-photo {
   aspect-ratio: 1;
   background: var(--fill-2);
-  display: block;
+  display: grid;
+  grid: 1fr / 1fr;
   inline-size: 100%;
   margin: 0;
-}
+  place-content: center;
 
-.cover-photo > img {
-  aspect-ratio: 1;
-  object-fit: cover;
-}
+  :is(img, svg) {
+    grid-area: 1 / 1 / -1 / -1;
+    place-self: center;
+  }
 
-img[aria-hidden='true'] {
-  visibility: hidden;
+  svg {
+    fill: currentColor;
+    inline-size: 2em;
+  }
+
+  img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: opacity var(--transition);
+    z-index: 1;
+  }
+
+  img[aria-hidden='true'] {
+    opacity: 0;
+  }
 }
