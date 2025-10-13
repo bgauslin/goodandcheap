@@ -35,21 +35,16 @@ header picture > img {
 
 [id='back'] {
   align-items: center;
-  appearance: none;
-  background: none;
   block-size: var(--header-size);
-  border: none;
-  color: inherit;
-  cursor: pointer;
   display: flex;
   gap: 0 .25rem;
   grid-area: back;
-  margin: 0;
-  max-width: 100%;
-  overflow: hidden;
   place-self: center start;
+
+  /* max-width: 100%;
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: nowrap; */
 
   &[disabled] {
     display: none;

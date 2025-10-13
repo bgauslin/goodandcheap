@@ -18,6 +18,7 @@ interface Item {
 @customElement('gc-home')
 class GoodAndCheapHome extends LitElement {
   @state() data: Home;
+  @state() tab: string = 'recipes';
 
   constructor() {
     super();
@@ -56,15 +57,37 @@ class GoodAndCheapHome extends LitElement {
     const {chapters, pages} = this.data;
 
     return html`
-      ${this.renderList('Recipes', 'chapter', chapters, true)}
-      ${this.renderList('More Info', 'page', pages)}
+      <div role="tablist">
+        ${this.renderTabControl('Recipes', 'recipes')}
+        ${this.renderTabControl('More Info', 'info')}
+      </div>
+
+      ${this.renderList('chapter', chapters, 'recipes', true)}
+      ${this.renderList('page', pages, 'info')}
     `;
   }
 
-  private renderList(heading: string, type: string, items: Item[], count:boolean = false) {
+  private renderTabControl(label: string, id: string) {
     return html`
-      <h2>${heading}</h2>
-      <ul class="previews">
+      <button
+        aria-controls="tabpanel-${id}"
+        aria-selected="${this.tab === id}"
+        id="tab-${id}"
+        role="tab"
+        tabindex="${this.tab === id ? 0 : -1}"
+        @click="${() => this.tab = id}">${label}</button>
+      `;
+  }
+
+  private renderList(type: string, items: Item[], id: string, count:boolean = false) {
+    return html`
+      <ul
+        aria-hidden="${this.tab !== id}"
+        aria-labelledby="tab-${id}"
+        class="previews"
+        id="tabpanel-${id}"
+        role="tabpanel"
+        tabindex="0">
       ${items.map(item => {
         const {image, slug, title} = item;
         return html`

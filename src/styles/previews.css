@@ -1,3 +1,24 @@
+[role='tablist'] {
+  display: grid;
+  gap: 0 .5rem;
+  grid: auto / auto-flow;
+  margin: 1rem;
+  place-content: center;
+}
+
+[role='tablist'] > button {
+  background: var(--fill-1);
+  border-radius: 3px;
+  padding-block: .5rem;
+  padding-inline: .75rem;
+}
+
+button[aria-selected='true'] {
+  /* background: var(--fill-2); */
+  background: var(--brand-color);
+  pointer-events: none;
+}
+
 .previews {
   display: grid;
   gap: 1rem 0;
@@ -6,6 +27,10 @@
   margin-block: 0 4rem;
   margin-inline: 1rem;
   padding: 0;
+}
+
+.previews[aria-hidden='true'] {
+  display: none;
 }
 
 .previews a {
