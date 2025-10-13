@@ -300,17 +300,17 @@ class GoodAndCheapApp extends LitElement {
 
       <main>
         <gc-home
-          aria-hidden="${this.context !== 'home'}"
-          transition="${this.homeTransition}"></gc-home>
+          transition="${this.homeTransition}"  
+          ?inert="${this.context !== 'home'}"></gc-home>
         <gc-page
-          aria-hidden="${this.context !== 'page'}"
-          transition="${this.pageTransition}"></gc-page>
+          transition="${this.pageTransition}"
+          ?inert="${this.context !== 'page'}"></gc-page>
         <gc-chapter
-          aria-hidden="${this.context !== 'chapter'}"
-          transition="${this.chapterTransition}"></gc-chapter>
+          transition="${this.chapterTransition}"
+          ?inert="${this.context !== 'chapter'}"></gc-chapter>
         <gc-recipe
-          aria-hidden="${this.context !== 'recipe'}"
-          transition="${this.recipeTransition}"></gc-recipe>
+          transition="${this.recipeTransition}"
+          ?inert="${this.context !== 'recipe'}"></gc-recipe>
       </main>
 
       <footer>

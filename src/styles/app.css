@@ -36,11 +36,11 @@ gc-app > main > * {
     display: none;
   }
 
-  &[aria-hidden='true'] {
+  &[inert] {
     pointer-events: none;
   }
 
-  &[aria-hidden='false'] {
+  &:not([inert]) {
     z-index: 1;
   }
 }
