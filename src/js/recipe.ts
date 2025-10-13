@@ -7,8 +7,9 @@ import {Recipe} from './shared';
 @customElement('gc-recipe')
 class GoodAndCheapRecipe extends LitElement {
   private dataListener: EventListenerObject;
-  
+
   @state() data: Recipe;
+  @state() tab: string = 'overview';
 
   constructor() {
     super();
@@ -45,12 +46,23 @@ class GoodAndCheapRecipe extends LitElement {
       </p>` : nothing;
 
     const overview_ = overview ? html`
-      <section class="overview" id="overview">
+      <section
+        aria-hidden="${this.tab !== 'overview'}"
+        aria-labelledby="tab-overview"
+        class="overview"
+        id="overview"
+        role="tabpanel"
+        tabindex="0">
         ${unsafeHTML(overview)}
       </section>` : nothing;
 
     const ingredients_ = ingredients ? html`
-      <section id="ingredients">
+      <section
+        aria-hidden="${this.tab !== 'ingredients'}"
+        aria-labelledby="tab-ingredients"
+        id="ingredients"
+        role="tabpanel"
+        tabindex="0">
       ${ingredients.map((group, index) => {
         const {label, items} = group;
         return html`
@@ -64,8 +76,12 @@ class GoodAndCheapRecipe extends LitElement {
       </section>` : nothing;
 
     const steps_ = steps ? html`
-      <section id="steps">
-        <h2>Steps</h2>
+      <section
+        aria-hidden="${this.tab !== 'steps'}"
+        aria-labelledby="tab-steps"
+        id="steps"
+        role="tabpanel"
+        tabindex="0">
         <ol>
           ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
         </ol>
@@ -74,15 +90,32 @@ class GoodAndCheapRecipe extends LitElement {
     return html`
       <div class="cover">
         <gc-image class="cover-photo" src="${image}"></gc-image>
-
         <h1>${unsafeHTML(title)}</h1>
         <div class="badge">${badge}</div>
         ${cost_}
+      </div>
+
+      <div role="tablist">
+        ${overview ? this.renderTabControl('Overview', 'overview') : nothing}
+        ${ingredients ? this.renderTabControl('Ingredients', 'ingredients') : nothing}
+        ${steps ? this.renderTabControl('Steps', 'steps') : nothing}
       </div>
 
       ${overview_}
       ${ingredients_}
       ${steps_}
     `;
+  }
+
+  private renderTabControl(label: string, id: string) {
+    return html`
+      <button
+        aria-controls="${id}"
+        aria-selected="${this.tab === id}"
+        id="tab-${id}"
+        role="tab"
+        tabindex="${this.tab === id ? 0 : -1}"
+        @click="${() => this.tab = id}">${label}</button>
+      `;
   }
 }

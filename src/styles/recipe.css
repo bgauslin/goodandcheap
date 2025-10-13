@@ -1,25 +1,6 @@
 gc-recipe {
-  section {
-    margin-block: 3em;
-    padding-inline: 1rem;
-  }
-
   .cover {
     position: relative;
-  }
-
-  [id='overview'] {
-    margin-block-start: 0;
-  }
-
-  h1 {
-    margin-block-end: 0;
-    margin-inline: 1rem;
-  }
-
-  .badge {
-    margin-block: .5em 2em;
-    margin-inline: 1rem;
   }
 
   .cost {
@@ -30,6 +11,20 @@ gc-recipe {
     padding-block: .5rem;
     padding-inline: 1rem;
     position: absolute;
+  }
+
+  h1 {
+    margin-block-end: 0;
+    margin-inline: 1rem;
+  }
+
+  .badge {
+    margin-block: .5em 0;
+    margin-inline: 1rem;
+  }
+
+  section {
+    padding-inline: 1rem;
   }
 
   :is(ul, ol) {

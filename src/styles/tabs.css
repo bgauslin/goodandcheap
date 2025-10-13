@@ -2,7 +2,8 @@
   display: grid;
   gap: 0 .5rem;
   grid: auto / auto-flow;
-  margin: 1rem;
+  margin-block: 2rem;
+  margin-inline: 1rem;
   place-content: center;
 
   button {
