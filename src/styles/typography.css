@@ -6,20 +6,19 @@ h1 {
   line-height: 1.5;
 }
 
-gc-home h2,
-[id='back'] {
+/* Buttons. */
+[id='back'],
+[role='tablist'] > button {
   font-family: 'Futura Book';
-  font-size: var(--subhead-font-size);
-  letter-spacing: .25em;
+  letter-spacing: .125em;
   text-transform: uppercase;
 }
 
-gc-home h2 {
-  margin-block: 1rem;
-  margin-inline: 1rem;
+[id='back'] {
+  font-size: var(--subhead-font-size);
 }
 
-gc-page h2,
+/* Headings. */
 gc-recipe :is(.badge, .cost, h2, h3),
 .previews h3 {
   font-family: 'Futura Bold';
@@ -28,25 +27,16 @@ gc-recipe :is(.badge, .cost, h2, h3),
   text-transform: uppercase;
 }
 
+/* Various elements. */
 .count,
 [id='ingredients'] li,
-[role='tablist'] > button,
 .previews :is(.badge, .counter) {
   font-family: 'Futura Book'; 
 }
 
 .count,
-.previews :is(.badge, .counter),
-[role='tablist'] > button {
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.count,
 .previews :is(.badge, .counter) {
   font-size: var(--subhead-font-size);
-}
-
-.previews .counter {
-  opacity: .7;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }

@@ -45,4 +45,6 @@
 
 .previews .counter {
   grid-area: counter;
+  opacity: .7;
 }
+
