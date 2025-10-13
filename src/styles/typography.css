@@ -7,7 +7,7 @@ h1 {
 }
 
 gc-home h2,
-header > [id='back'] {
+[id='back'] {
   font-family: 'Futura Book';
   font-size: var(--subhead-font-size);
   letter-spacing: .25em;

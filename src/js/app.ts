@@ -276,24 +276,26 @@ class GoodAndCheapApp extends LitElement {
   protected render() {
     return html`
       <header>
-        <button
-          id="back"
-          title="${this.backLabel}"
-          type="button"
-          ?disabled="${this.context === 'home'}"
-          @click="${this.handleBackButton}">
-          <svg aria-hidden="true" viewbox="0 0 24 24">
-            <path d="M15,4 L7,12 L15,20"/>
-          </svg>
-          <span>${unsafeHTML(this.backLabel)}</span>
-        </button>
+        <div>
+          <button
+            id="back"
+            title="${this.backLabel}"
+            type="button"
+            ?disabled="${this.context === 'home'}"
+            @click="${this.handleBackButton}">
+            <svg aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M15,4 L7,12 L15,20"/>
+            </svg>
+            <span>${unsafeHTML(this.backLabel)}</span>
+          </button>
 
-        <picture>
-          <source
-            media="(prefers-color-scheme: dark)"
-            srcset="./img/wordmark-dark.png">
-          <img src="./img/wordmark.png" alt="Good And Cheap">
-        </picture>
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="./img/wordmark-dark.png">
+            <img src="./img/wordmark.png" alt="Good And Cheap">
+          </picture>
+        </div>
       </header>
 
       <main>
