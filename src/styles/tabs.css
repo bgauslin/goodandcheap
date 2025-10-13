@@ -4,16 +4,21 @@
   grid: auto / auto-flow;
   margin: 1rem;
   place-content: center;
+
+  button {
+    background: var(--fill-1);
+    border-radius: 3px;
+    padding-block: .5rem;
+    padding-inline: .75rem;
+  }
+
+  button[aria-selected='true'] {
+    background: var(--brand-color);
+    pointer-events: none;
+  }
 }
 
-[role='tablist'] > button {
-  background: var(--fill-1);
-  border-radius: 3px;
-  padding-block: .5rem;
-  padding-inline: .75rem;
+[role='tabpanel'][aria-hidden='true'] {
+  display: none;
 }
 
-button[aria-selected='true'] {
-  background: var(--brand-color);
-  pointer-events: none;
-}

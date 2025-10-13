@@ -81,28 +81,29 @@ class GoodAndCheapHome extends LitElement {
 
   private renderList(type: string, items: Item[], id: string, count:boolean = false) {
     return html`
-      <ul
+      <div
         aria-hidden="${this.tab !== id}"
         aria-labelledby="tab-${id}"
-        class="previews"
         id="tabpanel-${id}"
         role="tabpanel"
         tabindex="0">
-      ${items.map(item => {
-        const {image, slug, title} = item;
-        return html`
-          <li>
-            <a href="${slug}" data-type="${type}">
-              <img src="./images/${image}@thumb.webp" alt="">
-              <div class="blurb">
-                <h3>${unsafeHTML(title)}</h3>
-                ${count ? html`<p class="count">${items.length} Recipes</p>` : nothing }
-              </div>
-            </a>
-          </li>
-        `;
-      })}
-      </ul>
+        <ul class="previews">
+        ${items.map(item => {
+          const {image, slug, title} = item;
+          return html`
+            <li>
+              <a href="${slug}" data-type="${type}" tabindex="${this.tab === id ? 0 : -1}">
+                <img src="./images/${image}@thumb.webp" alt="">
+                <div class="blurb">
+                  <h3>${unsafeHTML(title)}</h3>
+                  ${count ? html`<p class="count">${items.length} Recipes</p>` : nothing }
+                </div>
+              </a>
+            </li>
+          `;
+        })}
+        </ul>
+      </div>
     `;
   }
 }
