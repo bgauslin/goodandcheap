@@ -64,7 +64,8 @@ class GoodAndCheapRecipe extends LitElement {
         ${steps ? this.renderTabControl('Steps', 'steps') : nothing}
       </div>` : nothing}
 
-    ${overview && hasTabs ? html`
+    ${hasTabs ? html`
+      ${overview ? html`
       <section
         class="overview"
         id="overview"
@@ -75,12 +76,7 @@ class GoodAndCheapRecipe extends LitElement {
         ${unsafeHTML(overview)}
       </section>` : nothing}
 
-    ${overview && !hasTabs ? html`
-      <section class="overview" id="overview">
-        ${unsafeHTML(overview)}
-      </section>` : nothing}
-
-    ${ingredients && hasTabs ? html`
+      ${ingredients ? html`
       <section
         aria-hidden="${this.tab !== 'ingredients'}"
         aria-labelledby="tab-ingredients"
@@ -94,24 +90,11 @@ class GoodAndCheapRecipe extends LitElement {
             <ul>
               ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
             </ul>
-          `
+          `;
         })}
       </section>` : nothing}
 
-    ${ingredients && !hasTabs ? html`
-      <section id="ingredients">
-        ${ingredients.map(group => {
-          const {label, items} = group;
-          return html`
-            ${label ? html`<h3>${label}</h3>` : nothing}
-            <ul>
-              ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
-            </ul>
-          `
-        })}
-      </section>` : nothing}
-
-    ${steps && hasTabs ? html`
+      ${steps ? html`
       <section
         aria-hidden="${this.tab !== 'steps'}"
         aria-labelledby="tab-steps"
@@ -122,14 +105,35 @@ class GoodAndCheapRecipe extends LitElement {
           ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
         </ol>
       </section>` : nothing}
+    ` : nothing}
 
-    ${steps && !hasTabs ? html`
+    ${!hasTabs ? html`
+      ${overview ? html`
+      <section class="overview" id="overview">
+        ${unsafeHTML(overview)}
+      </section>` : nothing}
+
+      ${ingredients ? html`
+      <section id="ingredients">
+        ${ingredients.map(group => {
+          const {label, items} = group;
+          return html`
+            ${label ? html`<h3>${label}</h3>` : nothing}
+            <ul>
+              ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
+            </ul>
+          `;
+        })}
+      </section>` : nothing}
+
+      ${steps ? html`
       <section id="steps">
         <ol>
           ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
         </ol>
       </section>` : nothing}
-    `;
+
+    ` : nothing}`;
   }
 
   private renderTabControl(label: string, id: string) {
