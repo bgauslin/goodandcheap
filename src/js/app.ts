@@ -13,7 +13,6 @@ interface Data {
 @customElement('gc-app')
 class GoodAndCheapApp extends LitElement {
   private clickHandler: EventListenerObject;
-  private popstateHandler: EventListenerObject;
 
   @query('gc-chapter') chapterElement: HTMLElement;
   @query('gc-page') pageElement: HTMLElement;
@@ -33,20 +32,17 @@ class GoodAndCheapApp extends LitElement {
     super();
     this.baseTitle = document.title;
     this.clickHandler = this.handleClick.bind(this);
-    this.popstateHandler = this.updateFromUrl.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener('click', this.clickHandler);
-    window.addEventListener('popstate', this.popstateHandler);
     this.fetchData();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.removeEventListener('click', this.clickHandler);
-    window.removeEventListener('popstate', this.popstateHandler);
   }
 
   protected createRenderRoot() {
@@ -208,7 +204,7 @@ class GoodAndCheapApp extends LitElement {
     if (parent) {
       path = `./${parent}/${slug}`;
     }
-    history.pushState(null, '', path);
+    history.replaceState(null, '', path);
   }
 
   /**
