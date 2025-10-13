@@ -39,43 +39,79 @@ class GoodAndCheapRecipe extends LitElement {
 
     const {badge, cost, image, ingredients, overview, steps, title} = this.data;
 
-    const cost_ = cost ? html`
-      <p class="cost">
-        ${cost.total} Total<br>
-        ${cost.each} / ${cost.units}
-      </p>` : nothing;
+    let sections = 0;
+    if (overview) sections += 1;
+    if (ingredients) sections += 1;
+    if (steps) sections += 1;
+    const hasTabs = (sections > 1);
 
-    const overview_ = overview ? html`
+    return html`
+      <div class="cover">
+        <gc-image class="cover-photo" src="${image}"></gc-image>
+        <h1>${unsafeHTML(title)}</h1>
+        <div class="badge">${badge}</div>
+      ${cost ? html`
+        <p class="cost">
+          ${cost.total} Total<br>
+          ${cost.each} / ${cost.units}
+        </p>` : nothing}
+      </div>
+
+    ${hasTabs ? html`
+      <div role="tablist">
+        ${overview ? this.renderTabControl('Overview', 'overview') : nothing}
+        ${ingredients ? this.renderTabControl('Ingredients', 'ingredients') : nothing}
+        ${steps ? this.renderTabControl('Steps', 'steps') : nothing}
+      </div>` : nothing}
+
+    ${overview && hasTabs ? html`
       <section
-        aria-hidden="${this.tab !== 'overview'}"
-        aria-labelledby="tab-overview"
         class="overview"
         id="overview"
+        aria-hidden="${this.tab !== 'overview'}"
+        aria-labelledby="tab-overview"
         role="tabpanel"
         tabindex="0">
         ${unsafeHTML(overview)}
-      </section>` : nothing;
+      </section>` : nothing}
 
-    const ingredients_ = ingredients ? html`
+    ${overview && !hasTabs ? html`
+      <section class="overview" id="overview">
+        ${unsafeHTML(overview)}
+      </section>` : nothing}
+
+    ${ingredients && hasTabs ? html`
       <section
         aria-hidden="${this.tab !== 'ingredients'}"
         aria-labelledby="tab-ingredients"
         id="ingredients"
         role="tabpanel"
         tabindex="0">
-      ${ingredients.map((group, index) => {
-        const {label, items} = group;
-        return html`
-          ${index === 0 ? html`<h2>Ingredients</h2>` : nothing}
-          ${label ? html`<h3>${label}</h3>` : nothing}
-          <ul>
-            ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
-          </ul>
-        `;
-      })}
-      </section>` : nothing;
+        ${ingredients.map(group => {
+          const {label, items} = group;
+          return html`
+            ${label ? html`<h3>${label}</h3>` : nothing}
+            <ul>
+              ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
+            </ul>
+          `
+        })}
+      </section>` : nothing}
 
-    const steps_ = steps ? html`
+    ${ingredients && !hasTabs ? html`
+      <section id="ingredients">
+        ${ingredients.map(group => {
+          const {label, items} = group;
+          return html`
+            ${label ? html`<h3>${label}</h3>` : nothing}
+            <ul>
+              ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
+            </ul>
+          `
+        })}
+      </section>` : nothing}
+
+    ${steps && hasTabs ? html`
       <section
         aria-hidden="${this.tab !== 'steps'}"
         aria-labelledby="tab-steps"
@@ -85,25 +121,14 @@ class GoodAndCheapRecipe extends LitElement {
         <ol>
           ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
         </ol>
-      </section>` : nothing;
+      </section>` : nothing}
 
-    return html`
-      <div class="cover">
-        <gc-image class="cover-photo" src="${image}"></gc-image>
-        <h1>${unsafeHTML(title)}</h1>
-        <div class="badge">${badge}</div>
-        ${cost_}
-      </div>
-
-      <div role="tablist">
-        ${overview ? this.renderTabControl('Overview', 'overview') : nothing}
-        ${ingredients ? this.renderTabControl('Ingredients', 'ingredients') : nothing}
-        ${steps ? this.renderTabControl('Steps', 'steps') : nothing}
-      </div>
-
-      ${overview_}
-      ${ingredients_}
-      ${steps_}
+    ${steps && !hasTabs ? html`
+      <section id="steps">
+        <ol>
+          ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
+        </ol>
+      </section>` : nothing}
     `;
   }
 
