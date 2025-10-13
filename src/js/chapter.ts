@@ -1,4 +1,4 @@
-import {Chapter} from './_types';
+import {Chapter} from './shared';
 
 
 customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElement {

@@ -1,7 +1,7 @@
 import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Chapter, Page, Recipe} from './_types';
+import {Chapter, Page, Recipe} from './shared';
 
 
 interface Data {

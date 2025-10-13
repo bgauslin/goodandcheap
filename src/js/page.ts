@@ -1,4 +1,4 @@
-import {Page} from './_types';
+import {Page} from './shared';
 
 
 customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
