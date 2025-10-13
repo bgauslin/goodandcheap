@@ -17,6 +17,9 @@ header > div {
   max-inline-size: var(--section-max-width);
 }
 
+/* ---------------------------------------- */
+/* Wordmark. */
+
 header picture {
   grid-area: wordmark;
   place-self: center;
@@ -58,6 +61,7 @@ header picture > img {
 }
 
 [id='back'] > svg {
+  fill: none;
   flex: 0 0 1.25em;
   stroke: currentColor;
   stroke-width: 3px;

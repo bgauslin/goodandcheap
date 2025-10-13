@@ -20,7 +20,7 @@
 
   /* Branding. */
   --brand-color: #e5001f;
-  --header-background: rgba(255, 255, 255, .9);
+  --header-background: rgba(255, 255, 255, .95);
   --text-color: rgb(44, 44, 46);  /* Gray5 dark. */
 
   /* Layout. */
@@ -48,7 +48,7 @@
 
     /* Dark mode branding and elements. */
     --brand-color: #ed4d62;
-    --header-background: rgba(0, 0, 0, .5);    
+    --header-background: rgba(0, 0, 0, .8);    
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */
   }
 }
