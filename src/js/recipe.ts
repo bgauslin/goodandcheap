@@ -37,11 +37,15 @@ class GoodAndCheapRecipe extends LitElement {
 
     this.data = event.detail;
 
-    window.requestAnimationFrame(() => {
-      if (!this.coverPhoto.complete) {
-        this.coverPhoto.onload = () => this.loading = false;
-      }
-    });
+    if (this.coverPhoto.complete) {
+      this.loading = false;
+    } else {
+      window.requestAnimationFrame(() => {
+        if (!this.coverPhoto.complete) {
+          this.coverPhoto.onload = () => this.loading = false;
+        }
+      });
+    }
   }
 
   protected render() {
