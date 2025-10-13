@@ -36,7 +36,7 @@ body {
   display: grid;
   grid: 1fr / 1fr;
   font-family: 'Carmina Light';
-  font-size: clamp(.8rem, calc(.5rem + 1vw), 1.2rem);
+  font-size: clamp(.9rem, calc(.7rem + 1vw), 1.2rem);
   color: var(--text-color);
   margin: 0;
   overflow: hidden;
@@ -48,7 +48,20 @@ noscript {
   text-align: center;
 }
 
-a {
+/* ---------------------------------------- */
+/* Responsive images. */
+
+img,
+svg {
+  block-size: auto;
+  inline-size: 100%;
+  vertical-align: middle;
+}
+
+/* ---------------------------------------- */
+/* Links. */
+
+:is(a, button) {
   color: var(--link-color);
   outline: none;
   text-decoration: none;

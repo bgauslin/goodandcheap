@@ -277,11 +277,14 @@ class GoodAndCheapApp extends LitElement {
     return html`
       <header>
         <button
-          aria-hidden="${this.context === 'home'}"
           id="back"
           title="${this.backLabel}"
           type="button"
+          ?disabled="${this.context === 'home'}"
           @click="${this.handleBackButton}">
+          <svg aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M15,4 L7,12 L15,20"/>
+          </svg>
           <span>${unsafeHTML(this.backLabel)}</span>
         </button>
 
