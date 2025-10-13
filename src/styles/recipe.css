@@ -27,6 +27,13 @@ gc-recipe {
     padding-inline: 1rem;
   }
 
+  h2 {
+    background-color: var(--fill-0);
+    padding-block: .5em;
+    position: sticky;
+    top: 0;
+  }
+
   :is(ul, ol) {
     margin-block: 0 2em;
     padding-inline: 1.5em 0;

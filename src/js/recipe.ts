@@ -9,7 +9,6 @@ class GoodAndCheapRecipe extends LitElement {
   private dataListener: EventListenerObject;
 
   @state() data: Recipe;
-  @state() tab: string = 'overview';
 
   constructor() {
     super();
@@ -39,12 +38,6 @@ class GoodAndCheapRecipe extends LitElement {
 
     const {badge, cost, image, ingredients, overview, steps, title} = this.data;
 
-    let sections = 0;
-    if (overview) sections += 1;
-    if (ingredients) sections += 1;
-    if (steps) sections += 1;
-    const hasTabs = (sections > 1);
-
     return html`
       <div class="cover">
         <gc-image class="cover-photo" src="${image}"></gc-image>
@@ -57,57 +50,6 @@ class GoodAndCheapRecipe extends LitElement {
         </p>` : nothing}
       </div>
 
-    ${hasTabs ? html`
-      <div role="tablist">
-        ${overview ? this.renderTabControl('Overview', 'overview') : nothing}
-        ${ingredients ? this.renderTabControl('Ingredients', 'ingredients') : nothing}
-        ${steps ? this.renderTabControl('Steps', 'steps') : nothing}
-      </div>` : nothing}
-
-    ${hasTabs ? html`
-      ${overview ? html`
-      <section
-        class="overview"
-        id="overview"
-        aria-hidden="${this.tab !== 'overview'}"
-        aria-labelledby="tab-overview"
-        role="tabpanel"
-        tabindex="0">
-        ${unsafeHTML(overview)}
-      </section>` : nothing}
-
-      ${ingredients ? html`
-      <section
-        aria-hidden="${this.tab !== 'ingredients'}"
-        aria-labelledby="tab-ingredients"
-        id="ingredients"
-        role="tabpanel"
-        tabindex="0">
-        ${ingredients.map(group => {
-          const {label, items} = group;
-          return html`
-            ${label ? html`<h3>${label}</h3>` : nothing}
-            <ul>
-              ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
-            </ul>
-          `;
-        })}
-      </section>` : nothing}
-
-      ${steps ? html`
-      <section
-        aria-hidden="${this.tab !== 'steps'}"
-        aria-labelledby="tab-steps"
-        id="steps"
-        role="tabpanel"
-        tabindex="0">
-        <ol>
-          ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
-        </ol>
-      </section>` : nothing}
-    ` : nothing}
-
-    ${!hasTabs ? html`
       ${overview ? html`
       <section class="overview" id="overview">
         ${unsafeHTML(overview)}
@@ -115,6 +57,7 @@ class GoodAndCheapRecipe extends LitElement {
 
       ${ingredients ? html`
       <section id="ingredients">
+        <h2>Ingredients</h2>
         ${ingredients.map(group => {
           const {label, items} = group;
           return html`
@@ -128,23 +71,11 @@ class GoodAndCheapRecipe extends LitElement {
 
       ${steps ? html`
       <section id="steps">
+        <h2>Steps</h2>
         <ol>
           ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
         </ol>
       </section>` : nothing}
-
-    ` : nothing}`;
-  }
-
-  private renderTabControl(label: string, id: string) {
-    return html`
-      <button
-        aria-controls="${id}"
-        aria-selected="${this.tab === id}"
-        id="tab-${id}"
-        role="tab"
-        tabindex="${this.tab === id ? 0 : -1}"
-        @click="${() => this.tab = id}">${label}</button>
-      `;
+    `;
   }
 }
