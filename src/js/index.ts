@@ -2,6 +2,7 @@
 import './app';
 import './chapter';
 import './home';
+import './image';
 import './page';
 import './recipe';
 

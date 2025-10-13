@@ -44,11 +44,7 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
     }
 
     this.innerHTML = `
-      <figure class="cover-photo">
-        <img
-          alt=""
-          src="./images/${image}@large.webp">
-      </figure>
+      <gc-image class="cover-photo" src="${image}"></gc-image>
       
       <section class="overview">
         <h1>${title}</h1>

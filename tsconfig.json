@@ -13,6 +13,7 @@
     "src/js/app.ts",
     "src/js/chapter.ts",
     "src/js/home.ts",
+    "src/js/image.ts",
     "src/js/page.ts",
     "src/js/recipe.ts",
   ]

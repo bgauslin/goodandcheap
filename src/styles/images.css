@@ -2,6 +2,7 @@
 .cover-photo {
   aspect-ratio: 1;
   background: var(--fill-2);
+  display: block;
   inline-size: 100%;
   margin: 0;
 }

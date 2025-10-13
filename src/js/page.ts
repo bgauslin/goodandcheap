@@ -26,11 +26,7 @@ customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
   private render() {
     const {image, content, title} = this.data;
     this.innerHTML = `
-      <figure class="cover-photo">
-        <img
-          alt=""  
-          src="./images/${image}@large.webp">
-      </figure>
+      <gc-image class="cover-photo" src="${image}"></gc-image>
 
       <section>
         <h1>${title}</h1>
