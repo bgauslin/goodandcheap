@@ -2,8 +2,8 @@
 @import 'vars';
 
 @import 'app';
+@import 'cover';
 @import 'header';
-@import 'images';
 @import 'page';
 @import 'previews';
 @import 'recipe';
