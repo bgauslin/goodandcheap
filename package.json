@@ -23,8 +23,5 @@
     "webpack-dev-server": "^5.2.1",
     "webpack-font-preload-plugin": "^1.5.0",
     "webpack-merge": "^5.8.0"
-  },
-  "dependencies": {
-    "base-href-webpack-plugin": "^3.0.1"
   }
 }
