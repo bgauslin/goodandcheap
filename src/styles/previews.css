@@ -30,7 +30,7 @@
     grid-area: blurb;
   }
 
-  h3 {
+  .title {
     margin-block: 0;
   }
 

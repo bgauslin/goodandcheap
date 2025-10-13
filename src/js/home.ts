@@ -92,10 +92,10 @@ class GoodAndCheapHome extends LitElement {
           const {image, slug, title} = item;
           return html`
             <li>
-              <a href="${slug}" data-type="${type}" tabindex="${this.tab === id ? 0 : -1}">
+              <a href="${slug}" data-type="${type}">
                 <img src="./images/${image}@thumb.webp" alt="">
                 <div class="blurb">
-                  <h3>${unsafeHTML(title)}</h3>
+                  <p class="title">${unsafeHTML(title)}</p>
                   ${count ? html`<p class="count">${items.length} Recipes</p>` : nothing }
                 </div>
               </a>

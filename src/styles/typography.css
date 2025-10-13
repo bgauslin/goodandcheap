@@ -19,8 +19,8 @@ h1 {
 }
 
 /* Headings. */
-gc-recipe :is(.badge, .cost, h2, h3),
-.previews h3 {
+.previews .title,
+gc-recipe :is(.badge, .cost, h2, h3) {
   font-family: 'Futura Bold';
   font-size: var(--subhead-font-size);
   letter-spacing: .25em;
