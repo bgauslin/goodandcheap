@@ -5,7 +5,8 @@ header {
   background-color: var(--header-background);
   grid-area: header;
   inset-block: 0 auto;
-  position: sticky;
+  place-self: center stretch;
+  position: var(--header-position);
   z-index: 2;
 
   /* Layout wrapper. */
