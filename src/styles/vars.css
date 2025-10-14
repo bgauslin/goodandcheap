@@ -41,8 +41,8 @@
   --view-display: block;
 
   /* Typography. */
-  --subhead-font-size: 80%;
   --small-font-size: 60%;
+  --subhead-font-size: 80%;
 
   @media (prefers-color-scheme: dark) {
     /* Apple HGI dark mode colors. */
@@ -56,8 +56,8 @@
     /* Dark mode branding and theming. */
     --body-background: black;
     --border-color: var(--gray3);
-    --content-background: var(--gray6);
     --brand-color: #ed4d62;
+    --content-background: var(--gray6);
     --header-background: rgba(0, 0, 0, .8);    
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */
   }
@@ -95,10 +95,6 @@
     --section-max-size: 100rem;
     --view-display: grid;
     --view-grid: 'cover content' / 1fr 1fr;
-
-    gc-recipe {
-      --view-grid: 'content cover' / 1fr 1fr;
-    }
   }
 
   gc-home {
@@ -111,5 +107,9 @@
     --overview-grid-area: 1 / 1 / -1 / -1;
     --overview-margin-inline: 3rem;
     --overview-place-self: end;
+  }
+
+  gc-recipe {
+    --view-grid: 'content cover' / 1fr 1fr;
   }
 }
