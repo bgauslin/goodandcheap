@@ -3,6 +3,7 @@ import {customElement, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {footer} from './shared';
 
+
 interface Home {
   chapters: Item[],
   pages: Item[],
@@ -102,7 +103,7 @@ class GoodAndCheapHome extends LitElement {
                 <div class="copy">
                   <div class="description">
                     <p class="title">${unsafeHTML(title)}</p>
-                    ${count ? html`<p class="count">${count} Recipes</p>` : nothing }
+                    ${count ? html`<p class="count">${count} Recipes</p>` : nothing}
                   </div>
                 </div>
               </a>
