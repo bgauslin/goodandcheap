@@ -8,13 +8,14 @@
 
   button {
     background-color: var(--content-background);
+    border: var(--border);
     border-radius: 3px;
     padding-block: .5rem;
     padding-inline: .75rem;
   }
 
   button[aria-selected='true'] {
-    background-color: var(--brand-color);
+    border-color: var(--brand-color);
     pointer-events: none;
   }
 }
