@@ -31,6 +31,10 @@
   --header-grid: '. back wordmark . .' var(--header-size) / 0 minmax(0, 1fr) auto 1fr 0;
   --header-size: 3rem;
   --main-block-size: calc(100dvh - var(--header-size));
+  --previews-border: 1px solid var(--border-color);
+  --previews-border-radius: 1rem;
+  --previews-gap: 0;
+  --previews-grid: auto-flow / 1fr;
   --section-max-size: 45rem;
   --thumb-size: 4.5rem;
   --view-display: block;
@@ -68,6 +72,14 @@
     --header-gap: 0;
     --header-grid: 'back wordmark .' var(--header-size) / minmax(0, 1fr) auto 1fr;
   }
+
+  gc-home {
+    --preview-border-radius: 1rem;
+    --previews-border: none;
+    --previews-border-radius: 0;
+    --previews-gap: 1rem;
+    --previews-grid: auto-flow / repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 60rem) {
@@ -88,6 +100,7 @@
   }
 
   gc-home {
+    --previews-grid: auto-flow / repeat(3, 1fr);
     --view-grid: 'tabs' auto 'preview' 1fr / 1fr;
   }
 }

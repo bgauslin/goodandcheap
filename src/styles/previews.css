@@ -1,8 +1,8 @@
 .previews {
-  border-radius: 1rem;
-  display: grid;
-  gap: 0;
-  grid: auto-flow / 1fr;
+  border-radius: var(--previews-border-radius);
+  display: grid; 
+  gap: var(--previews-gap);
+  grid: var(--previews-grid);
   list-style: none;
   margin-block: 0;
   margin-inline: 1rem;
@@ -11,10 +11,11 @@
 
   li {
     background-color: var(--content-background);
+    border-radius: var(--preview-border-radius, 0);
   }
 
   li:not(:last-child) .copy {
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: var(--previews-border);
   }
 
   a {

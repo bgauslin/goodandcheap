@@ -91,7 +91,7 @@ class GoodAndCheapHome extends LitElement {
         tabindex="0">
         <ul class="previews">
         ${items.map(item => {
-          const {image, slug, title} = item;
+          const {count, image, slug, title} = item;
           return html`
             <li>
               <a href="${slug}" data-type="${type}">
@@ -101,7 +101,7 @@ class GoodAndCheapHome extends LitElement {
                 <div class="copy">
                   <div class="description">
                     <p class="title">${unsafeHTML(title)}</p>
-                    ${count ? html`<p class="count">${items.length} Recipes</p>` : nothing }
+                    ${count ? html`<p class="count">${count} Recipes</p>` : nothing }
                   </div>
                 </div>
               </a>
