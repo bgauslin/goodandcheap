@@ -15,7 +15,7 @@ h1 {
 }
 
 [id='back'] {
-  font-size: var(--subhead-font-size);
+  font-size: var(--small-font-size);
 }
 
 /* Headings. */
@@ -23,6 +23,7 @@ h1 {
 gc-recipe :is(.badge, .cost, h2, h3) {
   font-family: 'Futura Bold';
   font-size: var(--subhead-font-size);
+  line-height: 1.3;
   letter-spacing: .25em;
   text-transform: uppercase;
 }
@@ -36,7 +37,7 @@ gc-recipe :is(.badge, .cost, h2, h3) {
 
 .count,
 .previews :is(.badge, .counter) {
-  font-size: var(--subhead-font-size);
+  font-size: var(--small-font-size);
   letter-spacing: .1em;
   text-transform: uppercase;
 }

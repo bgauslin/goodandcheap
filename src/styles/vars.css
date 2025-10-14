@@ -29,7 +29,8 @@
   --header-size: 3rem;
   --section-max-width: 40rem;
   --subhead-font-size: 80%;
-  --thumb-size: 6rem;
+  --small-font-size: 60%;
+  --thumb-size: 4.5rem;
 
   @media (prefers-color-scheme: dark) {
     /* Apple HGI dark mode colors. */
