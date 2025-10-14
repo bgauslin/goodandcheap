@@ -32,12 +32,14 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
       items += `
         <li>
           <a href="${slug}" data-type="recipe">
-            <img src="./images/${image}@thumb.webp" alt="">
+            <figure>
+              <img src="./images/${image}@thumb.webp" alt="">
+            </figure>
             <div class="blurb">
               <p class="title">${title}</p>
               <p class="badge">${badge}</p>
+              <div class="counter">${index + 1}</div>
             </div>
-            <div class="counter">${index + 1}</div>
           </a>
         </li>
       `;

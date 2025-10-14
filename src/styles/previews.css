@@ -1,49 +1,78 @@
 .previews {
+  border-radius: 1rem;
   display: grid;
-  gap: 1rem 0;
+  gap: 0;
   grid: auto-flow / 1fr;
   list-style: none;
-  margin-block: 0 4rem;
+  margin-block: 0;
   margin-inline: 1rem;
+  overflow: hidden;
   padding: 0;
 
   li {
     background-color: var(--content-background);
   }
 
+  li:not(:last-child) .blurb {
+    border-bottom: var(--border)
+  }
+
   a {
     align-items: center;
     display: grid;
-    gap: 1rem;
-    grid: 'thumb blurb counter' var(--thumb-size) / var(--thumb-size) 1fr;
+    gap: .75rem;
+    grid: 'thumb blurb' auto / auto 1fr;
   }
 
   a > * {
     pointer-events: none;
   }
 
+  figure {
+    aspect-ratio: 1;
+    grid-area: thumb;
+    inline-size: var(--thumb-size);
+    margin-block: 1rem;
+    margin-inline: 1rem 0;
+  }
+
   img {
     aspect-ratio: 1;
     background-color: var(--image-background);
     border-radius: .25rem;
-    grid-area: thumb;
     object-fit: cover;
   }
 
   .blurb {
+    display: grid;
     grid-area: blurb;
+    grid: 'title counter' 1fr 'badge counter' 1fr / 1fr auto;
+    place-self: stretch;
   }
 
   .title {
+    grid-area: title;
     margin-block: 0;
+    padding-inline: 0 1rem;
+    place-self: end start;
   }
 
   :is(.badge, .count) {
+    grid-area: badge;
     margin-block: .2em 0;
+    padding-inline: 0 1rem;
+    place-self: start;
   }
 
   .counter {
     grid-area: counter;
+    margin-inline: .75rem;
     opacity: .7;
+    place-self: center;
   }
+}
+
+[id='tabpanel-info'] .previews .title {
+  grid-area: 1 / 1 / -1 / -1;
+  place-self: center start;
 }

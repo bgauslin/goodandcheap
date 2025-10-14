@@ -17,6 +17,7 @@
 
   /* Branding. */
   --body-background: var(--gray6);
+  --border: 1px solid var(--gray5);
   --content-background: white;
   --image-background: var(--gray4);
   --brand-color: #e5001f;

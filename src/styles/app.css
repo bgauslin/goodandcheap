@@ -4,7 +4,7 @@
 gc-app {
   block-size: 100dvh;
   display: grid;
-  grid: var(--header-size) 1fr / 1fr auto 1fr;
+  grid: var(--header-size) 1fr / 1fr minmax(auto, var(--section-max-width)) 1fr;
 }
 
 /* ---------------------------------------- */
