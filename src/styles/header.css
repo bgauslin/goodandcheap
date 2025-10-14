@@ -3,9 +3,9 @@
 
 header {
   background-color: var(--header-background);
+  grid-area: header;
   inset-block: 0 auto;
-  inset-inline: 0 0;
-  position: fixed;
+  position: sticky;
   z-index: 2;
 
   /* Layout wrapper. */

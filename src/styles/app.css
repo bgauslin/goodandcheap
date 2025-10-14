@@ -4,17 +4,17 @@
 gc-app {
   block-size: 100dvh;
   display: grid;
-  grid: var(--header-size) 1fr / 1fr minmax(auto, var(--section-max-width)) 1fr;
+  grid: 'header header header' var(--header-size) '. main .' 1fr / 1fr minmax(auto, var(--section-max-width)) 1fr;
 }
 
 /* ---------------------------------------- */
 /* Main */
 
 gc-app > main {
-  block-size: 100dvh;
+  block-size: calc(100dvh - var(--header-size));
   display: grid;
   grid: 'content' 1fr / 1fr;
-  grid-area: 1 / 2 / 2 / 2;
+  grid-area: main;
   max-inline-size: var(--section-max-width);
   overflow: hidden;
 }
@@ -28,7 +28,6 @@ gc-app > main > * {
 
 :is(gc-home, gc-chapter, gc-recipe, gc-page) {
   overflow: auto;
-  padding-block: var(--header-size) 0;
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
