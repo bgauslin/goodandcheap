@@ -300,17 +300,21 @@ class GoodAndCheapApp extends LitElement {
 
       <main>
         <gc-home
+          class="view"
           transition="${this.homeTransition}"  
           ?inert="${this.context !== 'home'}"></gc-home>
         <gc-page
+          class="view"
           role="article"
           transition="${this.pageTransition}"
           ?inert="${this.context !== 'page'}"></gc-page>
         <gc-chapter
+          class="view"
           role="article"
           transition="${this.chapterTransition}"
           ?inert="${this.context !== 'chapter'}"></gc-chapter>
         <gc-recipe
+          class="view"
           role="article"
           transition="${this.recipeTransition}"
           ?inert="${this.context !== 'recipe'}"></gc-recipe>

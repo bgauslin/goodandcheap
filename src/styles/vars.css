@@ -19,19 +19,25 @@
   --body-background: var(--gray6);
   --border-color: var(--gray5);
   --content-background: white;
+  --footer-background: var(--body-background);
   --image-background: var(--gray4);
   --brand-color: #e5001f;
   --header-background: rgba(242, 242, 247, .95);
   --text-color: rgb(44, 44, 46);  /* Gray5 dark. */
 
   /* Layout. */
+  --app-grid: 'header header header' var(--header-size) '. main .' 1fr / 1fr minmax(auto, var(--section-max-size)) 1fr;
   --header-gap: .5rem;
   --header-grid: '. back wordmark . .' var(--header-size) / 0 minmax(0, 1fr) auto 1fr 0;
   --header-size: 3rem;
-  --section-max-width: 40rem;
+  --main-block-size: calc(100dvh - var(--header-size));
+  --section-max-size: 40rem;
+  --thumb-size: 4.5rem;
+  --view-display: block;
+  
+  /* Typography. */
   --subhead-font-size: 80%;
   --small-font-size: 60%;
-  --thumb-size: 4.5rem;
 
   @media (prefers-color-scheme: dark) {
     /* Apple HGI dark mode colors. */
@@ -55,5 +61,21 @@
   :root {
     --header-gap: 0;
     --header-grid: 'back wordmark .' var(--header-size) / minmax(0, 1fr) auto 1fr;
+  }
+}
+
+@media (min-width: 80rem) {
+  :root {
+    --app-grid: '. header .' 1fr '. main .' auto '. . .' 1fr / 1fr var(--section-max-size) 1fr;
+    --footer-background: none;
+    --main-aspect-ratio: 2 / 1;
+    --main-block-size: 40rem;
+    --section-max-size: 80rem;
+    --view-display: grid;
+    --view-grid: 'cover content' / 1fr 1fr;
+  }
+
+  gc-home {
+    --view-grid: 'tabs' auto 'preview' 1fr / 1fr;
   }
 }

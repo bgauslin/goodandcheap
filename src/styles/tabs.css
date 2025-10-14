@@ -2,6 +2,7 @@
   display: grid;
   gap: 0 1rem;
   grid: auto / auto-flow;
+  grid-area: tabs;
   margin-block: 1rem 2rem;
   margin-inline: 1rem;
   place-content: center;

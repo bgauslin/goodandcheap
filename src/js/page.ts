@@ -28,12 +28,11 @@ customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
     this.innerHTML = `
       <gc-image class="cover-photo" src="${image}"></gc-image>
 
-      <section>
+      <div class="content">
         <h1>${title}</h1>
         ${content}
-      </section>
-
-      ${footer}
+        ${footer}
+      </div>
     `;
   }
 });

@@ -1,32 +1,31 @@
 /* ---------------------------------------- */
-/* App */
+/* App. */
 
 gc-app {
   block-size: 100dvh;
   display: grid;
-  grid: 'header header header' var(--header-size) '. main .' 1fr / 1fr minmax(auto, var(--section-max-width)) 1fr;
+  grid: var(--app-grid);
 }
 
 /* ---------------------------------------- */
-/* Main */
+/* Main. */
 
 gc-app > main {
-  block-size: calc(100dvh - var(--header-size));
+  aspect-ratio: var(--main-aspect-ratio, unset);
+  block-size: var(--main-block-size);
   display: grid;
-  grid: 'content' 1fr / 1fr;
+  grid: 'view' 1fr / 1fr;
   grid-area: main;
-  max-inline-size: var(--section-max-width);
   overflow: hidden;
 }
 
-gc-app > main > * {
-  grid-area: content;
-}
-
 /* ---------------------------------------- */
-/* Main components */
+/* View components. */
 
-:is(gc-home, gc-chapter, gc-recipe, gc-page) {
+.view {
+  display: var(--view-display);
+  grid: var(--view-grid);
+  grid-area: view;
   overflow: auto;
   scrollbar-width: none;
 
@@ -51,9 +50,11 @@ gc-app > main > * {
   background-color: var(--content-background);
 }
 
-:is(gc-chapter, gc-recipe) {
-  display: block;
-  max-inline-size: var(--section-max-width);
+/* ---------------------------------------- */
+/* View components child elements. */
+
+.content {
+  grid-area: content;
 }
 
 .overview {
@@ -61,10 +62,10 @@ gc-app > main > * {
 }
 
 /* ---------------------------------------- */
-/* Footer */
+/* Footer. */
 
 footer {
-  background-color: var(--body-background);
+  background-color: var(--footer-background);
   display: grid;
   grid: 1fr / 1fr;
   padding-block: 3rem;

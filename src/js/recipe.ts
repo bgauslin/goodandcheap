@@ -41,8 +41,6 @@ class GoodAndCheapRecipe extends LitElement {
     return html`
       <div class="cover">
         <gc-image class="cover-photo" src="${image}"></gc-image>
-        <h1>${unsafeHTML(title)}</h1>
-        <div class="badge">${badge}</div>
       ${cost ? html`
         <p class="cost">
           ${cost.total} Total<br>
@@ -50,34 +48,39 @@ class GoodAndCheapRecipe extends LitElement {
         </p>` : nothing}
       </div>
 
-      ${overview ? html`
-      <section class="overview" id="overview">
-        ${unsafeHTML(overview)}
-      </section>` : nothing}
+      <div class="content">
+        <h1>${unsafeHTML(title)}</h1>
+        <div class="badge">${badge}</div>
 
-      ${ingredients ? html`
-      <section id="ingredients">
-        <h2>Ingredients</h2>
-        ${ingredients.map(group => {
-          const {label, items} = group;
-          return html`
-            ${label ? html`<h3>${label}</h3>` : nothing}
-            <ul>
-              ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
-            </ul>
-          `;
-        })}
-      </section>` : nothing}
+        ${overview ? html`
+        <section class="overview" id="overview">
+          ${unsafeHTML(overview)}
+        </section>` : nothing}
 
-      ${steps ? html`
-      <section id="steps">
-        <h2>Steps</h2>
-        <ol>
-          ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
-        </ol>
-      </section>` : nothing}
+        ${ingredients ? html`
+        <section id="ingredients">
+          <h2>Ingredients</h2>
+          ${ingredients.map(group => {
+            const {label, items} = group;
+            return html`
+              ${label ? html`<h3>${label}</h3>` : nothing}
+              <ul>
+                ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
+              </ul>
+            `;
+          })}
+        </section>` : nothing}
 
-      ${unsafeHTML(footer)}
+        ${steps ? html`
+        <section id="steps">
+          <h2>Steps</h2>
+          <ol>
+            ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
+          </ol>
+        </section>` : nothing}
+
+        ${unsafeHTML(footer)}
+      </div>
     `;
   }
 }
