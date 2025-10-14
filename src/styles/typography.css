@@ -20,6 +20,7 @@ h1 {
 
 /* Headings. */
 .previews .title,
+gc-page h2,
 gc-recipe :is(.badge, .cost, h2, h3) {
   font-family: 'Futura Bold';
   font-size: var(--subhead-font-size);
@@ -30,6 +31,7 @@ gc-recipe :is(.badge, .cost, h2, h3) {
 
 /* Various elements. */
 .count,
+gc-page li,
 [id='ingredients'] li,
 .previews :is(.badge, .counter) {
   font-family: 'Futura Book'; 
