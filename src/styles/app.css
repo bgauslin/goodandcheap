@@ -48,7 +48,7 @@ gc-app > main > * {
   background-color: var(--body-background);
 }
 
-gc-recipe {
+:is(gc-recipe, gc-page) {
   background-color: var(--content-background);
 }
 

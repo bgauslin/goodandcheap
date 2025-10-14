@@ -11,6 +11,7 @@ gc-recipe {
     padding-block: .5rem;
     padding-inline: 1rem;
     position: absolute;
+    z-index: 1;
   }
 
   h1 {
