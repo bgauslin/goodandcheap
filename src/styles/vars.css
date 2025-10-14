@@ -34,7 +34,7 @@
   --section-max-size: 40rem;
   --thumb-size: 4.5rem;
   --view-display: block;
-  
+
   /* Typography. */
   --subhead-font-size: 80%;
   --small-font-size: 60%;
@@ -68,12 +68,18 @@
 @media (min-width: 80rem) {
   :root {
     --app-grid: '. header .' 1fr '. main .' auto '. . .' 1fr / 1fr var(--section-max-size) 1fr;
+    --cover-photo-inset: 0;
+    --cover-photo-position: sticky;
     --footer-background: none;
     --main-aspect-ratio: 2 / 1;
     --main-block-size: 40rem;
     --section-max-size: 80rem;
     --view-display: grid;
     --view-grid: 'cover content' / 1fr 1fr;
+
+    gc-recipe {
+      --view-grid: 'content cover' / 1fr 1fr;
+    }
   }
 
   gc-home {

@@ -5,11 +5,11 @@
   display: grid;
   grid: 1fr / 1fr;
   grid-area: cover;
+  inset-block: var(--cover-photo-inset, initial);
+  overflow: hidden;
   margin: 0;
   place-content: center;
-
-  /* TODO: Debug/fix styles that bork layout on large screens. */
-  display: none;
+  position: var(--cover-photo-position, static);
 
   :is(img, svg) {
     grid-area: 1 / 1 / -1 / -1;
