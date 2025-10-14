@@ -17,11 +17,11 @@
 
   /* Branding. */
   --body-background: var(--gray6);
-  --border: 1px solid var(--gray5);
+  --border-color: var(--gray5);
   --content-background: white;
   --image-background: var(--gray4);
   --brand-color: #e5001f;
-  --header-background: rgba(255, 255, 255, .95);
+  --header-background: rgba(242, 242, 247, .95);
   --text-color: rgb(44, 44, 46);  /* Gray5 dark. */
 
   /* Layout. */

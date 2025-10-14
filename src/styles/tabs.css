@@ -1,22 +1,36 @@
 [role='tablist'] {
   display: grid;
-  gap: 0 .5rem;
+  gap: 0 1rem;
   grid: auto / auto-flow;
-  margin-block: 2rem;
+  margin-block: 1rem 2rem;
   margin-inline: 1rem;
   place-content: center;
 
   button {
     background-color: var(--content-background);
-    border: var(--border);
-    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    border-radius: 32px;
     padding-block: .5rem;
     padding-inline: .75rem;
-  }
 
-  button[aria-selected='true'] {
-    border-color: var(--brand-color);
-    pointer-events: none;
+    &:focus-visible {
+      border-color: var(--brand-color);
+    }
+    
+    &[aria-selected='true'] {
+      border-color: var(--text-color);
+      pointer-events: none;
+    }
+
+    @media (any-hover: hover) {
+      & {
+        transition: border-color var(--transition), color var(--transition);
+      }
+    
+      &:hover {
+        border-color: var(--brand-color);
+      }
+    }
   }
 }
 

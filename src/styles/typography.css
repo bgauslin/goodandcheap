@@ -10,12 +10,9 @@ h1 {
 [id='back'],
 [role='tablist'] > button {
   font-family: 'Futura Book';
+  font-size: var(--small-font-size);
   letter-spacing: .125em;
   text-transform: uppercase;
-}
-
-[id='back'] {
-  font-size: var(--small-font-size);
 }
 
 /* Headings. */
