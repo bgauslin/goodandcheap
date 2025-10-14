@@ -8,9 +8,6 @@
   --gray6: rgb(242, 242, 247);
 
   /* Theming. */
-  --fill-0: var(--gray6);
-  --fill-1: white;
-  --fill-2: var(--gray5);
   --link-color: var(--text-color);
   --link-focus-color: var(--brand-color);
   --link-visited-color: var(--text-color);  /* TODO: Update value. */
@@ -19,6 +16,9 @@
   --transition: .25s;
 
   /* Branding. */
+  --body-background: var(--gray6);
+  --content-background: white;
+  --image-background: var(--gray4);
   --brand-color: #e5001f;
   --header-background: rgba(255, 255, 255, .95);
   --text-color: rgb(44, 44, 46);  /* Gray5 dark. */
@@ -40,12 +40,9 @@
     --gray5: rgb(44, 44, 46);
     --gray6: rgb(28, 28, 30);
 
-    /* Dark mode theming. */
-    --fill-0: var(--gray6);
-    --fill-1: var(--gray5);
-    --fill-2: var(--gray4);
-
     /* Dark mode branding and elements. */
+    --body-background: black;
+    --content-background: var(--gray5);
     --brand-color: #ed4d62;
     --header-background: rgba(0, 0, 0, .8);    
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */

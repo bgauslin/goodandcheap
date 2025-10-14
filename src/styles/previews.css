@@ -7,6 +7,10 @@
   margin-inline: 1rem;
   padding: 0;
 
+  li {
+    background-color: var(--content-background);
+  }
+
   a {
     align-items: center;
     display: grid;
@@ -20,7 +24,7 @@
 
   img {
     aspect-ratio: 1;
-    background: var(--fill-2);
+    background-color: var(--image-background);
     border-radius: .25rem;
     grid-area: thumb;
     object-fit: cover;

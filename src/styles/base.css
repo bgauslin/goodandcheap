@@ -32,7 +32,7 @@ html {
 }
 
 body {
-  background-color: var(--fill-0);
+  background-color: var(--body-background);
   display: grid;
   grid: 1fr / 1fr;
   font-family: 'Carmina Light';

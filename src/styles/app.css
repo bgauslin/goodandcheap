@@ -27,7 +27,6 @@ gc-app > main > * {
 /* Main components */
 
 :is(gc-home, gc-chapter, gc-recipe, gc-page) {
-  background-color: var(--fill-0);
   overflow: auto;
   padding-block: var(--header-size) 0;
   scrollbar-width: none;
@@ -45,6 +44,14 @@ gc-app > main > * {
   }
 }
 
+:is(gc-home, gc-chapter, gc-page) {
+  background-color: var(--body-background);
+}
+
+gc-recipe {
+  background-color: var(--content-background);
+}
+
 :is(gc-chapter, gc-recipe) {
   display: block;
   max-inline-size: var(--section-max-width);
@@ -58,6 +65,7 @@ gc-app > main > * {
 /* Footer */
 
 footer {
+  background-color: var(--body-background);
   display: grid;
   grid: 1fr / 1fr;
   padding-block: 3rem;

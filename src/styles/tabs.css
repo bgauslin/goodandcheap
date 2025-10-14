@@ -7,14 +7,14 @@
   place-content: center;
 
   button {
-    background: var(--fill-1);
+    background-color: var(--content-background);
     border-radius: 3px;
     padding-block: .5rem;
     padding-inline: .75rem;
   }
 
   button[aria-selected='true'] {
-    background: var(--brand-color);
+    background-color: var(--brand-color);
     pointer-events: none;
   }
 }

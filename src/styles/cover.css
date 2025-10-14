@@ -1,7 +1,7 @@
 /* Cover photo for everything but home page. */
 .cover-photo {
   aspect-ratio: 1;
-  background: var(--fill-2);
+  background-color: var(--image-background);
   display: grid;
   grid: 1fr / 1fr;
   inline-size: 100%;

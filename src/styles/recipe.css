@@ -4,7 +4,7 @@ gc-recipe {
   }
 
   .cost {
-    background-color: var(--fill-1);
+    background-color: var(--content-background);
     inset-block: 2rem auto;
     inset-inline: auto 0;
     margin: 0;
@@ -28,7 +28,7 @@ gc-recipe {
   }
 
   h2 {
-    background-color: var(--fill-0);
+    background-color: var(--content-background);
     padding-block: .5em;
     position: sticky;
     top: 0;
