@@ -303,19 +303,18 @@ class GoodAndCheapApp extends LitElement {
           transition="${this.homeTransition}"  
           ?inert="${this.context !== 'home'}"></gc-home>
         <gc-page
+          role="article"
           transition="${this.pageTransition}"
           ?inert="${this.context !== 'page'}"></gc-page>
         <gc-chapter
+          role="article"
           transition="${this.chapterTransition}"
           ?inert="${this.context !== 'chapter'}"></gc-chapter>
         <gc-recipe
+          role="article"
           transition="${this.recipeTransition}"
           ?inert="${this.context !== 'recipe'}"></gc-recipe>
       </main>
-
-      <footer>
-        <img src="./img/by-nc-sa-80x15.svg" alt="Creative Commons License">
-      </footer>
     `;
   }
 }

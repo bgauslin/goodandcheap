@@ -1,4 +1,4 @@
-import {Chapter} from './shared';
+import {Chapter, footer} from './shared';
 
 
 customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElement {
@@ -55,6 +55,8 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
       <ul class="previews">
         ${items}
       </ul>
+
+      ${footer}
     `;
   }
 });

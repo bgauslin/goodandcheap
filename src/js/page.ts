@@ -1,4 +1,4 @@
-import {Page} from './shared';
+import {Page, footer} from './shared';
 
 
 customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
@@ -32,6 +32,8 @@ customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
         <h1>${title}</h1>
         ${content}
       </section>
+
+      ${footer}
     `;
   }
 });

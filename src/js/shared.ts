@@ -37,3 +37,8 @@ export interface Recipe {
   steps?: string[],
   title: string,
 }
+
+export const footer = `
+  <footer>
+    <img src="./img/by-nc-sa-80x15.svg" alt="Creative Commons License">
+  </footer>`;

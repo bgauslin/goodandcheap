@@ -1,7 +1,7 @@
 import {LitElement, html, nothing} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Recipe} from './shared';
+import {Recipe, footer} from './shared';
 
 
 @customElement('gc-recipe')
@@ -76,6 +76,8 @@ class GoodAndCheapRecipe extends LitElement {
           ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
         </ol>
       </section>` : nothing}
+
+      ${unsafeHTML(footer)}
     `;
   }
 }
