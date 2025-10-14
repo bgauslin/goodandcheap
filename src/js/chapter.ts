@@ -35,9 +35,11 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
             <figure>
               <img src="./images/${image}@thumb.webp" alt="">
             </figure>
-            <div class="blurb">
-              <p class="title">${title}</p>
-              <p class="badge">${badge}</p>
+            <div class="copy">
+              <div class="description">
+                <p class="title">${title}</p>
+                <p class="badge">${badge}</p>
+              </div>
               <div class="counter">${index + 1}</div>
             </div>
           </a>

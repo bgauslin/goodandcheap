@@ -13,7 +13,7 @@
     background-color: var(--content-background);
   }
 
-  li:not(:last-child) .blurb {
+  li:not(:last-child) .copy {
     border-bottom: 1px solid var(--border-color);
   }
 
@@ -21,7 +21,7 @@
     align-items: center;
     display: grid;
     gap: .75rem;
-    grid: 'thumb blurb' auto / auto 1fr;
+    grid: 'thumb copy' auto / auto 1fr;
   }
 
   a > * {
@@ -43,32 +43,26 @@
     object-fit: cover;
   }
 
-  .blurb {
+  .copy {
     display: grid;
-    grid-area: blurb;
-    grid: 'title counter' 1fr 'badge counter' 1fr / 1fr auto;
+    gap: 0 .75rem;
+    grid: 'description counter .' 1fr / 1fr auto 0;
+    grid-area: copy;
     place-self: stretch;
+    place-items: center start;
   }
 
   .title {
-    grid-area: title;
     margin-block: 0;
-    padding-inline: 0 1rem;
-    place-self: end start;
   }
 
   :is(.badge, .count) {
-    grid-area: badge;
     margin-block: .2em 0;
-    padding-inline: 0 1rem;
-    place-self: start;
   }
 
   .counter {
     grid-area: counter;
-    margin-inline: .75rem;
     opacity: .7;
-    place-self: center;
   }
 }
 

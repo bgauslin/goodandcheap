@@ -48,8 +48,9 @@
     --gray5: rgb(44, 44, 46);
     --gray6: rgb(28, 28, 30);
 
-    /* Dark mode branding and elements. */
+    /* Dark mode branding and theming. */
     --body-background: black;
+    --border-color: var(--gray3);
     --content-background: var(--gray5);
     --brand-color: #ed4d62;
     --header-background: rgba(0, 0, 0, .8);    
