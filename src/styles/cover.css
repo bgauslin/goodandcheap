@@ -1,15 +1,22 @@
 /* Cover photo for everything but home page. */
-.cover-photo {
+.cover {
+  display: grid;
+  grid: 1fr / 1fr;
+  grid-area: cover;
+  inset-block: var(--cover-inset, initial);
+  place-self: start stretch;
+  position: var(--cover-position, static);
+}
+
+.cover__photo {
   aspect-ratio: 1;
   background-color: var(--image-background);
   display: grid;
   grid: 1fr / 1fr;
-  grid-area: cover;
-  inset-block: var(--cover-photo-inset, initial);
+  grid-area: 1 / 1 / -1 / -1;
   overflow: hidden;
   margin: 0;
   place-content: center;
-  position: var(--cover-photo-position, static);
 
   :is(img, svg) {
     grid-area: 1 / 1 / -1 / -1;

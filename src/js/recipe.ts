@@ -40,7 +40,7 @@ class GoodAndCheapRecipe extends LitElement {
 
     return html`
       <div class="cover">
-        <gc-image class="cover-photo" src="${image}"></gc-image>
+        <gc-image class="cover__photo" src="${image}"></gc-image>
       ${cost ? html`
         <p class="cost">
           ${cost.total} Total<br>

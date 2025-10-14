@@ -1,0 +1,9 @@
+gc-chapter {
+  .overview {
+    background-color: var(--overview-background);
+    grid-area: var(--overview-grid-area, initial);
+    margin-inline: var(--overview-margin-inline);
+    place-self: var(--overview-place-self);
+    z-index: 1;
+  }
+}

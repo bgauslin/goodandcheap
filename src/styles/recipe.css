@@ -1,8 +1,4 @@
 gc-recipe {
-  .cover {
-    position: relative;
-  }
-
   .cost {
     background-color: var(--content-background);
     inset-block: 2rem auto;
@@ -22,10 +18,6 @@ gc-recipe {
   .badge {
     margin-block: .5em 0;
     margin-inline: 1rem;
-  }
-
-  section {
-    padding-inline: 1rem;
   }
 
   h2 {

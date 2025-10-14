@@ -1,9 +1,4 @@
 gc-page {
-  .content {
-    padding-block: 0 2rem;
-    padding-inline: 1rem;
-  }
-
   ul {
     columns: 3;
     list-style: none;

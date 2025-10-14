@@ -48,19 +48,19 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
     }
 
     this.innerHTML = `
-      <gc-image class="cover-photo" src="${image}"></gc-image>
-      
-      <div class="content">
+      <div class="cover">
+        <gc-image class="cover__photo" src="${image}"></gc-image>
         <section class="overview">
           <h1>${title}</h1>
           ${content}
-          <p class="count">${recipes.length} Recipes</p>
         </section>
-
+      </div>
+      
+      <div class="content">
+        <p class="count">${recipes.length} Recipes</p>
         <ul class="previews">
           ${items}
         </ul>
-
         ${footer}
       </div>
     `;

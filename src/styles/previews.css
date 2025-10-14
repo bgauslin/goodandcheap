@@ -5,7 +5,6 @@
   grid: var(--previews-grid);
   list-style: none;
   margin-block: 0;
-  margin-inline: 1rem;
   overflow: hidden;
   padding: 0;
 

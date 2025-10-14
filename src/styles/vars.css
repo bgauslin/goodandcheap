@@ -18,11 +18,11 @@
   /* Branding. */
   --body-background: var(--gray6);
   --border-color: var(--gray5);
+  --brand-color: #e5001f;
   --content-background: white;
   --footer-background: var(--body-background);
-  --image-background: var(--gray4);
-  --brand-color: #e5001f;
   --header-background: rgba(242, 242, 247, .95);
+  --image-background: var(--gray4);
   --text-color: rgb(44, 44, 46);  /* Gray5 dark. */
 
   /* Layout. */
@@ -86,8 +86,8 @@
 @media (min-width: 60rem) {
   :root {
     --app-grid: '. header .' 1fr '. main .' auto '. . .' 1fr / 1fr minmax(0, var(--section-max-size)) 1fr;
-    --cover-photo-inset: 0;
-    --cover-photo-position: sticky;
+    --cover-inset: 0;
+    --cover-position: sticky;
     --footer-background: none;
     --header-position: static;
     --main-aspect-ratio: 2 / 1;
@@ -103,6 +103,13 @@
 
   gc-home {
     --previews-grid: auto-flow / repeat(3, 1fr);
-    --view-grid: 'tabs' auto 'preview' 1fr / 1fr;
+    --view-display: block;
+  }
+
+  gc-chapter {
+    --overview-background: var(--content-background);
+    --overview-grid-area: 1 / 1 / -1 / -1;
+    --overview-margin-inline: 3rem;
+    --overview-place-self: end;
   }
 }
