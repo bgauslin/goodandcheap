@@ -5,15 +5,15 @@ footer {
   padding-block: 3rem;
   place-items: center;
   text-align: center;
-}
 
-footer small {
-  display: block;
-  line-height: 1.5;
-}
+  small {
+    display: block;
+    line-height: 1.5;
+  }
 
-footer img {
-  block-size: 1rem;
-  inline-size: auto;
-  margin-block: 0 1em;
+  img {
+    block-size: 1rem;
+    inline-size: auto;
+    margin-block: 0 1em;
+  }
 }

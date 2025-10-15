@@ -52,14 +52,12 @@ gc-app > main {
   background-color: var(--content-background);
 }
 
-/* View component content. */
+/* ---------------------------------------- */
+/* View component elements. */
+
 .content {
   grid-area: content;
   padding-inline: var(--gap);
-}
-
-gc-chapter .count {
-  margin-block: 2rem 1em;
 }
 
 .badge {
@@ -68,4 +66,8 @@ gc-chapter .count {
   display: inline-block;
   padding-block: .25em;
   padding-inline: .75em;
+}
+
+gc-chapter .count {
+  margin-block: 2rem 1em;
 }
