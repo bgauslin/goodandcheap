@@ -74,7 +74,6 @@ class GoodAndCheapHome extends LitElement {
         aria-selected="${this.tab === id}"
         id="tab-${id}"
         role="tab"
-        tabindex="${this.tab === id ? 0 : -1}"
         @click="${() => this.tab = id}">${label}</button>
       `;
   }
@@ -85,8 +84,7 @@ class GoodAndCheapHome extends LitElement {
         aria-hidden="${this.tab !== id}"
         aria-labelledby="tab-${id}"
         id="tabpanel-${id}"
-        role="tabpanel"
-        tabindex="0">
+        role="tabpanel">
         <ul class="previews">
         ${items.map(item => {
           const {count, image, slug, title} = item;
