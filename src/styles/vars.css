@@ -24,6 +24,7 @@
   --header-background: var(--gray6);
   --image-background: var(--gray4);
   --text-color: rgb(44, 44, 46);  /* Gray5 dark. */
+  --text-color-inverted: white;
 
   /* Layout. */
   --app-grid: 'header header header' var(--header-size) '. main .' 1fr / 1fr minmax(auto, var(--section-max-size)) 1fr;
@@ -62,6 +63,7 @@
     --content-background: var(--gray6);
     --header-background: black;
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */
+    --text-color-inverted: black;
   }
 }
 

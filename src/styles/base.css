@@ -59,18 +59,36 @@ svg {
 }
 
 /* ---------------------------------------- */
-/* Links and buttons. */
+/* Buttons. */
 
 button {
   appearance: none;
-  background: none;
+  background-color: var(--gray5);
   border: none;
   color: inherit;
   cursor: pointer;
   margin: 0;
+  outline: none;
+
+  &:focus-visible {
+    background-color: var(--gray3);
+  }
+
+  @media (any-hover: hover) {
+    & {
+      transition: background-color var(--transition), color var(--transition);
+    }
+  
+    &:hover {
+      background-color: var(--gray3);
+    }
+  }
 }
 
-:is(a, button) {
+/* ---------------------------------------- */
+/* Links. */
+
+a {
   color: var(--link-color);
   outline: none;
   text-decoration: none;

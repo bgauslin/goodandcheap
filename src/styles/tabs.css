@@ -8,29 +8,14 @@
   place-content: center;
 
   button {
-    background-color: var(--content-background);
-    border: 1px solid var(--border-color);
-    border-radius: 32px;
+    border-radius: 2rem;
     padding-block: .5rem;
     padding-inline: .75rem;
-
-    &:focus-visible {
-      border-color: var(--brand-color);
-    }
     
     &[aria-selected='true'] {
-      border-color: var(--text-color);
+      background-color: var(--text-color);
+      color: var(--text-color-inverted);
       pointer-events: none;
-    }
-
-    @media (any-hover: hover) {
-      & {
-        transition: border-color var(--transition), color var(--transition);
-      }
-    
-      &:hover {
-        border-color: var(--brand-color);
-      }
     }
   }
 }
