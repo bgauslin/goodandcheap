@@ -50,13 +50,7 @@ gc-app > main {
   background-color: var(--content-background);
 }
 
-/* ---------------------------------------- */
-/* View components child elements. */
-
-.overview {
-  padding-inline: 1rem;
-}
-
+/* View component content. */
 .content {
   grid-area: content;
   padding-inline: 1rem;

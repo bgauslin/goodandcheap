@@ -104,13 +104,6 @@
     --view-display: block;
   }
 
-  gc-chapter {
-    --overview-background: var(--content-background);
-    --overview-grid-area: 1 / 1 / -1 / -1;
-    --overview-margin-inline: 3rem;
-    --overview-place-self: end;
-  }
-
   gc-recipe {
     --view-grid: 'content cover' / 1fr 1fr;
   }

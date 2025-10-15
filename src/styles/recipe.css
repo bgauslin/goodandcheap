@@ -10,14 +10,12 @@ gc-recipe {
     z-index: 1;
   }
 
-  h1 {
-    margin-block-end: 0;
-    margin-inline: 1rem;
+  .badge {
+    margin-block: 1rem 0;
   }
 
-  .badge {
-    margin-block: .5em 0;
-    margin-inline: 1rem;
+  h1 {
+    margin-block: .5rem;
   }
 
   h2 {
