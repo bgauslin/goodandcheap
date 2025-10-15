@@ -46,7 +46,7 @@ export const footer = `
       <img src="./by-nc-sa-80x15.svg" alt="Creative Commons License">
     </a>
     <small>
-      All content © ${new Date().getFullYear()} Leanne Brown<br>
+      All content © 2014–${new Date().toLocaleDateString('en', {year: '2-digit'})} Leanne Brown<br>
       Web app © ${new Date().getFullYear()} Ben Gauslin
     <small>
   </footer>`;
