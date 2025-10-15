@@ -27,6 +27,7 @@
 
   /* Layout. */
   --app-grid: 'header header header' var(--header-size) '. main .' 1fr / 1fr minmax(auto, var(--section-max-size)) 1fr;
+  --back-label-display: none;
   --header-gap: .5rem;
   --header-grid: '. back wordmark . .' var(--header-size) / 0 minmax(0, 1fr) auto 1fr 0;
   --header-position: sticky;
@@ -70,6 +71,7 @@
 
 @media (min-width: 45rem) {
   :root {
+    --back-label-display: unset;
     --header-gap: 0;
     --header-grid: 'back wordmark .' var(--header-size) / minmax(0, 1fr) auto 1fr;
   }

@@ -34,18 +34,19 @@ header {
 /* App 'Back' button. */
 
 [id='back'] {
+  --button-size: 2rem;
+
   align-items: center;
-  block-size: var(--header-size);
+  background-color: var(--gray5);
+  block-size: var(--button-size);
+  border-radius: var(--button-size);
   display: flex;
-  gap: 0 .25rem;
   grid-area: back;
+  min-inline-size: var(--button-size);
+  padding-inline: 0;
   place-self: center start;
-
-  /* max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; */
-
+  white-space: nowrap;
+  
   &[disabled] {
     display: none;
   }
@@ -54,9 +55,15 @@ header {
     pointer-events: none;
   }
 
+  span {
+    display: var(--back-label-display);
+    margin-inline: 0 1rem;
+  }
+
   svg {
     fill: none;
-    flex: 0 0 1.25em;
+    flex: 0 0 1.5rem;
+    margin-inline: .25rem 0;
     stroke: currentColor;
     stroke-width: 3px;
   }
