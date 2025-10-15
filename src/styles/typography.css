@@ -27,6 +27,7 @@ gc-recipe :is(.badge, .cost, .serving, h2, h3) {
 }
 
 /* Various elements. */
+footer,
 .count,
 gc-page li,
 [id='ingredients'] li,
@@ -34,6 +35,7 @@ gc-page li,
   font-family: 'Futura Book'; 
 }
 
+footer,
 .count,
 .previews :is(.badge, .counter, .serving) {
   font-size: var(--small-font-size);

@@ -60,20 +60,3 @@ gc-app > main {
 gc-chapter .count {
   margin-block: 2rem 1em;
 }
-
-/* ---------------------------------------- */
-/* Footer. */
-
-footer {
-  background-color: var(--footer-background);
-  display: grid;
-  grid: 1fr / 1fr;
-  margin-inline: -1rem;
-  padding-block: 3rem;
-  place-items: center;
-}
-
-footer > img {
-  block-size: 1rem;
-  inline-size: auto;
-}

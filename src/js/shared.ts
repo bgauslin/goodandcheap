@@ -42,5 +42,11 @@ export interface Recipe {
 
 export const footer = `
   <footer>
-    <img src="./img/by-nc-sa-80x15.svg" alt="Creative Commons License">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" title="Creative Commons Attribution-NonCommercial-ShareAlike License">
+      <img src="./img/by-nc-sa-80x15.svg" alt="Creative Commons License">
+    </a>
+    <small>
+      All content © ${new Date().getFullYear()} Leanne Brown<br>
+      Web app © ${new Date().getFullYear()} Ben Gauslin
+    <small>
   </footer>`;
