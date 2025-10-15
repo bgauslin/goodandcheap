@@ -9,56 +9,56 @@
       "recipes": [
         {
           "title": "Tomato Scrambled Eggs",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "tomato-scrambled-eggs",
           "chapter": "breakfast",
           "slug": "tomato-scrambled-eggs"
         },
         {
           "title": "Broiled Grapefruit",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "broiled-grapefruit",
           "chapter": "breakfast",
           "slug": "broiled-grapefruit"
         },
         {
           "title": "Omelette",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "omelette",
           "chapter": "breakfast",
           "slug": "omelette"
         },
         {
           "title": "Banana Pancakes",
-          "badge": "Makes Ten to Fourteen Pancakes",
+          "serving": "Makes Ten to Fourteen Pancakes",
           "image": "banana-pancakes",
           "chapter": "breakfast",
           "slug": "banana-pancakes"
         },
         {
           "title": "Chocolate Zucchini Muffins",
-          "badge": "Makes Twenty-four Small Muffins",
+          "serving": "Makes Twenty-four Small Muffins",
           "image": "chocolate-zucchini-muffins",
           "chapter": "breakfast",
           "slug": "chocolate-zucchini-muffins"
         },
         {
           "title": "Whole-Wheat Jalapeño Cheddar Scones",
-          "badge": "Makes Six",
+          "serving": "Makes Six",
           "image": "whole-wheat-jalapeno-cheddar-scones",
           "chapter": "breakfast",
           "slug": "whole-wheat-jalapeno-cheddar-scones"
         },
         {
           "title": "Peanut Butter and Jelly Granola Bars",
-          "badge": "Makes Twelve",
+          "serving": "Makes Twelve",
           "image": "peanut-butter-and-jelly-granola-bars",
           "chapter": "breakfast",
           "slug": "peanut-butter-and-jelly-granola-bars"
         },
         {
           "title": "Egg Sandwich with Mushroom Hash",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "egg-sandwich-with-mushroom-hash",
           "chapter": "breakfast",
           "slug": "egg-sandwich-with-mushroom-hash"
@@ -88,28 +88,28 @@
       "recipes": [
         {
           "title": "Dal",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "dal",
           "chapter": "soup",
           "slug": "dal"
         },
         {
           "title": "Corn Soup",
-          "badge": "For Four to Six",
+          "serving": "For Four to Six",
           "image": "corn-soup",
           "chapter": "soup",
           "slug": "corn-soup"
         },
         {
           "title": "French Onion Soup",
-          "badge": "For Six",
+          "serving": "For Six",
           "image": "french-onion-soup",
           "chapter": "soup",
           "slug": "french-onion-soup"
         },
         {
           "title": "Lightly Curried Butternut Squash Soup",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "lightly-curried-butternut-squash-soup",
           "chapter": "soup",
           "slug": "lightly-curried-butternut-squash-soup"
@@ -125,63 +125,63 @@
       "recipes": [
         {
           "title": "Broiled Eggplant Salad",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "broiled-eggplant-salad",
           "chapter": "salad",
           "slug": "broiled-eggplant-salad"
         },
         {
           "title": "Kale Salad",
-          "badge": "For Two, or Four as a Side",
+          "serving": "For Two, or Four as a Side",
           "image": "kale-salad-1",
           "chapter": "salad",
           "slug": "kale-salad"
         },
         {
           "title": "Ever-Popular Potato Salad",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "ever-popular-potato-salad",
           "chapter": "salad",
           "slug": "ever-popular-potato-salad"
         },
         {
           "title": "Spicy Panzanella",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "spicy-panzanella",
           "chapter": "salad",
           "slug": "spicy-panzanella"
         },
         {
           "title": "Cold (and Spicy?) Asian Noodles",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "cold-and-spicy-asian-noodles",
           "chapter": "salad",
           "slug": "cold-and-spicy-asian-noodles"
         },
         {
           "title": "Taco Salad",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "taco-salad",
           "chapter": "salad",
           "slug": "taco-salad"
         },
         {
           "title": "Beet and Chickpea Salad",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "beet-and-chickpea-salad",
           "chapter": "salad",
           "slug": "beet-and-chickpea-salad"
         },
         {
           "title": "Broccoli Apple Salad",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "broccoli-apple-salad",
           "chapter": "salad",
           "slug": "broccoli-apple-salad"
         },
         {
           "title": "Charred Summer Salad",
-          "badge": "For Two, or Four as a Side",
+          "serving": "For Two, or Four as a Side",
           "image": "charred-summer-salad",
           "chapter": "salad",
           "slug": "charred-summer-salad"
@@ -197,56 +197,56 @@
       "recipes": [
         {
           "title": "Jacket Sweet Potato",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "jacket-sweet-potato",
           "chapter": "snacks-sides-and-small-bites",
           "slug": "jacket-sweet-potato"
         },
         {
           "title": "Smoky and Spicy Roasted Cauliflower",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "smoky-and-spicy-roasted-cauliflower",
           "chapter": "snacks-sides-and-small-bites",
           "slug": "smoky-and-spicy-roasted-cauliflower"
         },
         {
           "title": "Spicy Green Beans",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "spicy-green-beans",
           "chapter": "snacks-sides-and-small-bites",
           "slug": "spicy-green-beans"
         },
         {
           "title": "Mexican Street Corn",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "mexican-street-corn",
           "chapter": "snacks-sides-and-small-bites",
           "slug": "mexican-street-corn"
         },
         {
           "title": "Green Chili and Cheddar Quesadillas",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "green-chili-and-cheddar-quesadillas",
           "chapter": "snacks-sides-and-small-bites",
           "slug": "green-chili-and-cheddar-quesadillas"
         },
         {
           "title": "Cornmeal Crusted Veggies",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "cornmeal-crusted-veggies-1",
           "chapter": "snacks-sides-and-small-bites",
           "slug": "cornmeal-crusted-veggies"
         },
         {
           "title": "Brussels Sprout Hash and Eggs",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "brussels-sprout-hash-and-eggs",
           "chapter": "snacks-sides-and-small-bites",
           "slug": "brussels-sprout-hash-and-eggs"
         },
         {
           "title": "Poutine",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "poutine",
           "chapter": "snacks-sides-and-small-bites",
           "slug": "poutine"
@@ -276,35 +276,35 @@
       "recipes": [
         {
           "title": "Cauliflower Tacos",
-          "badge": "For Two to Three",
+          "serving": "For Two to Three",
           "image": "cauliflower-tacos",
           "chapter": "handheld",
           "slug": "cauliflower-tacos"
         },
         {
           "title": "Potato Leek Pizza",
-          "badge": "Makes Four Pizzas",
+          "serving": "Makes Four Pizzas",
           "image": "potato-leek-pizza",
           "chapter": "handheld",
           "slug": "potato-leek-pizza"
         },
         {
           "title": "Broccoli Rabe and Mozzarella Calzones",
-          "badge": "Makes Four Calzones",
+          "serving": "Makes Four Calzones",
           "image": "broccoli-rabe-and-mozzarella-calzones",
           "chapter": "handheld",
           "slug": "broccoli-rabe-and-mozzarella-calzones"
         },
         {
           "title": "Broccoli, Egg, and Cheddar Empanadas",
-          "badge": "Makes Twelve",
+          "serving": "Makes Twelve",
           "image": "broccoli-egg-and-cheddar-empanadas",
           "chapter": "handheld",
           "slug": "broccoli-egg-and-cheddar-empanadas"
         },
         {
           "title": "Potato and Kale Rolls with Raita",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "potato-and-kale-rolls-with-raita",
           "chapter": "handheld",
           "slug": "potato-and-kale-rolls-with-raita"
@@ -327,119 +327,119 @@
       "recipes": [
         {
           "title": "Creamy Zucchini Fettuccine",
-          "badge": "For Three",
+          "serving": "For Three",
           "image": "creamy-zucchini-fettuccine",
           "chapter": "dinner",
           "slug": "creamy-zucchini-fettuccine"
         },
         {
           "title": "Pasta with Eggplant and Tomato",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "pasta-with-eggplant-and-tomato",
           "chapter": "dinner",
           "slug": "pasta-with-eggplant-and-tomato"
         },
         {
           "title": "Chana Masala",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "chana-masala",
           "chapter": "dinner",
           "slug": "chana-masala"
         },
         {
           "title": "Black-Eyed Peas and Collards",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "black-eyed-peas-and-collards",
           "chapter": "dinner",
           "slug": "black-eyed-peas-and-collards"
         },
         {
           "title": "Vegetable Jambalaya",
-          "badge": "For Six",
+          "serving": "For Six",
           "image": "vegetable-jambalaya",
           "chapter": "dinner",
           "slug": "vegetable-jambalaya"
         },
         {
           "title": "Filipino Chicken Adobo",
-          "badge": "For Eight",
+          "serving": "For Eight",
           "image": "filipino-chicken-adobo",
           "chapter": "dinner",
           "slug": "filipino-chicken-adobo"
         },
         {
           "title": "Baked Beans 2 Ways",
-          "badge": "For Two, or Four as a Side",
+          "serving": "For Two, or Four as a Side",
           "image": "baked-beans",
           "chapter": "dinner",
           "slug": "baked-beans-2-ways"
         },
         {
           "title": "Half-Veggie Burgers",
-          "badge": "For Eight",
+          "serving": "For Eight",
           "image": "half-veggie-burgers",
           "chapter": "dinner",
           "slug": "half-veggie-burgers"
         },
         {
           "title": "Beef Stroganoff",
-          "badge": "For Six",
+          "serving": "For Six",
           "image": "beef-stroganoff",
           "chapter": "dinner",
           "slug": "beef-stroganoff"
         },
         {
           "title": "Tofu Hot Pot",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "tofu-hot-pot",
           "chapter": "dinner",
           "slug": "tofu-hot-pot"
         },
         {
           "title": "Deconstructed Cabbage Rolls",
-          "badge": "For Six",
+          "serving": "For Six",
           "image": "deconstructed-cabbage-rolls",
           "chapter": "dinner",
           "slug": "deconstructed-cabbage-rolls"
         },
         {
           "title": "Savory Summer Cobbler",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "savory-summer-cobbler",
           "chapter": "dinner",
           "slug": "savory-summer-cobbler"
         },
         {
           "title": "Cauliflower Cheese",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "cauliflower-cheese",
           "chapter": "dinner",
           "slug": "cauliflower-cheese"
         },
         {
           "title": "Vegetable Quiche, Hold the Crust",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "vegetable-quiche-hold-the-crust",
           "chapter": "dinner",
           "slug": "vegetable-quiche-hold-the-crust"
         },
         {
           "title": "Shrimp and Grits",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "shrimp-and-grits",
           "chapter": "dinner",
           "slug": "shrimp-and-grits"
         },
         {
           "title": "Spicy, Crunchy, Creamy Polenta",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "spicy-crunchy-creamy-polenta",
           "chapter": "dinner",
           "slug": "spicy-crunchy-creamy-polenta"
         },
         {
           "title": "Roast Chicken",
-          "badge": "For Six",
+          "serving": "For Six",
           "image": "roast-chicken",
           "chapter": "dinner",
           "slug": "roast-chicken"
@@ -453,14 +453,14 @@
         },
         {
           "title": "Roasted Potatoes with Chilies",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "roasted-potatoes-with-chilies-1",
           "chapter": "dinner",
           "slug": "roasted-potatoes-with-chilies"
         },
         {
           "title": "Spicy Broiled Tilapia with Lime",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "spicy-broiled-tilapia-with-lime",
           "chapter": "dinner",
           "slug": "spicy-broiled-tilapia-with-lime"
@@ -476,28 +476,28 @@
       "recipes": [
         {
           "title": "Spicy Pulled Pork",
-          "badge": "For Ten",
+          "serving": "For Ten",
           "image": "spicy-pulled-pork",
           "chapter": "big-batch",
           "slug": "spicy-pulled-pork"
         },
         {
           "title": "Deviled Eggs 6 Ways",
-          "badge": "Makes Twenty-four Half Eggs",
+          "serving": "Makes Twenty-four Half Eggs",
           "image": "deviled-eggs",
           "chapter": "big-batch",
           "slug": "deviled-eggs-6-ways"
         },
         {
           "title": "Perogies",
-          "badge": "Makes Sixty to Seventy-two",
+          "serving": "Makes Sixty to Seventy-two",
           "image": "perogies",
           "chapter": "big-batch",
           "slug": "perogies"
         },
         {
           "title": "Dumplings 2 Ways",
-          "badge": "Makes Sixty",
+          "serving": "Makes Sixty",
           "image": "dumplings",
           "chapter": "big-batch",
           "slug": "dumplings-2-ways"
@@ -513,49 +513,49 @@
       "recipes": [
         {
           "title": "Flour Tortillas",
-          "badge": "Makes Twenty-four Small",
+          "serving": "Makes Twenty-four Small",
           "image": "flour-tortillas",
           "chapter": "staples",
           "slug": "flour-tortillas"
         },
         {
           "title": "Roti",
-          "badge": "Makes Sixteen",
+          "serving": "Makes Sixteen",
           "image": "roti",
           "chapter": "staples",
           "slug": "roti"
         },
         {
           "title": "Pizza Dough 2 Ways",
-          "badge": "Makes Four Individual Pizzas",
+          "serving": "Makes Four Individual Pizzas",
           "image": "pizza-dough",
           "chapter": "staples",
           "slug": "pizza-dough-2-ways"
         },
         {
           "title": "Fresh Pasta",
-          "badge": "For One Large Entree",
+          "serving": "For One Large Entree",
           "image": "fresh-pasta-3",
           "chapter": "staples",
           "slug": "fresh-pasta"
         },
         {
           "title": "Best Tomato Sauce",
-          "badge": "Makes Three and a Half Cups",
+          "serving": "Makes Three and a Half Cups",
           "image": "best-tomato-sauce",
           "chapter": "staples",
           "slug": "best-tomato-sauce"
         },
         {
           "title": "Chorizo and White Bean Ragu",
-          "badge": "Makes Three Cups",
+          "serving": "Makes Three Cups",
           "image": "chorizo-and-white-bean-ragu",
           "chapter": "staples",
           "slug": "chorizo-and-white-bean-ragu"
         },
         {
           "title": "Rainbow Rice 3 Ways",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "rainbow-rice",
           "chapter": "staples",
           "slug": "rainbow-rice-3-ways"
@@ -585,14 +585,14 @@
       "recipes": [
         {
           "title": "Agua Fresca",
-          "badge": "Serves Four to Six",
+          "serving": "Serves Four to Six",
           "image": "agua-fresca",
           "chapter": "drinks",
           "slug": "agua-fresca"
         },
         {
           "title": "Smoothies 4 Ways",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "smoothies",
           "chapter": "drinks",
           "slug": "smoothies-4-ways"
@@ -608,35 +608,35 @@
       "recipes": [
         {
           "title": "Caramelized Bananas",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "caramelized-bananas",
           "chapter": "desserts",
           "slug": "caramelized-bananas"
         },
         {
           "title": "Coconut Chocolate Cookies",
-          "badge": "Makes Forty",
+          "serving": "Makes Forty",
           "image": "coconut-chocolate-cookies",
           "chapter": "desserts",
           "slug": "coconut-chocolate-cookies"
         },
         {
           "title": "Peach Coffee Cake",
-          "badge": "For Twelve",
+          "serving": "For Twelve",
           "image": "peach-coffee-cake",
           "chapter": "desserts",
           "slug": "peach-coffee-cake"
         },
         {
           "title": "Fast Melon Sorbet",
-          "badge": "For Four",
+          "serving": "For Four",
           "image": "fast-melon-sorbet",
           "chapter": "desserts",
           "slug": "fast-melon-sorbet"
         },
         {
           "title": "Avocado Milkshake",
-          "badge": "For Two",
+          "serving": "For Two",
           "image": "avocado-milkshake",
           "chapter": "desserts",
           "slug": "avocado-milkshake"
@@ -652,35 +652,35 @@
       "recipes": [
         {
           "title": "Peanut Sauce",
-          "badge": "Makes One Cup",
+          "serving": "Makes One Cup",
           "image": "peanut-sauce",
           "chapter": "flavor",
           "slug": "peanut-sauce"
         },
         {
           "title": "Spice Oil",
-          "badge": "Makes One Cup",
+          "serving": "Makes One Cup",
           "image": "spice-oil",
           "chapter": "flavor",
           "slug": "spice-oil"
         },
         {
           "title": "Salsa",
-          "badge": "Makes Three Cups",
+          "serving": "Makes Three Cups",
           "image": "salsa",
           "chapter": "flavor",
           "slug": "salsa"
         },
         {
           "title": "Raita",
-          "badge": "Makes Two Cups",
+          "serving": "Makes Two Cups",
           "image": "raita",
           "chapter": "flavor",
           "slug": "raita"
         },
         {
           "title": "Tzatziki",
-          "badge": "Makes Two Cups",
+          "serving": "Makes Two Cups",
           "image": "tzatziki",
           "chapter": "flavor",
           "slug": "tzatziki"
@@ -738,7 +738,7 @@
         "chapter": "big-batch",
         "title": "Spicy Pulled Pork",
         "slug": "spicy-pulled-pork",
-        "badge": "For Ten",
+        "serving": "For Ten",
         "image": "spicy-pulled-pork",
         "cost": {
           "total": "$14",
@@ -785,7 +785,7 @@
         "chapter": "big-batch",
         "title": "Deviled Eggs 6 Ways",
         "slug": "deviled-eggs-6-ways",
-        "badge": "Makes Twenty-four Half Eggs",
+        "serving": "Makes Twenty-four Half Eggs",
         "image": "deviled-eggs",
         "cost": {
           "total": "$3.60",
@@ -879,7 +879,7 @@
         "chapter": "big-batch",
         "title": "Perogies",
         "slug": "perogies",
-        "badge": "Makes Sixty to Seventy-two",
+        "serving": "Makes Sixty to Seventy-two",
         "image": "perogies",
         "cost": {
           "total": "$14",
@@ -939,7 +939,7 @@
         "chapter": "big-batch",
         "title": "Dumplings 2 Ways",
         "slug": "dumplings-2-ways",
-        "badge": "Makes Sixty",
+        "serving": "Makes Sixty",
         "image": "dumplings",
         "cost": {
           "total": "$7.20",
@@ -1005,7 +1005,7 @@
         "chapter": "breakfast",
         "title": "Tomato Scrambled Eggs",
         "slug": "tomato-scrambled-eggs",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "tomato-scrambled-eggs",
         "cost": {
           "total": "$3.60",
@@ -1041,7 +1041,7 @@
         "chapter": "breakfast",
         "title": "Broiled Grapefruit",
         "slug": "broiled-grapefruit",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "broiled-grapefruit",
         "cost": {
           "total": "$2",
@@ -1069,7 +1069,7 @@
         "chapter": "breakfast",
         "title": "Omelette",
         "slug": "omelette",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "omelette",
         "cost": {
           "total": "$1.60",
@@ -1101,7 +1101,7 @@
         "chapter": "breakfast",
         "title": "Banana Pancakes",
         "slug": "banana-pancakes",
-        "badge": "Makes Ten to Fourteen Pancakes",
+        "serving": "Makes Ten to Fourteen Pancakes",
         "image": "banana-pancakes",
         "cost": {
           "total": "$2.80",
@@ -1138,7 +1138,7 @@
         "chapter": "breakfast",
         "title": "Chocolate Zucchini Muffins",
         "slug": "chocolate-zucchini-muffins",
-        "badge": "Makes Twenty-four Small Muffins",
+        "serving": "Makes Twenty-four Small Muffins",
         "image": "chocolate-zucchini-muffins",
         "cost": {
           "total": "$4.80",
@@ -1178,7 +1178,7 @@
         "chapter": "breakfast",
         "title": "Whole-Wheat Jalapeño Cheddar Scones",
         "slug": "whole-wheat-jalapeno-cheddar-scones",
-        "badge": "Makes Six",
+        "serving": "Makes Six",
         "image": "whole-wheat-jalapeno-cheddar-scones",
         "cost": {
           "total": "$4.50",
@@ -1221,7 +1221,7 @@
         "chapter": "breakfast",
         "title": "Peanut Butter and Jelly Granola Bars",
         "slug": "peanut-butter-and-jelly-granola-bars",
-        "badge": "Makes Twelve",
+        "serving": "Makes Twelve",
         "image": "peanut-butter-and-jelly-granola-bars",
         "cost": {
           "total": "$3.60",
@@ -1265,7 +1265,7 @@
         "chapter": "breakfast",
         "title": "Egg Sandwich with Mushroom Hash",
         "slug": "egg-sandwich-with-mushroom-hash",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "egg-sandwich-with-mushroom-hash",
         "cost": {
           "total": "$3.60",
@@ -1354,7 +1354,7 @@
         "chapter": "desserts",
         "title": "Caramelized Bananas",
         "slug": "caramelized-bananas",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "caramelized-bananas",
         "cost": {
           "total": "$0.70",
@@ -1380,7 +1380,7 @@
         "chapter": "desserts",
         "title": "Coconut Chocolate Cookies",
         "slug": "coconut-chocolate-cookies",
-        "badge": "Makes Forty",
+        "serving": "Makes Forty",
         "image": "coconut-chocolate-cookies",
         "cost": {
           "total": "$10",
@@ -1420,7 +1420,7 @@
         "chapter": "desserts",
         "title": "Peach Coffee Cake",
         "slug": "peach-coffee-cake",
-        "badge": "For Twelve",
+        "serving": "For Twelve",
         "image": "peach-coffee-cake",
         "cost": {
           "total": "$9",
@@ -1461,7 +1461,7 @@
         "chapter": "desserts",
         "title": "Fast Melon Sorbet",
         "slug": "fast-melon-sorbet",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "fast-melon-sorbet",
         "cost": {
           "total": "$2.40",
@@ -1484,7 +1484,7 @@
         "chapter": "desserts",
         "title": "Avocado Milkshake",
         "slug": "avocado-milkshake",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "avocado-milkshake",
         "cost": {
           "total": "$2.30",
@@ -1513,7 +1513,7 @@
         "chapter": "dinner",
         "title": "Creamy Zucchini Fettuccine",
         "slug": "creamy-zucchini-fettuccine",
-        "badge": "For Three",
+        "serving": "For Three",
         "image": "creamy-zucchini-fettuccine",
         "cost": {
           "total": "$3.50",
@@ -1548,7 +1548,7 @@
         "chapter": "dinner",
         "title": "Pasta with Eggplant and Tomato",
         "slug": "pasta-with-eggplant-and-tomato",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "pasta-with-eggplant-and-tomato",
         "cost": {
           "total": "$5",
@@ -1583,7 +1583,7 @@
         "chapter": "dinner",
         "title": "Chana Masala",
         "slug": "chana-masala",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "chana-masala",
         "cost": {
           "total": "$3",
@@ -1629,7 +1629,7 @@
         "chapter": "dinner",
         "title": "Black-Eyed Peas and Collards",
         "slug": "black-eyed-peas-and-collards",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "black-eyed-peas-and-collards",
         "cost": {
           "total": "$5",
@@ -1663,7 +1663,7 @@
         "chapter": "dinner",
         "title": "Vegetable Jambalaya",
         "slug": "vegetable-jambalaya",
-        "badge": "For Six",
+        "serving": "For Six",
         "image": "vegetable-jambalaya",
         "cost": {
           "total": "$3.90",
@@ -1714,7 +1714,7 @@
         "chapter": "dinner",
         "title": "Filipino Chicken Adobo",
         "slug": "filipino-chicken-adobo",
-        "badge": "For Eight",
+        "serving": "For Eight",
         "image": "filipino-chicken-adobo",
         "cost": {
           "total": "$10.40",
@@ -1769,7 +1769,7 @@
         "chapter": "dinner",
         "title": "Baked Beans 2 Ways",
         "slug": "baked-beans-2-ways",
-        "badge": "For Two, or Four as a Side",
+        "serving": "For Two, or Four as a Side",
         "image": "baked-beans",
         "cost": {
           "total": "$3",
@@ -1829,7 +1829,7 @@
         "chapter": "dinner",
         "title": "Half-Veggie Burgers",
         "slug": "half-veggie-burgers",
-        "badge": "For Eight",
+        "serving": "For Eight",
         "image": "half-veggie-burgers",
         "cost": {
           "total": "$7.20",
@@ -1862,7 +1862,7 @@
         "chapter": "dinner",
         "title": "Beef Stroganoff",
         "slug": "beef-stroganoff",
-        "badge": "For Six",
+        "serving": "For Six",
         "image": "beef-stroganoff",
         "cost": {
           "total": "$16.50",
@@ -1912,7 +1912,7 @@
         "chapter": "dinner",
         "title": "Tofu Hot Pot",
         "slug": "tofu-hot-pot",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "tofu-hot-pot",
         "cost": {
           "total": "$7.20",
@@ -1967,7 +1967,7 @@
         "chapter": "dinner",
         "title": "Deconstructed Cabbage Rolls",
         "slug": "deconstructed-cabbage-rolls",
-        "badge": "For Six",
+        "serving": "For Six",
         "image": "deconstructed-cabbage-rolls",
         "cost": {
           "total": "$9",
@@ -2020,7 +2020,7 @@
         "chapter": "dinner",
         "title": "Savory Summer Cobbler",
         "slug": "savory-summer-cobbler",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "savory-summer-cobbler",
         "cost": {
           "total": "$8",
@@ -2070,7 +2070,7 @@
         "chapter": "dinner",
         "title": "Cauliflower Cheese",
         "slug": "cauliflower-cheese",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "cauliflower-cheese",
         "cost": {
           "total": "$6.60",
@@ -2118,7 +2118,7 @@
         "chapter": "dinner",
         "title": "Vegetable Quiche, Hold the Crust",
         "slug": "vegetable-quiche-hold-the-crust",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "vegetable-quiche-hold-the-crust",
         "cost": {
           "total": "$6",
@@ -2155,7 +2155,7 @@
         "chapter": "dinner",
         "title": "Shrimp and Grits",
         "slug": "shrimp-and-grits",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "shrimp-and-grits",
         "cost": {
           "total": "$12",
@@ -2198,7 +2198,7 @@
         "chapter": "dinner",
         "title": "Spicy, Crunchy, Creamy Polenta",
         "slug": "spicy-crunchy-creamy-polenta",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "spicy-crunchy-creamy-polenta",
         "cost": {
           "total": "$3.50",
@@ -2236,7 +2236,7 @@
         "chapter": "dinner",
         "title": "Roast Chicken",
         "slug": "roast-chicken",
-        "badge": "For Six",
+        "serving": "For Six",
         "image": "roast-chicken",
         "cost": {
           "total": "$8-15",
@@ -2334,7 +2334,7 @@
         "chapter": "dinner",
         "title": "Roasted Potatoes with Chilies",
         "slug": "roasted-potatoes-with-chilies",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "roasted-potatoes-with-chilies-1",
         "cost": {
           "total": "$3",
@@ -2365,7 +2365,7 @@
         "chapter": "dinner",
         "title": "Spicy Broiled Tilapia with Lime",
         "slug": "spicy-broiled-tilapia-with-lime",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "spicy-broiled-tilapia-with-lime",
         "cost": {
           "total": "$9",
@@ -2399,7 +2399,7 @@
         "chapter": "drinks",
         "title": "Agua Fresca",
         "slug": "agua-fresca",
-        "badge": "Serves Four to Six",
+        "serving": "Serves Four to Six",
         "image": "agua-fresca",
         "overview": "<p>Refreshing and hydrating, these beautiful drinks are great at a party, and they can help you use up any fruit that you won’t be able to eat before it goes off. This is certainly not the master recipe, just a good starting point.</p><p>For a very lightly flavored agua fresca, just mix the water and fruit together. Done! Obviously, if you want more fruit flavor, then use less water; if you want less flavor, then use more water.</p><p>I usually run my agua fresca through the blender, however. If you want the drink to be clear, strain the pulpy leftovers of the fruit after blending. If you’re using blueberries or oranges or other fruit with a skin, you’ll almost certainly want to strain it.</p><p>For some fruits, you can also choose to leave the pulp: it’s particularly great when making a melon agua fresca since it mostly disappears.</p><p>Serve over ice. Try some of the variations I’ve suggested or whatever fruits you like!</p>",
         "ingredients": [
@@ -2439,7 +2439,7 @@
         "chapter": "drinks",
         "title": "Smoothies 4 Ways",
         "slug": "smoothies-4-ways",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "smoothies",
         "overview": "<p>I have four types of smoothies here, but of course there are many more. Give these a try when you have overripe fruit that you wouldn’t eat otherwise. Add a teaspoon of vanilla to any of these and they will seem incredibly professional. The frozen melon drinks, in particular, are the most refreshing treat on a hot summer day.</p><h2>Drinkable Yogurt</h2><p>If you like the grocery store’s yogurt drinks, try making these at home for less! You don’t even need to blend them—just add the juice and yogurt to a jar, then shake.</p><ul><li>½ cup plain yogurt</li><li>½ cup fruit juice</li></ul><h2>Melon Smoothie</h2><p>When you buy a melon, dice and freeze whatever you don’t eat. Pull it out and blend it with a bit of water or juice to thin it out. It’s like a better slushy!</p><ul><li>1 cup frozen melon</li><li>½ cup water or juice</li><li>1 tsp vanilla</li></ul><h2>Berry Smoothie</h2><p>Blend until smooth, then adjust with more berries or milk to your taste.</p><ul><li>½ cup yogurt</li><li>1 cup frozen berries</li><li>milk or juice to thin as needed</li></ul><h2>Mango Lassi (not pictured)</h2><p>Blend the mango and yogurt together. If it’s too thick to drink with a straw, add some milk to thin it out. A ripe and juicy mango combined with thin yogurt is often all you need. Be warned: if you make this for children, they will request it over and over.</p><ul><li>1 mango, diced</li><li>1 cup yogurt</li><li>milk to thin as needed</li></ul><p>TODO(layout): Multiple variants with ingredients.</p>"
       },
@@ -2447,7 +2447,7 @@
         "chapter": "flavor",
         "title": "Peanut Sauce",
         "slug": "peanut-sauce",
-        "badge": "Makes One Cup",
+        "serving": "Makes One Cup",
         "image": "peanut-sauce",
         "cost": {
           "total": "$3",
@@ -2480,7 +2480,7 @@
         "chapter": "flavor",
         "title": "Spice Oil",
         "slug": "spice-oil",
-        "badge": "Makes One Cup",
+        "serving": "Makes One Cup",
         "image": "spice-oil",
         "cost": {
           "total": "$3.50",
@@ -2513,7 +2513,7 @@
         "chapter": "flavor",
         "title": "Salsa",
         "slug": "salsa",
-        "badge": "Makes Three Cups",
+        "serving": "Makes Three Cups",
         "image": "salsa",
         "cost": {
           "total": "$2.25",
@@ -2554,7 +2554,7 @@
         "chapter": "flavor",
         "title": "Raita",
         "slug": "raita",
-        "badge": "Makes Two Cups",
+        "serving": "Makes Two Cups",
         "image": "raita",
         "cost": {
           "total": "$2.50",
@@ -2590,7 +2590,7 @@
         "chapter": "flavor",
         "title": "Tzatziki",
         "slug": "tzatziki",
-        "badge": "Makes Two Cups",
+        "serving": "Makes Two Cups",
         "image": "tzatziki",
         "cost": {
           "total": "$3.50",
@@ -2629,7 +2629,7 @@
         "chapter": "handheld",
         "title": "Cauliflower Tacos",
         "slug": "cauliflower-tacos",
-        "badge": "For Two to Three",
+        "serving": "For Two to Three",
         "image": "cauliflower-tacos",
         "cost": {
           "total": "$6",
@@ -2657,7 +2657,7 @@
         "chapter": "handheld",
         "title": "Potato Leek Pizza",
         "slug": "potato-leek-pizza",
-        "badge": "Makes Four Pizzas",
+        "serving": "Makes Four Pizzas",
         "image": "potato-leek-pizza",
         "cost": {
           "total": "$9",
@@ -2692,7 +2692,7 @@
         "chapter": "handheld",
         "title": "Broccoli Rabe and Mozzarella Calzones",
         "slug": "broccoli-rabe-and-mozzarella-calzones",
-        "badge": "Makes Four Calzones",
+        "serving": "Makes Four Calzones",
         "image": "broccoli-rabe-and-mozzarella-calzones",
         "cost": {
           "total": "$6",
@@ -2727,7 +2727,7 @@
         "chapter": "handheld",
         "title": "Broccoli, Egg, and Cheddar Empanadas",
         "slug": "broccoli-egg-and-cheddar-empanadas",
-        "badge": "Makes Twelve",
+        "serving": "Makes Twelve",
         "image": "broccoli-egg-and-cheddar-empanadas",
         "cost": {
           "total": "$7.20",
@@ -2776,7 +2776,7 @@
         "chapter": "handheld",
         "title": "Potato and Kale Rolls with Raita",
         "slug": "potato-and-kale-rolls-with-raita",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "potato-and-kale-rolls-with-raita",
         "cost": {
           "total": "$5.25",
@@ -2826,7 +2826,7 @@
         "chapter": "salad",
         "title": "Broiled Eggplant Salad",
         "slug": "broiled-eggplant-salad",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "broiled-eggplant-salad",
         "cost": {
           "total": "$4.50",
@@ -2855,7 +2855,7 @@
         "chapter": "salad",
         "title": "Kale Salad",
         "slug": "kale-salad",
-        "badge": "For Two, or Four as a Side",
+        "serving": "For Two, or Four as a Side",
         "image": "kale-salad-1",
         "cost": {
           "total": "$4.50",
@@ -2898,7 +2898,7 @@
         "chapter": "salad",
         "title": "Ever-Popular Potato Salad",
         "slug": "ever-popular-potato-salad",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "ever-popular-potato-salad",
         "cost": {
           "total": "$3",
@@ -2943,7 +2943,7 @@
         "chapter": "salad",
         "title": "Spicy Panzanella",
         "slug": "spicy-panzanella",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "spicy-panzanella",
         "cost": {
           "total": "$5.20",
@@ -2996,7 +2996,7 @@
         "chapter": "salad",
         "title": "Cold (and Spicy?) Asian Noodles",
         "slug": "cold-and-spicy-asian-noodles",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "cold-and-spicy-asian-noodles",
         "cost": {
           "total": "$5",
@@ -3038,7 +3038,7 @@
         "chapter": "salad",
         "title": "Taco Salad",
         "slug": "taco-salad",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "taco-salad",
         "cost": {
           "total": "$5.20",
@@ -3086,7 +3086,7 @@
         "chapter": "salad",
         "title": "Beet and Chickpea Salad",
         "slug": "beet-and-chickpea-salad",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "beet-and-chickpea-salad",
         "cost": {
           "total": "$3.50",
@@ -3122,7 +3122,7 @@
         "chapter": "salad",
         "title": "Broccoli Apple Salad",
         "slug": "broccoli-apple-salad",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "broccoli-apple-salad",
         "cost": {
           "total": "$3.20",
@@ -3168,7 +3168,7 @@
         "chapter": "salad",
         "title": "Charred Summer Salad",
         "slug": "charred-summer-salad",
-        "badge": "For Two, or Four as a Side",
+        "serving": "For Two, or Four as a Side",
         "image": "charred-summer-salad",
         "cost": {
           "total": "$5.50",
@@ -3208,7 +3208,7 @@
         "chapter": "snacks-sides-and-small-bites",
         "title": "Jacket Sweet Potato",
         "slug": "jacket-sweet-potato",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "jacket-sweet-potato",
         "cost": {
           "total": "$4.80",
@@ -3237,7 +3237,7 @@
         "chapter": "snacks-sides-and-small-bites",
         "title": "Smoky and Spicy Roasted Cauliflower",
         "slug": "smoky-and-spicy-roasted-cauliflower",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "smoky-and-spicy-roasted-cauliflower",
         "cost": {
           "total": "$3.40",
@@ -3267,7 +3267,7 @@
         "chapter": "snacks-sides-and-small-bites",
         "title": "Spicy Green Beans",
         "slug": "spicy-green-beans",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "spicy-green-beans",
         "cost": {
           "total": "$1.30",
@@ -3304,7 +3304,7 @@
         "chapter": "snacks-sides-and-small-bites",
         "title": "Mexican Street Corn",
         "slug": "mexican-street-corn",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "mexican-street-corn",
         "cost": {
           "total": "$4",
@@ -3336,7 +3336,7 @@
         "chapter": "snacks-sides-and-small-bites",
         "title": "Green Chili and Cheddar Quesadillas",
         "slug": "green-chili-and-cheddar-quesadillas",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "green-chili-and-cheddar-quesadillas",
         "cost": {
           "total": "$3.50",
@@ -3363,7 +3363,7 @@
         "chapter": "snacks-sides-and-small-bites",
         "title": "Cornmeal Crusted Veggies",
         "slug": "cornmeal-crusted-veggies",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "cornmeal-crusted-veggies-1",
         "cost": {
           "total": "$2.60",
@@ -3412,7 +3412,7 @@
         "chapter": "snacks-sides-and-small-bites",
         "title": "Brussels Sprout Hash and Eggs",
         "slug": "brussels-sprout-hash-and-eggs",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "brussels-sprout-hash-and-eggs",
         "cost": {
           "total": "$2.80",
@@ -3444,7 +3444,7 @@
         "chapter": "snacks-sides-and-small-bites",
         "title": "Poutine",
         "slug": "poutine",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "poutine",
         "cost": {
           "total": "$7",
@@ -3551,7 +3551,7 @@
         "chapter": "soup",
         "title": "Dal",
         "slug": "dal",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "dal",
         "cost": {
           "total": "$2.40",
@@ -3586,7 +3586,7 @@
         "chapter": "soup",
         "title": "Corn Soup",
         "slug": "corn-soup",
-        "badge": "For Four to Six",
+        "serving": "For Four to Six",
         "image": "corn-soup",
         "cost": {
           "total": "$5",
@@ -3639,7 +3639,7 @@
         "chapter": "soup",
         "title": "French Onion Soup",
         "slug": "french-onion-soup",
-        "badge": "For Six",
+        "serving": "For Six",
         "image": "french-onion-soup",
         "cost": {
           "total": "$9",
@@ -3686,7 +3686,7 @@
         "chapter": "soup",
         "title": "Lightly Curried Butternut Squash Soup",
         "slug": "lightly-curried-butternut-squash-soup",
-        "badge": "For Four",
+        "serving": "For Four",
         "image": "lightly-curried-butternut-squash-soup",
         "cost": {
           "total": "$6",
@@ -3735,7 +3735,7 @@
         "chapter": "staples",
         "title": "Flour Tortillas",
         "slug": "flour-tortillas",
-        "badge": "Makes Twenty-four Small",
+        "serving": "Makes Twenty-four Small",
         "image": "flour-tortillas",
         "cost": {
           "total": "$1.70",
@@ -3767,7 +3767,7 @@
         "chapter": "staples",
         "title": "Roti",
         "slug": "roti",
-        "badge": "Makes Sixteen",
+        "serving": "Makes Sixteen",
         "image": "roti",
         "cost": {
           "total": "$0.50",
@@ -3797,7 +3797,7 @@
         "chapter": "staples",
         "title": "Pizza Dough 2 Ways",
         "slug": "pizza-dough-2-ways",
-        "badge": "Makes Four Individual Pizzas",
+        "serving": "Makes Four Individual Pizzas",
         "image": "pizza-dough",
         "cost": {
           "total": "$0.80",
@@ -3826,7 +3826,7 @@
         "chapter": "staples",
         "title": "Fresh Pasta",
         "slug": "fresh-pasta",
-        "badge": "For One Large Entree",
+        "serving": "For One Large Entree",
         "image": "fresh-pasta-3",
         "cost": {
           "total": "$0.35",
@@ -3859,7 +3859,7 @@
         "chapter": "staples",
         "title": "Best Tomato Sauce",
         "slug": "best-tomato-sauce",
-        "badge": "Makes Three and a Half Cups",
+        "serving": "Makes Three and a Half Cups",
         "image": "best-tomato-sauce",
         "cost": {
           "total": "$3.50",
@@ -3888,7 +3888,7 @@
         "chapter": "staples",
         "title": "Chorizo and White Bean Ragu",
         "slug": "chorizo-and-white-bean-ragu",
-        "badge": "Makes Three Cups",
+        "serving": "Makes Three Cups",
         "image": "chorizo-and-white-bean-ragu",
         "cost": {
           "total": "$3.75",
@@ -3919,7 +3919,7 @@
         "chapter": "staples",
         "title": "Rainbow Rice 3 Ways",
         "slug": "rainbow-rice-3-ways",
-        "badge": "For Two",
+        "serving": "For Two",
         "image": "rainbow-rice",
         "cost": {
           "total": "$1.50",

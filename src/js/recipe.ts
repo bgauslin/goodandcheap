@@ -36,7 +36,7 @@ class GoodAndCheapRecipe extends LitElement {
   protected render() {
     if (!this.data) return;
 
-    const {badge, cost, image, ingredients, overview, steps, title} = this.data;
+    const {badge, cost, image, ingredients, overview, serving, steps, title} = this.data;
 
     return html`
       <div class="cover">
@@ -49,8 +49,9 @@ class GoodAndCheapRecipe extends LitElement {
       </div>
 
       <div class="content">
+        ${badge ? html`<div class="badge">${badge}</div>` : nothing}
         <h1>${unsafeHTML(title)}</h1>
-        <div class="badge">${badge}</div>
+        ${serving ? html`<div class="serving">${serving}</div>` : nothing}
 
         ${overview ? html`
         <section class="overview" id="overview">

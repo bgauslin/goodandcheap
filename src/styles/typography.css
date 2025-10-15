@@ -18,7 +18,7 @@ h1 {
 /* Headings. */
 .previews .title,
 gc-page h2,
-gc-recipe :is(.badge, .cost, h2, h3) {
+gc-recipe :is(.badge, .cost, .serving, h2, h3) {
   font-family: 'Futura Bold';
   font-size: var(--subhead-font-size);
   line-height: 1.3;
@@ -30,12 +30,12 @@ gc-recipe :is(.badge, .cost, h2, h3) {
 .count,
 gc-page li,
 [id='ingredients'] li,
-.previews :is(.badge, .counter) {
+.previews :is(.badge, .counter, .serving) {
   font-family: 'Futura Book'; 
 }
 
 .count,
-.previews :is(.badge, .counter) {
+.previews :is(.badge, .counter, .serving) {
   font-size: var(--small-font-size);
   letter-spacing: .1em;
   text-transform: uppercase;
