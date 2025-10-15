@@ -1,12 +1,11 @@
 gc-recipe {
   .cost {
     background-color: var(--content-background);
-    inset-block: 2rem auto;
-    inset-inline: auto 0;
-    margin: 0;
+    grid-area: 1 / 1 / -1 / -1;
+    margin-block: 3rem 0;
     padding-block: .5rem;
     padding-inline: 1rem;
-    position: absolute;
+    place-self: start end;
     z-index: 1;
   }
 
