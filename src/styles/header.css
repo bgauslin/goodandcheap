@@ -25,7 +25,7 @@ header {
   }
 
   picture > img {
-    block-size: var(--header-size);
+    block-size: 2.5em;
     inline-size: auto;
   }
 }
