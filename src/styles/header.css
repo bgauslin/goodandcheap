@@ -40,7 +40,8 @@ header {
   background-color: var(--gray5);
   block-size: var(--button-size);
   border-radius: var(--button-size);
-  display: flex;
+  display: grid;
+  grid: auto / var(--button-size) auto;
   grid-area: back;
   min-inline-size: var(--button-size);
   padding-inline: 0;
@@ -55,16 +56,16 @@ header {
     pointer-events: none;
   }
 
-  span {
-    display: var(--back-label-display);
-    margin-inline: 0 1rem;
+  svg {
+    block-size: 1.75em;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 3px;
   }
 
-  svg {
-    fill: none;
-    flex: 0 0 1.5rem;
-    margin-inline: .25rem 0;
-    stroke: currentColor;
-    stroke-width: 3px;
+  span {
+    display: var(--back-label-display);
+    margin-inline: -.5em 1rem;
   }
 }
