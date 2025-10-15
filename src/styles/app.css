@@ -5,6 +5,7 @@ gc-app {
   block-size: 100dvh;
   display: grid;
   grid: var(--app-grid);
+  margin-inline: var(--app-margin);
 }
 
 /* ---------------------------------------- */
@@ -54,6 +55,10 @@ gc-app > main {
 .content {
   grid-area: content;
   padding-inline: var(--gap);
+}
+
+gc-chapter .count {
+  margin-block: 2rem 1em;
 }
 
 /* ---------------------------------------- */

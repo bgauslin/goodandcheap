@@ -1,10 +1,12 @@
 .previews {
+  border: var(--previews-border);
   border-radius: var(--previews-border-radius);
   display: grid; 
   gap: var(--previews-gap);
   grid: var(--previews-grid);
   list-style: none;
   margin-block: 0;
+  margin-inline: var(--previews-margin);
   overflow: hidden;
   padding: 0;
 
@@ -14,7 +16,7 @@
   }
 
   li:not(:last-child) .copy {
-    border-bottom: var(--previews-border);
+    border-bottom: var(--preview-border);
   }
 
   a {
