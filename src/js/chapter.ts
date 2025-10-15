@@ -28,12 +28,12 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
 
     let items = '';
     for (const [index, recipe] of recipes.entries()) {
-      const {badge, image, serving, slug, title} = recipe;
+      const {badge, chapter, image, serving, slug, title} = recipe;
       const badge_ = badge ? `<p class="badge">${badge}</p>` : '';
       const serving_ = serving ? `<p class="serving">${serving}</p>` : '';
       items += `
         <li>
-          <a href="${slug}" data-type="recipe">
+          <a href="./${chapter}/${slug}">
             <figure>
               <img src="./images/${image}@thumb.webp" alt="">
             </figure>

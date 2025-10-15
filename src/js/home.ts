@@ -62,8 +62,8 @@ class GoodAndCheapHome extends LitElement {
         ${this.renderTabControl('About', 'info')}
       </div>
 
-      ${this.renderList('chapter', chapters, 'recipes', true)}
-      ${this.renderList('page', pages, 'info')}
+      ${this.renderList(chapters, 'recipes', true)}
+      ${this.renderList(pages, 'info')}
     `;
   }
 
@@ -78,7 +78,7 @@ class GoodAndCheapHome extends LitElement {
       `;
   }
 
-  private renderList(type: string, items: Item[], id: string, count:boolean = false) {
+  private renderList(items: Item[], id: string, showCount:boolean = false) {
     return html`
       <div
         aria-hidden="${this.tab !== id}"
@@ -90,14 +90,14 @@ class GoodAndCheapHome extends LitElement {
           const {count, image, slug, title} = item;
           return html`
             <li>
-              <a href="${slug}" data-type="${type}">
+              <a href="./${slug}">
                 <figure>
                   <img src="./images/${image}@thumb.webp" alt="">
                 </figure>
                 <div class="copy">
                   <div class="description">
                     <p class="title">${unsafeHTML(title)}</p>
-                    ${count ? html`<p class="count">${count} Recipes</p>` : nothing}
+                    ${showCount ? html`<p class="count">${count} Recipes</p>` : nothing}
                   </div>
                 </div>
               </a>

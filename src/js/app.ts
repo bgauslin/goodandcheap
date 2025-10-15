@@ -74,26 +74,27 @@ class GoodAndCheapApp extends LitElement {
     event.preventDefault();
 
     const {target} = event;
-    const type = (<HTMLElement>target).dataset.type;
+    const href = (<HTMLAnchorElement>target).getAttribute('href');
 
-    if (!['chapter', 'page', 'recipe'].includes(type)) return;
+    if (!href) return;
 
+    const segments = href.split('/');
+    const slug = segments[segments.length - 1];
+    
     const {chapters, pages, recipes} = this.data;
-    const slug = (<HTMLAnchorElement>target).getAttribute('href');
-
     const chapter = chapters.find((chapter: Chapter) => chapter.slug === slug);
     const page = pages.find((page: Page) => page.slug === slug);
     const recipe = recipes.find((recipe: Recipe) => recipe.slug === slug);
 
-    if (type === 'chapter') {
+    if (chapter) {
       this.context = 'chapter';
       this.updateComponent(this.chapterElement, chapter);
       this.updateAddressBar(slug);
-    } else if (type === 'page') {
+    } else if (page) {
       this.context = 'page';
       this.updateComponent(this.pageElement, page);
       this.updateAddressBar(slug);
-    } else if (type === 'recipe') {
+    } else if (recipe) {
       this.context = 'recipe';
       this.updateComponent(this.recipeElement, recipe);
       this.updateAddressBar(slug, recipe.chapter);

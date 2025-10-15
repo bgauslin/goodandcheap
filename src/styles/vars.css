@@ -10,7 +10,7 @@
   /* Theming. */
   --link-color: var(--text-color);
   --link-focus-color: var(--brand-color);
-  --link-visited-color: var(--text-color);  /* TODO: Update value. */
+  --link-visited-color: rgb(142, 142, 147);  /* Gray1 dark. */
 
   /* Global properties. */
   --transition: .25s;
@@ -62,6 +62,7 @@
     --brand-color: #ed4d62;
     --content-background: var(--gray6);
     --header-background: black;
+    --link-visited-color: rgb(174, 174, 178);  /* Gray2 light. */
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */
     --text-color-inverted: black;
   }
