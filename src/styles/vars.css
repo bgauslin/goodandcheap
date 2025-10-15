@@ -21,17 +21,18 @@
   --brand-color: #e5001f;
   --content-background: white;
   --footer-background: var(--body-background);
-  --header-background: rgba(242, 242, 247, .95);
+  --header-background: var(--gray6);
   --image-background: var(--gray4);
   --text-color: rgb(44, 44, 46);  /* Gray5 dark. */
 
   /* Layout. */
   --app-grid: 'header header header' var(--header-size) '. main .' 1fr / 1fr minmax(auto, var(--section-max-size)) 1fr;
   --back-label-display: none;
+  --gap: clamp(1em, 1em + 1vw, 3em);
   --header-gap: .5rem;
   --header-grid: '. back wordmark . .' var(--header-size) / 0 minmax(0, 1fr) auto 1fr 0;
   --header-position: sticky;
-  --header-size: 3rem;
+  --header-size: clamp(3rem, 3rem + 1vw, 5rem);
   --main-block-size: calc(100dvh - var(--header-size));
   --previews-border: 1px solid var(--border-color);
   --previews-border-radius: 1rem;
@@ -59,17 +60,19 @@
     --border-color: var(--gray3);
     --brand-color: #ed4d62;
     --content-background: var(--gray6);
-    --header-background: rgba(0, 0, 0, .8);    
+    --header-background: black;
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */
   }
 }
 
 /* 45rem = 720px */
+/* 48rem = 768px */
+/* 50rem = 800px */
 /* 60rem = 960px */
 /* 80rem = 1280px */
 /* 100rem = 1600px */
 
-@media (min-width: 45rem) {
+@media (min-width: 50rem) {
   :root {
     --back-label-display: unset;
     --header-gap: 0;

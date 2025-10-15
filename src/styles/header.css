@@ -5,7 +5,7 @@ header {
   background-color: var(--header-background);
   grid-area: header;
   inset-block: 0 auto;
-  place-self: center stretch;
+  place-self: end stretch;
   position: var(--header-position);
   z-index: 2;
 

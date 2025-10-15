@@ -53,7 +53,7 @@ gc-app > main {
 /* View component content. */
 .content {
   grid-area: content;
-  padding-inline: 1rem;
+  padding-inline: var(--gap);
 }
 
 /* ---------------------------------------- */
