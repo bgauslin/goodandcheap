@@ -1,5 +1,4 @@
 footer {
-  background-color: var(--footer-background);
   display: grid;
   grid: 1fr / 1fr;
   margin-inline: -1rem;

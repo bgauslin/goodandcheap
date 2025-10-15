@@ -29,8 +29,9 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
     let items = '';
     for (const [index, recipe] of recipes.entries()) {
       const {badge, chapter, image, serving, slug, title} = recipe;
-      const badge_ = badge ? `<p class="badge">${badge}</p>` : '';
-      const serving_ = serving ? `<p class="serving">${serving}</p>` : '';
+      let callout = `<p class="serving">${serving}</p>`;
+      if (badge) callout = `<p class="badge">${badge}</p>`;
+
       items += `
         <li>
           <a href="./${chapter}/${slug}">
@@ -39,9 +40,8 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
             </figure>
             <div class="copy">
               <div class="description">
-                ${badge_}
                 <p class="title">${title}</p>
-                ${serving_}
+                ${callout}
               </div>
               <div class="counter">${index + 1}</div>
             </div>

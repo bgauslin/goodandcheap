@@ -16,10 +16,15 @@ h1 {
 }
 
 /* Headings. */
-.previews .title,
 gc-page h2,
-gc-recipe :is(.badge, .cost, .serving, h2, h3) {
+.previews .title,
+gc-recipe :is(.cost, .serving, h2, h3) {
   font-family: 'Futura Bold';
+}
+
+gc-page h2,
+.previews .title,
+gc-recipe :is(.badge, .cost, .serving, h2, h3) {
   font-size: var(--subhead-font-size);
   line-height: 1.3;
   letter-spacing: .25em;
@@ -28,10 +33,10 @@ gc-recipe :is(.badge, .cost, .serving, h2, h3) {
 
 /* Various elements. */
 footer,
-.count,
 gc-page li,
+:is(.badge, .count),
 [id='ingredients'] li,
-.previews :is(.badge, .counter, .serving) {
+.previews :is(.counter, .serving) {
   font-family: 'Futura Book'; 
 }
 

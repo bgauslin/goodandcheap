@@ -58,12 +58,8 @@
     margin-block: 0;
   }
 
-  .badge {
-    margin-block: 0 .2em;
-  }
-
-  :is(.serving, .count) {
-    margin-block: .2em 0;
+  :is(.badge, .count, .serving) {
+    margin-block: .2em;
   }
 
   .counter {
