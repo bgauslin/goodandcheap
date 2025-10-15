@@ -60,14 +60,12 @@ class GoodAndCheapHome extends LitElement {
     return html`
       <div role="tablist">
         ${this.renderTabControl('Recipes', 'recipes')}
-        ${this.renderTabControl('More Info', 'info')}
+        ${this.renderTabControl('About', 'info')}
       </div>
 
-      <div class="content">
-        ${this.renderList('chapter', chapters, 'recipes', true)}
-        ${this.renderList('page', pages, 'info')}
-        ${unsafeHTML(footer)}
-      </div>
+      ${this.renderList('chapter', chapters, 'recipes', true)}
+      ${this.renderList('page', pages, 'info')}
+      ${unsafeHTML(footer)}
     `;
   }
 
