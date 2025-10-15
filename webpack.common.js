@@ -19,7 +19,6 @@ module.exports = {
         { from: 'src/root' },
         { from: 'src/api', to: 'api' },
         { from: 'src/images', to: 'images' },
-        { from: 'src/img', to: 'img' },
       ],
     }),
     new FontPreloadPlugin({

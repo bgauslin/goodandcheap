@@ -297,8 +297,8 @@ class GoodAndCheapApp extends LitElement {
           <picture>
             <source
               media="(prefers-color-scheme: dark)"
-              srcset="./img/wordmark-dark.png">
-            <img src="./img/wordmark.png" alt="Good And Cheap">
+              srcset="./wordmark-dark.png">
+            <img src="./wordmark.png" alt="Good And Cheap">
           </picture>
         </div>
       </header>
