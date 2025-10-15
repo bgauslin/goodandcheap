@@ -5,6 +5,7 @@ import './home';
 import './image';
 import './page';
 import './recipe';
+import './touch';
 
 // App stylesheet. (Required in JS entry file for Webpack.)
 import '../styles/index';

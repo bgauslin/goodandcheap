@@ -70,6 +70,7 @@ button {
   margin: 0;
   outline: none;
 
+  &.touch,
   &:focus-visible {
     background-color: var(--gray3);
   }
@@ -101,6 +102,7 @@ a {
     color: var(--link-focus-color);
   }
   
+  &.touch,
   &:active {
     color: var(--link-active-color, var(--link-focus-color));
   }

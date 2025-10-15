@@ -323,6 +323,7 @@ class GoodAndCheapApp extends LitElement {
           transition="${this.recipeTransition}"
           ?inert="${this.context !== 'recipe'}"></gc-recipe>
       </main>
+      <gc-touch></gc-touch>
     `;
   }
 }
