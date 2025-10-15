@@ -71,12 +71,14 @@ class GoodAndCheapApp extends LitElement {
    * Updates the app when a link is clicked.
    */
   private handleClick(event: Event) {
-    event.preventDefault();
-
     const {target} = event;
     const href = (<HTMLAnchorElement>target).getAttribute('href');
 
     if (!href) return;
+
+    if (href.startsWith('http')) return;
+
+    event.preventDefault();
 
     const segments = href.split('/');
     const slug = segments[segments.length - 1];
