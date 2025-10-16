@@ -535,7 +535,7 @@
         {
           "title": "Fresh Pasta",
           "serving": "For One Large Entree",
-          "image": "fresh-pasta-3",
+          "image": "fresh-pasta",
           "chapter": "staples",
           "slug": "fresh-pasta"
         },
@@ -4239,7 +4239,7 @@
         "title": "Fresh Pasta",
         "slug": "fresh-pasta",
         "serving": "For One Large Entree",
-        "image": "fresh-pasta-3",
+        "image": "fresh-pasta",
         "cost": {
           "total": "$0.35",
           "each": "$0.35",
