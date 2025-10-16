@@ -8,7 +8,7 @@ h2, .cost, .title {
   font-family: 'Futura Bold';
 }
 
-h3, button, .badge, .count, .serving, .ingredients > li {
+h3, button, .badge, .count, .counter, .serving, .ingredients > li {
   font-family: 'Futura Book';
 }
 

@@ -2,7 +2,7 @@ gc-recipe {
   .cost {
     background-color: var(--content-background);
     grid-area: 1 / 1 / -1 / -1;
-    margin-block: 3rem 0;
+    margin-block: 4rem 0;
     padding-block: .5rem;
     padding-inline: 1rem;
     place-self: start end;
@@ -37,6 +37,10 @@ gc-recipe {
     margin-block: 2em 1em;
   }
 
+  h2 + h3 {
+    margin-block-start: 0;
+  }
+
   p {
     margin-block: 0 1em;
   }
@@ -69,7 +73,7 @@ gc-recipe {
   }
 
   .photo > .cost {
+    margin-block: 2rem 0;
     place-self: start;
-    inset-block: 2rem auto;
   }
 }
