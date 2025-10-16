@@ -2727,7 +2727,7 @@
           "each": "$1.25",
           "units": "Cup"
         },
-        "overview": "<p>Raita is a traditional Indian sauce served with all kinds of things. It’s simple and surprisingly tasty. Spoon it onto chana masala, the potato and kale rolls, or anything spicy to cool things down.</p><ol><li>This recipe is extremely loose. Basically, just stir some of your favorite chopped vegetables into yogurt and add salt and pepper. Use this as a stepping stone to develop your own.</li><li>After you stir all the ingredients together, store the raita in a covered container in the fridge until you’re ready to use it.</li></ol>",
+        "overview": "<p>Raita is a traditional Indian sauce served with all kinds of things. It’s simple and surprisingly tasty. Spoon it onto chana masala, the potato and kale rolls, or anything spicy to cool things down.</p>",
         "ingredients": [
           {
             "items": [
@@ -2750,6 +2750,10 @@
               "cooked spinach"
             ]
           }
+        ],
+        "steps": [
+            "This recipe is extremely loose. Basically, just stir some of your favorite chopped vegetables into yogurt and add salt and pepper. Use this as a stepping stone to develop your own.",
+            "After you stir all the ingredients together, store the raita in a covered container in the fridge until you’re ready to use it."
         ]
       },
       {
