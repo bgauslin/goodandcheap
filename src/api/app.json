@@ -190,7 +190,7 @@
     },
     {
       "title": "Snacks, Sides &amp; Small Bites",
-      "slug": "snacks-sides-and-small-bites",
+      "slug": "snacks",
       "content": "<p>When cooking on a budget, snacks are often the first thing you shave away. If you’re creative, though, you can make plenty of cheap, healthy and delightful snacks to enjoy in all seasons and on any occasion. (And remember, leftovers make great snacks, too!)</p>",
       "image": "snacks-sides-small-bites",
       "count": "10",
@@ -199,70 +199,70 @@
           "title": "Jacket Sweet Potato",
           "serving": "For Four",
           "image": "jacket-sweet-potato",
-          "chapter": "snacks-sides-and-small-bites",
+          "chapter": "snacks",
           "slug": "jacket-sweet-potato"
         },
         {
           "title": "Smoky and Spicy Roasted Cauliflower",
           "serving": "For Four",
           "image": "smoky-and-spicy-roasted-cauliflower",
-          "chapter": "snacks-sides-and-small-bites",
+          "chapter": "snacks",
           "slug": "smoky-and-spicy-roasted-cauliflower"
         },
         {
           "title": "Spicy Green Beans",
           "serving": "For Two",
           "image": "spicy-green-beans",
-          "chapter": "snacks-sides-and-small-bites",
+          "chapter": "snacks",
           "slug": "spicy-green-beans"
         },
         {
           "title": "Mexican Street Corn",
           "serving": "For Four",
           "image": "mexican-street-corn",
-          "chapter": "snacks-sides-and-small-bites",
+          "chapter": "snacks",
           "slug": "mexican-street-corn"
         },
         {
           "title": "Green Chili and Cheddar Quesadillas",
           "serving": "For Two",
           "image": "green-chili-and-cheddar-quesadillas",
-          "chapter": "snacks-sides-and-small-bites",
+          "chapter": "snacks",
           "slug": "green-chili-and-cheddar-quesadillas"
         },
         {
           "title": "Cornmeal Crusted Veggies",
           "serving": "For Four",
           "image": "cornmeal-crusted-veggies-1",
-          "chapter": "snacks-sides-and-small-bites",
+          "chapter": "snacks",
           "slug": "cornmeal-crusted-veggies"
         },
         {
           "title": "Brussels Sprout Hash and Eggs",
           "serving": "For Two",
           "image": "brussels-sprout-hash-and-eggs",
-          "chapter": "snacks-sides-and-small-bites",
+          "chapter": "snacks",
           "slug": "brussels-sprout-hash-and-eggs"
         },
         {
           "title": "Poutine",
           "serving": "For Four",
           "image": "poutine",
-          "chapter": "snacks-sides-and-small-bites",
+          "chapter": "snacks",
           "slug": "poutine"
         },
         {
           "title": "Things On Toast",
           "badge": "Ideas",
           "image": "toast",
-          "chapter": "snacks-sides-and-small-bites",
+          "chapter": "snacks",
           "slug": "things-on-toast"
         },
         {
           "title": "Popcorn",
           "badge": "Ideas",
           "image": "popcorn",
-          "chapter": "snacks-sides-and-small-bites",
+          "chapter": "snacks",
           "slug": "popcorn"
         }
       ]
@@ -3473,7 +3473,7 @@
         ]
       },
       {
-        "chapter": "snacks-sides-and-small-bites",
+        "chapter": "snacks",
         "title": "Jacket Sweet Potato",
         "slug": "jacket-sweet-potato",
         "serving": "For Four",
@@ -3502,7 +3502,7 @@
         ]
       },
       {
-        "chapter": "snacks-sides-and-small-bites",
+        "chapter": "snacks",
         "title": "Smoky and Spicy Roasted Cauliflower",
         "slug": "smoky-and-spicy-roasted-cauliflower",
         "serving": "For Four",
@@ -3532,7 +3532,7 @@
         ]
       },
       {
-        "chapter": "snacks-sides-and-small-bites",
+        "chapter": "snacks",
         "title": "Spicy Green Beans",
         "slug": "spicy-green-beans",
         "serving": "For Two",
@@ -3569,7 +3569,7 @@
         ]
       },
       {
-        "chapter": "snacks-sides-and-small-bites",
+        "chapter": "snacks",
         "title": "Mexican Street Corn",
         "slug": "mexican-street-corn",
         "serving": "For Four",
@@ -3601,7 +3601,7 @@
         ]
       },
       {
-        "chapter": "snacks-sides-and-small-bites",
+        "chapter": "snacks",
         "title": "Green Chili and Cheddar Quesadillas",
         "slug": "green-chili-and-cheddar-quesadillas",
         "serving": "For Two",
@@ -3628,7 +3628,7 @@
         ]
       },
       {
-        "chapter": "snacks-sides-and-small-bites",
+        "chapter": "snacks",
         "title": "Cornmeal Crusted Veggies",
         "slug": "cornmeal-crusted-veggies",
         "serving": "For Four",
@@ -3677,7 +3677,7 @@
         ]
       },
       {
-        "chapter": "snacks-sides-and-small-bites",
+        "chapter": "snacks",
         "title": "Brussels Sprout Hash and Eggs",
         "slug": "brussels-sprout-hash-and-eggs",
         "serving": "For Two",
@@ -3709,7 +3709,7 @@
         ]
       },
       {
-        "chapter": "snacks-sides-and-small-bites",
+        "chapter": "snacks",
         "title": "Poutine",
         "slug": "poutine",
         "serving": "For Four",
@@ -3756,7 +3756,7 @@
         ]
       },
       {
-        "chapter": "snacks-sides-and-small-bites",
+        "chapter": "snacks",
         "title": "Things On Toast",
         "slug": "things-on-toast",
         "badge": "Ideas",
@@ -3954,7 +3954,7 @@
         ]
       },
       {
-        "chapter": "snacks-sides-and-small-bites",
+        "chapter": "snacks",
         "title": "Popcorn",
         "slug": "popcorn",
         "badge": "Ideas",
