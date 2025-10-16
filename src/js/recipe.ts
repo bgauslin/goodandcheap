@@ -36,12 +36,22 @@ class GoodAndCheapRecipe extends LitElement {
   protected render() {
     if (!this.data) return;
 
-    const {badge, cost, image, ingredients, overview, serving, steps, title} = this.data;
+    const {
+      badge,
+      cost,
+      image,
+      ingredients,
+      more,
+      overview,
+      serving,
+      steps,
+      title
+    } = this.data;
 
     return html`
       <div class="cover">
         <gc-image class="cover__photo" src="${image}"></gc-image>
-      ${cost ? html`
+        ${cost ? html`
         <p class="cost">
           ${cost.total} Total<br>
           ${cost.each} / ${cost.units}
@@ -78,6 +88,44 @@ class GoodAndCheapRecipe extends LitElement {
           <ol>
             ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
           </ol>
+        </section>` : nothing}
+
+        ${more ? html`
+        <section id="more">
+          ${more.map(item => {
+            const {copy, cost, heading, image, ingredients, steps} = item;
+            return html`
+              <h2>${heading}</h2>
+              ${image ? html`
+              <div class="">
+                <img src="./images/${image}@medium.webp" alt="">
+                ${cost ? html`
+                <p class="cost">
+                  ${cost.total} Total<br>
+                  ${cost.each} / ${cost.units}
+                </p>` : nothing}
+              </div>` : nothing}
+              ${copy ? html`${unsafeHTML(copy)}` : nothing}
+
+              ${ingredients ? html`
+                ${ingredients.map(group => {
+                  const {label, items} = group;
+                  return html`
+                    ${label ? html`<h3>${label}</h3>` : nothing}
+                    <ul>
+                      ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
+                    </ul>
+                  `;
+                })}
+              ` : nothing}
+
+              ${steps ? html`
+                <ol>
+                  ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
+                </ol>` : nothing}
+
+            `;
+          })}
         </section>` : nothing}
 
         ${unsafeHTML(footer)}

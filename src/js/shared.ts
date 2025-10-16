@@ -33,6 +33,21 @@ export interface Recipe {
     items: string[],
     label?: string,
   }[],
+  more: {
+    copy: string,
+    cost?: {
+      each: string,
+      total: string,
+      units: string
+    },
+    heading: string,
+    image?: string,
+    ingredients?: {
+      items: string[],
+      label?: string,
+    }[],
+    steps?: string[],
+  }[],
   overview: string,
   serving: string,
   slug: string,
