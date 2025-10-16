@@ -96,16 +96,25 @@ class GoodAndCheapRecipe extends LitElement {
             const {copy, cost, heading, image, ingredients, steps} = item;
             return html`
             <div class="more">
-              <h2>${heading}</h2>
               ${image ? html`
-              <div class="">
-                <img src="./images/${image}@medium.webp" alt="">
+              <div class="photo">
+                <img
+                  alt=""
+                  src="./images/${image}@medium.webp"
+                  srcset="
+                    ./images/${image}@small.webp 480w,
+                    ./images/${image}@medium.webp 640w,
+                    ./images/${image}@large.webp 720w"
+                  sizes="(min-width: 60rem) 720px, 100vw">
                 ${cost ? html`
                 <p class="cost">
                   ${cost.total} Total<br>
                   ${cost.each} / ${cost.units}
                 </p>` : nothing}
               </div>` : nothing}
+
+              <h2>${heading}</h2>
+
               ${copy ? html`<p>${unsafeHTML(copy)}</p>` : nothing}
 
               ${ingredients ? html`

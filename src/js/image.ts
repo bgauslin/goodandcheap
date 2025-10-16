@@ -51,7 +51,7 @@ class GoodAndCheapImage extends LitElement {
           ./images/${this.src}@small.webp 480w,
           ./images/${this.src}@medium.webp 640w,
           ./images/${this.src}@large.webp 720w"
-        sizes="(min-width: 720px) 720px, 100vw">
+        sizes="(min-width: 60rem) 720px, 100vw">
     `;
   }
 }
