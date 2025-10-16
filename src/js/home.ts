@@ -1,6 +1,7 @@
 import {LitElement, html, nothing} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
+import {footer} from './shared';
 
 
 interface Home {
@@ -64,6 +65,8 @@ class GoodAndCheapHome extends LitElement {
 
       ${this.renderList(chapters, 'recipes', true)}
       ${this.renderList(pages, 'info')}
+
+      ${unsafeHTML(footer)}
     `;
   }
 

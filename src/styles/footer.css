@@ -1,9 +1,11 @@
 footer {
-  display: grid;
+  display: var(--footer-display);
   grid: 1fr / 1fr;
+  grid-area: footer;
   margin-inline: -1rem;
   padding-block: 3rem;
   place-items: center;
+  place-self: center;
   text-align: center;
 
   small {

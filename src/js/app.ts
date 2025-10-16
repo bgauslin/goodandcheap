@@ -1,7 +1,7 @@
 import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Chapter, Page, Recipe} from './shared';
+import {Chapter, Page, Recipe, footer} from './shared';
 
 
 interface Data {
@@ -326,6 +326,7 @@ class GoodAndCheapApp extends LitElement {
           transition="${this.recipeTransition}"
           ?inert="${this.context !== 'recipe'}"></gc-recipe>
       </main>
+      ${unsafeHTML(footer)}
       <gc-touch></gc-touch>
     `;
   }

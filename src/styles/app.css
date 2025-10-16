@@ -58,10 +58,11 @@ gc-app > main {
 .content {
   grid-area: content;
   padding-inline: var(--gap);
+  padding-block: 0 var(--gap);
 }
 
 .badge {
-  background-color: var(--gray4);
+  background-color: var(--gray5);
   border-radius: .25rem;
   display: inline-block;
   padding-block: .25em;

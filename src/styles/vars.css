@@ -67,6 +67,14 @@
   }
 }
 
+gc-app {
+  --footer-display: none;
+}
+
+.view {
+  --footer-display: grid;
+}
+
 gc-home {
   --previews-margin: var(--gap);
 }
@@ -100,7 +108,7 @@ gc-home {
 
 @media (min-width: 60rem) {
   :root {
-    --app-grid: '. header .' 1fr '. main .' auto '. . .' 1fr / 1fr minmax(0, var(--section-max-size)) 1fr;
+    --app-grid: '. header .' 1fr '. main .' auto '. footer .' 1fr / 1fr minmax(0, var(--section-max-size)) 1fr;
     --cover-inset: 0;
     --cover-position: sticky;
     --header-position: static;
@@ -110,6 +118,14 @@ gc-home {
     --section-max-size: 100rem;
     --view-display: grid;
     --view-grid: 'cover content' / 1fr 1fr;
+  }
+
+  gc-app {
+    --footer-display: grid;
+  }
+
+  .view {
+    --footer-display: none;
   }
 
   gc-home {
