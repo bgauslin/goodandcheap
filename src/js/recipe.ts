@@ -75,7 +75,7 @@ class GoodAndCheapRecipe extends LitElement {
             const {label, items} = group;
             return html`
               ${label ? html`<h3>${label}</h3>` : nothing}
-              <ul>
+              <ul class="ingredients">
                 ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
               </ul>
             `;
@@ -85,7 +85,7 @@ class GoodAndCheapRecipe extends LitElement {
         ${steps ? html`
         <section id="steps">
           <h2>Steps</h2>
-          <ol>
+          <ol class="steps">
             ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
           </ol>
         </section>` : nothing}
@@ -95,6 +95,7 @@ class GoodAndCheapRecipe extends LitElement {
           ${more.map(item => {
             const {copy, cost, heading, image, ingredients, steps} = item;
             return html`
+            <div class="more">
               <h2>${heading}</h2>
               ${image ? html`
               <div class="">
@@ -105,14 +106,14 @@ class GoodAndCheapRecipe extends LitElement {
                   ${cost.each} / ${cost.units}
                 </p>` : nothing}
               </div>` : nothing}
-              ${copy ? html`${unsafeHTML(copy)}` : nothing}
+              ${copy ? html`<p>${unsafeHTML(copy)}</p>` : nothing}
 
               ${ingredients ? html`
                 ${ingredients.map(group => {
                   const {label, items} = group;
                   return html`
                     ${label ? html`<h3>${label}</h3>` : nothing}
-                    <ul>
+                    <ul class="ingredients">
                       ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
                     </ul>
                   `;
@@ -120,11 +121,10 @@ class GoodAndCheapRecipe extends LitElement {
               ` : nothing}
 
               ${steps ? html`
-                <ol>
+                <ol class="steps">
                   ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
                 </ol>` : nothing}
-
-            `;
+            </div>`;
           })}
         </section>` : nothing}
 

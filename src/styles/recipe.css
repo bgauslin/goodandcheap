@@ -33,7 +33,11 @@ gc-recipe {
     padding-inline: 1.5em 0;
   }
 
-  [id='steps'] li {
+  .steps > li {
     margin-block: 1em;
+  }
+
+  .more {
+    margin-block: 2rem 0;
   }
 }

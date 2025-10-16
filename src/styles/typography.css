@@ -35,7 +35,7 @@ gc-recipe :is(.badge, .cost, .serving, h2, h3) {
 footer,
 gc-page li,
 :is(.badge, .count),
-[id='ingredients'] li,
+.ingredients > li,
 .previews :is(.counter, .serving) {
   font-family: 'Futura Book'; 
 }
