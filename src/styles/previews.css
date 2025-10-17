@@ -30,11 +30,6 @@
     pointer-events: none;
   }
 
-  
-  /* a :is(.badge, .counter) {
-    color: var(--text-color);
-  } */
-
   figure {
     aspect-ratio: 1;
     grid-area: thumb;
