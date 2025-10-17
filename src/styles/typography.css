@@ -8,7 +8,7 @@ h2, .cost, .title {
   font-family: 'Futura Bold';
 }
 
-h3, button, .badge, .count, .counter, .serving, .ingredients > li, footer {
+h3, button, footer > small, .badge, .count, .counter, .serving, .ingredients > li {
   font-family: 'Futura Book';
 }
 
@@ -21,7 +21,7 @@ h2, h3, .cost, .serving, .title {
   text-transform: uppercase;
 }
 
-button, footer, .badge, .count, .counter, .serving {
+button, footer > small, .badge, .count, .counter, .serving {
   font-size: var(--small-font-size);
   letter-spacing: .125em;
   text-transform: uppercase;

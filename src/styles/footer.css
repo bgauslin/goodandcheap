@@ -1,9 +1,7 @@
 footer {
   display: var(--footer-display);
-  grid: 1fr / 1fr;
   grid-area: footer;
   padding-block: var(--footer-padding);
-  place-items: center;
   place-self: center;
   text-align: center;
 
@@ -15,6 +13,6 @@ footer {
   img {
     block-size: 1rem;
     inline-size: auto;
-    margin-block: 0 1em;
+    margin-block: 0 .5rem;
   }
 }
