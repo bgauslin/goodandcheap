@@ -10,6 +10,12 @@ interface Data {
   recipes: Recipe[];
 }
 
+/**
+ * Web component for the Good And Cheap app. This component fetches data from
+ * a JSON endpoint; sends data to child components for rendering; sets CSS
+ * transitions for before/after view changes; and updates the browser's address
+ * bar and title.
+ */
 @customElement('gc-app')
 class GoodAndCheapApp extends LitElement {
   private clickHandler: EventListenerObject;
@@ -74,20 +80,25 @@ class GoodAndCheapApp extends LitElement {
     const {target} = event;
     const href = (<HTMLAnchorElement>target).getAttribute('href');
 
+    // Bail if there's no attribute or if the link goes to an external site.
     if (!href) return;
-
     if (href.startsWith('http')) return;
 
+    // Otherwise, hijack the link since it's from the app and go to next view.
     event.preventDefault();
 
+    // Get last segment for looking up the type of content to render.
     const segments = href.split('/');
     const slug = segments[segments.length - 1];
     
+    // See if the slug is valid for one of our content types.
     const {chapters, pages, recipes} = this.data;
     const chapter = chapters.find((chapter: Chapter) => chapter.slug === slug);
     const page = pages.find((page: Page) => page.slug === slug);
     const recipe = recipes.find((recipe: Recipe) => recipe.slug === slug);
 
+    // If we have a valid slug and content, render it and update the browser.
+    // Otherwise, default to the home page.
     if (chapter) {
       this.context = 'chapter';
       this.updateComponent(this.chapterElement, chapter);
@@ -107,22 +118,24 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
-   * Updates the app when the 'Back' button is clicked.
+   * Updates the app when the 'Back' button is clicked. If current context
+   * is a recipe, then next will be a chapter. Otherwise, default to home.
    */
   private handleBackButton() {
     if (this.context === 'recipe') {
       this.context = 'chapter';
 
+      // Get the chapter based off URL slug.
       const slug = this.getSlug();
       const chapter = this.getChapter(slug);
 
-      this.updateButtonLabel();
+      // Render the chapter and update the UI.
       this.updateComponent(this.chapterElement, chapter);
+      this.updateButtonLabel();
       this.updateAddressBar(chapter.slug);
       this.updateDocumentTitle(chapter.slug);
     } else {
       this.context = 'home';
-
       this.updateAddressBar('');
       this.updateDocumentTitle();
     }
@@ -158,11 +171,13 @@ class GoodAndCheapApp extends LitElement {
   private updateFromUrl() {
     const slug = this.getSlug();
 
+    // Look up content type based on URL slug.
     const {chapters, pages, recipes} = this.data;
     const chapter = chapters.find((chapter: Chapter) => chapter.slug === slug);
     const page = pages.find((page: Page) => page.slug === slug);
     const recipe = recipes.find((recipe: Recipe) => recipe.slug === slug);
 
+    // Set current context, render current content, update the UI.
     if (chapter) {
       this.context = 'chapter';
       this.updateComponent(this.chapterElement, chapter);
@@ -215,7 +230,7 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
-   * Updates document title (and browser history).
+   * Updates document title (and browser history list).
    */ 
   private updateDocumentTitle(slug?: string) {
     let title = null;
