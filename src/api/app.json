@@ -40,28 +40,28 @@
           "serving": "Makes Twenty-four Small Muffins",
           "image": "chocolate-zucchini-muffins",
           "chapter": "breakfast",
-          "slug": "chocolate-zucchini-muffins"
+          "slug": "muffins"
         },
         {
           "title": "Whole-Wheat Jalapeño Cheddar Scones",
           "serving": "Makes Six",
           "image": "whole-wheat-jalapeno-cheddar-scones",
           "chapter": "breakfast",
-          "slug": "whole-wheat-jalapeno-cheddar-scones"
+          "slug": "scones"
         },
         {
           "title": "Peanut Butter and Jelly Granola Bars",
           "serving": "Makes Twelve",
           "image": "peanut-butter-and-jelly-granola-bars",
           "chapter": "breakfast",
-          "slug": "peanut-butter-and-jelly-granola-bars"
+          "slug": "granola-bars"
         },
         {
           "title": "Egg Sandwich with Mushroom Hash",
           "serving": "For Two",
           "image": "egg-sandwich-with-mushroom-hash",
           "chapter": "breakfast",
-          "slug": "egg-sandwich-with-mushroom-hash"
+          "slug": "egg-sandwich"
         },
         {
           "title": "Oatmeal",
@@ -75,7 +75,7 @@
           "badge": "Ideas",
           "image": "yogurt-smash",
           "chapter": "breakfast",
-          "slug": "yogurt-smash"
+          "slug": "yogurt"
         }
       ]
     },
@@ -112,7 +112,7 @@
           "serving": "For Four",
           "image": "lightly-curried-butternut-squash-soup",
           "chapter": "soup",
-          "slug": "lightly-curried-butternut-squash-soup"
+          "slug": "butternut-squash-soup"
         }
       ]
     },
@@ -128,7 +128,7 @@
           "serving": "For Two",
           "image": "broiled-eggplant-salad",
           "chapter": "salad",
-          "slug": "broiled-eggplant-salad"
+          "slug": "eggplant-salad"
         },
         {
           "title": "Kale Salad",
@@ -142,7 +142,7 @@
           "serving": "For Four",
           "image": "ever-popular-potato-salad",
           "chapter": "salad",
-          "slug": "ever-popular-potato-salad"
+          "slug": "potato-salad"
         },
         {
           "title": "Spicy Panzanella",
@@ -156,7 +156,7 @@
           "serving": "For Four",
           "image": "cold-and-spicy-asian-noodles",
           "chapter": "salad",
-          "slug": "cold-and-spicy-asian-noodles"
+          "slug": "asian-noodles"
         },
         {
           "title": "Taco Salad",
@@ -207,7 +207,7 @@
           "serving": "For Four",
           "image": "smoky-and-spicy-roasted-cauliflower",
           "chapter": "snacks",
-          "slug": "smoky-and-spicy-roasted-cauliflower"
+          "slug": "roasted-cauliflower"
         },
         {
           "title": "Spicy Green Beans",
@@ -228,7 +228,7 @@
           "serving": "For Two",
           "image": "green-chili-and-cheddar-quesadillas",
           "chapter": "snacks",
-          "slug": "green-chili-and-cheddar-quesadillas"
+          "slug": "quesadillas"
         },
         {
           "title": "Cornmeal Crusted Veggies",
@@ -242,7 +242,7 @@
           "serving": "For Two",
           "image": "brussels-sprout-hash-and-eggs",
           "chapter": "snacks",
-          "slug": "brussels-sprout-hash-and-eggs"
+          "slug": "hash-and-eggs"
         },
         {
           "title": "Poutine",
@@ -256,7 +256,7 @@
           "badge": "Ideas",
           "image": "toast",
           "chapter": "snacks",
-          "slug": "things-on-toast"
+          "slug": "toast"
         },
         {
           "title": "Popcorn",
@@ -293,21 +293,21 @@
           "serving": "Makes Four Calzones",
           "image": "broccoli-rabe-and-mozzarella-calzones",
           "chapter": "handheld",
-          "slug": "broccoli-rabe-and-mozzarella-calzones"
+          "slug": "calzones"
         },
         {
           "title": "Broccoli, Egg, and Cheddar Empanadas",
           "serving": "Makes Twelve",
           "image": "broccoli-egg-and-cheddar-empanadas",
           "chapter": "handheld",
-          "slug": "broccoli-egg-and-cheddar-empanadas"
+          "slug": "empanadas"
         },
         {
           "title": "Potato and Kale Rolls with Raita",
           "serving": "For Four",
           "image": "potato-and-kale-rolls-with-raita",
           "chapter": "handheld",
-          "slug": "potato-and-kale-rolls-with-raita"
+          "slug": "rolls-with-raita"
         },
         {
           "title": "Leftovers",
@@ -330,14 +330,14 @@
           "serving": "For Three",
           "image": "creamy-zucchini-fettuccine",
           "chapter": "dinner",
-          "slug": "creamy-zucchini-fettuccine"
+          "slug": "fettuccine"
         },
         {
           "title": "Pasta with Eggplant and Tomato",
           "serving": "For Two",
           "image": "pasta-with-eggplant-and-tomato",
           "chapter": "dinner",
-          "slug": "pasta-with-eggplant-and-tomato"
+          "slug": "pasta"
         },
         {
           "title": "Chana Masala",
@@ -351,35 +351,35 @@
           "serving": "For Four",
           "image": "black-eyed-peas-and-collards",
           "chapter": "dinner",
-          "slug": "black-eyed-peas-and-collards"
+          "slug": "peas-and-collards"
         },
         {
           "title": "Vegetable Jambalaya",
           "serving": "For Six",
           "image": "vegetable-jambalaya",
           "chapter": "dinner",
-          "slug": "vegetable-jambalaya"
+          "slug": "jambalaya"
         },
         {
           "title": "Filipino Chicken Adobo",
           "serving": "For Eight",
           "image": "filipino-chicken-adobo",
           "chapter": "dinner",
-          "slug": "filipino-chicken-adobo"
+          "slug": "chicken-adobo"
         },
         {
           "title": "Baked Beans 2 Ways",
           "serving": "For Two, or Four as a Side",
           "image": "baked-beans",
           "chapter": "dinner",
-          "slug": "baked-beans-2-ways"
+          "slug": "baked-beans"
         },
         {
           "title": "Half-Veggie Burgers",
           "serving": "For Eight",
           "image": "half-veggie-burgers",
           "chapter": "dinner",
-          "slug": "half-veggie-burgers"
+          "slug": "veggie-burgers"
         },
         {
           "title": "Beef Stroganoff",
@@ -400,14 +400,14 @@
           "serving": "For Six",
           "image": "deconstructed-cabbage-rolls",
           "chapter": "dinner",
-          "slug": "deconstructed-cabbage-rolls"
+          "slug": "cabbage-rolls"
         },
         {
           "title": "Savory Summer Cobbler",
           "serving": "For Four",
           "image": "savory-summer-cobbler",
           "chapter": "dinner",
-          "slug": "savory-summer-cobbler"
+          "slug": "summer-cobbler"
         },
         {
           "title": "Cauliflower Cheese",
@@ -421,7 +421,7 @@
           "serving": "For Four",
           "image": "vegetable-quiche-hold-the-crust",
           "chapter": "dinner",
-          "slug": "vegetable-quiche-hold-the-crust"
+          "slug": "vegetable-quiche"
         },
         {
           "title": "Shrimp and Grits",
@@ -435,7 +435,7 @@
           "serving": "For Two",
           "image": "spicy-crunchy-creamy-polenta",
           "chapter": "dinner",
-          "slug": "spicy-crunchy-creamy-polenta"
+          "slug": "spicy-polenta"
         },
         {
           "title": "Roast Chicken",
@@ -456,20 +456,20 @@
           "serving": "For Four",
           "image": "roasted-potatoes-with-chilies-1",
           "chapter": "dinner",
-          "slug": "roasted-potatoes-with-chilies"
+          "slug": "roasted-potatoes"
         },
         {
           "title": "Spicy Broiled Tilapia with Lime",
           "serving": "For Two",
           "image": "spicy-broiled-tilapia-with-lime",
           "chapter": "dinner",
-          "slug": "spicy-broiled-tilapia-with-lime"
+          "slug": "spicy-tilapia"
         }
       ]
     },
     {
       "title": "Big Batch",
-      "slug": "big-batch",
+      "slug": "batch",
       "content": "<p>It’s simple economics: usually making a large amount of something is cheaper and more efficient than making lots of different small dishes. You can blow a whole batch all on a big celebration or portion these dishes out and freeze them for later use. You’ll be extremely grateful to your past self when you pull delicious home-made food out of the freezer on a busy Monday evening!</p>",
       "image": "big-batch",
       "count": "4",
@@ -478,29 +478,29 @@
           "title": "Spicy Pulled Pork",
           "serving": "For Ten",
           "image": "spicy-pulled-pork",
-          "chapter": "big-batch",
+          "chapter": "batch",
           "slug": "spicy-pulled-pork"
         },
         {
           "title": "Deviled Eggs 6 Ways",
           "serving": "Makes Twenty-four Half Eggs",
           "image": "deviled-eggs",
-          "chapter": "big-batch",
-          "slug": "deviled-eggs-6-ways"
+          "chapter": "batch",
+          "slug": "deviled-eggs"
         },
         {
           "title": "Perogies",
           "serving": "Makes Sixty to Seventy-two",
           "image": "perogies",
-          "chapter": "big-batch",
+          "chapter": "batch",
           "slug": "perogies"
         },
         {
           "title": "Dumplings 2 Ways",
           "serving": "Makes Sixty",
           "image": "dumplings",
-          "chapter": "big-batch",
-          "slug": "dumplings-2-ways"
+          "chapter": "batch",
+          "slug": "dumplings"
         }
       ]
     },
@@ -530,7 +530,7 @@
           "serving": "Makes Four Individual Pizzas",
           "image": "pizza-dough",
           "chapter": "staples",
-          "slug": "pizza-dough-2-ways"
+          "slug": "pizza-dough"
         },
         {
           "title": "Fresh Pasta",
@@ -544,35 +544,35 @@
           "serving": "Makes Three and a Half Cups",
           "image": "best-tomato-sauce",
           "chapter": "staples",
-          "slug": "best-tomato-sauce"
+          "slug": "tomato-sauce"
         },
         {
           "title": "Chorizo and White Bean Ragu",
           "serving": "Makes Three Cups",
           "image": "chorizo-and-white-bean-ragu",
           "chapter": "staples",
-          "slug": "chorizo-and-white-bean-ragu"
+          "slug": "ragu"
         },
         {
           "title": "Rainbow Rice 3 Ways",
           "serving": "For Two",
           "image": "rainbow-rice",
           "chapter": "staples",
-          "slug": "rainbow-rice-3-ways"
+          "slug": "rainbow-rice"
         },
         {
           "title": "How to Cook Dried Beans",
           "badge": "Method",
           "image": "how-to-cook-dried-beans",
           "chapter": "staples",
-          "slug": "how-to-cook-dried-beans"
+          "slug": "dried-beans"
         },
         {
           "title": "Croutons or Breadcrumbs",
           "badge": "Method",
           "image": "croutons-or-breadcrumbs-1",
           "chapter": "staples",
-          "slug": "croutons-or-breadcrumbs"
+          "slug": "croutons-breadcrumbs"
         }
       ]
     },
@@ -632,7 +632,7 @@
           "serving": "For Four",
           "image": "fast-melon-sorbet",
           "chapter": "desserts",
-          "slug": "fast-melon-sorbet"
+          "slug": "melon-sorbet"
         },
         {
           "title": "Avocado Milkshake",
@@ -735,7 +735,7 @@
   ],
   "recipes": [
       {
-        "chapter": "big-batch",
+        "chapter": "batch",
         "title": "Spicy Pulled Pork",
         "slug": "spicy-pulled-pork",
         "serving": "For Ten",
@@ -782,9 +782,9 @@
         ]
       },
       {
-        "chapter": "big-batch",
+        "chapter": "batch",
         "title": "Deviled Eggs 6 Ways",
-        "slug": "deviled-eggs-6-ways",
+        "slug": "deviled-eggs",
         "serving": "Makes Twenty-four Half Eggs",
         "image": "deviled-eggs",
         "cost": {
@@ -876,7 +876,7 @@
         ]
       },
       {
-        "chapter": "big-batch",
+        "chapter": "batch",
         "title": "Perogies",
         "slug": "perogies",
         "serving": "Makes Sixty to Seventy-two",
@@ -936,9 +936,9 @@
         ]
       },
       {
-        "chapter": "big-batch",
+        "chapter": "batch",
         "title": "Dumplings 2 Ways",
-        "slug": "dumplings-2-ways",
+        "slug": "dumplings",
         "serving": "Makes Sixty",
         "image": "dumplings",
         "cost": {
@@ -1137,7 +1137,7 @@
       {
         "chapter": "breakfast",
         "title": "Chocolate Zucchini Muffins",
-        "slug": "chocolate-zucchini-muffins",
+        "slug": "muffins",
         "serving": "Makes Twenty-four Small Muffins",
         "image": "chocolate-zucchini-muffins",
         "cost": {
@@ -1177,7 +1177,7 @@
       {
         "chapter": "breakfast",
         "title": "Whole-Wheat Jalapeño Cheddar Scones",
-        "slug": "whole-wheat-jalapeno-cheddar-scones",
+        "slug": "scones",
         "serving": "Makes Six",
         "image": "whole-wheat-jalapeno-cheddar-scones",
         "cost": {
@@ -1220,7 +1220,7 @@
       {
         "chapter": "breakfast",
         "title": "Peanut Butter and Jelly Granola Bars",
-        "slug": "peanut-butter-and-jelly-granola-bars",
+        "slug": "granola-bars",
         "serving": "Makes Twelve",
         "image": "peanut-butter-and-jelly-granola-bars",
         "cost": {
@@ -1264,7 +1264,7 @@
       {
         "chapter": "breakfast",
         "title": "Egg Sandwich with Mushroom Hash",
-        "slug": "egg-sandwich-with-mushroom-hash",
+        "slug": "egg-sandwich",
         "serving": "For Two",
         "image": "egg-sandwich-with-mushroom-hash",
         "cost": {
@@ -1442,7 +1442,7 @@
       {
         "chapter": "breakfast",
         "title": "Yogurt Smash!",
-        "slug": "yogurt-smash",
+        "slug": "yogurt",
         "badge": "Ideas",
         "image": "yogurt-smash",
         "overview": "<p>There are so many types of yogurt in the grocery store: some low in fat and high in sugar, some with cute animal pictures. Some are Greek. Some have chocolate shavings and candy. Some have names like “key lime pie.”</p><p>Now forget about all of that. The best value for your money are the big buckets of plain yogurt. The fat content is your choice—just check that it doesn’t contain gelatin and you’re all set. Starting with plain yogurt, you can make super flavors in your own kitchen, where you know exactly what’s going into it.</p><p>If you have kids, ask them what flavors they can imagine and go make it! It’s a lot more fun than letting the supermarket choose for you. Try something new and smash it in! Check out the ideas on the adjoining page.</p><p>If you want a thicker Greek-style yogurt, all you have to do is strain regular American yogurt through cheesecloth to remove the extra water.</p><p>Yogurt’s versatility makes it a great staple to keep in the fridge. Mix it with some of the items you see on the next page or turn it into a savory sauce like raita or tzatziki.</p>",
@@ -1563,7 +1563,7 @@
       {
         "chapter": "desserts",
         "title": "Fast Melon Sorbet",
-        "slug": "fast-melon-sorbet",
+        "slug": "melon-sorbet",
         "serving": "For Four",
         "image": "fast-melon-sorbet",
         "cost": {
@@ -1615,7 +1615,7 @@
       {
         "chapter": "dinner",
         "title": "Creamy Zucchini Fettuccine",
-        "slug": "creamy-zucchini-fettuccine",
+        "slug": "fettuccine",
         "serving": "For Three",
         "image": "creamy-zucchini-fettuccine",
         "cost": {
@@ -1650,7 +1650,7 @@
       {
         "chapter": "dinner",
         "title": "Pasta with Eggplant and Tomato",
-        "slug": "pasta-with-eggplant-and-tomato",
+        "slug": "pasta",
         "serving": "For Two",
         "image": "pasta-with-eggplant-and-tomato",
         "cost": {
@@ -1731,7 +1731,7 @@
       {
         "chapter": "dinner",
         "title": "Black-Eyed Peas and Collards",
-        "slug": "black-eyed-peas-and-collards",
+        "slug": "peas-and-collards",
         "serving": "For Four",
         "image": "black-eyed-peas-and-collards",
         "cost": {
@@ -1765,7 +1765,7 @@
       {
         "chapter": "dinner",
         "title": "Vegetable Jambalaya",
-        "slug": "vegetable-jambalaya",
+        "slug": "jambalaya",
         "serving": "For Six",
         "image": "vegetable-jambalaya",
         "cost": {
@@ -1816,7 +1816,7 @@
       {
         "chapter": "dinner",
         "title": "Filipino Chicken Adobo",
-        "slug": "filipino-chicken-adobo",
+        "slug": "chicken-adobo",
         "serving": "For Eight",
         "image": "filipino-chicken-adobo",
         "cost": {
@@ -1871,7 +1871,7 @@
       {
         "chapter": "dinner",
         "title": "Baked Beans 2 Ways",
-        "slug": "baked-beans-2-ways",
+        "slug": "baked-beans",
         "serving": "For Two, or Four as a Side",
         "image": "baked-beans",
         "cost": {
@@ -1941,7 +1941,7 @@
       {
         "chapter": "dinner",
         "title": "Half-Veggie Burgers",
-        "slug": "half-veggie-burgers",
+        "slug": "veggie-burgers",
         "serving": "For Eight",
         "image": "half-veggie-burgers",
         "cost": {
@@ -2079,7 +2079,7 @@
       {
         "chapter": "dinner",
         "title": "Deconstructed Cabbage Rolls",
-        "slug": "deconstructed-cabbage-rolls",
+        "slug": "cabbage-rolls",
         "serving": "For Six",
         "image": "deconstructed-cabbage-rolls",
         "cost": {
@@ -2132,7 +2132,7 @@
       {
         "chapter": "dinner",
         "title": "Savory Summer Cobbler",
-        "slug": "savory-summer-cobbler",
+        "slug": "summer-cobbler",
         "serving": "For Four",
         "image": "savory-summer-cobbler",
         "cost": {
@@ -2230,7 +2230,7 @@
       {
         "chapter": "dinner",
         "title": "Vegetable Quiche, Hold the Crust",
-        "slug": "vegetable-quiche-hold-the-crust",
+        "slug": "vegetable-quiche",
         "serving": "For Four",
         "image": "vegetable-quiche-hold-the-crust",
         "cost": {
@@ -2310,7 +2310,7 @@
       {
         "chapter": "dinner",
         "title": "Spicy, Crunchy, Creamy Polenta",
-        "slug": "spicy-crunchy-creamy-polenta",
+        "slug": "spicy-polenta",
         "serving": "For Two",
         "image": "spicy-crunchy-creamy-polenta",
         "cost": {
@@ -2446,7 +2446,7 @@
       {
         "chapter": "dinner",
         "title": "Roasted Potatoes with Chilies",
-        "slug": "roasted-potatoes-with-chilies",
+        "slug": "roasted-potatoes",
         "serving": "For Four",
         "image": "roasted-potatoes-with-chilies-1",
         "cost": {
@@ -2477,7 +2477,7 @@
       {
         "chapter": "dinner",
         "title": "Spicy Broiled Tilapia with Lime",
-        "slug": "spicy-broiled-tilapia-with-lime",
+        "slug": "spicy-tilapia",
         "serving": "For Two",
         "image": "spicy-broiled-tilapia-with-lime",
         "cost": {
@@ -2917,7 +2917,7 @@
       {
         "chapter": "handheld",
         "title": "Broccoli Rabe and Mozzarella Calzones",
-        "slug": "broccoli-rabe-and-mozzarella-calzones",
+        "slug": "calzones",
         "serving": "Makes Four Calzones",
         "image": "broccoli-rabe-and-mozzarella-calzones",
         "cost": {
@@ -2952,7 +2952,7 @@
       {
         "chapter": "handheld",
         "title": "Broccoli, Egg, and Cheddar Empanadas",
-        "slug": "broccoli-egg-and-cheddar-empanadas",
+        "slug": "empanadas",
         "serving": "Makes Twelve",
         "image": "broccoli-egg-and-cheddar-empanadas",
         "cost": {
@@ -3001,7 +3001,7 @@
       {
         "chapter": "handheld",
         "title": "Potato and Kale Rolls with Raita",
-        "slug": "potato-and-kale-rolls-with-raita",
+        "slug": "rolls-with-raita",
         "serving": "For Four",
         "image": "potato-and-kale-rolls-with-raita",
         "cost": {
@@ -3097,7 +3097,7 @@
       {
         "chapter": "salad",
         "title": "Broiled Eggplant Salad",
-        "slug": "broiled-eggplant-salad",
+        "slug": "eggplant-salad",
         "serving": "For Two",
         "image": "broiled-eggplant-salad",
         "cost": {
@@ -3169,7 +3169,7 @@
       {
         "chapter": "salad",
         "title": "Ever-Popular Potato Salad",
-        "slug": "ever-popular-potato-salad",
+        "slug": "potato-salad",
         "serving": "For Four",
         "image": "ever-popular-potato-salad",
         "cost": {
@@ -3267,7 +3267,7 @@
       {
         "chapter": "salad",
         "title": "Cold (and Spicy?) Asian Noodles",
-        "slug": "cold-and-spicy-asian-noodles",
+        "slug": "asian-noodles",
         "serving": "For Four",
         "image": "cold-and-spicy-asian-noodles",
         "cost": {
@@ -3508,7 +3508,7 @@
       {
         "chapter": "snacks",
         "title": "Smoky and Spicy Roasted Cauliflower",
-        "slug": "smoky-and-spicy-roasted-cauliflower",
+        "slug": "roasted-cauliflower",
         "serving": "For Four",
         "image": "smoky-and-spicy-roasted-cauliflower",
         "cost": {
@@ -3607,7 +3607,7 @@
       {
         "chapter": "snacks",
         "title": "Green Chili and Cheddar Quesadillas",
-        "slug": "green-chili-and-cheddar-quesadillas",
+        "slug": "quesadillas",
         "serving": "For Two",
         "image": "green-chili-and-cheddar-quesadillas",
         "cost": {
@@ -3683,7 +3683,7 @@
       {
         "chapter": "snacks",
         "title": "Brussels Sprout Hash and Eggs",
-        "slug": "brussels-sprout-hash-and-eggs",
+        "slug": "hash-and-eggs",
         "serving": "For Two",
         "image": "brussels-sprout-hash-and-eggs",
         "cost": {
@@ -3762,7 +3762,7 @@
       {
         "chapter": "snacks",
         "title": "Things On Toast",
-        "slug": "things-on-toast",
+        "slug": "toast",
         "badge": "Ideas",
         "image": "toast",
         "cost": {
@@ -4159,7 +4159,7 @@
       {
         "chapter": "soup",
         "title": "Lightly Curried Butternut Squash Soup",
-        "slug": "lightly-curried-butternut-squash-soup",
+        "slug": "butternut-squash-soup",
         "serving": "For Four",
         "image": "lightly-curried-butternut-squash-soup",
         "cost": {
@@ -4270,7 +4270,7 @@
       {
         "chapter": "staples",
         "title": "Pizza Dough 2 Ways",
-        "slug": "pizza-dough-2-ways",
+        "slug": "pizza-dough",
         "serving": "Makes Four Individual Pizzas",
         "image": "pizza-dough",
         "cost": {
@@ -4346,7 +4346,7 @@
       {
         "chapter": "staples",
         "title": "Best Tomato Sauce",
-        "slug": "best-tomato-sauce",
+        "slug": "tomato-sauce",
         "serving": "Makes Three and a Half Cups",
         "image": "best-tomato-sauce",
         "cost": {
@@ -4375,7 +4375,7 @@
       {
         "chapter": "staples",
         "title": "Chorizo and White Bean Ragu",
-        "slug": "chorizo-and-white-bean-ragu",
+        "slug": "ragu",
         "serving": "Makes Three Cups",
         "image": "chorizo-and-white-bean-ragu",
         "cost": {
@@ -4406,7 +4406,7 @@
       {
         "chapter": "staples",
         "title": "Rainbow Rice 3 Ways",
-        "slug": "rainbow-rice-3-ways",
+        "slug": "rainbow-rice",
         "serving": "For Two",
         "image": "rainbow-rice",
         "cost": {
@@ -4467,7 +4467,7 @@
       {
         "chapter": "staples",
         "title": "How to Cook Dried Beans",
-        "slug": "how-to-cook-dried-beans",
+        "slug": "dried-beans",
         "badge": "Method",
         "image": "how-to-cook-dried-beans",
         "overview": "<p>The best way to prepare dried beans is to soak them overnight. The next day, drain the water and rinse thoroughly before cooking in fresh water.</p>",
@@ -4497,7 +4497,7 @@
       {
         "chapter": "staples",
         "title": "Croutons or Breadcrumbs",
-        "slug": "croutons-or-breadcrumbs",
+        "slug": "croutons-breadcrumbs",
         "badge": "Method",
         "image": "croutons-or-breadcrumbs-1",
         "overview": "<p>I am constantly haunted by the hard, several-day-old bread that I have neglected. Luckily there are plenty of delicious solutions that avoid the trash can. Croutons and breadcrumbs will keep for ages in a sealed container on the counter, and when you have them around you’ll find yourself using them everywhere and finding excuses to make a salad.</p>",
