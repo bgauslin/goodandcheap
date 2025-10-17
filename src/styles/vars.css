@@ -39,7 +39,7 @@
   --previews-border-radius: 1rem;
   --previews-gap: 0;
   --previews-grid: auto-flow / 1fr;
-  --section-max-size: 40rem;  /* 40rem = 640px */
+  --section-max-size: 35rem;  /* 35rem = 560px */
   --thumb-size: 4.5rem;
   --view-background: var(--body-background);
   --view-display: block;
@@ -82,15 +82,8 @@ gc-home {
   --previews-margin: var(--gap);
 }
 
-/* 40rem = 640px */
-/* 50rem = 800px */
-/* 60rem = 960px */
-/* 70rem = 1120px */
-/* 80rem = 1280px */
-/* 100rem = 1600px */
-
-/* 40rem = 640px */
-@media (min-width: 40rem) {
+/* 35rem = 560px */
+@media (min-width: 35rem) {
   :root {
     --app-margin: var(--gap);
     --back-label-display: unset;
