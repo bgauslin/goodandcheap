@@ -75,8 +75,7 @@ class GoodAndCheapApp extends LitElement {
     const href = (<HTMLAnchorElement>target).getAttribute('href');
 
     // Bail if there's no attribute or if the link goes to an external site.
-    if (!href) return;
-    if (href.startsWith('http')) return;
+    if (!href || href.startsWith('http')) return;
 
     // Otherwise, hijack the link since it's from the app and the view needs to
     // change.
