@@ -27,7 +27,7 @@ gc-recipe {
   }
 
   h2 {
-    background-color: var(--content-background);
+    background-color: var(--view-background);
     inset-block: 0 auto;
     margin-block: 1em 0;
     padding-block: 1em;

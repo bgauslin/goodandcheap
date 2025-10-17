@@ -2,10 +2,10 @@
 /* App. */
 
 gc-app {
-  block-size: 100dvh;
   display: grid;
   grid: var(--app-grid);
   margin-inline: var(--app-margin);
+  min-block-size: 100dvh;
 }
 
 /* ---------------------------------------- */
@@ -19,12 +19,14 @@ gc-app > main {
   grid: 'view' 1fr / 1fr;
   grid-area: main;
   overflow: hidden;
+  place-self: center;
 }
 
 /* ---------------------------------------- */
 /* View components. */
 
 .view {
+  background-color: var(--view-background);
   display: var(--view-display);
   grid: var(--view-grid);
   grid-area: view;
