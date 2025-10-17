@@ -30,6 +30,11 @@
     pointer-events: none;
   }
 
+  
+  /* a :is(.badge, .counter) {
+    color: var(--text-color);
+  } */
+
   figure {
     aspect-ratio: 1;
     grid-area: thumb;
@@ -62,7 +67,9 @@
     margin-block: .2em;
   }
 
+  /* [1] Prevent hover/focus color change. */
   .counter {
+    color: var(--text-color);  /* [1] */
     grid-area: counter;
     opacity: .7;
   }
