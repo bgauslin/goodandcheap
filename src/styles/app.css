@@ -59,8 +59,8 @@ gc-app > main {
 
 .content {
   grid-area: content;
-  padding-inline: var(--gap);
   padding-block: 0 var(--gap);
+  padding-inline: var(--gap);
 }
 
 .badge {
