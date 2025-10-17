@@ -64,6 +64,10 @@ gc-recipe {
     margin-block: 0;
   }
 
+  .more .steps {
+    margin-block: 1em;
+  }
+
   .photo {
     display: grid;
     grid: 'photo' 1fr / 1fr;
