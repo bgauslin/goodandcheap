@@ -170,7 +170,7 @@
           "serving": "For Two",
           "image": "beet-and-chickpea-salad",
           "chapter": "salad",
-          "slug": "beet-and-chickpea-salad"
+          "slug": "beet-chickpea-salad"
         },
         {
           "title": "Broccoli Apple Salad",
@@ -221,7 +221,7 @@
           "serving": "For Four",
           "image": "mexican-street-corn",
           "chapter": "snacks",
-          "slug": "mexican-street-corn"
+          "slug": "street-corn"
         },
         {
           "title": "Green Chili and Cheddar Quesadillas",
@@ -235,7 +235,7 @@
           "serving": "For Four",
           "image": "cornmeal-crusted-veggies-1",
           "chapter": "snacks",
-          "slug": "cornmeal-crusted-veggies"
+          "slug": "crusted-veggies"
         },
         {
           "title": "Brussels Sprout Hash and Eggs",
@@ -595,7 +595,7 @@
           "serving": "For Two",
           "image": "smoothies",
           "chapter": "drinks",
-          "slug": "smoothies-4-ways"
+          "slug": "smoothies"
         }
       ]
     },
@@ -690,7 +690,7 @@
           "badge": "Ideas",
           "image": "spices-and-aromatics",
           "chapter": "flavor",
-          "slug": "spices-and-aromatics"
+          "slug": "spices-aromatics"
         }
       ]
     }
@@ -2551,7 +2551,7 @@
       {
         "chapter": "drinks",
         "title": "Smoothies 4 Ways",
-        "slug": "smoothies-4-ways",
+        "slug": "smoothies",
         "serving": "For Two",
         "image": "smoothies",
         "overview": "<p>I have four types of smoothies here, but of course there are many more. Give these a try when you have overripe fruit that you wouldn’t eat otherwise. Add a teaspoon of vanilla to any of these and they will seem incredibly professional. The frozen melon drinks, in particular, are the most refreshing treat on a hot summer day.</p>",
@@ -2790,7 +2790,7 @@
       {
         "chapter": "flavor",
         "title": "Spices and Aromatics",
-        "slug": "spices-and-aromatics",
+        "slug": "spices-aromatics",
         "badge": "Ideas",
         "image": "spices-and-aromatics",
         "overview": "<p>So many of the recipes in this collection can be easily modified to your taste. Learning to cook with different spices, herbs, and aromatics will instantly elevate your cooking and open up new and interesting possibilities. Spices are expensive to buy, but since you use such small amounts, they end up costing pennies per recipe. If you’re able to shop around, look for inexpensive spices in bulk at ethnic markets.</p><p>I’ve ranked what I feel are the most important seasonings, but if you already know what you like, please listen to yourself! I know that my sister would rank chipotle powder just under salt, so do as your heart commands.</p>",
@@ -3357,7 +3357,7 @@
       {
         "chapter": "salad",
         "title": "Beet and Chickpea Salad",
-        "slug": "beet-and-chickpea-salad",
+        "slug": "beet-chickpea-salad",
         "serving": "For Two",
         "image": "beet-and-chickpea-salad",
         "cost": {
@@ -3575,7 +3575,7 @@
       {
         "chapter": "snacks",
         "title": "Mexican Street Corn",
-        "slug": "mexican-street-corn",
+        "slug": "street-corn",
         "serving": "For Four",
         "image": "mexican-street-corn",
         "cost": {
@@ -3634,7 +3634,7 @@
       {
         "chapter": "snacks",
         "title": "Cornmeal Crusted Veggies",
-        "slug": "cornmeal-crusted-veggies",
+        "slug": "crusted-veggies",
         "serving": "For Four",
         "image": "cornmeal-crusted-veggies-1",
         "cost": {
