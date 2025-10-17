@@ -1,6 +1,10 @@
 import {Page, footer} from './shared';
 
 
+/**
+ * Custom element for rendering a Page for the Good And Cheap app.
+ * This element simply receives data from a custom event and renders it.
+ */
 customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
   private data: Page;
   private dataListener: EventListenerObject;

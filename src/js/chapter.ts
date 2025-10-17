@@ -1,6 +1,10 @@
 import {Chapter, footer} from './shared';
 
 
+/**
+ * Custom element for rendering a Chapter for the Good And Cheap app.
+ * This element simply receives data from a custom event and renders it.
+ */
 customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElement {
   private data: Chapter;
   private dataListener: EventListenerObject;

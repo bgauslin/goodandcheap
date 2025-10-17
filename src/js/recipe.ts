@@ -4,6 +4,10 @@ import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {Recipe, footer} from './shared';
 
 
+/**
+ * Custom element for rendering a Recipe for the Good And Cheap app.
+ * This element simply receives data from a custom event and renders it.
+ */
 @customElement('gc-recipe')
 class GoodAndCheapRecipe extends LitElement {
   private dataListener: EventListenerObject;

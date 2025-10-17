@@ -1,20 +1,14 @@
 import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Chapter, Page, Recipe, footer} from './shared';
+import {Chapter, Data, Page, Recipe, footer} from './shared';
 
-
-interface Data {
-  chapters: Chapter[];
-  pages: Page[];
-  recipes: Recipe[];
-}
 
 /**
- * Web component for the Good And Cheap app. This component fetches data from
- * a JSON endpoint; sends data to child components for rendering; sets CSS
- * transitions for before/after view changes; and updates the browser's address
- * bar and title.
+ * Custom element that does all the heavy lifting for the Good And Cheap app.
+ * This component fetches data from a JSON endpoint; sends data to child
+ * components for rendering; sets CSS transitions for before/after view changes;
+ * and updates the browser's address bar and title.
  */
 @customElement('gc-app')
 class GoodAndCheapApp extends LitElement {
@@ -84,7 +78,8 @@ class GoodAndCheapApp extends LitElement {
     if (!href) return;
     if (href.startsWith('http')) return;
 
-    // Otherwise, hijack the link since it's from the app and go to next view.
+    // Otherwise, hijack the link since it's from the app and the view needs to
+    // change.
     event.preventDefault();
 
     // Get last segment for looking up the type of content to render.
@@ -97,8 +92,7 @@ class GoodAndCheapApp extends LitElement {
     const page = pages.find((page: Page) => page.slug === slug);
     const recipe = recipes.find((recipe: Recipe) => recipe.slug === slug);
 
-    // If we have a valid slug and content, render it and update the browser.
-    // Otherwise, default to the home page.
+    // If we have valid content, render it and update the UI and browser.
     if (chapter) {
       this.context = 'chapter';
       this.updateComponent(this.chapterElement, chapter);
@@ -119,7 +113,7 @@ class GoodAndCheapApp extends LitElement {
 
   /**
    * Updates the app when the 'Back' button is clicked. If current context
-   * is a recipe, then next will be a chapter. Otherwise, default to home.
+   * is a Recipe, then next will be a Chapter. Otherwise, default to Home.
    */
   private handleBackButton() {
     if (this.context === 'recipe') {
@@ -171,7 +165,7 @@ class GoodAndCheapApp extends LitElement {
   private updateFromUrl() {
     const slug = this.getSlug();
 
-    // Look up content type based on URL slug.
+    // Look up content based on URL slug.
     const {chapters, pages, recipes} = this.data;
     const chapter = chapters.find((chapter: Chapter) => chapter.slug === slug);
     const page = pages.find((page: Page) => page.slug === slug);

@@ -16,6 +16,11 @@ interface Item {
   title: string,
 }
 
+/**
+ * Custom element for rendering the Home page for the Good And Cheap app'.
+ * This element fetches data from a JSON endpoint, renders it into tabs,
+ * and changes the active tab based on button click.
+ */
 @customElement('gc-home')
 class GoodAndCheapHome extends LitElement {
   @state() data: Home;

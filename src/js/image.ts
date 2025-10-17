@@ -1,6 +1,12 @@
 import {LitElement, html, nothing, PropertyValues} from 'lit';
 import {customElement, property, query, state} from 'lit/decorators.js';
 
+
+/**
+ * Custom element for rendering a cover image for the Good And Cheap app.
+ * This element fetches an image when its 'src' attribute changes and displays
+ * a spinner until the image is fully loaded.
+ */
 @customElement('gc-image')
 class GoodAndCheapImage extends LitElement {
   @property() src: string;

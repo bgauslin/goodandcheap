@@ -55,6 +55,12 @@ export interface Recipe {
   title: string,
 }
 
+export interface Data {
+  chapters: Chapter[];
+  pages: Page[];
+  recipes: Recipe[];
+}
+
 export const footer = `
   <footer>
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" title="Creative Commons Attribution-NonCommercial-ShareAlike License" target="_blank">

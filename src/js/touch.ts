@@ -1,3 +1,6 @@
+/**
+ * Custom element that adds/removes a class on touched elements for CSS styling.
+ */
 customElements.define('gc-touch', class GoodAndCheapTouch extends HTMLElement {
   private end: EventListenerObject;
   private start: EventListenerObject;
