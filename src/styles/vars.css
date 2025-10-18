@@ -76,7 +76,7 @@
     --header-background: rgba(0, 0, 0, .9);
     --link-visited-color: rgb(174, 174, 178);  /* Gray2 light. */
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */
-    --text-color-inverted: black;
+    --text-color-inverted: var(--gray6);
   }
 }
 
@@ -102,10 +102,6 @@ gc-home {
 @media (min-width: 35rem) {
   :root {
     --app-margin: var(--gap);
-    --back-label-display: unset;
-    --header-background: none;
-    --header-border: none;
-    --header-gap: 0;
     --header-grid: 'back wordmark .' var(--header-block-size) / minmax(0, 1fr) auto 1fr;
   }
 }
@@ -139,10 +135,15 @@ gc-home {
 
 @media (orientation: landscape) {
   :root {
-    --app-grid: '. header .' 1fr '. main .' auto '. footer .' 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
+    --app-grid: 1fr auto 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
+    --back-label-display: unset;
     --cover-inset: 0;
     --cover-position: sticky;
+    --footer-grid-area: 3 / 2;
     --footer-padding: 1rem;
+    --header-background: none;
+    --header-border: none;
+    --header-gap: 0;
     --header-position: static;
     --main-aspect-ratio: 2 / 1;
     --main-border-radius: .25rem;
