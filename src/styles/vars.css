@@ -12,7 +12,7 @@
   --border-color: var(--gray5);
   --brand-color: #e5001f;
   --content-background: white;
-  --header-background: rgb(242, 242, 247, .9);  /* Gray6 light. */
+  --header-background: rgb(255, 255, 255, .95);
   --header-border: 1px solid var(--border-color);
   --image-background: var(--gray4);
   --link-color: var(--text-color);
@@ -88,6 +88,7 @@ gc-home {
   :root {
     --app-margin: var(--gap);
     --back-label-display: unset;
+    --header-background: none;
     --header-border: none;
     --header-gap: 0;
     --header-grid: 'back wordmark .' var(--header-block-size) / minmax(0, 1fr) auto 1fr;
