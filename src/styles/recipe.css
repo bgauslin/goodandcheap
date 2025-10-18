@@ -24,8 +24,6 @@ gc-recipe {
   }
 
   h2 {
-    background-color: var(--content-background);
-    inset-block: 0 auto;
     margin-block: 1em 0;
     margin-inline: calc(var(--gap) * -1);
     padding-block: 1em;
@@ -33,6 +31,7 @@ gc-recipe {
   }
 
   :where([id='ingredients'], [id='steps']) h2 {
+    backdrop-filter: var(--backdrop-filter);
     background-color: var(--callout-background);
     inset-block: 0 auto;
     position: sticky;
