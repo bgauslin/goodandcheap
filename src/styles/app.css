@@ -17,7 +17,7 @@ gc-app > main {
   border-radius: var(--main-border-radius);
   display: grid;
   grid: 'view' 1fr / 1fr;
-  grid-area: main;
+  grid-area: var(--main-grid-area);
   overflow: hidden;
   place-self: center;
 }
@@ -31,6 +31,7 @@ gc-app > main {
   grid: var(--view-grid);
   grid-area: view;
   overflow: auto;
+  padding-block: var(--view-padding-block);
   scrollbar-width: none;
 
   &::-webkit-scrollbar {

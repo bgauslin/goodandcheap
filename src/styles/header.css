@@ -4,10 +4,12 @@
 header {
   background-color: var(--header-background);
   border-block-end: var(--header-border);
-  grid-area: header;
+  grid-area: 1 / 1 / 2 / 4;
   place-self: center stretch;
   position: var(--header-position);
-  z-index: 2;
+  inset-block: 0 auto;
+  inset-inline: 0;
+  z-index: 3;
 
   /* Layout wrapper. */
   & > div {
