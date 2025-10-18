@@ -10,10 +10,6 @@ gc-recipe {
     z-index: 1;
   }
 
-  .badge {
-    margin-block: 2rem 0;
-  }
-
   .badge + h1 {
     margin-block-start: .5rem;
   }
@@ -23,10 +19,13 @@ gc-recipe {
   }
 
   h2 {
-    background-color: var(--content-background);
-    inset-block: 0 auto;
     margin-block: 1em 0;
     padding-block: 1em;
+  }
+
+  :where([id='ingredients'], [id='steps']) h2 {
+    background-color: var(--content-background);
+    inset-block: 0 auto;
     position: sticky;
   }
 
