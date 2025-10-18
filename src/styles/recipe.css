@@ -34,6 +34,8 @@ gc-recipe {
     backdrop-filter: var(--backdrop-filter);
     background-color: var(--callout-background);
     inset-block: 0 auto;
+    margin-inline: calc(var(--gap) * -1);
+    padding-inline: var(--gap);
     position: sticky;
   }
 

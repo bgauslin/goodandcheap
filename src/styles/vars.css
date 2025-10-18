@@ -114,9 +114,10 @@ gc-home {
 /* Large | 60rem = 960px */
 
 @media (min-width: 60rem) {
-  gc-home {    
-    --preview-border: none;
+  gc-home {
+    --preview-border: 1px solid var(--border-color);
     --preview-border-radius: 1rem;
+    --preview-copy-border: none;
     --previews-border: none;
     --previews-border-radius: 0;
     --previews-gap: 1rem;
