@@ -33,13 +33,12 @@ html {
 
 body {
   background-color: var(--body-background);
+  color: var(--text-color);
   display: grid;
-  grid: 1fr / 1fr;
   font-family: 'Carmina Light';
   font-size: clamp(.9rem, calc(.7rem + 1vw), 1.2rem);
-  color: var(--text-color);
+  grid: 1fr / 1fr;
   margin: 0;
-  overflow: hidden;
   place-content: center;
 }
 
