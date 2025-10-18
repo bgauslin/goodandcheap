@@ -64,7 +64,7 @@
   --header-block-size: clamp(3rem, 3rem + 1vw, 5rem);
   --main-block-size: 100dvh;
   --main-grid-area: 1 / 2 / 3 / 2;
-  --preview-border: 1px solid var(--border-color);
+  --preview-copy-border: 1px solid var(--border-color);
   --previews-border: 1px solid var(--border-color);
   --previews-border-radius: 1rem;
   --previews-gap: 0;
@@ -114,7 +114,7 @@ gc-home {
     --header-border: none;
     --header-position: static;
     --main-aspect-ratio: 2 / 1;
-    --main-border-radius: .25rem;
+    --main-border-radius: .5rem;
     --main-block-size: 100%;
     --main-grid-area: 2 / 2;
     --section-max-inline-size: 70rem;
@@ -145,8 +145,9 @@ gc-home {
 
 @media (min-width: 60rem) {
   gc-home {    
-    --preview-border: none;
+    --preview-border: 1px solid var(--border-color);
     --preview-border-radius: 1rem;
+    --preview-copy-border: none;
     --previews-border: none;
     --previews-border-radius: 0;
     --previews-gap: 1rem;
