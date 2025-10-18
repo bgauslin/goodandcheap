@@ -31,6 +31,7 @@
   --header-size: clamp(3rem, 3rem + 1vw, 5rem);
   --main-block-size: calc(100dvh - var(--header-size));
   --preview-border: 1px solid var(--border-color);
+  --previews-border: 1px solid var(--border-color);
   --previews-border-radius: 1rem;
   --previews-gap: 0;
   --previews-grid: auto-flow / 1fr;
@@ -119,7 +120,6 @@ gc-home {
     --main-aspect-ratio: 2 / 1;
     --main-border-radius: .25rem;
     --main-block-size: 100%;
-    --previews-border: 1px solid var(--border-color);
     --section-max-size: 70rem;
     --view-display: grid;
     --view-grid: 'cover content' / 1fr 1fr;
