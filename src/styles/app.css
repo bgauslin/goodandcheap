@@ -50,16 +50,13 @@ gc-app > main {
   background-color: var(--body-background);
 }
 
-:is(gc-recipe, gc-page) {
-  background-color: var(--content-background);
-}
-
 /* ---------------------------------------- */
 /* View component elements. */
 
 .content {
+  background-color: var(--content-background);
   grid-area: content;
-  padding-block: 0 var(--gap);
+  padding-block: var(--gap);
   padding-inline: var(--gap);
 }
 

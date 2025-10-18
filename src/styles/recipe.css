@@ -18,16 +18,12 @@ gc-recipe {
     margin-block-start: .5rem;
   }
 
-  h1 {
-    margin-block-end: .5rem;
-  }
-
   .serving {
     margin-block: 0 1em;
   }
 
   h2 {
-    background-color: var(--view-background);
+    background-color: var(--content-background);
     inset-block: 0 auto;
     margin-block: 1em 0;
     padding-block: 1em;

@@ -37,8 +37,9 @@ customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
       <div class="content">
         <h1>${title}</h1>
         ${content}
-        ${footer}
       </div>
+
+      ${footer}
     `;
   }
 });

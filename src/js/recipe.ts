@@ -140,9 +140,9 @@ class GoodAndCheapRecipe extends LitElement {
             </div>`;
           })}
         </section>` : nothing}
-
-        ${unsafeHTML(footer)}
       </div>
+
+      ${unsafeHTML(footer)}
     `;
   }
 }

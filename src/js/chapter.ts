@@ -66,8 +66,9 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
         <ul class="previews">
           ${items}
         </ul>
-        ${footer}
       </div>
+
+      ${footer}
     `;
   }
 });
