@@ -3,6 +3,7 @@
 
 header {
   background-color: var(--header-background);
+  border-block-end: var(--header-border);
   grid-area: header;
   place-self: center stretch;
   position: var(--header-position);
