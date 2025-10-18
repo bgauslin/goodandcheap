@@ -5,7 +5,7 @@ h1 {
   margin-block: 0 .5rem;
 }
 
-h2, .cost, .title {
+h2, .cost, .title, .steps > li::before {
   font-family: 'Futura Bold';
 }
 

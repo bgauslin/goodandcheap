@@ -53,13 +53,33 @@ gc-recipe {
     margin-block: 0 1em;
   }
 
+  /* Lists for ingredients and cooking steps. */
   :is(ul, ol) {
     margin-block: 0;
-    padding-inline: 1em;
+    padding-inline: 2em 0;
+  }
+
+  /* Recipe steps. */
+  .steps {
+    counter-reset: steps 0;
+    list-style: none;
   }
 
   .steps > li {
+    counter-increment: steps;
     margin-block: 0 1em;
+  }
+
+  .steps > li::before {
+    background-color: var(--text-color);
+    border-radius: 1em;
+    color: var(--text-color-inverted);
+    content: counter(steps);
+    display: inline-grid;
+    font-size: var(--subhead-font-size);
+    grid: 1.75em / 1.75em;
+    margin-inline: -2.5em .75em;
+    place-items: center;
   }
 
   /* Recipes within recipes (and supplemental content). */
