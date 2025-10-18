@@ -52,8 +52,13 @@
 
   /* Transitions. */
   --transition: .25s;
+}
 
-  @media (prefers-color-scheme: dark) {
+/* -------------------------------------------------- */
+/* Dark mode */
+
+@media (prefers-color-scheme: dark) {
+  :root {
     /* Apple HGI dark mode colors. */
     --gray1: rgb(142, 142, 147);
     --gray2: rgb(99, 99, 102);
@@ -66,6 +71,7 @@
     --body-background: black;
     --border-color: var(--gray3);
     --brand-color: #ed4d62;
+    --callout-background: rgb(28, 28, 30, .9);
     --content-background: var(--gray6);
     --header-background: rgba(0, 0, 0, .9);
     --link-visited-color: rgb(174, 174, 178);  /* Gray2 light. */
@@ -74,6 +80,10 @@
   }
 }
 
+/* -------------------------------------------------- */
+/* Elements and scoped overrides. */
+
+/**/
 gc-app {
   --footer-display: none;
 }
@@ -86,7 +96,9 @@ gc-home {
   --previews-margin: var(--gap);
 }
 
-/* 35rem = 560px */
+/* -------------------------------------------------- */
+/* Medium | 35rem = 560px */
+
 @media (min-width: 35rem) {
   :root {
     --app-margin: var(--gap);
@@ -98,7 +110,9 @@ gc-home {
   }
 }
 
-/* 60rem = 960px */
+/* -------------------------------------------------- */
+/* Large | 60rem = 960px */
+
 @media (min-width: 60rem) {
   gc-home {    
     --preview-border: none;
@@ -111,12 +125,17 @@ gc-home {
   }
 }
 
-/* 70rem = 1120px */
+/* -------------------------------------------------- */
+/* X-large | 70rem = 1120px */
+
 @media (min-width: 70rem) {
   gc-home {
     --previews-grid: auto-flow / repeat(3, 1fr);
   }
 }
+
+/* -------------------------------------------------- */
+/* Landscape */
 
 @media (orientation: landscape) {
   :root {
@@ -135,6 +154,7 @@ gc-home {
     --view-padding-block: 0;
   }
 
+  /* Elements and scoped overrides. */
   gc-app {
     --footer-display: block;
   }
