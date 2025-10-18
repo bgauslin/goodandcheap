@@ -1,6 +1,6 @@
 gc-recipe {
   .cost {
-    background-color: var(--content-background);
+    background-color: var(--callout-background);
     grid-area: 1 / 1 / -1 / -1;
     line-height: 1.5;
     margin-block: 10% 0;
@@ -24,7 +24,7 @@ gc-recipe {
   }
 
   :where([id='ingredients'], [id='steps']) h2 {
-    background-color: var(--content-background);
+    background-color: var(--callout-background);
     inset-block: 0 auto;
     position: sticky;
   }

@@ -11,9 +11,10 @@
   --body-background: var(--gray6);
   --border-color: var(--gray5);
   --brand-color: #e5001f;
+  --callout-background: rgb(255, 255, 255, .9);
   --content-background: white;
   --content-border: 1px solid var(--border-color);
-  --header-background: rgb(255, 255, 255, .95);
+  --header-background: rgb(255, 255, 255, .9);
   --header-border: 1px solid var(--border-color);
   --image-background: var(--gray4);
   --link-color: var(--text-color);
@@ -42,8 +43,9 @@
     --body-background: black;
     --border-color: var(--gray3);
     --brand-color: #ed4d62;
+    --callout-background: rgb(28, 28, 30, .75);
     --content-background: var(--gray6);
-    --header-background: rgba(0, 0, 0, .9);
+    --header-background: rgba(28, 28, 30, .75);
     --link-visited-color: rgb(174, 174, 178);  /* Gray2 light. */
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */
     --text-color-inverted: black;
