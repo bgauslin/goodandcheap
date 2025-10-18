@@ -3,7 +3,7 @@ gc-recipe {
     background-color: var(--content-background);
     grid-area: 1 / 1 / -1 / -1;
     line-height: 1.5;
-    margin-block: 4rem 0;
+    margin-block: 10% 0;
     padding-block: .5rem;
     padding-inline: .75rem;
     place-self: start end;
