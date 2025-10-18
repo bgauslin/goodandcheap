@@ -12,11 +12,12 @@
 
   li {
     background-color: var(--content-background);
+    border: var(--preview-border, none);
     border-radius: var(--preview-border-radius, 0);
   }
 
   li:not(:last-child) .copy {
-    border-bottom: var(--preview-border);
+    border-bottom: var(--preview-copy-border);
   }
 
   a {

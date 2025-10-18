@@ -24,28 +24,6 @@
   --text-color: rgb(44, 44, 46);  /* Gray5 dark. */
   --text-color-inverted: white;
 
-  /* Layout. */
-  --app-grid: var(--header-block-size) 1fr / 1fr minmax(auto, var(--section-max-inline-size)) 1fr;
-  --back-label-display: none;
-  --gap: clamp(.75em, .75em + 1vw, 3em);
-  --footer-padding: 2rem;
-  --header-gap: .5rem;
-  --header-grid: '. back wordmark . .' var(--header-block-size) / 0 minmax(0, 1fr) auto 1fr 0;
-  --header-position: fixed;
-  --header-block-size: clamp(3rem, 3rem + 1vw, 5rem);
-  --main-block-size: 100dvh;
-  --main-grid-area: 1 / 2 / 3 / 2;
-  --preview-border: 1px solid var(--border-color);
-  --previews-border: 1px solid var(--border-color);
-  --previews-border-radius: 1rem;
-  --previews-gap: 0;
-  --previews-grid: auto-flow / 1fr;
-  --section-max-inline-size: 35rem;  /* 35rem = 560px */
-  --thumb-size: 4.5rem;
-  --view-background: var(--body-background);
-  --view-display: block;
-  --view-padding-block: var(--header-block-size) 0;
-
   /* Typography. */
   --small-font-size: 60%;
   --subhead-font-size: 80%;
@@ -73,11 +51,37 @@
     --brand-color: #ed4d62;
     --callout-background: rgb(28, 28, 30, .9);
     --content-background: var(--gray6);
-    --header-background: rgba(0, 0, 0, .9);
+    --header-background: rgba(28, 28, 30, .75);
     --link-visited-color: rgb(174, 174, 178);  /* Gray2 light. */
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */
     --text-color-inverted: var(--gray6);
   }
+}
+
+/* ------------------------------------------------------------ */
+/* Layout | small/default */
+
+:root {
+  --app-grid: var(--header-block-size) 1fr / 1fr minmax(auto, var(--section-max-inline-size)) 1fr;
+  --back-label-display: none;
+  --gap: clamp(.75em, .75em + 1vw, 3em);
+  --footer-padding: 2rem;
+  --header-gap: .5rem;
+  --header-grid: '. back wordmark . .' var(--header-block-size) / 0 minmax(0, 1fr) auto 1fr 0;
+  --header-position: fixed;
+  --header-block-size: clamp(3rem, 3rem + 1vw, 5rem);
+  --main-block-size: 100dvh;
+  --main-grid-area: 1 / 2 / 3 / 2;
+  --preview-copy-border: 1px solid var(--border-color);
+  --previews-border: 1px solid var(--border-color);
+  --previews-border-radius: 1rem;
+  --previews-gap: 0;
+  --previews-grid: auto-flow / 1fr;
+  --section-max-inline-size: 35rem;  /* 35rem = 560px */
+  --thumb-size: 4.5rem;
+  --view-background: var(--body-background);
+  --view-display: block;
+  --view-padding-block: var(--header-block-size) 0;
 }
 
 /* -------------------------------------------------- */
@@ -136,6 +140,7 @@ gc-home {
 @media (orientation: landscape) {
   :root {
     --app-grid: 1fr auto 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
+    --content-border: none;
     --back-label-display: unset;
     --cover-inset: 0;
     --cover-position: sticky;
@@ -144,9 +149,11 @@ gc-home {
     --header-background: none;
     --header-border: none;
     --header-gap: 0;
+    --header-background: none;
+    --header-border: none;
     --header-position: static;
     --main-aspect-ratio: 2 / 1;
-    --main-border-radius: .25rem;
+    --main-border-radius: .5rem;
     --main-block-size: 100%;
     --main-grid-area: 2 / 2;
     --section-max-inline-size: 70rem;
@@ -170,5 +177,30 @@ gc-home {
 
   gc-recipe {
     --view-grid: 'content cover' / 1fr 1fr;
+  }
+}
+
+/* ------------------------------------------------------------ */
+/* Previews | large | 60rem = 960px */
+
+@media (min-width: 60rem) {
+  gc-home {    
+    --preview-border: 1px solid var(--border-color);
+    --preview-border-radius: 1rem;
+    --preview-copy-border: none;
+    --previews-border: none;
+    --previews-border-radius: 0;
+    --previews-gap: 1rem;
+    --previews-grid: auto-flow / repeat(2, 1fr);
+    --previews-margin: 0;
+  }
+}
+
+/* ------------------------------------------------------------ */
+/* Previews | x-large | 70rem = 1120px */
+
+@media (min-width: 70rem) {
+  gc-home {
+    --previews-grid: auto-flow / repeat(3, 1fr);
   }
 }
