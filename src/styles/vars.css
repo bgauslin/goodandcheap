@@ -59,7 +59,7 @@
 }
 
 /* -------------------------------------------------- */
-/* Layout | small/default */
+/* Small | (default) */
 
 :root {
   --app-grid: var(--header-block-size) 1fr / 1fr minmax(auto, var(--section-max-inline-size)) 1fr;
@@ -84,10 +84,6 @@
   --view-padding-block: var(--header-block-size) 0;
 }
 
-/* -------------------------------------------------- */
-/* Elements and scoped overrides. */
-
-/**/
 gc-app {
   --footer-display: none;
 }
@@ -161,7 +157,6 @@ gc-home {
     --view-padding-block: 0;
   }
 
-  /* Elements and scoped overrides. */
   gc-app {
     --footer-display: block;
   }
