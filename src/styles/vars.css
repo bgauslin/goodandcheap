@@ -8,11 +8,14 @@
   --gray6: rgb(242, 242, 247);
 
   /* Branding and theming. */
+  --backdrop-filter: blur(6px);
   --body-background: var(--gray6);
   --border-color: var(--gray5);
   --brand-color: #e5001f;
+  --callout-background: rgb(255, 255, 255, .8);
   --content-background: white;
-  --header-background: rgb(255, 255, 255, .95);
+  --content-border: 1px solid var(--border-color);
+  --header-background: rgb(255, 255, 255, .8);
   --header-border: 1px solid var(--border-color);
   --image-background: var(--gray4);
   --link-color: var(--text-color);

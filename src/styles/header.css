@@ -2,6 +2,7 @@
 /* App header. */
 
 header {
+  backdrop-filter: var(--backdrop-filter);
   background-color: var(--header-background);
   border-block-end: var(--header-border);
   grid-area: 1 / 1 / 2 / 4;

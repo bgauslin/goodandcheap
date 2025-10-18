@@ -1,18 +1,22 @@
 import {LitElement, html, nothing} from 'lit';
-import {customElement, state} from 'lit/decorators.js';
+import {customElement, queryAll, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {Recipe, footer} from './shared';
 
 
 /**
  * Custom element for rendering a Recipe for the Good And Cheap app.
- * This element simply receives data from a custom event and renders it.
+ * This element receives data from a custom event and renders it, then sets
+ * up an Intersection Observer for styling sticky headings when stuck.
  */
 @customElement('gc-recipe')
 class GoodAndCheapRecipe extends LitElement {
   private dataListener: EventListenerObject;
 
+  @queryAll(':where([id="ingredients"], [id="steps"]) h2') headings: HTMLHeadingElement[];
+
   @state() data: Recipe;
+  @state() observer: IntersectionObserver;
 
   constructor() {
     super();
@@ -27,14 +31,47 @@ class GoodAndCheapRecipe extends LitElement {
   disconnectedCallback() {
     super.disconnectedCallback();
     this.removeEventListener('data', this.dataListener);
+    this.observer.disconnect();
   }
 
   protected createRenderRoot() {
     return this;
   }
 
-  private updateData(event: CustomEvent) {
+  private async updateData(event: CustomEvent) {
     this.data = event.detail;
+
+    await this.updateComplete;
+    this.watch();
+  }
+
+  private watch() {
+    this.observer = new IntersectionObserver(this.sticky, {
+      root: this,
+      rootMargin: '-1px',
+      threshold: 1,
+    });
+
+    for (const heading of this.headings) {
+      this.observer.observe(heading);
+    }
+  }
+
+  /**
+   * IntersectionObserver callback that updates sticky elements.
+   */
+  sticky(entries: IntersectionObserverEntry[]) {
+    for (const entry of entries) {
+      const {target} = entry;
+
+      if (entry.isIntersecting) {
+        target.classList.remove('stuck');
+        console.log('not stuck', target.textContent);
+      } else {
+        target.classList.add('stuck');
+        console.log('stuck!', target.textContent);
+      }
+    }
   }
 
   protected render() {
