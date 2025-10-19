@@ -61,6 +61,15 @@ gc-recipe {
     padding-inline: 2em 0;
   }
 
+  /* Recipe ingredients. */
+  li[data-checked] {
+    cursor: pointer;
+  }
+
+  li[data-checked='true'] {
+    color: green;
+  }
+
   /* Recipe steps. */
   .steps {
     counter-reset: steps 0;

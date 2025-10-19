@@ -6,7 +6,7 @@ import {Recipe, footer} from './shared';
 
 interface Ingredients {
   slug: string,
-  items: number[],
+  items: string[],
 };
 
 /**
@@ -20,8 +20,8 @@ class GoodAndCheapRecipe extends LitElement {
 
   @queryAll(':is([id="ingredients"], [id="steps"]) h2') headings: HTMLHeadingElement[];
   @state() data: Recipe;
-  @state() ingredients: Ingredients;
   @state() storage: Ingredients[];
+  @state() ingredients: Ingredients;
   @state() observer: IntersectionObserver;
 
   constructor() {
@@ -32,6 +32,7 @@ class GoodAndCheapRecipe extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener('data', this.dataListener);
+    this.getStoredIngredients();
   }
 
   disconnectedCallback() {
@@ -47,21 +48,64 @@ class GoodAndCheapRecipe extends LitElement {
   private async updateData(event: CustomEvent) {
     this.data = event.detail;
     await this.updateComplete;
-    this.getIngredients();
     this.watch();
+    this.getIngredients();
   }
 
-  private getIngredients() {
+  /**
+   * TODO: Ensure that this ic only called one time when first connected.
+   */
+  private getStoredIngredients() {
     this.storage = JSON.parse(localStorage.getItem('ingredients'));
+    
+    console.log('this.storage', this.storage);
+
     if (this.storage) {
-      this.ingredients = this.storage.find((item: Ingredients) => item.slug === this.data.slug);
+      const recipe = this.storage.find(item => item.slug === this.data.slug);
+      this.ingredients.items = recipe.items;
     }
+
+    console.log('this.ingredients', this.ingredients);
   }
 
-  private saveIngredients(index: number) {
-    this.ingredients.items.push(index);
+  /**
+   * TODO: This should be called every time the recipe changes.
+   */
+  private getIngredients() {
+    console.log('getIngredients() before', this.ingredients);
 
-    localStorage.setItem('ingredients', JSON.stringify(this.ingredients);)
+    if (!this.ingredients) {
+      this.ingredients = {
+        slug: this.data.slug,
+        items: [],
+      }
+    }
+
+    console.log('getIngredients() after', this.ingredients);
+  }
+
+  /**
+   * TODO: Get the click target and add/remove it to the items array.
+   */
+  private saveIngredients(event: Event) {
+    const {target} = event;
+    const value = (<HTMLElement>target).dataset.index;
+    
+    const index = this.ingredients.items.indexOf(value);
+    if (index < 0) {
+      this.ingredients.items.push(value);
+    } else {
+      this.ingredients.items.splice(index, 1);
+    }
+    this.ingredients.items.sort();
+
+    // Toggle data attribute for styling.
+    (<HTMLElement>target).dataset.checked = `${index < 0}`;
+
+    console.log('saveIngredients()', this.ingredients);
+
+    // Save the items to localStorage.
+    // localStorage.setItem('ingredients', JSON.stringify(this.storage));
   }
 
   private watch() {
@@ -129,12 +173,19 @@ class GoodAndCheapRecipe extends LitElement {
         ${ingredients ? html`
         <section id="ingredients">
           <h2>Ingredients</h2>
-          ${ingredients.map(group => {
+          ${ingredients.map((group, i) => {
             const {label, items} = group;
             return html`
               ${label ? html`<h3>${label}</h3>` : nothing}
               <ul class="ingredients">
-                ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
+                ${items.map((item, j) => html`
+                  <li
+                    data-checked="false"
+                    data-index="${i}.${j}"
+                    @click="${this.saveIngredients}">
+                    ${unsafeHTML(item)}
+                  </li>`
+                )}
               </ul>
             `;
           })}
