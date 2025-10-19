@@ -9,6 +9,7 @@
 
   /* Branding and theming. */
   --backdrop-filter: blur(6px);
+  --badge-background: var(--gray5);
   --body-background: var(--gray6);
   --border-color: var(--gray5);
   --brand-color: #e5001f;
@@ -48,6 +49,7 @@
     --gray6: rgb(28, 28, 30);
 
     /* Dark mode branding and theming. */
+    --badge-background: var(--gray4);
     --body-background: black;
     --border-color: var(--gray3);
     --brand-color: #ed4d62;

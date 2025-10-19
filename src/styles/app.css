@@ -63,7 +63,7 @@ gc-app > main {
 }
 
 .badge {
-  background-color: var(--gray5);
+  background-color: var(--badge-background);
   border-radius: .25rem;
   display: inline-block;
   padding-block: .25em;
