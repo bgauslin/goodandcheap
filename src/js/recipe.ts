@@ -52,6 +52,7 @@ class GoodAndCheapRecipe extends LitElement {
   private saveIngredients(id: string) {
     const index = this.saved.indexOf(id);
 
+    // Add/remove ingredient and sort the list for readability.
     if (index < 0) {
       this.saved.push(id);
     } else {
@@ -74,7 +75,7 @@ class GoodAndCheapRecipe extends LitElement {
   }
 
   /**
-   * Set up an IntersectionObserver for sticky elements.
+   * Sets up an IntersectionObserver for sticky elements.
    */
   private watch() {
     this.observer = new IntersectionObserver(this.sticky, {
