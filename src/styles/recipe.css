@@ -62,11 +62,11 @@ gc-recipe {
   }
 
   /* Recipe ingredients. */
-  li[data-checked] {
+  [id='ingredients'] li {
     cursor: pointer;
   }
 
-  li[data-checked='true'] {
+  [data-checked] {
     color: green;
   }
 

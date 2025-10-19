@@ -14,6 +14,7 @@ import {Chapter, Data, Page, Recipe, footer} from './shared';
 class GoodAndCheapApp extends LitElement {
   private clickHandler: EventListenerObject;
   private popstateHandler: EventListenerObject;
+  private savedHandler: EventListenerObject;
 
   @query('gc-chapter') chapterElement: HTMLElement;
   @query('gc-page') pageElement: HTMLElement;
@@ -34,12 +35,14 @@ class GoodAndCheapApp extends LitElement {
     this.baseTitle = document.title;
     this.clickHandler = this.handleClick.bind(this);
     this.popstateHandler = this.updateFromUrl.bind(this);
+    this.savedHandler = this.handleSaved.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener('click', this.clickHandler);
     window.addEventListener('popstate', this.popstateHandler);
+    window.addEventListener('saved', this.savedHandler);
     this.fetchData();
   }
 
@@ -47,6 +50,7 @@ class GoodAndCheapApp extends LitElement {
     super.disconnectedCallback();
     this.removeEventListener('click', this.clickHandler);
     window.removeEventListener('popstate', this.popstateHandler);
+    window.removeEventListener('saved', this.savedHandler);
   }
 
   protected createRenderRoot() {
@@ -65,6 +69,17 @@ class GoodAndCheapApp extends LitElement {
       console.warn('Currently unable to fetch data. :(');
       return;
     }
+  }
+
+  /**
+   * Captures 'saved' event dispatched from a child element and updates
+   * a recipe with saved ingredients.
+   */
+  private handleSaved(event: CustomEvent) {
+    const {slug, saved} = event.detail;
+    const {recipes} = this.data;
+    const recipe = recipes.find(recipe => recipe.slug === slug);
+    recipe.saved = saved;
   }
 
   /**

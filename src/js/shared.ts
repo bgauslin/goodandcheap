@@ -49,6 +49,7 @@ export interface Recipe {
     steps?: string[],
   }[],
   overview: string,
+  saved?: string[],
   serving: string,
   slug: string,
   steps?: string[],

@@ -4,11 +4,6 @@ import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {Recipe, footer} from './shared';
 
 
-interface Ingredients {
-  slug: string,
-  items: string[],
-};
-
 /**
  * Custom element for rendering a Recipe for the Good And Cheap app.
  * This element receives data from a custom event and renders it, then sets
@@ -20,9 +15,8 @@ class GoodAndCheapRecipe extends LitElement {
 
   @queryAll(':is([id="ingredients"], [id="steps"]) h2') headings: HTMLHeadingElement[];
   @state() data: Recipe;
-  @state() storage: Ingredients[];
-  @state() ingredients: Ingredients;
   @state() observer: IntersectionObserver;
+  @state() saved: string[] = [];
 
   constructor() {
     super();
@@ -32,7 +26,6 @@ class GoodAndCheapRecipe extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener('data', this.dataListener);
-    this.getStoredIngredients();
   }
 
   disconnectedCallback() {
@@ -48,66 +41,44 @@ class GoodAndCheapRecipe extends LitElement {
   private async updateData(event: CustomEvent) {
     this.data = event.detail;
     await this.updateComplete;
+    this.saved = this.data.saved || [];
     this.watch();
-    this.getIngredients();
   }
 
   /**
-   * TODO: Ensure that this ic only called one time when first connected.
-   */
-  private getStoredIngredients() {
-    this.storage = JSON.parse(localStorage.getItem('ingredients'));
-    
-    console.log('this.storage', this.storage);
-
-    if (this.storage) {
-      const recipe = this.storage.find(item => item.slug === this.data.slug);
-      this.ingredients.items = recipe.items;
-    }
-
-    console.log('this.ingredients', this.ingredients);
-  }
-
-  /**
-   * TODO: This should be called every time the recipe changes.
-   */
-  private getIngredients() {
-    console.log('getIngredients() before', this.ingredients);
-
-    if (!this.ingredients) {
-      this.ingredients = {
-        slug: this.data.slug,
-        items: [],
-      }
-    }
-
-    console.log('getIngredients() after', this.ingredients);
-  }
-
-  /**
-   * TODO: Get the click target and add/remove it to the items array.
+   * Updates the list of checked ingredients and dispatches them to the app
+   * to store and render on subsequent visits.
    */
   private saveIngredients(event: Event) {
     const {target} = event;
-    const value = (<HTMLElement>target).dataset.index;
+    const id = (<HTMLElement>target).dataset.id;
     
-    const index = this.ingredients.items.indexOf(value);
+    // Add/remove ingredient ID and sort the list for readability.
+    const index = this.saved.indexOf(id);
     if (index < 0) {
-      this.ingredients.items.push(value);
+      this.saved.push(id);
     } else {
-      this.ingredients.items.splice(index, 1);
+      this.saved.splice(index, 1);
     }
-    this.ingredients.items.sort();
+    this.saved.sort();
 
-    // Toggle data attribute for styling.
-    (<HTMLElement>target).dataset.checked = `${index < 0}`;
+    // Re-render the template.
+    this.requestUpdate();
 
-    console.log('saveIngredients()', this.ingredients);
-
-    // Save the items to localStorage.
-    // localStorage.setItem('ingredients', JSON.stringify(this.storage));
+    // Send saved ingredients up to the app.
+    this.dispatchEvent(new CustomEvent('saved', {
+      bubbles: true,
+      composed: true,
+      detail: {
+        slug: this.data.slug,
+        saved: this.saved,
+      },
+    }));
   }
 
+  /**
+   * Set up an IntersectionObserver for sticky elements.
+   */
   private watch() {
     this.observer = new IntersectionObserver(this.sticky, {
       root: this,
@@ -178,14 +149,17 @@ class GoodAndCheapRecipe extends LitElement {
             return html`
               ${label ? html`<h3>${label}</h3>` : nothing}
               <ul class="ingredients">
-                ${items.map((item, j) => html`
+                ${items.map((item, j) => {
+                  const id = `${i}.${j}`;
+                  const checked = this.saved.includes(id);
+                  return html`
                   <li
-                    data-checked="false"
-                    data-index="${i}.${j}"
+                    ?data-checked="${checked}"
+                    data-id="${id}"
                     @click="${this.saveIngredients}">
                     ${unsafeHTML(item)}
                   </li>`
-                )}
+                })}
               </ul>
             `;
           })}
