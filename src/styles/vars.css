@@ -51,7 +51,7 @@
     /* Dark mode branding and theming. */
     --badge-background: var(--gray4);
     --body-background: black;
-    --border-color: var(--gray3);
+    --border-color: var(--gray5);
     --brand-color: #ed4d62;
     --callout-background: rgb(28, 28, 30, .9);
     --content-background: var(--gray6);
