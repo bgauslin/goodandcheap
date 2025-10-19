@@ -1,16 +1,16 @@
 /* Font family. */
 
 h1 {
-  font-family: 'Carmina Bold';
+  font-family: 'Carmina Bold', serif;
   margin-block: 0 .5rem;
 }
 
 h2, .cost, .title, .steps > li::before {
-  font-family: 'Futura Bold';
+  font-family: 'Futura Bold', sans-serif;
 }
 
 h3, button, footer > small, .badge, .count, .counter, .serving, .ingredients > li {
-  font-family: 'Futura Book';
+  font-family: 'Futura Book', sans-serif;
 }
 
 /* Font size and layout. */
