@@ -4,6 +4,11 @@ import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {Recipe, footer} from './shared';
 
 
+interface Ingredients {
+  slug: string,
+  items: number[],
+};
+
 /**
  * Custom element for rendering a Recipe for the Good And Cheap app.
  * This element receives data from a custom event and renders it, then sets
@@ -15,6 +20,8 @@ class GoodAndCheapRecipe extends LitElement {
 
   @queryAll(':is([id="ingredients"], [id="steps"]) h2') headings: HTMLHeadingElement[];
   @state() data: Recipe;
+  @state() ingredients: Ingredients;
+  @state() storage: Ingredients[];
   @state() observer: IntersectionObserver;
 
   constructor() {
@@ -40,7 +47,21 @@ class GoodAndCheapRecipe extends LitElement {
   private async updateData(event: CustomEvent) {
     this.data = event.detail;
     await this.updateComplete;
+    this.getIngredients();
     this.watch();
+  }
+
+  private getIngredients() {
+    this.storage = JSON.parse(localStorage.getItem('ingredients'));
+    if (this.storage) {
+      this.ingredients = this.storage.find((item: Ingredients) => item.slug === this.data.slug);
+    }
+  }
+
+  private saveIngredients(index: number) {
+    this.ingredients.items.push(index);
+
+    localStorage.setItem('ingredients', JSON.stringify(this.ingredients);)
   }
 
   private watch() {
@@ -58,7 +79,7 @@ class GoodAndCheapRecipe extends LitElement {
   /**
    * IntersectionObserver callback that updates sticky elements.
    */
-  sticky(entries: IntersectionObserverEntry[]) {
+  private sticky(entries: IntersectionObserverEntry[]) {
     for (const entry of entries) {
       const {target} = entry;
 
