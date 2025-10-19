@@ -49,12 +49,9 @@ class GoodAndCheapRecipe extends LitElement {
    * Updates the list of checked ingredients and dispatches them to the app
    * to store and render on subsequent visits.
    */
-  private saveIngredients(event: Event) {
-    const {target} = event;
-    const id = (<HTMLElement>target).dataset.id;
-    
-    // Add/remove ingredient ID and sort the list for readability.
+  private saveIngredients(id: string) {
     const index = this.saved.indexOf(id);
+
     if (index < 0) {
       this.saved.push(id);
     } else {
@@ -155,8 +152,7 @@ class GoodAndCheapRecipe extends LitElement {
                   return html`
                   <li
                     ?data-checked="${checked}"
-                    data-id="${id}"
-                    @click="${this.saveIngredients}">
+                    @click="${() => this.saveIngredients(id)}">
                     ${unsafeHTML(item)}
                   </li>`
                 })}
