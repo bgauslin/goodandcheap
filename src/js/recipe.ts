@@ -13,8 +13,7 @@ import {Recipe, footer} from './shared';
 class GoodAndCheapRecipe extends LitElement {
   private dataListener: EventListenerObject;
 
-  @queryAll(':where([id="ingredients"], [id="steps"]) h2') headings: HTMLHeadingElement[];
-
+  @queryAll(':is([id="ingredients"], [id="steps"]) h2') headings: HTMLHeadingElement[];
   @state() data: Recipe;
   @state() observer: IntersectionObserver;
 
@@ -40,7 +39,6 @@ class GoodAndCheapRecipe extends LitElement {
 
   private async updateData(event: CustomEvent) {
     this.data = event.detail;
-
     await this.updateComplete;
     this.watch();
   }
@@ -66,10 +64,8 @@ class GoodAndCheapRecipe extends LitElement {
 
       if (entry.isIntersecting) {
         target.classList.remove('stuck');
-        console.log('not stuck', target.textContent);
       } else {
         target.classList.add('stuck');
-        console.log('stuck!', target.textContent);
       }
     }
   }
