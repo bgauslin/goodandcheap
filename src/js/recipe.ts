@@ -89,18 +89,15 @@ class GoodAndCheapRecipe extends LitElement {
    */
   private saveIngredients(event: Event) {
     const {target} = event;
-    const value = (<HTMLElement>target).dataset.index;
+    const id = (<HTMLElement>target).dataset.id;
     
-    const index = this.ingredients.items.indexOf(value);
+    const index = this.ingredients.items.indexOf(id);
     if (index < 0) {
-      this.ingredients.items.push(value);
+      this.ingredients.items.push(id);
     } else {
-      this.ingredients.items.splice(index, 1);
+      this.ingredients.items.splice(id, 1);
     }
     this.ingredients.items.sort();
-
-    // Toggle data attribute for styling.
-    (<HTMLElement>target).dataset.checked = `${index < 0}`;
 
     console.log('saveIngredients()', this.ingredients);
 
@@ -178,14 +175,17 @@ class GoodAndCheapRecipe extends LitElement {
             return html`
               ${label ? html`<h3>${label}</h3>` : nothing}
               <ul class="ingredients">
-                ${items.map((item, j) => html`
+                ${items.map((item, j) => {
+                  const id = `${i}.${j}`;
+                  const checked = this.ingredients.includes(id);
+                  return html`
                   <li
-                    data-checked="false"
-                    data-index="${i}.${j}"
+                    ?data-checked="${checked}"
+                    data-id="${id}"
                     @click="${this.saveIngredients}">
                     ${unsafeHTML(item)}
                   </li>`
-                )}
+                })}
               </ul>
             `;
           })}
