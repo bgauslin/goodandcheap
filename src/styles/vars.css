@@ -12,6 +12,8 @@
   --body-background: var(--gray6);
   --border-color: var(--gray5);
   --brand-color: #e5001f;
+  --button-background: var(--gray5);
+  --button-hover-backround: var(--gray3);
   --callout-background: rgb(255, 255, 255, .8);
   --content-background: white;
   --content-border: 1px solid var(--border-color);

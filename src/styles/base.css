@@ -62,7 +62,7 @@ svg {
 
 button {
   appearance: none;
-  background-color: var(--gray5);
+  background-color: var(--button-background);
   border: none;
   color: inherit;
   cursor: pointer;
@@ -71,7 +71,7 @@ button {
 
   &.touch,
   &:focus-visible {
-    background-color: var(--gray3);
+    background-color: var(--button-hover-backround);
   }
 
   @media (any-hover: hover) {
@@ -80,7 +80,7 @@ button {
     }
   
     &:hover {
-      background-color: var(--gray3);
+      background-color: var(--button-hover-backround);
     }
   }
 }

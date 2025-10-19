@@ -40,7 +40,6 @@ header {
   --button-size: 2rem;
 
   align-items: center;
-  background-color: var(--gray5);
   block-size: var(--button-size);
   border-radius: var(--button-size);
   display: grid;

@@ -11,12 +11,12 @@
     border-radius: 2rem;
     padding-block: .5rem;
     padding-inline: .75rem;
-    
-    &[aria-selected='true'] {
-      background-color: var(--text-color);
-      color: var(--text-color-inverted);
-      pointer-events: none;
-    }
+  }
+  
+  [aria-selected='true'] {
+    background-color: var(--text-color);
+    color: var(--text-color-inverted);
+    pointer-events: none;
   }
 }
 
