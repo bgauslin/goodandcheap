@@ -64,6 +64,7 @@ class GoodAndCheapApp extends LitElement {
     try {
       const response = await fetch('./api/app.json');
       this.data = await response.json();
+      this.getStorage();
       this.updateFromUrl();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
@@ -109,6 +110,21 @@ class GoodAndCheapApp extends LitElement {
     };
     
     localStorage.setItem('saved', JSON.stringify(saved));
+  }
+
+  /**
+   * Gets localStorage for pre-populating saved ingredients on return visits.
+   */
+  private getStorage() {
+    const saved = JSON.parse(localStorage.getItem('saved'));
+    const {ingredients} = saved;
+
+    const {recipes} = this.data;
+
+    for (const item of ingredients) {
+      const recipe = recipes.find(recipe => recipe.slug === item.id);
+      recipe.savedIngredients = item.items;
+    }
   }
 
   /**
