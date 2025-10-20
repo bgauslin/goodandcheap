@@ -1,4 +1,4 @@
-import {Chapter, footer} from './shared';
+import {Events, Chapter, footer} from './shared';
 
 
 /**
@@ -15,11 +15,11 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
   }
 
   connectedCallback() {
-    this.addEventListener('data', this.dataListener);
+    this.addEventListener(Events.Data, this.dataListener);
   }
 
   disconnectedCallback() {
-    this.removeEventListener('data', this.dataListener);
+    this.removeEventListener(Events.Data, this.dataListener);
   }
 
   private updateData(event: CustomEvent) {

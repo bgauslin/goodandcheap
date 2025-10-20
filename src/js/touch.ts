@@ -1,3 +1,6 @@
+import {Events} from './shared';
+
+
 /**
  * Custom element that adds/removes a class on touched elements for CSS styling.
  */
@@ -13,13 +16,13 @@ customElements.define('gc-touch', class GoodAndCheapTouch extends HTMLElement {
   }
 
   connectedCallback() {
-    document.addEventListener('touchstart', this.start, {passive: true});
-    document.addEventListener('touchend', this.end, {passive: true});
+    document.addEventListener(Events.Touchstart, this.start, {passive: true});
+    document.addEventListener(Events.Touchend, this.end, {passive: true});
   }
 
   disconnectedCallback() {
-    document.removeEventListener('touchstart', this.start);
-    document.removeEventListener('touchend', this.end);
+    document.removeEventListener(Events.Touchstart, this.start);
+    document.removeEventListener(Events.Touchend, this.end);
   }
 
   touchstart(event: Event) {

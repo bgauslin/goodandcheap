@@ -1,7 +1,7 @@
 import {LitElement, html, nothing} from 'lit';
 import {customElement, queryAll, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Recipe, footer} from './shared';
+import {Events, Recipe, footer} from './shared';
 
 
 /**
@@ -26,12 +26,12 @@ class GoodAndCheapRecipe extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.addEventListener('data', this.dataListener);
+    this.addEventListener(Events.Data, this.dataListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.removeEventListener('data', this.dataListener);
+    this.removeEventListener(Events.Data, this.dataListener);
     this.observer.disconnect();
   }
 

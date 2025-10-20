@@ -1,3 +1,13 @@
+export enum Events {
+  Click = 'click',
+  Data = 'data',
+  Favorite = 'favorite',
+  Ingredients = 'ingredients',
+  Popstate = 'popstate',
+  Touchend = 'touchend',
+  Touchstart = 'touchstart',
+}
+
 export interface Chapter {
   content: string,
   image: string,
@@ -72,3 +82,5 @@ export const footer = `
       Web app © ${new Date().getFullYear()} Ben Gauslin
     <small>
   </footer>`;
+
+export const STORAGE_ITEM = 'saved';

@@ -1,7 +1,7 @@
 import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Chapter, Data, Page, Recipe, footer} from './shared';
+import {Events, Chapter, Data, Page, Recipe, footer, STORAGE_ITEM} from './shared';
 
 
 /**
@@ -40,17 +40,17 @@ class GoodAndCheapApp extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.addEventListener('click', this.clickHandler);
-    window.addEventListener('popstate', this.popstateHandler);
-    window.addEventListener('ingredients', this.ingredientsHandler);
+    this.addEventListener(Events.Click, this.clickHandler);
+    window.addEventListener(Events.Popstate, this.popstateHandler);
+    window.addEventListener(Events.Ingredients, this.ingredientsHandler);
     this.fetchData();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.removeEventListener('click', this.clickHandler);
-    window.removeEventListener('popstate', this.popstateHandler);
-    window.removeEventListener('ingredients', this.ingredientsHandler);
+    this.removeEventListener(Events.Click, this.clickHandler);
+    window.removeEventListener(Events.Popstate, this.popstateHandler);
+    window.removeEventListener(Events.Ingredients, this.ingredientsHandler);
   }
 
   protected createRenderRoot() {
@@ -109,14 +109,14 @@ class GoodAndCheapApp extends LitElement {
       ingredients,
     };
     
-    localStorage.setItem('saved', JSON.stringify(saved));
+    localStorage.setItem(STORAGE_ITEM, JSON.stringify(saved));
   }
 
   /**
    * Gets localStorage for pre-populating saved ingredients on return visits.
    */
   private getStorage() {
-    const saved = JSON.parse(localStorage.getItem('saved'));
+    const saved = JSON.parse(localStorage.getItem(STORAGE_ITEM));
     const {ingredients} = saved;
 
     const {recipes} = this.data;
@@ -198,7 +198,7 @@ class GoodAndCheapApp extends LitElement {
    * Dispatches custom event to a component with data for rendering.
    */ 
   private updateComponent(element: HTMLElement, detail: Chapter|Page|Recipe) {
-    element.dispatchEvent(new CustomEvent('data', {
+    element.dispatchEvent(new CustomEvent(Events.Data, {
       bubbles: true,
       composed: true,
       detail,
