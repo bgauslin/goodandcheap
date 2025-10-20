@@ -62,12 +62,31 @@ gc-recipe {
   }
 
   /* Recipe ingredients. */
-  [id='ingredients'] li {
-    cursor: pointer;
+  [id='ingredients'] ul {
+    list-style: none;
+    padding-inline: 0;
   }
 
-  [data-checked] {
-    color: green;
+  [id='ingredients'] li {
+    cursor: pointer;
+    padding-block: .1em;
+  }
+
+  [id='ingredients'] li svg {
+    aspect-ratio: 1;
+    inline-size: 1.25rem;
+    border: 2px solid var(--gray1);
+    border-radius: 1.25rem;
+    fill: none;
+    margin-block: -.2em 0;
+    margin-inline: .25em;
+    stroke: var(--text-color-inverted);
+    stroke-width: 3px;
+  }
+
+  [id='ingredients'] [data-checked] svg {
+    background-color: var(--brand-color-complement);
+    border-color: var(--brand-color-complement);
   }
 
   /* Recipe steps. */

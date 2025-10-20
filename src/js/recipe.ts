@@ -150,10 +150,10 @@ class GoodAndCheapRecipe extends LitElement {
                 ${items.map((item, j) => {
                   const id = `${i}.${j}`;
                   const checked = this.saved.includes(id);
+                  const path = checked ? 'M4,11 L10,17, L20,7' : '';
                   return html`
-                  <li
-                    ?data-checked="${checked}"
-                    @click="${() => this.saveIngredients(id)}">
+                  <li ?data-checked="${checked}" @click="${() => this.saveIngredients(id)}">
+                    <svg aria-hidden="true" viewbox="0 0 24 24"><path d="${path}"/></svg>
                     ${unsafeHTML(item)}
                   </li>`
                 })}
