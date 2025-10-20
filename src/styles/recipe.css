@@ -75,18 +75,18 @@ gc-recipe {
   [id='ingredients'] li svg {
     aspect-ratio: 1;
     inline-size: 1.25rem;
-    border: 2px solid var(--gray1);
+    border: 2px solid var(--checked-border-color);
     border-radius: 1.25rem;
     fill: none;
     margin-block: -.2em 0;
     margin-inline: .25em;
-    stroke: var(--text-color-inverted);
+    stroke: var(--checked-color);
     stroke-width: 3px;
   }
 
   [id='ingredients'] [data-checked] svg {
-    background-color: var(--brand-color-complement);
-    border-color: var(--brand-color-complement);
+    background-color: var(--checked-background);
+    border-color: var(--checked-color);
   }
 
   /* Recipe steps. */
