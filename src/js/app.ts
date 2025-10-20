@@ -78,20 +78,44 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
-   * Captures 'saved' event dispatched from a child element and updates
-   * a recipe with saved ingredients.
+   * Gets localStorage for pre-populating saved ingredients on return visits.
+   */
+  private getStorage() {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_ITEM));
+    if (!saved) return;
+
+    const {recipes} = this.data;
+    const {favorites, ingredients} = saved;
+
+    for (const list of ingredients) {
+      const recipe = recipes.find(recipe => recipe.slug === list.id);
+      recipe.savedIngredients = list.items;
+    }
+
+    this.favorites = favorites || [];
+    for (const favorite of favorites) {
+      const recipe = recipes.find(recipe => recipe.slug === favorite);
+      recipe.favorite = true;
+    }
+  }
+
+  /**
+   * Captures event dispatched from a recipe element and updates the recipe
+   * with saved ingredients.
    */
   private handleIngredients(event: CustomEvent) {
     const {slug, saved} = event.detail;
     const {recipes} = this.data;
+
     const recipe = recipes.find(recipe => recipe.slug === slug);
-    
     recipe.savedIngredients = saved;
+
     this.setStorage();
   }
 
   /**
-   * TODO: Description...
+   * Captures event dispatched from a recipe element and updates the list of
+   * user favorites.
    */
   private handleFavorites(event: CustomEvent) {
     const {detail} = event;
@@ -111,7 +135,8 @@ class GoodAndCheapApp extends LitElement {
     }
     this.favorites.sort();
 
-    console.log('app favorites', this.favorites);
+    // Save to localStorage.
+    this.setStorage();
   }
 
   /**
@@ -134,26 +159,11 @@ class GoodAndCheapApp extends LitElement {
 
     // Bundle everything up and save it to localStorage.
     const saved = {
+      favorites: this.favorites,
       ingredients,
     };
     
     localStorage.setItem(STORAGE_ITEM, JSON.stringify(saved));
-  }
-
-  /**
-   * Gets localStorage for pre-populating saved ingredients on return visits.
-   */
-  private getStorage() {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_ITEM));
-    if (!saved) return;
-
-    const {ingredients} = saved;
-    const {recipes} = this.data;
-
-    for (const item of ingredients) {
-      const recipe = recipes.find(recipe => recipe.slug === item.id);
-      recipe.savedIngredients = item.items;
-    }
   }
 
   /**
