@@ -150,11 +150,11 @@ class GoodAndCheapRecipe extends LitElement {
         </p>` : nothing}
       </div>
 
-      <div class="content">
+      <div class="content">     
         ${badge ? html`<div class="badge">${badge}</div>` : nothing}
         <h1>${unsafeHTML(title)}</h1>
         ${serving ? html`<div class="serving">${serving}</div>` : nothing}
-        
+      
         <button
           class="favorite"
           data-checked="${this.favorite}"

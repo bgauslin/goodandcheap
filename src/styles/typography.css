@@ -3,7 +3,7 @@
 h1 {
   font-family: 'Carmina Bold', serif;
   line-height: 1;
-  margin-block: 0 .5rem;
+  margin-block: 0 .5em;
 }
 
 h2, .cost, .title, .steps > li::before {

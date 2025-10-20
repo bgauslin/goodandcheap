@@ -12,12 +12,21 @@ gc-recipe {
     z-index: 1;
   }
 
+  /* Title, badge, serving, favorite. */
+  .content {
+    position: relative;
+  }
+
   .badge {
     margin-block: 0;
   }
 
   .badge + h1 {
-    margin-block-start: .5rem;
+    margin-block-start: .5em;
+  }
+
+  h1 {
+    padding-inline-end: 1em;
   }
 
   .serving {
@@ -27,10 +36,14 @@ gc-recipe {
   .favorite {
     aspect-ratio: 1;
     background: none;
-    inline-size: 3rem;
+    inline-size: 2.5rem;
+    inset-block: .75em auto;
+    inset-inline: auto .75em;
+    position: absolute;
   }
 
   .favorite svg {
+    inline-size: 1.25rem;
     fill: none;
     stroke: red;
     stroke-linecap: round;
@@ -50,16 +63,16 @@ gc-recipe {
   }
 
   :where([id='ingredients'], [id='steps']) h2 {
+    backdrop-filter: var(--backdrop-filter);
+    background-color: var(--callout-background);
     inset-block: 0 auto;
+    margin-inline: calc(var(--gap) * -1);
+    padding-inline: var(--gap);
     position: sticky;
   }
 
   h2.stuck {
-    backdrop-filter: var(--backdrop-filter);
-    background-color: var(--callout-background);
     border-bottom: 1px solid var(--border-color);
-    margin-inline: calc(var(--gap) * -1);
-    padding-inline: var(--gap);
   }
 
   h3 {
