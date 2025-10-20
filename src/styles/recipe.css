@@ -2,7 +2,7 @@ gc-recipe {
   .cost {
     backdrop-filter: var(--backdrop-filter);
     background-color: var(--callout-background);
-    grid-area: 1 / 1 / -1 / -1;
+    grid-area: 1 / 1;
     line-height: 1.5;
     margin-block: 10% 0;
     padding-block: .5rem;

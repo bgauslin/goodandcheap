@@ -13,13 +13,13 @@
   background-color: var(--image-background);
   display: grid;
   grid: 1fr / 1fr;
-  grid-area: 1 / 1 / -1 / -1;
+  grid-area: 1 / 1;
   margin: 0;
   overflow: hidden;
   place-content: center;
 
   :is(img, svg) {
-    grid-area: 1 / 1 / -1 / -1;
+    grid-area: 1 / 1;
     place-self: center;
   }
 
