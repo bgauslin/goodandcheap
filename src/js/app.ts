@@ -380,7 +380,7 @@ class GoodAndCheapApp extends LitElement {
   protected render() {
     return html`
       <header>
-        <div>
+        <div class="header">
           <button
             id="back"
             title="${this.backLabel}"
