@@ -117,8 +117,9 @@ class GoodAndCheapApp extends LitElement {
    */
   private getStorage() {
     const saved = JSON.parse(localStorage.getItem('saved'));
-    const {ingredients} = saved;
+    if (!saved) return;
 
+    const {ingredients} = saved;
     const {recipes} = this.data;
 
     for (const item of ingredients) {
