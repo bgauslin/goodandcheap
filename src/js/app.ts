@@ -79,7 +79,36 @@ class GoodAndCheapApp extends LitElement {
     const {slug, saved} = event.detail;
     const {recipes} = this.data;
     const recipe = recipes.find(recipe => recipe.slug === slug);
+    
     recipe.savedIngredients = saved;
+
+    this.setStorage();
+  }
+
+  /**
+   * Saves user-selected items to localStorage for populating UI on follow-up
+   * visits.
+   */
+  private setStorage() {
+    const {recipes} = this.data;
+
+    // Get saved ingredients
+    const filtered = recipes.filter(recipe => recipe.savedIngredients !== undefined);
+    const ingredients = [];
+    for (const recipe of filtered) {
+      const {slug, savedIngredients} = recipe;
+      ingredients.push({
+        id: slug,
+        items: savedIngredients,
+      });
+    }
+
+    // Bundle everything up and save it to localStorage.
+    const saved = {
+      ingredients,
+    };
+    
+    localStorage.setItem('saved', JSON.stringify(saved));
   }
 
   /**
