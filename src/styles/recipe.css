@@ -31,16 +31,16 @@ gc-recipe {
   }
 
   :where([id='ingredients'], [id='steps']) h2 {
-    backdrop-filter: var(--backdrop-filter);
-    background-color: var(--callout-background);
     inset-block: 0 auto;
-    margin-inline: calc(var(--gap) * -1);
-    padding-inline: var(--gap);
     position: sticky;
   }
 
   h2.stuck {
+    backdrop-filter: var(--backdrop-filter);
+    background-color: var(--callout-background);
     border-bottom: 1px solid var(--border-color);
+    margin-inline: calc(var(--gap) * -1);
+    padding-inline: var(--gap);
   }
 
   h3 {
