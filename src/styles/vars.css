@@ -16,6 +16,9 @@
   --button-background: var(--gray5);
   --button-hover-backround: var(--gray3);
   --callout-background: rgb(255, 255, 255, .8);
+  --checked-background: rgba(46, 209, 67, .1);
+  --checked-border-color: var(--gray2);
+  --checked-color: #2ed143;
   --content-background: white;
   --content-border: 1px solid var(--border-color);
   --header-background: rgb(255, 255, 255, .8);
@@ -55,6 +58,8 @@
     --brand-color: #ed4d62;
     --callout-background: rgb(28, 28, 30, .9);
     --content-background: var(--gray6);
+    --checked-background: rgba(109, 223, 123, .4);
+    --checked-color: #6ddf7b;
     --header-background: rgba(28, 28, 30, .75);
     --link-visited-color: rgb(174, 174, 178);  /* Gray2 light. */
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */

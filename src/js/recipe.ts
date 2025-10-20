@@ -14,7 +14,9 @@ class GoodAndCheapRecipe extends LitElement {
   private dataListener: EventListenerObject;
 
   @queryAll(':is([id="ingredients"], [id="steps"]) h2') headings: HTMLHeadingElement[];
+  
   @state() data: Recipe;
+  @state() ingredients: string[] = [];
   @state() observer: IntersectionObserver;
 
   constructor() {
@@ -40,9 +42,42 @@ class GoodAndCheapRecipe extends LitElement {
   private async updateData(event: CustomEvent) {
     this.data = event.detail;
     await this.updateComplete;
+    this.ingredients = this.data.savedIngredients || [];
     this.watch();
   }
 
+  /**
+   * Updates the list of checked ingredients and dispatches them to the app
+   * to store and render on subsequent visits.
+   */
+  private saveIngredients(id: string) {
+    const index = this.ingredients.indexOf(id);
+
+    // Add/remove ingredient and sort the list for readability.
+    if (index < 0) {
+      this.ingredients.push(id);
+    } else {
+      this.ingredients.splice(index, 1);
+    }
+    this.ingredients.sort();
+
+    // Re-render the template.
+    this.requestUpdate();
+
+    // Send saved ingredients up to the app.
+    this.dispatchEvent(new CustomEvent('ingredients', {
+      bubbles: true,
+      composed: true,
+      detail: {
+        slug: this.data.slug,
+        saved: this.ingredients,
+      },
+    }));
+  }
+
+  /**
+   * Sets up an IntersectionObserver for sticky elements.
+   */
   private watch() {
     this.observer = new IntersectionObserver(this.sticky, {
       root: this,
@@ -58,7 +93,7 @@ class GoodAndCheapRecipe extends LitElement {
   /**
    * IntersectionObserver callback that updates sticky elements.
    */
-  sticky(entries: IntersectionObserverEntry[]) {
+  private sticky(entries: IntersectionObserverEntry[]) {
     for (const entry of entries) {
       const {target} = entry;
 
@@ -108,12 +143,21 @@ class GoodAndCheapRecipe extends LitElement {
         ${ingredients ? html`
         <section id="ingredients">
           <h2>Ingredients</h2>
-          ${ingredients.map(group => {
+          ${ingredients.map((group, i) => {
             const {label, items} = group;
             return html`
               ${label ? html`<h3>${label}</h3>` : nothing}
               <ul class="ingredients">
-                ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
+                ${items.map((item, j) => {
+                  const id = `${i}.${j}`;
+                  const checked = this.ingredients.includes(id);
+                  const path = checked ? 'M4,11 L10,17, L20,7' : '';
+                  return html`
+                  <li ?data-checked="${checked}" @click="${() => this.saveIngredients(id)}">
+                    <svg aria-hidden="true" viewbox="0 0 24 24"><path d="${path}"/></svg>
+                    <span>${unsafeHTML(item)}</span>
+                  </li>`
+                })}
               </ul>
             `;
           })}

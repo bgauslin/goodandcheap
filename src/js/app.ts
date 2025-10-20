@@ -14,6 +14,7 @@ import {Chapter, Data, Page, Recipe, footer} from './shared';
 class GoodAndCheapApp extends LitElement {
   private clickHandler: EventListenerObject;
   private popstateHandler: EventListenerObject;
+  private ingredientsHandler: EventListenerObject;
 
   @query('gc-chapter') chapterElement: HTMLElement;
   @query('gc-page') pageElement: HTMLElement;
@@ -34,12 +35,14 @@ class GoodAndCheapApp extends LitElement {
     this.baseTitle = document.title;
     this.clickHandler = this.handleClick.bind(this);
     this.popstateHandler = this.updateFromUrl.bind(this);
+    this.ingredientsHandler = this.handleIngredients.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener('click', this.clickHandler);
     window.addEventListener('popstate', this.popstateHandler);
+    window.addEventListener('ingredients', this.ingredientsHandler);
     this.fetchData();
   }
 
@@ -47,6 +50,7 @@ class GoodAndCheapApp extends LitElement {
     super.disconnectedCallback();
     this.removeEventListener('click', this.clickHandler);
     window.removeEventListener('popstate', this.popstateHandler);
+    window.removeEventListener('ingredients', this.ingredientsHandler);
   }
 
   protected createRenderRoot() {
@@ -60,10 +64,66 @@ class GoodAndCheapApp extends LitElement {
     try {
       const response = await fetch('./api/app.json');
       this.data = await response.json();
+      this.getStorage();
       this.updateFromUrl();
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
       return;
+    }
+  }
+
+  /**
+   * Captures 'saved' event dispatched from a child element and updates
+   * a recipe with saved ingredients.
+   */
+  private handleIngredients(event: CustomEvent) {
+    const {slug, saved} = event.detail;
+    const {recipes} = this.data;
+    const recipe = recipes.find(recipe => recipe.slug === slug);
+    
+    recipe.savedIngredients = saved;
+
+    this.setStorage();
+  }
+
+  /**
+   * Saves user-selected items to localStorage for populating UI on follow-up
+   * visits.
+   */
+  private setStorage() {
+    const {recipes} = this.data;
+
+    // Get saved ingredients
+    const filtered = recipes.filter(recipe => recipe.savedIngredients !== undefined);
+    const ingredients = [];
+    for (const recipe of filtered) {
+      const {slug, savedIngredients} = recipe;
+      ingredients.push({
+        id: slug,
+        items: savedIngredients,
+      });
+    }
+
+    // Bundle everything up and save it to localStorage.
+    const saved = {
+      ingredients,
+    };
+    
+    localStorage.setItem('saved', JSON.stringify(saved));
+  }
+
+  /**
+   * Gets localStorage for pre-populating saved ingredients on return visits.
+   */
+  private getStorage() {
+    const saved = JSON.parse(localStorage.getItem('saved'));
+    const {ingredients} = saved;
+
+    const {recipes} = this.data;
+
+    for (const item of ingredients) {
+      const recipe = recipes.find(recipe => recipe.slug === item.id);
+      recipe.savedIngredients = item.items;
     }
   }
 
