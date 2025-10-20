@@ -92,7 +92,7 @@ gc-recipe {
     gap: 0 .4em;
     grid: 'checkbox label' / 1.5em 1fr;
     line-height: 1.3;
-    padding-block: .2em;
+    padding-block: .3em;
   }
 
   [id='ingredients'] li > svg {
@@ -102,8 +102,7 @@ gc-recipe {
     border-radius: 1.25rem;
     fill: none;
     grid-area: checkbox;
-    margin-block: .15em 0;
-    place-self: start center;
+    place-self: center;
     stroke: var(--checked-color);
     stroke-width: 3px;
   }
