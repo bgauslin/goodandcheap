@@ -1,7 +1,7 @@
 export enum Events {
   Click = 'click',
   Data = 'data',
-  Favorite = 'favorite',
+  Favorites = 'favorites',
   Ingredients = 'ingredients',
   Popstate = 'popstate',
   Touchend = 'touchend',
@@ -38,6 +38,7 @@ export interface Recipe {
     total: string,
     units: string
   },
+  favorite: boolean,
   image: string,
   ingredients?: {
     items: string[],
@@ -71,6 +72,11 @@ export interface Data {
   pages: Page[];
   recipes: Recipe[];
 }
+
+export const favoriteIcon = `
+  <svg aria-hidden="true" viewbox="0 0 24 24">
+    <path d="M12,21 L3,12 A 1 1 0 0 1 12 5 A 1 1 0 0 1 21 12 L12,21"/>
+  </svg>`;
 
 export const footer = `
   <footer>

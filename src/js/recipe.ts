@@ -1,7 +1,7 @@
 import {LitElement, html, nothing} from 'lit';
 import {customElement, queryAll, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Events, Recipe, footer} from './shared';
+import {Events, Recipe, favoriteIcon, footer} from './shared';
 
 
 /**
@@ -16,6 +16,7 @@ class GoodAndCheapRecipe extends LitElement {
   @queryAll(':is([id="ingredients"], [id="steps"]) h2') headings: HTMLHeadingElement[];
   
   @state() data: Recipe;
+  @state() favorite: boolean = false;
   @state() ingredients: string[] = [];
   @state() observer: IntersectionObserver;
 
@@ -43,6 +44,7 @@ class GoodAndCheapRecipe extends LitElement {
     this.data = event.detail;
     await this.updateComplete;
     this.ingredients = this.data.savedIngredients || [];
+    this.favorite = this.data.favorite;
     this.watch();
   }
 
@@ -65,7 +67,7 @@ class GoodAndCheapRecipe extends LitElement {
     this.requestUpdate();
 
     // Send saved ingredients up to the app.
-    this.dispatchEvent(new CustomEvent('ingredients', {
+    this.dispatchEvent(new CustomEvent(Events.Ingredients, {
       bubbles: true,
       composed: true,
       detail: {
@@ -105,17 +107,35 @@ class GoodAndCheapRecipe extends LitElement {
     }
   }
 
+  /**
+   * TODO: Description.
+   */
+  private handleFavorite(id: string) {
+    this.favorite = !this.favorite;
+
+    this.dispatchEvent(new CustomEvent(Events.Favorites, {
+      bubbles: true,
+      composed: true,
+      detail: {
+        id,
+        checked: this.favorite,
+      }
+    }));
+  }
+
   protected render() {
     if (!this.data) return;
 
     const {
       badge,
       cost,
+      favorite,
       image,
       ingredients,
       more,
       overview,
       serving,
+      slug,
       steps,
       title
     } = this.data;
@@ -134,6 +154,15 @@ class GoodAndCheapRecipe extends LitElement {
         ${badge ? html`<div class="badge">${badge}</div>` : nothing}
         <h1>${unsafeHTML(title)}</h1>
         ${serving ? html`<div class="serving">${serving}</div>` : nothing}
+        
+        <button
+          class="favorite"
+          data-checked="${this.favorite}"
+          title="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
+          type="button"
+          @click="${() => this.handleFavorite(slug)}">
+          ${unsafeHTML(favoriteIcon)}
+        </button>
 
         ${overview ? html`
         <section class="overview" id="overview">

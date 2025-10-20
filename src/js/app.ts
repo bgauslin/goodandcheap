@@ -13,8 +13,9 @@ import {Events, Chapter, Data, Page, Recipe, footer, STORAGE_ITEM} from './share
 @customElement('gc-app')
 class GoodAndCheapApp extends LitElement {
   private clickHandler: EventListenerObject;
-  private popstateHandler: EventListenerObject;
+  private favoritesHandler: EventListenerObject;
   private ingredientsHandler: EventListenerObject;
+  private popstateHandler: EventListenerObject;
 
   @query('gc-chapter') chapterElement: HTMLElement;
   @query('gc-page') pageElement: HTMLElement;
@@ -29,6 +30,7 @@ class GoodAndCheapApp extends LitElement {
   @state() baseTitle: string;
   @state() context: string = 'home';
   @state() data: Data;
+  @state() favorites: string[] = [];
 
   constructor() {
     super();
@@ -36,21 +38,24 @@ class GoodAndCheapApp extends LitElement {
     this.clickHandler = this.handleClick.bind(this);
     this.popstateHandler = this.updateFromUrl.bind(this);
     this.ingredientsHandler = this.handleIngredients.bind(this);
+    this.favoritesHandler = this.handleFavorites.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener(Events.Click, this.clickHandler);
+    this.addEventListener(Events.Favorites, this.favoritesHandler);
+    this.addEventListener(Events.Ingredients, this.ingredientsHandler);
     window.addEventListener(Events.Popstate, this.popstateHandler);
-    window.addEventListener(Events.Ingredients, this.ingredientsHandler);
     this.fetchData();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.removeEventListener(Events.Click, this.clickHandler);
+    this.removeEventListener(Events.Favorites, this.favoritesHandler);
+    this.removeEventListener(Events.Ingredients, this.ingredientsHandler);
     window.removeEventListener(Events.Popstate, this.popstateHandler);
-    window.removeEventListener(Events.Ingredients, this.ingredientsHandler);
   }
 
   protected createRenderRoot() {
@@ -82,8 +87,31 @@ class GoodAndCheapApp extends LitElement {
     const recipe = recipes.find(recipe => recipe.slug === slug);
     
     recipe.savedIngredients = saved;
-
     this.setStorage();
+  }
+
+  /**
+   * TODO: Description...
+   */
+  private handleFavorites(event: CustomEvent) {
+    const {detail} = event;
+    const {checked, id} = detail;
+
+    // Update the recipe.
+    const {recipes} = this.data;
+    const recipe = recipes.find(recipe => recipe.slug === id);
+    recipe.favorite = checked;
+
+    // Add/remove favorite and sort the list for readability.
+    if (checked) {
+      this.favorites.push(id);
+    } else {
+      const index = this.favorites.indexOf(id);
+      this.favorites.splice(index, 1);
+    }
+    this.favorites.sort();
+
+    console.log('app favorites', this.favorites);
   }
 
   /**
@@ -116,7 +144,7 @@ class GoodAndCheapApp extends LitElement {
    * Gets localStorage for pre-populating saved ingredients on return visits.
    */
   private getStorage() {
-    const saved = JSON.parse(localStorage.getItem('saved'));
+    const saved = JSON.parse(localStorage.getItem(STORAGE_ITEM));
     if (!saved) return;
 
     const {ingredients} = saved;
