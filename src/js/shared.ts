@@ -49,7 +49,7 @@ export interface Recipe {
     steps?: string[],
   }[],
   overview: string,
-  saved?: string[],
+  savedIngredients?: string[],
   serving: string,
   slug: string,
   steps?: string[],

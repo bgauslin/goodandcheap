@@ -14,9 +14,10 @@ class GoodAndCheapRecipe extends LitElement {
   private dataListener: EventListenerObject;
 
   @queryAll(':is([id="ingredients"], [id="steps"]) h2') headings: HTMLHeadingElement[];
+  
   @state() data: Recipe;
+  @state() ingredients: string[] = [];
   @state() observer: IntersectionObserver;
-  @state() saved: string[] = [];
 
   constructor() {
     super();
@@ -41,7 +42,7 @@ class GoodAndCheapRecipe extends LitElement {
   private async updateData(event: CustomEvent) {
     this.data = event.detail;
     await this.updateComplete;
-    this.saved = this.data.saved || [];
+    this.ingredients = this.data.savedIngredients || [];
     this.watch();
   }
 
@@ -50,26 +51,26 @@ class GoodAndCheapRecipe extends LitElement {
    * to store and render on subsequent visits.
    */
   private saveIngredients(id: string) {
-    const index = this.saved.indexOf(id);
+    const index = this.ingredients.indexOf(id);
 
     // Add/remove ingredient and sort the list for readability.
     if (index < 0) {
-      this.saved.push(id);
+      this.ingredients.push(id);
     } else {
-      this.saved.splice(index, 1);
+      this.ingredients.splice(index, 1);
     }
-    this.saved.sort();
+    this.ingredients.sort();
 
     // Re-render the template.
     this.requestUpdate();
 
     // Send saved ingredients up to the app.
-    this.dispatchEvent(new CustomEvent('saved', {
+    this.dispatchEvent(new CustomEvent('ingredients', {
       bubbles: true,
       composed: true,
       detail: {
         slug: this.data.slug,
-        saved: this.saved,
+        saved: this.ingredients,
       },
     }));
   }
@@ -149,7 +150,7 @@ class GoodAndCheapRecipe extends LitElement {
               <ul class="ingredients">
                 ${items.map((item, j) => {
                   const id = `${i}.${j}`;
-                  const checked = this.saved.includes(id);
+                  const checked = this.ingredients.includes(id);
                   const path = checked ? 'M4,11 L10,17, L20,7' : '';
                   return html`
                   <li ?data-checked="${checked}" @click="${() => this.saveIngredients(id)}">
