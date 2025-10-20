@@ -82,6 +82,7 @@ class GoodAndCheapHome extends LitElement {
         aria-selected="${this.tab === id}"
         id="tab-${id}"
         role="tab"
+        type="button"
         @click="${() => this.tab = id}">${label}</button>
       `;
   }
