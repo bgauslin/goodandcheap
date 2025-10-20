@@ -155,7 +155,7 @@ class GoodAndCheapRecipe extends LitElement {
                   return html`
                   <li ?data-checked="${checked}" @click="${() => this.saveIngredients(id)}">
                     <svg aria-hidden="true" viewbox="0 0 24 24"><path d="${path}"/></svg>
-                    ${unsafeHTML(item)}
+                    <span>${unsafeHTML(item)}</span>
                   </li>`
                 })}
               </ul>
