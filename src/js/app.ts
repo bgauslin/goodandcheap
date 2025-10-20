@@ -81,11 +81,11 @@ class GoodAndCheapApp extends LitElement {
    * Gets localStorage for pre-populating saved ingredients on return visits.
    */
   private getStorage() {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_ITEM));
-    if (!saved) return;
+    const storage = JSON.parse(localStorage.getItem(STORAGE_ITEM));
+    if (!storage) return;
 
     const {recipes} = this.data;
-    const {favorites, ingredients} = saved;
+    const {favorites, ingredients} = storage;
 
     for (const list of ingredients) {
       const recipe = recipes.find(recipe => recipe.slug === list.id);
@@ -119,14 +119,20 @@ class GoodAndCheapApp extends LitElement {
    */
   private handleFavorites(event: CustomEvent) {
     const {detail} = event;
-    const {checked, id} = detail;
+    const {chapter: chapterSlug, checked, id} = detail;
 
-    // Update the recipe.
-    const {recipes} = this.data;
+    const {chapters, recipes} = this.data;
+
+    // Update the recipe entry.
     const recipe = recipes.find(recipe => recipe.slug === id);
     recipe.favorite = checked;
 
-    // Add/remove favorite and sort the list for readability.
+    // Update the recipe in its chapter list.
+    const chapter = chapters.find(chapter => chapter.slug === chapterSlug);
+    const recipe_ = chapter.recipes.find(recipe => recipe.slug === id);
+    recipe_.favorite = checked;
+
+    // Add/remove the favorite and sort the list for readability.
     if (checked) {
       this.favorites.push(id);
     } else {

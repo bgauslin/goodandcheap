@@ -14,6 +14,7 @@ export interface Chapter {
   recipes: {
     badge: string,
     chapter: string,
+    favorite?: boolean,
     image: string,
     serving: string,
     slug: string,
@@ -38,7 +39,7 @@ export interface Recipe {
     total: string,
     units: string
   },
-  favorite: boolean,
+  favorite?: boolean,
   image: string,
   ingredients?: {
     items: string[],
