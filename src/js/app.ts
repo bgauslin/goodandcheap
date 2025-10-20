@@ -116,9 +116,10 @@ class GoodAndCheapApp extends LitElement {
    * Gets localStorage for pre-populating saved ingredients on return visits.
    */
   private getStorage() {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_ITEM));
-    const {ingredients} = saved;
+    const saved = JSON.parse(localStorage.getItem('saved'));
+    if (!saved) return;
 
+    const {ingredients} = saved;
     const {recipes} = this.data;
 
     for (const item of ingredients) {
