@@ -3,6 +3,7 @@
 
 @import 'app';
 @import 'cover';
+@import 'favorite';
 @import 'footer';
 @import 'header';
 @import 'page';

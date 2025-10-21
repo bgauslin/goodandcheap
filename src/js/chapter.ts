@@ -1,4 +1,4 @@
-import {Events, Chapter, footer} from './shared';
+import {Events, Chapter, favoriteIcon, footer} from './shared';
 
 
 /**
@@ -6,19 +6,23 @@ import {Events, Chapter, footer} from './shared';
  * This element simply receives data from a custom event and renders it.
  */
 customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElement {
+  private clickListener: EventListenerObject;
   private data: Chapter;
   private dataListener: EventListenerObject;
 
   constructor() {
     super();
+    this.clickListener = this.handleClick.bind(this);
     this.dataListener = this.updateData.bind(this);
   }
 
   connectedCallback() {
+    this.addEventListener(Events.Click, this.clickListener);
     this.addEventListener(Events.Data, this.dataListener);
   }
 
   disconnectedCallback() {
+    this.removeEventListener(Events.Click, this.clickListener);
     this.removeEventListener(Events.Data, this.dataListener);
   }
 
@@ -27,12 +31,39 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
     this.render();
   }
 
+  /**
+   * Sends recipe ID and chapter up to the app for updating the list of
+   * favorited recipes.
+   */
+  private handleClick(event: Event) {
+    const {target} = event;
+    const id = (<HTMLElement>target).dataset.id;
+    if (!id) return;
+
+    const dataChecked = (<HTMLElement>target).dataset.checked;
+    const checked = dataChecked === 'true' ? false : true;
+
+    (<HTMLElement>target).dataset.checked = `${checked}`;
+    (<HTMLElement>target).title = checked ?
+        'Remove from Favorites' : 'Add to Favorites';
+
+    this.dispatchEvent(new CustomEvent(Events.Favorites, {
+      bubbles: true,
+      composed: true,
+      detail: {
+        chapter: this.data.slug,
+        checked,
+        id,
+      }
+    }));
+  }
+
   private render() {
     const {content, image, recipes, title} = this.data;
 
     let items = '';
     for (const [index, recipe] of recipes.entries()) {
-      const {badge, chapter, image, serving, slug, title} = recipe;
+      const {badge, chapter, favorite, image, serving, slug, title} = recipe;
       let callout = `<p class="serving">${serving}</p>`;
       if (badge) callout = `<p class="badge">${badge}</p>`;
 
@@ -50,6 +81,15 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
               <div class="counter">${index + 1}</div>
             </div>
           </a>
+
+          <button
+            class="favorite"
+            data-id="${slug}"
+            data-checked="${favorite}"
+            title="${favorite ? 'Remove from' : 'Add to'} Favorites"
+            type="button">
+            ${favoriteIcon}
+          </button>
         </li>
       `;
     }

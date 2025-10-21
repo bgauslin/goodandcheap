@@ -34,24 +34,8 @@ gc-recipe {
   }
 
   .favorite {
-    aspect-ratio: 1;
-    background: none;
-    inline-size: 2.5rem;
     inset-block: .75em auto;
     inset-inline: auto .75em;
-    position: absolute;
-  }
-
-  .favorite svg {
-    inline-size: 1.25rem;
-    fill: none;
-    stroke: red;
-    stroke-linecap: round;
-    stroke-width: 2px;
-  }
-
-  [data-checked='true'] svg {
-    fill: rgba(255, 0, 0, .5);
   }
 
   /* Content headings. */

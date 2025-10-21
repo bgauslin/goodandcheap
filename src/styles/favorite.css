@@ -1,0 +1,30 @@
+.favorite {
+  aspect-ratio: 1;
+  background: none;
+  inline-size: 2.5rem;
+  position: absolute;
+
+  &.touch,
+  &:focus-visible {
+    background: none;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+.favorite svg {
+  inline-size: 1.25rem;
+  fill: none;
+  pointer-events: none;
+  stroke: red;
+  stroke-linecap: round;
+  stroke-width: 2px;
+}
+
+.favorite[data-checked='true'] svg {
+  fill: rgba(255, 0, 0, .5);
+}
