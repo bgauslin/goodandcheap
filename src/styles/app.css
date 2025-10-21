@@ -57,6 +57,7 @@ gc-app > main {
 .content {
   background-color: var(--content-background);
   border-bottom: var(--content-border);
+  border-radius: var(--content-border-radius);
   grid-area: content;
   padding-block: var(--gap);
   padding-inline: var(--gap);

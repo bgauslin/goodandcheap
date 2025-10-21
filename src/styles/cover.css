@@ -1,9 +1,11 @@
 /* Cover photo for everything but home page. */
 .cover {
+  border-radius: var(--cover-border-radius);
   display: grid;
   grid: 1fr / 1fr;
   grid-area: cover;
   inset-block: var(--cover-inset, initial);
+  overflow: hidden;
   place-self: start stretch;
   position: var(--cover-position, static);
 }

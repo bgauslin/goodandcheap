@@ -71,7 +71,7 @@
 }
 
 /* -------------------------------------------------- */
-/* Small-Medium | (default) */
+/* Small | (default) */
 
 :root {
   --app-grid: var(--header-block-size) 1fr / 1fr minmax(auto, var(--section-max-inline-size)) 1fr;
@@ -114,31 +114,42 @@ gc-home {
 @media (min-width: 32rem) {
   :root {
     --app-margin: var(--gap);
+    --content-border: none;
+    --content-border-radius: 0 0 .25rem .25rem;
+    --cover-border-radius: .25rem .25rem 0 0;
+    --header-background: rgba(242, 242, 247, .75);
+    --header-gap: 0;
+    --header-border: none;
     --header-grid: 'back wordmark .' var(--header-block-size) / minmax(0, 1fr) auto 1fr;
+    --header-position: static;
+  }
+}
+
+@media ((min-width: 32rem) and (prefers-color-scheme: dark)) {
+  :root {
+    --header-background: rgba(0, 0, 0, .75);
   }
 }
 
 /* -------------------------------------------------- */
-/* Large, Landscape | 54rem = 1024px */
+/* Large, Landscape | 64rem = 1024px */
 
 @media ((min-width: 64rem) and (orientation: landscape)) {
   :root {
     --app-grid: 1fr auto 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
-    --content-border: none;
     --back-label-display: unset;
+    --content-border-radius: none;
+    --cover-border-radius: none;
     --cover-inset: 0;
     --cover-position: sticky;
     --footer-grid-area: 3 / 2;
     --footer-padding: 1rem;
     --header-background: none;
-    --header-border: none;
-    --header-gap: 0;
-    --header-position: static;
     --main-aspect-ratio: 2 / 1;
-    --main-border-radius: .5rem;
     --main-block-size: 100%;
+    --main-border-radius: .25rem;
     --main-grid-area: 2 / 2;
-    --section-max-inline-size: 64rem;
+    --section-max-inline-size: 64rem;  /* 64rem = 1024px */
     --view-display: grid;
     --view-grid: 'cover content' / 1fr 1fr;
     --view-padding-block: 0;
