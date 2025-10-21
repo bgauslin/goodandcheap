@@ -68,7 +68,10 @@
   .counter {
     color: var(--text-color);  /* [1] */
     grid-area: counter;
+    inline-size: .75rem;
+    margin-block: .75rem;
     opacity: .7;
+    place-self: end center;
   }
 
   .favorite {
