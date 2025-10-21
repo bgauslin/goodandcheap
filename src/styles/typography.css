@@ -28,6 +28,9 @@ h2, h3, .cost, .serving, .title {
 
 button, footer > small, .badge, .count, .counter, .serving {
   font-size: var(--small-font-size);
+}
+
+button, footer > small, .badge, .count, .serving {
   letter-spacing: .125em;
   text-transform: uppercase;
 }

@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/* Favorite <button> for saving recipes. */
+/* -------------------------------------------------------------------------- */
+
 .favorite {
   aspect-ratio: 1;
   background: none;
@@ -20,11 +24,12 @@
   inline-size: 1.25rem;
   fill: none;
   pointer-events: none;
-  stroke: var(--favorite-color);
+  stroke: var(--icon-color);
   stroke-linecap: round;
   stroke-width: 2.5px;
 }
 
 .favorite[data-checked='true'] svg {
   fill: var(--favorite-background); 
+  stroke: var(--favorite-color);
 }
