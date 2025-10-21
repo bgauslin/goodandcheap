@@ -50,7 +50,7 @@
   .copy {
     display: grid;
     gap: 0 .75rem;
-    grid: 'description counter .' 1fr / 1fr auto 0;
+    grid: 'description counter' 1fr / 1fr 2.5rem;
     grid-area: copy;
     place-items: center start;
     place-self: stretch;
@@ -68,8 +68,7 @@
   .counter {
     color: var(--text-color);  /* [1] */
     grid-area: counter;
-    inline-size: .75rem;
-    margin-block: .75rem;
+    margin-block: 0 .75rem;
     opacity: .7;
     place-self: end center;
   }
