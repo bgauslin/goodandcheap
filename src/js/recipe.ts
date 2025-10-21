@@ -144,7 +144,7 @@ class GoodAndCheapRecipe extends LitElement {
 
     return html`
       <div class="cover">
-        <gc-image class="cover__photo" src="${image}"></gc-image>
+        <gc-cover class="cover__photo" src="${image}"></gc-cover>
         ${cost ? html`
         <p class="cost">
           ${cost.total} Total<br>
@@ -214,10 +214,11 @@ class GoodAndCheapRecipe extends LitElement {
                   alt=""
                   src="./images/${image}@medium.webp"
                   srcset="
-                    ./images/${image}@small.webp 480w,
-                    ./images/${image}@medium.webp 640w,
-                    ./images/${image}@large.webp 720w"
-                  sizes="(min-width: 60rem) 720px, 100vw">
+                    ./images/${image}@small.webp 400w,
+                    ./images/${image}@medium.webp 600w,
+                    ./images/${image}@large.webp 800w"
+                    ./images/${image}@xlarge.webp 1000w"
+                  sizes="(min-width: 32rem) 512px, 100vw">
                 ${cost ? html`
                 <p class="cost">
                   ${cost.total} Total<br>

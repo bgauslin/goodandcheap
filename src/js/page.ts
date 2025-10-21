@@ -31,7 +31,7 @@ customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
     const {content, image, title} = this.data;
     this.innerHTML = `
       <div class="cover">
-        <gc-image class="cover__photo" src="${image}"></gc-image>
+        <gc-cover class="cover__photo" src="${image}"></gc-cover>
       </div>
 
       <div class="content">

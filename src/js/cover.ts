@@ -7,8 +7,8 @@ import {customElement, property, query, state} from 'lit/decorators.js';
  * This element fetches an image when its 'src' attribute changes and displays
  * a spinner until the image is fully loaded.
  */
-@customElement('gc-image')
-class GoodAndCheapImage extends LitElement {
+@customElement('gc-cover')
+class GoodAndCheapCover extends LitElement {
   @property() src: string;
   @query('img') image: HTMLImageElement;
   @state() loading: boolean = true;
@@ -54,10 +54,11 @@ class GoodAndCheapImage extends LitElement {
         aria-hidden="${this.loading}"
         src="./images/${this.src}@medium.webp"
         srcset="
-          ./images/${this.src}@small.webp 480w,
-          ./images/${this.src}@medium.webp 640w,
-          ./images/${this.src}@large.webp 720w"
-        sizes="(min-width: 60rem) 720px, 100vw">
+          ./images/${this.src}@small.webp 400w,
+          ./images/${this.src}@medium.webp 600w,
+          ./images/${this.src}@large.webp 800w"
+          ./images/${this.src}@xlarge.webp 1000w"
+        sizes="(min-width: 32rem) 512px, 100vw">
     `;
   }
 }
