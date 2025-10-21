@@ -20,11 +20,11 @@
   inline-size: 1.25rem;
   fill: none;
   pointer-events: none;
-  stroke: red;
+  stroke: var(--favorite-color);
   stroke-linecap: round;
-  stroke-width: 2px;
+  stroke-width: 2.5px;
 }
 
 .favorite[data-checked='true'] svg {
-  fill: rgba(255, 0, 0, .5);
+  fill: var(--favorite-background); 
 }

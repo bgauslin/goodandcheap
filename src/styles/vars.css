@@ -12,17 +12,19 @@
   --badge-background: var(--gray5);
   --body-background: var(--gray6);
   --border-color: var(--gray5);
-  --brand-color: #e5001f;
+  --brand-color: rgb(229, 0, 31);  /* #e5001f */
   --button-background: var(--gray5);
   --button-hover-backround: var(--gray3);
   --callout-background: rgb(255, 255, 255, .8);
-  --checked-background: rgba(46, 209, 67, .1);
-  --checked-border-color: var(--gray2);
-  --checked-color: #2ed143;
   --content-background: white;
   --content-border: 1px solid var(--border-color);
+  --favorite-background: rgba(229, 0, 31, .5);
+  --favorite-color: var(--brand-color);
   --header-background: rgb(255, 255, 255, .8);
   --header-border: 1px solid var(--border-color);
+  --icon-color: var(--gray2);
+  --icon-active-background: rgba(46, 209, 67, .1);
+  --icon-active-color: #2ed143;
   --image-background: var(--gray4);
   --link-color: var(--text-color);
   --link-focus-color: var(--brand-color);
@@ -55,12 +57,13 @@
     --badge-background: var(--gray4);
     --body-background: black;
     --border-color: var(--gray5);
-    --brand-color: #ed4d62;
+    --brand-color: rgb(237, 77, 98);  /* #ed4d62 */
     --callout-background: rgb(28, 28, 30, .9);
     --content-background: var(--gray6);
-    --checked-background: rgba(109, 223, 123, .4);
-    --checked-color: #6ddf7b;
+    --favorite-background: rgba(237, 77, 98, .75);
     --header-background: rgba(28, 28, 30, .75);
+    --icon-active-background: rgba(109, 223, 123, .4);
+    --icon-active-color: #6ddf7b;
     --link-visited-color: rgb(174, 174, 178);  /* Gray2 light. */
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */
     --text-color-inverted: var(--gray6);
