@@ -71,7 +71,7 @@ class GoodAndCheapRecipe extends LitElement {
       bubbles: true,
       composed: true,
       detail: {
-        slug: this.data.slug,
+        id: this.data.id,
         saved: this.ingredients,
       },
     }));
@@ -108,8 +108,8 @@ class GoodAndCheapRecipe extends LitElement {
   }
 
   /**
-   * Sends recipe slug and chapter up to the app for updating the list of
-   * favorited recipe.
+   * Sends recipe ID and chapter up to the app for updating the list of
+   * favorited recipes.
    */
   private handleFavorite(id: string, chapter: string) {
     this.favorite = !this.favorite;
@@ -132,12 +132,12 @@ class GoodAndCheapRecipe extends LitElement {
       badge,
       chapter,
       cost,
+      id,
       image,
       ingredients,
       more,
       overview,
       serving,
-      slug,
       steps,
       title
     } = this.data;
@@ -162,7 +162,7 @@ class GoodAndCheapRecipe extends LitElement {
           data-checked="${this.favorite}"
           title="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
           type="button"
-          @click="${() => this.handleFavorite(slug, chapter)}">
+          @click="${() => this.handleFavorite(id, chapter)}">
           ${unsafeHTML(favoriteIcon)}
         </button>
 

@@ -28,24 +28,24 @@ export enum Events {
 
 export interface Chapter {
   content: string,
+  id: string,
   image: string,
   recipes: {
     badge: string,
     chapter: string,
     favorite?: boolean,
+    id: string,
     image: string,
     serving: string,
-    slug: string,
     title: string,
   }[],
-  slug: string,
   title: string,
 }
 
 export interface Page {
   content: string,
+  id: string,
   image: string,
-  slug: string,
   title: string,
 }
 
@@ -58,6 +58,7 @@ export interface Recipe {
     units: string
   },
   favorite?: boolean,
+  id: string,
   image: string,
   ingredients?: {
     items: string[],
@@ -81,7 +82,6 @@ export interface Recipe {
   overview: string,
   savedIngredients?: string[],
   serving: string,
-  slug: string,
   steps?: string[],
   title: string,
 }

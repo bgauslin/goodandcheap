@@ -3,67 +3,67 @@
     {
       "title": "Breakfast",
       "image": "breakfast",
-      "slug": "breakfast",
+      "id": "breakfast",
       "count": "10"
     },
     {
       "title": "Soup",
       "image": "soup",
-      "slug": "soup",
+      "id": "soup",
       "count": "4"
     },
     {
       "title": "Salad",
       "image": "salad",
-      "slug": "salad",
+      "id": "salad",
       "count": "9"
     },
     {
       "title": "Snacks, Sides &amp; Small Bites",
       "image": "snacks-sides-small-bites",
-      "slug": "snacks",
+      "id": "snacks",
       "count": "10"
     },
     {
       "title": "Handheld",
       "image": "handheld",
-      "slug": "handheld",
+      "id": "handheld",
       "count": "6"
     },
     {
       "title": "Dinner",
       "image": "dinner",
-      "slug": "dinner",
+      "id": "dinner",
       "count": "20"
     },
     {
       "title": "Big Batch",
       "image": "big-batch",
-      "slug": "batch",
+      "id": "batch",
       "count": "4"
     },
     {
       "title": "Staples",
       "image": "staples",
-      "slug": "staples",
+      "id": "staples",
       "count": "9"
     },
     {
       "title": "Drinks",
       "image": "drinks",
-      "slug": "drinks",
+      "id": "drinks",
       "count": "2"
     },
     {
       "title": "Desserts",
       "image": "desserts",
-      "slug": "desserts",
+      "id": "desserts",
       "count": "5"
     },
     {
       "title": "Flavor",
       "image": "flavor",
-      "slug": "flavor",
+      "id": "flavor",
       "count": "6"
     }
   ],
@@ -71,32 +71,32 @@
     {
       "title": "Introduction",
       "image": "blueberries",
-      "slug": "intro"
+      "id": "intro"
     },
     {
       "title": "A Note on $4/Day",
       "image": "shells",
-      "slug": "note"
+      "id": "note"
     },
     {
       "title": "My Philosophy",
       "image": "black-beans-2",
-      "slug": "philosophy"
+      "id": "philosophy"
     },
     {
       "title": "About this Book",
       "image": "corn-stalks-2",
-      "slug": "about"
+      "id": "about"
     },
     {
       "title": "Tips for Eating and Shopping Well",
       "image": "salsa-1",
-      "slug": "tips"
+      "id": "tips"
     },
     {
       "title": "Pantry Basics",
       "image": "cans-2",
-      "slug": "basics"
+      "id": "basics"
     }
   ]
 }

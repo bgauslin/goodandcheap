@@ -11,8 +11,8 @@ interface Home {
 
 interface Item {
   count: string,
+  id: string,
   image: string,
-  slug: string,
   title: string,
 }
 
@@ -96,10 +96,10 @@ class GoodAndCheapHome extends LitElement {
         role="tabpanel">
         <ul class="previews">
         ${items.map(item => {
-          const {count, image, slug, title} = item;
+          const {count, id, image, title} = item;
           return html`
             <li>
-              <a href="./${slug}">
+              <a href="./${id}">
                 <figure>
                   <img src="./images/${image}@thumb.webp" alt="">
                 </figure>

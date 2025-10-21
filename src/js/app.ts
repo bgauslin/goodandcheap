@@ -89,14 +89,14 @@ class GoodAndCheapApp extends LitElement {
 
     // Update ingredients in each recipe in the data object.
     for (const list of ingredients) {
-      const recipe = recipes.find(recipe => recipe.slug === list.id);
+      const recipe = recipes.find(recipe => recipe.id === list.id);
       recipe.savedIngredients = list.items;
     }
 
     // Update each recipe entry's favorite state.
     this.favorites = favorites || [];
     for (const favorite of favorites) {
-      const recipe = recipes.find(recipe => recipe.slug === favorite);
+      const recipe = recipes.find(recipe => recipe.id === favorite);
       recipe.favorite = true;
     }
 
@@ -104,7 +104,7 @@ class GoodAndCheapApp extends LitElement {
     for (const chapter of chapters) {
       const {recipes} = chapter;
       for (const recipe of recipes) {
-        if (favorites.includes(recipe.slug)) {
+        if (favorites.includes(recipe.id)) {
           recipe.favorite = true;
         }
       }
@@ -116,10 +116,10 @@ class GoodAndCheapApp extends LitElement {
    * with saved ingredients.
    */
   private handleIngredients(event: CustomEvent) {
-    const {slug, saved} = event.detail;
+    const {id, saved} = event.detail;
     const {recipes} = this.data;
 
-    const recipe = recipes.find(recipe => recipe.slug === slug);
+    const recipe = recipes.find(recipe => recipe.id === id);
     recipe.savedIngredients = saved;
 
     this.setStorage();
@@ -131,17 +131,17 @@ class GoodAndCheapApp extends LitElement {
    */
   private handleFavorites(event: CustomEvent) {
     const {detail} = event;
-    const {chapter: chapterSlug, checked, id} = detail;
+    const {chapter: chapterId, checked, id} = detail;
 
     const {chapters, recipes} = this.data;
 
     // Update the recipe entry.
-    const recipe = recipes.find(recipe => recipe.slug === id);
+    const recipe = recipes.find(recipe => recipe.id === id);
     recipe.favorite = checked;
 
     // Update the recipe in its chapter list.
-    const chapter = chapters.find(chapter => chapter.slug === chapterSlug);
-    const recipe_ = chapter.recipes.find(recipe => recipe.slug === id);
+    const chapter = chapters.find(chapter => chapter.id === chapterId);
+    const recipe_ = chapter.recipes.find(recipe => recipe.id === id);
     recipe_.favorite = checked;
 
     // Add/remove the favorite and sort the list for readability.
@@ -168,9 +168,9 @@ class GoodAndCheapApp extends LitElement {
     const filtered = recipes.filter(recipe => recipe.savedIngredients !== undefined);
     const ingredients = [];
     for (const recipe of filtered) {
-      const {slug, savedIngredients} = recipe;
+      const {id, savedIngredients} = recipe;
       ingredients.push({
-        id: slug,
+        id,
         items: savedIngredients,
       });
     }
@@ -200,31 +200,31 @@ class GoodAndCheapApp extends LitElement {
 
     // Get last segment for looking up the type of content to render.
     const segments = href.split('/');
-    const slug = segments[segments.length - 1];
+    const id = segments[segments.length - 1];
     
-    // See if the slug is valid for one of our content types.
+    // See if the ID is valid for one of our content types.
     const {chapters, pages, recipes} = this.data;
-    const chapter = chapters.find((chapter: Chapter) => chapter.slug === slug);
-    const page = pages.find((page: Page) => page.slug === slug);
-    const recipe = recipes.find((recipe: Recipe) => recipe.slug === slug);
+    const chapter = chapters.find((chapter: Chapter) => chapter.id === id);
+    const page = pages.find((page: Page) => page.id === id);
+    const recipe = recipes.find((recipe: Recipe) => recipe.id === id);
 
     // If we have valid content, render it and update the UI and browser.
     if (chapter) {
       this.context = 'chapter';
       this.updateComponent(this.chapterElement, chapter);
-      this.updateAddressBar(slug);
+      this.updateAddressBar(id);
     } else if (page) {
       this.context = 'page';
       this.updateComponent(this.pageElement, page);
-      this.updateAddressBar(slug);
+      this.updateAddressBar(id);
     } else if (recipe) {
       this.context = 'recipe';
       this.updateComponent(this.recipeElement, recipe);
-      this.updateAddressBar(slug, recipe.chapter);
+      this.updateAddressBar(id, recipe.chapter);
     }
 
     this.updateButtonLabel();
-    this.updateDocumentTitle(slug);
+    this.updateDocumentTitle(id);
   }
 
   /**
@@ -235,15 +235,15 @@ class GoodAndCheapApp extends LitElement {
     if (this.context === 'recipe') {
       this.context = 'chapter';
 
-      // Get the chapter based off URL slug.
-      const slug = this.getSlug();
-      const chapter = this.getChapter(slug);
+      // Get the chapter based off URL segment.
+      const id = this.getSegment();
+      const chapter = this.getChapter(id);
 
       // Render the chapter and update the UI.
       this.updateComponent(this.chapterElement, chapter);
       this.updateButtonLabel();
-      this.updateAddressBar(chapter.slug);
-      this.updateDocumentTitle(chapter.slug);
+      this.updateAddressBar(chapter.id);
+      this.updateDocumentTitle(chapter.id);
     } else {
       this.context = 'home';
       this.updateAddressBar('');
@@ -267,8 +267,8 @@ class GoodAndCheapApp extends LitElement {
    */
   private updateButtonLabel() {
     if (this.context === 'recipe') {
-      const slug = this.getSlug();
-      const chapter = this.getChapter(slug);
+      const id = this.getSegment();
+      const chapter = this.getChapter(id);
       this.backLabel = chapter.title;
     } else {
       this.backLabel = 'Home'
@@ -279,13 +279,13 @@ class GoodAndCheapApp extends LitElement {
    * Updates the app when browser's 'Back' and 'Forward' buttons are clicked.
    */ 
   private updateFromUrl() {
-    const slug = this.getSlug();
+    const id = this.getSegment();
 
-    // Look up content based on URL slug.
+    // Look up content based on URL segment.
     const {chapters, pages, recipes} = this.data;
-    const chapter = chapters.find((chapter: Chapter) => chapter.slug === slug);
-    const page = pages.find((page: Page) => page.slug === slug);
-    const recipe = recipes.find((recipe: Recipe) => recipe.slug === slug);
+    const chapter = chapters.find((chapter: Chapter) => chapter.id === id);
+    const page = pages.find((page: Page) => page.id === id);
+    const recipe = recipes.find((recipe: Recipe) => recipe.id === id);
 
     // Set current context, render current content, update the UI.
     if (chapter) {
@@ -302,13 +302,13 @@ class GoodAndCheapApp extends LitElement {
     }
 
     this.updateButtonLabel();
-    this.updateDocumentTitle(slug);
+    this.updateDocumentTitle(id);
   }
 
   /**
    * Helper function that gets the last URL segment from the address bar.
    */
-  private getSlug(): string {
+  private getSegment(): string {
     const url = new URL(window.location.href);
     const {pathname} = url;
     const segments = pathname.split('/');
@@ -320,10 +320,10 @@ class GoodAndCheapApp extends LitElement {
    * Helper function that gets the parent Chapter of a Recipe for updating
    * elements and the browser window.
    */
-  private getChapter(slug: string): Chapter {
+  private getChapter(id: string): Chapter {
     const {chapters, recipes} = this.data;
-    const recipe = recipes.find(recipe => recipe.slug === slug);
-    const chapter = chapters.find(chapter => chapter.slug === recipe.chapter);
+    const recipe = recipes.find(recipe => recipe.id === id);
+    const chapter = chapters.find(chapter => chapter.id === recipe.chapter);
     
     return chapter;
   }
@@ -331,10 +331,10 @@ class GoodAndCheapApp extends LitElement {
   /**
    * Updates URL in the address bar.
    */ 
-  private updateAddressBar(slug: string, parent?: string) {
-    let path = `./${slug}`;
+  private updateAddressBar(id: string, parent?: string) {
+    let path = `./${id}`;
     if (parent) {
-      path = `./${parent}/${slug}`;
+      path = `./${parent}/${id}`;
     }
     history.pushState(null, '', path);
   }
@@ -342,18 +342,18 @@ class GoodAndCheapApp extends LitElement {
   /**
    * Updates document title (and browser history list).
    */ 
-  private updateDocumentTitle(slug?: string) {
+  private updateDocumentTitle(id?: string) {
     let title = null;
     const {chapters, pages, recipes} = this.data;
 
     if (this.context === 'chapter') {
-      const chapter = chapters.find((chapter: Chapter) => chapter.slug === slug);
+      const chapter = chapters.find((chapter: Chapter) => chapter.id === id);
       title = chapter.title;
     } else if (this.context === 'page') {
-      const page = pages.find((page: Page) => page.slug === slug);
+      const page = pages.find((page: Page) => page.id === id);
       title = page.title;
     } else if (this.context === 'recipe') {
-      const recipe = recipes.find((recipe: Recipe) => recipe.slug === slug);
+      const recipe = recipes.find((recipe: Recipe) => recipe.id === id);
       title = recipe.title;
     }
 

@@ -51,7 +51,7 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
       bubbles: true,
       composed: true,
       detail: {
-        chapter: this.data.slug,
+        chapter: this.data.id,
         checked,
         id,
       }
@@ -63,13 +63,13 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
 
     let items = '';
     for (const [index, recipe] of recipes.entries()) {
-      const {badge, chapter, favorite, image, serving, slug, title} = recipe;
+      const {badge, chapter, favorite, id, image, serving, title} = recipe;
       let callout = `<p class="serving">${serving}</p>`;
       if (badge) callout = `<p class="badge">${badge}</p>`;
 
       items += `
         <li>
-          <a href="./${chapter}/${slug}">
+          <a href="./${chapter}/${id}">
             <figure>
               <img src="./images/${image}@thumb.webp" alt="">
             </figure>
@@ -84,7 +84,7 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
 
           <button
             class="favorite"
-            data-id="${slug}"
+            data-id="${id}"
             data-checked="${favorite}"
             title="${favorite ? 'Remove from' : 'Add to'} Favorites"
             type="button">

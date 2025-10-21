@@ -2,7 +2,7 @@
   "chapters": [
     {
       "title": "Breakfast",
-      "slug": "breakfast",
+      "id": "breakfast",
       "content": "<p>Fast, healthy, and cheap is usually the game plan for breakfast—with as much pleasing flavor as I can manage in my grouchy morning state. Whether you have hours or minutes, there’s a great breakfast to be had for little.</p>",
       "image": "breakfast",
       "count": "10",
@@ -12,76 +12,76 @@
           "serving": "For Two",
           "image": "tomato-scrambled-eggs",
           "chapter": "breakfast",
-          "slug": "tomato-scrambled-eggs"
+          "id": "tomato-scrambled-eggs"
         },
         {
           "title": "Broiled Grapefruit",
           "serving": "For Two",
           "image": "broiled-grapefruit",
           "chapter": "breakfast",
-          "slug": "broiled-grapefruit"
+          "id": "broiled-grapefruit"
         },
         {
           "title": "Omelette",
           "serving": "For Two",
           "image": "omelette",
           "chapter": "breakfast",
-          "slug": "omelette"
+          "id": "omelette"
         },
         {
           "title": "Banana Pancakes",
           "serving": "Makes Ten to Fourteen Pancakes",
           "image": "banana-pancakes",
           "chapter": "breakfast",
-          "slug": "banana-pancakes"
+          "id": "banana-pancakes"
         },
         {
           "title": "Chocolate Zucchini Muffins",
           "serving": "Makes Twenty-four Small Muffins",
           "image": "chocolate-zucchini-muffins",
           "chapter": "breakfast",
-          "slug": "muffins"
+          "id": "muffins"
         },
         {
           "title": "Whole-Wheat Jalapeño Cheddar Scones",
           "serving": "Makes Six",
           "image": "whole-wheat-jalapeno-cheddar-scones",
           "chapter": "breakfast",
-          "slug": "scones"
+          "id": "scones"
         },
         {
           "title": "Peanut Butter and Jelly Granola Bars",
           "serving": "Makes Twelve",
           "image": "peanut-butter-and-jelly-granola-bars",
           "chapter": "breakfast",
-          "slug": "granola-bars"
+          "id": "granola-bars"
         },
         {
           "title": "Egg Sandwich with Mushroom Hash",
           "serving": "For Two",
           "image": "egg-sandwich-with-mushroom-hash",
           "chapter": "breakfast",
-          "slug": "egg-sandwich"
+          "id": "egg-sandwich"
         },
         {
           "title": "Oatmeal",
           "badge": "Ideas",
           "image": "oatmeal",
           "chapter": "breakfast",
-          "slug": "oatmeal"
+          "id": "oatmeal"
         },
         {
           "title": "Yogurt Smash!",
           "badge": "Ideas",
           "image": "yogurt-smash",
           "chapter": "breakfast",
-          "slug": "yogurt"
+          "id": "yogurt"
         }
       ]
     },
     {
       "title": "Soup",
-      "slug": "soup",
+      "id": "soup",
       "content": "<p>It’s a cliché, but as soon as the weather gets cold, my apartment fills with the smell of vegetables simmering for soup. Vegetable soups are so simple that you can easily invent your own, using the stuff you and your family like. Start with some onion, carrot, celery, maybe a pepper; then add broth and a large amount of, say, spinach, and suddenly you have spinach soup! It’s a great way for new cooks to gain some confidence. Just remember to season it enough. Dunk a grilled-cheese sandwich in it and even mediocre soup tastes great.</p>",
       "image": "soup",
       "count": "4",
@@ -91,34 +91,34 @@
           "serving": "For Four",
           "image": "dal",
           "chapter": "soup",
-          "slug": "dal"
+          "id": "dal"
         },
         {
           "title": "Corn Soup",
           "serving": "For Four to Six",
           "image": "corn-soup",
           "chapter": "soup",
-          "slug": "corn-soup"
+          "id": "corn-soup"
         },
         {
           "title": "French Onion Soup",
           "serving": "For Six",
           "image": "french-onion-soup",
           "chapter": "soup",
-          "slug": "french-onion-soup"
+          "id": "french-onion-soup"
         },
         {
           "title": "Lightly Curried Butternut Squash Soup",
           "serving": "For Four",
           "image": "lightly-curried-butternut-squash-soup",
           "chapter": "soup",
-          "slug": "butternut-squash-soup"
+          "id": "butternut-squash-soup"
         }
       ]
     },
     {
       "title": "Salad",
-      "slug": "salad",
+      "id": "salad",
       "content": "<p>There isn’t much to a great salad: just fresh vegetables, anything crunchy, and one or two rich ingredients like cheese, nuts, a buttery crouton, or a creamy dressing. The dressing should be well seasoned with salt and have a nice hit of vinegar or citrus to bring out the other flavors. Don’t bother with store-bought dressing. It usually tastes lousy and is full of cheap oils and chemicals; you can make better and cheaper dressing at home with just a few pantry items. Salad shouldn’t be a side dish you grudgingly serve as an afterthought. Make it a meal you look forward to by building it around your favorite flavors.</p>",
       "image": "salad",
       "count": "9",
@@ -128,69 +128,69 @@
           "serving": "For Two",
           "image": "broiled-eggplant-salad",
           "chapter": "salad",
-          "slug": "eggplant-salad"
+          "id": "eggplant-salad"
         },
         {
           "title": "Kale Salad",
           "serving": "For Two, or Four as a Side",
           "image": "kale-salad-1",
           "chapter": "salad",
-          "slug": "kale-salad"
+          "id": "kale-salad"
         },
         {
           "title": "Ever-Popular Potato Salad",
           "serving": "For Four",
           "image": "ever-popular-potato-salad",
           "chapter": "salad",
-          "slug": "potato-salad"
+          "id": "potato-salad"
         },
         {
           "title": "Spicy Panzanella",
           "serving": "For Four",
           "image": "spicy-panzanella",
           "chapter": "salad",
-          "slug": "spicy-panzanella"
+          "id": "spicy-panzanella"
         },
         {
           "title": "Cold (and Spicy?) Asian Noodles",
           "serving": "For Four",
           "image": "cold-and-spicy-asian-noodles",
           "chapter": "salad",
-          "slug": "asian-noodles"
+          "id": "asian-noodles"
         },
         {
           "title": "Taco Salad",
           "serving": "For Two",
           "image": "taco-salad",
           "chapter": "salad",
-          "slug": "taco-salad"
+          "id": "taco-salad"
         },
         {
           "title": "Beet and Chickpea Salad",
           "serving": "For Two",
           "image": "beet-and-chickpea-salad",
           "chapter": "salad",
-          "slug": "beet-chickpea-salad"
+          "id": "beet-chickpea-salad"
         },
         {
           "title": "Broccoli Apple Salad",
           "serving": "For Four",
           "image": "broccoli-apple-salad",
           "chapter": "salad",
-          "slug": "broccoli-apple-salad"
+          "id": "broccoli-apple-salad"
         },
         {
           "title": "Charred Summer Salad",
           "serving": "For Two, or Four as a Side",
           "image": "charred-summer-salad",
           "chapter": "salad",
-          "slug": "charred-summer-salad"
+          "id": "charred-summer-salad"
         }
       ]
     },
     {
       "title": "Snacks, Sides &amp; Small Bites",
-      "slug": "snacks",
+      "id": "snacks",
       "content": "<p>When cooking on a budget, snacks are often the first thing you shave away. If you’re creative, though, you can make plenty of cheap, healthy and delightful snacks to enjoy in all seasons and on any occasion. (And remember, leftovers make great snacks, too!)</p>",
       "image": "snacks-sides-small-bites",
       "count": "10",
@@ -200,76 +200,76 @@
           "serving": "For Four",
           "image": "jacket-sweet-potato",
           "chapter": "snacks",
-          "slug": "jacket-sweet-potato"
+          "id": "jacket-sweet-potato"
         },
         {
           "title": "Smoky and Spicy Roasted Cauliflower",
           "serving": "For Four",
           "image": "smoky-and-spicy-roasted-cauliflower",
           "chapter": "snacks",
-          "slug": "roasted-cauliflower"
+          "id": "roasted-cauliflower"
         },
         {
           "title": "Spicy Green Beans",
           "serving": "For Two",
           "image": "spicy-green-beans",
           "chapter": "snacks",
-          "slug": "spicy-green-beans"
+          "id": "spicy-green-beans"
         },
         {
           "title": "Mexican Street Corn",
           "serving": "For Four",
           "image": "mexican-street-corn",
           "chapter": "snacks",
-          "slug": "street-corn"
+          "id": "street-corn"
         },
         {
           "title": "Green Chili and Cheddar Quesadillas",
           "serving": "For Two",
           "image": "green-chili-and-cheddar-quesadillas",
           "chapter": "snacks",
-          "slug": "quesadillas"
+          "id": "quesadillas"
         },
         {
           "title": "Cornmeal Crusted Veggies",
           "serving": "For Four",
           "image": "cornmeal-crusted-veggies-1",
           "chapter": "snacks",
-          "slug": "crusted-veggies"
+          "id": "crusted-veggies"
         },
         {
           "title": "Brussels Sprout Hash and Eggs",
           "serving": "For Two",
           "image": "brussels-sprout-hash-and-eggs",
           "chapter": "snacks",
-          "slug": "hash-and-eggs"
+          "id": "hash-and-eggs"
         },
         {
           "title": "Poutine",
           "serving": "For Four",
           "image": "poutine",
           "chapter": "snacks",
-          "slug": "poutine"
+          "id": "poutine"
         },
         {
           "title": "Things On Toast",
           "badge": "Ideas",
           "image": "toast",
           "chapter": "snacks",
-          "slug": "toast"
+          "id": "toast"
         },
         {
           "title": "Popcorn",
           "badge": "Ideas",
           "image": "popcorn",
           "chapter": "snacks",
-          "slug": "popcorn"
+          "id": "popcorn"
         }
       ]
     },
     {
       "title": "Handheld",
-      "slug": "handheld",
+      "id": "handheld",
       "content": "<p>Sometimes you just don’t want to deal with plates and cutlery. Plus, eating with your hands is fun! These recipes are great for lunch, dinner, or for a casual party.</p>",
       "image": "handheld",
       "count": "6",
@@ -279,48 +279,48 @@
           "serving": "For Two to Three",
           "image": "cauliflower-tacos",
           "chapter": "handheld",
-          "slug": "cauliflower-tacos"
+          "id": "cauliflower-tacos"
         },
         {
           "title": "Potato Leek Pizza",
           "serving": "Makes Four Pizzas",
           "image": "potato-leek-pizza",
           "chapter": "handheld",
-          "slug": "potato-leek-pizza"
+          "id": "potato-leek-pizza"
         },
         {
           "title": "Broccoli Rabe and Mozzarella Calzones",
           "serving": "Makes Four Calzones",
           "image": "broccoli-rabe-and-mozzarella-calzones",
           "chapter": "handheld",
-          "slug": "calzones"
+          "id": "calzones"
         },
         {
           "title": "Broccoli, Egg, and Cheddar Empanadas",
           "serving": "Makes Twelve",
           "image": "broccoli-egg-and-cheddar-empanadas",
           "chapter": "handheld",
-          "slug": "empanadas"
+          "id": "empanadas"
         },
         {
           "title": "Potato and Kale Rolls with Raita",
           "serving": "For Four",
           "image": "potato-and-kale-rolls-with-raita",
           "chapter": "handheld",
-          "slug": "rolls-with-raita"
+          "id": "rolls-with-raita"
         },
         {
           "title": "Leftovers",
           "badge": "Ideas",
           "image": "leftovers",
           "chapter": "handheld",
-          "slug": "leftovers"
+          "id": "leftovers"
         }
       ]
     },
     {
       "title": "Dinner",
-      "slug": "dinner",
+      "id": "dinner",
       "content": "<p>My favorite meal of the day. For me, eating dinner indicates that the hard work is done: it’s time for family, relaxing, and the more optional endeavors. A great dinner is an opportunity to show love to those you are cooking for and to yourself.</p>",
       "image": "dinner",
       "count": "20",
@@ -330,146 +330,146 @@
           "serving": "For Three",
           "image": "creamy-zucchini-fettuccine",
           "chapter": "dinner",
-          "slug": "fettuccine"
+          "id": "fettuccine"
         },
         {
           "title": "Pasta with Eggplant and Tomato",
           "serving": "For Two",
           "image": "pasta-with-eggplant-and-tomato",
           "chapter": "dinner",
-          "slug": "pasta"
+          "id": "pasta"
         },
         {
           "title": "Chana Masala",
           "serving": "For Two",
           "image": "chana-masala",
           "chapter": "dinner",
-          "slug": "chana-masala"
+          "id": "chana-masala"
         },
         {
           "title": "Black-Eyed Peas and Collards",
           "serving": "For Four",
           "image": "black-eyed-peas-and-collards",
           "chapter": "dinner",
-          "slug": "peas-and-collards"
+          "id": "peas-and-collards"
         },
         {
           "title": "Vegetable Jambalaya",
           "serving": "For Six",
           "image": "vegetable-jambalaya",
           "chapter": "dinner",
-          "slug": "jambalaya"
+          "id": "jambalaya"
         },
         {
           "title": "Filipino Chicken Adobo",
           "serving": "For Eight",
           "image": "filipino-chicken-adobo",
           "chapter": "dinner",
-          "slug": "chicken-adobo"
+          "id": "chicken-adobo"
         },
         {
           "title": "Baked Beans 2 Ways",
           "serving": "For Two, or Four as a Side",
           "image": "baked-beans",
           "chapter": "dinner",
-          "slug": "baked-beans"
+          "id": "baked-beans"
         },
         {
           "title": "Half-Veggie Burgers",
           "serving": "For Eight",
           "image": "half-veggie-burgers",
           "chapter": "dinner",
-          "slug": "veggie-burgers"
+          "id": "veggie-burgers"
         },
         {
           "title": "Beef Stroganoff",
           "serving": "For Six",
           "image": "beef-stroganoff",
           "chapter": "dinner",
-          "slug": "beef-stroganoff"
+          "id": "beef-stroganoff"
         },
         {
           "title": "Tofu Hot Pot",
           "serving": "For Four",
           "image": "tofu-hot-pot",
           "chapter": "dinner",
-          "slug": "tofu-hot-pot"
+          "id": "tofu-hot-pot"
         },
         {
           "title": "Deconstructed Cabbage Rolls",
           "serving": "For Six",
           "image": "deconstructed-cabbage-rolls",
           "chapter": "dinner",
-          "slug": "cabbage-rolls"
+          "id": "cabbage-rolls"
         },
         {
           "title": "Savory Summer Cobbler",
           "serving": "For Four",
           "image": "savory-summer-cobbler",
           "chapter": "dinner",
-          "slug": "summer-cobbler"
+          "id": "summer-cobbler"
         },
         {
           "title": "Cauliflower Cheese",
           "serving": "For Four",
           "image": "cauliflower-cheese",
           "chapter": "dinner",
-          "slug": "cauliflower-cheese"
+          "id": "cauliflower-cheese"
         },
         {
           "title": "Vegetable Quiche, Hold the Crust",
           "serving": "For Four",
           "image": "vegetable-quiche-hold-the-crust",
           "chapter": "dinner",
-          "slug": "vegetable-quiche"
+          "id": "vegetable-quiche"
         },
         {
           "title": "Shrimp and Grits",
           "serving": "For Four",
           "image": "shrimp-and-grits",
           "chapter": "dinner",
-          "slug": "shrimp-and-grits"
+          "id": "shrimp-and-grits"
         },
         {
           "title": "Spicy, Crunchy, Creamy Polenta",
           "serving": "For Two",
           "image": "spicy-crunchy-creamy-polenta",
           "chapter": "dinner",
-          "slug": "spicy-polenta"
+          "id": "spicy-polenta"
         },
         {
           "title": "Roast Chicken",
           "serving": "For Six",
           "image": "roast-chicken",
           "chapter": "dinner",
-          "slug": "roast-chicken"
+          "id": "roast-chicken"
         },
         {
           "title": "Roasted Vegetables",
           "badge": "Method",
           "image": "roasted-vegetables",
           "chapter": "dinner",
-          "slug": "roasted-vegetables"
+          "id": "roasted-vegetables"
         },
         {
           "title": "Roasted Potatoes with Chilies",
           "serving": "For Four",
           "image": "roasted-potatoes-with-chilies-1",
           "chapter": "dinner",
-          "slug": "roasted-potatoes"
+          "id": "roasted-potatoes"
         },
         {
           "title": "Spicy Broiled Tilapia with Lime",
           "serving": "For Two",
           "image": "spicy-broiled-tilapia-with-lime",
           "chapter": "dinner",
-          "slug": "spicy-tilapia"
+          "id": "spicy-tilapia"
         }
       ]
     },
     {
       "title": "Big Batch",
-      "slug": "batch",
+      "id": "batch",
       "content": "<p>It’s simple economics: usually making a large amount of something is cheaper and more efficient than making lots of different small dishes. You can blow a whole batch all on a big celebration or portion these dishes out and freeze them for later use. You’ll be extremely grateful to your past self when you pull delicious home-made food out of the freezer on a busy Monday evening!</p>",
       "image": "big-batch",
       "count": "4",
@@ -479,34 +479,34 @@
           "serving": "For Ten",
           "image": "spicy-pulled-pork",
           "chapter": "batch",
-          "slug": "spicy-pulled-pork"
+          "id": "spicy-pulled-pork"
         },
         {
           "title": "Deviled Eggs 6 Ways",
           "serving": "Makes Twenty-four Half Eggs",
           "image": "deviled-eggs",
           "chapter": "batch",
-          "slug": "deviled-eggs"
+          "id": "deviled-eggs"
         },
         {
           "title": "Perogies",
           "serving": "Makes Sixty to Seventy-two",
           "image": "perogies",
           "chapter": "batch",
-          "slug": "perogies"
+          "id": "perogies"
         },
         {
           "title": "Dumplings 2 Ways",
           "serving": "Makes Sixty",
           "image": "dumplings",
           "chapter": "batch",
-          "slug": "dumplings"
+          "id": "dumplings"
         }
       ]
     },
     {
       "title": "Staples",
-      "slug": "staples",
+      "id": "staples",
       "content": "<p>These are the building blocks of great meals. Freshly made flatbreads are amazingly cheap to produce and taste fabulous. They can take a bit of time to make at first, but you’ll get faster with practice and the flavor is absolutely worth it. Large batches of grains and beans can be cooked at the beginning of the week, then used in different meals each day, saving both time and money. Staples are where the possibilities begin!</p>",
       "image": "staples",
       "count": "9",
@@ -516,69 +516,69 @@
           "serving": "Makes Twenty-four Small",
           "image": "flour-tortillas",
           "chapter": "staples",
-          "slug": "flour-tortillas"
+          "id": "flour-tortillas"
         },
         {
           "title": "Roti",
           "serving": "Makes Sixteen",
           "image": "roti",
           "chapter": "staples",
-          "slug": "roti"
+          "id": "roti"
         },
         {
           "title": "Pizza Dough 2 Ways",
           "serving": "Makes Four Individual Pizzas",
           "image": "pizza-dough",
           "chapter": "staples",
-          "slug": "pizza-dough"
+          "id": "pizza-dough"
         },
         {
           "title": "Fresh Pasta",
           "serving": "For One Large Entree",
           "image": "fresh-pasta",
           "chapter": "staples",
-          "slug": "fresh-pasta"
+          "id": "fresh-pasta"
         },
         {
           "title": "Best Tomato Sauce",
           "serving": "Makes Three and a Half Cups",
           "image": "best-tomato-sauce",
           "chapter": "staples",
-          "slug": "tomato-sauce"
+          "id": "tomato-sauce"
         },
         {
           "title": "Chorizo and White Bean Ragu",
           "serving": "Makes Three Cups",
           "image": "chorizo-and-white-bean-ragu",
           "chapter": "staples",
-          "slug": "ragu"
+          "id": "ragu"
         },
         {
           "title": "Rainbow Rice 3 Ways",
           "serving": "For Two",
           "image": "rainbow-rice",
           "chapter": "staples",
-          "slug": "rainbow-rice"
+          "id": "rainbow-rice"
         },
         {
           "title": "How to Cook Dried Beans",
           "badge": "Method",
           "image": "how-to-cook-dried-beans",
           "chapter": "staples",
-          "slug": "dried-beans"
+          "id": "dried-beans"
         },
         {
           "title": "Croutons or Breadcrumbs",
           "badge": "Method",
           "image": "croutons-or-breadcrumbs-1",
           "chapter": "staples",
-          "slug": "croutons-breadcrumbs"
+          "id": "croutons-breadcrumbs"
         }
       ]
     },
     {
       "title": "Drinks",
-      "slug": "drinks",
+      "id": "drinks",
       "content": "<p>You don’t need a special drink at every meal (unless of course it is the meal!) but when you do, let fruit play a leading role, and make it yourself. It’ll be so much better than the overpriced bottles in the supermarket.</p>",
       "image": "drinks",
       "count": "2",
@@ -588,20 +588,20 @@
           "serving": "Serves Four to Six",
           "image": "agua-fresca",
           "chapter": "drinks",
-          "slug": "agua-fresca"
+          "id": "agua-fresca"
         },
         {
           "title": "Smoothies 4 Ways",
           "serving": "For Two",
           "image": "smoothies",
           "chapter": "drinks",
-          "slug": "smoothies"
+          "id": "smoothies"
         }
       ]
     },
     {
       "title": "Desserts",
-      "slug": "desserts",
+      "id": "desserts",
       "content": "<p>Whether it’s been a rough day, it’s time to celebrate, or just because it’s Wednesday, these sweets are totally worth it.</p>",
       "image": "desserts",
       "count": "5",
@@ -611,41 +611,41 @@
           "serving": "For Two",
           "image": "caramelized-bananas",
           "chapter": "desserts",
-          "slug": "caramelized-bananas"
+          "id": "caramelized-bananas"
         },
         {
           "title": "Coconut Chocolate Cookies",
           "serving": "Makes Forty",
           "image": "coconut-chocolate-cookies",
           "chapter": "desserts",
-          "slug": "coconut-chocolate-cookies"
+          "id": "coconut-chocolate-cookies"
         },
         {
           "title": "Peach Coffee Cake",
           "serving": "For Twelve",
           "image": "peach-coffee-cake",
           "chapter": "desserts",
-          "slug": "peach-coffee-cake"
+          "id": "peach-coffee-cake"
         },
         {
           "title": "Fast Melon Sorbet",
           "serving": "For Four",
           "image": "fast-melon-sorbet",
           "chapter": "desserts",
-          "slug": "melon-sorbet"
+          "id": "melon-sorbet"
         },
         {
           "title": "Avocado Milkshake",
           "serving": "For Two",
           "image": "avocado-milkshake",
           "chapter": "desserts",
-          "slug": "avocado-milkshake"
+          "id": "avocado-milkshake"
         }
       ]
     },
     {
       "title": "Flavor",
-      "slug": "flavor",
+      "id": "flavor",
       "content": "<p>If you have a great sauce or a few spices in your kitchen, you’ll never have to tolerate bland food. Most of these recipes require surprisingly little effort and time, pack a ton of flavor, and can be stored for use in any dish you choose.</p>",
       "image": "flavor",
       "count": "6",
@@ -655,42 +655,42 @@
           "serving": "Makes One Cup",
           "image": "peanut-sauce",
           "chapter": "flavor",
-          "slug": "peanut-sauce"
+          "id": "peanut-sauce"
         },
         {
           "title": "Spice Oil",
           "serving": "Makes One Cup",
           "image": "spice-oil",
           "chapter": "flavor",
-          "slug": "spice-oil"
+          "id": "spice-oil"
         },
         {
           "title": "Salsa",
           "serving": "Makes Three Cups",
           "image": "salsa",
           "chapter": "flavor",
-          "slug": "salsa"
+          "id": "salsa"
         },
         {
           "title": "Raita",
           "serving": "Makes Two Cups",
           "image": "raita",
           "chapter": "flavor",
-          "slug": "raita"
+          "id": "raita"
         },
         {
           "title": "Tzatziki",
           "serving": "Makes Two Cups",
           "image": "tzatziki",
           "chapter": "flavor",
-          "slug": "tzatziki"
+          "id": "tzatziki"
         },
         {
           "title": "Spices and Aromatics",
           "badge": "Ideas",
           "image": "spices-and-aromatics",
           "chapter": "flavor",
-          "slug": "spices-aromatics"
+          "id": "spices-aromatics"
         }
       ]
     }
@@ -698,37 +698,37 @@
   "pages": [
     {
       "title": "Introduction",
-      "slug": "intro",
+      "id": "intro",
       "image": "blueberries",
       "content": "<p>Eating is one of life’s greatest pleasures. In a perfect world, healthy and delicious food would be all around us. It would be easy to choose and easy to enjoy.</p><p>But of course it’s not a perfect world. There are thousands of barriers that can keep us from eating in a way that nourishes our bodies and satisfies our tastes. Money just needn’t be one of them.</p><p>Kitchen skill, not budget, is the key to great food. This cookbook is a celebration of the many delicious meals available to those on even the most strict of budgets.</p><p>Eating on a limited budget is not easy, and there are times when a tough week can turn mealtime into a chore. As one woman told me, “I’m weary of the ‘what’s for dinner?’ game.” I hope the recipes and techniques in this book can help make those times rare and the tough choices a little more bearable.</p><p>At the same time, this book is not a meal plan—those are much too individual to share on a wide scale. Every person and every family has specific needs and unique tastes. We live in different regions, different neighborhoods, and with varying means. One book cannot account for all of that, but I hope it can be a spark, a general strategy, a flexible set of approachable and cheap recipes. The rest is up to you.</p><p>I think you’ll find (or perhaps have already found) that learning to cook has a powerfully positive effect. If you can become a more skilled, more conscious cook, you’ll be able to conjure deliciousness in any kitchen, anytime. Good cooking alone can’t solve hunger in America, but it can make life happier—and that is worth every effort. Just as a good meal is best shared with others, so is a good recipe. I may not be able to share a meal with you, but I’d love to offer a few ideas. What’s for dinner? Here’s my answer.</p>"
     },
     {
       "title": "A Note on $4/Day",
-      "slug": "note",
+      "id": "note",
       "image": "shells",
       "content": "<p>I designed these recipes to fit the budgets of people living on SNAP, the US program that used to be called food stamps. If you’re on SNAP, you already know that the benefit formulas are complicated, but the rule of thumb is that you end up with $4 per person, per day to spend on food.</p><p>This book isn’t challenging you to live on so little; it’s a resource in case that’s your reality. In May 2014, there were 46 million Americans on food stamps. Untold millions more—in particular, retirees and students—live under similar constraints.</p><p>The costs for each recipe are based on two sources. For the pantry items on the following pages, I collected prices from four grocery stores in Inwood, a relatively low-income neighborhood on the north tip of Manhattan. For specific spices and a wider variety of fruits and vegetables, I looked at online grocery stores or nationwide averages collected by the Bureau of Labor Statistics.</p><p>The prices for fruits and vegetables assume that they’re roughly in season, when you can get the best deals. This means, unfortunately, that you’ll pay a lot more if you want to make peach coffee cake in February. I talk more about shopping in season on the following pages.</p><p>The estimates are, by necessity, a snapshot of place and time. Costs will vary in other cities, other neighborhoods, even just other stores. Please think of the numbers as a guideline, not a guarantee.</p><p>More than in most cookbooks, my recipes are flexible and encourage substitution based on availability, price, and personal tastes. A strict budget requires flexibility and a willingness to say, “that’s a good deal this week, so it’s what I’ll be cooking!” Don’t worry, you’ll pick up the tricks quickly.</p><p>A few recipes call for fancy kitchen equipment, but in my work with low-income families in New York, I’ve found that items like blenders, food processors, and electric mixers are fairly common. I did not, however, attempt to tackle the very real situation of people who have no kitchen, no equipment, and no space to prepare food. I simply cannot hope to do those issues justice within the bounds of one cookbook. Let’s all agree that we need to keep striving to address those other issues that make it difficult for so many people to eat well.</p>"
     },
     {
       "title": "My Philosophy",
-      "slug": "philosophy",
+      "id": "philosophy",
       "image": "black-beans-2",
       "content": "<p>The best health advice is simple: eat fruits and vegetables. Many American cookbooks rely on meat as the central feature of a meal. My recipes celebrate the vegetables rather than the meat.</p><p>My intent was to create satisfying food that doesn’t require you to supplement your meals with cheap carbohydrates to stave off hunger. I strove to create recipes that use money carefully, without being purely slavish to the bottom line. For example, many recipes use butter rather than oil. Butter is not cheap, but it creates flavor, crunch, and richness in a way that cheap oils never can.</p><p>I’m not a dietician, and this isn’t a diet book. I’m just a home cook, like you. If you have dietary restrictions, some recipes won’t work for you as-is, but that’s fine—you can try to adapt them to your needs, or just turn the page and keep looking for inspiration.</p><p>More than a book of recipes, this is a book of ideas. I want you to tailor things to your taste. Improvisation is the soul of great cooking! If it doesn’t work out every time, I hope you’ll forgive me. More importantly, forgive yourself, and try again.</p>"
     },
     {
       "title": "About this Book",
-      "slug": "about",
+      "id": "about",
       "image": "corn-stalks-2",
       "content": "<p>I created an earlier version of this book as the capstone project for my MA in Food Studies at New York University. After I posted a free PDF on my website, it went viral on Reddit, Tumblr, and elsewhere, racking up almost 100,000 downloads in the first few weeks.</p><p>That support gave me the courage to launch a Kickstarter campaign to get printed copies of Good and Cheap into the hands of people who don’t have computers or who wouldn’t otherwise see it. Thousands of generous supporters contributed to the campaign, donating more than 8,000 free copies of the printed book and sponsoring 20 new recipes.</p><p>Now, just five months after first posting the PDF, it has been downloaded about 500,000 times. The experience has changed my life.</p>"
     },
     {
       "title": "Tips for Eating and Shopping Well",
-      "slug": "tips",
+      "id": "tips",
       "image": "salsa-1",
       "content": "<h2>Buy foods that can be used in multiple meals</h2><p>Versatile ingredients save meals. If you buy flour, you can make tortillas, roti, scones, and pancakes. If you buy yogurt (or make your own), you can have it with fruit, make raita and tzatziki, or use it in a drink. Need I even mention the versatility of garlic or lemons? If you always keep them around, you can make anything else taste fantastic.</p><h2>Buy in bulk</h2><p>Buying larger amounts usually brings the price down. When you’re working within a tight budget, you won’t always be able to afford to shop for the future, but do it when you can. And, of course, keep storage in mind: If the item will go off before you can finish it, get the smaller size. If you buy versatile ingredients in slightly larger amounts, you’ll be able to use them quickly but still make diverse meals.</p><h2>Start building a pantry</h2><p>If possible—and admittedly this can be difficult for people living on their own—reserve part of your budget to buy one or two semi-expensive pantry items each week. Things like olive oil, soy sauce, and spices are pricey at first, but if you use just a little with each recipe, they go a long way. With turmeric, coriander, cumin, and fresh ginger root, you’ll suddenly have a world of flavor on your shelf. In a few pages, I’ll suggest specific items to add to your pantry.</p><h2>Think weekly</h2><p>Each week, mix things up by buying different varieties of staple foods like grains and beans. This week, you might have oatmeal every morning with black bean chili or black bean tacos later in the day, but next week you’ll have yogurt for breakfast and hummus or chana masala for lunch and dinner. If you have time to shop frequently, pick up smaller amounts of produce every couple of days to ensure everything is fresh. It’s a lot more inspiring to pull crisp greens out of the fridge than to unstick a wilted mess from the bottom of the veggie drawer. If you can’t shop as often, consider getting canned or frozen versions of whichever vegetables you won’t use immediately.</p><h2>Think seasonally</h2><p>During their local growing season, fruits and vegetables are generally cheaper and definitely tastier than outside of season. You’ll notice that orange prices shoot up during the summer, yet what’s available is drab and flavorless. But oranges are abundant in December and January, the peak of their season, and that’s reflected in the price. At the end of summer, you can get bags of zucchini for next to nothing. Brussels sprouts are also very seasonal, coming on sale around Thanksgiving. Enjoy as much of the summer and fall produce as possible, because you’ll be more limited in the winter. Then again, simmering and roasting winter vegetables is a fine way to warm up your house, and tough winter roots are easy to store. In addition, winter is a great time to search for deals on canned and frozen produce. Seasons for fruits and vegetables vary depending on where you live, so consult a local guide to growing seasons and use it to shop for the best deals.</p><h2>More vegetables means more flavor</h2><p>Nothing livens up a bowl of rice like summer squash and corn! Vegetables make the best sauces: they’re earthy, bright, tart, sweet, bitter, savory, rich. Give them a treasured spot at the top of your grocery list and you’ll never be bored.</p><h2>Always buy eggs</h2><p>With these babies in your fridge, you’re only minutes away from a satisfying meal. Scramble an egg with leftovers or drop an egg on top of a salad or a plate of stir-fried vegetables, and deliciousness is guaranteed.</p><h2>Buy expensive eggs if you can</h2><p>More expensive eggs are usually worth the money—they taste so much better than cheap eggs. Even at $4 a dozen, you’re still only paying 33 cents an egg. Really fresh eggs, like those from a farmers’ market, also make a big difference in flavor.</p><h2>Be careful with undercooked eggs</h2><p>Very rarely, raw eggs can be infected with salmonella. Many classic recipes, from mayonnaise to eggnog to Caesar dressing, are prepared with raw egg yolk, but technically only a hard-cooked egg is guaranteed to be free of salmonella. Consequently, raw or runny eggs are not recommended for infants, the elderly, pregnant women, or anyone with a weakened immune system.</p><h2>Buy fresh bread</h2><p>Try to buy fresh loaves of interesting bread from an independent bakery or the bakery in your grocery store. Although fresh loaves don’t last as long as sliced bread, they’re much more enjoyable, and you can use the old stuff to make panzanella or croutons or breadcrumbs to top other dishes. Later in the day, many independent bakeries offer deep discounts on bread they would otherwise have to throw out.</p><h2>Don’t buy drinks</h2><p>All the body needs drink-wise is water. Except for milk, most packaged drinks are overpriced and deliver a lot of sugar without filling you up the way a piece of fruit or a bowl of yogurt does. If you want a special drink, make agua fresca, a smoothie, or tea.</p><h2>Get creative with wilted vegetables</h2><p>Sometimes you forget a pepper or bunch of spinach in the back of the fridge. Although wilted veggies might not remain fit for a salad, they’ll still be wonderful in any dish that calls for sautéed, grated, or baked vegetables. Just cut off any actual rot. You can also use them in broth.</p><h2>Make your own broth and stock</h2><p>In almost any savory recipe that calls for water, homemade broth or stock would be better. To make broth, start by saving any vegetable bits that you chop off and would normally throw away, like onion tops, the seedy parts of peppers, and the ends of carrots. Store them in the freezer until you have a few cups, then cover them with water, bring to a boil, and simmer on low heat for a few hours. Add salt to taste, and you have broth! To make a hearty stock, do the same with leftover bones or scraps of meat (preferably all the same kind of meat). Since you’re using stuff you’d otherwise throw away, broth and stock are effectively free.</p><h2>Treat your freezer with respect</h2><p>A freezer can be a great friend for saving time by letting you prepare large batches of food at once. Cooking dried beans takes a while, so make more than you need, then freeze the rest. Another great trick I learned from a reader is to dice a whole package of bacon, fry it, then freeze it in small parcels. This makes it easy to add a small amount of bacon to a dish without the temptation of using the whole package.</p><h2>Turn chicken skin into schmaltz</h2><p>Schmaltz is rendered chicken fat that you can use like butter. Buy chicken that still has its skin, then trim the skins and lay them in a pan on low heat. Add a cup or so of water and simmer until the fat releases from the skin and the water cooks off. Let the fat cool, then throw away the skins and pour the fat into a glass jar. Store in the fridge.</p><h2>Buy a pepper grinder</h2><p>Seriously, banish pre-ground pepper from your life; it loses all flavor when it sits around. Fresh pepper creates pops of intense flavor on the tongue and lights up bland dishes. One of the most popular dishes in Rome is just pasta with butter and pepper: give it a try!</p>"
     },
     {
       "title": "Pantry Basics",
-      "slug": "basics",
+      "id": "basics",
       "image": "cans-2",
       "content": "<p>With these commonly available items in your pantry, you can have a wide variety of meals on the table within minutes. Keeping a well stocked pantry is the key to easy, fast cooking at home. When you’re living on a budget, building up supplies does take time, but just keep adding each week and you’ll get there in time.</p><h2>Vegetables</h2><p>Vegetables can (and should!) be the base of most meals. Other than greens, which should be used quickly, these can be stored for a few days to a few weeks. Try each vegetable as it hits peak season and goes on sale.</p><ul><li>garlic</li><li>onions</li><li>carrots</li><li>celery</li><li>peppers</li><li>broccoli</li><li>tomatoes</li><li>hot peppers</li><li>hardy greens</li><li>salad greens</li><li>potatoes</li><li>sweet potatoes</li><li>cauliflower</li><li>winter squash</li></ul><h2>Fruits</h2><p>Citrus fruits are cooking essentials and they keep well. The zest and juice can liven up just about any dish and they always make a great dressing. Bananas, apples, and melons are great quick snacks, but try every fruit you can afford! Remember, almost all fruits and vegetables have a season, so savor them at their freshest and cheapest.</p><ul><li>apples</li><li>melons</li><li>oranges</li><li>limes</li><li>lemons</li><li>bananas</li></ul><h2>Dairy</h2><p>Butter is just as good to cook with as it is on toast. These are the cheeses I like, but buy what your taste, budget, and local availability alllow.</p><ul><li>butter</li><li>milk</li><li>yogurt</li><li>queso fresco</li><li>Romano or Parmesan</li><li>sharp cheddar</li><li>mozzarella</li></ul><h2>Protein</h2><p>Meat isn’t the only protein! The items below are cheap, easily stored, and have multiple uses. Be aware that most fish at the grocery store has previously been frozen and was merely thawed for display. There’s no harm in buying it frozen and thawing it yourself.</p><ul><li>eggs</li><li>dried beans</li><li>lentils</li><li>tofu</li><li>nuts</li><li>peanut butter</li></ul><h2>Grains</h2><p>Flour is so inexpensive, and once you have a few basics at hand, most baked goods are a cinch to make. There’s great variety in whole grains. Substitute them for rice, toss them in a salad, or add them to soup.</p><ul><li>bread</li><li>tortillas</li><li>pasta</li><li>all-purpose flour</li><li>whole-wheat flour</li><li>oats</li><li>popcorn</li><li>short-grain rice</li><li>long-grain rice</li><li>brown rice</li><li>cornmeal</li><li>dried whole grains</li></ul><h2>Canned vegetables</h2><p>Plenty of vegetables are good when canned, so remember to compare prices between fresh, frozen, and canned. The canned versions are fantastic in sauces. Just be aware that canned foods are often very salty, so you might want to rinse them, except for canned tomatoes.</p><ul><li>whole tomatoes</li><li>tomato paste</li><li>whole corn</li></ul><h2>Frozen fruits and vegetables</h2><p>Fresh berries can be expensive, but the frozen ones often go on sale and are great for smoothies. Frozen veggies are quick to add to soups and rice dishes. Again, compare prices to see whether frozen is the best value.</p><ul><li>berries</li><li>peas</li><li>green beans</li><li>corn</li></ul><h2>Flavor and cooking</h2><p>You can explore an extraordinary number of cuisines with these items. They add depth and excitement to the most simple dishes.</p><ul><li>olive oil or vegetable oil</li><li>wine vinegar</li><li>anchovies</li><li>sardines</li><li>olives</li><li>fish sauce</li><li>coconut milk</li><li>miso paste</li><li>mustard</li><li>soy sauce</li><li>chili sauce</li><li>brown sugar</li><li>fresh herbs</li><li>dried spices</li></ul><h2>Treats that go a long way</h2><p>Although these items can be expensive, a little goes a long way; when you can, pick up an item or two and enjoy the results.</p><ul><li>dried fruits</li><li>dried mushrooms</li><li>frozen shrimp</li><li>maple syrup</li><li>bacon</li><li>vanilla</li><li>cocoa powder</li></ul><h2>Spices</h2><p>I have a whole page on spices, but they can be a sticking point: no food value, and they sometimes have a high sticker price. However, one small bottle lasts many meals, so invest in them whenever you can.</p>"
     }
@@ -737,7 +737,7 @@
       {
         "chapter": "batch",
         "title": "Spicy Pulled Pork",
-        "slug": "spicy-pulled-pork",
+        "id": "spicy-pulled-pork",
         "serving": "For Ten",
         "image": "spicy-pulled-pork",
         "cost": {
@@ -784,7 +784,7 @@
       {
         "chapter": "batch",
         "title": "Deviled Eggs 6 Ways",
-        "slug": "deviled-eggs",
+        "id": "deviled-eggs",
         "serving": "Makes Twenty-four Half Eggs",
         "image": "deviled-eggs",
         "cost": {
@@ -878,7 +878,7 @@
       {
         "chapter": "batch",
         "title": "Perogies",
-        "slug": "perogies",
+        "id": "perogies",
         "serving": "Makes Sixty to Seventy-two",
         "image": "perogies",
         "cost": {
@@ -938,7 +938,7 @@
       {
         "chapter": "batch",
         "title": "Dumplings 2 Ways",
-        "slug": "dumplings",
+        "id": "dumplings",
         "serving": "Makes Sixty",
         "image": "dumplings",
         "cost": {
@@ -1004,7 +1004,7 @@
       {
         "chapter": "breakfast",
         "title": "Tomato Scrambled Eggs",
-        "slug": "tomato-scrambled-eggs",
+        "id": "tomato-scrambled-eggs",
         "serving": "For Two",
         "image": "tomato-scrambled-eggs",
         "cost": {
@@ -1040,7 +1040,7 @@
       {
         "chapter": "breakfast",
         "title": "Broiled Grapefruit",
-        "slug": "broiled-grapefruit",
+        "id": "broiled-grapefruit",
         "serving": "For Two",
         "image": "broiled-grapefruit",
         "cost": {
@@ -1068,7 +1068,7 @@
       {
         "chapter": "breakfast",
         "title": "Omelette",
-        "slug": "omelette",
+        "id": "omelette",
         "serving": "For Two",
         "image": "omelette",
         "cost": {
@@ -1100,7 +1100,7 @@
       {
         "chapter": "breakfast",
         "title": "Banana Pancakes",
-        "slug": "banana-pancakes",
+        "id": "banana-pancakes",
         "serving": "Makes Ten to Fourteen Pancakes",
         "image": "banana-pancakes",
         "cost": {
@@ -1137,7 +1137,7 @@
       {
         "chapter": "breakfast",
         "title": "Chocolate Zucchini Muffins",
-        "slug": "muffins",
+        "id": "muffins",
         "serving": "Makes Twenty-four Small Muffins",
         "image": "chocolate-zucchini-muffins",
         "cost": {
@@ -1177,7 +1177,7 @@
       {
         "chapter": "breakfast",
         "title": "Whole-Wheat Jalapeño Cheddar Scones",
-        "slug": "scones",
+        "id": "scones",
         "serving": "Makes Six",
         "image": "whole-wheat-jalapeno-cheddar-scones",
         "cost": {
@@ -1220,7 +1220,7 @@
       {
         "chapter": "breakfast",
         "title": "Peanut Butter and Jelly Granola Bars",
-        "slug": "granola-bars",
+        "id": "granola-bars",
         "serving": "Makes Twelve",
         "image": "peanut-butter-and-jelly-granola-bars",
         "cost": {
@@ -1264,7 +1264,7 @@
       {
         "chapter": "breakfast",
         "title": "Egg Sandwich with Mushroom Hash",
-        "slug": "egg-sandwich",
+        "id": "egg-sandwich",
         "serving": "For Two",
         "image": "egg-sandwich-with-mushroom-hash",
         "cost": {
@@ -1316,7 +1316,7 @@
       {
         "chapter": "breakfast",
         "title": "Oatmeal",
-        "slug": "oatmeal",
+        "id": "oatmeal",
         "badge": "Ideas",
         "image": "oatmeal",
         "cost": {
@@ -1442,7 +1442,7 @@
       {
         "chapter": "breakfast",
         "title": "Yogurt Smash!",
-        "slug": "yogurt",
+        "id": "yogurt",
         "badge": "Ideas",
         "image": "yogurt-smash",
         "overview": "<p>There are so many types of yogurt in the grocery store: some low in fat and high in sugar, some with cute animal pictures. Some are Greek. Some have chocolate shavings and candy. Some have names like “key lime pie.”</p><p>Now forget about all of that. The best value for your money are the big buckets of plain yogurt. The fat content is your choice—just check that it doesn’t contain gelatin and you’re all set. Starting with plain yogurt, you can make super flavors in your own kitchen, where you know exactly what’s going into it.</p><p>If you have kids, ask them what flavors they can imagine and go make it! It’s a lot more fun than letting the supermarket choose for you. Try something new and smash it in! Check out the ideas on the adjoining page.</p><p>If you want a thicker Greek-style yogurt, all you have to do is strain regular American yogurt through cheesecloth to remove the extra water.</p><p>Yogurt’s versatility makes it a great staple to keep in the fridge. Mix it with some of the items you see on the next page or turn it into a savory sauce like raita or tzatziki.</p>",
@@ -1456,7 +1456,7 @@
       {
         "chapter": "desserts",
         "title": "Caramelized Bananas",
-        "slug": "caramelized-bananas",
+        "id": "caramelized-bananas",
         "serving": "For Two",
         "image": "caramelized-bananas",
         "cost": {
@@ -1482,7 +1482,7 @@
       {
         "chapter": "desserts",
         "title": "Coconut Chocolate Cookies",
-        "slug": "coconut-chocolate-cookies",
+        "id": "coconut-chocolate-cookies",
         "serving": "Makes Forty",
         "image": "coconut-chocolate-cookies",
         "cost": {
@@ -1522,7 +1522,7 @@
       {
         "chapter": "desserts",
         "title": "Peach Coffee Cake",
-        "slug": "peach-coffee-cake",
+        "id": "peach-coffee-cake",
         "serving": "For Twelve",
         "image": "peach-coffee-cake",
         "cost": {
@@ -1563,7 +1563,7 @@
       {
         "chapter": "desserts",
         "title": "Fast Melon Sorbet",
-        "slug": "melon-sorbet",
+        "id": "melon-sorbet",
         "serving": "For Four",
         "image": "fast-melon-sorbet",
         "cost": {
@@ -1586,7 +1586,7 @@
       {
         "chapter": "desserts",
         "title": "Avocado Milkshake",
-        "slug": "avocado-milkshake",
+        "id": "avocado-milkshake",
         "serving": "For Two",
         "image": "avocado-milkshake",
         "cost": {
@@ -1615,7 +1615,7 @@
       {
         "chapter": "dinner",
         "title": "Creamy Zucchini Fettuccine",
-        "slug": "fettuccine",
+        "id": "fettuccine",
         "serving": "For Three",
         "image": "creamy-zucchini-fettuccine",
         "cost": {
@@ -1650,7 +1650,7 @@
       {
         "chapter": "dinner",
         "title": "Pasta with Eggplant and Tomato",
-        "slug": "pasta",
+        "id": "pasta",
         "serving": "For Two",
         "image": "pasta-with-eggplant-and-tomato",
         "cost": {
@@ -1685,7 +1685,7 @@
       {
         "chapter": "dinner",
         "title": "Chana Masala",
-        "slug": "chana-masala",
+        "id": "chana-masala",
         "serving": "For Two",
         "image": "chana-masala",
         "cost": {
@@ -1731,7 +1731,7 @@
       {
         "chapter": "dinner",
         "title": "Black-Eyed Peas and Collards",
-        "slug": "peas-and-collards",
+        "id": "peas-and-collards",
         "serving": "For Four",
         "image": "black-eyed-peas-and-collards",
         "cost": {
@@ -1765,7 +1765,7 @@
       {
         "chapter": "dinner",
         "title": "Vegetable Jambalaya",
-        "slug": "jambalaya",
+        "id": "jambalaya",
         "serving": "For Six",
         "image": "vegetable-jambalaya",
         "cost": {
@@ -1816,7 +1816,7 @@
       {
         "chapter": "dinner",
         "title": "Filipino Chicken Adobo",
-        "slug": "chicken-adobo",
+        "id": "chicken-adobo",
         "serving": "For Eight",
         "image": "filipino-chicken-adobo",
         "cost": {
@@ -1871,7 +1871,7 @@
       {
         "chapter": "dinner",
         "title": "Baked Beans 2 Ways",
-        "slug": "baked-beans",
+        "id": "baked-beans",
         "serving": "For Two, or Four as a Side",
         "image": "baked-beans",
         "cost": {
@@ -1941,7 +1941,7 @@
       {
         "chapter": "dinner",
         "title": "Half-Veggie Burgers",
-        "slug": "veggie-burgers",
+        "id": "veggie-burgers",
         "serving": "For Eight",
         "image": "half-veggie-burgers",
         "cost": {
@@ -1974,7 +1974,7 @@
       {
         "chapter": "dinner",
         "title": "Beef Stroganoff",
-        "slug": "beef-stroganoff",
+        "id": "beef-stroganoff",
         "serving": "For Six",
         "image": "beef-stroganoff",
         "cost": {
@@ -2024,7 +2024,7 @@
       {
         "chapter": "dinner",
         "title": "Tofu Hot Pot",
-        "slug": "tofu-hot-pot",
+        "id": "tofu-hot-pot",
         "serving": "For Four",
         "image": "tofu-hot-pot",
         "cost": {
@@ -2079,7 +2079,7 @@
       {
         "chapter": "dinner",
         "title": "Deconstructed Cabbage Rolls",
-        "slug": "cabbage-rolls",
+        "id": "cabbage-rolls",
         "serving": "For Six",
         "image": "deconstructed-cabbage-rolls",
         "cost": {
@@ -2132,7 +2132,7 @@
       {
         "chapter": "dinner",
         "title": "Savory Summer Cobbler",
-        "slug": "summer-cobbler",
+        "id": "summer-cobbler",
         "serving": "For Four",
         "image": "savory-summer-cobbler",
         "cost": {
@@ -2182,7 +2182,7 @@
       {
         "chapter": "dinner",
         "title": "Cauliflower Cheese",
-        "slug": "cauliflower-cheese",
+        "id": "cauliflower-cheese",
         "serving": "For Four",
         "image": "cauliflower-cheese",
         "cost": {
@@ -2230,7 +2230,7 @@
       {
         "chapter": "dinner",
         "title": "Vegetable Quiche, Hold the Crust",
-        "slug": "vegetable-quiche",
+        "id": "vegetable-quiche",
         "serving": "For Four",
         "image": "vegetable-quiche-hold-the-crust",
         "cost": {
@@ -2267,7 +2267,7 @@
       {
         "chapter": "dinner",
         "title": "Shrimp and Grits",
-        "slug": "shrimp-and-grits",
+        "id": "shrimp-and-grits",
         "serving": "For Four",
         "image": "shrimp-and-grits",
         "cost": {
@@ -2310,7 +2310,7 @@
       {
         "chapter": "dinner",
         "title": "Spicy, Crunchy, Creamy Polenta",
-        "slug": "spicy-polenta",
+        "id": "spicy-polenta",
         "serving": "For Two",
         "image": "spicy-crunchy-creamy-polenta",
         "cost": {
@@ -2348,7 +2348,7 @@
       {
         "chapter": "dinner",
         "title": "Roast Chicken",
-        "slug": "roast-chicken",
+        "id": "roast-chicken",
         "serving": "For Six",
         "image": "roast-chicken",
         "cost": {
@@ -2380,7 +2380,7 @@
       {
         "chapter": "dinner",
         "title": "Roasted Vegetables",
-        "slug": "roasted-vegetables",
+        "id": "roasted-vegetables",
         "badge": "Method",
         "image": "roasted-vegetables",
         "overview": "<p>When the weather turns cool, I want only to eat warm, flavorful food. Roasting is easy, it warms up the kitchen, and it makes the house smell like the holidays. If you’re uncertain how to prepare a new vegetable, you usually can’t go wrong with roasting—most things end up sweeter, with nice crunchy bits. If you roast a bunch of vegetables at the beginning of the week, you can eat them throughout the week in various ways: with eggs at breakfast, folded into an omelette, as a side dish, in a taco or sandwich, on toast, or with any grain.</p>",
@@ -2446,7 +2446,7 @@
       {
         "chapter": "dinner",
         "title": "Roasted Potatoes with Chilies",
-        "slug": "roasted-potatoes",
+        "id": "roasted-potatoes",
         "serving": "For Four",
         "image": "roasted-potatoes-with-chilies-1",
         "cost": {
@@ -2477,7 +2477,7 @@
       {
         "chapter": "dinner",
         "title": "Spicy Broiled Tilapia with Lime",
-        "slug": "spicy-tilapia",
+        "id": "spicy-tilapia",
         "serving": "For Two",
         "image": "spicy-broiled-tilapia-with-lime",
         "cost": {
@@ -2511,7 +2511,7 @@
       {
         "chapter": "drinks",
         "title": "Agua Fresca",
-        "slug": "agua-fresca",
+        "id": "agua-fresca",
         "serving": "Serves Four to Six",
         "image": "agua-fresca",
         "overview": "<p>Refreshing and hydrating, these beautiful drinks are great at a party, and they can help you use up any fruit that you won’t be able to eat before it goes off. This is certainly not the master recipe, just a good starting point.</p><p>For a very lightly flavored agua fresca, just mix the water and fruit together. Done! Obviously, if you want more fruit flavor, then use less water; if you want less flavor, then use more water.</p><p>I usually run my agua fresca through the blender, however. If you want the drink to be clear, strain the pulpy leftovers of the fruit after blending. If you’re using blueberries or oranges or other fruit with a skin, you’ll almost certainly want to strain it.</p><p>For some fruits, you can also choose to leave the pulp: it’s particularly great when making a melon agua fresca since it mostly disappears.</p><p>Serve over ice. Try some of the variations I’ve suggested or whatever fruits you like!</p>",
@@ -2551,7 +2551,7 @@
       {
         "chapter": "drinks",
         "title": "Smoothies 4 Ways",
-        "slug": "smoothies",
+        "id": "smoothies",
         "serving": "For Two",
         "image": "smoothies",
         "overview": "<p>I have four types of smoothies here, but of course there are many more. Give these a try when you have overripe fruit that you wouldn’t eat otherwise. Add a teaspoon of vanilla to any of these and they will seem incredibly professional. The frozen melon drinks, in particular, are the most refreshing treat on a hot summer day.</p>",
@@ -2612,7 +2612,7 @@
       {
         "chapter": "flavor",
         "title": "Peanut Sauce",
-        "slug": "peanut-sauce",
+        "id": "peanut-sauce",
         "serving": "Makes One Cup",
         "image": "peanut-sauce",
         "cost": {
@@ -2645,7 +2645,7 @@
       {
         "chapter": "flavor",
         "title": "Spice Oil",
-        "slug": "spice-oil",
+        "id": "spice-oil",
         "serving": "Makes One Cup",
         "image": "spice-oil",
         "cost": {
@@ -2678,7 +2678,7 @@
       {
         "chapter": "flavor",
         "title": "Salsa",
-        "slug": "salsa",
+        "id": "salsa",
         "serving": "Makes Three Cups",
         "image": "salsa",
         "cost": {
@@ -2719,7 +2719,7 @@
       {
         "chapter": "flavor",
         "title": "Raita",
-        "slug": "raita",
+        "id": "raita",
         "serving": "Makes Two Cups",
         "image": "raita",
         "cost": {
@@ -2759,7 +2759,7 @@
       {
         "chapter": "flavor",
         "title": "Tzatziki",
-        "slug": "tzatziki",
+        "id": "tzatziki",
         "serving": "Makes Two Cups",
         "image": "tzatziki",
         "cost": {
@@ -2790,7 +2790,7 @@
       {
         "chapter": "flavor",
         "title": "Spices and Aromatics",
-        "slug": "spices-aromatics",
+        "id": "spices-aromatics",
         "badge": "Ideas",
         "image": "spices-and-aromatics",
         "overview": "<p>So many of the recipes in this collection can be easily modified to your taste. Learning to cook with different spices, herbs, and aromatics will instantly elevate your cooking and open up new and interesting possibilities. Spices are expensive to buy, but since you use such small amounts, they end up costing pennies per recipe. If you’re able to shop around, look for inexpensive spices in bulk at ethnic markets.</p><p>I’ve ranked what I feel are the most important seasonings, but if you already know what you like, please listen to yourself! I know that my sister would rank chipotle powder just under salt, so do as your heart commands.</p>",
@@ -2854,7 +2854,7 @@
       {
         "chapter": "handheld",
         "title": "Cauliflower Tacos",
-        "slug": "cauliflower-tacos",
+        "id": "cauliflower-tacos",
         "serving": "For Two to Three",
         "image": "cauliflower-tacos",
         "cost": {
@@ -2882,7 +2882,7 @@
       {
         "chapter": "handheld",
         "title": "Potato Leek Pizza",
-        "slug": "potato-leek-pizza",
+        "id": "potato-leek-pizza",
         "serving": "Makes Four Pizzas",
         "image": "potato-leek-pizza",
         "cost": {
@@ -2917,7 +2917,7 @@
       {
         "chapter": "handheld",
         "title": "Broccoli Rabe and Mozzarella Calzones",
-        "slug": "calzones",
+        "id": "calzones",
         "serving": "Makes Four Calzones",
         "image": "broccoli-rabe-and-mozzarella-calzones",
         "cost": {
@@ -2952,7 +2952,7 @@
       {
         "chapter": "handheld",
         "title": "Broccoli, Egg, and Cheddar Empanadas",
-        "slug": "empanadas",
+        "id": "empanadas",
         "serving": "Makes Twelve",
         "image": "broccoli-egg-and-cheddar-empanadas",
         "cost": {
@@ -3001,7 +3001,7 @@
       {
         "chapter": "handheld",
         "title": "Potato and Kale Rolls with Raita",
-        "slug": "rolls-with-raita",
+        "id": "rolls-with-raita",
         "serving": "For Four",
         "image": "potato-and-kale-rolls-with-raita",
         "cost": {
@@ -3043,7 +3043,7 @@
       {
         "chapter": "handheld",
         "title": "Leftovers",
-        "slug": "leftovers",
+        "id": "leftovers",
         "badge": "Ideas",
         "image": "leftovers",
         "overview": "<p>Leftovers are convenient, but can seem unappealing, limp, and cold after sitting in the fridge for a couple of days. That’s why the sandwich, the wrap, and the taco are your friend. Here are just a few ideas for how to give leftovers a makeover very quickly for a whole new meal!</p>",
@@ -3097,7 +3097,7 @@
       {
         "chapter": "salad",
         "title": "Broiled Eggplant Salad",
-        "slug": "eggplant-salad",
+        "id": "eggplant-salad",
         "serving": "For Two",
         "image": "broiled-eggplant-salad",
         "cost": {
@@ -3126,7 +3126,7 @@
       {
         "chapter": "salad",
         "title": "Kale Salad",
-        "slug": "kale-salad",
+        "id": "kale-salad",
         "serving": "For Two, or Four as a Side",
         "image": "kale-salad-1",
         "cost": {
@@ -3169,7 +3169,7 @@
       {
         "chapter": "salad",
         "title": "Ever-Popular Potato Salad",
-        "slug": "potato-salad",
+        "id": "potato-salad",
         "serving": "For Four",
         "image": "ever-popular-potato-salad",
         "cost": {
@@ -3214,7 +3214,7 @@
       {
         "chapter": "salad",
         "title": "Spicy Panzanella",
-        "slug": "spicy-panzanella",
+        "id": "spicy-panzanella",
         "serving": "For Four",
         "image": "spicy-panzanella",
         "cost": {
@@ -3267,7 +3267,7 @@
       {
         "chapter": "salad",
         "title": "Cold (and Spicy?) Asian Noodles",
-        "slug": "asian-noodles",
+        "id": "asian-noodles",
         "serving": "For Four",
         "image": "cold-and-spicy-asian-noodles",
         "cost": {
@@ -3309,7 +3309,7 @@
       {
         "chapter": "salad",
         "title": "Taco Salad",
-        "slug": "taco-salad",
+        "id": "taco-salad",
         "serving": "For Two",
         "image": "taco-salad",
         "cost": {
@@ -3357,7 +3357,7 @@
       {
         "chapter": "salad",
         "title": "Beet and Chickpea Salad",
-        "slug": "beet-chickpea-salad",
+        "id": "beet-chickpea-salad",
         "serving": "For Two",
         "image": "beet-and-chickpea-salad",
         "cost": {
@@ -3393,7 +3393,7 @@
       {
         "chapter": "salad",
         "title": "Broccoli Apple Salad",
-        "slug": "broccoli-apple-salad",
+        "id": "broccoli-apple-salad",
         "serving": "For Four",
         "image": "broccoli-apple-salad",
         "cost": {
@@ -3439,7 +3439,7 @@
       {
         "chapter": "salad",
         "title": "Charred Summer Salad",
-        "slug": "charred-summer-salad",
+        "id": "charred-summer-salad",
         "serving": "For Two, or Four as a Side",
         "image": "charred-summer-salad",
         "cost": {
@@ -3479,7 +3479,7 @@
       {
         "chapter": "snacks",
         "title": "Jacket Sweet Potato",
-        "slug": "jacket-sweet-potato",
+        "id": "jacket-sweet-potato",
         "serving": "For Four",
         "image": "jacket-sweet-potato",
         "cost": {
@@ -3508,7 +3508,7 @@
       {
         "chapter": "snacks",
         "title": "Smoky and Spicy Roasted Cauliflower",
-        "slug": "roasted-cauliflower",
+        "id": "roasted-cauliflower",
         "serving": "For Four",
         "image": "smoky-and-spicy-roasted-cauliflower",
         "cost": {
@@ -3538,7 +3538,7 @@
       {
         "chapter": "snacks",
         "title": "Spicy Green Beans",
-        "slug": "spicy-green-beans",
+        "id": "spicy-green-beans",
         "serving": "For Two",
         "image": "spicy-green-beans",
         "cost": {
@@ -3575,7 +3575,7 @@
       {
         "chapter": "snacks",
         "title": "Mexican Street Corn",
-        "slug": "street-corn",
+        "id": "street-corn",
         "serving": "For Four",
         "image": "mexican-street-corn",
         "cost": {
@@ -3607,7 +3607,7 @@
       {
         "chapter": "snacks",
         "title": "Green Chili and Cheddar Quesadillas",
-        "slug": "quesadillas",
+        "id": "quesadillas",
         "serving": "For Two",
         "image": "green-chili-and-cheddar-quesadillas",
         "cost": {
@@ -3634,7 +3634,7 @@
       {
         "chapter": "snacks",
         "title": "Cornmeal Crusted Veggies",
-        "slug": "crusted-veggies",
+        "id": "crusted-veggies",
         "serving": "For Four",
         "image": "cornmeal-crusted-veggies-1",
         "cost": {
@@ -3683,7 +3683,7 @@
       {
         "chapter": "snacks",
         "title": "Brussels Sprout Hash and Eggs",
-        "slug": "hash-and-eggs",
+        "id": "hash-and-eggs",
         "serving": "For Two",
         "image": "brussels-sprout-hash-and-eggs",
         "cost": {
@@ -3715,7 +3715,7 @@
       {
         "chapter": "snacks",
         "title": "Poutine",
-        "slug": "poutine",
+        "id": "poutine",
         "serving": "For Four",
         "image": "poutine",
         "cost": {
@@ -3762,7 +3762,7 @@
       {
         "chapter": "snacks",
         "title": "Things On Toast",
-        "slug": "toast",
+        "id": "toast",
         "badge": "Ideas",
         "image": "toast",
         "cost": {
@@ -3960,7 +3960,7 @@
       {
         "chapter": "snacks",
         "title": "Popcorn",
-        "slug": "popcorn",
+        "id": "popcorn",
         "badge": "Ideas",
         "image": "popcorn",
         "cost": {
@@ -4024,7 +4024,7 @@
       {
         "chapter": "soup",
         "title": "Dal",
-        "slug": "dal",
+        "id": "dal",
         "serving": "For Four",
         "image": "dal",
         "cost": {
@@ -4059,7 +4059,7 @@
       {
         "chapter": "soup",
         "title": "Corn Soup",
-        "slug": "corn-soup",
+        "id": "corn-soup",
         "serving": "For Four to Six",
         "image": "corn-soup",
         "cost": {
@@ -4112,7 +4112,7 @@
       {
         "chapter": "soup",
         "title": "French Onion Soup",
-        "slug": "french-onion-soup",
+        "id": "french-onion-soup",
         "serving": "For Six",
         "image": "french-onion-soup",
         "cost": {
@@ -4159,7 +4159,7 @@
       {
         "chapter": "soup",
         "title": "Lightly Curried Butternut Squash Soup",
-        "slug": "butternut-squash-soup",
+        "id": "butternut-squash-soup",
         "serving": "For Four",
         "image": "lightly-curried-butternut-squash-soup",
         "cost": {
@@ -4208,7 +4208,7 @@
       {
         "chapter": "staples",
         "title": "Flour Tortillas",
-        "slug": "flour-tortillas",
+        "id": "flour-tortillas",
         "serving": "Makes Twenty-four Small",
         "image": "flour-tortillas",
         "cost": {
@@ -4240,7 +4240,7 @@
       {
         "chapter": "staples",
         "title": "Roti",
-        "slug": "roti",
+        "id": "roti",
         "serving": "Makes Sixteen",
         "image": "roti",
         "cost": {
@@ -4270,7 +4270,7 @@
       {
         "chapter": "staples",
         "title": "Pizza Dough 2 Ways",
-        "slug": "pizza-dough",
+        "id": "pizza-dough",
         "serving": "Makes Four Individual Pizzas",
         "image": "pizza-dough",
         "cost": {
@@ -4313,7 +4313,7 @@
       {
         "chapter": "staples",
         "title": "Fresh Pasta",
-        "slug": "fresh-pasta",
+        "id": "fresh-pasta",
         "serving": "For One Large Entree",
         "image": "fresh-pasta",
         "cost": {
@@ -4346,7 +4346,7 @@
       {
         "chapter": "staples",
         "title": "Best Tomato Sauce",
-        "slug": "tomato-sauce",
+        "id": "tomato-sauce",
         "serving": "Makes Three and a Half Cups",
         "image": "best-tomato-sauce",
         "cost": {
@@ -4375,7 +4375,7 @@
       {
         "chapter": "staples",
         "title": "Chorizo and White Bean Ragu",
-        "slug": "ragu",
+        "id": "ragu",
         "serving": "Makes Three Cups",
         "image": "chorizo-and-white-bean-ragu",
         "cost": {
@@ -4406,7 +4406,7 @@
       {
         "chapter": "staples",
         "title": "Rainbow Rice 3 Ways",
-        "slug": "rainbow-rice",
+        "id": "rainbow-rice",
         "serving": "For Two",
         "image": "rainbow-rice",
         "cost": {
@@ -4467,7 +4467,7 @@
       {
         "chapter": "staples",
         "title": "How to Cook Dried Beans",
-        "slug": "dried-beans",
+        "id": "dried-beans",
         "badge": "Method",
         "image": "how-to-cook-dried-beans",
         "overview": "<p>The best way to prepare dried beans is to soak them overnight. The next day, drain the water and rinse thoroughly before cooking in fresh water.</p>",
@@ -4497,7 +4497,7 @@
       {
         "chapter": "staples",
         "title": "Croutons or Breadcrumbs",
-        "slug": "croutons-breadcrumbs",
+        "id": "croutons-breadcrumbs",
         "badge": "Method",
         "image": "croutons-or-breadcrumbs-1",
         "overview": "<p>I am constantly haunted by the hard, several-day-old bread that I have neglected. Luckily there are plenty of delicious solutions that avoid the trash can. Croutons and breadcrumbs will keep for ages in a sealed container on the counter, and when you have them around you’ll find yourself using them everywhere and finding excuses to make a salad.</p>",
