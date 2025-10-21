@@ -84,18 +84,30 @@ class GoodAndCheapApp extends LitElement {
     const storage = JSON.parse(localStorage.getItem(STORAGE_ITEM));
     if (!storage) return;
 
-    const {recipes} = this.data;
+    const {chapters, recipes} = this.data;
     const {favorites, ingredients} = storage;
 
+    // Update ingredients in each recipe in the data object.
     for (const list of ingredients) {
       const recipe = recipes.find(recipe => recipe.slug === list.id);
       recipe.savedIngredients = list.items;
     }
 
+    // Update each recipe entry's favorite state.
     this.favorites = favorites || [];
     for (const favorite of favorites) {
       const recipe = recipes.find(recipe => recipe.slug === favorite);
       recipe.favorite = true;
+    }
+
+    // Update the recipes's states within each chapter's list of recipes.
+    for (const chapter of chapters) {
+      const {recipes} = chapter;
+      for (const recipe of recipes) {
+        if (favorites.includes(recipe.slug)) {
+          recipe.favorite = true;
+        }
+      }
     }
   }
 
