@@ -13,6 +13,7 @@
     "src/js/app.ts",
     "src/js/chapter.ts",
     "src/js/cover.ts",
+    "src/js/favorites.ts",
     "src/js/home.ts",
     "src/js/page.ts",
     "src/js/recipe.ts",

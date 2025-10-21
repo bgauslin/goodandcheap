@@ -1,0 +1,41 @@
+/* -------------------------------------------------------------------------- */
+/* Favorites view via a <button> that toggles a <dialog>. */
+
+gc-favorites {
+  display: contents;
+
+  button {
+    aspect-ratio: 1;
+  }
+
+  /* [1] Override defaults to enable transitions. */
+  /* [2] Ensure closed <dialog> occupies no space since app can be taller than
+         viewport on small/portrait screens. */
+  dialog {
+    background-color: var(--content-background);
+    block-size: 100%;
+    border: none;
+    color: inherit;
+    display: block;  /* [1] */
+    inline-size: 100%;
+    max-block-size: 100dvh;
+    outline: none;
+    overflow: auto;
+    padding: 0;
+    scrollbar-width: none;
+    transition: transform var(--transition);
+    z-index: 2;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &[inert] {
+      transform: translateY(100%);
+    }
+
+    &:not([open]) {
+      block-size: 0;  /* [2] */
+    }
+  }
+}
