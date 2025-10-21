@@ -1,7 +1,7 @@
 import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Events, Chapter, Data, Page, Recipe, footer, STORAGE_ITEM} from './shared';
+import {Events, Chapter, Data, Page, Recipe, RecipePreview, footer, STORAGE_ITEM} from './shared';
 
 
 /**
@@ -28,7 +28,7 @@ class GoodAndCheapApp extends LitElement {
   @state() chapters: Chapter[];
   @state() context: string = 'home';
   @state() data: Data;
-  @state() favorites: string[] = [];
+  @state() favorites: RecipePreview[] = [];
   @state() loading: boolean = true;
   @state() pages: Page[];
   @state() recipes: Recipe[];
@@ -110,21 +110,22 @@ class GoodAndCheapApp extends LitElement {
       recipe.savedIngredients = list.items;
     }
 
-    // Update each recipe's 'favorite' state.
-    this.favorites = favorites || [];
+    // Save the recipe preview to favorites and update its state within its
+    // chapter.
+    for (const chapter of this.chapters) {
+      const {recipes} = chapter;
+      for (const preview of recipes) {
+        if (favorites.includes(preview.id)) {
+          this.favorites.push(preview);
+          preview.favorite = true;
+        }
+      }
+    }
+
+    // Update each recipe's 'favorite' status.
     for (const favorite of favorites) {
       const recipe = this.recipes.find(recipe => recipe.id === favorite);
       recipe.favorite = true;
-    }
-
-    // Update each recipe's 'favorite' state within each chapter's recipe list.
-    for (const chapter of this.chapters) {
-      const {recipes} = chapter;
-      for (const recipe of recipes) {
-        if (favorites.includes(recipe.id)) {
-          recipe.favorite = true;
-        }
-      }
     }
   }
 
@@ -147,25 +148,24 @@ class GoodAndCheapApp extends LitElement {
     const {detail} = event;
     const {chapter: chapterId, checked, id} = detail;
 
-    // Update the recipe.
+    // Update the recipe on its own.
     const recipe = this.recipes.find(recipe => recipe.id === id);
     recipe.favorite = checked;
 
-    // Update the recipe in its chapter list.
+    // Update the recipe preview within its chapter.
     const chapter = this.chapters.find(chapter => chapter.id === chapterId);
-    const recipe_ = chapter.recipes.find(recipe => recipe.id === id);
-    recipe_.favorite = checked;
+    const preview = chapter.recipes.find(recipe => recipe.id === id);
+    preview.favorite = checked;
 
-    // Add/remove the favorite and sort the list.
+    // Add/remove recipe preview to/from favorites.
     if (checked) {
-      this.favorites.push(id);
+      this.favorites.push(preview);
     } else {
-      const index = this.favorites.indexOf(id);
+      const index = this.favorites.indexOf(preview);
       this.favorites.splice(index, 1);
     }
-    this.favorites.sort();
 
-    // Save the favorites to localStorage.
+    // Save favorites to localStorage.
     this.setStorage();
   }
 
@@ -185,13 +185,18 @@ class GoodAndCheapApp extends LitElement {
       });
     }
 
-    // Bundle up ingredients and favorites...
+    // Get just the recipe IDs from favorites.
+    const favorites = [];
+    for (const favorite of this.favorites) {
+      favorites.push(favorite.id);
+    }
+
+    // Bundle everything up and save to localStorage.
     const saved = {
-      favorites: this.favorites,
+      favorites,
       ingredients,
     };
-    
-    // ...and save them to localStorage.
+
     localStorage.setItem(STORAGE_ITEM, JSON.stringify(saved));
   }
 
