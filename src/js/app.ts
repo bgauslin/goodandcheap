@@ -31,6 +31,7 @@ class GoodAndCheapApp extends LitElement {
   @state() context: string = 'home';
   @state() data: Data;
   @state() favorites: string[] = [];
+  @state() loading: boolean = true;
 
   constructor() {
     super();
@@ -71,6 +72,8 @@ class GoodAndCheapApp extends LitElement {
       this.data = await response.json();
       this.getStorage();
       this.updateFromUrl();
+      await this.updateComplete;
+      this.loading = false;
     } catch (error) {
       console.warn('Currently unable to fetch data. :(');
       return;
@@ -430,7 +433,7 @@ class GoodAndCheapApp extends LitElement {
         </div>
       </header>
 
-      <main>
+      <main ?data-loading="${this.loading}">
         <gc-home
           class="view"
           transition="${this.homeTransition}"  

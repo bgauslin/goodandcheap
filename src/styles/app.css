@@ -11,7 +11,7 @@ gc-app {
 /* ---------------------------------------- */
 /* Main. */
 
-gc-app > main {
+main {
   aspect-ratio: var(--main-aspect-ratio, unset);
   block-size: var(--main-block-size);
   border-radius: var(--main-border-radius);
@@ -20,6 +20,11 @@ gc-app > main {
   grid-area: var(--main-grid-area);
   overflow: hidden;
   place-self: center;
+  transition: opacity .5s;
+}
+
+[data-loading] {
+  opacity: 0;
 }
 
 /* ---------------------------------------- */
