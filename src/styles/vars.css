@@ -71,7 +71,7 @@
 }
 
 /* -------------------------------------------------- */
-/* Small | (default) */
+/* Small-Medium | (default) */
 
 :root {
   --app-grid: var(--header-block-size) 1fr / 1fr minmax(auto, var(--section-max-inline-size)) 1fr;
@@ -89,7 +89,7 @@
   --previews-border-radius: 1rem;
   --previews-gap: 0;
   --previews-grid: auto-flow / 1fr;
-  --section-max-inline-size: 35rem;  /* 35rem = 560px */
+  --section-max-inline-size: 32rem;  /* 32rem = 512px */
   --thumb-size: 4.5rem;
   --view-background: var(--body-background);
   --view-display: block;
@@ -109,9 +109,9 @@ gc-home {
 }
 
 /* -------------------------------------------------- */
-/* Medium | 35rem = 560px */
+/* Medium | 32rem = 512px */
 
-@media (min-width: 35rem) {
+@media (min-width: 32rem) {
   :root {
     --app-margin: var(--gap);
     --header-grid: 'back wordmark .' var(--header-block-size) / minmax(0, 1fr) auto 1fr;
@@ -119,34 +119,9 @@ gc-home {
 }
 
 /* -------------------------------------------------- */
-/* Large | 60rem = 960px */
+/* Large, Landscape | 54rem = 1024px */
 
-@media (min-width: 60rem) {
-  gc-home {
-    --preview-border: 1px solid var(--border-color);
-    --preview-border-radius: 1rem;
-    --preview-copy-border: none;
-    --previews-border: none;
-    --previews-border-radius: 0;
-    --previews-gap: 1rem;
-    --previews-grid: auto-flow / repeat(2, 1fr);
-    --previews-margin: 0;
-  }
-}
-
-/* -------------------------------------------------- */
-/* X-large | 70rem = 1120px */
-
-@media (min-width: 70rem) {
-  gc-home {
-    --previews-grid: auto-flow / repeat(3, 1fr);
-  }
-}
-
-/* -------------------------------------------------- */
-/* Landscape */
-
-@media (orientation: landscape) {
+@media ((min-width: 64rem) and (orientation: landscape)) {
   :root {
     --app-grid: 1fr auto 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
     --content-border: none;
@@ -163,7 +138,7 @@ gc-home {
     --main-border-radius: .5rem;
     --main-block-size: 100%;
     --main-grid-area: 2 / 2;
-    --section-max-inline-size: 70rem;
+    --section-max-inline-size: 64rem;
     --view-display: grid;
     --view-grid: 'cover content' / 1fr 1fr;
     --view-padding-block: 0;
@@ -178,6 +153,14 @@ gc-home {
   }
 
   gc-home {
+    --preview-border: 1px solid var(--border-color);
+    --preview-border-radius: 1rem;
+    --preview-copy-border: none;
+    --previews-border: none;
+    --previews-border-radius: 0;
+    --previews-gap: 1rem;
+    --previews-grid: auto-flow / repeat(3, 1fr);
+    --previews-margin: 0; 
     --view-display: block;
   }
 
