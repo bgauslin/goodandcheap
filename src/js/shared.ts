@@ -30,15 +30,7 @@ export interface Chapter {
   content: string,
   id: string,
   image: string,
-  recipes: {
-    badge: string,
-    chapter: string,
-    favorite?: boolean,
-    id: string,
-    image: string,
-    serving: string,
-    title: string,
-  }[],
+  recipes: RecipePreview[],
   title: string,
 }
 
@@ -83,6 +75,16 @@ export interface Recipe {
   savedIngredients?: string[],
   serving: string,
   steps?: string[],
+  title: string,
+}
+
+export interface RecipePreview {
+  badge: string,
+  chapter: string,
+  favorite?: boolean,
+  id: string,
+  image: string,
+  serving: string,
   title: string,
 }
 

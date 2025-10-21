@@ -17,15 +17,12 @@ class GoodAndCheapApp extends LitElement {
   private ingredientsHandler: EventListenerObject;
   private popstateHandler: EventListenerObject;
 
+  // Elements.
   @query('gc-chapter') chapterElement: HTMLElement;
   @query('gc-page') pageElement: HTMLElement;
   @query('gc-recipe') recipeElement: HTMLElement;
 
-  @state() chapterTransition: string;
-  @state() homeTransition: string;
-  @state() pageTransition: string;
-  @state() recipeTransition: string;
-
+  // Properties.
   @state() backLabel: string = 'Home';
   @state() baseTitle: string;
   @state() chapters: Chapter[];
@@ -35,6 +32,12 @@ class GoodAndCheapApp extends LitElement {
   @state() loading: boolean = true;
   @state() pages: Page[];
   @state() recipes: Recipe[];
+
+  // Transitions.
+  @state() chapterTransition: string;
+  @state() homeTransition: string;
+  @state() pageTransition: string;
+  @state() recipeTransition: string;
 
   constructor() {
     super();
