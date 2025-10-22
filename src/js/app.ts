@@ -391,19 +391,16 @@ class GoodAndCheapApp extends LitElement {
       if (prev === 'home' && next === 'chapter') {
         this.homeTransition = 'start-out';
         this.chapterTransition = 'end-in';
-        window.requestAnimationFrame(() => this.chapterElement.scrollTo(0, 0));
       }
 
       if (prev === 'chapter' && next === 'recipe') {
         this.chapterTransition = 'start-out';
         this.recipeTransition = 'end-in';
-        window.requestAnimationFrame(() => this.recipeElement.scrollTo(0, 0));
       }
 
       if (prev === 'home' && next === 'page') {
         this.homeTransition = 'start-out';
         this.pageTransition = 'end-in';
-        window.requestAnimationFrame(() => this.pageElement.scrollTo(0, 0));
       }
 
       // Coming back.
