@@ -1,7 +1,7 @@
 import {LitElement, html, PropertyValues} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Events, Chapter, Data, Page, Recipe, RecipePreview, footer, STORAGE_ITEM} from './shared';
+import {footer, STORAGE_ITEM, Events, Chapter, Data, Page, Recipe, RecipePreview} from './shared';
 
 
 /**
@@ -19,6 +19,7 @@ class GoodAndCheapApp extends LitElement {
 
   // Elements.
   @query('gc-chapter') chapterElement: HTMLElement;
+  @query('gc-favorites') favoritesElement: HTMLElement;
   @query('gc-page') pageElement: HTMLElement;
   @query('gc-recipe') recipeElement: HTMLElement;
 
@@ -43,9 +44,9 @@ class GoodAndCheapApp extends LitElement {
     super();
     this.baseTitle = document.title;
     this.clickHandler = this.handleClick.bind(this);
-    this.popstateHandler = this.updateFromUrl.bind(this);
-    this.ingredientsHandler = this.handleIngredients.bind(this);
     this.favoritesHandler = this.handleFavorites.bind(this);
+    this.ingredientsHandler = this.handleIngredients.bind(this);
+    this.popstateHandler = this.updateFromUrl.bind(this);
   }
 
   connectedCallback() {
@@ -127,6 +128,9 @@ class GoodAndCheapApp extends LitElement {
       const recipe = this.recipes.find(recipe => recipe.id === favorite);
       recipe.favorite = true;
     }
+
+    // Send favorites to the component.
+    this.updateComponent(this.favoritesElement, this.favorites);
   }
 
   /**
@@ -165,7 +169,8 @@ class GoodAndCheapApp extends LitElement {
       this.favorites.splice(index, 1);
     }
 
-    // Save favorites to localStorage.
+    // Update element and save favorites to localStorage.
+    this.updateComponent(this.favoritesElement, this.favorites);
     this.setStorage();
   }
 
@@ -175,7 +180,8 @@ class GoodAndCheapApp extends LitElement {
    */
   private setStorage() {
     // Get saved ingredients.
-    const filtered = this.recipes.filter(recipe => recipe.savedIngredients !== undefined);
+    const filtered = this.recipes.filter(
+        recipe => recipe.savedIngredients !== undefined);
     const ingredients = [];
     for (const recipe of filtered) {
       const {id, savedIngredients} = recipe;
@@ -268,7 +274,8 @@ class GoodAndCheapApp extends LitElement {
   /**
    * Dispatches custom event to a component with data for rendering.
    */ 
-  private updateComponent(element: HTMLElement, detail: Chapter|Page|Recipe) {
+  private updateComponent(element: HTMLElement,
+      detail: Chapter|Page|Recipe|RecipePreview[]) {
     element.dispatchEvent(new CustomEvent(Events.Data, {
       bubbles: true,
       composed: true,
@@ -358,7 +365,8 @@ class GoodAndCheapApp extends LitElement {
     let title = null;
 
     if (this.context === 'chapter') {
-      const chapter = this.chapters.find((chapter: Chapter) => chapter.id === id);
+      const chapter = this.chapters.find(
+          (chapter: Chapter) => chapter.id === id);
       title = chapter.title;
     } else if (this.context === 'page') {
       const page = this.pages.find((page: Page) => page.id === id);
@@ -438,6 +446,8 @@ class GoodAndCheapApp extends LitElement {
               srcset="./wordmark-dark.png">
             <img src="./wordmark.png" alt="Good And Cheap">
           </picture>
+
+          <gc-favorites></gc-favorites>
         </div>
       </header>
 

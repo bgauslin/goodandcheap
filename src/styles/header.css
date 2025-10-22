@@ -31,6 +31,12 @@ header {
     block-size: 2.5em;
     inline-size: auto;
   }
+
+  .favorite {
+    grid-area: favorites;
+    place-self: center end;
+    position: static;
+  }
 }
 
 /* ---------------------------------------- */

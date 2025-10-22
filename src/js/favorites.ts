@@ -1,40 +1,51 @@
-import {LitElement, html} from 'lit';
+import {LitElement, html, nothing} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Events, favoriteIcon} from './shared';
+import {favoriteIcon, Events, RecipePreview} from './shared';
 
 
 @customElement('gc-favorites')
 class GoodAndCheapFavorites extends LitElement {
   private clickListener: EventListenerObject;
+  private dataListener: EventListenerObject;
   private keyListener: EventListenerObject;
 
   @query('button') button: HTMLButtonElement;
   @query('dialog') dialog: HTMLDialogElement;
 
-  @state() favorites: [];
+  @state() data: RecipePreview[];
   @state() inert: boolean = true;
   @state() open: boolean = false;
 
   constructor() {
     super();
     this.clickListener = this.handleClick.bind(this);
+    this.dataListener = this.updateData.bind(this);
     this.keyListener = this.handleKey.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
+    this.addEventListener(Events.Data, this.dataListener);
     document.addEventListener(Events.Click, this.clickListener);
-    document.addEventListener('keyup', this.keyListener);
+    document.addEventListener(Events.Keyup, this.keyListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    document.removeEventListener('keyup', this.keyListener);
+    this.removeEventListener(Events.Data, this.dataListener);
+    document.removeEventListener(Events.Click, this.clickListener);
+    document.removeEventListener(Events.Keyup, this.keyListener);
   }
 
   protected createRenderRoot() {
     return this;
+  }
+
+  private updateData(event: CustomEvent) {
+    this.data = event.detail;
+    this.data.reverse();
+    this.requestUpdate();
   }
 
   private togglePanel() {
@@ -53,7 +64,7 @@ class GoodAndCheapFavorites extends LitElement {
 
   private handleClick(event: Event) {
     const target = event.composedPath()[0];
-    if (target === this.button || (target === document.body && this.open)) {
+    if (target === this.button || this.open) {
       this.togglePanel();
     }
   }
@@ -66,24 +77,44 @@ class GoodAndCheapFavorites extends LitElement {
   }
 
   protected render() {
-    if (!this.favorites) return;
-
-    const label = this.open ? 'Close' : 'Favorites';
-
+    const label = 'View Favorites';
     return html`
       <button
         aria-label="${label}"
-        id="toggle"
+        class="favorite"
         title="${label}"
         type="button">
         ${unsafeHTML(favoriteIcon)}
+        ${this.data ? this.data.length : nothing}
       </button>
 
       <dialog
-        id="info"
         ?inert="${this.inert}"
         ?open="${this.open}">
-        <div></div>
+        
+        ${this.data ? html`
+        <ol class="previews">
+        ${this.data.map((recipe, index) => {
+          const {badge, chapter, id, image, serving, title} = recipe;
+          return html`
+            <li>
+              <a href="./${chapter}/${id}">
+                <figure>
+                  <img src="./images/${image}@thumb.webp" alt="">
+                </figure>
+                <div class="copy">
+                  <div class="description">
+                    <p class="title">${title}</p>
+                    ${badge ? html`<p class="badge">${badge}</p>` : nothing}
+                    ${serving ? html`<p class="serving">${serving}</p>` : nothing}
+                  </div>
+                  <div class="counter">${index + 1}</div>
+                </div>
+              </a>
+            </li>
+          `;
+        })}
+        </ol>` : nothing}
       </dialog>
     `;
   }

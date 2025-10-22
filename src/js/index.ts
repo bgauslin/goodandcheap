@@ -1,6 +1,7 @@
 // Web components.
 import './app';
 import './chapter';
+import './favorites';
 import './home';
 import './cover';
 import './page';

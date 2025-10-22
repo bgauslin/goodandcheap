@@ -21,6 +21,7 @@ export enum Events {
   Data = 'data',
   Favorites = 'favorites',
   Ingredients = 'ingredients',
+  Keyup = 'keyup',
   Popstate = 'popstate',
   Touchend = 'touchend',
   Touchstart = 'touchstart',
