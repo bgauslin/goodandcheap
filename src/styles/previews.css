@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/* List of recipe previews on the home and chapter views.
+/* -------------------------------------------------------------------------- */
+
 .previews {
   border: var(--previews-border);
   border-radius: var(--previews-border-radius);

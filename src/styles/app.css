@@ -1,5 +1,6 @@
-/* ---------------------------------------- */
-/* App. */
+/* -------------------------------------------------------------------------- */
+/* Styles for app and its primary child elements. */
+/* -------------------------------------------------------------------------- */
 
 gc-app {
   display: grid;
@@ -57,7 +58,7 @@ main {
 }
 
 /* ---------------------------------------- */
-/* View component elements. */
+/* View component children. */
 
 .content {
   background-color: var(--content-background);

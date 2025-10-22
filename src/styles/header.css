@@ -1,5 +1,6 @@
-/* ---------------------------------------- */
-/* App header. */
+/* -------------------------------------------------------------------------- */
+/* Site-wide header element.
+/* -------------------------------------------------------------------------- */
 
 header {
   backdrop-filter: var(--backdrop-filter);
@@ -21,7 +22,9 @@ header {
     max-inline-size: var(--section-max-inline-size);
   }
 
+  /* ---------------------------------------- */
   /* Wordmark. */
+  
   picture {
     grid-area: wordmark;
     place-self: center;
@@ -32,48 +35,51 @@ header {
     inline-size: auto;
   }
 
+  /* ---------------------------------------- */
+  /* Favorites button. */
+
   .favorite {
     grid-area: favorites;
     place-self: center end;
     position: static;
   }
-}
 
-/* ---------------------------------------- */
-/* App 'Back' button. */
+  /* ---------------------------------------- */
+  /* 'Back' button. */
 
-[id='back'] {
-  --button-size: 2rem;
+  [id='back'] {
+    --button-size: 2rem;
 
-  align-items: center;
-  block-size: var(--button-size);
-  border-radius: var(--button-size);
-  display: grid;
-  grid: auto / var(--button-size) auto;
-  grid-area: back;
-  min-inline-size: var(--button-size);
-  padding-inline: 0;
-  place-self: center start;
-  white-space: nowrap;
-  
-  &[disabled] {
-    display: none;
-  }
+    align-items: center;
+    block-size: var(--button-size);
+    border-radius: var(--button-size);
+    display: grid;
+    grid: auto / var(--button-size) auto;
+    grid-area: back;
+    min-inline-size: var(--button-size);
+    padding-inline: 0;
+    place-self: center start;
+    white-space: nowrap;
+    
+    &[disabled] {
+      display: none;
+    }
 
-  & > * {
-    pointer-events: none;
-  }
+    & > * {
+      pointer-events: none;
+    }
 
-  svg {
-    block-size: 1.75em;
-    fill: none;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-width: 3px;
-  }
+    svg {
+      block-size: 1.75em;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-width: 3px;
+    }
 
-  span {
-    display: var(--back-label-display);
-    margin-inline: -.5em 1rem;
+    span {
+      display: var(--back-label-display);
+      margin-inline: -.5em 1rem;
+    }
   }
 }

@@ -1,5 +1,11 @@
+/* -------------------------------------------------------------------------- */
+/* Recipe view.
+/* -------------------------------------------------------------------------- */
+
 gc-recipe {
-  /* Meta information. */
+  /* ---------------------------------------- */
+  /* Cost. */
+
   .cost {
     backdrop-filter: var(--backdrop-filter);
     background-color: var(--callout-background);
@@ -12,7 +18,9 @@ gc-recipe {
     z-index: 1;
   }
 
+  /* ---------------------------------------- */
   /* Title, badge, serving, favorite. */
+
   .content {
     position: relative;
   }
@@ -38,7 +46,9 @@ gc-recipe {
     inset-inline: auto .75em;
   }
 
-  /* Content headings. */
+  /* ---------------------------------------- */
+  /* Recipe headings. */
+
   h2 {
     margin-block: 1em 0;
     margin-inline: calc(var(--gap) * -1);
@@ -71,13 +81,17 @@ gc-recipe {
     margin-block: 0 1em;
   }
 
-  /* Lists for ingredients and cooking steps. */
+  /* ---------------------------------------- */
+  /* Lists of ingredients and cooking steps. */
+
   :is(ul, ol) {
     margin-block: 0;
     padding-inline: 2em 0;
   }
 
-  /* Recipe ingredients. */
+  /* ---------------------------------------- */
+  /* Ingredients list. */
+
   [id='ingredients'] ul {
     list-style: none;
     padding-inline: 0;
@@ -113,7 +127,9 @@ gc-recipe {
     grid-area: label;
   }
 
-  /* Recipe steps. */
+  /* ---------------------------------------- */
+  /* Cooking steps. */
+
   .steps {
     counter-reset: steps 0;
     list-style: none;
@@ -136,7 +152,9 @@ gc-recipe {
     place-items: center;
   }
 
-  /* Recipes within recipes (and supplemental content). */
+  /* ---------------------------------------- */
+  /* Recipes within recipes. */
+
   .more {
     margin-block: 3rem 0;
   }

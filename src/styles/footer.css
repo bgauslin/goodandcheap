@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/* Footer element: site-wide and within content, depending on breakpoint.
+/* -------------------------------------------------------------------------- */
+
 footer {
   display: var(--footer-display);
   grid-area: var(--footer-grid-area);
