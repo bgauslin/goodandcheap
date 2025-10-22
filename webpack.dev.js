@@ -9,13 +9,13 @@ module.exports = merge(common, {
     filename: '[name].js',
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
     new HtmlWebpackPlugin({
       base: '/',
       filename: 'index.html',
       template: 'src/html/index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
     }),
   ],
   devServer: {
