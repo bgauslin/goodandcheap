@@ -125,7 +125,7 @@ gc-home {
   }
 }
 
-@media ((min-width: 32rem) and (prefers-color-scheme: dark)) {
+@media (min-width: 32rem) and (prefers-color-scheme: dark) {
   :root {
     --header-background: rgba(0, 0, 0, .75);
   }
@@ -134,7 +134,7 @@ gc-home {
 /* -------------------------------------------------- */
 /* Large, Landscape | 64rem = 1024px */
 
-@media ((min-width: 64rem) and (orientation: landscape)) {
+@media (min-width: 64rem) and (orientation: landscape) {
   :root {
     --app-grid: 1fr auto 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
     --back-label-display: unset;
