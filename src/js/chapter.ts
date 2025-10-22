@@ -36,7 +36,7 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
    * favorited recipes.
    */
   private handleClick(event: Event) {
-    const {target} = event;
+    const target = event.composedPath()[0];
     const id = (<HTMLElement>target).dataset.id;
     if (!id) return;
 
