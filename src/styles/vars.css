@@ -78,6 +78,9 @@
   --back-button-size: 2rem;
   --back-button-label-display: none;
   --back-button-margin: .5rem;
+  --dialog-aspect-ratio: var(--main-aspect-ratio);
+  --dialog-block-size: calc(100dv - var(--header-block-size));
+  --dialog-border-radius: var(--main-border-radius);
   --favorites-grid: var(--header-block-size) 1fr / 1fr;
   --footer-padding: 2rem;
   --gap: clamp(.75rem, .75rem + 1vw, 3rem);
@@ -116,8 +119,8 @@ gc-home {
   :root {
     --back-button-margin: 0;
     --content-border: none;
-    --content-border-radius: 0 0 .25rem .25rem;
-    --cover-border-radius: .25rem .25rem 0 0;
+    --content-border-radius: 0 0 .75rem .75rem;
+    --cover-border-radius: .75rem .75rem 0 0;
     --header-background: rgba(242, 242, 247, .75);
     --header-border: none;
     --header-position: static;
@@ -147,7 +150,7 @@ gc-home {
     --header-background: none;
     --main-aspect-ratio: 2 / 1;
     --main-block-size: 100%;
-    --main-border-radius: .25rem;
+    --main-border-radius: .75rem;
     --main-grid-area: 2 / 2;
     --section-max-inline-size: 64rem;  /* 64rem = 1024px */
     --view-display: grid;

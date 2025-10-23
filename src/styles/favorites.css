@@ -41,9 +41,9 @@ gc-favorites {
    * Container element whose layout mimics the <main> element.
    */
   .dialog {
-    aspect-ratio: var(--main-aspect-ratio, unset);
-    block-size: var(--main-block-size);
-    border-radius: var(--main-border-radius);
+    aspect-ratio: var(--dialog-aspect-ratio, unset);
+    block-size: var(--dialog-block-size);
+    border-radius: var(--dialog-border-radius);
     grid-area: 2 / 2;
     overflow: auto;
     scrollbar-width: none;
@@ -58,10 +58,15 @@ gc-favorites {
    */
   .content {
     background-color: var(--content-background);
+    min-block-size: 100%;
     transition: transform var(--transition);
   }
 
   dialog[inert] .content {
     transform: translateY(100%);
+  }
+
+  .previews {
+    border-bottom: 1px solid var(--border-color);
   }
 }
