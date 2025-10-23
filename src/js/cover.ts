@@ -19,7 +19,6 @@ class GoodAndCheapCover extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.load();
   }
 
   disconnectedCallback() {
@@ -29,6 +28,7 @@ class GoodAndCheapCover extends LitElement {
   protected willUpdate(changedProperties: PropertyValues<this>) {
     if (changedProperties.has('src')) {
       this.loading = true;
+      this.load();
     }
   }
 
