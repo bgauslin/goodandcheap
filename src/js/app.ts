@@ -29,7 +29,7 @@ class GoodAndCheapApp extends LitElement {
   @state() chapters: Chapter[];
   @state() context: string = 'home';
   @state() data: Data;
-  @state() favorites: RecipePreview[] = [];
+  @state() favorites = new Set<RecipePreview>();
   @state() loading: boolean = true;
   @state() pages: Page[];
   @state() recipes: Recipe[];
@@ -117,7 +117,7 @@ class GoodAndCheapApp extends LitElement {
       const {recipes} = chapter;
       for (const preview of recipes) {
         if (favorites.includes(preview.id)) {
-          this.favorites.push(preview);
+          this.favorites.add(preview);
           preview.favorite = true;
         }
       }
@@ -163,10 +163,9 @@ class GoodAndCheapApp extends LitElement {
 
     // Add/remove recipe preview to/from favorites.
     if (checked) {
-      this.favorites.push(preview);
+      this.favorites.add(preview);
     } else {
-      const index = this.favorites.indexOf(preview);
-      this.favorites.splice(index, 1);
+      this.favorites.delete(preview);
     }
 
     // Update element and save favorites to localStorage.
@@ -275,7 +274,7 @@ class GoodAndCheapApp extends LitElement {
    * Dispatches custom event to a component with data for rendering.
    */ 
   private updateComponent(element: HTMLElement,
-      detail: Chapter|Page|Recipe|RecipePreview[]) {
+      detail: Chapter|Page|Recipe|Set<RecipePreview>) {
     element.dispatchEvent(new CustomEvent(Events.Data, {
       bubbles: true,
       composed: true,

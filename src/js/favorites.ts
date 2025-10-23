@@ -14,7 +14,7 @@ class GoodAndCheapFavorites extends LitElement {
   @query('.content') content: HTMLElement;
   @query('dialog') dialog: HTMLDialogElement;
 
-  @state() data: RecipePreview[];
+  @state() data = new Set<RecipePreview>();
   @state() inert: boolean = true;
   @state() open: boolean = false;
 
@@ -45,7 +45,6 @@ class GoodAndCheapFavorites extends LitElement {
 
   private updateData(event: CustomEvent) {
     this.data = event.detail;
-    this.data.reverse();
     this.requestUpdate();
   }
 
@@ -78,6 +77,28 @@ class GoodAndCheapFavorites extends LitElement {
   }
 
   protected render() {
+    let counter = 1;
+    const previews = [];
+    for (const recipe of this.data) {
+      const {badge, chapter, id, image, serving, title} = recipe;
+      previews.push(html`
+        <li>
+          <a href="./${chapter}/${id}">
+            <figure>
+              <img src="./images/${image}@thumb.webp" alt="">
+            </figure>
+            <div class="description">
+              <p class="title">${title}</p>
+              ${badge ? html`<p class="badge">${badge}</p>` : nothing}
+              ${serving ? html`<p class="serving">${serving}</p>` : nothing}
+            </div>
+            <div class="counter">${counter}</div>
+          </a>
+        </li>
+      `);
+      counter += 1;
+    }
+
     const label = 'View Favorites';
     return html`
       <button
@@ -86,35 +107,17 @@ class GoodAndCheapFavorites extends LitElement {
         title="${label}"
         type="button">
         ${unsafeHTML(favoriteIcon)}
-        ${this.data ? this.data.length : nothing}
+        ${this.data ? this.data.size : nothing}
       </button>
 
       <dialog
         ?inert="${this.inert}"
         ?open="${this.open}">
-        
         <div class="dialog">
           <div class="content">
-          ${this.data ? html`
+          ${previews.length > 0 ? html`
             <ol class="previews">
-            ${this.data.map((recipe, index) => {
-              const {badge, chapter, id, image, serving, title} = recipe;
-              return html`
-                <li>
-                  <a href="./${chapter}/${id}">
-                    <figure>
-                      <img src="./images/${image}@thumb.webp" alt="">
-                    </figure>
-                    <div class="description">
-                      <p class="title">${title}</p>
-                      ${badge ? html`<p class="badge">${badge}</p>` : nothing}
-                      ${serving ? html`<p class="serving">${serving}</p>` : nothing}
-                    </div>
-                    <div class="counter">${index + 1}</div>
-                  </a>
-                </li>
-              `;
-            })}
+              ${previews}
             </ol>` : nothing}
           </div>
         </div>
