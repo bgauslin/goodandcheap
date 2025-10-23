@@ -403,6 +403,16 @@ class GoodAndCheapApp extends LitElement {
         this.pageTransition = 'end-in';
       }
 
+      if (prev === 'home' && next === 'recipe') {
+        this.homeTransition = 'start-out';
+        this.recipeTransition = 'end-in';
+      }
+
+      if (prev === 'page' && next === 'recipe') {
+        this.pageTransition = 'start-out';
+        this.recipeTransition = 'end-in';
+      }
+
       // Coming back.
       if (prev === 'recipe' && next === 'chapter') {    
         this.chapterTransition = 'start-in';
