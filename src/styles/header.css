@@ -16,7 +16,6 @@ header {
   /* Layout wrapper. */
   .header {
     display: grid;
-    gap: var(--header-gap, 0);
     grid: var(--header-grid);
     margin: 0 auto;
     max-inline-size: var(--section-max-inline-size);

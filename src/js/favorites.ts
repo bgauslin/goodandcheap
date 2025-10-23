@@ -102,14 +102,12 @@ class GoodAndCheapFavorites extends LitElement {
                 <figure>
                   <img src="./images/${image}@thumb.webp" alt="">
                 </figure>
-                <div class="copy">
-                  <div class="description">
-                    <p class="title">${title}</p>
-                    ${badge ? html`<p class="badge">${badge}</p>` : nothing}
-                    ${serving ? html`<p class="serving">${serving}</p>` : nothing}
-                  </div>
-                  <div class="counter">${index + 1}</div>
+                <div class="description">
+                  <p class="title">${title}</p>
+                  ${badge ? html`<p class="badge">${badge}</p>` : nothing}
+                  ${serving ? html`<p class="serving">${serving}</p>` : nothing}
                 </div>
+                <div class="counter">${index + 1}</div>
               </a>
             </li>
           `;

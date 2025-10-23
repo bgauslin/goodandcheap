@@ -5,7 +5,9 @@
 .favorite {
   aspect-ratio: 1;
   background: none;
-  inline-size: 2.5rem;
+  inline-size: var(--icon-size);
+  inset-block: 0 auto;
+  inset-inline: auto 0;
   position: absolute;
 
   &.touch,

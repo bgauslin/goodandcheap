@@ -3,14 +3,11 @@
 /* -------------------------------------------------------------------------- */
 
 .previews {
-  border: var(--previews-border);
-  border-radius: var(--previews-border-radius);
   display: grid; 
   gap: var(--previews-gap);
   grid: var(--previews-grid);
   list-style: none;
   margin-block: 0;
-  margin-inline: var(--previews-margin);
   overflow: hidden;
   padding: 0;
 
@@ -18,18 +15,15 @@
     background-color: var(--content-background);
     border: var(--preview-border, none);
     border-radius: var(--preview-border-radius, 0);
+    border-top: var(--preview-border-top);
     position: relative;
-  }
-
-  li:not(:last-child) .copy {
-    border-bottom: var(--preview-copy-border);
   }
 
   a {
     align-items: center;
     display: grid;
     gap: .75rem;
-    grid: 'thumb copy' auto / auto 1fr;
+    grid: 'thumb description counter' auto / auto 1fr var(--icon-size);
   }
 
   a > * {
@@ -51,13 +45,8 @@
     object-fit: cover;
   }
 
-  .copy {
-    display: grid;
-    gap: 0 .75rem;
-    grid: 'description counter' 1fr / 1fr 2.5rem;
-    grid-area: copy;
-    place-items: center start;
-    place-self: stretch;
+  .description {
+    grid-area: description;
   }
 
   .title {
@@ -75,10 +64,5 @@
     margin-block: 0 .75rem;
     opacity: .7;
     place-self: end center;
-  }
-
-  .favorite {
-    inset-block: 0 auto;
-    inset-inline: auto 0;
   }
 }

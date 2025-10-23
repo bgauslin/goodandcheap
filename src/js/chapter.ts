@@ -74,13 +74,11 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
             <figure>
               <img src="./images/${image}@thumb.webp" alt="">
             </figure>
-            <div class="copy">
-              <div class="description">
-                <p class="title">${title}</p>
-                ${callout}
-              </div>
-              <div class="counter">${index + 1}</div>
+            <div class="description">
+              <p class="title">${title}</p>
+              ${callout}
             </div>
+            <div class="counter">${index + 1}</div>
           </a>
 
           <button
@@ -101,8 +99,11 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
       </div>
       
       <div class="content">
-        <h1>${title}</h1>
-        ${content}
+        <div class="copy">
+          <h1>${title}</h1>
+          ${content}
+        </div>
+
         <p class="count">${recipes.length} Recipes</p>
         <ul class="previews">
           ${items}

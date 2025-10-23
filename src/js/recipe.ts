@@ -153,24 +153,21 @@ class GoodAndCheapRecipe extends LitElement {
         </p>` : nothing}
       </div>
 
-      <div class="content">     
-        ${badge ? html`<div class="badge">${badge}</div>` : nothing}
-        <h1>${unsafeHTML(title)}</h1>
-        ${serving ? html`<div class="serving">${serving}</div>` : nothing}
-      
-        <button
-          class="favorite"
-          data-checked="${this.favorite}"
-          title="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
-          type="button"
-          @click="${() => this.handleFavorite(id, chapter)}">
-          ${unsafeHTML(favoriteIcon)}
-        </button>
-
-        ${overview ? html`
-        <section class="overview" id="overview">
-          ${unsafeHTML(overview)}
-        </section>` : nothing}
+      <div class="content">
+        <div class="copy">  
+          ${badge ? html`<div class="badge">${badge}</div>` : nothing}
+          <h1>${unsafeHTML(title)}</h1>
+          ${serving ? html`<div class="serving">${serving}</div>` : nothing}
+          ${overview ? html`${unsafeHTML(overview)}` : nothing}
+          <button
+            class="favorite"
+            data-checked="${this.favorite}"
+            title="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
+            type="button"
+            @click="${() => this.handleFavorite(id, chapter)}">
+            ${unsafeHTML(favoriteIcon)}
+          </button>
+        </div>
 
         ${ingredients ? html`
         <section id="ingredients">

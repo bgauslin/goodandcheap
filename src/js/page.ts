@@ -36,8 +36,10 @@ customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
       </div>
 
       <div class="content">
-        <h1>${title}</h1>
-        ${content}
+        <div class="copy">
+          <h1>${title}</h1>
+          ${content}
+        </div>
       </div>
 
       ${footer}

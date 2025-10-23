@@ -102,12 +102,10 @@ class GoodAndCheapHome extends LitElement {
               <a href="./${id}">
                 <figure>
                   <img src="./images/${image}@thumb.webp" alt="">
-                </figure>
-                <div class="copy">
-                  <div class="description">
-                    <p class="title">${unsafeHTML(title)}</p>
-                    ${showCount ? html`<p class="count">${count} Recipes</p>` : nothing}
-                  </div>
+                </figure>                
+                <div class="description">
+                  <p class="title">${unsafeHTML(title)}</p>
+                  ${showCount ? html`<p class="count">${count} Recipes</p>` : nothing}
                 </div>
               </a>
             </li>

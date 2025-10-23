@@ -71,22 +71,20 @@
 }
 
 /* -------------------------------------------------- */
-/* Small | (default) */
+/* Small / default */
 
 :root {
   --app-grid: var(--header-block-size) 1fr / 1fr minmax(auto, var(--section-max-inline-size)) 1fr;
   --back-label-display: none;
-  --gap: clamp(.75em, .75em + 1vw, 3em);
   --footer-padding: 2rem;
-  --header-gap: .5rem;
-  --header-grid: '. back wordmark favorites .' var(--header-block-size) / 0 1fr auto 1fr 0;
+  --gap: clamp(.75rem, .75rem + 1vw, 3rem);
+  --header-grid: 'back wordmark favorites' var(--header-block-size) / 1fr auto 1fr;
   --header-position: fixed;
   --header-block-size: clamp(3rem, 3rem + 1vw, 5rem);
+  --icon-size: 2.5rem;
   --main-block-size: 100dvh;
   --main-grid-area: 1 / 2 / 3 / 2;
-  --preview-copy-border: 1px solid var(--border-color);
-  --previews-border: 1px solid var(--border-color);
-  --previews-border-radius: 1rem;
+  --preview-border-top: 1px solid var(--border-color);
   --previews-gap: 0;
   --previews-grid: auto-flow / 1fr;
   --section-max-inline-size: 32rem;  /* 32rem = 512px */
@@ -104,10 +102,6 @@ gc-app {
   --footer-display: block;
 }
 
-gc-home {
-  --previews-margin: var(--gap);
-}
-
 /* -------------------------------------------------- */
 /* Medium | 32rem = 512px */
 
@@ -118,9 +112,7 @@ gc-home {
     --content-border-radius: 0 0 .25rem .25rem;
     --cover-border-radius: .25rem .25rem 0 0;
     --header-background: rgba(242, 242, 247, .75);
-    --header-gap: 0;
     --header-border: none;
-    --header-grid: 'back wordmark favorites' var(--header-block-size) / 1fr auto 1fr;
     --header-position: static;
   }
 }
@@ -166,12 +158,9 @@ gc-home {
   gc-home {
     --preview-border: 1px solid var(--border-color);
     --preview-border-radius: 1rem;
-    --preview-copy-border: none;
-    --previews-border: none;
-    --previews-border-radius: 0;
+    --preview-border-top: none;
     --previews-gap: 1rem;
     --previews-grid: auto-flow / repeat(3, 1fr);
-    --previews-margin: 0; 
     --view-display: block;
   }
 

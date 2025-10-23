@@ -65,6 +65,9 @@ main {
   border-bottom: var(--content-border);
   border-radius: var(--content-border-radius);
   grid-area: content;
+}
+
+.copy {
   padding-block: var(--gap);
   padding-inline: var(--gap);
 }
@@ -78,5 +81,6 @@ main {
 }
 
 gc-chapter .count {
-  margin-block: 2rem 1em;
+  margin-block: 0 .5rem;
+  padding-inline: var(--gap);
 }
