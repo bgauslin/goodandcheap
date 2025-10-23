@@ -17,7 +17,6 @@
   --button-hover-backround: var(--gray3);
   --callout-background: rgb(255, 255, 255, .8);
   --content-background: white;
-  --content-border: 1px solid var(--border-color);
   --favorite-background: rgba(229, 0, 31, .5);
   --favorite-color: var(--brand-color);
   --header-background: rgb(255, 255, 255, .8);
@@ -81,7 +80,6 @@
   --border-radius: 1rem;
   --dialog-aspect-ratio: var(--main-aspect-ratio);
   --dialog-block-size: calc(100dv - var(--header-block-size));
-  --dialog-border-radius: var(--main-border-radius);
   --favorites-grid: var(--header-block-size) 1fr / 1fr;
   --footer-padding: 2rem;
   --gap: clamp(.75rem, .75rem + 1vw, 3rem);
@@ -91,7 +89,6 @@
   --icon-size: 2.5rem;
   --main-block-size: 100dvh;
   --main-grid-area: 1 / 2 / 3 / 2;
-  --preview-border-start: 1px solid var(--border-color);
   --previews-gap: 0;
   --previews-grid: auto-flow / 1fr;
   --section-max-inline-size: 32rem;  /* 32rem = 512px */
@@ -111,7 +108,6 @@ gc-app {
 
 gc-home {
   --preview-background: var(--content-background);
-  --previews-border-end: 1px solid var(--border-color);
 }
 
 /* -------------------------------------------------- */
@@ -121,9 +117,9 @@ gc-home {
   :root {
     --app-grid: var(--header-block-size) 1fr / 1fr var(--section-max-inline-size) 1fr;
     --back-button-margin: 0;
-    --content-border: none;
     --content-border-radius: 0 0 var(--border-radius) var(--border-radius);
     --cover-border-radius: var(--border-radius) var(--border-radius) 0 0;
+    --dialog-border-radius: var(--border-radius);
     --header-background: rgba(242, 242, 247, .75);
     --header-border: none;
     --header-position: static;

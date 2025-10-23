@@ -4,7 +4,6 @@
 
 .previews {
   border: var(--previews-border, none);
-  border-block-end: var(--previews-border-end, none);
   border-radius: var(--previews-border-radius, 0);
   display: grid;
   gap: var(--previews-gap);
@@ -17,7 +16,6 @@
   li {
     background-color: var(--preview-background, none);
     border: var(--preview-border, none);
-    border-block-start: var(--preview-border-start);
     border-radius: var(--preview-border-radius, 0);
     position: relative;
   }
