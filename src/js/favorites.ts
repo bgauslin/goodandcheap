@@ -57,7 +57,7 @@ class GoodAndCheapFavorites extends LitElement {
       }, {once: true});
     } else {
       this.inert = false;
-      this.dialog.show();
+      this.dialog.showModal();
       this.open = true;
     }
   }
@@ -92,27 +92,29 @@ class GoodAndCheapFavorites extends LitElement {
         ?inert="${this.inert}"
         ?open="${this.open}">
         
+        <div>
         ${this.data ? html`
-        <ol class="previews">
-        ${this.data.map((recipe, index) => {
-          const {badge, chapter, id, image, serving, title} = recipe;
-          return html`
-            <li>
-              <a href="./${chapter}/${id}">
-                <figure>
-                  <img src="./images/${image}@thumb.webp" alt="">
-                </figure>
-                <div class="description">
-                  <p class="title">${title}</p>
-                  ${badge ? html`<p class="badge">${badge}</p>` : nothing}
-                  ${serving ? html`<p class="serving">${serving}</p>` : nothing}
-                </div>
-                <div class="counter">${index + 1}</div>
-              </a>
-            </li>
-          `;
-        })}
-        </ol>` : nothing}
+          <ol class="previews">
+          ${this.data.map((recipe, index) => {
+            const {badge, chapter, id, image, serving, title} = recipe;
+            return html`
+              <li>
+                <a href="./${chapter}/${id}">
+                  <figure>
+                    <img src="./images/${image}@thumb.webp" alt="">
+                  </figure>
+                  <div class="description">
+                    <p class="title">${title}</p>
+                    ${badge ? html`<p class="badge">${badge}</p>` : nothing}
+                    ${serving ? html`<p class="serving">${serving}</p>` : nothing}
+                  </div>
+                  <div class="counter">${index + 1}</div>
+                </a>
+              </li>
+            `;
+          })}
+          </ol>` : nothing}
+        </div>
       </dialog>
     `;
   }

@@ -9,21 +9,25 @@ gc-favorites {
     aspect-ratio: 1;
   }
 
-  /* [1] 'display' verride defaults to enable transitions. */
-  /* [2] 'block-size' ensures closed <dialog> occupies no space since app can
-         be taller than viewport on small/portrait screens. */
+  /* [1] Override to enable transitions. */
+  /* [2] Browser overrides for fullscreen layout. */
+  /* [3] Ensure <dialog> is hidden since it has 'display' override. */
+  
   dialog {
-    background-color: var(--content-background);
-    /* block-size: 100dvh; */
+    background: none;
+    block-size: 100dvh;
     border: none;
-    color: inherit;
-    display: block;  /* [1] */
+    display: grid;  /* [1] */
+    grid: var(--app-grid);
+    inline-size: 100dvw;
+    margin: 0;
+    max-block-size: 100dvh;  /* [2] */
+    max-inline-size: 100dvw;  /* [2] */
     outline: none;
     overflow: auto;
     padding: 0;
     scrollbar-width: none;
     transition: transform var(--transition);
-    z-index: 2;
 
     &::-webkit-scrollbar {
       display: none;
@@ -34,7 +38,16 @@ gc-favorites {
     }
 
     &:not([open]) {
-      block-size: 0;  /* [2] */
+      display: none;  /* [3] */
     }
+  
+    &::backdrop {
+      background: none;
+    }
+  }
+
+  dialog > div {
+    background-color: var(--content-background);
+    grid-area: 2 / 2;
   }
 }

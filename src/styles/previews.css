@@ -12,7 +12,7 @@
   padding: 0;
 
   li {
-    background-color: var(--content-background);
+    background-color: var(--preview-background, none);
     border: var(--preview-border, none);
     border-radius: var(--preview-border-radius, 0);
     border-top: var(--preview-border-top);
