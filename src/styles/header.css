@@ -21,9 +21,9 @@ header {
     max-inline-size: var(--section-max-inline-size);
   }
 
-  /* ---------------------------------------- */
-  /* Wordmark. */
-  
+  /**
+   * Wordmark.
+   */
   picture {
     grid-area: wordmark;
     place-self: center;
@@ -34,9 +34,9 @@ header {
     inline-size: auto;
   }
 
-  /* ---------------------------------------- */
-  /* 'Back' button. */
-
+  /**
+   * 'Back' button.
+   */
   [id='back'] {
     align-items: center;
     block-size: var(--back-button-size);
@@ -72,9 +72,9 @@ header {
     }
   }
 
-  /* ---------------------------------------- */
-  /* Favorites button. */
-
+  /**
+   * Favorites button.
+   */
   .favorite {
     grid-area: favorites;
     place-self: center end;

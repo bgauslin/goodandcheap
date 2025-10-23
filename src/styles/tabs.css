@@ -24,6 +24,9 @@
   }
 }
 
+/**
+ * Tabbed content panels.
+ */
 [role='tabpanel'][aria-hidden='true'] {
   display: none;
   pointer-events: none;

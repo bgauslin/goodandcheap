@@ -88,7 +88,6 @@ gc-recipe {
   /* ---------------------------------------- */
   /* Ingredients and Steps lists. */
 
-  
   [id='ingredients'] ul, .steps {
     list-style: none;
   }
