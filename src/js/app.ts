@@ -387,47 +387,51 @@ class GoodAndCheapApp extends LitElement {
       const prev = changedProperties.get('context');
       const next = this.context;
 
-      // Going forward.
-      if (prev === 'home' && next === 'chapter') {
-        this.homeTransition = 'start-out';
-        this.chapterTransition = 'end-in';
+      // Going forward to 'page' or 'chapter' from 'home'.
+      if (prev === 'home') {
+        if (next === 'page') {
+          this.homeTransition = 'start-out';
+          this.pageTransition = 'end-in';
+          window.requestAnimationFrame(() => this.pageElement.scrollTo(0, 0));
+        } else if (next === 'chapter') {
+          this.homeTransition = 'start-out';
+          this.chapterTransition = 'end-in';
+          window.requestAnimationFrame(() => this.chapterElement.scrollTo(0, 0));
+        }
       }
 
-      if (prev === 'chapter' && next === 'recipe') {
-        this.chapterTransition = 'start-out';
-        this.recipeTransition = 'end-in';
+      // Going forward to 'recipe' from 'home', 'page', or 'chapter'.
+      // (start-out, end-in)
+      if (next === 'recipe') {
+        if (prev === 'home') {
+          this.homeTransition = 'start-out';
+          this.recipeTransition = 'end-in';
+        } else if (prev === 'page') {
+          this.pageTransition = 'start-out';
+          this.recipeTransition = 'end-in';
+        } else if (prev === 'chapter') {
+          this.chapterTransition = 'start-out';
+          this.recipeTransition = 'end-in'; 
+        }
+        window.requestAnimationFrame(() => this.recipeElement.scrollTo(0, 0));
       }
 
-      if (prev === 'home' && next === 'page') {
-        this.homeTransition = 'start-out';
-        this.pageTransition = 'end-in';
-      }
-
-      if (prev === 'home' && next === 'recipe') {
-        this.homeTransition = 'start-out';
-        this.recipeTransition = 'end-in';
-      }
-
-      if (prev === 'page' && next === 'recipe') {
-        this.pageTransition = 'start-out';
-        this.recipeTransition = 'end-in';
-      }
-
-      // Coming back.
+      // Coming back from 'recipe' to 'chapter'.
       if (prev === 'recipe' && next === 'chapter') {    
         this.chapterTransition = 'start-in';
         this.recipeTransition = 'end-out';
       }
 
-      if (prev === 'chapter' && next === 'home') {
-        this.homeTransition = 'start-in';
-        this.chapterTransition = 'end-out';
+      // Coming back from 'chapter' or 'page' to 'chapter'.
+      if (next === 'home') {
+        if (prev === 'chapter') {
+          this.homeTransition = 'start-in';
+          this.chapterTransition = 'end-out';
+        } else if (prev === 'page') {
+          this.homeTransition = 'start-in';
+          this.pageTransition = 'end-out';
+        }
       }
-
-      if (prev === 'page' && next === 'home') {
-        this.homeTransition = 'start-in';
-        this.pageTransition = 'end-out';
-      } 
     }
   }
 

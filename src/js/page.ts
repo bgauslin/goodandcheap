@@ -25,7 +25,6 @@ customElements.define('gc-page', class GoodAndCheapPage extends HTMLElement {
   private updateData(event: CustomEvent) {
     this.data = event.detail;
     this.render();
-    window.requestAnimationFrame(() => this.scrollTo(0, 0));
   }
 
   private render() {

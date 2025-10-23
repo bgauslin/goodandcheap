@@ -39,7 +39,6 @@ class GoodAndCheapRecipe extends LitElement {
   private async updateData(event: CustomEvent) {
     this.data = event.detail;
     await this.updateComplete;
-    window.requestAnimationFrame(() => this.scrollTo(0, 0));
     this.ingredients = this.data.savedIngredients || [];
     this.favorite = this.data.favorite;
   }
