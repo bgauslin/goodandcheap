@@ -62,7 +62,7 @@ main {
 
 .content {
   background-color: var(--content-background);
-  border-bottom: var(--content-border);
+  border-block-end: var(--content-border);
   border-radius: var(--content-border-radius);
   grid-area: content;
 }

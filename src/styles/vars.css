@@ -78,6 +78,7 @@
   --back-button-size: 2rem;
   --back-button-label-display: none;
   --back-button-margin: .5rem;
+  --border-radius: 1rem;
   --dialog-aspect-ratio: var(--main-aspect-ratio);
   --dialog-block-size: calc(100dv - var(--header-block-size));
   --dialog-border-radius: var(--main-border-radius);
@@ -90,7 +91,7 @@
   --icon-size: 2.5rem;
   --main-block-size: 100dvh;
   --main-grid-area: 1 / 2 / 3 / 2;
-  --preview-border-top: 1px solid var(--border-color);
+  --preview-border-start: 1px solid var(--border-color);
   --previews-gap: 0;
   --previews-grid: auto-flow / 1fr;
   --section-max-inline-size: 32rem;  /* 32rem = 512px */
@@ -110,6 +111,7 @@ gc-app {
 
 gc-home {
   --preview-background: var(--content-background);
+  --previews-border-end: 1px solid var(--border-color);
 }
 
 /* -------------------------------------------------- */
@@ -117,13 +119,19 @@ gc-home {
 
 @media (min-width: 32rem) {
   :root {
+    --app-grid: var(--header-block-size) 1fr / 1fr var(--section-max-inline-size) 1fr;
     --back-button-margin: 0;
     --content-border: none;
-    --content-border-radius: 0 0 .75rem .75rem;
-    --cover-border-radius: .75rem .75rem 0 0;
+    --content-border-radius: 0 0 var(--border-radius) var(--border-radius);
+    --cover-border-radius: var(--border-radius) var(--border-radius) 0 0;
     --header-background: rgba(242, 242, 247, .75);
     --header-border: none;
     --header-position: static;
+  }
+
+  gc-home {
+    --previews-border: 1px solid var(--border-color);
+    --previews-border-radius: var(--border-radius);
   }
 }
 
@@ -150,7 +158,7 @@ gc-home {
     --header-background: none;
     --main-aspect-ratio: 2 / 1;
     --main-block-size: 100%;
-    --main-border-radius: .75rem;
+    --main-border-radius: var(--border-radius);
     --main-grid-area: 2 / 2;
     --section-max-inline-size: 64rem;  /* 64rem = 1024px */
     --view-display: grid;
@@ -168,8 +176,8 @@ gc-home {
 
   gc-home {
     --preview-border: 1px solid var(--border-color);
-    --preview-border-radius: 1rem;
-    --preview-border-top: none;
+    --preview-border-radius: var(--border-radius);
+    --previews-border: none;
     --previews-gap: 1rem;
     --previews-grid: auto-flow / repeat(3, 1fr);
     --view-display: block;

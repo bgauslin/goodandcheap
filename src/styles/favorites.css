@@ -67,6 +67,6 @@ gc-favorites {
   }
 
   .previews {
-    border-bottom: 1px solid var(--border-color);
+    border-block-end: 1px solid var(--border-color);
   }
 }

@@ -48,7 +48,7 @@ gc-recipe {
   :is(.ingredients, .steps) h2 {
     backdrop-filter: var(--backdrop-filter);
     background-color: var(--callout-background);
-    border-bottom: 1px solid var(--border-color);
+    border-block-end: 1px solid var(--border-color);
     inset-block: 0 auto;
     position: sticky;
   }
