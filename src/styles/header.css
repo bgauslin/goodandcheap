@@ -35,27 +35,17 @@ header {
   }
 
   /* ---------------------------------------- */
-  /* Favorites button. */
-
-  .favorite {
-    grid-area: favorites;
-    place-self: center end;
-    position: static;
-  }
-
-  /* ---------------------------------------- */
   /* 'Back' button. */
 
   [id='back'] {
-    --button-size: 2rem;
-
     align-items: center;
-    block-size: var(--button-size);
-    border-radius: var(--button-size);
+    block-size: var(--back-button-size);
+    border-radius: var(--back-button-size);
     display: grid;
-    grid: auto / var(--button-size) auto;
+    grid: auto / var(--back-button-size) auto;
     grid-area: back;
-    min-inline-size: var(--button-size);
+    margin-inline: var(--back-button-margin);
+    min-inline-size: var(--back-button-size);
     padding-inline: 0;
     place-self: center start;
     white-space: nowrap;
@@ -77,8 +67,17 @@ header {
     }
 
     span {
-      display: var(--back-label-display);
+      display: var(--back-button-label-display);
       margin-inline: -.5em 1rem;
     }
+  }
+
+  /* ---------------------------------------- */
+  /* Favorites button. */
+
+  .favorite {
+    grid-area: favorites;
+    place-self: center end;
+    position: static;
   }
 }

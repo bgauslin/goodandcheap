@@ -75,7 +75,9 @@
 
 :root {
   --app-grid: var(--header-block-size) 1fr / 1fr minmax(auto, var(--section-max-inline-size)) 1fr;
-  --back-label-display: none;
+  --back-button-size: 2rem;
+  --back-button-label-display: none;
+  --back-button-margin: .5rem;
   --footer-padding: 2rem;
   --gap: clamp(.75rem, .75rem + 1vw, 3rem);
   --header-grid: 'back wordmark favorites' var(--header-block-size) / 1fr auto 1fr;
@@ -107,7 +109,7 @@ gc-app {
 
 @media (min-width: 32rem) {
   :root {
-    --app-margin: var(--gap);
+    --back-button-margin: 0;
     --content-border: none;
     --content-border-radius: 0 0 .25rem .25rem;
     --cover-border-radius: .25rem .25rem 0 0;
@@ -129,7 +131,8 @@ gc-app {
 @media (min-width: 64rem) and (orientation: landscape) {
   :root {
     --app-grid: 1fr auto 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
-    --back-label-display: unset;
+    --app-margin: var(--gap);
+    --back-button-label-display: initial;
     --content-border-radius: none;
     --cover-border-radius: none;
     --cover-inset: 0;
