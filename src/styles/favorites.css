@@ -9,10 +9,11 @@ gc-favorites {
     aspect-ratio: 1;
   }
 
-  /* [1] Override to enable transitions. */
-  /* [2] Browser overrides for fullscreen layout. */
-  /* [3] Ensure <dialog> is hidden since it has 'display' override. */
-  
+  /**
+   * [1] Override to enable transitions.
+   * [2] Browser overrides for fullscreen layout.
+   * [3] Ensure <dialog> is hidden since it has 'display' override.
+   */
   dialog {
     background: none;
     block-size: 100dvh;
@@ -26,17 +27,7 @@ gc-favorites {
     outline: none;
     overflow: auto;
     padding: 0;
-    scrollbar-width: none;
-    transition: transform var(--transition);
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    &[inert] {
-      transform: translateY(100%);
-    }
-
+    
     &:not([open]) {
       display: none;  /* [3] */
     }
@@ -46,8 +37,31 @@ gc-favorites {
     }
   }
 
-  dialog > div {
-    background-color: var(--content-background);
+  /**
+   * Container element whose layout mimics the <main> element.
+   */
+  .dialog {
+    aspect-ratio: var(--main-aspect-ratio, unset);
+    block-size: var(--main-block-size);
+    border-radius: var(--main-border-radius);
     grid-area: 2 / 2;
+    overflow: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /**
+   * Child element with transitions applied to it.
+   */
+  .content {
+    background-color: var(--content-background);
+    transition: transform var(--transition);
+  }
+
+  dialog[inert] .content {
+    transform: translateY(100%);
   }
 }

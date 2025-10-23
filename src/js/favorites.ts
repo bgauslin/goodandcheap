@@ -11,6 +11,7 @@ class GoodAndCheapFavorites extends LitElement {
   private keyListener: EventListenerObject;
 
   @query('button') button: HTMLButtonElement;
+  @query('.content') content: HTMLElement;
   @query('dialog') dialog: HTMLDialogElement;
 
   @state() data: RecipePreview[];
@@ -51,7 +52,7 @@ class GoodAndCheapFavorites extends LitElement {
   private togglePanel() {
     if (this.open) {
       this.inert = true;
-      this.dialog.addEventListener('transitionend', () => {
+      this.content.addEventListener('transitionend', () => {
         this.dialog.close();
         this.open = false;
       }, {once: true});
@@ -92,28 +93,30 @@ class GoodAndCheapFavorites extends LitElement {
         ?inert="${this.inert}"
         ?open="${this.open}">
         
-        <div>
-        ${this.data ? html`
-          <ol class="previews">
-          ${this.data.map((recipe, index) => {
-            const {badge, chapter, id, image, serving, title} = recipe;
-            return html`
-              <li>
-                <a href="./${chapter}/${id}">
-                  <figure>
-                    <img src="./images/${image}@thumb.webp" alt="">
-                  </figure>
-                  <div class="description">
-                    <p class="title">${title}</p>
-                    ${badge ? html`<p class="badge">${badge}</p>` : nothing}
-                    ${serving ? html`<p class="serving">${serving}</p>` : nothing}
-                  </div>
-                  <div class="counter">${index + 1}</div>
-                </a>
-              </li>
-            `;
-          })}
-          </ol>` : nothing}
+        <div class="dialog">
+          <div class="content">
+          ${this.data ? html`
+            <ol class="previews">
+            ${this.data.map((recipe, index) => {
+              const {badge, chapter, id, image, serving, title} = recipe;
+              return html`
+                <li>
+                  <a href="./${chapter}/${id}">
+                    <figure>
+                      <img src="./images/${image}@thumb.webp" alt="">
+                    </figure>
+                    <div class="description">
+                      <p class="title">${title}</p>
+                      ${badge ? html`<p class="badge">${badge}</p>` : nothing}
+                      ${serving ? html`<p class="serving">${serving}</p>` : nothing}
+                    </div>
+                    <div class="counter">${index + 1}</div>
+                  </a>
+                </li>
+              `;
+            })}
+            </ol>` : nothing}
+          </div>
         </div>
       </dialog>
     `;
