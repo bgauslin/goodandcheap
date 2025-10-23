@@ -46,7 +46,7 @@ body {
   color: var(--text-color);
   display: grid;
   font-family: 'Carmina Light', serif;
-  font-size: clamp(.9rem, calc(.7rem + 1vw), 1.2rem);
+  font-size: clamp(.9rem, calc(.7rem + 1vw), 1.1rem);
   grid: 1fr / 1fr;
   margin: 0;
   place-content: center;
