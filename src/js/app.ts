@@ -426,7 +426,7 @@ class GoodAndCheapApp extends LitElement {
       <header>
         <div class="header">
           <button
-            id="back"
+            class="back"
             title="${this.backLabel}"
             type="button"
             ?disabled="${this.context === 'home'}"

@@ -11,11 +11,11 @@ h1 {
   margin-block: 0 .5em;
 }
 
-h2, .cost, .title, .steps > li::before {
+h2, .cost, .title, .steps__item::before {
   font-family: 'Futura Bold', sans-serif;
 }
 
-h3, button, gc-page ul, footer > small, .badge, .count, .counter, .serving, .ingredients > li {
+h3, button, gc-page ul, footer > small, .badge, .count, .counter, .serving, .ingredients__item {
   font-family: 'Futura Book', sans-serif;
 }
 

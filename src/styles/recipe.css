@@ -3,9 +3,6 @@
 /* -------------------------------------------------------------------------- */
 
 gc-recipe {
-  /* ---------------------------------------- */
-  /* Cost. */
-
   .cost {
     backdrop-filter: var(--backdrop-filter);
     background-color: var(--callout-background);
@@ -18,12 +15,12 @@ gc-recipe {
     z-index: 1;
   }
 
-  /* ---------------------------------------- */
-  /* Title, badge, serving, favorite. */
-
   .content {
     position: relative;
   }
+
+  /* ---------------------------------------- */
+  /* Badge, title, serving. */
 
   .badge {
     margin-block: 0;
@@ -44,24 +41,21 @@ gc-recipe {
   /* ---------------------------------------- */
   /* Recipe headings. */
 
-  :where([id='ingredients'], [id='steps']) :is(h2, h3) {
+  :is(.ingredients, .steps) :is(h2, h3) {
     padding-inline: var(--gap);
   }
   
-  :where([id='ingredients'], [id='steps']) h2 {
+  :is(.ingredients, .steps) h2 {
     backdrop-filter: var(--backdrop-filter);
     background-color: var(--callout-background);
+    border-bottom: 1px solid var(--border-color);
     inset-block: 0 auto;
     position: sticky;
   }
 
   h2 {
-    margin-block: 0 1em;
+    margin-block: 1em;
     padding-block: 1em;
-  }
-
-  h2.stuck {
-    border-bottom: 1px solid var(--border-color);
   }
 
   h3 {
@@ -84,67 +78,62 @@ gc-recipe {
     padding-inline: var(--gap);
   }
 
-
-  /* ---------------------------------------- */
-  /* Ingredients and Steps lists. */
-
-  [id='ingredients'] ul, .steps {
+  .ingredients__list--main,
+  .steps__list {
     list-style: none;
   }
 
-  [id='ingredients'] li, .steps li {
+  .ingredients__item,
+  .steps__item {
     display: grid;
     gap: 0 .4em;
     grid: 'icon text' / 1.5em 1fr;
   }
 
-  [id='ingredients'] li > svg {
-    grid-area: icon;
-  }
-
-  [id='ingredients'] li > span {
-    grid-area: text;
-  }
-
   /* ---------------------------------------- */
-  /* Ingredients list. */
+  /* Ingredients list items. */
 
-  [id='ingredients'] li {
+  .ingredients__item {
     cursor: pointer;
     line-height: 1.3;
     padding-block: .3em;
   }
 
-  [id='ingredients'] li > svg {
+  .ingredients__item > svg {
     aspect-ratio: 1;
     inline-size: 1.25rem;
     border: 2px solid var(--icon-color);
     border-radius: 1.25rem;
     fill: none;
+    grid-area: icon;
     place-self: center;
     stroke: var(--icon-active-color);
     stroke-width: 3px;
   }
 
-  [id='ingredients'] [data-checked] > svg {
+  .ingredients__item[data-checked] > svg {
     background-color: var(--icon-active-background);
     border-color: var(--icon-active-color);
+  }
+
+  .ingredients__item > span {
+    grid-area: text;
   }
 
   /* ---------------------------------------- */
   /* Cooking steps. */
 
-  .steps {
+  .steps__list {
     counter-reset: steps 0;
     padding-block: 0 var(--gap);
   }
 
-  .steps > li {
+  .steps__item {
     counter-increment: steps;
     margin-block: 0 1em;
   }
 
-  .steps > li::before {
+  .steps__item::before {
     background-color: var(--text-color);
     border-radius: 1em;
     color: var(--text-color-inverted);
@@ -160,7 +149,7 @@ gc-recipe {
   /* Recipes within recipes. */
 
   .more {
-    margin-block: 3rem 0;
+    margin-block: 2rem 0;
     padding-inline: var(--gap);
   }
 

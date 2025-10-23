@@ -39,7 +39,7 @@ header {
   /**
    * 'Back' button.
    */
-  [id='back'] {
+  .back {
     align-items: center;
     block-size: var(--back-button-size);
     border-radius: var(--back-button-size);

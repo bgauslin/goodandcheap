@@ -1,5 +1,5 @@
 import {LitElement, html, nothing} from 'lit';
-import {customElement, queryAll, state} from 'lit/decorators.js';
+import {customElement, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {Events, Recipe, favoriteIcon, footer} from './shared';
 
@@ -12,13 +12,10 @@ import {Events, Recipe, favoriteIcon, footer} from './shared';
 @customElement('gc-recipe')
 class GoodAndCheapRecipe extends LitElement {
   private dataListener: EventListenerObject;
-
-  @queryAll(':is([id="ingredients"], [id="steps"]) h2') headings: HTMLHeadingElement[];
   
   @state() data: Recipe;
   @state() favorite: boolean = false;
   @state() ingredients: string[] = [];
-  @state() observer: IntersectionObserver;
 
   constructor() {
     super();
@@ -33,7 +30,6 @@ class GoodAndCheapRecipe extends LitElement {
   disconnectedCallback() {
     super.disconnectedCallback();
     this.removeEventListener(Events.Data, this.dataListener);
-    this.observer.disconnect();
   }
 
   protected createRenderRoot() {
@@ -46,7 +42,6 @@ class GoodAndCheapRecipe extends LitElement {
     window.requestAnimationFrame(() => this.scrollTo(0, 0));
     this.ingredients = this.data.savedIngredients || [];
     this.favorite = this.data.favorite;
-    this.watch();
   }
 
   /**
@@ -76,36 +71,6 @@ class GoodAndCheapRecipe extends LitElement {
         saved: this.ingredients,
       },
     }));
-  }
-
-  /**
-   * Sets up an IntersectionObserver for sticky elements.
-   */
-  private watch() {
-    this.observer = new IntersectionObserver(this.sticky, {
-      root: this,
-      rootMargin: '-1px',
-      threshold: 1,
-    });
-
-    for (const heading of this.headings) {
-      this.observer.observe(heading);
-    }
-  }
-
-  /**
-   * IntersectionObserver callback that updates sticky elements.
-   */
-  private sticky(entries: IntersectionObserverEntry[]) {
-    for (const entry of entries) {
-      const {target} = entry;
-
-      if (entry.isIntersecting) {
-        target.classList.remove('stuck');
-      } else {
-        target.classList.add('stuck');
-      }
-    }
   }
 
   /**
@@ -170,19 +135,22 @@ class GoodAndCheapRecipe extends LitElement {
         </div>
 
         ${ingredients ? html`
-        <section id="ingredients">
+        <section class="ingredients">
           <h2>Ingredients</h2>
           ${ingredients.map((group, i) => {
             const {label, items} = group;
             return html`
               ${label ? html`<h3>${label}</h3>` : nothing}
-              <ul class="ingredients">
+              <ul class="ingredients__list ingredients__list--main">
                 ${items.map((item, j) => {
                   const id = `${i}.${j}`;
                   const checked = this.ingredients.includes(id);
                   const path = checked ? 'M4,11 L10,17, L20,7' : '';
                   return html`
-                  <li ?data-checked="${checked}" @click="${() => this.saveIngredients(id)}">
+                  <li
+                    class="ingredients__item"
+                    ?data-checked="${checked}"
+                    @click="${() => this.saveIngredients(id)}">
                     <svg aria-hidden="true" viewbox="0 0 24 24"><path d="${path}"/></svg>
                     <span>${unsafeHTML(item)}</span>
                   </li>`
@@ -193,15 +161,15 @@ class GoodAndCheapRecipe extends LitElement {
         </section>` : nothing}
 
         ${steps ? html`
-        <section id="steps">
+        <section class="steps">
           <h2>Steps</h2>
-          <ol class="steps">
-            ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
+          <ol class="steps__list">
+            ${steps.map(step => html`<li class="steps__item">${unsafeHTML(step)}</li>`)}
           </ol>
         </section>` : nothing}
 
         ${more ? html`
-        <section id="more">
+        <section>
           ${more.map(item => {
             const {copy, cost, heading, image, ingredients, steps} = item;
             return html`
