@@ -99,7 +99,7 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
       </div>
       
       <div class="content">
-        <div class="copy">
+        <div class="copy clamp">
           <h1>${title}</h1>
           ${content}
         </div>

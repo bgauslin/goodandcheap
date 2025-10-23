@@ -2,6 +2,7 @@
 @import 'vars';
 
 @import 'app';
+@import 'chapter';
 @import 'cover';
 @import 'favorite';
 @import 'favorites';
