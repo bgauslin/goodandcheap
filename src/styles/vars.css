@@ -133,7 +133,7 @@ gc-home {
     --previews-border-radius: var(--border-radius);
   }
 
-  gc-home .previews li:first-child {
+  gc-home .previews__item:first-child {
     --preview-divider: none;
   }
 }
@@ -186,7 +186,7 @@ gc-home {
     --view-display: block;
   }
 
-  gc-home .previews li:first-child {
+  gc-home .previews__item:first-child {
     --preview-divider: var(--preview-border);
   }
 

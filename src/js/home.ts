@@ -98,13 +98,13 @@ class GoodAndCheapHome extends LitElement {
         ${items.map(item => {
           const {count, id, image, title} = item;
           return html`
-            <li>
-              <a href="./${id}">
-                <figure>
-                  <img src="./images/${image}@thumb.webp" alt="">
+            <li class="previews__item">
+              <a class="previews__link" href="./${id}">
+                <figure class="previews__figure">
+                  <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
                 </figure>                
-                <div class="description">
-                  <p class="title">${unsafeHTML(title)}</p>
+                <div class="previews__description">
+                  <p class="previews__title">${unsafeHTML(title)}</p>
                   ${showCount ? html`<p class="count">${count} Recipes</p>` : nothing}
                 </div>
               </a>

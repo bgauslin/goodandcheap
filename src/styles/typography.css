@@ -11,7 +11,7 @@ h1 {
   margin-block: 0 .5em;
 }
 
-h2, .cost, .title, .steps__item::before {
+h2, .cost, .previews__title, .steps__item::before {
   font-family: 'Futura Bold', sans-serif;
 }
 
@@ -22,13 +22,13 @@ h3, button, gc-page ul, footer > small, .badge, .count, .counter, .serving, .ing
 /* ---------------------------------------- */
 /* Font size and layout. */
 
-h2, h3, .cost, .serving, .title {
+h2, h3, .cost, .previews__title, .serving {
   font-size: var(--subhead-font-size);
   letter-spacing: .2em;
   text-transform: uppercase;
 }
 
-.cost, .serving, .title {
+.cost, .previews__title, .serving {
   line-height: 1.3;
 }
 

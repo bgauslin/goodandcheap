@@ -12,59 +12,59 @@
   margin-block: 0;
   overflow: hidden;
   padding: 0;
+}
 
-  li {
-    background-color: var(--preview-background, none);
-    border: var(--preview-border, none);
-    border-block-start: var(--preview-divider);
-    border-radius: var(--preview-border-radius, 0);
-    position: relative;
-  }
+.previews__item {
+  background-color: var(--preview-background, none);
+  border: var(--preview-border, none);
+  border-block-start: var(--preview-divider);
+  border-radius: var(--preview-border-radius, 0);
+  position: relative;
+}
 
-  a {
-    align-items: center;
-    display: grid;
-    gap: .75rem;
-    grid: 'thumb description counter' auto / auto 1fr var(--icon-size);
-  }
+.previews__link {
+  align-items: center;
+  display: grid;
+  gap: .75rem;
+  grid: 'thumb description counter' auto / auto 1fr var(--icon-size);
+}
 
-  a > * {
-    pointer-events: none;
-  }
+.previews__link > * {
+  pointer-events: none;
+}
 
-  figure {
-    aspect-ratio: 1;
-    grid-area: thumb;
-    inline-size: var(--thumb-size);
-    margin-block: .75rem;
-    margin-inline: .75rem 0;
-  }
+.previews__figure {
+  aspect-ratio: 1;
+  grid-area: thumb;
+  inline-size: var(--thumb-size);
+  margin-block: .75rem;
+  margin-inline: .75rem 0;
+}
 
-  img {
-    aspect-ratio: 1;
-    background-color: var(--image-background);
-    border-radius: .25rem;
-    object-fit: cover;
-  }
+.previews__img {
+  aspect-ratio: 1;
+  background-color: var(--image-background);
+  border-radius: .25rem;
+  object-fit: cover;
+}
 
-  .description {
-    grid-area: description;
-  }
+.previews__description {
+  grid-area: description;
+}
 
-  .title {
-    margin-block: 0;
-  }
+.previews__description :is(.badge, .count, .serving) {
+  margin-block: .2em;
+}
 
-  :is(.badge, .count, .serving) {
-    margin-block: .2em;
-  }
+.previews__title {
+  margin-block: 0;
+}
 
-  /* [1] Prevent hover/focus color change. */
-  .counter {
-    color: var(--text-color);  /* [1] */
-    grid-area: counter;
-    margin-block: 0 .75rem;
-    opacity: .7;
-    place-self: end center;
-  }
+/* [1] Prevent hover/focus color change. */
+.previews__counter {
+  color: var(--text-color);  /* [1] */
+  grid-area: counter;
+  margin-block: 0 .75rem;
+  opacity: .7;
+  place-self: end center;
 }

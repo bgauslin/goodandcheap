@@ -82,17 +82,17 @@ class GoodAndCheapFavorites extends LitElement {
     for (const recipe of this.data) {
       const {badge, chapter, id, image, serving, title} = recipe;
       previews.push(html`
-        <li>
-          <a href="./${chapter}/${id}">
-            <figure>
-              <img src="./images/${image}@thumb.webp" alt="">
+        <li class="previews__item">
+          <a class="previews__link" href="./${chapter}/${id}">
+            <figure class="previews__figure">
+              <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
             </figure>
-            <div class="description">
-              <p class="title">${title}</p>
+            <div class="previews__description">
+              <p class="previews__title">${title}</p>
               ${badge ? html`<p class="badge">${badge}</p>` : nothing}
               ${serving ? html`<p class="serving">${serving}</p>` : nothing}
             </div>
-            <div class="counter">${counter}</div>
+            <div class="previews__counter">${counter}</div>
           </a>
         </li>
       `);

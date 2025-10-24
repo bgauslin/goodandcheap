@@ -68,16 +68,16 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
       if (badge) callout = `<p class="badge">${badge}</p>`;
 
       items += `
-        <li>
-          <a href="./${chapter}/${id}">
-            <figure>
-              <img src="./images/${image}@thumb.webp" alt="">
+        <li class="previews__item">
+          <a class="previews__link" href="./${chapter}/${id}">
+            <figure class="previews__figure">
+              <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
             </figure>
-            <div class="description">
-              <p class="title">${title}</p>
+            <div class="previews__description">
+              <p class="previews__title">${title}</p>
               ${callout}
             </div>
-            <div class="counter">${index + 1}</div>
+            <div class="previews__counter">${index + 1}</div>
           </a>
 
           <button
