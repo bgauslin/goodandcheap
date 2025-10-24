@@ -1,52 +1,67 @@
+import {LitElement, html} from 'lit';
+import {customElement, state} from 'lit/decorators.js';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {Events, Chapter, favoriteIcon, footer} from './shared';
 
 
 /**
  * Custom element for rendering a Chapter for the Good And Cheap app.
- * This element simply receives data from a custom event and renders it.
  */
-customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElement {
-  private clickListener: EventListenerObject;
-  private data: Chapter;
+@customElement('gc-chapter')
+class GoodAndCheapChapter extends LitElement {
   private dataListener: EventListenerObject;
+
+  @state() data: Chapter;
+  @state() favorites = new Set();
 
   constructor() {
     super();
-    this.clickListener = this.handleClick.bind(this);
     this.dataListener = this.updateData.bind(this);
   }
 
   connectedCallback() {
-    this.addEventListener(Events.Click, this.clickListener);
+    super.connectedCallback();
     this.addEventListener(Events.Data, this.dataListener);
   }
 
   disconnectedCallback() {
-    this.removeEventListener(Events.Click, this.clickListener);
+    super.disconnectedCallback();
     this.removeEventListener(Events.Data, this.dataListener);
+  }
+
+  protected createRenderRoot() {
+    return this;
   }
 
   private updateData(event: CustomEvent) {
     this.data = event.detail;
-    this.render();
+    this.favorites = new Set();
+
+    // Populate local Set for toggling 'favorite' state of each recipe preview.
+    const {recipes} = this.data;
+    for (const recipe of recipes) {
+      const {favorite, id} = recipe;
+      if (favorite) {
+        this.favorites.add(id);
+      }
+    }
   }
 
   /**
    * Sends recipe ID and chapter up to the app for updating the list of
    * favorited recipes.
    */
-  private handleClick(event: Event) {
-    const target = event.composedPath()[0];
-    const id = (<HTMLElement>target).dataset.id;
-    if (!id) return;
+  private updateFavorite(id: string) {
+    if (this.favorites.has(id)) {
+      this.favorites.delete(id);
+    } else {
+      this.favorites.add(id);
+    }
 
-    const dataChecked = (<HTMLElement>target).dataset.checked;
-    const checked = dataChecked === 'true' ? false : true;
+    // Re-render the template
+    this.requestUpdate();
 
-    (<HTMLElement>target).dataset.checked = `${checked}`;
-    (<HTMLElement>target).title = checked ?
-        'Remove from Favorites' : 'Add to Favorites';
-
+    // Dispatch to the app for processing.
     this.dispatchEvent(new CustomEvent(Events.Favorites, {
       bubbles: true,
       composed: true,
@@ -57,16 +72,20 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
     }));
   }
 
-  private render() {
+  protected render() {
+    if (!this.data) return;
+
     const {content, image, recipes, title} = this.data;
-
-    let items = '';
-    for (const [index, recipe] of recipes.entries()) {
-      const {badge, chapter, favorite, id, image, serving, title} = recipe;
-      let callout = `<p class="serving">${serving}</p>`;
-      if (badge) callout = `<p class="badge">${badge}</p>`;
-
-      items += `
+    
+    let counter = 0;
+    const previews = [];
+    for (const recipe of recipes) {
+      const {badge, chapter, id, image, serving, title} = recipe;
+      const favorite = this.favorites.has(id);
+      let callout = html`<p class="serving">${serving}</p>`;
+      if (badge) callout = html`<p class="badge">${badge}</p>`;
+      counter += 1;
+      previews.push(html`
         <li class="previews__item">
           <a class="previews__link" href="./${chapter}/${id}">
             <figure class="previews__figure">
@@ -76,39 +95,39 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
               <p class="previews__title">${title}</p>
               ${callout}
             </div>
-            <div class="previews__counter">${index + 1}</div>
+            <div class="previews__counter">${counter}</div>
           </a>
 
           <button
             class="favorite"
-            data-id="${id}"
             data-checked="${favorite}"
             title="${favorite ? 'Remove from' : 'Add to'} Favorites"
-            type="button">
-            ${favoriteIcon}
+            type="button"
+            @click="${() => this.updateFavorite(id)}">
+            ${unsafeHTML(favoriteIcon)}
           </button>
         </li>
-      `;
+      `);
     }
 
-    this.innerHTML = `
+    return html`
       <div class="cover">
         <gc-cover class="cover__photo" src="${image}"></gc-cover>
       </div>
       
       <div class="content">
         <div class="copy clamp">
-          <h1>${title}</h1>
-          ${content}
+          <h1>${unsafeHTML(title)}</h1>
+          ${unsafeHTML(content)}
         </div>
 
         <p class="count">${recipes.length} Recipes</p>
         <ul class="previews">
-          ${items}
+          ${previews}
         </ul>
       </div>
 
-      ${footer}
+      ${unsafeHTML(footer)}
     `;
   }
-});
+}
