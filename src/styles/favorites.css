@@ -18,6 +18,7 @@ gc-favorites {
     background: none;
     block-size: 100dvh;
     border: none;
+    color: inherit;
     display: grid;  /* [1] */
     grid: var(--app-grid);
     inline-size: 100dvw;
@@ -74,6 +75,7 @@ gc-favorites {
     margin: 0;
     padding-block: 1rem;
     place-self: center;
+    pointer-events: none;
     text-align: center;
   }
 
@@ -84,5 +86,20 @@ gc-favorites {
 
   dialog[inert] .content {
     transform: translateY(100%);
+  }
+
+  /* Recipe preview 'remove' button and icon. */
+  .remove {
+    display: grid;
+    place-items: center;
+  }
+
+  .remove svg {
+    background-color: var(--brand-color);
+    border-radius: 1.25rem;
+    inline-size: 1.25rem;
+    stroke: var(--text-color-inverted);
+    stroke-linecap: round;
+    stroke-width: 3px;
   }
 }

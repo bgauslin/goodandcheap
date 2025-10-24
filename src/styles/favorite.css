@@ -2,7 +2,7 @@
 /* Favorite <button> for saving recipes. */
 /* -------------------------------------------------------------------------- */
 
-.favorite {
+.favorite, .remove {
   aspect-ratio: 1;
   background: none;
   inline-size: var(--icon-size);
@@ -12,7 +12,7 @@
 
   &.touch,
   &:focus-visible {
-    background: none;
+    background-color: none;
   }
 
   @media (any-hover: hover) {
@@ -23,9 +23,8 @@
 }
 
 .favorite svg {
-  inline-size: 1.25rem;
   fill: none;
-  pointer-events: none;
+  inline-size: 1.25rem;
   stroke: var(--icon-color);
   stroke-linecap: round;
   stroke-width: 2.5px;

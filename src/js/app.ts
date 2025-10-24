@@ -170,8 +170,18 @@ class GoodAndCheapApp extends LitElement {
     } else {
       this.favorites.delete(preview);
     }
+    
+    // If the favorite is removed while on a recipe or chapter view, update
+    // the view.
+    const lastSegment = this.getSegment();
+    if (lastSegment === chapter.id) {
+      this.updateComponent(this.chapterElement, chapter);
+    }
+    if (lastSegment === id) {
+      this.updateComponent(this.recipeElement, recipe);
+    } 
 
-    // Update element and save favorites to localStorage.
+    // Update favorites element and save favorites to localStorage.
     this.updateComponent(this.favoritesElement, this.favorites);
     this.setStorage();
   }
@@ -398,8 +408,6 @@ class GoodAndCheapApp extends LitElement {
     if (changedProperties.has('context')) {
       const prev = changedProperties.get('context');
       const next = this.context;
-
-      console.log(`from ${prev} to ${next}`);
 
       // Going forward to 'page' or 'chapter' from 'home'.
       if (prev === 'home') {

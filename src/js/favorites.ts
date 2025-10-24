@@ -62,8 +62,30 @@ class GoodAndCheapFavorites extends LitElement {
     }
   }
 
+  /**
+   * Dispatches event that removes the favorite from the list.
+   */
+  private removeFavorite(chapter: string, id: string) {
+    this.dispatchEvent(new CustomEvent(Events.Favorites, {
+      bubbles: true,
+      composed: true,
+      detail: {
+        chapter,
+        id,
+      }
+    }));
+  }
+
   private handleClick(event: Event) {
-    const target = event.composedPath()[0];
+    const target = <HTMLElement>event.composedPath()[0];
+
+    // Keep the dialog open if content area or a remove button is clicked.
+    if (['content', 'remove'].includes(target.className)) {
+      return;
+    }
+
+    // Open the dialog if the opener button is clicked; close it if click is
+    // anywhere else.
     if (target === this.button || this.open) {
       this.togglePanel();
     }
@@ -94,6 +116,16 @@ class GoodAndCheapFavorites extends LitElement {
             </div>
             <div class="previews__counter">${counter}</div>
           </a>
+          <button
+            class="remove"
+            data-id="${id}"
+            title="Remove from Favorites"
+            type="button"
+            @click="${() => this.removeFavorite(chapter, id)}">
+            <svg aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M7,7 L17,17 M7,17 L17,7"/>
+            </svg>
+          </button>
         </li>
       `);
       counter += 1;
