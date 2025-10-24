@@ -56,9 +56,9 @@ class GoodAndCheapFavorites extends LitElement {
         this.open = false;
       }, {once: true});
     } else {
-      this.inert = false;
-      this.dialog.showModal();
       this.open = true;
+      this.dialog.showModal();
+      window.requestAnimationFrame(() => this.inert = false);
     }
   }
 
@@ -100,6 +100,7 @@ class GoodAndCheapFavorites extends LitElement {
     }
 
     const label = 'View Favorites';
+    const count = previews.length;
     return html`
       <button
         aria-label="${label}"
@@ -115,6 +116,8 @@ class GoodAndCheapFavorites extends LitElement {
         ?open="${this.open}">
         <div class="dialog">
           <div class="content">
+          <h2>${count > 0 ? `${count}` : 'No'} saved recipe${count > 1 || count === 0 ? 's' : ''}</h2>
+
           ${previews.length > 0 ? html`
             <ol class="previews">
               ${previews}
