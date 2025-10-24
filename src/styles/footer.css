@@ -8,7 +8,7 @@ footer {
   grid-area: var(--footer-grid-area);
   padding-block: var(--footer-padding);
   padding-inline: var(--footer-padding);
-  place-self: stretch;
+  place-self: center stretch;
   text-align: center;
 
   small {
