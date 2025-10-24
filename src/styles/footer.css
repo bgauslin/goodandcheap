@@ -3,11 +3,12 @@
 /* -------------------------------------------------------------------------- */
 
 footer {
+  border-block-start: var(--footer-border);
   display: var(--footer-display);
   grid-area: var(--footer-grid-area);
   padding-block: var(--footer-padding);
   padding-inline: var(--footer-padding);
-  place-self: center;
+  place-self: stretch;
   text-align: center;
 
   small {
