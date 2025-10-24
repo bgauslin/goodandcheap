@@ -87,7 +87,7 @@ gc-recipe {
   .steps__item {
     display: grid;
     gap: 0 .4em;
-    grid: 'icon text' / 1.5em 1fr;
+    grid: 'icon text' / var(--marker-size) 1fr;
   }
 
   /* ---------------------------------------- */
@@ -101,9 +101,9 @@ gc-recipe {
 
   .ingredients__item > svg {
     aspect-ratio: 1;
-    inline-size: 1.25rem;
+    inline-size: var(--marker-size);
     border: 2px solid var(--icon-color);
-    border-radius: 1.25rem;
+    border-radius: var(--marker-size);
     fill: none;
     grid-area: icon;
     place-self: center;
@@ -134,14 +134,15 @@ gc-recipe {
   }
 
   .steps__item::before {
+    aspect-ratio: 1;
     background-color: var(--text-color);
-    border-radius: 1em;
+    border-radius: var(--marker-size);
     color: var(--text-color-inverted);
     content: counter(steps);
-    display: inline-grid;
+    display: grid;
     font-size: var(--subhead-font-size);
-    grid: 1.75em / 1.75em;
-    place-items: center;
+    inline-size: var(--marker-size);
+    place-content: center;
     place-self: start;
   }
 

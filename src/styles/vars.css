@@ -89,6 +89,7 @@
   --header-block-size: clamp(3rem, 3rem + 1vw, 5rem);
   --icon-size: 2.5rem;
   --main-block-size: 100dvh;
+  --marker-size: 1.5rem;
   --main-grid-area: 1 / 2 / 3 / 2;
   --preview-divider: 1px solid var(--border-color);
   --previews-gap: 0;
