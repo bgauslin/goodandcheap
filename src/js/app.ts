@@ -150,15 +150,18 @@ class GoodAndCheapApp extends LitElement {
    */
   private handleFavorites(event: CustomEvent) {
     const {detail} = event;
-    const {chapter: chapterId, checked, id} = detail;
+    const {chapter: chapterId, id} = detail;
 
-    // Update the recipe on its own.
+    // Look up the recipe, find its preview in the chapter, then update its
+    // preview in favorites.
     const recipe = this.recipes.find(recipe => recipe.id === id);
-    recipe.favorite = checked;
-
-    // Update the recipe preview within its chapter.
     const chapter = this.chapters.find(chapter => chapter.id === chapterId);
     const preview = chapter.recipes.find(recipe => recipe.id === id);
+
+    const checked = !this.favorites.has(preview);
+
+    // Update the recipe itself and within its chapter.
+    recipe.favorite = checked;
     preview.favorite = checked;
 
     // Add/remove recipe preview to/from favorites.
@@ -385,6 +388,8 @@ class GoodAndCheapApp extends LitElement {
     if (changedProperties.has('context')) {
       const prev = changedProperties.get('context');
       const next = this.context;
+
+      console.log(`from ${prev} to ${next}`);
 
       // Going forward to 'page' or 'chapter' from 'home'.
       if (prev === 'home') {

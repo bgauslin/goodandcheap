@@ -84,7 +84,6 @@ class GoodAndCheapRecipe extends LitElement {
       composed: true,
       detail: {
         chapter,
-        checked: this.favorite,
         id,
       }
     }));

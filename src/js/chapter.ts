@@ -52,7 +52,6 @@ customElements.define('gc-chapter', class GoodAndCheapChapter extends HTMLElemen
       composed: true,
       detail: {
         chapter: this.data.id,
-        checked,
         id,
       }
     }));
