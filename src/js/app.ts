@@ -230,6 +230,10 @@ class GoodAndCheapApp extends LitElement {
     const page = this.pages.find((page: Page) => page.id === id);
     const recipe = this.recipes.find((recipe: Recipe) => recipe.id === id);
 
+    // Get previous context in case a favorite was clicked and we're already
+    // on a recipe view.
+    const previousContext = this.context;
+
     // If we have valid content, render it and update the UI and browser.
     if (chapter) {
       this.context = 'chapter';
@@ -245,6 +249,12 @@ class GoodAndCheapApp extends LitElement {
       this.updateAddressBar(id, recipe.chapter);
     }
 
+    // Reset scroll position if recipe was clicked from favorites list.
+    if (previousContext === 'recipe' && this.context === 'recipe') {
+      window.requestAnimationFrame(() => this.recipeElement.scrollTo(0, 0));
+    }
+
+    // Update the UI.
     this.updateButtonLabel();
     this.updateDocumentTitle(id);
   }
