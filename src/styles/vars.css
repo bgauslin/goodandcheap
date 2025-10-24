@@ -79,7 +79,7 @@
   --back-button-margin: .5rem;
   --border-radius: 1rem;
   --dialog-aspect-ratio: var(--main-aspect-ratio);
-  --dialog-block-size: calc(100dv - var(--header-block-size));
+  --dialog-block-size: calc(100dvh - var(--header-block-size));
   --favorites-grid: var(--header-block-size) 1fr / 1fr;
   --footer-border: 1px solid var(--border-color);
   --footer-padding: 2rem;
@@ -156,6 +156,7 @@ gc-home {
     --cover-border-radius: none;
     --cover-inset: 0;
     --cover-position: sticky;
+    --dialog-block-size: 100%;
     --footer-grid-area: 3 / 2;
     --footer-padding: 1rem;
     --header-background: none;

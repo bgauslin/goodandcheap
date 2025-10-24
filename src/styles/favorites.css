@@ -59,8 +59,27 @@ gc-favorites {
    */
   .content {
     background-color: var(--content-background);
+    display: grid;
+    grid: auto 1fr / 1fr;
     min-block-size: 100%;
     transition: transform var(--transition);
+  }
+
+  .content[data-empty] {
+    grid: 1fr / 1fr;
+  }
+
+  h1 {
+    grid-area: 1 / 1;
+    margin: 0;
+    padding-block: 1rem;
+    place-self: center;
+    text-align: center;
+  }
+
+  .previews {
+    grid-area: 2 / 1;
+    place-self: start stretch;
   }
 
   dialog[inert] .content {
