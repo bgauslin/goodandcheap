@@ -106,10 +106,11 @@ class GoodAndCheapFavorites extends LitElement {
   }
 
   protected render() {
-    let counter = 1;
+    let counter = 0;
     const previews = [];
     for (const recipe of this.data) {
       const {badge, chapter, id, image, serving, title} = recipe;
+      counter += 1;
       previews.push(html`
         <li class="previews__item">
           <a class="previews__link" href="./${chapter}/${id}">
@@ -135,7 +136,6 @@ class GoodAndCheapFavorites extends LitElement {
           </button>
         </li>
       `);
-      counter += 1;
     }
 
     const count = this.data.size;
