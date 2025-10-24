@@ -91,10 +91,17 @@ class GoodAndCheapFavorites extends LitElement {
     }
   }
 
+  /**
+   * The [esc] key closes modal dialogs by default, and since we can't hijack
+   * it to change the 'open' state after the transition finishes, we need to
+   * manually change the 'open' and 'inert' attributes here.
+   */
   private handleKey(event: KeyboardEvent) {
-    if (event.code === 'Escape' && this.open) {
-      event.preventDefault();
-      this.togglePanel();
+    const {code} = event;
+
+    if (code === 'Escape' && this.open) {
+      this.inert = true;
+      this.open = false;
     }
   }
 
