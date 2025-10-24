@@ -90,6 +90,7 @@
   --icon-size: 2.5rem;
   --main-block-size: 100dvh;
   --main-grid-area: 1 / 2 / 3 / 2;
+  --preview-divider: 1px solid var(--border-color);
   --previews-gap: 0;
   --previews-grid: auto-flow / 1fr;
   --section-max-inline-size: 32rem;  /* 32rem = 512px */
@@ -130,6 +131,10 @@ gc-home {
   gc-home {
     --previews-border: 1px solid var(--border-color);
     --previews-border-radius: var(--border-radius);
+  }
+
+  gc-home .previews li:first-child {
+    --preview-divider: none;
   }
 }
 
@@ -179,6 +184,10 @@ gc-home {
     --previews-gap: 1rem;
     --previews-grid: auto-flow / repeat(3, 1fr);
     --view-display: block;
+  }
+
+  gc-home .previews li:first-child {
+    --preview-divider: var(--preview-border);
   }
 
   gc-recipe {

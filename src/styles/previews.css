@@ -16,6 +16,7 @@
   li {
     background-color: var(--preview-background, none);
     border: var(--preview-border, none);
+    border-block-start: var(--preview-divider);
     border-radius: var(--preview-border-radius, 0);
     position: relative;
   }
