@@ -138,28 +138,27 @@ class GoodAndCheapFavorites extends LitElement {
       counter += 1;
     }
 
-    const label = 'View Favorites';
-    const count = previews.length;
+    const count = this.data.size;
+    const label = count ? `${count} Favorite${count > 1 || count === 0 ? 's' : ''}` : 'Favorites';
     return html`
-      <button
-        aria-label="${label}"
-        class="favorite"
-        title="${label}"
-        type="button">
-        ${unsafeHTML(favoriteIcon)}
-        ${this.data ? this.data.size : nothing}
-      </button>
+      <div class="toggle">
+        <button
+          aria-label="${label}"
+          class="favorite"
+          title="${label}"
+          type="button">
+          ${unsafeHTML(favoriteIcon)}
+        </button>
+        <div class="count">${count ? count : nothing}</div>
+      </div>
 
       <dialog
         ?inert="${this.inert}"
         ?open="${this.open}">
         <div class="dialog">
-          <div
-            class="content"
-            ?data-empty="${count === 0}">
-          <h1>${count > 0 ? `${count}` : 'No'} saved recipe${count > 1 || count === 0 ? 's' : ''}</h1>
-
-          ${previews.length > 0 ? html`
+          <div class="content" ?data-empty="${count === 0}">
+            <h1>${count > 0 ? `${count}` : 'No'} saved recipe${count > 1 || count === 0 ? 's' : ''}</h1>
+            ${previews.length > 0 ? html`
             <ol class="previews">
               ${previews}
             </ol>` : nothing}

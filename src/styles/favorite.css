@@ -2,17 +2,20 @@
 /* Favorite <button> for saving recipes. */
 /* -------------------------------------------------------------------------- */
 
-.favorite, .remove {
+.favorite,
+.remove {
   aspect-ratio: 1;
   background: none;
+  border-radius: var(--icon-size);
   inline-size: var(--icon-size);
   inset-block: 0 auto;
   inset-inline: auto 0;
   position: absolute;
 
+  /* TODO: Update hover, focus states for a11y. */
   &.touch,
   &:focus-visible {
-    background-color: none;
+    background: none;
   }
 
   @media (any-hover: hover) {

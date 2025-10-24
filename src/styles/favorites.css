@@ -5,8 +5,26 @@
 gc-favorites {
   display: contents;
 
-  button {
-    aspect-ratio: 1;
+  /*
+   * Open/close button.
+   */
+  .toggle {
+    display: grid;
+    grid: 'count button' auto / auto;
+    grid-area: favorites;
+    place-self: center end;
+    place-items: center;
+  }
+
+  /* [1] Override default layout for 'favorite' buttons. */
+  .toggle button.favorite {
+    grid-area: button;
+    position: static;  /* [1] */
+  }
+
+  .toggle .count {
+    grid-area: count;
+    margin-inline: auto -.5rem;
   }
 
   /**

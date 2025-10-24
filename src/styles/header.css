@@ -73,13 +73,4 @@ header {
       margin-inline: -.5em 1rem;
     }
   }
-
-  /**
-   * Favorites button.
-   */
-  .favorite {
-    grid-area: favorites;
-    place-self: center end;
-    position: static;
-  }
 }
