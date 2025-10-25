@@ -11,7 +11,7 @@ gc-recipe {
     margin-block: 10% 0;
     padding-block: .5rem;
     padding-inline: .75rem;
-    place-self: start end;
+    place-self: start;
     z-index: 1;
   }
 

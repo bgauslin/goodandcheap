@@ -84,7 +84,7 @@ class GoodAndCheapFavorites extends LitElement {
     const target = <HTMLElement>event.composedPath()[0];
 
     // Keep the dialog open if content area or a remove button is clicked.
-    if (['content', 'remove'].includes(target.className)) {
+    if (['content', 'meta', 'remove'].includes(target.className)) {
       return;
     }
 
@@ -161,7 +161,9 @@ class GoodAndCheapFavorites extends LitElement {
         ?open="${this.open}">
         <div class="dialog">
           <div class="content" ?data-empty="${count === 0}">
-            <h1>${count > 0 ? `${count}` : 'No'} saved recipe${count > 1 || count === 0 ? 's' : ''}</h1>
+            <div class="meta">
+              <h1>${count > 0 ? `${count}` : 'No'} saved recipe${count > 1 || count === 0 ? 's' : ''}</h1>
+            </div>
             ${previews.length > 0 ? html`
             <ol class="previews">
               ${previews}

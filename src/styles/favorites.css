@@ -61,37 +61,43 @@ gc-favorites {
    * Container element whose layout mimics the <main> element.
    */
   .dialog {
-    aspect-ratio: var(--dialog-aspect-ratio, unset);
-    block-size: var(--dialog-block-size);
     grid-area: 2 / 2;
-    overflow: auto;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    overflow: hidden;
   }
 
   /**
    * Child element with transitions applied to it.
    */
   .content {
+    aspect-ratio: var(--dialog-content-aspect-ratio);
     background-color: var(--content-background);
     border: var(--dialog-border);
     border-block-start: var(--dialog-border-top);
     border-radius: var(--dialog-border-radius);
     display: grid;
-    grid: auto 1fr / 1fr;
+    grid: var(--dialog-content-grid);
     min-block-size: 100%;
+    overflow: auto;
+    scrollbar-width: none;
     transition: transform var(--transition);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
-  .content[data-empty] {
+  .meta {
+    aspect-ratio: var(--dialog-meta-aspect-ratio);
+    display: grid;
+    grid-area: meta;
     grid: 1fr / 1fr;
+    inset-block: var(--dialog-meta-inset, initial);
+    overflow: hidden;
+    place-self: var(--dialog-meta-place-self);
+    position: var(--dialog-meta-position, static);
   }
 
   h1 {
-    grid-area: 1 / 1;
     margin: 0;
     padding-block: 1rem;
     place-self: center;
@@ -100,7 +106,8 @@ gc-favorites {
   }
 
   .previews {
-    grid-area: 2 / 1;
+    border-block-end: 1px solid var(--border-color);
+    grid-area: previews;
     place-self: start stretch;
   }
 

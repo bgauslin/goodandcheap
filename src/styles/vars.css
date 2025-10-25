@@ -82,6 +82,8 @@
   --dialog-block-size: calc(100dvh - var(--header-block-size));
   --dialog-border: none;
   --dialog-border-top: 1px solid var(--border-color);
+  --dialog-content-grid: 'meta' auto 'previews' 1fr / 1fr;
+  --dialog-meta-place-self: start stretch;
   --favorites-grid: var(--header-block-size) 1fr / 1fr;
   --footer-border: 1px solid var(--border-color);
   --footer-padding: 2rem;
@@ -113,6 +115,11 @@ gc-app {
 
 gc-home {
   --preview-background: var(--content-background);
+}
+
+gc-favorites [data-empty] {
+  --dialog-content-grid: 'meta' 1fr / 1fr;
+  --dialog-meta-place-self: center;
 }
 
 /* -------------------------------------------------- */
@@ -161,6 +168,11 @@ gc-home {
     --cover-inset: 0;
     --cover-position: sticky;
     --dialog-block-size: 100%;
+    --dialog-content-aspect-ratio: 2 / 1;
+    --dialog-content-grid: 'meta previews' 1fr / 1fr 1fr;
+    --dialog-meta-aspect-ratio: 1;
+    --dialog-meta-inset: 0;
+    --dialog-meta-position: sticky;
     --footer-grid-area: 3 / 2;
     --footer-padding: 1rem;
     --header-background: none;
@@ -195,7 +207,7 @@ gc-home {
     --preview-divider: var(--preview-border);
   }
 
-  gc-recipe {
-    --view-grid: 'content cover' / 1fr 1fr;
+  gc-favorites [data-empty] {
+    --dialog-meta-aspect-ratio: 2 / 1;
   }
 }
