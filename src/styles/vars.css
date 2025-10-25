@@ -80,6 +80,8 @@
   --border-radius: 1rem;
   --dialog-aspect-ratio: var(--main-aspect-ratio);
   --dialog-block-size: calc(100dvh - var(--header-block-size));
+  --dialog-border: none;
+  --dialog-border-top: 1px solid var(--border-color);
   --favorites-grid: var(--header-block-size) 1fr / 1fr;
   --footer-border: 1px solid var(--border-color);
   --footer-padding: 2rem;
@@ -122,6 +124,7 @@ gc-home {
     --back-button-margin: 0;
     --content-border-radius: 0 0 var(--border-radius) var(--border-radius);
     --cover-border-radius: var(--border-radius) var(--border-radius) 0 0;
+    --dialog-border: 1px solid var(--border-color);
     --dialog-border-radius: var(--border-radius);
     --footer-border: none;
     --header-background: rgba(242, 242, 247, .75);

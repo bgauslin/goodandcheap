@@ -1,5 +1,5 @@
 import {LitElement, html, nothing} from 'lit';
-import {customElement, query, state} from 'lit/decorators.js';
+import {customElement, property, query, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {favoriteIcon, Events, RecipePreview} from './shared';
 
@@ -9,6 +9,8 @@ class GoodAndCheapFavorites extends LitElement {
   private clickListener: EventListenerObject;
   private dataListener: EventListenerObject;
   private keyListener: EventListenerObject;
+
+  @property({reflect: true}) active: boolean = false;
 
   @query('button') button: HTMLButtonElement;
   @query('.content') content: HTMLElement;
@@ -50,12 +52,14 @@ class GoodAndCheapFavorites extends LitElement {
 
   private togglePanel() {
     if (this.open) {
+      this.active = false;
       this.inert = true;
       this.content.addEventListener('transitionend', () => {
         this.dialog.close();
         this.open = false;
       }, {once: true});
     } else {
+      this.active = true;
       this.open = true;
       this.dialog.showModal();
       window.requestAnimationFrame(() => this.inert = false);

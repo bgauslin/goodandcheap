@@ -15,6 +15,7 @@ class GoodAndCheapApp extends LitElement {
   private clickHandler: EventListenerObject;
   private favoritesHandler: EventListenerObject;
   private ingredientsHandler: EventListenerObject;
+  private observer: MutationObserver;
   private popstateHandler: EventListenerObject;
 
   // Elements.
@@ -29,6 +30,7 @@ class GoodAndCheapApp extends LitElement {
   @state() chapters: Chapter[];
   @state() context: string = 'home';
   @state() data: Data;
+  @state() dialogOpen: boolean = false;
   @state() favorites = new Set<RecipePreview>();
   @state() loading: boolean = true;
   @state() pages: Page[];
@@ -56,6 +58,7 @@ class GoodAndCheapApp extends LitElement {
     this.addEventListener(Events.Ingredients, this.ingredientsHandler);
     window.addEventListener(Events.Popstate, this.popstateHandler);
     this.fetchData();
+    this.setupObserver();
   }
 
   disconnectedCallback() {
@@ -94,6 +97,18 @@ class GoodAndCheapApp extends LitElement {
       console.warn('Currently unable to fetch data. :(');
       return;
     }
+  }
+
+  /**
+   * Sets up a MutationOberver that toggles a property based on the 'open'
+   * state of the Favorites element.
+   */
+  private async setupObserver() {
+    await this.updateComplete;
+    this.observer = new MutationObserver(() => {
+      this.dialogOpen = this.favoritesElement.getAttribute('active') === 'true';
+    });
+    this.observer.observe(this.favoritesElement, {attributes: true});
   }
 
   /**
@@ -486,20 +501,24 @@ class GoodAndCheapApp extends LitElement {
 
       <main ?data-loading="${this.loading}">
         <gc-home
+          active="${!this.dialogOpen}"
           class="view"
           transition="${this.homeTransition}"  
           ?inert="${this.context !== 'home'}"></gc-home>
         <gc-page
+          active="${!this.dialogOpen}"
           class="view"
           role="article"
           transition="${this.pageTransition}"
           ?inert="${this.context !== 'page'}"></gc-page>
         <gc-chapter
+          active="${!this.dialogOpen}"
           class="view"
           role="article"
           transition="${this.chapterTransition}"
           ?inert="${this.context !== 'chapter'}"></gc-chapter>
         <gc-recipe
+          active="${!this.dialogOpen}"
           class="view"
           role="article"
           transition="${this.recipeTransition}"

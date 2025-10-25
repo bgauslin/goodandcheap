@@ -63,7 +63,6 @@ gc-favorites {
   .dialog {
     aspect-ratio: var(--dialog-aspect-ratio, unset);
     block-size: var(--dialog-block-size);
-    border-radius: var(--dialog-border-radius);
     grid-area: 2 / 2;
     overflow: auto;
     scrollbar-width: none;
@@ -78,6 +77,9 @@ gc-favorites {
    */
   .content {
     background-color: var(--content-background);
+    border: var(--dialog-border);
+    border-block-start: var(--dialog-border-top);
+    border-radius: var(--dialog-border-radius);
     display: grid;
     grid: auto 1fr / 1fr;
     min-block-size: 100%;
