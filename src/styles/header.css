@@ -41,16 +41,11 @@ header {
    */
   .back {
     align-items: center;
-    block-size: var(--back-button-size);
-    border-radius: var(--back-button-size);
     display: grid;
-    grid: auto / var(--back-button-size) auto;
+    grid: auto / var(--button-size) auto;
     grid-area: back;
     margin-inline: var(--back-button-margin);
-    min-inline-size: var(--back-button-size);
-    padding-inline: 0;
     place-self: center start;
-    white-space: nowrap;
     
     &[disabled] {
       display: none;

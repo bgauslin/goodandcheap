@@ -84,11 +84,16 @@ svg {
 button {
   appearance: none;
   background-color: var(--button-background);
+  block-size: var(--button-size);
   border: none;
+  border-radius: var(--button-size);
   color: inherit;
   cursor: pointer;
   margin: 0;
+  min-inline-size: var(--button-size);
   outline: none;
+  padding: 0;
+  white-space: nowrap;
 
   &.touch,
   &:focus-visible {

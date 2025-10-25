@@ -8,16 +8,14 @@
 :is(.favorite, .remove) {
   aspect-ratio: 1;
   background: none;
-  border-radius: var(--icon-size);
-  inline-size: var(--icon-size);
-  inset-block: 0 auto;
-  inset-inline: auto 0;
+  inset-block: .5rem auto;
+  inset-inline: auto .5rem;
   position: absolute;
 
-  /* TODO: Add circle background on focus for a11y. */
-  &.touch,
-  &:focus-visible {
-    background: none;
+  svg {
+    inline-size: var(--icon-size);
+    stroke: var(--icon-color);
+    stroke-linecap: round;
   }
 
   @media (any-hover: hover) {
@@ -33,9 +31,6 @@
 .favorite {
   svg {
     fill: none;
-    inline-size: 1.25rem;
-    stroke: var(--icon-color);
-    stroke-linecap: round;
     stroke-width: 2.5px;
   }
 
@@ -71,10 +66,7 @@
 
   svg {
     border: 2px solid var(--icon-color);
-    border-radius: 1.25rem;
-    inline-size: 1.25rem;
-    stroke: var(--icon-color);
-    stroke-linecap: round;
+    border-radius: var(--icon-size);
     stroke-width: 3px;
   }
 

@@ -26,7 +26,7 @@
   align-items: center;
   display: grid;
   gap: .75rem;
-  grid: 'thumb description counter' auto / auto 1fr var(--icon-size);
+  grid: 'thumb description counter' auto / auto 1fr 3rem;
 }
 
 .previews__link > * {
