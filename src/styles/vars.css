@@ -15,16 +15,16 @@
   --brand-color: rgb(229, 0, 31);  /* #e5001f */
   --button-background: var(--gray5);
   --button-hover-backround: var(--gray3);
-  --callout-background: rgb(255, 255, 255, .8);
+  --callout-background: rgba(255, 255, 255, .8);
   --content-background: white;
-  --header-background: rgb(255, 255, 255, .8);
+  --header-background: rgba(255, 255, 255, .8);
   --header-border: 1px solid var(--border-color);
   --icon-add-background: rgba(46, 209, 67, .1);
   --icon-add-color: #2ed143;
   --icon-color: var(--gray2);
   --icon-favorite-background: rgba(229, 0, 31, .5);
   --icon-favorite-color: var(--brand-color);
-  --icon-remove-background: rgb(229, 0, 31, .2);
+  --icon-remove-background: rgba(229, 0, 31, .2);
   --icon-remove-color: rgb(229, 0, 31);
   --image-background: var(--gray4);
   --link-color: var(--text-color);
@@ -59,13 +59,13 @@
     --body-background: black;
     --border-color: var(--gray5);
     --brand-color: rgb(237, 77, 98);  /* #ed4d62 */
-    --callout-background: rgb(28, 28, 30, .9);
+    --callout-background: rgba(28, 28, 30, .9);
     --content-background: var(--gray6);
-    --header-background: rgba(28, 28, 30, .75);
+    --header-background: rgba(28, 28, 30, .8);
     --icon-add-background: rgba(109, 223, 123, .4);
     --icon-add-color: #6ddf7b;
-    --icon-favorite-background: rgba(237, 77, 98, .75);
-    --icon-remove-background: rgb(237, 77, 98, .75);
+    --icon-favorite-background: rgba(237, 77, 98, .7);
+    --icon-remove-background: rgba(237, 77, 98, .2);
     --icon-remove-color: rgb(237, 77, 98);
     --link-visited-color: rgb(174, 174, 178);  /* Gray2 light. */
     --text-color: rgb(229, 229, 234);  /* Gray5 light. */

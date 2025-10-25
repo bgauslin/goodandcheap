@@ -4,10 +4,10 @@
 @import 'app';
 @import 'chapter';
 @import 'cover';
-@import 'favorite';
 @import 'favorites';
 @import 'footer';
 @import 'header';
+@import 'icon-buttons';
 @import 'page';
 @import 'previews';
 @import 'recipe';

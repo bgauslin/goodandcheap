@@ -143,7 +143,7 @@ class GoodAndCheapRecipe extends LitElement {
                 ${items.map((item, j) => {
                   const id = `${i}.${j}`;
                   const checked = this.ingredients.includes(id);
-                  const path = checked ? 'M4,11 L10,17, L20,7' : '';
+                  const path = checked ? 'M4,11 L10,17, L19,8' : '';
                   return html`
                   <li
                     class="ingredients__item"

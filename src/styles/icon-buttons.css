@@ -1,9 +1,9 @@
 /* -------------------------------------------------------------------------- */
-/* Favorites <button> styles for saving/remving recipes. */
+/* Icon <button> styles for saving/removing recipes. */
 /* -------------------------------------------------------------------------- */
 
 /**
- * Both 'favorite' and 'remove' buttons.
+ * The 'favorite' and 'remove' buttons.
  */
 :is(.favorite, .remove) {
   aspect-ratio: 1;
@@ -14,7 +14,7 @@
   inset-inline: auto 0;
   position: absolute;
 
-  /* TODO: Update hover, focus states for a11y. */
+  /* TODO: Add circle background on focus for a11y. */
   &.touch,
   &:focus-visible {
     background: none;
@@ -44,15 +44,11 @@
     svg {
       stroke: var(--icon-favorite-color);
     }
-
-    &[data-checked='true'] svg {
-      fill: none;
-    }
   }
 
   @media (any-hover: hover) {
     & svg {
-      transition: stroke var(--transition);
+      transition: fill var(--transition), stroke var(--transition);
     }
 
     &:hover svg {
@@ -61,7 +57,7 @@
   }
 
   &[data-checked='true'] svg {
-    fill: var(--icon-favorite-background); 
+    fill: var(--icon-favorite-background);
     stroke: var(--icon-favorite-color);
   }
 }
