@@ -39,6 +39,27 @@
     stroke-width: 2.5px;
   }
 
+  &.touch,
+  &:focus-visible {
+    svg {
+      stroke: var(--icon-favorite-color);
+    }
+
+    &[data-checked='true'] svg {
+      fill: none;
+    }
+  }
+
+  @media (any-hover: hover) {
+    & svg {
+      transition: stroke var(--transition);
+    }
+
+    &:hover svg {
+      stroke: var(--icon-favorite-color);
+    }
+  }
+
   &[data-checked='true'] svg {
     fill: var(--icon-favorite-background); 
     stroke: var(--icon-favorite-color);
