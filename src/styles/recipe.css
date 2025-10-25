@@ -99,21 +99,44 @@ gc-recipe {
     padding-block: .3em;
   }
 
-  .ingredients__item > svg {
-    aspect-ratio: 1;
-    inline-size: var(--marker-size);
-    border: 2px solid var(--icon-color);
-    border-radius: var(--marker-size);
-    fill: none;
-    grid-area: icon;
-    place-self: center;
-    stroke: var(--icon-add-color);
-    stroke-width: 3px;
-  }
+  .ingredients__item {
+    outline: none;
 
-  .ingredients__item[data-checked] > svg {
-    background-color: var(--icon-add-background);
-    border-color: var(--icon-add-color);
+    svg {
+      aspect-ratio: 1;
+      inline-size: var(--marker-size);
+      border: 2px solid var(--icon-color);
+      border-radius: var(--marker-size);
+      fill: none;
+      grid-area: icon;
+      place-self: center;
+      stroke-width: 3px;
+    }
+
+    &.touch,
+    &:focus-visible {
+      svg {
+        background-color: var(--icon-add-background);
+        border-color: var(--icon-add-color);
+      }
+    }
+
+    @media (any-hover: hover) {
+      & svg {
+        transition: background-color var(--transition), border-color var(--transition);
+      }
+
+      &:hover svg {
+        background-color: var(--icon-add-background);
+        border-color: var(--icon-add-color);
+      }
+    }
+
+    &[data-checked] > svg {
+      background-color: var(--icon-add-background);
+      border-color: var(--icon-add-color);
+      stroke: var(--icon-add-color);
+    }
   }
 
   .ingredients__item > span {
