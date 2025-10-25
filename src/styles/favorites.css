@@ -62,7 +62,7 @@ gc-favorites {
    */
   .dialog {
     grid-area: 2 / 2;
-    overflow: hidden;
+    overflow: auto;
   }
 
   /**
