@@ -4,6 +4,10 @@ import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {favoriteIcon, Events, RecipePreview} from './shared';
 
 
+/**
+ * Custom element for rendering favorites in a <dialog>, as well as removing
+ * them.
+ */
 @customElement('gc-favorites')
 class GoodAndCheapFavorites extends LitElement {
   private clickListener: EventListenerObject;
@@ -50,6 +54,11 @@ class GoodAndCheapFavorites extends LitElement {
     this.requestUpdate();
   }
 
+  /**
+   * Opens/closes the <dialog> and uses a one-time listener and an RAF tick
+   * to ensure smooth transitions since a <dialog> opens/closes instantly
+   * by default.
+   */
   private togglePanel() {
     if (this.open) {
       this.active = false;
@@ -80,6 +89,10 @@ class GoodAndCheapFavorites extends LitElement {
     }));
   }
 
+  /**
+   * Opens/closes the <dialog> based on where a click occurs. This allows
+   * clicks outside the element to close an opened <dialog>.
+   */
   private handleClick(event: Event) {
     const target = <HTMLElement>event.composedPath()[0];
 
@@ -96,9 +109,10 @@ class GoodAndCheapFavorites extends LitElement {
   }
 
   /**
-   * The [esc] key closes modal dialogs by default, and since we can't hijack
-   * it to change the 'open' state after the transition finishes, we need to
-   * manually change the 'open' and 'inert' attributes here.
+   * Forces attribute changes when the [esc] key is pressed. Since the [esc] key
+   * closes modal dialogs by default, and since we can't hijack modal behavior
+   * to change the 'open' state after a transition finishes, we need to manually
+   * change the attributes here.
    */
   private handleKey(event: KeyboardEvent) {
     const {code} = event;

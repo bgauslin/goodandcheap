@@ -17,7 +17,7 @@ interface Item {
 }
 
 /**
- * Custom element for rendering the Home page for the Good And Cheap app'.
+ * Custom element for rendering the Home page for the Good And Cheap app.
  * This element fetches data from a JSON endpoint, renders it into tabs,
  * and changes the active tab based on button click.
  */
@@ -44,8 +44,8 @@ class GoodAndCheapHome extends LitElement {
   }
 
   /**
-   * This component fetches its own data to quickly render it while the
-   * app is busy fetching data for everything else.
+   * Fetches data to quickly render the home view while the app is busy
+   * fetching data for everything else.
    */
   private async fetchData(): Promise<Home> {
     try {

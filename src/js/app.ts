@@ -8,7 +8,8 @@ import {footer, STORAGE_ITEM, Events, Chapter, Data, Page, Recipe, RecipePreview
  * Custom element that does all the heavy lifting for the Good And Cheap app.
  * This component fetches data from a JSON endpoint; sends data to child
  * components for rendering; sets CSS transitions for before/after view changes;
- * and updates the browser's address bar and title.
+ * processes and stores saved favorites and ingredients; and updates the
+ * browser's address bar and title.
  */
 @customElement('gc-app')
 class GoodAndCheapApp extends LitElement {
@@ -100,8 +101,8 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
-   * Sets up a MutationOberver that toggles a property based on the 'open'
-   * state of the Favorites element.
+   * Sets up a MutationOberver that toggles a property based on the open/closed
+   * state of the Favorites component.
    */
   private async setupObserver() {
     await this.updateComplete;
@@ -126,8 +127,7 @@ class GoodAndCheapApp extends LitElement {
       recipe.savedIngredients = list.items;
     }
 
-    // Save the recipe preview to favorites and update its state within its
-    // chapter.
+    // Save the recipe preview to favorites and update it within its chapter.
     for (const chapter of this.chapters) {
       const {recipes} = chapter;
       for (const preview of recipes) {
@@ -160,7 +160,7 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
-   * Captures event dispatched from <gc-recipe> and updates the list of user
+   * Captures event dispatched from components and updates the list of user
    * favorites.
    */
   private handleFavorites(event: CustomEvent) {
@@ -224,7 +224,7 @@ class GoodAndCheapApp extends LitElement {
       favorites.push(favorite.id);
     }
 
-    // Bundle everything up and save to localStorage.
+    // Bundle and save everything.
     const saved = {
       favorites,
       ingredients,
@@ -274,7 +274,7 @@ class GoodAndCheapApp extends LitElement {
       this.updateAddressBar(id, recipe.chapter);
     }
 
-    // Reset scroll position if recipe was clicked from favorites list.
+    // Reset scroll position if a recipe was clicked from the favorites list.
     if (previousContext === 'recipe' && this.context === 'recipe') {
       window.requestAnimationFrame(() => this.recipeElement.scrollTo(0, 0));
     }
@@ -286,7 +286,7 @@ class GoodAndCheapApp extends LitElement {
 
   /**
    * Updates the app when the 'Back' button is clicked. If current context
-   * is a Recipe, then next will be a Chapter. Otherwise, default to Home.
+   * is a recipe, then next will be a chapter. Otherwise, default to home.
    */
   private handleBackButton() {
     if (this.context === 'recipe') {
@@ -374,8 +374,8 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
-   * Helper function that gets the parent Chapter of a Recipe for updating
-   * elements and the browser window.
+   * Helper function that gets the parent chapter of a recipe for updating
+   * components and the browser.
    */
   private getChapter(id: string): Chapter {
     const recipe = this.recipes.find(recipe => recipe.id === id);
@@ -385,7 +385,7 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
-   * Updates URL in the address bar.
+   * Updates URL in the browser's address bar.
    */ 
   private updateAddressBar(id: string, parent?: string) {
     let path = `./${id}`;

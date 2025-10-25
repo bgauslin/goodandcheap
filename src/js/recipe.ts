@@ -5,9 +5,9 @@ import {Events, Recipe, favoriteIcon, footer} from './shared';
 
 
 /**
- * Custom element for rendering a Recipe for the Good And Cheap app.
- * This element receives data from a custom event and renders it, then sets
- * up an Intersection Observer for styling sticky headings when stuck.
+ * Custom element for rendering a recipe for the Good And Cheap app.
+ * This element receives data from a custom event and renders it, and sends
+ * saved ingredients and favorite state up to the app for processing.
  */
 @customElement('gc-recipe')
 class GoodAndCheapRecipe extends LitElement {

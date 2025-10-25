@@ -33,11 +33,15 @@ class GoodAndCheapChapter extends LitElement {
     return this;
   }
 
+  /**
+   * Receives data for rendering and creates a copy of the favorites for
+   * adding/removing when a 'favorite' button is clicked.
+   */
   private updateData(event: CustomEvent) {
     this.data = event.detail;
     this.favorites = new Set();
 
-    // Populate local Set for toggling 'favorite' state of each recipe preview.
+    // Populate local copy for toggling 'favorite' state of each recipe preview.
     const {recipes} = this.data;
     for (const recipe of recipes) {
       const {favorite, id} = recipe;
@@ -58,7 +62,7 @@ class GoodAndCheapChapter extends LitElement {
       this.favorites.add(id);
     }
 
-    // Re-render the template
+    // Re-render the template.
     this.requestUpdate();
 
     // Dispatch to the app for processing.
