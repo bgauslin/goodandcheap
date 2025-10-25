@@ -107,13 +107,13 @@ gc-recipe {
     fill: none;
     grid-area: icon;
     place-self: center;
-    stroke: var(--icon-active-color);
+    stroke: var(--icon-add-color);
     stroke-width: 3px;
   }
 
   .ingredients__item[data-checked] > svg {
-    background-color: var(--icon-active-background);
-    border-color: var(--icon-active-color);
+    background-color: var(--icon-add-background);
+    border-color: var(--icon-add-color);
   }
 
   .ingredients__item > span {

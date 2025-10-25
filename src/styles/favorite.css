@@ -1,9 +1,11 @@
 /* -------------------------------------------------------------------------- */
-/* Favorite <button> for saving recipes. */
+/* Favorites <button> styles for saving/remving recipes. */
 /* -------------------------------------------------------------------------- */
 
-.favorite,
-.remove {
+/**
+ * Both 'favorite' and 'remove' buttons.
+ */
+:is(.favorite, .remove) {
   aspect-ratio: 1;
   background: none;
   border-radius: var(--icon-size);
@@ -25,15 +27,55 @@
   }
 }
 
-.favorite svg {
-  fill: none;
-  inline-size: 1.25rem;
-  stroke: var(--icon-color);
-  stroke-linecap: round;
-  stroke-width: 2.5px;
+/**
+ * 'favorite' button.
+ */
+.favorite {
+  svg {
+    fill: none;
+    inline-size: 1.25rem;
+    stroke: var(--icon-color);
+    stroke-linecap: round;
+    stroke-width: 2.5px;
+  }
+
+  &[data-checked='true'] svg {
+    fill: var(--icon-favorite-background); 
+    stroke: var(--icon-favorite-color);
+  }
 }
 
-.favorite[data-checked='true'] svg {
-  fill: var(--favorite-background); 
-  stroke: var(--favorite-color);
+/**
+ * 'remove' button.
+ */
+.remove  {
+  svg {
+    border: 2px solid var(--icon-color);
+    border-radius: 1.25rem;
+    inline-size: 1.25rem;
+    stroke: var(--icon-color);
+    stroke-linecap: round;
+    stroke-width: 3px;
+  }
+
+  &.touch,
+  &:focus-visible {
+    svg {
+      background-color: var(--icon-remove-background);
+      border-color: var(--icon-remove-color);
+      stroke: var(--icon-remove-color);
+    }
+  }
+
+  @media (any-hover: hover) {
+    & svg {
+      transition: background-color var(--transition), border-color var(--transition), stroke var(--transition);
+    }
+
+    &:hover svg {
+      background-color: var(--icon-remove-background);
+      border-color: var(--icon-remove-color);
+      stroke: var(--icon-remove-color);
+    }
+  }
 }

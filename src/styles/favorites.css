@@ -120,13 +120,4 @@ gc-favorites {
     display: grid;
     place-items: center;
   }
-
-  .remove svg {
-    background-color: var(--brand-color);
-    border-radius: 1.25rem;
-    inline-size: 1.25rem;
-    stroke: var(--text-color-inverted);
-    stroke-linecap: round;
-    stroke-width: 3px;
-  }
 }
