@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- */
-/* Styles for app and its primary child elements. */
+/* Styles for <gc-app> and its primary components and elements. */
 /* -------------------------------------------------------------------------- */
 
 gc-app {
@@ -64,7 +64,7 @@ main {
 }
 
 /* ---------------------------------------- */
-/* View component children. */
+/* Primary/repeated elements. */
 
 .content {
   background-color: var(--content-background);

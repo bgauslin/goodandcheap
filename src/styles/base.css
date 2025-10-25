@@ -2,9 +2,9 @@
 /* Base HTML styles.
 /* -------------------------------------------------------------------------- */
 
-/* ---------------------------------------- */
-/* Webfonts. */
-
+/**
+ * Webfonts.
+ */
 @font-face {
   font-display: swap;
   font-family: 'Carmina Bold';

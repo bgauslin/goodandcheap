@@ -2,8 +2,12 @@
 /* Favorites view via a <button> that toggles a <dialog>. */
 /* -------------------------------------------------------------------------- */
 
+/**
+ * [1] The 'display' override lets us place the <button> within its parent
+ *     header's grid.
+ */
 gc-favorites {
-  display: contents;
+  display: contents;  /* [1] */
 
   /*
    * Open/close button.
@@ -28,9 +32,14 @@ gc-favorites {
   }
 
   /**
+   * The <dialog> is full-screen with a .dialog element that mimics the layout
+   * of the <main> element. Within the .dialog element is the .content element
+   * which actually behaves like a modal dialog. This nesting allows us to
+   * adopt the layout of the rest of the app and apply transitions to the modal.
+   *
    * [1] Override to enable transitions.
    * [2] Browser overrides for fullscreen layout.
-   * [3] Ensure <dialog> is hidden since it has 'display' override.
+   * [3] Ensure <dialog> is hidden since it also has a 'display' override.
    */
   dialog {
     background: none;
@@ -58,15 +67,27 @@ gc-favorites {
   }
 
   /**
+   * Hide scrollbars for both the .dialog and .content elements.
+   */
+  .dialog,
+  .content {
+    overflow: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /**
    * Container element whose layout mimics the <main> element.
    */
   .dialog {
     grid-area: 2 / 2;
-    overflow: auto;
   }
 
   /**
-   * Child element with transitions applied to it.
+   * Modal element with transitions applied to it.
    */
   .content {
     aspect-ratio: var(--dialog-content-aspect-ratio);
@@ -77,15 +98,16 @@ gc-favorites {
     display: grid;
     grid: var(--dialog-content-grid);
     min-block-size: 100%;
-    overflow: auto;
-    scrollbar-width: none;
     transition: transform var(--transition);
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
 
+  dialog[inert] .content {
+    transform: translateY(100%);
+  }
+
+  /**
+   * Layout container for the heading.
+   */
   .meta {
     aspect-ratio: var(--dialog-meta-aspect-ratio);
     display: grid;
@@ -105,19 +127,12 @@ gc-favorites {
     text-align: center;
   }
 
+  /**
+   * Previews of favorited recipes.
+   */
   .previews {
     border-block-end: 1px solid var(--border-color);
     grid-area: previews;
     place-self: start stretch;
-  }
-
-  dialog[inert] .content {
-    transform: translateY(100%);
-  }
-
-  /* Recipe preview 'remove' button and icon. */
-  .remove {
-    display: grid;
-    place-items: center;
   }
 }

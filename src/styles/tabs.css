@@ -2,6 +2,9 @@
 /* Tabbed widget on the home page.
 /* -------------------------------------------------------------------------- */
 
+/**
+ * Grouped tab buttons.
+ */
 [role='tablist'] {
   display: grid;
   gap: 0 1rem;

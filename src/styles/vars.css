@@ -1,5 +1,7 @@
 :root {
-  /* Apple HGI light mode colors. */
+  /**
+   * Apple HGI light mode colors.
+   */
   --gray1: rgb(142, 142, 147);
   --gray2: rgb(174, 174, 178);
   --gray3: rgb(199, 199, 204);
@@ -7,7 +9,9 @@
   --gray5: rgb(229, 229, 234);
   --gray6: rgb(242, 242, 247);
 
-  /* Branding and theming. */
+  /**
+   * Branding and theming.
+   */
   --backdrop-filter: blur(6px);
   --badge-background: var(--gray5);
   --body-background: var(--gray6);
@@ -33,11 +37,15 @@
   --text-color: rgb(44, 44, 46);  /* Gray5 dark. */
   --text-color-inverted: white;
 
-  /* Typography. */
+  /**
+   * Typography.
+   */
   --small-font-size: 60%;
   --subhead-font-size: 80%;
 
-  /* Transitions. */
+  /**
+   * Transitions.
+   */
   --transition: .25s;
 }
 
@@ -46,7 +54,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Apple HGI dark mode colors. */
+    /**
+     * Apple HGI dark mode colors.
+     */
     --gray1: rgb(142, 142, 147);
     --gray2: rgb(99, 99, 102);
     --gray3: rgb(72, 72, 74);
@@ -54,7 +64,9 @@
     --gray5: rgb(44, 44, 46);
     --gray6: rgb(28, 28, 30);
 
-    /* Dark mode branding and theming. */
+    /**
+     * Dark mode branding and theming.
+     */
     --badge-background: var(--gray4);
     --body-background: black;
     --border-color: var(--gray5);

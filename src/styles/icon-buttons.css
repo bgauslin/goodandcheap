@@ -28,7 +28,7 @@
 }
 
 /**
- * 'favorite' button.
+ * The 'favorite' button.
  */
 .favorite {
   svg {
@@ -63,9 +63,12 @@
 }
 
 /**
- * 'remove' button.
+ * The 'remove' button.
  */
 .remove  {
+  display: grid;
+  place-items: center;
+
   svg {
     border: 2px solid var(--icon-color);
     border-radius: 1.25rem;
