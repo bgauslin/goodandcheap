@@ -15,7 +15,6 @@
   place-content: center;
 
   button {
-    border-radius: 2rem;
     padding-block: .5rem;
     padding-inline: .75rem;
   }

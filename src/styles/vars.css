@@ -102,7 +102,7 @@
   --app-grid: var(--header-block-size) 1fr / 1fr minmax(auto, var(--section-max-inline-size)) 1fr;
   --back-button-label-display: none;
   --border-radius: 1rem;
-  --button-size: 2rem;
+  --button-size: 2.25rem;
   --dialog-aspect-ratio: var(--main-aspect-ratio);
   --dialog-block-size: calc(100dvh - var(--header-block-size));
   --dialog-border: none;

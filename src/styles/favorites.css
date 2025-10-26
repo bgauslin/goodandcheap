@@ -27,16 +27,16 @@ gc-favorites {
 
   .toggle .count {
     background-color: var(--brand-color);
+    block-size: 1rem;
     border-radius: 1rem;
     color: var(--text-color-inverted);
     display: grid;
     grid-area: count;
-    block-size: 1rem;
+    margin-inline: auto -.375rem;
     min-inline-size: 1rem;
     padding-inline: .3em;
     place-content: center;
     letter-spacing: 0;
-    /* text-align: center; */
   }
 
   /**
