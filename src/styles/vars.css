@@ -143,6 +143,7 @@ gc-home {
 
 gc-favorites [data-empty] {
   --dialog-content-grid: 'meta' 1fr / 1fr;
+  --dialog-meta-border-block: none;
   --dialog-meta-place-self: center;
 }
 
