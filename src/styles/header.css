@@ -42,12 +42,12 @@ header {
  * 'Back' button.
  */
 .back {
-  align-items: center;
   background: none;
   color: var(--brand-color);
   display: grid;
   grid: auto / var(--button-size) auto;
   grid-area: back;
+  place-items: center;
   place-self: center start;
   
   &[disabled] {
@@ -59,11 +59,11 @@ header {
   }
 
   svg {
-    block-size: 1.75em;
+    inline-size: var(--icon-size);
     fill: none;
     stroke: currentColor;
     stroke-linecap: round;
-    stroke-width: 3px;
+    stroke-width: 2.5px;
   }
 
   span {

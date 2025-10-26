@@ -3,9 +3,9 @@
 /* -------------------------------------------------------------------------- */
 
 /**
- * All 'favorite' and 'remove' buttons.
+ * All favorites buttons.
  */
-:is(.favorite, .remove) {
+:is(.close, .favorite, .remove) {
   aspect-ratio: 1;
 
   svg {
@@ -56,10 +56,23 @@
   color: var(--brand-color);
 
   svg {
-    fill: currentColor;
     stroke: currentColor;
   }
 }
+
+/**
+ * The 'close' button that appears when the <dialog> is open.
+ */
+.close {
+  background: none;
+  color: inherit;
+
+  svg {
+    stroke: currentColor;
+    stroke-width: 2.5px;
+  }
+}
+
 
 /**
  * Chapter and recipe 'favorite' buttons.

@@ -13,6 +13,7 @@ gc-favorites {
    * Open/close button.
    */
   .toggle {
+    cursor: pointer;
     display: grid;
     grid: 'count button' auto / auto;
     grid-area: favorites;
@@ -20,12 +21,22 @@ gc-favorites {
     place-items: center;
   }
 
-  .favorite--toggle {
+  .favorite--toggle, .close {
     grid-area: button;
   }
 
   .toggle .count {
+    background-color: var(--brand-color);
+    border-radius: 1rem;
+    color: var(--text-color-inverted);
+    display: grid;
     grid-area: count;
+    block-size: 1rem;
+    min-inline-size: 1rem;
+    padding-inline: .3em;
+    place-content: center;
+    letter-spacing: 0;
+    /* text-align: center; */
   }
 
   /**

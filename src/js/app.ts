@@ -483,7 +483,7 @@ class GoodAndCheapApp extends LitElement {
             ?disabled="${this.context === 'home' || this.dialogOpen}"
             @click="${this.handleBackButton}">
             <svg aria-hidden="true" viewbox="0 0 24 24">
-              <path d="M15,4 L7,12 L15,20"/>
+              <path d="M14,5 L7,12 L14,19"/>
             </svg>
             <span>${unsafeHTML(this.backLabel)}</span>
           </button>

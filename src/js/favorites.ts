@@ -157,9 +157,12 @@ class GoodAndCheapFavorites extends LitElement {
     }
 
     const count = this.data.size;
-    const label = count ? `${count} Favorite${count > 1 || count === 0 ? 's' : ''}` : 'Favorites';
+    let label = count ? `${count} Favorite${count > 1 || count === 0 ? 's' : ''}` : 'Favorites';
+    if (this.active) label = 'Close Favorites';
     return html`
       <div class="toggle">
+      ${!this.active ?
+      html`
         <button
           aria-label="${label}"
           class="favorite favorite--toggle"
@@ -167,7 +170,19 @@ class GoodAndCheapFavorites extends LitElement {
           type="button">
           ${unsafeHTML(favoriteIcon)}
         </button>
-        <div class="count">${count ? count : nothing}</div>
+        ${count ? html`<div class="count">${count}</div>` : nothing}
+      ` :
+      html`
+        <button
+          aria-label="${label}"
+          class="close"
+          title="${label}"
+          type="button">
+          <svg aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M5,5 L19,19 M5,19 L19,5"/>
+          </svg>
+        </button>
+      `}
       </div>
 
       <dialog
