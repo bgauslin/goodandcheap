@@ -57,9 +57,10 @@
   --button-background: var(--content-background);
 }
 
-/* -------------------------------------------------- */
-/* Dark mode */
-
+/**
+ * ------------------------------------------------------
+ * Dark mode
+ */
 @media (prefers-color-scheme: dark) {
   :root {
     /**
@@ -93,9 +94,10 @@
   }
 }
 
-/* -------------------------------------------------- */
-/* Small / default */
-
+/**
+ * ------------------------------------------------------
+ * Small / default
+ */
 :root {
   --app-grid: var(--header-block-size) 1fr / 1fr minmax(auto, var(--section-max-inline-size)) 1fr;
   --back-button-label-display: none;
@@ -147,9 +149,10 @@ gc-favorites [data-empty] {
   --dialog-meta-place-self: center;
 }
 
-/* -------------------------------------------------- */
-/* Medium | 32rem = 512px */
-
+/**
+ * ------------------------------------------------------
+ * Medium | 32rem = 512px
+ */
 @media (min-width: 32rem) {
   :root {
     --app-grid: var(--header-block-size) 1fr / 1fr var(--section-max-inline-size) 1fr;
@@ -184,13 +187,14 @@ gc-favorites [data-empty] {
   }
 }
 
-/* -------------------------------------------------- */
-/* Large, Landscape | 64rem = 1024px */
-
-@media (min-width: 64rem) and (orientation: landscape) {
+/**
+ * ------------------------------------------------------
+ * Large, Landscape | 67rem = 1072px
+ * 64rem max-size + 1.5rem inline-padding room for <main>
+ */
+@media (min-width: 67rem) and (orientation: landscape) {
   :root {
     --app-grid: 1fr auto 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
-    --app-margin: var(--gap);
     --back-button-label-display: initial;
     --content-border-radius: none;
     --cover-border-radius: none;
@@ -200,10 +204,8 @@ gc-favorites [data-empty] {
     --dialog-content-aspect-ratio: 2 / 1;
     --dialog-content-grid: 'meta previews' 1fr / 1fr 1fr;
     --dialog-meta-aspect-ratio: 1;
-
     --dialog-meta-border-block: none;
     --dialog-meta-border-inline: 1px solid var(--border-color);
-
     --dialog-meta-inset: 0;
     --dialog-meta-position: sticky;
     --footer-grid-area: 3 / 2;

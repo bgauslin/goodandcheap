@@ -58,7 +58,6 @@ gc-favorites {
     grid: var(--app-grid);
     inline-size: 100dvw;
     margin: 0;
-    padding-inline: var(--app-margin);
     max-block-size: 100dvh;  /* [2] */
     max-inline-size: 100dvw;  /* [2] */
     outline: none;

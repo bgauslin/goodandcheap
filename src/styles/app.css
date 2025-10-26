@@ -5,7 +5,6 @@
 gc-app {
   display: grid;
   grid: var(--app-grid);
-  margin-inline: var(--app-margin);
   min-block-size: 100dvh;
 }
 
