@@ -28,7 +28,8 @@ customElements.define('gc-touch', class GoodAndCheapTouch extends HTMLElement {
   touchstart(event: Event) {
     this.target = <HTMLElement>event.composedPath()[0];
 
-    if (['a', 'button'].includes(this.target.tagName.toLowerCase())) {
+    if (['a', 'button'].includes(this.target.tagName.toLowerCase()) ||
+        ['ingredients__item'].includes(this.target.className)) {
       this.target.classList.add('touch');
     }
   }

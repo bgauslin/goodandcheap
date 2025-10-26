@@ -111,8 +111,24 @@ gc-recipe {
     outline: none;
     padding-block: .3em;
 
+    &.touch,
+    &:focus-visible {
+      color: var(--icon-add-color);
+    }
+
+    @media (any-hover: hover) {
+      & {
+        transition: color var(--transition);
+      }
+
+      &:hover {
+        color: var(--icon-add-color);
+      }
+    }
+
     .text {
       grid-area: text;
+      pointer-events: none;
     }
 
     svg {
@@ -135,18 +151,16 @@ gc-recipe {
     &.touch,
     &:focus-visible {
       .checkbox {
-        background-color: var(--icon-add-background);
         border-color: var(--icon-add-color);
       }
     }
 
     @media (any-hover: hover) {
       & .checkbox {
-        transition: background-color var(--transition), border-color var(--transition);
+        transition: border-color var(--transition);
       }
 
       &:hover .checkbox {
-        background-color: var(--icon-add-background);
         border-color: var(--icon-add-color);
       }
     }

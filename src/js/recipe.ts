@@ -12,6 +12,7 @@ import {checkboxIcon, favoriteIcon, footer, Events, Recipe} from './shared';
 @customElement('gc-recipe')
 class GoodAndCheapRecipe extends LitElement {
   private dataListener: EventListenerObject;
+  private keyListener: EventListenerObject;
   
   @state() data: Recipe;
   @state() favorite: boolean = false;
@@ -20,16 +21,19 @@ class GoodAndCheapRecipe extends LitElement {
   constructor() {
     super();
     this.dataListener = this.updateData.bind(this);
+    this.keyListener = this.handleKey.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener(Events.Data, this.dataListener);
+    window.addEventListener(Events.Keyup, this.keyListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.removeEventListener(Events.Data, this.dataListener);
+    window.removeEventListener(Events.Keyup, this.keyListener);
   }
 
   protected createRenderRoot() {
@@ -87,6 +91,19 @@ class GoodAndCheapRecipe extends LitElement {
         id,
       }
     }));
+  }
+  
+  /**
+   * Adds keyboard a11y to ingredients items.
+   */
+  private handleKey(event: KeyboardEvent) {
+    const {code} = event;
+    if (code === 'Enter') {
+      const element = <HTMLElement>document.activeElement;
+      if (element.className === 'ingredients__item') {
+        element.click();
+      }
+    }
   }
 
   protected render() {
