@@ -123,7 +123,7 @@ class GoodAndCheapRecipe extends LitElement {
           ${serving ? html`<div class="serving">${serving}</div>` : nothing}
           ${overview ? html`${unsafeHTML(overview)}` : nothing}
           <button
-            class="favorite"
+            class="favorite favorite--recipe"
             data-checked="${this.favorite}"
             title="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
             type="button"

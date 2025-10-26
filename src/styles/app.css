@@ -15,6 +15,7 @@ gc-app {
 main {
   aspect-ratio: var(--main-aspect-ratio, unset);
   block-size: var(--main-block-size);
+  border: var(--main-border, none);
   border-radius: var(--main-border-radius);
   display: grid;
   grid: 'view' 1fr / 1fr;

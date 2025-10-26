@@ -103,7 +103,7 @@ class GoodAndCheapChapter extends LitElement {
           </a>
 
           <button
-            class="favorite"
+            class="favorite favorite--preview"
             data-checked="${favorite}"
             title="${favorite ? 'Remove from' : 'Add to'} Favorites"
             type="button"

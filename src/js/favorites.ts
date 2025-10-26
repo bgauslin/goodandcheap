@@ -162,7 +162,7 @@ class GoodAndCheapFavorites extends LitElement {
       <div class="toggle">
         <button
           aria-label="${label}"
-          class="favorite"
+          class="favorite favorite--toggle"
           title="${label}"
           type="button">
           ${unsafeHTML(favoriteIcon)}

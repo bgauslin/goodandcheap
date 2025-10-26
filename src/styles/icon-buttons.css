@@ -3,19 +3,28 @@
 /* -------------------------------------------------------------------------- */
 
 /**
- * The 'favorite' and 'remove' buttons.
+ * All 'favorite' and 'remove' buttons.
  */
 :is(.favorite, .remove) {
   aspect-ratio: 1;
-  background: none;
+
+  svg {
+    inline-size: var(--icon-size);
+    stroke-linecap: round;
+  }
+}
+
+/**
+ * Chapter and recipe 'favorite' buttons, 'remove favorite' button.
+ */
+:is(.favorite--preview, .favorite--recipe, .remove) {
   inset-block: .5rem auto;
   inset-inline: auto .5rem;
   position: absolute;
 
-  svg {
-    inline-size: var(--icon-size);
-    stroke: var(--icon-color);
-    stroke-linecap: round;
+  &,
+  &.touch {
+    background: none;
   }
 
   @media (any-hover: hover) {
@@ -23,16 +32,39 @@
       background: none;
     }
   }
+
+  svg {
+    stroke: var(--icon-color);
+  }
 }
 
 /**
- * The 'favorite' button.
+ * Typical 'favorite' button.
  */
 .favorite {
   svg {
     fill: none;
     stroke-width: 2.5px;
   }
+}
+
+/**
+ * The 'favorite' button that toggles a <dialog>.
+ */
+.favorite--toggle {
+  background: none;
+  color: var(--brand-color);
+
+  svg {
+    fill: currentColor;
+    stroke: currentColor;
+  }
+}
+
+/**
+ * Chapter and recipe 'favorite' buttons.
+ */
+:is(.favorite--preview, .favorite--recipe) {
 
   &.touch,
   &:focus-visible {
@@ -58,7 +90,7 @@
 }
 
 /**
- * The 'remove' button.
+ * Typical 'remove favorite' button.
  */
 .remove  {
   display: grid;
