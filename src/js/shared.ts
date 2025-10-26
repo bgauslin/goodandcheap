@@ -1,3 +1,8 @@
+export const checkboxIcon = `
+  <svg aria-hidden="true" viewbox="0 0 24 24">
+    <path d="M4,11 L10,17, L19,8"/>
+  </svg>`;
+
 export const favoriteIcon = `
   <svg aria-hidden="true" viewbox="0 0 24 24">
     <path d="M12,21 L3,12 A 1 1 0 0 1 12 5 A 1 1 0 0 1 21 12 L12,21"/>

@@ -1,7 +1,7 @@
 import {LitElement, html, nothing} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Events, Recipe, favoriteIcon, footer} from './shared';
+import {checkboxIcon, favoriteIcon, footer, Events, Recipe} from './shared';
 
 
 /**
@@ -143,15 +143,14 @@ class GoodAndCheapRecipe extends LitElement {
                 ${items.map((item, j) => {
                   const id = `${i}.${j}`;
                   const checked = this.ingredients.includes(id);
-                  const path = checked ? 'M4,11 L10,17, L19,8' : '';
                   return html`
                   <li
                     class="ingredients__item"
                     ?data-checked="${checked}"
                     tabindex="0"
                     @click="${() => this.saveIngredients(id)}">
-                    <svg aria-hidden="true" viewbox="0 0 24 24"><path d="${path}"/></svg>
-                    <span>${unsafeHTML(item)}</span>
+                    <span class="checkbox">${checked ? html`${unsafeHTML(checkboxIcon)}` : nothing}</span>
+                    <span class="text">${unsafeHTML(item)}</span>
                   </li>`
                 })}
               </ul>
@@ -169,7 +168,7 @@ class GoodAndCheapRecipe extends LitElement {
 
         ${more ? html`
         <section>
-          ${more.map(item => {
+          ${more.map((item, k) => {
             const {copy, cost, heading, image, ingredients, steps} = item;
             return html`
             <div class="more">
@@ -196,14 +195,23 @@ class GoodAndCheapRecipe extends LitElement {
               ${copy ? html`<p>${unsafeHTML(copy)}</p>` : nothing}
 
               ${ingredients ? html`
-                ${ingredients.map(group => {
+                ${ingredients.map((group, m) => {
                   const {label, items} = group;
                   return html`
                     ${label ? html`<h3>${label}</h3>` : nothing}
                     <ul class="ingredients__list">
-                      ${items.map(item => html`<li class="ingredients__item">
-                        <span>${unsafeHTML(item)}</span>
-                      </li>`)}
+                    ${items.map((item, n) => {
+                      const id = `${k}.${m}.${n}`;
+                      const checked = this.ingredients.includes(id);
+                      return html`
+                        <li
+                          class="ingredients__item"
+                          ?data-checked="${checked}"
+                          tabindex="0"
+                          @click="${() => this.saveIngredients(id)}">
+                          <span class="checkbox">${checked ? html`${unsafeHTML(checkboxIcon)}` : nothing}</span>
+                          <span class="text">${unsafeHTML(item)}</span>
+                      </li>`})}
                     </ul>
                   `;
                 })}

@@ -106,45 +106,51 @@ gc-recipe {
   .ingredients__item {
     outline: none;
 
-    svg {
+    .checkbox {
       aspect-ratio: 1;
-      inline-size: var(--marker-size);
       border: 2px solid var(--icon-color);
       border-radius: var(--marker-size);
-      fill: none;
+      display: grid;
+      inline-size: var(--marker-size);
       grid-area: icon;
+      place-items: center;
       place-self: center;
+    }
+
+    .text {
+      grid-area: text;
+    }
+
+    svg {
+      fill: none;
+      stroke: currentColor;
       stroke-width: 3px;
     }
 
     &.touch,
     &:focus-visible {
-      svg {
+      .checkbox {
         background-color: var(--icon-add-background);
         border-color: var(--icon-add-color);
       }
     }
 
     @media (any-hover: hover) {
-      & svg {
+      & .checkbox {
         transition: background-color var(--transition), border-color var(--transition);
       }
 
-      &:hover svg {
+      &:hover .checkbox {
         background-color: var(--icon-add-background);
         border-color: var(--icon-add-color);
       }
     }
 
-    &[data-checked] > svg {
+    &[data-checked] .checkbox {
       background-color: var(--icon-add-background);
       border-color: var(--icon-add-color);
-      stroke: var(--icon-add-color);
+      color: var(--icon-add-color);
     }
-  }
-
-  .ingredients__item > span {
-    grid-area: text;
   }
 
   /* ---------------------------------------- */
