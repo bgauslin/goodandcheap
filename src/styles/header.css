@@ -48,18 +48,6 @@ header {
   grid-area: back;
   place-items: center;
   place-self: center start;
-  
-
-  &.touch,
-  &:focus-visible {
-    color: var(--brand-color);
-  }
-
-  @media (any-hover: hover) {
-    &:hover {
-      color: var(--brand-color);
-    }
-  }
 
   &[disabled] {
     display: none;
