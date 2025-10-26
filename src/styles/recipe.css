@@ -100,11 +100,18 @@ gc-recipe {
   .ingredients__item {
     cursor: pointer;
     line-height: 1.3;
-    padding-block: .3em;
-  }
-
-  .ingredients__item {
     outline: none;
+    padding-block: .3em;
+
+    .text {
+      grid-area: text;
+    }
+
+    svg {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 3px;
+    }
 
     .checkbox {
       aspect-ratio: 1;
@@ -115,16 +122,6 @@ gc-recipe {
       grid-area: icon;
       place-items: center;
       place-self: center;
-    }
-
-    .text {
-      grid-area: text;
-    }
-
-    svg {
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 3px;
     }
 
     &.touch,
