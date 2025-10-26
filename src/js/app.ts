@@ -480,7 +480,7 @@ class GoodAndCheapApp extends LitElement {
             class="back"
             title="${this.backLabel}"
             type="button"
-            ?disabled="${this.context === 'home'}"
+            ?disabled="${this.context === 'home' || this.dialogOpen}"
             @click="${this.handleBackButton}">
             <svg aria-hidden="true" viewbox="0 0 24 24">
               <path d="M15,4 L7,12 L15,20"/>
