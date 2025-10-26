@@ -191,7 +191,7 @@ class GoodAndCheapFavorites extends LitElement {
         <div class="dialog">
           <div class="content" ?data-empty="${count === 0}">
             <div class="meta">
-              <h1>${count > 0 ? `${count}` : 'No'} saved recipe${count > 1 || count === 0 ? 's' : ''}</h1>
+              <h1>${count > 0 ? `${count}` : 'No'} Favorite${count > 1 || count === 0 ? 's' : ''}</h1>
             </div>
             ${previews.length > 0 ? html`
             <ol class="previews">

@@ -245,5 +245,6 @@ gc-favorites [data-empty] {
 
   gc-favorites [data-empty] {
     --dialog-meta-aspect-ratio: 2 / 1;
+    --dialog-meta-border-inline: none;
   }
 }
