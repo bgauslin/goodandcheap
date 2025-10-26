@@ -200,16 +200,18 @@ class GoodAndCheapRecipe extends LitElement {
                   const {label, items} = group;
                   return html`
                     ${label ? html`<h3>${label}</h3>` : nothing}
-                    <ul class="ingredients">
-                      ${items.map(item => html`<li>${unsafeHTML(item)}</li>`)}
+                    <ul class="ingredients__list">
+                      ${items.map(item => html`<li class="ingredients__item">
+                        <span>${unsafeHTML(item)}</span>
+                      </li>`)}
                     </ul>
                   `;
                 })}
               ` : nothing}
 
               ${steps ? html`
-                <ol class="steps">
-                  ${steps.map(step => html`<li>${unsafeHTML(step)}</li>`)}
+                <ol class="steps__list">
+                  ${steps.map(step => html`<li class="steps__item">${unsafeHTML(step)}</li>`)}
                 </ol>` : nothing}
             </div>`;
           })}

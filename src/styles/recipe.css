@@ -78,7 +78,11 @@ gc-recipe {
     padding-inline: var(--gap);
   }
 
-  .ingredients__list--main,
+  .more :is(ul, ol) {
+    padding-inline: 0;
+  }
+
+  .ingredients__list,
   .steps__list {
     list-style: none;
   }
