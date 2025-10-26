@@ -107,6 +107,8 @@ gc-favorites {
    */
   .meta {
     aspect-ratio: var(--dialog-meta-aspect-ratio);
+    border-block-end: var(--dialog-meta-border-block);
+    border-inline-end: var(--dialog-meta-border-inline);
     display: grid;
     grid-area: meta;
     grid: 1fr / 1fr;
@@ -131,5 +133,9 @@ gc-favorites {
     border-block-end: 1px solid var(--border-color);
     grid-area: previews;
     place-self: start stretch;
+  }
+
+  .previews__item:first-child {
+    border-block-start: none;
   }
 }
