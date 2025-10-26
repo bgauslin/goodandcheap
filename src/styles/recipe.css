@@ -53,6 +53,10 @@ gc-recipe {
     position: sticky;
   }
 
+  .ingredients h2 {
+    margin-block-start: 0;
+  }
+
   h2 {
     margin-block: 1em;
     padding-block: 1em;
@@ -85,6 +89,10 @@ gc-recipe {
   .ingredients__list,
   .steps__list {
     list-style: none;
+  }
+
+  .ingredients__list + .steps__list {
+    margin-block-start: 2em;
   }
 
   .ingredients__item,
