@@ -169,11 +169,12 @@ gc-favorites [data-empty] {
 
   main:has(gc-home:not([inert])) {
     --main-border: none;
+    --main-border-radius: none;
   }
 
   gc-home {
     --previews-border: 1px solid var(--border-color);
-    --previews-border-radius: var(--border-radius);
+    --previews-border-radius: 1rem;
   }
 
   gc-home .previews__item:first-child {
@@ -232,7 +233,7 @@ gc-favorites [data-empty] {
 
   gc-home {
     --preview-border: 1px solid var(--border-color);
-    --preview-border-radius: var(--border-radius);
+    --preview-border-radius: 1rem;
     --previews-border: none;
     --previews-gap: 1rem;
     --previews-grid: auto-flow / repeat(3, 1fr);
