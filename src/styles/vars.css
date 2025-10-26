@@ -25,8 +25,8 @@
   --dialog-meta-border-inline: none;
   --header-background: rgba(255, 255, 255, .8);
   --header-border: 1px solid var(--border-color);
-  --icon-add-background: rgba(46, 209, 67, .1);
-  --icon-add-color: #2ed143;
+  --icon-add-background: rgba(33, 171, 21, .1);
+  --icon-add-color: rgb(33, 171, 21);  /* #21ab15; */
   --icon-color: var(--gray2);
   --icon-favorite-background: rgba(229, 0, 31, .5);
   --icon-favorite-color: var(--brand-color);
@@ -81,8 +81,8 @@
     --callout-background: rgba(28, 28, 30, .9);
     --content-background: var(--gray6);
     --header-background: rgba(28, 28, 30, .8);
-    --icon-add-background: rgba(109, 223, 123, .4);
-    --icon-add-color: #6ddf7b;
+    --icon-add-background: rgba(144, 213, 138, .4);
+    --icon-add-color: rgb(144, 213, 138);  /* #90d58a */
     --icon-favorite-background: rgba(237, 77, 98, .7);
     --icon-remove-background: rgba(237, 77, 98, .2);
     --icon-remove-color: rgb(237, 77, 98);
