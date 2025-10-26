@@ -117,7 +117,7 @@ class GoodAndCheapRecipe extends LitElement {
       </div>
 
       <div class="content">
-        <div class="copy clamp">
+        <div class="copy">
           ${badge ? html`<div class="badge">${badge}</div>` : nothing}
           <h1>${unsafeHTML(title)}</h1>
           ${serving ? html`<div class="serving">${serving}</div>` : nothing}

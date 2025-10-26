@@ -77,15 +77,6 @@ main {
   padding-inline: var(--gap);
 }
 
-.copy.clamp {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
-  margin-block-end: var(--gap);
-  overflow: hidden;
-  padding-block-end: 0;
-}
-
 .badge {
   background-color: var(--badge-background);
   border-radius: .25rem;

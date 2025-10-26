@@ -120,7 +120,7 @@ class GoodAndCheapChapter extends LitElement {
       </div>
       
       <div class="content">
-        <div class="copy clamp">
+        <div class="copy">
           <h1>${unsafeHTML(title)}</h1>
           ${unsafeHTML(content)}
         </div>
