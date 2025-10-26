@@ -53,7 +53,17 @@
  */
 .favorite--toggle {
   background: none;
-  color: var(--brand-color);
+
+  &.touch,
+  &:focus-visible {
+    color: var(--brand-color);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--brand-color);
+    }
+  }
 
   svg {
     stroke: currentColor;

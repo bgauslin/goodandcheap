@@ -43,13 +43,24 @@ header {
  */
 .back {
   background: none;
-  color: var(--brand-color);
   display: grid;
   grid: auto / var(--button-size) auto;
   grid-area: back;
   place-items: center;
   place-self: center start;
   
+
+  &.touch,
+  &:focus-visible {
+    color: var(--brand-color);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--brand-color);
+    }
+  }
+
   &[disabled] {
     display: none;
   }
