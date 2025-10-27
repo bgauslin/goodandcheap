@@ -134,11 +134,15 @@ class GoodAndCheapRecipe extends LitElement {
       </div>
 
       <div class="content">
-        <gc-truncate class="copy" content="${id}">
+        <div class="copy">
           ${badge ? html`<div class="badge">${badge}</div>` : nothing}
           <h1>${unsafeHTML(title)}</h1>
           ${serving ? html`<div class="serving">${serving}</div>` : nothing}
-          ${overview ? html`${unsafeHTML(overview)}` : nothing}
+          ${overview ? html`
+            <gc-truncate content-id="${id}">
+              ${unsafeHTML(overview)}
+            </gc-truncate>
+          ` : nothing}
           <button
             class="favorite favorite--recipe"
             data-checked="${this.favorite}"
@@ -147,7 +151,7 @@ class GoodAndCheapRecipe extends LitElement {
             @click="${() => this.handleFavorite(id, chapter)}">
             ${unsafeHTML(favoriteIcon)}
           </button>
-        </gc-truncate>
+        </div>
 
         ${ingredients ? html`
         <section class="ingredients">

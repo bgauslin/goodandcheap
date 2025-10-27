@@ -1,5 +1,6 @@
 import {LitElement, html, nothing, PropertyValues} from 'lit';
 import {customElement, property, queryAll, state} from 'lit/decorators.js';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 
 /**
@@ -8,10 +9,18 @@ import {customElement, property, queryAll, state} from 'lit/decorators.js';
  */
 @customElement('gc-truncate')
 class GoodAndCheapTruncate extends LitElement {
-  @property({reflect: true}) clamp: boolean = true;
-  @property() content: string;
-  @queryAll('p, ol, ul') elements: HTMLElement[];
+
+  @property({attribute: 'content-id'}) contentId: string;
+  @property({reflect: true}) words: number = 30;
+  
+  @queryAll('p') paragraphElements: HTMLParagraphElement[];  
+  
+  @state() enabled: boolean = true;
   @state() showButton: boolean = false;
+  
+  @state() paragraphs: string[];
+  @state() original: string;
+  @state() truncated: string;
 
   constructor() {
     super();
@@ -30,34 +39,49 @@ class GoodAndCheapTruncate extends LitElement {
   }
 
   protected willUpdate(changedProperties: PropertyValues<this>) {
-    if (changedProperties.has('content')) {
-      this.clamp = true;
+    if (changedProperties.has('contentId')) {
+      this.enabled = true;
+      this.original = '';
+      this.paragraphs = [];
+      this.truncated = '';
       this.setup();
     }
   }
 
-  private async setup() {
-    await this.updateComplete;
-
-    let scrollHeight = 0;
-    let clientHeight = 0;
-    for (const element of this.elements) {
-      scrollHeight += element.scrollHeight;
-      clientHeight += element.clientHeight;
+  private setup() {
+    // Save original paragraph text for extracting the truncated version.
+    for (const p of this.paragraphElements) {
+      this.paragraphs.push(p.textContent);
     }
 
-    this.showButton = scrollHeight > clientHeight;
+    // Reassemble the original paragraphs for replacing the truncated version.
+    for (const p of this.paragraphElements) {
+      this.original += `<p>${p.textContent}</p>`;
+    }
+
+    // Clear everything out.
+    // this.innerHTML = '';
+    
+    // Assemble the truncated version.
+    const words = this.paragraphs[0].split(/\s+/);
+    for (let i = 0; i < this.words; i++) {
+      this.truncated += `${words[i]}`;
+      if (i < this.words - 1) {
+        this.truncated += ' ';
+      }
+    }
   }
 
   protected render() {
     return html`
-      ${this.showButton && this.clamp ? html`
-      <div class="truncate">
+      ${this.enabled ? html`
+      <p>
+        ${this.truncated}
         <button
           class="more-less"
           type="button"
-          @click="${() => this.clamp = !this.clamp}">more…</button>
-      </div>` : nothing}
+          @click="${() => this.enabled = !this.enabled}">more…</button>
+      </p>` : html`${unsafeHTML(this.original)}`}
     `;
   }
 }
