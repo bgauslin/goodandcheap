@@ -148,7 +148,6 @@ gc-recipe {
       place-self: center;
     }
 
-    &.touch,
     &:focus-visible {
       .checkbox {
         border-color: var(--icon-add-color);
