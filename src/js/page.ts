@@ -1,4 +1,4 @@
-import {Events, Page, footer} from './shared';
+import {footer, Events, Page} from './shared';
 
 
 /**

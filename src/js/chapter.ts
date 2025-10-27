@@ -1,7 +1,7 @@
 import {LitElement, html} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import {Events, Chapter, favoriteIcon, footer} from './shared';
+import {favoriteIcon, footer, Events, Chapter} from './shared';
 
 
 /**
