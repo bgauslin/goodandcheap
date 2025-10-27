@@ -189,6 +189,7 @@ gc-favorites [data-empty] {
   :root {
     --app-grid: 1fr auto 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
     --back-button-label-display: initial;
+    --base-line-height: 1.5;
     --content-border-radius: none;
     --cover-border-radius: none;
     --cover-inset: 0;
