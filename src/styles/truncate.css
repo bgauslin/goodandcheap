@@ -1,0 +1,26 @@
+/* -------------------------------------------------------------------------- */
+/* Text-truncating component... */
+/* -------------------------------------------------------------------------- */
+
+gc-truncate {
+  display: block;
+
+  &[clamp='true'] p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+}
+
+.truncate {
+  text-align: end;
+}
+
+.more-less {
+  font-family: 'Carmina Bold', serif;
+  font-size: 90%;
+  margin-block: .25rem 0;
+  margin-inline: 0 -.75em;
+  padding-inline: .75em;
+}

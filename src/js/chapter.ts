@@ -120,10 +120,10 @@ class GoodAndCheapChapter extends LitElement {
       </div>
       
       <div class="content">
-        <div class="copy">
+        <gc-truncate class="copy" content="${this.data.id}">
           <h1>${unsafeHTML(title)}</h1>
           ${unsafeHTML(content)}
-        </div>
+        </gc-truncate>
 
         <p class="count">${recipes.length} Recipes</p>
         <ul class="previews">

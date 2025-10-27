@@ -18,5 +18,6 @@
     "src/js/page.ts",
     "src/js/recipe.ts",
     "src/js/touch.ts",
+    "src/js/truncate.ts",
   ]
 }
