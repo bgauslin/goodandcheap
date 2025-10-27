@@ -5,18 +5,19 @@ import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 /**
  * Web component that truncates text content and adds a button for showing
- * the rest of it. The original text doesn't display since there's no <slot>
- * for it in the shadow DOM.
+ * the rest of it. Note: The original light DOM text doesn't display since
+ * there are no shadow DOM <slot> elements.
  */
 @customElement('gc-truncate')
 class GoodAndCheapTruncate extends LitElement {
   @property({attribute: 'content-id'}) contentId: string;
   @property({attribute: 'words', reflect: true}) wordCount: number = 30;
     
-  @state() enabled: boolean = true;
-  @state() original: string;
+  @state() enableTruncation: boolean = true;
+  @state() originalContent: string;
   @state() paragraphs: string[];
-  @state() truncated: string;
+  @state() truncated: boolean = true;
+  @state() truncatedContent: string;
 
   constructor() {
     super();
@@ -30,71 +31,93 @@ class GoodAndCheapTruncate extends LitElement {
     super.disconnectedCallback();
   }
 
+  /**
+   * Resets everything when new content is rendered.
+   */
   protected willUpdate(changedProperties: PropertyValues<this>) {
     if (changedProperties.has('contentId')) {
-      this.enabled = true;
-      this.original = '';
+      this.enableTruncation = true;
+      this.originalContent = '';
       this.paragraphs = [];
-      this.truncated = '';
+      this.truncated = true;
+      this.truncatedContent = '';
       this.setup();
     }
   }
 
   /**
    * Saves the original paragraphs for rendering and creates a truncated
-   * version from the first paragraph.
+   * version from the first original paragraph.
    */
   private async setup() {
     await this.updateComplete;
 
-    // Get original paragraphs in the light DOM for extracting a truncated
+    // Get original paragraphs in the light DOM for extracting the truncated
     // version.
     const paragraphElements = this.querySelectorAll('p')
     for (const p of paragraphElements) {
       this.paragraphs.push(p.textContent);
     }
 
-    // Reassemble the original paragraphs for replacing the truncated version.
+    // Reassemble the original paragraphs for replacing the truncated version
+    // when truncation is toggled by the button.
     for (const p of paragraphElements) {
-      this.original += `<p>${p.textContent}</p>`;
+      this.originalContent += `<p>${p.textContent}</p>`;
     }
 
     // Create the truncated version, but only if there are enough words to
     // show when expanded. I.e., it's silly to hide only 2-3 more words, so
-    // set a threshold for truncating the original in addition to the target
-    // word count.
+    // set a threshold based on the word count for truncating the original.
     const threshold = this.wordCount / 2;
     const words = this.paragraphs[0].split(/\s+/);
 
     if (words.length >= (this.wordCount + threshold)) {
       for (let i = 0; i < this.wordCount; i++) {
-        this.truncated += `${words[i]}`;
+        this.truncatedContent += `${words[i]}`;
         if (i < this.wordCount - 1) {
-          this.truncated += ' ';
+          this.truncatedContent += ' ';
         }
       }
     } else {
-      this.enabled = false;
+      this.enableTruncation = false;
     }
   }
 
   protected render() {
     return html`
-      ${this.enabled ? html`
-      <p>
-        ${this.truncated}
-        <button
-          class="more-less"
-          type="button"
-          @click="${() => this.enabled = !this.enabled}">more…</button>
-      </p>` : html`${unsafeHTML(this.original)}`}
+      ${this.enableTruncation ? html`
+        ${this.truncated ? html`
+          <p>
+            ${this.truncatedContent}
+            ${this.renderButton()}
+          </p>` : html`
+          ${unsafeHTML(this.originalContent)}
+          <div class="less">${this.renderButton()}</div>
+        `}` : html`
+        ${unsafeHTML(this.originalContent)}
+      `}
+    `;
+  }
+
+  private renderButton() {
+    return html`
+      <button
+        type="button"
+        @click="${() => this.truncated = !this.truncated}">
+        ${this.truncated ? 'more…' : 'Show less'}
+      </button>
     `;
   }
 
   // Shadow DOM stylesheet.
   static styles = css`
     p {
-      line-height: var(--base-line-height);
+      line-height: 1.5;
+    }
+
+    .less {
+      margin-block-start: -1rem;
+      text-align: end;
     }
 
     button {

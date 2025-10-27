@@ -73,8 +73,12 @@ main {
 }
 
 .copy {
-  padding-block: var(--gap);
+  padding-block: var(--gap) 0;
   padding-inline: var(--gap);
+}
+
+gc-page .copy {
+  padding-block: var(--gap);
 }
 
 .copy p:last-of-type {

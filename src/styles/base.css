@@ -61,7 +61,7 @@ noscript {
 /* Text content. */
 
 :is(p, li) {
-  line-height: var(--base-line-height);
+  line-height: 1.5;
 }
 
 /* ---------------------------------------- */
