@@ -11,7 +11,7 @@ import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 @customElement('gc-truncate')
 class GoodAndCheapTruncate extends LitElement {
   @property({attribute: 'content-id'}) contentId: string;
-  @property({attribute: 'words', reflect: true}) wordCount: number = 30;
+  @property({attribute: 'words', reflect: true}) wordCount: number = 25;
     
   @state() enableTruncation: boolean = true;
   @state() originalContent: string;
@@ -67,15 +67,29 @@ class GoodAndCheapTruncate extends LitElement {
 
     // Create the truncated version, but only if there are enough words to
     // show when expanded. I.e., it's silly to hide only 2-3 more words, so
-    // set a threshold based on the word count for truncating the original.
-    const threshold = this.wordCount / 2;
-    const words = this.paragraphs[0].split(/\s+/);
+    // set a threshold in addition to the word limit.
+    const threshold = 10;
 
-    if (words.length >= (this.wordCount + threshold)) {
+    // Get a total word count of all paragraphs.
+    let totalWords = 0;
+    for (const paragraph of this.paragraphs) {
+      const words = paragraph.split(/\s+/);
+      totalWords += words.length;
+    }
+
+    // Get the first paragraph's content, and if there are fewer words in the
+    // first paragraph than the word limit, stop truncating.
+    if (totalWords > (this.wordCount + threshold)) {
+      const words = this.paragraphs[0].split(/\s+/);
       for (let i = 0; i < this.wordCount; i++) {
-        this.truncatedContent += `${words[i]}`;
-        if (i < this.wordCount - 1) {
-          this.truncatedContent += ' ';
+        const word = words[i];
+        if (word) {
+          this.truncatedContent += word;
+          if (i < (this.wordCount - 1)) {
+            this.truncatedContent += ' ';
+          }
+        } else {
+          break;
         }
       }
     } else {
@@ -116,7 +130,7 @@ class GoodAndCheapTruncate extends LitElement {
     }
 
     .less {
-      margin-block-start: -1rem;
+      margin-block-start: -.5rem;
       text-align: end;
     }
 
@@ -130,6 +144,21 @@ class GoodAndCheapTruncate extends LitElement {
       margin: 0;  
       outline: none;
       padding: 0;
+    
+      &.touch,
+      &:focus-visible {
+        color: var(--text-color);
+      }
+    
+      @media (any-hover: hover) {
+        & {
+          transition: color var(--transition);
+        }
+        
+        &:hover {
+          color: var(--text-color);
+        }
+      }
     }
   `;
 }
