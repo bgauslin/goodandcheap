@@ -5,7 +5,7 @@ export const checkboxIcon = `
 
 export const favoriteIcon = `
   <svg aria-hidden="true" viewbox="0 0 24 24">
-    <path d="M12,21 L3,12 A 1 1 0 0 1 12 5 A 1 1 0 0 1 21 12 L12,21"/>
+    <path d="M12,22 A25 25 0 0 1 2 11 A 1 1 0 0 1 12 6 A 1 1 0 0 1 22 11 A 25 25 0 0 1 12 22"/>
   </svg>`;
 
 export const footer = `
