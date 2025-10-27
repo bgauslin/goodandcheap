@@ -44,7 +44,7 @@
 .favorite {
   svg {
     fill: none;
-    stroke-width: 2.5px;
+    stroke-width: 2.5;
   }
 }
 
@@ -68,7 +68,7 @@
 
   svg {
     stroke: currentColor;
-    stroke-width: 2.5px;
+    stroke-width: 2.5;
   }
 }
 
@@ -111,7 +111,7 @@
   svg {
     border: 2px solid var(--icon-color);
     border-radius: var(--icon-size);
-    stroke-width: 3px;
+    stroke-width: 3;
   }
 
   &.touch,

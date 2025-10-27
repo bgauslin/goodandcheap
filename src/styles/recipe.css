@@ -134,7 +134,7 @@ gc-recipe {
     svg {
       fill: none;
       stroke: currentColor;
-      stroke-width: 3px;
+      stroke-width: 3;
     }
 
     .checkbox {
