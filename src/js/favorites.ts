@@ -118,6 +118,7 @@ class GoodAndCheapFavorites extends LitElement {
     const {code} = event;
 
     if (code === 'Escape' && this.open) {
+      this.active = false;
       this.inert = true;
       this.open = false;
     }
