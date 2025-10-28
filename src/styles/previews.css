@@ -16,10 +16,14 @@
 
 .previews__item {
   background-color: var(--preview-background, none);
+  block-size: var(--block-size, auto);
   border: var(--preview-border, none);
   border-block-start: var(--preview-divider);
   border-radius: var(--preview-border-radius, 0);
+  overflow: hidden;
   position: relative;
+  transition: block-size var(--transition);
+  will-change: block-size;
 }
 
 .previews__link {

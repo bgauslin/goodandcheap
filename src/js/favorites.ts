@@ -76,17 +76,41 @@ class GoodAndCheapFavorites extends LitElement {
   }
 
   /**
-   * Dispatches event that removes the favorite from the list.
+   * Sets custom properties that animate the recipe's removal, then dispatches
+   * event that removes the favorite from the list.
    */
-  private removeFavorite(chapter: string, id: string) {
-    this.dispatchEvent(new CustomEvent(Events.Favorites, {
-      bubbles: true,
-      composed: true,
-      detail: {
-        chapter,
-        id,
-      }
-    }));
+  private removeFavorite(event: Event) {
+    const {target} = event;
+    const closest = (<HTMLButtonElement>target).closest('.previews__item');
+    const element = (<HTMLElement>closest);
+
+    // Get chapter and ID for sending up to the app.
+    const chapter = element.dataset.chapter;
+    const id = element.dataset.id;
+
+    // Get element's height and set custom property so that its transition
+    // triggers when the custom property changes.
+    const {height} = element.getBoundingClientRect();
+    element.style.setProperty('--block-size', `${height}px`);
+
+    // Wait a tick, change the custom property, then remove the element from
+    // the favorites list after its transition ends.
+    window.requestAnimationFrame(() => {
+      element.style.setProperty('--block-size', '0');
+      
+      element.addEventListener('transitionend', () => {
+        element.removeAttribute('style');
+
+        this.dispatchEvent(new CustomEvent(Events.Favorites, {
+          bubbles: true,
+          composed: true,
+          detail: {
+            chapter,
+            id,
+          }
+        }));
+      }, {once: true});
+    });
   }
 
   /**
@@ -131,7 +155,7 @@ class GoodAndCheapFavorites extends LitElement {
       const {badge, chapter, id, image, serving, title} = recipe;
       counter += 1;
       previews.push(html`
-        <li class="previews__item">
+        <li class="previews__item" data-id="${id}" data-chapter="${chapter}">
           <a class="previews__link" href="./${chapter}/${id}">
             <figure class="previews__figure">
               <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
@@ -144,11 +168,11 @@ class GoodAndCheapFavorites extends LitElement {
             <div class="previews__counter">${counter}</div>
           </a>
           <button
+            aria-label="Remove ${title} from Favorites"  
             class="remove"
-            data-id="${id}"
             title="Remove from Favorites"
             type="button"
-            @click="${() => this.removeFavorite(chapter, id)}">
+            @click="${this.removeFavorite}">
             <svg aria-hidden="true" viewbox="0 0 24 24">
               <path d="M7,7 L17,17 M7,17 L17,7"/>
             </svg>
