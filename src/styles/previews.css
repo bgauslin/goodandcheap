@@ -64,9 +64,20 @@
   margin-block: 0;
 }
 
-/* [1] Prevent hover/focus color change. */
+/**
+ * Prevent hover/focus color change for labels.
+ */
+.previews__link .badge,
+.previews__link .serving,
 .previews__counter {
-  color: var(--text-color);  /* [1] */
+  color: var(--text-color);
+}
+
+.previews__link:visited .serving {
+  color: var(--link-visited-color);
+}
+
+.previews__counter {
   grid-area: counter;
   margin-block: 0 .75rem;
   opacity: .7;
