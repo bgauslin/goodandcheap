@@ -80,6 +80,6 @@
 .previews__counter {
   grid-area: counter;
   margin-block: 0 .75rem;
-  opacity: .7;
+  opacity: var(--opacity);
   place-self: end center;
 }

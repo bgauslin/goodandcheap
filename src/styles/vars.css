@@ -46,8 +46,9 @@
   --subhead-font-size: 80%;
 
   /**
-   * Transitions.
+   * Miscellaneous.
    */
+  --opacity: .7;
   --transition: .25s;
 }
 

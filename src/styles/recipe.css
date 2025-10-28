@@ -120,7 +120,7 @@ gc-recipe {
     }
 
     &.touch .text {
-      opacity: .5;
+      opacity: var(--opacity);
     }
 
     svg {
@@ -160,7 +160,7 @@ gc-recipe {
       }
 
       &:hover .text {
-        opacity: .5;
+        opacity: var(--opacity);
       }
     }
 
