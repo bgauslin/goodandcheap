@@ -108,7 +108,8 @@ gc-favorites {
     border-radius: var(--dialog-border-radius);
     display: grid;
     grid: var(--dialog-content-grid);
-    min-block-size: 100%;
+    margin-block: var(--dialog-content-margin-block);
+    min-block-size: var(--dialog-content-min-block-size);
     transition: transform var(--transition);
   }
 

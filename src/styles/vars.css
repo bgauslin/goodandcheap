@@ -106,6 +106,7 @@
   --dialog-border: none;
   --dialog-border-top: 1px solid var(--border-color);
   --dialog-content-grid: 'meta' auto 'previews' 1fr / 1fr;
+  --dialog-content-min-block-size: 100%;
   --dialog-meta-place-self: start stretch;
   --favorites-grid: var(--header-block-size) 1fr / 1fr;
   --footer-border: 1px solid var(--border-color);
@@ -158,6 +159,8 @@ gc-favorites [data-empty] {
     --cover-border-radius: var(--border-radius) var(--border-radius) 0 0;
     --dialog-border: 1px solid var(--border-color);
     --dialog-border-radius: var(--border-radius);
+    --dialog-content-margin-block: 0 3rem;
+    --dialog-content-min-block-size: calc(100% - 3rem);
     --footer-border: none;
     --header-background: rgba(242, 242, 247, .75);
     --header-border: none;
@@ -196,6 +199,8 @@ gc-favorites [data-empty] {
     --dialog-block-size: 100%;
     --dialog-content-aspect-ratio: 2 / 1;
     --dialog-content-grid: 'meta previews' 1fr / 1fr 1fr;
+    --dialog-content-margin-block: 0;
+    --dialog-content-min-block-size: revert;
     --dialog-meta-aspect-ratio: 1;
     --dialog-meta-border-block: none;
     --dialog-meta-border-inline: 1px solid var(--border-color);
