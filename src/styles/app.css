@@ -68,6 +68,8 @@ main {
 
 .content {
   background-color: var(--content-background);
+  border: var(--content-border);
+  border-block-start: 0;
   border-radius: var(--content-border-radius);
   grid-area: content;
 }

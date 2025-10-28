@@ -3,6 +3,8 @@
 /* -------------------------------------------------------------------------- */
 
 .cover {
+  border: var(--cover-border);
+  border-block-end: 0;
   border-radius: var(--cover-border-radius);
   display: grid;
   grid: 1fr / 1fr;
