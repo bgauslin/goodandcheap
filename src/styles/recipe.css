@@ -110,19 +110,8 @@ gc-recipe {
     outline: none;
     padding-block: .3em;
 
-    &.touch,
     &:focus-visible {
       color: var(--icon-add-color);
-    }
-
-    @media (any-hover: hover) {
-      & {
-        transition: color var(--transition);
-      }
-
-      &:hover {
-        color: var(--icon-add-color);
-      }
     }
 
     .text {
