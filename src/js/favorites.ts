@@ -105,7 +105,7 @@ class GoodAndCheapFavorites extends LitElement {
   private removeFavorite(event: Event) {
     const {target} = event;
     const closest = (<HTMLButtonElement>target).closest('.previews__item');
-    const element = (<HTMLElement>closest);
+    const element = <HTMLElement>closest;
 
     // Get chapter and ID for sending up to the app.
     const chapter = element.dataset.chapter;
