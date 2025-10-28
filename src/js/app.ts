@@ -33,7 +33,7 @@ class GoodAndCheapApp extends LitElement {
   @state() context: string = 'home';
   @state() data: Data;
   @state() dialogOpen: boolean = false;
-  @state() favorites = new Set<RecipePreview>();
+  @state() favorites: Set<RecipePreview> = new Set();
   @state() loading: boolean = true;
   @state() pages: Page[];
   @state() recipes: Recipe[];

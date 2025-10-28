@@ -12,7 +12,7 @@ class GoodAndCheapChapter extends LitElement {
   private dataListener: EventListenerObject;
 
   @state() data: Chapter;
-  @state() favorites = new Set();
+  @state() favorites: Set<string>;
 
   constructor() {
     super();

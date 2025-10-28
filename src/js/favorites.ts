@@ -22,7 +22,7 @@ class GoodAndCheapFavorites extends LitElement {
   @query('.dialog') innerDialog: HTMLElement;
   @query('.toggle') toggle: HTMLElement;
 
-  @state() data = new Set<RecipePreview>();
+  @state() data: Set<RecipePreview> = new Set();
   @state() inert: boolean = true;
   @state() open: boolean = false;
 
