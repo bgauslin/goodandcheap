@@ -41,11 +41,9 @@
 /**
  * Typical 'favorite' button.
  */
-.favorite {
-  svg {
-    fill: none;
-    stroke-width: 2.5;
-  }
+.favorite svg {
+  fill: none;
+  stroke-width: 2.5;
 }
 
 /**

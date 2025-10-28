@@ -2,9 +2,7 @@
 /* Styles for the <gc-chapter> component with recipe previews. */
 /* -------------------------------------------------------------------------- */
 
-gc-chapter {
-  .count {
-    margin-block: 0 .5rem;
-    padding-inline: var(--gap);
-  }
+gc-chapter .count {
+  margin-block: 0 .5rem;
+  padding-inline: var(--gap);
 }

@@ -15,7 +15,7 @@ h2, .cost, .previews__title, .steps__item::before {
   font-family: 'Futura Bold', sans-serif;
 }
 
-h3, gc-page ul, small, [role='tab'], .back, .badge, .count, .previews__counter, .serving, .ingredients__item {
+h3, gc-page ul, small, [role='tab'], .back, .badge, .count, .ingredients__item, .previews__counter, .serving {
   font-family: 'Futura Book', sans-serif;
 }
 
@@ -32,11 +32,11 @@ h2, h3, .cost, .previews__title, .serving {
   line-height: 1.3;
 }
 
-small, .back, [role='tab'], .badge, .count, .previews__counter, .serving {
+small, [role='tab'], .back, .badge, .count, .previews__counter, .serving {
   font-size: var(--small-font-size);
 }
 
-small, .back, [role='tab'], .badge, .count, .serving {
+small, [role='tab'], .back, .badge, .count, .serving {
   letter-spacing: .125em;
   text-transform: uppercase;
 }

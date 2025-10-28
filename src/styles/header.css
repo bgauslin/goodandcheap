@@ -7,10 +7,10 @@ header {
   background-color: var(--header-background);
   border-block-end: var(--header-border);
   grid-area: 1 / 1 / 2 / 4;
-  place-self: center stretch;
-  position: var(--header-position);
   inset-block: 0 auto;
   inset-inline: 0;
+  place-self: center stretch;
+  position: var(--header-position);
   z-index: 3;
 
   /**
@@ -74,8 +74,8 @@ header {
   }
 
   svg {
-    inline-size: var(--icon-size);
     fill: none;
+    inline-size: var(--icon-size);
     stroke: currentColor;
     stroke-linecap: round;
     stroke-width: 2.5;

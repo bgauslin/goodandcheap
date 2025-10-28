@@ -82,7 +82,6 @@ gc-favorites {
    */
   .dialog,
   .content {
-    overflow: auto;
     scrollbar-width: none;
 
     &::-webkit-scrollbar {
@@ -96,6 +95,7 @@ gc-favorites {
    */
   .dialog {
     margin-block-start: 1px;  /* [1] */
+    overflow: auto;
     grid-area: 2 / 2;
   }
 
@@ -111,6 +111,7 @@ gc-favorites {
     grid: var(--dialog-content-grid);
     margin-block: var(--dialog-content-margin-block);
     min-block-size: var(--dialog-content-min-block-size);
+    overflow: auto;
     transition: transform var(--transition);
   }
 
@@ -126,8 +127,8 @@ gc-favorites {
     border-block-end: var(--dialog-meta-border-block);
     border-inline-end: var(--dialog-meta-border-inline);
     display: grid;
-    grid-area: meta;
     grid: 1fr / 1fr;
+    grid-area: meta;
     inset-block: var(--dialog-meta-inset, initial);
     overflow: hidden;
     place-self: var(--dialog-meta-place-self);

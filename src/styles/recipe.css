@@ -134,8 +134,8 @@ gc-recipe {
       border: 2px solid var(--icon-color);
       border-radius: var(--marker-size);
       display: grid;
-      inline-size: var(--marker-size);
       grid-area: icon;
+      inline-size: var(--marker-size);
       place-items: center;
       place-self: center;
     }
