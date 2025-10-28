@@ -48,7 +48,7 @@
 .previews__img {
   aspect-ratio: 1;
   background-color: var(--image-background);
-  border-radius: .25rem;
+  border-radius: .5rem;
   object-fit: cover;
 }
 

@@ -169,7 +169,7 @@ gc-favorites [data-empty] {
 
   gc-home {
     --previews-border: 1px solid var(--border-color);
-    --previews-border-radius: 1rem;
+    --previews-border-radius: var(--border-radius);
   }
 
   gc-home .previews__item:first-child {
@@ -236,8 +236,9 @@ gc-favorites [data-empty] {
 
   gc-home {
     --preview-border: 1px solid var(--border-color);
-    --preview-border-radius: 1rem;
+    --preview-border-radius: 1.25rem;
     --previews-border: none;
+    --previews-border-radius: 0;
     --previews-gap: 1rem;
     --previews-grid: auto-flow / repeat(3, 1fr);
     --view-display: block;
