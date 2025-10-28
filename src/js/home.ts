@@ -87,7 +87,7 @@ class GoodAndCheapHome extends LitElement {
       `;
   }
 
-  private renderList(items: Item[], id: string, showCount:boolean = false) {
+  private renderList(items: Item[], id: string, showCount: boolean = false) {
     return html`
       <div
         aria-hidden="${this.tab !== id}"
