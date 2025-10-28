@@ -144,6 +144,7 @@ class GoodAndCheapRecipe extends LitElement {
             </gc-truncate>
           ` : nothing}
           <button
+            aria-label="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
             class="favorite favorite--recipe"
             data-checked="${this.favorite}"
             title="${this.favorite ? 'Remove from' : 'Add to'} Favorites"

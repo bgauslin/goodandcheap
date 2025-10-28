@@ -103,6 +103,7 @@ class GoodAndCheapChapter extends LitElement {
           </a>
 
           <button
+            aria-label="${favorite ? 'Remove from' : 'Add to'} Favorites"
             class="favorite favorite--preview"
             data-checked="${favorite}"
             title="${favorite ? 'Remove from' : 'Add to'} Favorites"

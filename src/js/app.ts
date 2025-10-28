@@ -477,6 +477,7 @@ class GoodAndCheapApp extends LitElement {
       <header>
         <div class="header">
           <button
+            aria-label="${this.backLabel}"
             class="back"
             title="${this.backLabel}"
             type="button"
