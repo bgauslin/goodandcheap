@@ -14,10 +14,10 @@ class GoodAndCheapTruncate extends LitElement {
   @property({attribute: 'words', reflect: true}) wordCount: number = 25;
     
   @state() enableTruncation: boolean = true;
-  @state() originalContent: string;
-  @state() paragraphs: string[];
+  @state() originalContent: string = '';
+  @state() paragraphs: string[] = [];
   @state() truncated: boolean = true;
-  @state() truncatedContent: string;
+  @state() truncatedContent: string = '';
 
   constructor() {
     super();
@@ -54,19 +54,19 @@ class GoodAndCheapTruncate extends LitElement {
 
     // Get original paragraphs in the light DOM for extracting the truncated
     // version.
-    const paragraphElements = this.querySelectorAll('p')
-    for (const p of paragraphElements) {
-      this.paragraphs.push(p.textContent);
+    const paragraphElements = this.querySelectorAll('p');
+    for (const paragraph of paragraphElements) {
+      this.paragraphs.push(paragraph.textContent);
     }
 
     // Reassemble the original paragraphs for replacing the truncated version
     // when truncation is toggled by the button.
-    for (const p of paragraphElements) {
-      this.originalContent += `<p>${p.textContent}</p>`;
+    for (const paragraph of paragraphElements) {
+      this.originalContent += `<p>${paragraph.textContent}</p>`;
     }
 
-    // Create the truncated version, but only if there are enough words to
-    // show when expanded. I.e., it's silly to hide only 2-3 more words, so
+    // Create the truncated version, but only if there are enough words
+    // to show when expanded. Because it's odd to hide only 2-3 more words,
     // set a threshold in addition to the word limit.
     const threshold = 10;
 
