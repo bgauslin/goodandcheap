@@ -109,7 +109,6 @@
   --dialog-aspect-ratio: var(--main-aspect-ratio);
   --dialog-block-size: calc(100dvh - var(--header-block-size));
   --dialog-border: none;
-  --dialog-border-top: 1px solid var(--border-color);
   --dialog-content-grid: 'meta' auto 'previews' 1fr / 1fr;
   --dialog-content-min-block-size: 100%;
   --dialog-meta-place-self: start stretch;
