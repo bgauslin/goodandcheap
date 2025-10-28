@@ -19,6 +19,7 @@ class GoodAndCheapFavorites extends LitElement {
   @query('button') button: HTMLButtonElement;
   @query('.content') content: HTMLElement;
   @query('dialog') dialog: HTMLDialogElement;
+  @query('.toggle') toggle: HTMLElement;
 
   @state() data = new Set<RecipePreview>();
   @state() inert: boolean = true;
@@ -52,6 +53,23 @@ class GoodAndCheapFavorites extends LitElement {
   private updateData(event: CustomEvent) {
     this.data = event.detail;
     this.requestUpdate();
+    this.animateToggle();
+  }
+
+  /**
+   * Adds am animation to the button and its count whenever a favorite
+   * is added or removed.
+   */
+  private async animateToggle() {
+    await this.updateComplete;
+
+    // Don't animate the toggle if favorites panel is open.
+    if (this.active) return;
+
+    this.toggle.classList.add('added');
+    this.toggle.addEventListener('animationend', () => {
+      this.toggle.classList.remove('added');
+    }, {once: true});
   }
 
   /**

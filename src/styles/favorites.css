@@ -21,6 +21,10 @@ gc-favorites {
     place-items: center;
   }
 
+  .toggle.added {
+    animation: .5s 1 bounce;
+  }
+
   .favorite--toggle, .close {
     grid-area: button;
   }
@@ -147,5 +151,26 @@ gc-favorites {
 
   .previews__item:first-child {
     border-block-start: none;
+  }
+}
+
+/**
+ * Animation for adding a favorite.
+ */
+@keyframes bounce {
+  25% {
+    transform: scale(.8);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  75% {
+    transform: scale(.9);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
