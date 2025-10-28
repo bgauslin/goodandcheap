@@ -21,6 +21,7 @@ class GoodAndCheapApp extends LitElement {
 
   // Elements.
   @query('gc-chapter') chapterElement: HTMLElement;
+  @query('gc-home') homeElement: HTMLElement;
   @query('gc-favorites') favoritesElement: HTMLElement;
   @query('gc-page') pageElement: HTMLElement;
   @query('gc-recipe') recipeElement: HTMLElement;
@@ -285,6 +286,21 @@ class GoodAndCheapApp extends LitElement {
   }
 
   /**
+   * Updates the app when the wordmark is clicked. Wordmark has its own
+   * handler since its 'href' value is null.
+   */
+  private handleWordmark(event: Event) {
+    event.preventDefault();
+    
+    this.context = 'home';
+    
+    this.updateAddressBar('');
+    this.updateDocumentTitle();
+
+    window.requestAnimationFrame(() => this.homeElement.scrollTo(0, 0));
+  }
+
+  /**
    * Updates the app when the 'Back' button is clicked. If current context
    * is a recipe, then next will be a chapter. Otherwise, default to home.
    */
@@ -467,6 +483,9 @@ class GoodAndCheapApp extends LitElement {
         } else if (prev === 'page') {
           this.homeTransition = 'start-in';
           this.pageTransition = 'end-out';
+        } else if (prev === 'recipe') {
+          this.homeTransition = 'start-in';
+          this.recipeTransition = 'end-out';
         }
       }
     }
@@ -489,12 +508,19 @@ class GoodAndCheapApp extends LitElement {
             <span>${unsafeHTML(this.backLabel)}</span>
           </button>
 
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcset="./wordmark-dark.png">
-            <img src="./wordmark.png" alt="Good And Cheap">
-          </picture>
+          <a
+            class="wordmark"
+            ?disabled="${this.context === 'home'}"
+            href="./"
+            title="Home"
+            @click="${this.handleWordmark}">
+            <picture>
+              <source
+                media="(prefers-color-scheme: dark)"
+                srcset="./wordmark-dark.png">
+              <img src="./wordmark.png" alt="Good And Cheap">
+            </picture>
+          </a>
 
           <gc-favorites></gc-favorites>
         </div>

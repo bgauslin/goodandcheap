@@ -27,12 +27,28 @@ header {
   /**
    * Wordmark.
    */
-  picture {
+  .wordmark {
     grid-area: wordmark;
     place-self: center;
+    transition: transform var(--transition);
+
+    &.touch {
+      transform: scale(.9);
+    }
+
+    @media (any-hover: hover) {
+      &:active {
+        transform: scale(.9);
+      }
+    }
   }
 
-  picture > img {
+  .wordmark > *,
+  .wordmark[disabled] {
+    pointer-events: none;
+  }
+
+  .wordmark img {
     block-size: 2.5em;
     inline-size: auto;
   }
