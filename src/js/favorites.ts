@@ -19,6 +19,7 @@ class GoodAndCheapFavorites extends LitElement {
   @query('button') button: HTMLButtonElement;
   @query('.content') content: HTMLElement;
   @query('dialog') dialog: HTMLDialogElement;
+  @query('.dialog') innerDialog: HTMLElement;
   @query('.toggle') toggle: HTMLElement;
 
   @state() data = new Set<RecipePreview>();
@@ -89,7 +90,11 @@ class GoodAndCheapFavorites extends LitElement {
       this.active = true;
       this.open = true;
       this.dialog.showModal();
-      window.requestAnimationFrame(() => this.inert = false);
+      window.requestAnimationFrame(() => {
+        this.inert = false;
+        this.innerDialog.scrollTo(0, 0);
+        this.content.scrollTo(0, 0);
+      });
     }
   }
 
