@@ -58,7 +58,7 @@ class GoodAndCheapFavorites extends LitElement {
   }
 
   /**
-   * Adds am animation to the button and its count whenever a favorite
+   * Adds an animation to the button and its count whenever a favorite
    * is added or removed.
    */
   private async animateToggle() {
@@ -178,7 +178,7 @@ class GoodAndCheapFavorites extends LitElement {
       const {badge, chapter, id, image, serving, title} = recipe;
       counter += 1;
       previews.push(html`
-        <li class="previews__item" data-id="${id}" data-chapter="${chapter}">
+        <li class="previews__item" data-chapter="${chapter}" data-id="${id}">
           <a class="previews__link" href="./${chapter}/${id}">
             <figure class="previews__figure">
               <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
