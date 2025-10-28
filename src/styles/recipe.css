@@ -119,6 +119,10 @@ gc-recipe {
       pointer-events: none;
     }
 
+    &.touch .text {
+      opacity: .5;
+    }
+
     svg {
       fill: none;
       stroke: currentColor;
