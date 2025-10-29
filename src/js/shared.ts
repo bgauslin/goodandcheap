@@ -1,6 +1,6 @@
 export const checkboxIcon = `
   <svg aria-hidden="true" viewbox="0 0 24 24">
-    <path d="M4,11 L10,17, L19,8"/>
+    <path d="M4,11 L10,17 L19,8"/>
   </svg>`;
 
 export const favoriteIcon = `
