@@ -101,9 +101,11 @@ class GoodAndCheapChapter extends LitElement {
             </div>
             <div class="previews__counter">${counter}</div>
           </a>
-          <label class="favorite favorite--preview">
+          <label
+            class="favorite favorite--preview"
+            title="${favorite ? `Remove ${title} from` : `Add ${title} to`} Favorites">
             <input
-              aria-label="${favorite ? 'Remove from' : 'Add to'} Favorites"
+              aria-label="${favorite ? `Remove ${title} from` : `Add ${title} to`} Favorites"
               type="checkbox"
               ?checked="${favorite}"
               @click="${() => this.updateFavorite(id)}">

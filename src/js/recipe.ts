@@ -121,9 +121,11 @@ class GoodAndCheapRecipe extends LitElement {
           ${badge ? html`<div class="badge">${badge}</div>` : nothing}
           <h1>${unsafeHTML(title)}</h1>
           ${serving ? html`<div class="serving">${serving}</div>` : nothing}
-          <label class="favorite favorite--recipe">
+          <label
+            class="favorite favorite--recipe"
+            title="${this.favorite ? `Remove ${title} from` : `Add ${title} to`} Favorites">
             <input
-              aria-label="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
+              aria-label="${this.favorite ? `Remove ${title} from` : `Add ${title} to`} Favorites"
               type="checkbox"
               ?checked="${this.favorite}"
               @click="${() => this.handleFavorite(id, chapter)}">
