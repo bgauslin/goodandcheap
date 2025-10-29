@@ -65,7 +65,7 @@ class GoodAndCheapHome extends LitElement {
     return html`
       <div role="tablist">
         ${this.renderTabControl('Recipes', 'recipes', 'Browse all recipes')}
-        ${this.renderTabControl('About', 'info', 'About the Book')}
+        ${this.renderTabControl('About', 'info', 'About the book')}
       </div>
 
       ${this.renderList(chapters, 'recipes', true)}
