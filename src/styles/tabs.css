@@ -15,6 +15,7 @@
   place-content: center;
 
   button {
+    border: 1px solid var(--border-color);
     padding-block: .5rem;
     padding-inline: .75rem;
   }
