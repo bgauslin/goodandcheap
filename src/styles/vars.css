@@ -269,7 +269,7 @@ gc-favorites [data-empty] {
 
     --previews-border: none;
     --previews-border-radius: 0;
-    --previews-gap: 1rem;
+    --previews-gap: .5rem;
     --previews-grid: auto-flow / repeat(3, 1fr);
 
     --view-display: block;

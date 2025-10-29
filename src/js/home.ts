@@ -64,8 +64,8 @@ class GoodAndCheapHome extends LitElement {
 
     return html`
       <div role="tablist">
-        ${this.renderTabControl('Recipes', 'recipes')}
-        ${this.renderTabControl('About', 'info')}
+        ${this.renderTabControl('Recipes', 'recipes', 'Browse all recipes')}
+        ${this.renderTabControl('About', 'info', 'About the Book')}
       </div>
 
       ${this.renderList(chapters, 'recipes', true)}
@@ -75,13 +75,14 @@ class GoodAndCheapHome extends LitElement {
     `;
   }
 
-  private renderTabControl(label: string, id: string) {
+  private renderTabControl(label: string, id: string, title: string) {
     return html`
       <button
         aria-controls="tabpanel-${id}"
         aria-selected="${this.tab === id}"
         id="tab-${id}"
         role="tab"
+        title="${title}"
         type="button"
         @click="${() => this.tab = id}">${label}</button>
       `;
