@@ -111,28 +111,28 @@ class GoodAndCheapFavorites extends LitElement {
     const chapter = element.dataset.chapter;
     const id = element.dataset.id;
 
-    // Get element's height and set custom property so that its transition
-    // triggers when the custom property changes.
-    const {height} = element.getBoundingClientRect();
-    element.style.setProperty('--block-size', `${height}px`);
-
-    // Wait a tick, change the custom property, then remove the element from
-    // the favorites list after its transition ends.
+    // Wait a tick, then get element's height and set custom property so that
+    // its transition triggers when the custom property changes.
     window.requestAnimationFrame(() => {
-      element.style.setProperty('--block-size', '0');
-      
-      element.addEventListener('transitionend', () => {
-        element.removeAttribute('style');
+      const {height} = element.getBoundingClientRect();
+      element.style.setProperty('--block-size', `${height}px`);
 
-        this.dispatchEvent(new CustomEvent(Events.Favorites, {
-          bubbles: true,
-          composed: true,
-          detail: {
-            chapter,
-            id,
-          }
-        }));
-      }, {once: true});
+      // Wait another tick, change the custom property, then remove the element
+      // from the favorites list after its transition ends.
+      window.requestAnimationFrame(() => {
+        element.style.setProperty('--block-size', '0');
+        element.addEventListener('transitionend', () => {
+          element.removeAttribute('style');
+          this.dispatchEvent(new CustomEvent(Events.Favorites, {
+            bubbles: true,
+            composed: true,
+            detail: {
+              chapter,
+              id,
+            }
+          }));
+        }, {once: true});
+      });
     });
   }
 
