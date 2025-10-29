@@ -129,7 +129,7 @@ gc-recipe {
       stroke-width: 3;
     }
 
-    .checkbox {
+    input[type='checkbox'] {
       aspect-ratio: 1;
       border: 2px solid var(--icon-color);
       border-radius: var(--marker-size);
@@ -138,33 +138,31 @@ gc-recipe {
       inline-size: var(--marker-size);
       place-items: center;
       place-self: center;
-    }
 
-    &:focus-visible {
-      .checkbox {
+      &:focus-visible {
         border-color: var(--icon-add-color);
       }
     }
 
     @media (any-hover: hover) {
-      & .checkbox {
+      input[type='checkbox'] {
         transition: border-color var(--transition);
+        
+        .text {
+          transition: opacity var(--transition);
+        }
       }
 
-      & .text {
-        transition: opacity var(--transition);
-      }
-
-      &:hover .checkbox {
+      input[type='checkbox']:hover {
         border-color: var(--icon-add-color);
-      }
 
-      &:hover .text {
-        opacity: var(--opacity);
+        .text {
+          opacity: var(--opacity);
+        }
       }
     }
 
-    &[aria-checked='true'] .checkbox {
+    input[type='checkbox'][checked] {
       background-color: var(--icon-add-background);
       border-color: var(--icon-add-color);
       color: var(--icon-add-color);

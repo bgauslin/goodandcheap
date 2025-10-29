@@ -12,7 +12,6 @@ import {checkboxIcon, favoriteIcon, footer, Events, Recipe} from './shared';
 @customElement('gc-recipe')
 class GoodAndCheapRecipe extends LitElement {
   private dataListener: EventListenerObject;
-  private keyListener: EventListenerObject;
   
   @state() data: Recipe;
   @state() favorite: boolean = false;
@@ -21,19 +20,16 @@ class GoodAndCheapRecipe extends LitElement {
   constructor() {
     super();
     this.dataListener = this.updateData.bind(this);
-    this.keyListener = this.handleKey.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener(Events.Data, this.dataListener);
-    window.addEventListener(Events.Keyup, this.keyListener);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.removeEventListener(Events.Data, this.dataListener);
-    window.removeEventListener(Events.Keyup, this.keyListener);
   }
 
   protected createRenderRoot() {
@@ -92,19 +88,6 @@ class GoodAndCheapRecipe extends LitElement {
       }
     }));
   }
-  
-  /**
-   * Adds keyboard a11y to ingredients items.
-   */
-  private handleKey(event: KeyboardEvent) {
-    const {code} = event;
-    if (code === 'Enter') {
-      const element = <HTMLElement>document.activeElement;
-      if (element.className === 'ingredients__item') {
-        element.click();
-      }
-    }
-  }
 
   protected render() {
     if (!this.data) return;
@@ -138,16 +121,14 @@ class GoodAndCheapRecipe extends LitElement {
           ${badge ? html`<div class="badge">${badge}</div>` : nothing}
           <h1>${unsafeHTML(title)}</h1>
           ${serving ? html`<div class="serving">${serving}</div>` : nothing}
-         <button
-            aria-checked="${this.favorite}"   
-            aria-label="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
-            class="favorite favorite--recipe"
-            role="checkbox"
-            title="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
-            type="button"
-            @click="${() => this.handleFavorite(id, chapter)}">
+          <label class="favorite favorite--recipe">
+            <input
+              aria-label="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
+              type="checkbox"
+              ?checked="${this.favorite}"
+              @click="${() => this.handleFavorite(id, chapter)}">
             ${unsafeHTML(favoriteIcon)}
-          </button>
+          </label>
           ${overview ? html`
             <gc-truncate content-id="${id}">
               ${unsafeHTML(overview)}
@@ -167,14 +148,15 @@ class GoodAndCheapRecipe extends LitElement {
                   const id = `${i}.${j}`;
                   const checked = this.ingredients.includes(id);
                   return html`
-                  <li
-                    aria-checked="${checked}"
-                    class="ingredients__item"
-                    role="checkbox"
-                    tabindex="0"
-                    @click="${() => this.saveIngredients(id)}">
-                    <span class="checkbox">${checked ? html`${unsafeHTML(checkboxIcon)}` : nothing}</span>
-                    <span class="text">${unsafeHTML(item)}</span>
+                  <li class="ingredients__item">
+                    <label>
+                      <input
+                        type="checkbox"
+                        ?checked="${checked}"
+                        @click="${() => this.saveIngredients(id)}">
+                        ${checked ? html`${unsafeHTML(checkboxIcon)}` : nothing}
+                      <span class="text">${unsafeHTML(item)}</span>
+                    </label>
                   </li>`
                 })}
               </ul>
@@ -228,14 +210,18 @@ class GoodAndCheapRecipe extends LitElement {
                       const id = `${k}.${m}.${n}`;
                       const checked = this.ingredients.includes(id);
                       return html`
-                        <li
-                          aria-checked="${checked}"  
-                          class="ingredients__item"
-                          role="checkbox"
-                          tabindex="0"
-                          @click="${() => this.saveIngredients(id)}">
-                          <span aria-hidden="true" class="checkbox">${checked ? html`${unsafeHTML(checkboxIcon)}` : nothing}</span>
+
+                        <li class="ingredients__item">
+
+                          <input
+                            ?checked="${checked}"
+                            type="checkbox"
+                            @click="${() => this.saveIngredients(id)}">
+                          <span aria-hidden="true" class="checkbox">
+                            ${checked ? html`${unsafeHTML(checkboxIcon)}` : nothing}
+                          </span>
                           <span class="text">${unsafeHTML(item)}</span>
+
                       </li>`})}
                     </ul>
                   `;

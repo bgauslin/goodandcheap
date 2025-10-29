@@ -1,9 +1,9 @@
 /* -------------------------------------------------------------------------- */
-/* Icon <button> styles for saving/removing recipes. */
+/* Checkbox and button styles for saving/removing recipes. */
 /* -------------------------------------------------------------------------- */
 
 /**
- * All favorites buttons.
+ * All favorites checkboxes and buttons.
  */
 :is(.close, .favorite, .remove) {
   aspect-ratio: 1;
@@ -15,23 +15,12 @@
 }
 
 /**
- * Chapter and recipe 'favorite' buttons, 'remove favorite' button.
+ * Chapter and recipe 'favorite' checkboxes, 'remove favorite' button.
  */
 :is(.favorite--preview, .favorite--recipe, .remove) {
   inset-block: .5rem auto;
   inset-inline: auto .5rem;
   position: absolute;
-
-  &,
-  &.touch {
-    background: none;
-  }
-
-  @media (any-hover: hover) {
-    &:hover {
-      background: none;
-    }
-  }
 
   svg {
     stroke: var(--icon-color);
@@ -39,11 +28,59 @@
 }
 
 /**
- * Typical 'favorite' button.
+ * Typical 'favorite' icon.
  */
 .favorite svg {
   fill: none;
   stroke-width: 2.5;
+}
+
+/**
+ * Chapter and recipe 'favorite' checkboxes.
+ */
+:is(.favorite--preview, .favorite--recipe) {
+  block-size: var(--button-size);
+  border-radius: var(--button-size);
+  cursor: pointer;
+  display: grid;
+  grid: 1fr / 1fr;
+  place-items: center;
+  
+  :is(input, svg) {
+    grid-area: 1 / 1;
+  }
+
+  input[type='checkbox'] {
+    block-size: 0;
+    inline-size: 0;
+    margin: 0;
+  }
+
+  input[checked] + svg {
+    fill: var(--icon-favorite-background);
+    stroke: var(--icon-favorite-color);
+  }
+
+  &.touch,
+  &:has(input:focus-visible) {
+    svg {
+      stroke: var(--icon-favorite-color);
+    }
+  }
+
+  &:has(input:focus-visible) {
+    background-color: var(--button-hover-background);
+  }
+
+  @media (any-hover: hover) {
+    & svg {
+      transition: fill var(--transition), stroke var(--transition);
+    }
+
+    &:hover svg {
+      stroke: var(--icon-favorite-color);
+    }
+  }
 }
 
 /**
@@ -70,35 +107,6 @@
   }
 }
 
-
-/**
- * Chapter and recipe 'favorite' buttons.
- */
-:is(.favorite--preview, .favorite--recipe) {
-
-  &.touch,
-  &:focus-visible {
-    svg {
-      stroke: var(--icon-favorite-color);
-    }
-  }
-
-  @media (any-hover: hover) {
-    & svg {
-      transition: fill var(--transition), stroke var(--transition);
-    }
-
-    &:hover svg {
-      stroke: var(--icon-favorite-color);
-    }
-  }
-
-  &[aria-checked='true'] svg {
-    fill: var(--icon-favorite-background);
-    stroke: var(--icon-favorite-color);
-  }
-}
-
 /**
  * Typical 'remove favorite' button.
  */
@@ -112,6 +120,11 @@
     stroke-width: 3;
   }
 
+  &,
+  &.touch {
+    background: none;
+  }
+
   &.touch,
   &:focus-visible {
     svg {
@@ -122,6 +135,10 @@
   }
 
   @media (any-hover: hover) {
+    &:hover {
+      background: none;
+    }
+
     & svg {
       transition: background-color var(--transition), border-color var(--transition), stroke var(--transition);
     }
