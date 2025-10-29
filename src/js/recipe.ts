@@ -139,9 +139,10 @@ class GoodAndCheapRecipe extends LitElement {
           <h1>${unsafeHTML(title)}</h1>
           ${serving ? html`<div class="serving">${serving}</div>` : nothing}
          <button
+            aria-checked="${this.favorite}"   
             aria-label="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
             class="favorite favorite--recipe"
-            data-checked="${this.favorite}"
+            role="checkbox"
             title="${this.favorite ? 'Remove from' : 'Add to'} Favorites"
             type="button"
             @click="${() => this.handleFavorite(id, chapter)}">
@@ -167,8 +168,9 @@ class GoodAndCheapRecipe extends LitElement {
                   const checked = this.ingredients.includes(id);
                   return html`
                   <li
+                    aria-checked="${checked}"
                     class="ingredients__item"
-                    ?data-checked="${checked}"
+                    role="checkbox"
                     tabindex="0"
                     @click="${() => this.saveIngredients(id)}">
                     <span class="checkbox">${checked ? html`${unsafeHTML(checkboxIcon)}` : nothing}</span>
@@ -227,11 +229,12 @@ class GoodAndCheapRecipe extends LitElement {
                       const checked = this.ingredients.includes(id);
                       return html`
                         <li
+                          aria-checked="${checked}"  
                           class="ingredients__item"
-                          ?data-checked="${checked}"
+                          role="checkbox"
                           tabindex="0"
                           @click="${() => this.saveIngredients(id)}">
-                          <span class="checkbox">${checked ? html`${unsafeHTML(checkboxIcon)}` : nothing}</span>
+                          <span aria-hidden="true" class="checkbox">${checked ? html`${unsafeHTML(checkboxIcon)}` : nothing}</span>
                           <span class="text">${unsafeHTML(item)}</span>
                       </li>`})}
                     </ul>

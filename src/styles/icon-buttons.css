@@ -93,7 +93,7 @@
     }
   }
 
-  &[data-checked='true'] svg {
+  &[aria-checked='true'] svg {
     fill: var(--icon-favorite-background);
     stroke: var(--icon-favorite-color);
   }

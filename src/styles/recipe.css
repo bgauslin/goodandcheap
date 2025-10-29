@@ -164,7 +164,7 @@ gc-recipe {
       }
     }
 
-    &[data-checked] .checkbox {
+    &[aria-checked='true'] .checkbox {
       background-color: var(--icon-add-background);
       border-color: var(--icon-add-color);
       color: var(--icon-add-color);
