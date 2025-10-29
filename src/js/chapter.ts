@@ -91,7 +91,10 @@ class GoodAndCheapChapter extends LitElement {
       counter += 1;
       previews.push(html`
         <li class="previews__item">
-          <a class="previews__link" href="./${chapter}/${id}">
+          <a
+            class="previews__link"
+            href="./${chapter}/${id}"
+            title="View recipe for ${title}">
             <figure class="previews__figure">
               <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
             </figure>

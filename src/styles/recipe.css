@@ -115,12 +115,6 @@ gc-recipe {
       place-self: center;
     }
 
-    input[type='checkbox'] {
-      block-size: 0;
-      inline-size: 0;
-      margin: 0;
-    }
-
     svg {
       fill: none;
       stroke: currentColor;

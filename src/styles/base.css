@@ -112,6 +112,18 @@ button {
 }
 
 /* ---------------------------------------- */
+/* Checkboxes. */
+
+input[type='checkbox'] {
+  appearance: none;
+  block-size: 0;
+  border: none;
+  inline-size: 0;
+  margin: 0;
+  outline: none;
+}
+
+/* ---------------------------------------- */
 /* Links. */
 
 a {

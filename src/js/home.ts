@@ -88,6 +88,7 @@ class GoodAndCheapHome extends LitElement {
   }
 
   private renderList(items: Item[], id: string, showCount: boolean = false) {
+    const group = id;
     return html`
       <div
         aria-hidden="${this.tab !== id}"
@@ -99,7 +100,10 @@ class GoodAndCheapHome extends LitElement {
           const {count, id, image, title} = item;
           return html`
             <li class="previews__item">
-              <a class="previews__link" href="./${id}">
+              <a
+                class="previews__link"
+                href="./${id}"
+                title="${group === 'info' ? `Read ${title}` : `Browse all ${title} recipes`}">
                 <figure class="previews__figure">
                   <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
                 </figure>                

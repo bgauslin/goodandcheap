@@ -179,7 +179,10 @@ class GoodAndCheapFavorites extends LitElement {
       counter += 1;
       previews.push(html`
         <li class="previews__item" data-chapter="${chapter}" data-id="${id}">
-          <a class="previews__link" href="./${chapter}/${id}">
+          <a
+            class="previews__link"
+            href="./${chapter}/${id}"
+            title="View recipe for ${title}">
             <figure class="previews__figure">
               <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
             </figure>
@@ -193,7 +196,7 @@ class GoodAndCheapFavorites extends LitElement {
           <button
             aria-label="Remove ${title} from Favorites"  
             class="remove"
-            title="Remove from Favorites"
+            title="Remove ${title} from Favorites"
             type="button"
             @click="${this.removeFavorite}">
             <svg aria-hidden="true" viewbox="0 0 24 24">
@@ -205,7 +208,7 @@ class GoodAndCheapFavorites extends LitElement {
     }
 
     const count = this.data.size;
-    let label = count ? `${count} Favorite${count > 1 || count === 0 ? 's' : ''}` : 'Favorites';
+    let label = count ? `Review ${count} Favorite${count > 1 || count === 0 ? 's' : ''}` : 'No Favorites yet';
     if (this.active) label = 'Close Favorites';
     return html`
       <div class="toggle">

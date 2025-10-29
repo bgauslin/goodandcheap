@@ -27,7 +27,8 @@ class GoodAndCheapApp extends LitElement {
   @query('gc-recipe') recipeElement: HTMLElement;
 
   // Properties.
-  @state() backLabel: string = 'Home';
+  @state() backLabel: string;
+  @state() backTitle: string;
   @state() baseTitle: string;
   @state() chapters: Chapter[];
   @state() context: string = 'home';
@@ -344,8 +345,10 @@ class GoodAndCheapApp extends LitElement {
       const id = this.getSegment();
       const chapter = this.getChapter(id);
       this.backLabel = chapter.title;
+      this.backTitle = `Browse all ${chapter.title} recipes`;
     } else {
-      this.backLabel = 'Home'
+      this.backLabel =  'Home';
+      this.backTitle = 'Go to the home page';
     }
   }
 
@@ -496,9 +499,9 @@ class GoodAndCheapApp extends LitElement {
       <header>
         <div class="header">
           <button
-            aria-label="${this.backLabel}"
+            aria-label="${this.backTitle}"
             class="back"
-            title="${this.backLabel}"
+            title="${this.backTitle}"
             type="button"
             ?disabled="${this.context === 'home' || this.dialogOpen}"
             @click="${this.handleBackButton}">
@@ -512,7 +515,7 @@ class GoodAndCheapApp extends LitElement {
             class="wordmark"
             ?disabled="${this.context === 'home'}"
             href="./"
-            title="Home"
+            title="Go to the home page"
             @click="${this.handleWordmark}">
             <picture>
               <source

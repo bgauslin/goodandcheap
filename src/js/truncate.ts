@@ -116,9 +116,10 @@ class GoodAndCheapTruncate extends LitElement {
   private renderButton() {
     return html`
       <button
+        title="${this.truncated ? 'Show more text' : 'Show less text'}"
         type="button"
         @click="${() => this.truncated = !this.truncated}">
-        ${this.truncated ? 'more…' : 'Show less'}
+        ${this.truncated ? 'more…' : '(show less)'}
       </button>
     `;
   }
