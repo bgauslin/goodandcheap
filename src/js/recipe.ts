@@ -147,14 +147,16 @@ class GoodAndCheapRecipe extends LitElement {
                 ${items.map((item, j) => {
                   const id = `${i}.${j}`;
                   const checked = this.ingredients.includes(id);
-                  return html`
-                  <li class="ingredients__item">
-                    <label>
+                  return html`                
+                  <li>
+                    <label class="ingredients__item">
                       <input
                         type="checkbox"
                         ?checked="${checked}"
                         @click="${() => this.saveIngredients(id)}">
+                      <span class="checkbox">
                         ${checked ? html`${unsafeHTML(checkboxIcon)}` : nothing}
+                      </span>
                       <span class="text">${unsafeHTML(item)}</span>
                     </label>
                   </li>`
@@ -210,18 +212,17 @@ class GoodAndCheapRecipe extends LitElement {
                       const id = `${k}.${m}.${n}`;
                       const checked = this.ingredients.includes(id);
                       return html`
-
-                        <li class="ingredients__item">
-
+                      <li>
+                        <label class="ingredients__item">
                           <input
-                            ?checked="${checked}"
                             type="checkbox"
+                            ?checked="${checked}"
                             @click="${() => this.saveIngredients(id)}">
-                          <span aria-hidden="true" class="checkbox">
+                          <span class="checkbox">
                             ${checked ? html`${unsafeHTML(checkboxIcon)}` : nothing}
                           </span>
                           <span class="text">${unsafeHTML(item)}</span>
-
+                        </label>
                       </li>`})}
                     </ul>
                   `;

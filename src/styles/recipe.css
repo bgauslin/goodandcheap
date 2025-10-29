@@ -107,20 +107,18 @@ gc-recipe {
 
   .ingredients__item {
     cursor: pointer;
-    outline: none;
     padding-block: .3em;
 
-    &:focus-visible {
-      color: var(--icon-add-color);
+    .checkbox,
+    input[type='checkbox'] {
+      grid-area: icon;
+      place-self: center;
     }
 
-    .text {
-      grid-area: text;
-      pointer-events: none;
-    }
-
-    &.touch .text {
-      opacity: var(--opacity);
+    input[type='checkbox'] {
+      block-size: 0;
+      inline-size: 0;
+      margin: 0;
     }
 
     svg {
@@ -129,32 +127,48 @@ gc-recipe {
       stroke-width: 3;
     }
 
-    input[type='checkbox'] {
+    .checkbox {
       aspect-ratio: 1;
       border: 2px solid var(--icon-color);
       border-radius: var(--marker-size);
       display: grid;
-      grid-area: icon;
       inline-size: var(--marker-size);
       place-items: center;
-      place-self: center;
+    }
 
-      &:focus-visible {
+    .text {
+      grid-area: text;
+      line-height: 1.2;
+      pointer-events: none;
+    }
+
+    &.touch .text {
+      opacity: var(--opacity);
+    }
+
+    &:has(input:focus-visible) {
+      .checkbox {
         border-color: var(--icon-add-color);
+      }
+
+      .text {
+        opacity: var(--opacity);
       }
     }
 
     @media (any-hover: hover) {
-      input[type='checkbox'] {
+      .checkbox {
         transition: border-color var(--transition);
-        
-        .text {
-          transition: opacity var(--transition);
-        }
       }
 
-      input[type='checkbox']:hover {
-        border-color: var(--icon-add-color);
+      .text {
+        transition: opacity var(--transition);
+      }
+
+      &:hover {
+        .checkbox {
+          border-color: var(--icon-add-color);
+        }
 
         .text {
           opacity: var(--opacity);
@@ -162,7 +176,7 @@ gc-recipe {
       }
     }
 
-    input[type='checkbox'][checked] {
+    input[checked] + .checkbox {
       background-color: var(--icon-add-background);
       border-color: var(--icon-add-color);
       color: var(--icon-add-color);
