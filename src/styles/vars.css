@@ -112,9 +112,9 @@
   --dialog-aspect-ratio: var(--main-aspect-ratio);
   --dialog-block-size: calc(100dvh - var(--header-block-size));
   --dialog-border: none;
-  --dialog-content-grid: 'meta' auto 'previews' 1fr / 1fr;
-  --dialog-content-min-block-size: 100%;
   --dialog-meta-place-self: start stretch;
+  --dialog-panel-grid: 'meta' auto 'previews' 1fr / 1fr;
+  --dialog-panel-min-block-size: 100%;
   
   --favorites-grid: var(--header-block-size) 1fr / 1fr;
   
@@ -154,9 +154,9 @@ gc-home {
 }
 
 gc-favorites [data-empty] {
-  --dialog-content-grid: 'meta' 1fr / 1fr;
   --dialog-meta-border-block: none;
   --dialog-meta-place-self: center;
+  --dialog-panel-grid: 'meta' 1fr / 1fr;
 }
 
 /**
@@ -175,8 +175,8 @@ gc-favorites [data-empty] {
 
     --dialog-border: 1px solid var(--border-color);
     --dialog-border-radius: var(--border-radius);
-    --dialog-content-margin-block: 0 3rem;
-    --dialog-content-min-block-size: calc(100% - 3rem);
+    --dialog-panel-margin-block: 0 3rem;
+    --dialog-panel-min-block-size: calc(100% - 3rem);
     
     --footer-border: none;
 
@@ -221,15 +221,15 @@ gc-favorites [data-empty] {
     --cover-position: sticky;
     
     --dialog-block-size: 100%;
-    --dialog-content-aspect-ratio: 2 / 1;
-    --dialog-content-grid: 'meta previews' 1fr / 1fr 1fr;
-    --dialog-content-margin-block: 0;
-    --dialog-content-min-block-size: revert;
     --dialog-meta-aspect-ratio: 1;
     --dialog-meta-border-block: none;
     --dialog-meta-border-inline: 1px solid var(--border-color);
     --dialog-meta-inset: 0;
     --dialog-meta-position: sticky;
+    --dialog-panel-aspect-ratio: 2 / 1;
+    --dialog-panel-grid: 'meta previews' 1fr / 1fr 1fr;
+    --dialog-panel-margin-block: 0;
+    --dialog-panel-min-block-size: revert;
     
     --footer-grid-area: 3 / 2;
     --footer-padding: 1rem;

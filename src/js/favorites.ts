@@ -17,9 +17,9 @@ class GoodAndCheapFavorites extends LitElement {
   @property({reflect: true}) active: boolean = false;
 
   @query('button') button: HTMLButtonElement;
-  @query('.content') content: HTMLElement;
   @query('dialog') dialog: HTMLDialogElement;
-  @query('.dialog') innerDialog: HTMLElement;
+  @query('.main') main: HTMLElement;
+  @query('.panel') panel: HTMLElement;
   @query('.toggle') toggle: HTMLElement;
 
   @state() data: Set<RecipePreview> = new Set();
@@ -82,7 +82,7 @@ class GoodAndCheapFavorites extends LitElement {
     if (this.open) {
       this.active = false;
       this.inert = true;
-      this.content.addEventListener('transitionend', () => {
+      this.panel.addEventListener('transitionend', () => {
         this.dialog.close();
         this.open = false;
       }, {once: true});
@@ -92,8 +92,8 @@ class GoodAndCheapFavorites extends LitElement {
       this.dialog.showModal();
       window.requestAnimationFrame(() => {
         this.inert = false;
-        this.innerDialog.scrollTo(0, 0);
-        this.content.scrollTo(0, 0);
+        this.main.scrollTo(0, 0);
+        this.panel.scrollTo(0, 0);
       });
     }
   }
@@ -239,8 +239,8 @@ class GoodAndCheapFavorites extends LitElement {
       <dialog
         ?inert="${this.inert}"
         ?open="${this.open}">
-        <div class="dialog">
-          <div class="content" ?data-empty="${count === 0}">
+        <div class="main">
+          <div class="panel" ?data-empty="${count === 0}">
             <div class="meta">
               <h1>${count > 0 ? `${count}` : 'No'} Favorite${count > 1 || count === 0 ? 's' : ''}</h1>
             </div>

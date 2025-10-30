@@ -44,8 +44,8 @@ gc-favorites {
   }
 
   /**
-   * The <dialog> is full-screen with a .dialog element that mimics the layout
-   * of the <main> element. Within the .dialog element is the .content element
+   * The <dialog> is full-screen with a .main element that mimics the layout
+   * of the <main> element. Within the .main element is the .panel element
    * which actually behaves like a modal dialog. This nesting allows us to
    * adopt the layout of the rest of the app and apply transitions to the modal.
    *
@@ -78,10 +78,10 @@ gc-favorites {
   }
 
   /**
-   * Hide scrollbars for both the .dialog and .content elements.
+   * Hide scrollbars for both the .main and .panel elements.
    */
-  .dialog,
-  .content {
+  .main,
+  .panel {
     scrollbar-width: none;
 
     &::-webkit-scrollbar {
@@ -93,7 +93,7 @@ gc-favorites {
    * Container element whose layout mimics the <main> element.
    * [1] Prevent dialog element from overlapping header border.
    */
-  .dialog {
+  .main {
     margin-block-start: 1px;  /* [1] */
     overflow: auto;
     grid-area: 2 / 2;
@@ -102,20 +102,20 @@ gc-favorites {
   /**
    * Modal element with transitions applied to it.
    */
-  .content {
-    aspect-ratio: var(--dialog-content-aspect-ratio);
+  .panel {
+    aspect-ratio: var(--dialog-panel-aspect-ratio);
     background-color: var(--content-background);
     border: var(--dialog-border);
     border-radius: var(--dialog-border-radius);
     display: grid;
-    grid: var(--dialog-content-grid);
-    margin-block: var(--dialog-content-margin-block);
-    min-block-size: var(--dialog-content-min-block-size);
+    grid: var(--dialog-panel-grid);
+    margin-block: var(--dialog-panel-margin-block);
+    min-block-size: var(--dialog-panel-min-block-size);
     overflow: auto;
     transition: transform var(--transition);
   }
 
-  dialog[inert] .content {
+  dialog[inert] .panel {
     transform: translateY(100%);
   }
 
