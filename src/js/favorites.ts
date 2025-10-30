@@ -91,7 +91,6 @@ class GoodAndCheapFavorites extends LitElement {
       this.dialog.showModal();
       window.requestAnimationFrame(() => {
         this.inert = false;
-        this.panel.scrollTo(0, 0);
       });
     }
   }
