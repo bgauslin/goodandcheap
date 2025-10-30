@@ -82,7 +82,7 @@ gc-favorites {
    * [1] Prevent dialog element from overlapping header border.
    */
   .main {
-    block-size: 100%;
+    block-size: calc(100% - 1px);
     display: grid;
     grid: 1fr / 1fr;
     margin-block-start: 1px;  /* [1] */
@@ -120,20 +120,24 @@ gc-favorites {
    */
   .meta {
     aspect-ratio: var(--dialog-meta-aspect-ratio);
+    backdrop-filter: var(--backdrop-filter);
+    background-color: var(--callout-background);
     border-block-end: var(--dialog-meta-border-block);
     border-inline-end: var(--dialog-meta-border-inline);
     display: grid;
     grid: 1fr / 1fr;
     grid-area: meta;
-    inset-block: var(--dialog-meta-inset, initial);
+    inset-block: 0 auto;
     overflow: hidden;
     place-self: var(--dialog-meta-place-self);
-    position: var(--dialog-meta-position, static);
+    position: sticky;
+    z-index: 1;
   }
 
   h1 {
+    font-size: 100%;
     margin: 0;
-    padding-block: 1rem;
+    padding-block: .75em;
     place-self: center;
     pointer-events: none;
     text-align: center;

@@ -224,8 +224,6 @@ gc-favorites [data-empty] {
     --dialog-meta-aspect-ratio: 1;
     --dialog-meta-border-block: none;
     --dialog-meta-border-inline: 1px solid var(--border-color);
-    --dialog-meta-inset: 0;
-    --dialog-meta-position: sticky;
     --dialog-panel-aspect-ratio: 2 / 1;
     --dialog-panel-grid: 'meta previews' 1fr / 1fr 1fr;
     --dialog-panel-margin-block: 0;
