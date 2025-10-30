@@ -78,24 +78,15 @@ gc-favorites {
   }
 
   /**
-   * Hide scrollbars for both the .main and .panel elements.
-   */
-  .main,
-  .panel {
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  /**
    * Container element whose layout mimics the <main> element.
    * [1] Prevent dialog element from overlapping header border.
    */
   .main {
+    block-size: 100%;
+    display: grid;
+    grid: 1fr / 1fr;
     margin-block-start: 1px;  /* [1] */
-    overflow: auto;
+    overflow: hidden;
     grid-area: 2 / 2;
   }
 
@@ -112,7 +103,12 @@ gc-favorites {
     margin-block: var(--dialog-panel-margin-block);
     min-block-size: var(--dialog-panel-min-block-size);
     overflow: auto;
+    scrollbar-width: none;
     transition: transform var(--transition);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   dialog[inert] .panel {

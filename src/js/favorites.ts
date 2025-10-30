@@ -18,7 +18,6 @@ class GoodAndCheapFavorites extends LitElement {
 
   @query('button') button: HTMLButtonElement;
   @query('dialog') dialog: HTMLDialogElement;
-  @query('.main') main: HTMLElement;
   @query('.panel') panel: HTMLElement;
   @query('.toggle') toggle: HTMLElement;
 
@@ -92,7 +91,6 @@ class GoodAndCheapFavorites extends LitElement {
       this.dialog.showModal();
       window.requestAnimationFrame(() => {
         this.inert = false;
-        this.main.scrollTo(0, 0);
         this.panel.scrollTo(0, 0);
       });
     }
