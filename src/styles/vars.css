@@ -208,7 +208,7 @@ gc-favorites [data-empty] {
  */
 @media (min-width: 67rem) and (orientation: landscape) {
   :root {
-    --app-grid: 1fr auto 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
+    --app-grid: 1fr minmax(32rem, auto) 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
     
     --back-button-label-display: initial;
     
