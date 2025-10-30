@@ -140,8 +140,8 @@ class GoodAndCheapFavorites extends LitElement {
   private handleClick(event: Event) {
     const target = <HTMLElement>event.composedPath()[0];
 
-    // Keep the dialog open if content area or a remove button is clicked.
-    if (['content', 'meta', 'remove'].includes(target.className)) {
+    // Keep dialog open if the panel's contents or a 'remove' button is clicked.
+    if (['meta', 'panel', 'remove'].includes(target.className)) {
       return;
     }
 
