@@ -11,6 +11,9 @@ gc-app {
 /* ---------------------------------------- */
 /* Main. */
 
+/**
+ * [1] Ensure <gc-home> tab panels are full width.
+ */
 main {
   aspect-ratio: var(--main-aspect-ratio, unset);
   block-size: var(--main-block-size);
@@ -19,9 +22,10 @@ main {
   display: grid;
   grid: 'view' 1fr / 1fr;
   grid-area: var(--main-grid-area);
+  inline-size: 100%;  /* [1] */
   overflow: hidden;
   place-self: center;
-  transition: opacity .5s;
+  transition: opacity var(--transition);
 }
 
 [data-loading] {
