@@ -38,9 +38,22 @@ gc-recipe {
     margin-block: 0 1em;
   }
 
+  p {
+    margin-block: 0 1em;
+  }
+
   /* ---------------------------------------- */
   /* Recipe headings. */
 
+  /* All h2 headings: ingredients, steps, more. */
+  h2 {
+    margin-block: 0;
+    padding-block: 1em;
+  }
+
+  /**
+   * Ingredients and steps headings.
+   */
   :is(.ingredients, .steps) :is(h2, h3) {
     padding-inline: var(--gap);
   }
@@ -53,25 +66,16 @@ gc-recipe {
     position: sticky;
   }
 
-  .ingredients h2 {
+  .ingredients h2 + * {
+    padding-block-start: 1em;
+  }
+
+  .ingredients h3 {
     margin-block-start: 0;
   }
 
-  h2 {
-    margin-block: 1em;
-    padding-block: 1em;
-  }
-
-  h3 {
-    margin-block: 2em 1em;
-  }
-
-  h2 + h3 {
-    margin-block-start: 0;
-  }
-
-  p {
-    margin-block: 0 1em;
+  .ingredients :is(ol, ul) + h3 {
+    margin-block-start: 1em;
   }
 
   /* ---------------------------------------- */
@@ -91,8 +95,8 @@ gc-recipe {
     list-style: none;
   }
 
-  .ingredients__list + .steps__list {
-    margin-block-start: 2em;
+  .ingredients__list:last-child {
+    padding-block-end: 1em;
   }
 
   .ingredients__item,
@@ -182,7 +186,7 @@ gc-recipe {
 
   .steps__list {
     counter-reset: steps 0;
-    padding-block: 0 var(--gap);
+    padding-block: 1em var(--gap);
   }
 
   .steps__item {
@@ -207,16 +211,17 @@ gc-recipe {
   /* Recipes within recipes. */
 
   .more {
-    margin-block: 2rem 0;
+    margin-block: 1rem;
     padding-inline: var(--gap);
   }
 
   .more:last-child {
-    padding-block: 0 3rem;
+    padding-block-end: var(--gap);
   }
 
   .more h2 {
     margin-block: 0;
+    padding-block-start: 0;
   }
 
   .more .steps {
@@ -226,6 +231,7 @@ gc-recipe {
   .photo {
     display: grid;
     grid: 'photo' 1fr / 1fr;
+    margin-block: 0 1em;
   }
 
   .photo > * {
