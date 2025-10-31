@@ -217,6 +217,7 @@ gc-recipe {
   }
 
   .more:last-child {
+    margin-block-end: 0;
     padding-block-end: var(--gap);
   }
 
