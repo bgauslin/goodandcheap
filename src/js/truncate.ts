@@ -10,9 +10,9 @@ import {unsafeHTML} from 'lit/directives/unsafe-html.js';
  */
 @customElement('gc-truncate')
 class GoodAndCheapTruncate extends LitElement {
-  @property({attribute: 'content-id'}) contentId: string;
-  @property({attribute: 'words', reflect: true}) wordCount: number = 25;
-    
+  @property({attribute: 'words', reflect: true, type: Number}) limit: number;
+  @property({attribute: 'source', reflect: true}) source: string;
+
   @state() enableTruncation: boolean = true;
   @state() originalContent: string = '';
   @state() paragraphs: string[] = [];
@@ -35,7 +35,7 @@ class GoodAndCheapTruncate extends LitElement {
    * Resets everything when new content is rendered.
    */
   protected willUpdate(changedProperties: PropertyValues<this>) {
-    if (changedProperties.has('contentId')) {
+    if (changedProperties.has('source') || changedProperties.has('limit')) {
       this.enableTruncation = true;
       this.originalContent = '';
       this.paragraphs = [];
@@ -71,21 +71,21 @@ class GoodAndCheapTruncate extends LitElement {
     const threshold = 10;
 
     // Get a total word count of all paragraphs.
-    let totalWords = 0;
+    let total = 0;
     for (const paragraph of this.paragraphs) {
       const words = paragraph.split(/\s+/);
-      totalWords += words.length;
+      total += words.length;
     }
 
     // Get the first paragraph's content, and if there are fewer words in the
     // first paragraph than the word limit, stop truncating.
-    if (totalWords > (this.wordCount + threshold)) {
+    if (total > (this.limit + threshold)) {
       const words = this.paragraphs[0].split(/\s+/);
-      for (let i = 0; i < this.wordCount; i++) {
+      for (let i = 0; i < this.limit; i++) {
         const word = words[i];
         if (word) {
           this.truncatedContent += word;
-          if (i < (this.wordCount - 1)) {
+          if (i < (this.limit - 1)) {
             this.truncatedContent += ' ';
           }
         } else {
@@ -119,7 +119,7 @@ class GoodAndCheapTruncate extends LitElement {
         title="${this.truncated ? 'Show more text' : 'Show less text'}"
         type="button"
         @click="${() => this.truncated = !this.truncated}">
-        ${this.truncated ? 'more…' : '(show less)'}
+        ${this.truncated ? '(more…)' : '(show less)'}
       </button>
     `;
   }

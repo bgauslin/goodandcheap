@@ -131,7 +131,7 @@ class GoodAndCheapChapter extends LitElement {
       <div class="content">
         <div class="copy">
           <h1>${unsafeHTML(title)}</h1>
-          <gc-truncate content-id="${this.data.id}">
+          <gc-truncate source="${this.data.id}" words="24">
             ${unsafeHTML(content)}
           </gc-truncate>
         </div>

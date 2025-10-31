@@ -132,7 +132,7 @@ class GoodAndCheapRecipe extends LitElement {
             ${unsafeHTML(favoriteIcon)}
           </label>
           ${overview ? html`
-            <gc-truncate content-id="${id}">
+            <gc-truncate source="${id}" words="24">
               ${unsafeHTML(overview)}
             </gc-truncate>
           ` : nothing}
