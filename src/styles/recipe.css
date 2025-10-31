@@ -64,6 +64,7 @@ gc-recipe {
     border-block-end: 1px solid var(--border-color);
     inset-block: 0 auto;
     position: sticky;
+    z-index: 1;
   }
 
   .ingredients h2 + * {
