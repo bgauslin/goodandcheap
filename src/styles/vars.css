@@ -112,6 +112,7 @@
   --dialog-aspect-ratio: var(--main-aspect-ratio);
   --dialog-block-size: calc(100dvh - var(--header-block-size));
   --dialog-border: none;
+  --dialog-h1-font-size: 100%;
   --dialog-meta-place-self: start stretch;
   --dialog-panel-grid: 'meta' auto 'previews' 1fr / 1fr;
   --dialog-panel-min-block-size: 100%;
@@ -154,6 +155,7 @@ gc-home {
 }
 
 gc-favorites [data-empty] {
+  --dialog-h1-font-size: 2em;
   --dialog-meta-border-block: none;
   --dialog-meta-place-self: center;
   --dialog-panel-grid: 'meta' 1fr / 1fr;
@@ -221,6 +223,7 @@ gc-favorites [data-empty] {
     --cover-position: sticky;
     
     --dialog-block-size: 100%;
+    --dialog-h1-font-size: 2em;
     --dialog-meta-aspect-ratio: 1;
     --dialog-meta-border-block: none;
     --dialog-meta-border-inline: 1px solid var(--border-color);
