@@ -88,32 +88,37 @@ class GoodAndCheapChapter extends LitElement {
       const favorite = this.favorites.has(id);
       let callout = html`<p class="serving">${serving}</p>`;
       if (badge) callout = html`<p class="badge">${badge}</p>`;
+      const linkTitle = `View recipe for ${title}`;
+      const buttonTitle = favorite ? `Remove ${title} from Favorites` : `Add ${title} to Favorites`;
       counter += 1;
       previews.push(html`
         <li class="previews__item">
           <a
+            class="previews__thumb"
+            href="./${chapter}/${id}" title="${linkTitle}"
+            tabindex="-1">
+            <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
+          </a>
+          <a
             class="previews__link"
             href="./${chapter}/${id}"
-            title="View recipe for ${title}">
-            <figure class="previews__figure">
-              <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
-            </figure>
+            title="${linkTitle}">
             <div class="previews__description">
               <p class="previews__title">${title}</p>
               ${callout}
             </div>
-            <div class="previews__counter">${counter}</div>
           </a>
           <label
             class="favorite favorite--preview"
-            title="${favorite ? `Remove ${title} from` : `Add ${title} to`} Favorites">
+            title="${buttonTitle}">
             <input
-              aria-label="${favorite ? `Remove ${title} from` : `Add ${title} to`} Favorites"
+              aria-label="${buttonTitle}"
               type="checkbox"
               ?checked="${favorite}"
               @click="${() => this.updateFavorite(id)}">
             ${unsafeHTML(favoriteIcon)}
           </label>
+          <span class="previews__counter">${counter}</span>
         </li>
       `);
     }

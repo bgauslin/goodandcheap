@@ -173,22 +173,27 @@ class GoodAndCheapFavorites extends LitElement {
     const previews = [];
     for (const recipe of this.data) {
       const {badge, chapter, id, image, serving, title} = recipe;
+      const linkTitle = `View recipe for ${title}`;
       counter += 1;
       previews.push(html`
-        <li class="previews__item" data-chapter="${chapter}" data-id="${id}">
+        <li
+          class="previews__item"
+          data-chapter="${chapter}"
+          data-id="${id}">
+          <a
+            class="previews__thumb"
+            href="./${chapter}/${id}" title="${linkTitle}"
+            tabindex="-1">
+            <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
+          </a>
           <a
             class="previews__link"
-            href="./${chapter}/${id}"
-            title="View recipe for ${title}">
-            <figure class="previews__figure">
-              <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
-            </figure>
+            href="./${chapter}/${id}" title="${linkTitle}">
             <div class="previews__description">
               <p class="previews__title">${title}</p>
               ${badge ? html`<p class="badge">${badge}</p>` : nothing}
               ${serving ? html`<p class="serving">${serving}</p>` : nothing}
             </div>
-            <div class="previews__counter">${counter}</div>
           </a>
           <button
             aria-label="Remove ${title} from Favorites"  
@@ -200,6 +205,7 @@ class GoodAndCheapFavorites extends LitElement {
               <path d="M7,7 L17,17 M7,17 L17,7"/>
             </svg>
           </button>
+          <span class="previews__counter">${counter}</span>
         </li>
       `);
     }

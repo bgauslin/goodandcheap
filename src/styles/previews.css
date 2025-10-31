@@ -20,40 +20,46 @@
   border: var(--preview-border, none);
   border-block-start: var(--preview-divider);
   border-radius: var(--preview-border-radius, 0);
+  display: grid;
+  grid: var(--preview-grid);
   overflow: hidden;
   position: relative;
   transition: block-size var(--transition);
   will-change: block-size;
 }
 
-.previews__link {
-  align-items: center;
-  display: grid;
-  gap: .75rem;
-  grid: 'thumb description counter' auto / auto 1fr 3.25rem;
-}
-
-.previews__link > * {
-  pointer-events: none;
-}
-
-.previews__figure {
+.previews__thumb {
   aspect-ratio: 1;
   grid-area: thumb;
-  inline-size: var(--thumb-size);
-  margin-block: .75rem;
-  margin-inline: .75rem 0;
+  padding: .75rem;
+
+  @media (any-hover: hover) {
+    & img {
+      transition: transform var(--transition);
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    &:hover + a {
+      color: var(--link-focus-color);
+    }
+  }
 }
 
 .previews__img {
   aspect-ratio: 1;
   background-color: var(--image-background);
   border-radius: .5rem;
-  object-fit: cover;
+  inline-size: var(--thumb-size);
 }
 
-.previews__description {
-  grid-area: description;
+.previews__link {
+  display: grid;
+  grid-area: link;
+  padding-inline: 0 .75rem;
+  place-content: center start;
 }
 
 .previews__description :is(.badge, .count, .serving) {
@@ -82,4 +88,5 @@
   margin-block: 0 .75rem;
   opacity: var(--opacity);
   place-self: end center;
+  user-select: none;
 }

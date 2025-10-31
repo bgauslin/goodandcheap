@@ -99,15 +99,18 @@ class GoodAndCheapHome extends LitElement {
         <ul class="previews">
         ${items.map(item => {
           const {count, id, image, title} = item;
+          const linkTitle = (group === 'info') ? `Read ${title}` : `Browse all ${title} recipes`;
           return html`
             <li class="previews__item">
               <a
+                class="previews__thumb"
+                href="./${id}" title="${linkTitle}"
+                tabindex="-1">
+                <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
+              </a>
+              <a
                 class="previews__link"
-                href="./${id}"
-                title="${group === 'info' ? `Read ${title}` : `Browse all ${title} recipes`}">
-                <figure class="previews__figure">
-                  <img class="previews__img" src="./images/${image}@thumb.webp" alt="">
-                </figure>                
+                href="./${id}" title="${linkTitle}">
                 <div class="previews__description">
                   <p class="previews__title">${unsafeHTML(title)}</p>
                   ${showCount ? html`<p class="count">${count} Recipes</p>` : nothing}

@@ -131,7 +131,8 @@
   --main-grid-area: 1 / 2 / 3 / 2;
   
   --preview-divider: 1px solid var(--border-color);
-  
+  --preview-grid: 'thumb link counter' auto / auto 1fr 3.25rem;
+
   --previews-gap: 0;
   --previews-grid: auto-flow / 1fr;
   
@@ -152,6 +153,7 @@ gc-app {
 
 gc-home {
   --preview-background: var(--content-background);
+  --preview-grid: 'thumb link' auto / auto 1fr;
 }
 
 gc-favorites [data-empty] {
