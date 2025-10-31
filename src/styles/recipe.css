@@ -12,7 +12,7 @@ gc-recipe {
     padding-block: .5rem;
     padding-inline: .75rem;
     place-self: start;
-    z-index: 1;
+    z-index: 4;
   }
 
   .content {

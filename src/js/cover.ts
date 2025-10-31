@@ -52,6 +52,7 @@ class GoodAndCheapCover extends LitElement {
       <img
         alt=""
         aria-hidden="${this.loading}"
+        class="primary"
         src="./images/${this.src}@medium.webp"
         srcset="
           ./images/${this.src}@small.webp 400w,
@@ -59,6 +60,11 @@ class GoodAndCheapCover extends LitElement {
           ./images/${this.src}@large.webp 800w"
           ./images/${this.src}@xlarge.webp 1000w"
         sizes="(min-width: 32rem) 512px, 100vw">
+      <img
+        alt=""
+        aria-hidden="${!this.loading}"
+        class="placeholder"
+        src="./images/${this.src}@thumb.webp">
     `;
   }
 }

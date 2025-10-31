@@ -30,19 +30,28 @@
     place-self: center;
   }
 
-  svg {
-    fill: currentColor;
-    inline-size: 2em;
-  }
-
   img {
     aspect-ratio: 1;
-    object-fit: cover;
+    filter: var(--img-filter, none);
     transition: opacity var(--transition);
-    z-index: 1;
   }
 
   img[aria-hidden='true'] {
     opacity: 0;
+  }
+
+  .placeholder {
+    filter: blur(20px);
+    z-index: 1;
+  }
+
+  .primary {
+    z-index: 2;
+  }
+
+  svg {
+    color: var(--text-color-inverted);
+    inline-size: 2rem;
+    z-index: 3;
   }
 }

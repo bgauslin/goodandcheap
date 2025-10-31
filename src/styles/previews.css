@@ -60,6 +60,7 @@
   aspect-ratio: 1;
   background-color: var(--image-background);
   border-radius: .5rem;
+  filter: var(--img-filter, none);
   inline-size: var(--thumb-size);
 }
 
