@@ -29,6 +29,14 @@
   will-change: block-size;
 }
 
+/**
+ * Prevent all link children from being event targets; only the link should
+ * be the target for <gc-app> event handling.
+ */
+.previews__item > a > * {
+  pointer-events: none;
+}
+
 .previews__thumb {
   aspect-ratio: 1;
   grid-area: 2 / 2;
