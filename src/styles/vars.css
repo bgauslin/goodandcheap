@@ -99,6 +99,7 @@
  * Small / default
  */
 :root {
+  /* Global styles. */
   --border-radius: 1.5rem;
   --button-size: 2.25rem;
   --gap: clamp(.75rem, .75rem + 1vw, 3rem);
@@ -106,10 +107,13 @@
   --marker-size: 1.5rem;
   --thumb-size: 4.5rem;
 
+  /* The <gc-app> element. */
   --app-grid: var(--header-block-size) 1fr / 1fr minmax(auto, var(--section-max-inline-size)) 1fr;
 
+  /* Back button in <header>. */
   --back-button-label-display: none;
 
+  /* The <gc-favorites> modal window. */
   --dialog-aspect-ratio: var(--main-aspect-ratio);
   --dialog-block-size: calc(100dvh - var(--header-block-size));
   --dialog-border: none;
@@ -118,27 +122,35 @@
   --dialog-panel-grid: 'meta' auto 'previews' 1fr / 1fr;
   --dialog-panel-min-block-size: 100%;
   
+  /* The <gc-favorites> element. */
   --favorites-grid: var(--header-block-size) 1fr / 1fr;
   
+  /* Site-wide <footer> element. */
   --footer-border: 1px solid var(--border-color);
   --footer-padding: 2rem;
 
+  /* The <header> and .header elements. */
   --header-gap: 0 .5rem;
   --header-grid: '. back wordmark favorites .' var(--header-block-size) / 0 1fr auto 1fr 0;
   --header-position: fixed;
   --header-block-size: clamp(3rem, 3rem + 1vw, 5rem);
 
+  /* Site-wide <main> element containing all <gc-*> elements. */
   --main-block-size: 100dvh;
   --main-grid-area: 1 / 2 / 3 / 2;
   
+  /* Preview (singular) within <gc-home> and <gc-chapter> elements. */
   --preview-divider: 1px solid var(--border-color);
   --preview-grid: 0 var(--thumb-size) 0 / 0 var(--thumb-size) 1fr 3.25rem;
 
+  /* Previews (plural) within <gc-home> and <gc-chapter> elements. */
   --previews-gap: 0;
   --previews-grid: auto-flow / 1fr;
   
+  /* Max-width for .header and <main> elements. */
   --section-max-inline-size: 32rem;  /* 32rem = 512px */
 
+  /* Primary <gc-*> elements.*/
   --view-background: var(--body-background);
   --view-display: block;
   --view-padding-block: var(--header-block-size) 0;
@@ -170,21 +182,27 @@ gc-favorites [data-empty] {
  */
 @media (min-width: 32rem) {
   :root {
+    /* The <gc-app> element. */
     --app-grid: var(--header-block-size) 1fr / 1fr var(--section-max-inline-size) 1fr;
 
+    /* The .content element within <gc-*> elements. */
     --content-border: 1px solid var(--border-color);
     --content-border-radius: 0 0 var(--border-radius) var(--border-radius);
 
+    /* The <gc-cover> element. */
     --cover-border: 1px solid var(--border-color);
     --cover-border-radius: var(--border-radius) var(--border-radius) 0 0;
 
+    /* The <gc-favorites> modal window. */
     --dialog-border: 1px solid var(--border-color);
     --dialog-border-radius: var(--border-radius);
     --dialog-panel-margin-block: 0 3rem;
     --dialog-panel-min-block-size: calc(100% - 3rem);
     
+    /* Site-wide <footer> element. */
     --footer-border: none;
 
+    /* Site-wide <header> and .header elements. */
     --header-background: rgba(242, 242, 247, .75);
     --header-border: none;
     --header-position: static;
@@ -213,18 +231,23 @@ gc-favorites [data-empty] {
  */
 @media (min-width: 67rem) and (orientation: landscape) {
   :root {
+    /* The <gc-app> element. */
     --app-grid: 1fr minmax(32rem, auto) 1fr / 1fr minmax(0, var(--section-max-inline-size)) 1fr;
     
+    /* Back button in <header>. */
     --back-button-label-display: initial;
     
+    /* The .content element within <gc-*> elements. */
     --content-border: none;
     --content-border-radius: none;
     
+    /* The <gc-cover> element. */
     --cover-border: none;
     --cover-border-radius: none;
     --cover-inset: 0;
     --cover-position: sticky;
     
+    /* The <gc-favorites> modal window. */
     --dialog-block-size: 100%;
     --dialog-h1-font-size: 2em;
     --dialog-meta-aspect-ratio: 1;
@@ -235,20 +258,25 @@ gc-favorites [data-empty] {
     --dialog-panel-margin-block: 0;
     --dialog-panel-min-block-size: revert;
     
+    /* Site-wide <footer> element. */
     --footer-grid-area: 3 / 2;
     --footer-padding: 1rem;
     
+    /* Site-wide <header> and .header elements. */
     --header-background: none;
     --header-grid: 'back back wordmark favorites .' var(--header-block-size) / 0 1fr auto 1fr 0;
 
+    /* Site-wide <main> element containing all <gc-*> elements. */
     --main-aspect-ratio: 2 / 1;
     --main-block-size: 100%;
     --main-border: 1px solid var(--border-color);
     --main-border-radius: var(--border-radius);
     --main-grid-area: 2 / 2;
 
+    /* Max-width for .header and <main> elements. */
     --section-max-inline-size: 64rem;  /* 64rem = 1024px */
 
+    /* Primary <gc-*> elements.*/
     --view-display: grid;
     --view-grid: 'cover content' / 1fr 1fr;
     --view-padding-block: 0;
