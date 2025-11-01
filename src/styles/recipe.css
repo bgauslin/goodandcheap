@@ -214,34 +214,34 @@ gc-recipe {
   .more {
     margin-block: 1rem;
     padding-inline: var(--gap);
-  }
 
-  .more:last-child {
-    margin-block-end: 0;
-    padding-block-end: var(--gap);
-  }
-
-  .more h2 {
-    margin-block: 0;
-    padding-block-start: 0;
-  }
-
-  .more .steps {
-    margin-block: 1em;
+    &:last-child {
+      margin-block-end: 0;
+      padding-block-end: var(--gap);
+    }
+  
+    h2 {
+      margin-block: 0;
+      padding-block-start: 0;
+    }
+  
+    .steps {
+      margin-block: 1em;
+    }
   }
 
   .photo {
     display: grid;
     grid: 'photo' 1fr / 1fr;
     margin-block: 0 1em;
-  }
 
-  .photo > * {
-    grid-area: photo;
-  }
-
-  .photo > .cost {
-    margin-block: 2rem 0;
-    place-self: start;
+    & > * {
+      grid-area: photo;
+    }
+  
+    .cost {
+      margin-block: 2rem 0;
+      place-self: start;
+    }
   }
 }
