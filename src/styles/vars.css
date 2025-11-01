@@ -206,6 +206,10 @@ gc-favorites [data-empty] {
     --header-background: rgba(242, 242, 247, .75);
     --header-border: none;
     --header-position: static;
+
+    @media (prefers-color-scheme: dark) {
+      --header-background: rgba(0, 0, 0, .75);
+    }
   }
 
   gc-home {
@@ -215,12 +219,6 @@ gc-favorites [data-empty] {
 
   gc-home .previews__item:first-child {
     --preview-divider: none;
-  }
-}
-
-@media (min-width: 32rem) and (prefers-color-scheme: dark) {
-  :root {
-    --header-background: rgba(0, 0, 0, .75);
   }
 }
 
