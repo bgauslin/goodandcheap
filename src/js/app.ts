@@ -529,26 +529,24 @@ class GoodAndCheapApp extends LitElement {
         </div>
       </header>
 
-      <main ?data-loading="${this.loading}">
+      <main
+        ?data-inactive="${this.dialogOpen}"  
+        ?data-loading="${this.loading}">
         <gc-home
-          active="${!this.dialogOpen}"
           class="view"
           transition="${this.homeTransition}"  
           ?inert="${this.context !== 'home'}"></gc-home>
         <gc-page
-          active="${!this.dialogOpen}"
           class="view"
           role="article"
           transition="${this.pageTransition}"
           ?inert="${this.context !== 'page'}"></gc-page>
         <gc-chapter
-          active="${!this.dialogOpen}"
           class="view"
           role="article"
           transition="${this.chapterTransition}"
           ?inert="${this.context !== 'chapter'}"></gc-chapter>
         <gc-recipe
-          active="${!this.dialogOpen}"
           class="view"
           role="article"
           transition="${this.recipeTransition}"
