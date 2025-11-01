@@ -12,43 +12,43 @@ header {
   place-self: center stretch;
   position: var(--header-position);
   z-index: 3;
+}
 
-  /**
-   * Layout wrapper.
-   */
-  .header {
-    display: grid;
-    gap: var(--header-gap);
-    grid: var(--header-grid);
-    margin: 0 auto;
-    max-inline-size: var(--section-max-inline-size);
+/**
+ * Inner layout wrapper.
+ */
+.header {
+  display: grid;
+  gap: var(--header-gap);
+  grid: var(--header-grid);
+  margin: 0 auto;
+  max-inline-size: var(--section-max-inline-size);
+}
+
+/**
+ * Wordmark.
+ */
+.wordmark {
+  grid-area: wordmark;
+  place-self: center;
+  transition: transform var(--transition);
+
+  &.touch {
+    transform: scale(.9);
   }
 
-  /**
-   * Wordmark.
-   */
-  .wordmark {
-    grid-area: wordmark;
-    place-self: center;
-    transition: transform var(--transition);
-
-    &.touch {
+  @media (any-hover: hover) {
+    &:active {
       transform: scale(.9);
     }
-
-    @media (any-hover: hover) {
-      &:active {
-        transform: scale(.9);
-      }
-    }
   }
 
-  .wordmark > *,
-  .wordmark[disabled] {
+  & > *,
+  &[disabled] {
     pointer-events: none;
   }
-
-  .wordmark img {
+  
+  img {
     block-size: 2.5em;
     inline-size: auto;
   }
