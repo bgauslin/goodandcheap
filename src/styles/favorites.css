@@ -9,6 +9,11 @@
 gc-favorites {
   display: contents;  /* [1] */
 
+  /* Buttons are placed within header grid. */
+  :is(.favorite--toggle, .close) {
+    grid-area: button;
+  }
+
   /*
    * Open/close button.
    */
@@ -19,28 +24,24 @@ gc-favorites {
     grid-area: favorites;
     place-self: center end;
     place-items: center;
-  }
 
-  .toggle.added {
-    animation: .5s 1 bounce;
-  }
+    &.added {
+      animation: .5s 1 bounce;
+    }
 
-  .favorite--toggle, .close {
-    grid-area: button;
-  }
-
-  .toggle .count {
-    background-color: var(--brand-color);
-    block-size: 1rem;
-    border-radius: 1rem;
-    color: var(--text-color-inverted);
-    display: grid;
-    grid-area: count;
-    margin-inline: auto -.375rem;
-    min-inline-size: 1rem;
-    padding-inline: .3em;
-    place-content: center;
-    letter-spacing: 0;
+    .count {
+      background-color: var(--brand-color);
+      block-size: 1rem;
+      border-radius: 1rem;
+      color: var(--text-color-inverted);
+      display: grid;
+      grid-area: count;
+      margin-inline: auto -.375rem;
+      min-inline-size: 1rem;
+      padding-inline: .3em;
+      place-content: center;
+      letter-spacing: 0;
+    }
   }
 
   /**
@@ -109,10 +110,10 @@ gc-favorites {
     &::-webkit-scrollbar {
       display: none;
     }
-  }
-
-  dialog[inert] .panel {
-    transform: translateY(100%);
+  
+    dialog[inert] & {
+      transform: translateY(100%);
+    }
   }
 
   /**

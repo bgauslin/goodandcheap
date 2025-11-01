@@ -45,7 +45,9 @@ gc-recipe {
   /* ---------------------------------------- */
   /* Recipe headings. */
 
-  /* All h2 headings: ingredients, steps, more. */
+  /**
+   * All h2 headings: ingredients, steps, more.
+   */
   h2 {
     margin-block: 0;
     padding-block: 1em;
@@ -54,29 +56,36 @@ gc-recipe {
   /**
    * Ingredients and steps headings.
    */
-  :is(.ingredients, .steps) :is(h2, h3) {
-    padding-inline: var(--gap);
-  }
+  :is(.ingredients, .steps) {
+    :is(h2, h3) {
+      padding-inline: var(--gap);
+    }
   
-  :is(.ingredients, .steps) h2 {
-    backdrop-filter: var(--backdrop-filter);
-    background-color: var(--callout-background);
-    border-block-end: 1px solid var(--border-color);
-    inset-block: 0 auto;
-    position: sticky;
-    z-index: 1;
+    h2 {
+      backdrop-filter: var(--backdrop-filter);
+      background-color: var(--callout-background);
+      border-block-end: 1px solid var(--border-color);
+      inset-block: 0 auto;
+      position: sticky;
+      z-index: 1;
+    }
   }
 
-  .ingredients h2 + * {
-    padding-block-start: 1em;
-  }
+  /**
+   * Ingredients headings.
+   */
+  .ingredients {
+    h2 + * {
+      padding-block-start: 1em;
+    }
 
-  .ingredients h3 {
-    margin-block-start: 0;
-  }
+    h3 {
+      margin-block-start: 0;
+    }
 
-  .ingredients :is(ol, ul) + h3 {
-    margin-block-start: 1em;
+    :is(ol, ul) + h3 {
+      margin-block-start: 1em;
+    }
   }
 
   /* ---------------------------------------- */
@@ -85,14 +94,13 @@ gc-recipe {
   :is(ul, ol) {
     margin-block: 0;
     padding-inline: var(--gap);
+
+    .more & {
+      padding-inline: 0;
+    }
   }
 
-  .more :is(ul, ol) {
-    padding-inline: 0;
-  }
-
-  .ingredients__list,
-  .steps__list {
+  :is(.ingredients__list, .steps__list) {
     list-style: none;
   }
 
@@ -100,8 +108,7 @@ gc-recipe {
     padding-block-end: 1em;
   }
 
-  .ingredients__item,
-  .steps__item {
+  :is(.ingredients__item, .steps__item) {
     display: grid;
     gap: 0 .4em;
     grid: 'icon text' / var(--marker-size) 1fr;
@@ -114,8 +121,7 @@ gc-recipe {
     cursor: pointer;
     padding-block: .3em;
 
-    .checkbox,
-    input[type='checkbox'] {
+    :is(.checkbox, input[type='checkbox']) {
       grid-area: icon;
       place-self: center;
     }
@@ -193,19 +199,19 @@ gc-recipe {
   .steps__item {
     counter-increment: steps;
     margin-block: 0 1em;
-  }
 
-  .steps__item::before {
-    aspect-ratio: 1;
-    background-color: var(--text-color);
-    border-radius: var(--marker-size);
-    color: var(--text-color-inverted);
-    content: counter(steps);
-    display: grid;
-    font-size: var(--subhead-font-size);
-    inline-size: var(--marker-size);
-    place-content: center;
-    place-self: start;
+    &::before {
+      aspect-ratio: 1;
+      background-color: var(--text-color);
+      border-radius: var(--marker-size);
+      color: var(--text-color-inverted);
+      content: counter(steps);
+      display: grid;
+      font-size: var(--subhead-font-size);
+      inline-size: var(--marker-size);
+      place-content: center;
+      place-self: start;
+    }
   }
 
   /* ---------------------------------------- */
@@ -232,11 +238,11 @@ gc-recipe {
 
   .photo {
     display: grid;
-    grid: 'photo' 1fr / 1fr;
+    grid: 1fr / 1fr;
     margin-block: 0 1em;
 
     & > * {
-      grid-area: photo;
+      grid-area: 1 / 1;
     }
   
     .cost {
