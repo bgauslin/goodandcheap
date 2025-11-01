@@ -530,8 +530,8 @@ class GoodAndCheapApp extends LitElement {
       </header>
 
       <main
-        ?data-inactive="${this.dialogOpen}"  
-        ?data-loading="${this.loading}">
+        ?data-loading="${this.loading}"
+        ?inert="${this.dialogOpen}">
         <gc-home
           class="view"
           transition="${this.homeTransition}"  

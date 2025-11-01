@@ -26,15 +26,11 @@ main {
   overflow: hidden;
   place-self: center;
   transition: opacity var(--transition);
-}
 
-main[data-loading] {
-  opacity: 0;
-}
-
-main[data-inactive] {
-  opacity: 0;
-  pointer-events: none;
+  &[data-loading],
+  &[inert] {
+    opacity: 0;
+  }
 }
 
 /* ---------------------------------------- */
