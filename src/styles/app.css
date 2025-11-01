@@ -76,14 +76,14 @@ main {
 .copy {
   padding-block: var(--gap) 0;
   padding-inline: var(--gap);
-}
 
-gc-page .copy {
-  padding-block: var(--gap);
-}
+  gc-page & {
+    padding-block: var(--gap);
+  }
 
-.copy p:last-of-type {
-  margin-block-end: 0;
+  p:last-of-type {
+    margin-block-end: 0;
+  }
 }
 
 .badge {
